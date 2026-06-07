@@ -6,6 +6,7 @@ from app.schemas.common import (
     ConfidenceLevel,
     ConstraintType,
     EvidenceRef,
+    NonEmptyStr,
     QualityStatus,
     StrictBaseModel,
 )
@@ -55,9 +56,9 @@ class DeveloperProfile(StrictBaseModel):
     art_ability: str = Field(min_length=1)
     audio_ability: str = Field(min_length=1)
     content_production_ability: str = Field(min_length=1)
-    liked_references: list[str] = Field(min_length=1)
-    disliked_references_or_mechanics: list[str]
-    desired_player_experiences: list[str] = Field(min_length=1)
+    liked_references: list[NonEmptyStr] = Field(min_length=1)
+    disliked_references_or_mechanics: list[NonEmptyStr]
+    desired_player_experiences: list[NonEmptyStr] = Field(min_length=1)
     constraints: list[DeveloperConstraint] = Field(min_length=1)
 
 
@@ -65,14 +66,14 @@ class OpportunityFrame(StrictBaseModel):
     id: str = Field(min_length=1)
     developer_profile_id: str = Field(min_length=1)
     opportunity_area: str = Field(min_length=1)
-    source_game_ids: list[str] = Field(min_length=1)
-    related_mechanics: list[str] = Field(min_length=1)
-    related_player_experiences: list[str] = Field(min_length=1)
-    related_constraints: list[str] = Field(min_length=1)
-    related_innovation_patterns: list[str] = Field(min_length=1)
-    recommended_transformations: list[str] = Field(min_length=1)
-    forbidden_directions: list[str] = Field(min_length=1)
-    evidence_path: list[str] = Field(min_length=1)
+    source_game_ids: list[NonEmptyStr] = Field(min_length=1)
+    related_mechanics: list[NonEmptyStr] = Field(min_length=1)
+    related_player_experiences: list[NonEmptyStr] = Field(min_length=1)
+    related_constraints: list[NonEmptyStr] = Field(min_length=1)
+    related_innovation_patterns: list[NonEmptyStr] = Field(min_length=1)
+    recommended_transformations: list[NonEmptyStr] = Field(min_length=1)
+    forbidden_directions: list[NonEmptyStr] = Field(min_length=1)
+    evidence_path: list[NonEmptyStr] = Field(min_length=1)
     fit_reason: str = Field(min_length=1)
     risk_reason: str = Field(min_length=1)
 
@@ -84,13 +85,13 @@ class ConceptCard(StrictBaseModel):
     one_sentence_concept: str = Field(min_length=1)
     core_fantasy: str = Field(min_length=1)
     core_loop: str = Field(min_length=1)
-    main_player_decisions: list[str] = Field(min_length=1)
-    main_mechanics: list[str] = Field(min_length=1)
-    reference_sources: list[str] = Field(min_length=1)
+    main_player_decisions: list[NonEmptyStr] = Field(min_length=1)
+    main_mechanics: list[NonEmptyStr] = Field(min_length=1)
+    reference_sources: list[NonEmptyStr] = Field(min_length=1)
     difference_from_references: str = Field(min_length=1)
     fit_reason: str = Field(min_length=1)
-    production_risks: list[str] = Field(min_length=1)
-    design_risks: list[str] = Field(min_length=1)
+    production_risks: list[NonEmptyStr] = Field(min_length=1)
+    design_risks: list[NonEmptyStr] = Field(min_length=1)
     novelty_reason: str = Field(min_length=1)
     suggested_prototype_scope: str = Field(min_length=1)
 
@@ -101,6 +102,6 @@ class PrototypeBrief(StrictBaseModel):
     largest_risk_hypothesis: str = Field(min_length=1)
     minimum_prototype_scope: str = Field(min_length=1)
     target_playtest_duration: str = Field(min_length=1)
-    success_signals: list[str] = Field(min_length=1)
-    failure_signals: list[str] = Field(min_length=1)
-    do_not_build_yet: list[str] = Field(min_length=1)
+    success_signals: list[NonEmptyStr] = Field(min_length=1)
+    failure_signals: list[NonEmptyStr] = Field(min_length=1)
+    do_not_build_yet: list[NonEmptyStr] = Field(min_length=1)

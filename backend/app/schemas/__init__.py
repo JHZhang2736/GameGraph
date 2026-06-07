@@ -12,6 +12,7 @@ from app.schemas.common import (
     ConfidenceLevel,
     ConstraintType,
     EvidenceRef,
+    NonEmptyStr,
     QualityStatus,
     StrictBaseModel,
 )
@@ -25,6 +26,7 @@ __all__ = [
     "DeveloperProfile",
     "EvidenceRef",
     "GraphRelation",
+    "NonEmptyStr",
     "OpportunityFrame",
     "PrototypeBrief",
     "QualityStatus",

@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 from enum import StrEnum
-from typing import Self
+from typing import Annotated, Self
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+
+NonEmptyStr = Annotated[str, Field(min_length=1)]
 
 
 class StrictBaseModel(BaseModel):

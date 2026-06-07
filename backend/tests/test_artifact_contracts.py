@@ -212,3 +212,41 @@ def test_prototype_brief_requires_success_and_failure_signals() -> None:
             failure_signals=[],
             do_not_build_yet=["meta progression"],
         )
+
+
+def test_opportunity_frame_rejects_blank_list_items() -> None:
+    valid_payload = {
+        "id": "opportunity-1",
+        "developer_profile_id": "profile-1",
+        "opportunity_area": "Small tactical puzzler with visible cascading consequences.",
+        "source_game_ids": ["seed-1"],
+        "related_mechanics": ["enemy intent preview"],
+        "related_player_experiences": ["feeling clever under pressure"],
+        "related_constraints": ["constraint-1"],
+        "related_innovation_patterns": ["consequence preview"],
+        "recommended_transformations": ["compress battles into five-minute puzzles"],
+        "forbidden_directions": ["large content treadmill"],
+        "evidence_path": ["relation-1"],
+        "fit_reason": "Matches low content budget and tactical preferences.",
+        "risk_reason": "Needs enough variety without many bespoke units.",
+    }
+
+    with pytest.raises(ValidationError):
+        OpportunityFrame(**{**valid_payload, "source_game_ids": [""]})
+
+    with pytest.raises(ValidationError):
+        OpportunityFrame(**{**valid_payload, "evidence_path": ["   "]})
+
+
+def test_prototype_brief_rejects_blank_success_signals() -> None:
+    with pytest.raises(ValidationError):
+        PrototypeBrief(
+            id="prototype-1",
+            concept_card_id="concept-1",
+            largest_risk_hypothesis="Players can discover satisfying rescue chains quickly.",
+            minimum_prototype_scope="A five-puzzle playable loop with placeholder art.",
+            target_playtest_duration="10 minutes",
+            success_signals=["   "],
+            failure_signals=["players solve by trial and error only"],
+            do_not_build_yet=["meta progression"],
+        )
