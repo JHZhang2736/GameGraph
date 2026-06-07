@@ -1,5 +1,8 @@
+import json
+from pathlib import Path
+
 import pytest
-from pydantic import ValidationError
+from pydantic import TypeAdapter, ValidationError
 
 from app.schemas.artifacts import (
     ConceptCard,
@@ -250,3 +253,29 @@ def test_prototype_brief_rejects_blank_success_signals() -> None:
             failure_signals=["players solve by trial and error only"],
             do_not_build_yet=["meta progression"],
         )
+
+
+def test_golden_fixture_core_payloads_match_artifact_schemas() -> None:
+    fixture_path = Path(__file__).resolve().parents[1] / "app" / "fixtures" / "golden_flow.json"
+    raw = json.loads(fixture_path.read_text(encoding="utf-8"))
+
+    seed_games = TypeAdapter(list[SeedGame]).validate_python(raw["seed_games"])
+    design_claims = TypeAdapter(list[DesignClaim]).validate_python(raw["design_claims"])
+    developer_profile = DeveloperProfile.model_validate(raw["developer_profile"])
+    opportunity_frame = OpportunityFrame.model_validate(raw["opportunity_frame"])
+    concept_cards = TypeAdapter(list[ConceptCard]).validate_python(raw["concept_cards"])
+    prototype_brief = PrototypeBrief.model_validate(raw["prototype_brief"])
+
+    assert {game.id for game in seed_games} == {
+        "game_balatro",
+        "game_into_the_breach",
+        "game_baba_is_you",
+    }
+    assert {claim.confidence for claim in design_claims} >= {
+        ConfidenceLevel.HIGH,
+        ConfidenceLevel.LOW,
+    }
+    assert developer_profile.id == "profile_solo_systems"
+    assert opportunity_frame.id == "frame_rule_tactics"
+    assert concept_cards[0].opportunity_frame_id == opportunity_frame.id
+    assert prototype_brief.concept_card_id == concept_cards[0].id
