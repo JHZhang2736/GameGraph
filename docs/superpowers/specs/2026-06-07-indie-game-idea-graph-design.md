@@ -28,7 +28,7 @@ The system must not promise that a generated concept will be fun or commercially
 
 - Curated seed games, selected for design relevance rather than volume.
 - Structured game design profiles for each seed game.
-- AI-assisted but human-reviewed design annotation.
+- AI-assisted design annotation with evidence, confidence, and quality status.
 - A design knowledge graph made of games, mechanics, player experiences, production constraints, innovation patterns, and reusable reference patterns.
 - Developer profiles containing constraints, preferences, and interests.
 - Opportunity frames that explain why a design area fits a developer.
@@ -41,7 +41,8 @@ The system must not promise that a generated concept will be fun or commercially
 - Feedback loops that automatically update the graph after user reactions.
 - Full Steam-scale game indexing.
 - Claims that the system can predict fun or market success.
-- Fully automatic admission of AI-generated annotations into the trusted graph.
+- Mandatory per-annotation approval workflows.
+- Unbounded admission of annotations without evidence, confidence, and quality status.
 - Long-term production planning, task estimation, staffing, budgeting, or release planning.
 
 ## 4. Core Workflow
@@ -49,7 +50,6 @@ The system must not promise that a generated concept will be fun or commercially
 ```text
 Curated Game Intake
 -> Game Design Annotation
--> Human Review
 -> Design Knowledge Graph
 -> Developer Profile
 -> Opportunity Matching
@@ -108,11 +108,11 @@ Required fields:
 - Non-copyable risks
 - Evidence notes
 - Confidence level
-- Review status
+- Quality status
 
 ### 5.3 Design Claim
 
-A single reviewable statement about a game or design pattern.
+A single evidence-backed statement about a game or design pattern.
 
 Examples:
 
@@ -128,7 +128,7 @@ Required fields:
 - Explanation
 - Evidence
 - Confidence
-- Review status
+- Quality status
 
 ### 5.4 Developer Profile
 
@@ -260,7 +260,7 @@ Must Not:
 
 - Decide final design annotations.
 - Infer full mechanics or innovation patterns.
-- Admit a game into the trusted graph without later review.
+- Admit a game into the design graph before annotation.
 
 Independent Test Cases:
 
@@ -272,13 +272,13 @@ Acceptance Criteria:
 
 - Every accepted candidate has a stated reason for inclusion.
 - Every candidate can be traced to at least one source reference.
-- No candidate is treated as trusted design knowledge at this stage.
+- No candidate is treated as design knowledge at this stage.
 
 ### 6.2 Game Design Annotation Module
 
 Purpose:
 
-Produce a structured draft interpretation of a game as a design object.
+Produce a structured interpretation of a game as a design object.
 
 Inputs:
 
@@ -288,86 +288,45 @@ Inputs:
 
 Outputs:
 
-- Draft Game Design Profile
-- Draft Design Claims
+- Game Design Profile
+- Design Claims
 
 Responsibilities:
 
 - Identify core loop, player actions, decisions, experiences, mechanics, innovation patterns, and production constraints.
 - Separate observed facts from interpretive claims.
 - Attach evidence and confidence to important claims.
+- Assign quality status to claims so low-confidence material can still be used cautiously in a prototype.
 - Surface uncertainty rather than hiding it.
 
 Must Not:
 
-- Mark its own output as trusted.
-- Convert vague claims into graph facts without review.
-- Overwrite human-reviewed annotations.
+- Mark low-confidence output as high-confidence.
+- Convert vague claims into graph facts without evidence.
+- Overwrite manually curated corrections.
 
 Independent Test Cases:
 
-- Given a known game with strong source material, the module produces a complete draft profile.
+- Given a known game with strong source material, the module produces a complete profile.
 - Given weak source material, the module marks confidence as low and identifies missing evidence.
 - Given conflicting source material, the module preserves uncertainty instead of choosing silently.
 
 Acceptance Criteria:
 
-- Each draft profile includes core loop, mechanics, experiences, constraints, and innovation notes.
+- Each profile includes core loop, mechanics, experiences, constraints, and innovation notes.
 - Each non-obvious claim includes evidence or an explicit uncertainty marker.
-- Draft output is clearly distinguishable from reviewed output.
+- Every claim has confidence and quality status.
 
-### 6.3 Human Review Module
-
-Purpose:
-
-Turn draft annotations into trusted design knowledge.
-
-Inputs:
-
-- Draft Game Design Profile
-- Draft Design Claims
-- Reviewer edits
-
-Outputs:
-
-- Reviewed Game Design Profile
-- Approved, revised, or rejected Design Claims
-
-Responsibilities:
-
-- Confirm or correct high-impact design claims.
-- Standardize terminology across games.
-- Prevent noisy or speculative annotations from entering the trusted graph.
-- Preserve reviewer notes for future interpretation.
-
-Must Not:
-
-- Generate new concepts.
-- Change developer profile constraints.
-- Automatically approve low-confidence claims.
-
-Independent Test Cases:
-
-- Given a draft with unsupported claims, the module can reject or downgrade those claims.
-- Given two similar mechanics with inconsistent naming, the module can normalize them.
-- Given reviewer edits, the module preserves the reason for changes.
-
-Acceptance Criteria:
-
-- No trusted claim lacks review status.
-- Rejected claims remain auditable but are not used for recommendation.
-- Important terminology is normalized before graph admission.
-
-### 6.4 Design Knowledge Graph Module
+### 6.3 Design Knowledge Graph Module
 
 Purpose:
 
-Maintain reviewed design knowledge as connected concepts.
+Maintain design knowledge as connected concepts.
 
 Inputs:
 
-- Reviewed Game Design Profiles
-- Approved Design Claims
+- Game Design Profiles
+- Design Claims
 
 Outputs:
 
@@ -378,29 +337,31 @@ Outputs:
 Responsibilities:
 
 - Connect games to mechanics, experiences, constraints, styles, genres, themes, innovation patterns, and reusable reference patterns.
-- Preserve evidence and confidence on relationships.
+- Preserve evidence, confidence, and quality status on relationships.
 - Support traversal from developer constraints to relevant games and design patterns.
 - Support comparison between similar and contrasting games.
+- Keep low-confidence relationships available but visibly downgraded.
 
 Must Not:
 
-- Invent new claims without reviewed input.
+- Invent new claims without annotation input.
 - Generate final concept cards.
 - Treat popularity as equivalent to design relevance.
+- Hide low-confidence relationships.
 
 Independent Test Cases:
 
-- Given approved claims for a game, the module exposes the expected relationships.
+- Given claims for a game, the module exposes the expected relationships.
 - Given a target constraint such as low art cost, the module returns related games, mechanics, and patterns.
 - Given a game, the module returns evidence-backed paths explaining why it matches a design pattern.
 
 Acceptance Criteria:
 
-- Every relationship used downstream can be traced back to an approved or explicitly draft-level claim.
+- Every relationship used downstream can be traced back to an evidence-backed claim.
 - The module can return both direct matches and multi-step evidence paths.
 - The module can distinguish strong evidence from weak evidence.
 
-### 6.5 Developer Profile Module
+### 6.4 Developer Profile Module
 
 Purpose:
 
@@ -442,7 +403,7 @@ Acceptance Criteria:
 - Missing critical information is visible.
 - The profile can be used without reading the original conversation.
 
-### 6.6 Opportunity Matching Module
+### 6.5 Opportunity Matching Module
 
 Purpose:
 
@@ -482,7 +443,7 @@ Acceptance Criteria:
 - Results include more than one risk posture when possible.
 - The module can explain why an attractive area was rejected.
 
-### 6.7 Opportunity Framing Module
+### 6.6 Opportunity Framing Module
 
 Purpose:
 
@@ -519,11 +480,11 @@ Independent Test Cases:
 
 Acceptance Criteria:
 
-- Every frame cites source games or reviewed design claims.
+- Every frame cites source games or evidence-backed design claims.
 - Every frame includes both allowed transformations and prohibited directions.
 - Every frame can be read as a standalone creative brief.
 
-### 6.8 Concept Generation Module
+### 6.7 Concept Generation Module
 
 Purpose:
 
@@ -562,7 +523,7 @@ Acceptance Criteria:
 - Every Concept Card states references and differences from references.
 - Every Concept Card includes both production and design risks.
 
-### 6.9 Concept Evaluation Module
+### 6.8 Concept Evaluation Module
 
 Purpose:
 
@@ -604,7 +565,7 @@ Acceptance Criteria:
 - Each concept receives one of the defined classifications.
 - The ranking helps comparison but does not pretend to be an objective success prediction.
 
-### 6.10 Prototype Validation Module
+### 6.9 Prototype Validation Module
 
 Purpose:
 
@@ -644,7 +605,7 @@ Acceptance Criteria:
 - Each brief can be acted on without a full game plan.
 - Each brief includes concrete success and failure signals.
 
-### 6.11 Audit And Explanation Module
+### 6.10 Audit And Explanation Module
 
 Purpose:
 
@@ -668,27 +629,27 @@ Outputs:
 Responsibilities:
 
 - Show how a concept was derived from source games, claims, and developer constraints.
-- Distinguish reviewed knowledge from draft knowledge.
+- Distinguish high-confidence claims from low-confidence claims.
 - Make weak or speculative reasoning visible.
-- Support human review of suspicious recommendations.
+- Support human spot-checking of suspicious recommendations.
 
 Must Not:
 
 - Rewrite the recommendation itself.
 - Hide missing evidence.
-- Present draft claims as approved facts.
+- Present low-confidence claims as high-confidence facts.
 
 Independent Test Cases:
 
 - Given a Concept Card, the module returns the source Opportunity Frame and supporting claims.
-- Given a questionable claim, the module shows review status and confidence.
-- Given a rejected claim, the module verifies it was not used as trusted evidence.
+- Given a questionable claim, the module shows quality status and confidence.
+- Given a low-confidence claim, the module verifies it is visibly downgraded in explanations.
 
 Acceptance Criteria:
 
 - Every final recommendation has an explanation trail.
 - The explanation trail can identify unsupported or low-confidence links.
-- A human reviewer can inspect why the system recommended a concept.
+- A human can inspect why the system recommended a concept.
 
 ## 7. Cross-Module Rules
 
@@ -696,9 +657,9 @@ Acceptance Criteria:
 
 Concept generation must be downstream of an Opportunity Frame. The system must not produce final concepts directly from a developer profile alone.
 
-### 7.2 Human Review Before Trust
+### 7.2 Evidence And Confidence Before Use
 
-AI-generated design claims may be useful drafts, but they are not trusted graph knowledge until reviewed.
+AI-generated design claims may enter the prototype graph, but only with evidence, confidence, and quality status. Low-confidence claims must remain visible and should reduce downstream confidence.
 
 ### 7.3 Constraints Are Weighted, Not Flattened
 
@@ -776,9 +737,9 @@ The full flow should be tested with several developer profiles:
 
 Each profile should produce opportunity frames, concept cards, evaluations, and validation briefs that reflect its constraints.
 
-### 9.3 Human Judgment Review
+### 9.3 Human Judgment Spot Check
 
-Domain reviewers should inspect:
+Domain reviewers may spot-check:
 
 - Whether game profiles are accurate.
 - Whether opportunity frames are genuinely evidence-backed.
@@ -792,22 +753,21 @@ The product succeeds if:
 - A user can understand why each concept was recommended.
 - Concepts reflect the user's constraints without becoming overly conservative.
 - The system produces specific prototype validation briefs rather than generic advice.
-- Reviewed design knowledge improves recommendation quality.
+- Evidence-backed design knowledge improves recommendation quality.
 - The workflow turns vague creative uncertainty into comparable project candidates.
 
 The product fails if:
 
 - It behaves like a tag search engine.
 - It generates concepts directly from broad prompts without evidence.
-- It relies on unreviewed AI claims as trusted knowledge.
+- It treats weak or unsupported AI claims as high-confidence knowledge.
 - It repeatedly recommends only obvious low-risk clones.
 - Its prototype advice is too generic to guide action.
 
 ## 11. Open Questions For Review
 
 1. What is the first target size of the curated seed library: 50, 75, or 100 games?
-2. Who is allowed to approve design claims in the first version?
+2. What confidence threshold should mark a claim as strong enough for recommendation?
 3. How strict should the system be when a stretch concept challenges the developer's stated limits?
 4. Which game genres should be intentionally overrepresented in the seed library because they are more useful to indie developers?
 5. What level of evidence is required before an innovation pattern becomes reusable across games?
-
