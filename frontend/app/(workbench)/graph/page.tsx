@@ -42,7 +42,8 @@ export default function GraphPage() {
                 "w-full rounded-lg border p-3 text-left text-sm hover:bg-accent",
                 selected === edge.id && "ring-2 ring-primary",
                 (edge.confidence === "low" ||
-                  edge.quality_status === "weak_evidence") &&
+                  edge.quality_status === "weak_evidence" ||
+                  edge.quality_status === "conflicting") &&
                   "border-amber-200",
               )}
             >
