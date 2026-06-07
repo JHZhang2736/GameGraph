@@ -4,6 +4,7 @@ import { ConfidenceBadge } from "@/components/artifacts/confidence-badge";
 import { QualityBadge } from "@/components/artifacts/quality-badge";
 import { ClaimRow } from "@/components/artifacts/claim-row";
 import { ConstraintTag } from "@/components/artifacts/constraint-tag";
+import { EvidenceList } from "@/components/artifacts/evidence-list";
 import type { DesignClaim } from "@/lib/types";
 
 const lowClaim: DesignClaim = {
@@ -55,5 +56,15 @@ describe("artifact components", () => {
     );
     expect(screen.getByText("No online.")).toBeInTheDocument();
     expect(container.querySelector('[data-constraint="hard"]')).not.toBeNull();
+  });
+
+  it("links the evidence title when a url is present", () => {
+    render(
+      <EvidenceList
+        evidence={[{ title: "Steam page", url: "https://example.com/x", notes: "n" }]}
+      />,
+    );
+    const link = screen.getByRole("link", { name: "Steam page" });
+    expect(link).toHaveAttribute("href", "https://example.com/x");
   });
 });

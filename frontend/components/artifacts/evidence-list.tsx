@@ -6,17 +6,21 @@ export function EvidenceList({ evidence }: { evidence: EvidenceRef[] }) {
   }
   return (
     <ul className="space-y-1 text-xs text-muted-foreground">
-      {evidence.map((ref, i) => (
-        <li key={`${ref.title}-${i}`}>
-          <span className="font-medium text-foreground/80">{ref.title}</span>
+      {evidence.map((ref) => (
+        <li key={ref.title}>
           {ref.url ? (
-            <>
-              {" — "}
-              <a href={ref.url} className="underline" target="_blank" rel="noreferrer">
-                {ref.url}
-              </a>
-            </>
-          ) : ref.quote_or_summary ? (
+            <a
+              href={ref.url}
+              className="font-medium text-foreground/80 underline"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {ref.title}
+            </a>
+          ) : (
+            <span className="font-medium text-foreground/80">{ref.title}</span>
+          )}
+          {ref.quote_or_summary ? (
             <>{" — “"}{ref.quote_or_summary}{"”"}</>
           ) : null}
         </li>
