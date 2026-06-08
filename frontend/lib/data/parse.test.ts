@@ -24,6 +24,7 @@ const backendResult: ProfileParseResult = {
 };
 
 afterEach(() => {
+  vi.unstubAllGlobals();
   vi.restoreAllMocks();
 });
 
@@ -43,6 +44,22 @@ describe("parseDeveloperProfileInput", () => {
 
   it("falls back to the local parser when the request fails", async () => {
     vi.stubGlobal("fetch", vi.fn(() => Promise.reject(new Error("offline"))));
+
+    const result = await parseDeveloperProfileInput({
+      raw_text:
+        "我是 solo 开发者，程序能力强，美术能力弱，三个月原型。" +
+        "我喜欢 Balatro，想要短局，不要做在线多人，也不想做大量内容。",
+    });
+
+    expect(result.draft.team_size).toBe("solo");
+    expect(result.warnings[0]).toBe("后端不可用，已使用本地规则解析。");
+  });
+
+  it("falls back to the local parser on a non-2xx response", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => Promise.resolve(new Response("error", { status: 500 }))),
+    );
 
     const result = await parseDeveloperProfileInput({
       raw_text:
