@@ -98,7 +98,7 @@ class CandidateOpportunityArea(StrictBaseModel):  # 确定性引擎产出
     anchor_game_id: str
     anchor_summary: str        # 取自 Game.one_sentence_summary
     transformation: Transformation
-    novelty_count: int         # 组合现存游戏数,越小越新颖
+    existing_combination_count: int         # 组合现存游戏数,越小越新颖
     evidence: OpportunityEvidence
 
 class RiskPosture(str, Enum):
@@ -130,9 +130,9 @@ class OpportunityMatchResult(StrictBaseModel):
 
 - **替代**（维度 D ∈ {`Perspective`, `ArtStyle`, `Genre`}）：取 G 在 D 上的值 v；候选新值 v′ = 别的游戏在 D 上用过、且 ≠ v 的值。
 - **组合**（维度 `Mechanic`）：候选借入机制 m = 别的游戏有、而 G 没有的机制。
-- **稀缺度计数** `novelty_count` = 图谱里同时具备「**锚点主类型 (Genre)** + **目标值 v′/m**」的游戏数。`novelty_count = 0` ⇒ 空白机会候选。
+- **稀缺度计数** `existing_combination_count` = 图谱里同时具备「**锚点主类型 (Genre)** + **目标值 v′/m**」的游戏数。`existing_combination_count = 0` ⇒ 空白机会候选。
 - **有效性门槛**（应对小库）：仅当 `target_value_game_ids` 非空（新值有据）且 `combination_game_ids` 很小（组合稀缺）才保留——保证变形两端都站在真实证据上。
-- 全部候选按 `novelty_count` 升序、`len(target_value_game_ids)` 降序排序，取 **top-N（默认 30）** 送 LLM 判断层。
+- 全部候选按 `existing_combination_count` 升序、`len(target_value_game_ids)` 降序排序，取 **top-N（默认 30）** 送 LLM 判断层。
 
 **锚点签名（唯一主要可调旋钮）**：v1 用**主类型 Genre** 作为「锚点核心」来算共现，简单可解释。将来可加入 main_mechanics 重叠度以收紧签名。
 
@@ -181,7 +181,7 @@ POST /opportunity/match
 | 每个区域含适配理由和约束取舍 | schema 必填 `fit_reason`/`risk_reason` + 契约往返测试 |
 | 能解释为什么拒绝某个有吸引力的区域 | LLM stub：可行性闸把「新颖但不可行」候选送 `rejected[]` 并附理由 |
 
-- **引擎**：Neo4j 集成测试（`@pytest.mark.integration`，仿 `test_game_repository_integration`）—— 给定 fixture 集断言候选与 `novelty_count`；纯排序/门槛逻辑用 stub repository 单测。
+- **引擎**：Neo4j 集成测试（`@pytest.mark.integration`，仿 `test_game_repository_integration`）—— 给定 fixture 集断言候选与 `existing_combination_count`；纯排序/门槛逻辑用 stub repository 单测。
 - **LLM 层**：stub 客户端（仿 `test_profile_llm`）。
 
 ## 10. 范围
@@ -200,5 +200,5 @@ POST /opportunity/match
 
 ## 11. 已知局限
 
-- **小库下新颖度偏粗**：种子库现约 8 款时，几乎任何组合都「不存在」，`novelty_count` 信号粗，更像「灵感触发器」而非「稀缺性证明」。用户计划持续入库至上百款，届时信号自动变锐（spec 本就规划「随图谱生长」）。本期不为此做特殊处理，只摆正语义：稀缺度 = 「在我们策展的库里是空白」。
+- **小库下新颖度偏粗**：种子库现约 8 款时，几乎任何组合都「不存在」，`existing_combination_count` 信号粗，更像「灵感触发器」而非「稀缺性证明」。用户计划持续入库至上百款，届时信号自动变锐（spec 本就规划「随图谱生长」）。本期不为此做特殊处理，只摆正语义：稀缺度 = 「在我们策展的库里是空白」。
 - **LLM 行为非确定**：约束与可行性判断从「确定性可精确测试」变为「LLM 行为测试」（stub 断言），与既有 `test_profile_llm` 同策略。
