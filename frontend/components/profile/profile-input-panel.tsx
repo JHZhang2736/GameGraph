@@ -13,12 +13,18 @@ interface ProfileInputPanelProps {
   value: ProfileInputState;
   onChange: (value: ProfileInputState) => void;
   onParse: () => void;
+  rawTextPlaceholder?: string;
 }
 
 const inputClass =
   "h-9 w-full rounded-md border bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
-export function ProfileInputPanel({ value, onChange, onParse }: ProfileInputPanelProps) {
+export function ProfileInputPanel({
+  value,
+  onChange,
+  onParse,
+  rawTextPlaceholder,
+}: ProfileInputPanelProps) {
   return (
     <section className="space-y-3 rounded-lg border p-4">
       <div>
@@ -37,6 +43,7 @@ export function ProfileInputPanel({ value, onChange, onParse }: ProfileInputPane
         <textarea
           id="profile-raw-text"
           className="min-h-40 w-full rounded-md border bg-background p-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          placeholder={rawTextPlaceholder}
           value={value.raw_text}
           onChange={(event) => onChange({ ...value, raw_text: event.target.value })}
         />

@@ -37,10 +37,13 @@ export function useDeveloperProfile() {
   return useQuery({ queryKey: ["developer-profile"], queryFn: getDeveloperProfile });
 }
 
-export function useParseDeveloperProfileInput(input: ProfileParseInput) {
+// Pass null to leave the query idle (no parse on first load); the page seeds a
+// real input only after the user clicks 解析画像.
+export function useParseDeveloperProfileInput(input: ProfileParseInput | null) {
   return useQuery({
     queryKey: ["profile-parse", input],
-    queryFn: () => parseDeveloperProfileInput(input),
+    queryFn: () => parseDeveloperProfileInput(input as ProfileParseInput),
+    enabled: input !== null,
   });
 }
 

@@ -19,13 +19,15 @@ import type {
   ProfileParseResult,
 } from "@/lib/types";
 
-const DEFAULT_PROFILE_TEXT =
+// Shown as a gray placeholder hint so users see how to phrase their input. The
+// field starts empty; nothing is parsed until the user clicks 解析画像.
+const EXAMPLE_PROFILE_TEXT =
   "我是 solo 开发者，程序能力强，美术能力弱，想做三个月内能验证的原型。" +
   "我喜欢 Balatro 和 Into the Breach，想要短局、系统性决策和战术预测。" +
   "不要做在线多人，我不想做长篇叙事内容，也不想做大量内容。";
 
-const DEFAULT_INPUT: ProfileInputState = {
-  raw_text: DEFAULT_PROFILE_TEXT,
+const EMPTY_INPUT: ProfileInputState = {
+  raw_text: "",
   liked_references: "",
   disliked_references_or_mechanics: "",
   expected_project_scale: "",
@@ -48,12 +50,11 @@ function toParseInput(state: ProfileInputState): ProfileParseInput {
 }
 
 export default function ProfilePage() {
-  const [input, setInput] = useState<ProfileInputState>(DEFAULT_INPUT);
-  // `submitted` is the input actually parsed; editing the form does not reparse
-  // until the user clicks 解析画像. The default profile parses on first render.
-  const [submitted, setSubmitted] = useState<ProfileParseInput>(() =>
-    toParseInput(DEFAULT_INPUT),
-  );
+  const [input, setInput] = useState<ProfileInputState>(EMPTY_INPUT);
+  // `submitted` is the input actually parsed. It starts null so nothing parses
+  // on first load; clicking 解析画像 seeds it. Editing the form does not reparse
+  // until the next click.
+  const [submitted, setSubmitted] = useState<ProfileParseInput | null>(null);
   const { data: result } = useParseDeveloperProfileInput(submitted);
 
   // The editable draft is seeded from each parse, then owned locally so inline
@@ -90,6 +91,7 @@ export default function ProfilePage() {
           value={input}
           onChange={setInput}
           onParse={() => setSubmitted(toParseInput(input))}
+          rawTextPlaceholder={EXAMPLE_PROFILE_TEXT}
         />
         {draft ? (
           <ProfileDraftPreview draft={draft} onChange={updateDraft} />
