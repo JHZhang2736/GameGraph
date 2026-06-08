@@ -1,9 +1,7 @@
 # Production stack deployed on the Tencent Cloud ECS host.
-# Images are built & pushed by .github/workflows/cd.yml; the deploy step sets
-# BACKEND_TAG / FRONTEND_TAG (sha-<commit>) and NEO4J_PASSWORD in the shell env.
-#
-# NOTE: adjust the image registry/namespace below to match your TCR namespace
-# (here: ccr.ccs.tencentyun.com/gamegraph/...).
+# Images are BUILT on the host by .github/workflows/cd.yml (SSH -> git pull ->
+# docker compose build -> up), so there is no container registry round-trip.
+# The deploy step provides NEO4J_PASSWORD in the shell env.
 name: gamegraph
 
 services:
@@ -26,7 +24,9 @@ services:
       start_period: 30s
 
   backend:
-    image: "ccr.ccs.tencentyun.com/gamegraph/gamegraph-backend:${BACKEND_TAG:-latest}"
+    build:
+      context: ./backend
+    image: gamegraph-backend:latest
     restart: unless-stopped
     depends_on:
       neo4j:
@@ -41,7 +41,9 @@ services:
       - "127.0.0.1:8000:8000"
 
   frontend:
-    image: "ccr.ccs.tencentyun.com/gamegraph/gamegraph-frontend:${FRONTEND_TAG:-latest}"
+    build:
+      context: ./frontend
+    image: gamegraph-frontend:latest
     restart: unless-stopped
     depends_on:
       - backend
