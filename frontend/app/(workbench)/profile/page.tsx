@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/shell/view-states";
 import {
@@ -11,7 +12,16 @@ import { ProfileDraftPreview } from "@/components/profile/profile-draft-preview"
 import { ProfileConfirmedView } from "@/components/profile/profile-confirmed-view";
 import { useParseDeveloperProfileInput } from "@/lib/queries";
 import { confirmDeveloperProfile } from "@/lib/data";
-import { createEmptyDraft, recomputeDraftCompleteness } from "@/lib/profile/draft";
+import {
+  createDraftFromProfile,
+  createEmptyDraft,
+  recomputeDraftCompleteness,
+} from "@/lib/profile/draft";
+import {
+  loadStoredProfile,
+  saveStoredProfile,
+  subscribeStoredProfile,
+} from "@/lib/profile/storage";
 import type {
   DeveloperProfile,
   DeveloperProfileDraft,
@@ -64,6 +74,26 @@ export default function ProfilePage() {
   const [seed, setSeed] = useState<ProfileParseResult | undefined>(result);
   const [draft, setDraft] = useState<DeveloperProfileDraft>(() => createEmptyDraft());
   const [confirmed, setConfirmed] = useState<DeveloperProfile | null>(null);
+  const queryClient = useQueryClient();
+
+  // The profile confirmed in a previous visit, read from browser storage.
+  // useSyncExternalStore returns null during SSR/hydration (third arg) and the
+  // stored profile afterward, so restoring it never causes a hydration mismatch.
+  const storedProfile = useSyncExternalStore(
+    subscribeStoredProfile,
+    loadStoredProfile,
+    () => null,
+  );
+  const [restoredProfile, setRestoredProfile] = useState<DeveloperProfile | null>(null);
+
+  // Re-seed the confirmed view and editable draft from storage the first time a
+  // stored profile appears (mount, or a confirm in another tab). Adjusting state
+  // during render is the supported way to react to a changing external value.
+  if (storedProfile && storedProfile !== restoredProfile) {
+    setRestoredProfile(storedProfile);
+    setConfirmed(storedProfile);
+    setDraft(createDraftFromProfile(storedProfile));
+  }
 
   if (result && result !== seed) {
     setSeed(result);
@@ -77,7 +107,11 @@ export default function ProfilePage() {
   }
 
   async function handleConfirm() {
-    setConfirmed(await confirmDeveloperProfile(draft));
+    const profile = await confirmDeveloperProfile(draft);
+    saveStoredProfile(profile);
+    setConfirmed(profile);
+    // Let downstream steps that read getDeveloperProfile pick up the new profile.
+    void queryClient.invalidateQueries({ queryKey: ["developer-profile"] });
   }
 
   return (

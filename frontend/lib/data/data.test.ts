@@ -1,5 +1,40 @@
-import { describe, it, expect } from "vitest";
-import { getGoldenFlow, getGameProfile } from "@/lib/data";
+import { afterEach, describe, it, expect } from "vitest";
+import {
+  getDeveloperProfile,
+  getGoldenFlow,
+  getGameProfile,
+} from "@/lib/data";
+import { saveStoredProfile } from "@/lib/profile/storage";
+import type { DeveloperProfile } from "@/lib/types";
+
+describe("getDeveloperProfile", () => {
+  afterEach(() => {
+    localStorage.clear();
+  });
+
+  it("falls back to the golden-flow profile when nothing is stored", async () => {
+    const profile = await getDeveloperProfile();
+    expect(profile.id).toBe("profile_solo_systems");
+  });
+
+  it("prefers a profile saved in browser storage", async () => {
+    const stored: DeveloperProfile = {
+      id: "profile_draft_current",
+      team_size: "small team",
+      time_budget: "six month project",
+      programming_ability: "strong",
+      art_ability: "strong",
+      audio_ability: "basic",
+      content_production_ability: "strong",
+      liked_references: [],
+      disliked_references_or_mechanics: [],
+      desired_player_experiences: [],
+      constraints: [],
+    };
+    saveStoredProfile(stored);
+    expect(await getDeveloperProfile()).toEqual(stored);
+  });
+});
 
 describe("data layer", () => {
   it("returns the whole golden flow", async () => {

@@ -1,6 +1,7 @@
 import { goldenFlow } from "@/lib/fixtures/golden-flow";
 import { parseDeveloperProfileInput as parseLocalDeveloperProfileInput } from "@/lib/profile/parser";
 import { promoteDraftToProfile } from "@/lib/profile/draft";
+import { loadStoredProfile } from "@/lib/profile/storage";
 import type {
   ConceptCard,
   ConceptEvaluation,
@@ -73,8 +74,11 @@ export interface GraphData {
   edges: GraphEdge[];
 }
 
+// Returns the developer profile that drives downstream steps. A profile the user
+// confirmed and saved in browser storage wins; otherwise we fall back to the
+// golden-flow sample so the workbench still demos end-to-end.
 export async function getDeveloperProfile(): Promise<DeveloperProfile> {
-  return settle(goldenFlow.developer_profile);
+  return settle(loadStoredProfile() ?? goldenFlow.developer_profile);
 }
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
