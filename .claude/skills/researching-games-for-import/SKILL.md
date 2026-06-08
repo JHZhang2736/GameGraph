@@ -57,8 +57,8 @@ Document is `{ candidate, profile, claims }`. `profile.game_id` MUST equal `cand
 **1. 全中文**：所有生成文本一律简体中文——散文字段、原子标签、`reference_value_tags`、claims（`subject`/`object`/`explanation`）、各 `EvidenceRef` 的 `quote_or_summary`/`notes`。例外：专有名词（游戏标题、人名、引擎/语言如 `C++`、平台名）保留原文；引用页若为外文，其 `url`/`title` 按实保留，但 `notes`/`quote_or_summary` 用中文转述。
 
 **2. 散文 vs 原子标签，分开处理**：
-- **散文字段**（写成完整中文句子）：`short_description`、`selection_reason`、`one_sentence_summary`、`core_loop`、`progression_model`、`failure_model`、`content_structure`、claim 的 `explanation`、所有 evidence 文本。
-- **原子标签字段**（会进图建节点，必须原子）：`main_player_actions`、`main_player_decisions`、`main_player_experiences`、`main_mechanics`、`replayability_sources`、`production_constraints`、`innovation_patterns`、`reusable_reference_patterns`、`non_replicable_risks`、`reference_value_tags[].tag`、`claims[].object`（以及 `claims[].subject`）。
+- **散文字段**（写成完整中文句子）：`short_description`、`selection_reason`、`one_sentence_summary`、`core_hook`、`core_loop`、`progression_model`、`failure_model`、`content_structure`、claim 的 `explanation`、所有 evidence 文本。
+- **原子标签字段**（会进图建节点，必须原子）：`main_player_actions`、`main_player_decisions`、`main_player_experiences`、`main_mechanics`、`replayability_sources`、`production_constraints`、`innovation_patterns`、`reusable_reference_patterns`、`non_replicable_risks`、`genre`、`art_style`、`audio_style`、`perspective`、`theme`、`narrative_style`、`game_feel`、`team_model`、`reference_value_tags[].tag`、`claims[].object`（以及 `claims[].subject`）。
 
 **3. 原子标签格式**：一个名词或 1–4 字中文名词短语；去掉「玩法/机制/系统/参考/设计/体验」等填充后缀；不写整句；一个特征一项，复合短语拆成多项。粒度取中：禁用「类银河城」这类把所有游戏连成一片的全集级词；也别只用「翻屏房间」这种仅一款独有的过窄词，优先想还能不能更通用。
 

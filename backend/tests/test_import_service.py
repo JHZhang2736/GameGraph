@@ -18,6 +18,7 @@ def profile_payload() -> dict:
     return {
         "game_id": "game_balatro",
         "one_sentence_summary": "Poker-hand roguelike deckbuilder built on score multipliers.",
+        "core_hook": "Familiar poker rules as an on-ramp to exponential scoring builds.",
         "core_loop": "Play poker hands, buy jokers that rewrite scoring, beat escalating blinds.",
         "progression_model": "Run-based economy buying jokers between blinds.",
         "failure_model": "Failing to reach the blind score ends the run.",
@@ -31,6 +32,14 @@ def profile_payload() -> dict:
         "innovation_patterns": ["familiar rules as on-ramp to systemic depth"],
         "reusable_reference_patterns": ["score multiplier engine", "familiar rule vocabulary"],
         "non_replicable_risks": ["balancing exponential scoring is hard"],
+        "genre": ["roguelike deckbuilder"],
+        "art_style": ["abstract card art"],
+        "audio_style": ["lo-fi ambient"],
+        "perspective": ["top-down UI"],
+        "theme": ["playing cards", "casino"],
+        "narrative_style": ["minimal framing"],
+        "game_feel": ["snappy card play"],
+        "team_model": ["solo developer"],
         "reference_value_tags": [
             {
                 "tag": "low art cost reference",

@@ -16,8 +16,9 @@
 > - `confidence` 取值：`low` / `medium` / `high`。`quality_status` 取值：`draft` / `reviewed` / `weak_evidence` / `conflicting`。
 > - 每个 `EvidenceRef` 必须有 `title` 与 `notes`，并且 `url` 与 `quote_or_summary` 至少有一个；没有外部链接时填 `quote_or_summary`。
 > - **全部输出简体中文**；专有名词（游戏名/人名/引擎/语言如 `C++`）保留原文。
-> - **进图字段必须是原子标签**：`main_player_actions` / `main_player_decisions` / `main_player_experiences` / `main_mechanics` / `replayability_sources` / `production_constraints` / `innovation_patterns` / `reusable_reference_patterns` / `non_replicable_risks` / `reference_value_tags[].tag` / `claims[].object`（含 `subject`）——每项一个名词或 1–4 字名词短语，不写整句、不带「玩法/参考/设计」等填充后缀，复合的拆成多项。散文字段（各 `*_summary`/`core_loop`/`progression_model`/`failure_model`/`content_structure`/`explanation`/evidence 文本）写成完整中文句子。
+> - **进图字段必须是原子标签**：`main_player_actions` / `main_player_decisions` / `main_player_experiences` / `main_mechanics` / `replayability_sources` / `production_constraints` / `innovation_patterns` / `reusable_reference_patterns` / `non_replicable_risks` / `genre` / `art_style` / `audio_style` / `perspective` / `theme` / `narrative_style` / `game_feel` / `team_model` / `reference_value_tags[].tag` / `claims[].object`（含 `subject`）——每项一个名词或 1–4 字名词短语，不写整句、不带「玩法/参考/设计」等填充后缀，复合的拆成多项。散文字段（各 `*_summary`/`core_loop`/`progression_model`/`failure_model`/`content_structure`/`explanation`/evidence 文本）写成完整中文句子。
 > - **原子标签优先从 `.claude/skills/researching-games-for-import/preferred-terms.md` 选词**；没有合适的才造新词，并在交付 JSON 时另行列出新词供人工回填。
+> - `core_hook`（核心创意/钩子）是**一句话散文**：用一句中文点出这款游戏最差异化的卖点，不拆成标签。
 
 ## JSON 骨架（字段说明见注释）
 
@@ -35,6 +36,7 @@
   "profile": {
     "game_id": "game_<slug>",             // 必须等于 candidate.id
     "one_sentence_summary": "...",
+    "core_hook": "<一句话核心创意/钩子>",
     "core_loop": "...",
     "progression_model": "...",
     "failure_model": "...",
@@ -48,6 +50,14 @@
     "innovation_patterns": ["..."],        // 原子标签
     "reusable_reference_patterns": ["..."],// 原子标签
     "non_replicable_risks": ["..."],       // 原子标签
+    "genre": ["..."],                      // 原子标签
+    "art_style": ["..."],                  // 原子标签
+    "audio_style": ["..."],                // 原子标签
+    "perspective": ["..."],                // 原子标签
+    "theme": ["..."],                      // 原子标签
+    "narrative_style": ["..."],            // 原子标签
+    "game_feel": ["..."],                  // 原子标签
+    "team_model": ["..."],                 // 原子标签
     "reference_value_tags": [
       {
         "tag": "...",

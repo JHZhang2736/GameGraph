@@ -20,6 +20,7 @@
   "profile": {
     "game_id": "game_hollow_knight",
     "one_sentence_summary": "玩家操控空洞骑士在废弃地下王国中非线性探索，通过战斗与能力解锁逐步揭开世界秘密，Shade 死亡系统将货币与风险深度绑定。",
+    "core_hook": "把死亡变成必须追回的风险目标（Shade 系统），让广袤地下王国的每一步探索都带着代价与张力。",
     "core_loop": "在互联地图中自由探索，击败敌人和 Boss 获取灵魂与地理标注，利用解锁的移动能力抵达新区域，通过护符搭配优化战斗与探索效率。",
     "progression_model": "能力门控推进：双跳、攀墙、冲刺等移动技能依次解锁新区域；护符系统提供横向能力定制；打败最终 Boss 后解锁钢铁灵魂（全流程死亡即结束）模式，形成纵向挑战层。",
     "failure_model": "死亡后角色失去持有的地理货币（地理 Geo），并在死亡点生成 Shade 敌人；玩家须返回击败 Shade 方可取回损失，否则货币永久消失。钢铁灵魂模式下死亡直接结束存档。",
@@ -29,10 +30,18 @@
     "main_player_experiences": ["氛围营造", "探索发现", "战斗精通", "孤独"],
     "main_mechanics": ["能力门控探索", "非线性探索", "死亡惩罚", "护符定制", "环境叙事"],
     "replayability_sources": ["速通", "钢铁灵魂", "Boss 挑战", "全收集"],
-    "production_constraints": ["小型团队", "手绘美术", "Unity 引擎", "众筹资金"],
+    "production_constraints": ["Unity 引擎", "众筹资金"],
     "innovation_patterns": ["死亡惩罚", "护符定制", "环境叙事"],
     "reusable_reference_patterns": ["能力门控探索", "死亡惩罚", "氛围营造"],
     "non_replicable_risks": ["超长开发周期", "大规模玩家社区", "高品质手绘量"],
+    "genre": ["类银河城", "类魂"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["管弦乐", "氛围音乐"],
+    "perspective": ["横版2D"],
+    "theme": ["虫族", "废墟王国"],
+    "narrative_style": ["碎片化叙事", "环境叙事"],
+    "game_feel": ["精准近战"],
+    "team_model": ["小团队"],
     "reference_value_tags": [
       {
         "tag": "能力门控探索",
