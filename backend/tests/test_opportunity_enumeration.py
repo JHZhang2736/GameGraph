@@ -132,7 +132,7 @@ def _cand(cid: str, existing: int, target_count: int) -> CandidateOpportunityAre
         existing_combination_count=existing,
         evidence=OpportunityEvidence(
             anchor_game_id="a",
-            target_value_game_ids=[f"g{i}" for i in range(target_count)] or ["g0"],
+            target_value_game_ids=[f"g{i}" for i in range(target_count)],
             combination_game_ids=[f"c{i}" for i in range(existing)],
         ),
     )
