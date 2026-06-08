@@ -238,9 +238,7 @@ def searchable_concept_text(concept: ConceptCard) -> str:
 def searchable_concept_promise_text(concept: ConceptCard) -> str:
     search_values: list[str] = []
 
-    for field_name, value in concept.model_dump().items():
-        if field_name in {"production_risks", "design_risks"}:
-            continue
+    for value in concept.model_dump().values():
         if isinstance(value, str):
             search_values.append(value)
         elif isinstance(value, list):

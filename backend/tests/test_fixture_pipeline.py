@@ -94,6 +94,19 @@ def test_concept_card_must_not_promise_fun_or_commercial_success() -> None:
         run_fixture_pipeline_from_dict(raw)
 
 
+def test_concept_card_risk_must_not_promise_commercial_success() -> None:
+    raw = golden_raw()
+    raw["concept_cards"][0]["design_risks"] = [
+        "the concept will be commercially successful"
+    ]
+
+    with pytest.raises(
+        ContractViolation,
+        match="ConceptCard must not promise fun or commercial success",
+    ):
+        run_fixture_pipeline_from_dict(raw)
+
+
 def test_concept_card_risk_may_describe_negative_fun_feedback() -> None:
     raw = golden_raw()
     raw["concept_cards"][0]["design_risks"] = [
