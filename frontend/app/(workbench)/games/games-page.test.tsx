@@ -1,7 +1,22 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import GamesPage from "@/app/(workbench)/games/page";
+
+vi.mock("@/lib/queries", async (orig) => {
+  const actual = await orig<typeof import("@/lib/queries")>();
+  return {
+    ...actual,
+    useGames: () => ({
+      data: [
+        { id: "game_hk", title: "Hollow Knight", short_description: "metroidvania", confidence: "high", quality_status: "reviewed" },
+      ],
+      isLoading: false,
+      isError: false,
+      refetch: vi.fn(),
+    }),
+  };
+});
 
 function renderWithClient(ui: React.ReactNode) {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -9,12 +24,9 @@ function renderWithClient(ui: React.ReactNode) {
 }
 
 describe("GamesPage", () => {
-  it("lists seed games once loaded", async () => {
+  it("lists imported games and shows an import entry", async () => {
     renderWithClient(<GamesPage />);
-    await waitFor(() => {
-      expect(screen.getByText("Balatro")).toBeInTheDocument();
-    });
-    expect(screen.getByText("Into the Breach")).toBeInTheDocument();
-    expect(screen.getByText("Baba Is You")).toBeInTheDocument();
+    await waitFor(() => expect(screen.getByText("Hollow Knight")).toBeInTheDocument());
+    expect(screen.getByRole("link", { name: /导入游戏/ })).toBeInTheDocument();
   });
 });
