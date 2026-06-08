@@ -20,6 +20,7 @@ export const NAV_GROUPS: NavGroup[] = [
     title: "创意流程",
     items: [
       { href: "/profile", label: "开发者画像" },
+      { href: "/match", label: "机会匹配" },
       { href: "/opportunities", label: "机会框架" },
       { href: "/concepts", label: "概念卡" },
       { href: "/prototype", label: "原型简报" },
