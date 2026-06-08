@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from neo4j import Driver
 
+from app.schemas.graph import GameSummary
 from app.schemas.import_document import GameImportDocument
 from app.services.import_service import (
     EdgeMerge,
@@ -35,6 +36,20 @@ class GameRepository:
         with self._driver.session() as session:
             session.execute_write(self._write_plan, plan)
         return summarize(document)
+
+    def list_games(self) -> list[GameSummary]:
+        with self._driver.session() as session:
+            rows = session.execute_read(self._read_games)
+        return [GameSummary(**row) for row in rows]
+
+    @staticmethod
+    def _read_games(tx) -> list[dict]:
+        result = tx.run(
+            "MATCH (g:Game) RETURN g.id AS id, g.title AS title, "
+            "g.short_description AS short_description, g.confidence AS confidence, "
+            "g.quality_status AS quality_status ORDER BY g.title"
+        )
+        return [dict(record) for record in result]
 
     def get_game(self, game_id: str) -> GameImportDocument | None:
         with self._driver.session() as session:

@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException
 
 from app.graph.connection import create_driver
 from app.graph.game_repository import GameRepository
+from app.schemas.graph import GameSummary
 from app.schemas.import_document import GameImportDocument
 from app.services.import_service import ImportSummary, check_import_contracts
 
@@ -27,6 +28,13 @@ def import_game(
 ) -> ImportSummary:
     check_import_contracts(document)
     return repository.upsert_game(document)
+
+
+@router.get("/games", response_model=list[GameSummary])
+def list_games(
+    repository: GameRepository = Depends(get_repository),
+) -> list[GameSummary]:
+    return repository.list_games()
 
 
 @router.get("/games/{game_id}", response_model=GameImportDocument)
