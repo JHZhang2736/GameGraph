@@ -44,8 +44,9 @@ services:
       NEO4J_USER: neo4j
       NEO4J_PASSWORD: "${NEO4J_PASSWORD:?set NEO4J_PASSWORD}"
     ports:
-      # Host 8100 -> container 8000 (8000 is taken on the ECS); exposed for
-      # local/remote testing. Frontend still calls it in-network as backend:8000.
+      # Host 8100 -> container 8000 (8000 is taken on the ECS). Optional: only for
+      # direct API testing. The browser never calls this — the frontend proxies
+      # /api/* to backend:8000 over the compose network (see frontend build arg).
       - "8100:8000"
 
   frontend:
@@ -53,6 +54,9 @@ services:
       context: ./frontend
       args:
         NPM_REGISTRY: https://registry.npmmirror.com
+        # Next bakes /api/* -> this target at build time. In-network service name,
+        # so the browser talks only to the frontend origin (no CORS, backend private).
+        API_PROXY_TARGET: http://backend:8000
     image: gamegraph-frontend:latest
     restart: unless-stopped
     depends_on:
