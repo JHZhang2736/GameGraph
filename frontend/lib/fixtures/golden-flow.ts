@@ -1,0 +1,360 @@
+import type { GoldenFlow } from "@/lib/types";
+
+export const goldenFlow: GoldenFlow = {
+  seed_games: [
+    {
+      id: "game_balatro",
+      title: "Balatro",
+      source_refs: [
+        {
+          title: "Balatro store page",
+          url: "https://store.steampowered.com/app/2379780/Balatro/",
+          notes: "Primary reference for the game candidate.",
+        },
+      ],
+      short_description:
+        "Poker-inspired roguelike deckbuilder built around familiar card semantics.",
+      selection_reason:
+        "Strong sample for transforming familiar rules into systemic depth.",
+    },
+    {
+      id: "game_into_the_breach",
+      title: "Into the Breach",
+      source_refs: [
+        {
+          title: "Into the Breach store page",
+          url: "https://store.steampowered.com/app/590380/Into_the_Breach/",
+          notes: "Primary reference for the game candidate.",
+        },
+      ],
+      short_description:
+        "Compact tactical game using small boards, complete information, and readable enemy intent.",
+      selection_reason:
+        "Strong sample for high tactical depth with constrained presentation scope.",
+    },
+    {
+      id: "game_baba_is_you",
+      title: "Baba Is You",
+      source_refs: [
+        {
+          title: "Baba Is You store page",
+          url: "https://store.steampowered.com/app/736260/Baba_Is_You/",
+          notes: "Primary reference for the game candidate.",
+        },
+      ],
+      short_description:
+        "Puzzle game where players manipulate explicit rules as objects.",
+      selection_reason:
+        "Strong sample for rule manipulation as a central design pattern.",
+    },
+  ],
+  design_claims: [
+    {
+      id: "claim_balatro_familiar_rules",
+      subject: "Balatro",
+      relation: "uses",
+      object: "familiar card rules to reduce learning cost",
+      explanation:
+        "Poker-like hands give players an immediate rules vocabulary before modifiers add depth.",
+      evidence: [
+        {
+          title: "Balatro design summary",
+          quote_or_summary:
+            "The game starts from recognizable poker hand logic and layers score modifiers over it.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+    {
+      id: "claim_breach_compact_tactics",
+      subject: "Into the Breach",
+      relation: "creates",
+      object: "high tactical depth through compact boards and visible enemy intent",
+      explanation:
+        "Small boards and readable future actions let players reason about consequences without large production scope.",
+      evidence: [
+        {
+          title: "Into the Breach design summary",
+          quote_or_summary:
+            "Encounters emphasize small grids, visible threats, and consequence planning.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+    {
+      id: "claim_baba_rule_manipulation",
+      subject: "Baba Is You",
+      relation: "demonstrates",
+      object: "rule manipulation as player-facing interaction",
+      explanation: "Rules become explicit objects that players can inspect and alter.",
+      evidence: [
+        {
+          title: "Baba Is You design summary",
+          quote_or_summary:
+            "Puzzle rules are represented as manipulable language-like objects.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+    {
+      id: "claim_symbolic_ui_low_art_cost",
+      subject: "symbolic tactical UI",
+      relation: "may_reduce",
+      object: "animation and asset production burden",
+      explanation:
+        "Abstract symbolic feedback can reduce art load, but this depends on clarity and feedback design.",
+      evidence: [
+        {
+          title: "Curator hypothesis",
+          quote_or_summary:
+            "Symbolic UI is expected to be cheaper than animation-heavy combat for a solo prototype.",
+          notes: "Weak evidence included to prove downstream confidence handling.",
+        },
+      ],
+      confidence: "low",
+      quality_status: "weak_evidence",
+    },
+  ],
+  graph_relations: [
+    {
+      id: "rel_claim_balatro_familiar_rules",
+      source_node: "Balatro",
+      relation: "uses",
+      target_node: "familiar card rules to reduce learning cost",
+      claim_id: "claim_balatro_familiar_rules",
+      evidence: [
+        {
+          title: "Balatro design summary",
+          quote_or_summary:
+            "The game starts from recognizable poker hand logic and layers score modifiers over it.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+    {
+      id: "rel_claim_breach_compact_tactics",
+      source_node: "Into the Breach",
+      relation: "creates",
+      target_node: "high tactical depth through compact boards and visible enemy intent",
+      claim_id: "claim_breach_compact_tactics",
+      evidence: [
+        {
+          title: "Into the Breach design summary",
+          quote_or_summary:
+            "Encounters emphasize small grids, visible threats, and consequence planning.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+    {
+      id: "rel_claim_baba_rule_manipulation",
+      source_node: "Baba Is You",
+      relation: "demonstrates",
+      target_node: "rule manipulation as player-facing interaction",
+      claim_id: "claim_baba_rule_manipulation",
+      evidence: [
+        {
+          title: "Baba Is You design summary",
+          quote_or_summary:
+            "Puzzle rules are represented as manipulable language-like objects.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+    {
+      id: "rel_claim_symbolic_ui_low_art_cost",
+      source_node: "symbolic tactical UI",
+      relation: "may_reduce",
+      target_node: "animation and asset production burden",
+      claim_id: "claim_symbolic_ui_low_art_cost",
+      evidence: [
+        {
+          title: "Curator hypothesis",
+          quote_or_summary:
+            "Symbolic UI is expected to be cheaper than animation-heavy combat for a solo prototype.",
+          notes: "Weak evidence included to prove downstream confidence handling.",
+        },
+      ],
+      confidence: "low",
+      quality_status: "weak_evidence",
+    },
+  ],
+  developer_profile: {
+    id: "profile_solo_systems",
+    team_size: "solo",
+    time_budget: "three month prototype",
+    programming_ability: "strong",
+    art_ability: "weak",
+    audio_ability: "basic",
+    content_production_ability: "limited",
+    liked_references: ["Balatro", "Into the Breach"],
+    disliked_references_or_mechanics: ["online multiplayer", "long scripted narrative"],
+    desired_player_experiences: ["short runs", "systemic decisions", "tactical prediction"],
+    constraints: [
+      {
+        id: "constraint_no_online",
+        type: "hard",
+        statement: "Do not require online multiplayer.",
+      },
+      {
+        id: "constraint_low_art",
+        type: "strong_preference",
+        statement: "Prefer concepts that can start with symbolic or low-volume art.",
+      },
+    ],
+  },
+  opportunity_frame: {
+    id: "frame_rule_tactics",
+    developer_profile_id: "profile_solo_systems",
+    opportunity_area: "Low-art, short-run tactical rule manipulation.",
+    source_game_ids: ["game_balatro", "game_into_the_breach", "game_baba_is_you"],
+    related_mechanics: ["rule modification", "compact tactical boards", "familiar rule vocabulary"],
+    related_player_experiences: ["tactical prediction", "chain satisfaction", "emergent problem solving"],
+    related_constraints: ["weak art ability", "three month prototype", "solo development"],
+    related_innovation_patterns: ["combine rule editing with short tactical runs"],
+    recommended_transformations: [
+      "compress tactical space into a small board",
+      "replace animation-heavy feedback with symbolic state changes",
+      "combine editable rules with short encounter runs",
+    ],
+    forbidden_directions: [
+      "online multiplayer",
+      "large open world",
+      "long scripted narrative",
+      "animation-heavy combat",
+    ],
+    evidence_path: [
+      "claim_balatro_familiar_rules",
+      "claim_breach_compact_tactics",
+      "claim_baba_rule_manipulation",
+      "claim_symbolic_ui_low_art_cost",
+    ],
+    fit_reason:
+      "The area emphasizes systemic depth and readable rules over asset volume, matching a strong-programming solo developer with weak art capacity.",
+    risk_reason:
+      "The largest risk is whether players can understand rule consequences quickly enough for short tactical runs.",
+  },
+  concept_cards: [
+    {
+      id: "concept_ruleforge_tactics",
+      opportunity_frame_id: "frame_rule_tactics",
+      title: "Ruleforge Tactics",
+      one_sentence_concept:
+        "A short-run tactics game where players win by editing small battlefield rules instead of directly commanding every unit.",
+      core_fantasy: "Outsmarting a compact battlefield by rewriting its laws.",
+      core_loop:
+        "Inspect enemy intents, draft rule cards, apply one rule change, resolve the turn, and adapt the next encounter.",
+      main_player_decisions: [
+        "which battlefield rule to alter",
+        "when to accept a risky rule interaction",
+        "which encounter reward supports the current rule plan",
+      ],
+      main_mechanics: ["4x4 tactical board", "rule cards", "visible enemy intent", "short encounter chain"],
+      reference_sources: ["Balatro", "Into the Breach", "Baba Is You"],
+      difference_from_references:
+        "It uses tactical forecasting and rule manipulation, but turns them into short encounter runs rather than poker scoring, pure tactics, or puzzle levels.",
+      fit_reason:
+        "The concept can begin with symbols, simple boards, and rules-first feedback before any polished asset work.",
+      production_risks: [
+        "rule interactions need readable feedback",
+        "symbolic presentation may still require careful UI polish",
+      ],
+      design_risks: [
+        "players may not predict rule consequences",
+        "runs may feel arbitrary if rule feedback is unclear",
+      ],
+      novelty_reason:
+        "It combines rule editing with tactical run structure under low-art production constraints.",
+      suggested_prototype_scope: "A 4x4 board, three unit types, six rule cards, and five encounters.",
+    },
+  ],
+  prototype_brief: {
+    id: "brief_ruleforge_tactics",
+    concept_card_id: "concept_ruleforge_tactics",
+    largest_risk_hypothesis:
+      "Players can understand and enjoy changing battlefield rules within the first few minutes.",
+    minimum_prototype_scope: "A 4x4 board, three unit types, six rule cards, and five encounters.",
+    target_playtest_duration: "10 minutes",
+    success_signals: [
+      "player can explain a rule consequence after one encounter",
+      "player voluntarily restarts to try a different rule combination",
+    ],
+    failure_signals: [
+      "player says outcomes feel arbitrary",
+      "player cannot predict what a rule change will affect",
+    ],
+    do_not_build_yet: ["campaign progression", "polished art", "large content set", "online features"],
+  },
+  game_design_profiles: [
+    {
+      id: "profile_balatro",
+      game_id: "game_balatro",
+      one_sentence_summary:
+        "A roguelike deckbuilder that layers score modifiers over familiar poker hands.",
+      core_loop: "Play hands, bank chips, buy jokers, push a rising score target each round.",
+      main_player_actions: ["select cards", "play or discard hands", "buy modifiers"],
+      main_player_decisions: ["which hand to commit", "which joker synergy to chase"],
+      main_experiences: ["escalating combos", "build optimization"],
+      main_mechanics: ["poker hands", "score modifiers", "shop drafting"],
+      reference_value_tags: ["mechanic-distinct", "low-art reference", "high systemic depth"],
+      hard_to_copy_risks: ["balance of exponential scoring is hard to tune"],
+      evidence: [
+        {
+          title: "Balatro design summary",
+          quote_or_summary: "Recognizable poker logic with score modifiers layered on top.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+    {
+      id: "profile_into_the_breach",
+      game_id: "game_into_the_breach",
+      one_sentence_summary:
+        "A compact tactics game built on complete information and readable enemy intent.",
+      core_loop: "Read enemy intents, reposition, block or redirect attacks, protect the grid.",
+      main_player_actions: ["move mechs", "trigger attacks", "shield buildings"],
+      main_player_decisions: ["which threat to neutralize", "what to sacrifice"],
+      main_experiences: ["puzzle-like tactics", "consequence planning"],
+      main_mechanics: ["small grid", "visible enemy intent", "positional pushing"],
+      reference_value_tags: ["high systemic depth", "low-art reference", "solo-friendly reference"],
+      hard_to_copy_risks: ["perfect-information design needs careful encounter authoring"],
+      evidence: [
+        {
+          title: "Into the Breach design summary",
+          quote_or_summary: "Small grids, visible threats, and consequence planning.",
+          notes: "Curated design interpretation for the fixture.",
+        },
+      ],
+      confidence: "high",
+      quality_status: "reviewed",
+    },
+  ],
+  concept_evaluations: [
+    {
+      id: "eval_ruleforge_tactics",
+      concept_card_id: "concept_ruleforge_tactics",
+      fit_score: 4,
+      feasibility_score: 3,
+      novelty_score: 4,
+      risk_score: 3,
+      evidence_quality_score: 3,
+      category: "balanced",
+      notes:
+        "Strong fit for a systems-first solo developer; main uncertainty is whether rule feedback reads clearly enough.",
+    },
+  ],
+};
