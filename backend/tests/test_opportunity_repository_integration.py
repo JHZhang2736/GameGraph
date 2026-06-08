@@ -1,0 +1,42 @@
+import json
+import os
+from pathlib import Path
+
+import pytest
+
+from app.graph.connection import Neo4jSettings, create_driver
+from app.graph.game_repository import GameRepository
+from app.graph.opportunity_repository import OpportunityRepository
+from app.schemas.import_document import GameImportDocument
+
+pytestmark = pytest.mark.integration
+
+
+def _document(name: str) -> GameImportDocument:
+    path = Path(__file__).resolve().parents[1] / "app" / "fixtures" / "games" / f"{name}.json"
+    return GameImportDocument.model_validate(json.loads(path.read_text(encoding="utf-8")))
+
+
+@pytest.fixture()
+def driver():
+    if "NEO4J_PASSWORD" not in os.environ:
+        pytest.skip("NEO4J_PASSWORD not set; skipping Neo4j integration test")
+    drv = create_driver(Neo4jSettings.from_env())
+    try:
+        drv.verify_connectivity()
+    except Exception:
+        pytest.skip("Neo4j is not reachable; skipping integration test")
+    yield drv
+    with drv.session() as session:
+        session.run("MATCH (g:Game {id: $id}) DETACH DELETE g", id="game_animal_well")
+    drv.close()
+
+
+def test_fetch_game_dimensions_returns_anchor_values(driver) -> None:
+    GameRepository(driver).upsert_game(_document("animal_well"))
+    rows = OpportunityRepository(driver).fetch_game_dimensions()
+    aw = next(r for r in rows if r.game_id == "game_animal_well")
+    assert aw.summary
+    assert "类银河城" in aw.genres
+    assert "多用途道具" in aw.mechanics
+    assert aw.perspectives  # 非空
