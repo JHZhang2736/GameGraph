@@ -102,6 +102,7 @@ def test_concept_card_must_not_promise_fun_or_commercial_success() -> None:
             "Players are guaranteed to have fun every run.",
         ),
         ("core_fantasy", "Players will have fun every run."),
+        ("core_fantasy", "Players are going to have fun every run."),
         (
             "fit_reason",
             "This will be a fun tactics game for the developer's audience.",
@@ -109,7 +110,10 @@ def test_concept_card_must_not_promise_fun_or_commercial_success() -> None:
         ("novelty_reason", "The game will be a commercial hit."),
         ("novelty_reason", "The game is guaranteed to be a hit."),
         ("novelty_reason", "The game will be a hit."),
+        ("novelty_reason", "The game is going to be a hit."),
         ("novelty_reason", "The game will be a success."),
+        ("novelty_reason", "The game is going to be a success."),
+        ("novelty_reason", "The game is going to succeed."),
     ],
 )
 def test_concept_card_fields_must_not_promise_fun_or_commercial_success(
@@ -131,6 +135,7 @@ def test_concept_card_fields_must_not_promise_fun_or_commercial_success(
     [
         "the concept will be commercially successful",
         "the game will be a hit",
+        "the game is going to be a hit",
     ],
 )
 def test_concept_card_risk_must_not_promise_commercial_success(

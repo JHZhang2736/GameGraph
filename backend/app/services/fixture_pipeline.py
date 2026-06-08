@@ -19,6 +19,15 @@ from app.schemas.artifacts import (
 from app.schemas.common import StrictBaseModel
 
 
+PROMISED_CONCEPT_OUTCOME_MARKER_PATTERN = (
+    r"\b(?:will|going\s+to|(?:is|are)\s+going\s+to|guaranteed(?:\s+to)?|"
+    r"(?:is|are)\s+guaranteed\s+to|sure\s+to|certain\s+to|definitely)\b"
+)
+PROMISED_CONCEPT_OUTCOME_PATTERN = (
+    r"\b(?:have\s+fun|commercial\s+success|commercially\s+successful|fun|hit|"
+    r"success|successful|succeed|sell)\b"
+)
+
 PROMISED_CONCEPT_OUTCOME_PATTERNS = (
     r"\bcommercial\s+success\b",
     r"\bcommercial\s+hit\b",
@@ -36,8 +45,8 @@ PROMISED_CONCEPT_OUTCOME_PATTERNS = (
     r"\bwill\s+be\s+a\s+success\b",
     r"\bwill\s+succeed\b",
     r"\bwill\s+sell\b",
-    r"\b(?:will|guaranteed(?:\s+to)?|sure\s+to|certain\s+to|definitely)\b"
-    r".{0,40}\b(?:fun|hit|success|successful|succeed|sell|commercially\s+successful)\b",
+    rf"{PROMISED_CONCEPT_OUTCOME_MARKER_PATTERN}"
+    rf".{{0,40}}{PROMISED_CONCEPT_OUTCOME_PATTERN}",
     r"\b(?:is|are)\s+guaranteed\s+to\s+.{0,30}"
     r"\b(?:fun|hit|success|successful|succeed)\b",
     r"\bguarantees?\b.{0,30}\b(?:fun|hit|success|successful|succeed)\b",
