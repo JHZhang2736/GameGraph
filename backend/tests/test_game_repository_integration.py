@@ -70,3 +70,20 @@ def test_reimport_is_idempotent(driver) -> None:
             id="game_animal_well",
         ).single()
     assert mech["c"] == mechanic_count
+
+
+def test_list_search_and_neighbors_round_trip(driver) -> None:
+    repo = GameRepository(driver)
+    repo.upsert_game(animal_well_document())
+
+    games = repo.list_games()
+    assert any(g.id == "game_animal_well" for g in games)
+
+    hits = repo.search_nodes("animal", limit=10)
+    assert any(h.node_type == "Game" for h in hits)
+
+    hood = repo.neighbors("game_animal_well", hops=1, limit=150, rel_types=None)
+    assert hood is not None
+    assert hood.focus.id == "game_animal_well"
+    assert len(hood.nodes) > 0
+    assert repo.neighbors("game_missing", 1, 150, None) is None

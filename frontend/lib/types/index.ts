@@ -217,3 +217,49 @@ export interface GoldenFlow {
   game_design_profiles: GameDesignProfile[];
   concept_evaluations: ConceptEvaluation[];
 }
+
+// 图谱查询 DTO（镜像后端 app/schemas/graph.py）
+export type GraphNodeType =
+  | "Game"
+  | "Mechanic"
+  | "PlayerAction"
+  | "PlayerDecision"
+  | "Experience"
+  | "Concept"
+  | "ReferenceTag"
+  | "Genre"
+  | "ArtStyle"
+  | "AudioStyle"
+  | "Perspective"
+  | "Theme"
+  | "NarrativeStyle"
+  | "GameFeel"
+  | "TeamModel"
+  | "ProductionConstraint"
+  | "InnovationPattern"
+  | "ReferencePattern"
+  | "Risk"
+  | "ReplayabilitySource";
+
+export interface GameSummary {
+  id: string;
+  title: string;
+  short_description: string;
+  confidence: ConfidenceLevel;
+  quality_status: QualityStatus;
+}
+
+export interface NodeSearchHit {
+  id: string;
+  label: string;
+  node_type: string;
+}
+
+export interface ImportSummary {
+  game_id: string;
+  mechanics_written: number;
+  experiences_written: number;
+  tags_written: number;
+  concepts_written: number;
+  claims_written: number;
+}

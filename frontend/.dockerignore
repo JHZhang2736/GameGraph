@@ -8,5 +8,7 @@ npm-debug.log*
 yarn-error.log*
 coverage
 tests
+.env
+.env.production
 .env*.local
 README.md
