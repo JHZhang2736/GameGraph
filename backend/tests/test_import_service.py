@@ -1,6 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
+from app.graph.connection import Neo4jSettings
 from app.schemas.common import ConfidenceLevel, EvidenceRef, QualityStatus
 from app.services.fixture_pipeline import ContractViolation
 from app.services.import_service import build_graph_write_plan, summarize, validate_import_document
@@ -154,3 +155,25 @@ def test_summarize_counts_written_elements() -> None:
     assert summary.tags_written == 1
     assert summary.claims_written == 0
     assert summary.concepts_written == 0
+
+
+def test_neo4j_settings_reads_environment(monkeypatch) -> None:
+    monkeypatch.setenv("NEO4J_URI", "bolt://localhost:7687")
+    monkeypatch.setenv("NEO4J_USER", "neo4j")
+    monkeypatch.setenv("NEO4J_PASSWORD", "secret-password")
+
+    settings = Neo4jSettings.from_env()
+
+    assert settings.uri == "bolt://localhost:7687"
+    assert settings.user == "neo4j"
+    assert settings.password == "secret-password"
+
+
+def test_neo4j_settings_defaults_uri(monkeypatch) -> None:
+    monkeypatch.delenv("NEO4J_URI", raising=False)
+    monkeypatch.setenv("NEO4J_USER", "neo4j")
+    monkeypatch.setenv("NEO4J_PASSWORD", "secret-password")
+
+    settings = Neo4jSettings.from_env()
+
+    assert settings.uri == "bolt://localhost:7687"
