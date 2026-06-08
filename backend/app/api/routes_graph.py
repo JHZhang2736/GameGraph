@@ -21,7 +21,8 @@ def search_graph(
 @router.get("/graph/neighbors", response_model=NeighborhoodResult)
 def graph_neighbors(
     node_id: str = Query(min_length=1),
-    hops: int = Query(default=1, ge=1, le=2),
+    # 仅支持 1 跳邻域；多跳通过前端「点击节点展开」增量实现
+    hops: int = Query(default=1, ge=1, le=1),
     limit: int = Query(default=150, ge=1, le=500),
     rel_types: str | None = Query(default=None),
     repository: GameRepository = Depends(get_repository),
