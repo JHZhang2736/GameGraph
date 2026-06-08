@@ -87,3 +87,11 @@ def test_list_search_and_neighbors_round_trip(driver) -> None:
     assert hood.focus.id == "game_animal_well"
     assert len(hood.nodes) > 0
     assert repo.neighbors("game_missing", 1, 150, None) is None
+
+    # 无向展开:从一个属性节点(机制)出发应能回到拥有它的游戏(入边)。
+    mechanic = next(n for n in hood.nodes if n.node_type == "Mechanic")
+    back = repo.neighbors(mechanic.id, hops=1, limit=150, rel_types=None)
+    assert back is not None
+    assert any(n.id == "game_animal_well" for n in back.nodes)
+    edge = next(e for e in back.edges if e.target == mechanic.id)
+    assert edge.source == "game_animal_well"

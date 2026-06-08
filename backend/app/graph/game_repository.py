@@ -104,14 +104,18 @@ class GameRepository:
         ).single()
         if focus_rec is None:
             return None
+        # 无向遍历:属性节点(机制/体验等)只有入边,游戏节点只有出边,
+        # 用 (n)-[r]-(m) 两个方向都取,并保留每条边的真实端点用于展示方向。
         result = tx.run(
             "MATCH (n) WHERE n.id = $id OR n.name = $id "
-            "MATCH (n)-[r]->(m) "
+            "MATCH (n)-[r]-(m) "
             "WHERE $rel_types IS NULL OR type(r) IN $rel_types "
             "RETURN type(r) AS rel_type, properties(r) AS rel_props, "
             "head(labels(m)) AS neighbor_label, "
             "coalesce(m.id, m.name) AS neighbor_key, "
-            "coalesce(m.title, m.name) AS neighbor_display "
+            "coalesce(m.title, m.name) AS neighbor_display, "
+            "coalesce(startNode(r).id, startNode(r).name) AS source_key, "
+            "coalesce(endNode(r).id, endNode(r).name) AS target_key "
             "LIMIT $cap",
             id=node_id,
             rel_types=rel_types,
@@ -124,6 +128,8 @@ class GameRepository:
                 neighbor_label=rec["neighbor_label"],
                 neighbor_key=rec["neighbor_key"],
                 neighbor_display=rec["neighbor_display"],
+                source_key=rec["source_key"],
+                target_key=rec["target_key"],
             )
             for rec in result
         ]
