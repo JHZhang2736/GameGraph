@@ -81,13 +81,18 @@ export async function getDeveloperProfile(): Promise<DeveloperProfile> {
   return settle(loadStoredProfile() ?? goldenFlow.developer_profile);
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+// 浏览器侧统一打前端同源的 /api 前缀,由 Next 服务端 rewrites 代理到后端
+// (见 next.config.ts):docker 部署下走内网 backend:8000,因此无需 CORS、
+// 后端也无需对公网暴露。显式设 NEXT_PUBLIC_API_BASE_URL 可改为直连某绝对地址。
+function apiBase(): string {
+  return process.env.NEXT_PUBLIC_API_BASE_URL ?? "/api";
+}
 
 export async function parseDeveloperProfileInput(
   input: ProfileParseInput,
 ): Promise<ProfileParseResult> {
   try {
-    const response = await fetch(`${API_BASE}/profile/parse`, {
+    const response = await fetch(`${apiBase()}/profile/parse`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(input),
@@ -148,13 +153,13 @@ export class ImportError extends Error {
 }
 
 export async function listGames(): Promise<GameSummary[]> {
-  const res = await fetch(`${API_BASE}/games`);
+  const res = await fetch(`${apiBase()}/games`);
   if (!res.ok) throw new Error(`GET /games responded ${res.status}`);
   return (await res.json()) as GameSummary[];
 }
 
 export async function getGameDocument(id: string): Promise<ImportDocument> {
-  const res = await fetch(`${API_BASE}/games/${encodeURIComponent(id)}`);
+  const res = await fetch(`${apiBase()}/games/${encodeURIComponent(id)}`);
   if (!res.ok) throw new Error(`GET /games/${id} responded ${res.status}`);
   return (await res.json()) as ImportDocument;
 }
@@ -173,19 +178,19 @@ export async function getNeighbors(
   if (params.hops) query.set("hops", String(params.hops));
   if (params.limit) query.set("limit", String(params.limit));
   if (params.relTypes?.length) query.set("rel_types", params.relTypes.join(","));
-  const res = await fetch(`${API_BASE}/graph/neighbors?${query.toString()}`);
+  const res = await fetch(`${apiBase()}/graph/neighbors?${query.toString()}`);
   if (!res.ok) throw new Error(`GET /graph/neighbors responded ${res.status}`);
   return (await res.json()) as NeighborhoodResult;
 }
 
 export async function searchGraphNodes(q: string): Promise<NodeSearchHit[]> {
-  const res = await fetch(`${API_BASE}/graph/search?q=${encodeURIComponent(q)}`);
+  const res = await fetch(`${apiBase()}/graph/search?q=${encodeURIComponent(q)}`);
   if (!res.ok) throw new Error(`GET /graph/search responded ${res.status}`);
   return (await res.json()) as NodeSearchHit[];
 }
 
 export async function importGame(doc: ImportDocument): Promise<ImportSummary> {
-  const res = await fetch(`${API_BASE}/import/game`, {
+  const res = await fetch(`${apiBase()}/import/game`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(doc),

@@ -12,7 +12,12 @@ RUN npm ci --registry "${NPM_REGISTRY}"
 # ---- builder: produce the standalone output ----
 FROM node:22-alpine AS builder
 WORKDIR /app
-ENV NEXT_TELEMETRY_DISABLED=1
+# Next bakes rewrites() at build time. Point /api/* at the in-network backend
+# service so the browser only ever talks to the frontend origin (no CORS, backend
+# not exposed publicly). Compose can override; defaults to the compose service name.
+ARG API_PROXY_TARGET=http://backend:8000
+ENV NEXT_TELEMETRY_DISABLED=1 \
+    API_PROXY_TARGET=${API_PROXY_TARGET}
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 # Requires `output: "standalone"` in next.config.ts -> emits .next/standalone + server.js

@@ -13,19 +13,18 @@ from app.services.fixture_pipeline import ContractViolation
 
 app = FastAPI(title="GameGraph Import API")
 
-# 允许前端(Next dev server)跨域访问。来源用 FRONTEND_ORIGINS 环境变量配置
-# (逗号分隔),默认本地开发端口。
+# 允许前端跨域访问。本地任意端口(localhost / 127.0.0.1,含 dev 的 3000 与
+# docker-compose 暴露的 3100)由正则放行;生产部署的具体来源(如公网 IP/域名)
+# 用 FRONTEND_ORIGINS 环境变量(逗号分隔)显式追加。
 _origins = [
     origin.strip()
-    for origin in os.environ.get(
-        "FRONTEND_ORIGINS",
-        "http://localhost:3000,http://127.0.0.1:3000",
-    ).split(",")
+    for origin in os.environ.get("FRONTEND_ORIGINS", "").split(",")
     if origin.strip()
 ]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_origins,
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:\d+)?",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
