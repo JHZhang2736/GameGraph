@@ -44,9 +44,9 @@ services:
       NEO4J_USER: neo4j
       NEO4J_PASSWORD: "${NEO4J_PASSWORD:?set NEO4J_PASSWORD}"
     ports:
-      # Bound to localhost: put nginx/caddy in front, or change to 0.0.0.0:8000
-      # if the browser must call the API directly.
-      - "127.0.0.1:8000:8000"
+      # Host 8100 -> container 8000 (8000 is taken on the ECS); exposed for
+      # local/remote testing. Frontend still calls it in-network as backend:8000.
+      - "8100:8000"
 
   frontend:
     build:
@@ -58,7 +58,8 @@ services:
     depends_on:
       - backend
     ports:
-      - "3000:3000"
+      # Host 3100 -> container 3000 (avoids the other project already on 3000).
+      - "3100:3000"
 
 volumes:
   neo4j_data:

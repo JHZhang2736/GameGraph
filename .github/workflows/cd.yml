@@ -29,7 +29,6 @@ jobs:
           ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             set -e
             cd ~/workspace/GameGraph
-            export COMPOSE_FILE=docker-compose.prod.yml
             # Neo4j 密码：仅在数据卷首次初始化时生效，后续改密需手动 cypher-shell 或重置卷
             export NEO4J_PASSWORD='${{ secrets.NEO4J_PASSWORD }}'
 
