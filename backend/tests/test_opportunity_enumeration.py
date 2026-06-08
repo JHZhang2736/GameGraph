@@ -91,7 +91,7 @@ def test_substitute_from_value_is_lexicographically_smallest_for_multi_value_anc
     assert sub.transformation.from_value == "动作"
 
 
-def test_novelty_count_counts_genre_sharing_games_with_target_value() -> None:
+def test_existing_combination_count_counts_genre_sharing_games_with_target_value() -> None:
     games = [
         GameDimensions("g1", "s1", {"类肉鸽"}, {"横版2D"}, {"像素美术"}, set()),
         GameDimensions("g2", "s2", {"类肉鸽"}, {"第一人称"}, {"低多边形"}, set()),
