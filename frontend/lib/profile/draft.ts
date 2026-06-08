@@ -4,29 +4,21 @@
 import { BLOCKING_FIELDS, missingProfileField } from "@/lib/profile/parser";
 import type { DeveloperProfile, DeveloperProfileDraft } from "@/lib/types";
 
-function isEmpty(value: string | null | string[] | unknown[]): boolean {
-  if (value === null || value === "") return true;
-  return Array.isArray(value) && value.length === 0;
-}
-
 // Recomputes missing_fields and is_complete from the current field values so a
-// manual edit immediately reflects in the badge, missing panel, and confirm gate.
+// manual edit immediately reflects in the badge and confirm gate.
 export function recomputeDraftCompleteness(
   draft: DeveloperProfileDraft,
 ): DeveloperProfileDraft {
-  const values: Record<(typeof BLOCKING_FIELDS)[number], string | null | unknown[]> = {
+  const values: Record<(typeof BLOCKING_FIELDS)[number], string | null> = {
     team_size: draft.team_size,
     time_budget: draft.time_budget,
     programming_ability: draft.programming_ability,
     art_ability: draft.art_ability,
     content_production_ability: draft.content_production_ability,
-    liked_references: draft.liked_references,
-    desired_player_experiences: draft.desired_player_experiences,
-    constraints: draft.constraints,
   };
 
   const missingFields = BLOCKING_FIELDS.flatMap((field) =>
-    isEmpty(values[field]) ? [missingProfileField(field)] : [],
+    values[field] ? [] : [missingProfileField(field)],
   );
 
   return {
@@ -34,6 +26,28 @@ export function recomputeDraftCompleteness(
     missing_fields: missingFields,
     is_complete: missingFields.length === 0,
   };
+}
+
+// A blank, editable draft so the workbench is usable from a fresh load: the user
+// can fill the profile by selecting on the right without typing any free text.
+export function createEmptyDraft(): DeveloperProfileDraft {
+  return recomputeDraftCompleteness({
+    id: "profile_draft_current",
+    team_size: null,
+    time_budget: null,
+    programming_ability: null,
+    art_ability: null,
+    audio_ability: "basic",
+    content_production_ability: null,
+    liked_references: [],
+    disliked_references_or_mechanics: [],
+    desired_player_experiences: [],
+    constraints: [],
+    missing_fields: [],
+    field_sources: [],
+    raw_text: "",
+    is_complete: false,
+  });
 }
 
 function required(value: string | null, field: string): string {
@@ -56,7 +70,9 @@ export function promoteDraftToProfile(draft: DeveloperProfileDraft): DeveloperPr
     time_budget: required(draft.time_budget, "time_budget"),
     programming_ability: required(draft.programming_ability, "programming_ability"),
     art_ability: required(draft.art_ability, "art_ability"),
-    audio_ability: required(draft.audio_ability, "audio_ability"),
+    // Audio is optional/non-blocking; default it so a complete draft never fails
+    // promotion just because the user left audio unset.
+    audio_ability: draft.audio_ability ?? "basic",
     content_production_ability: required(
       draft.content_production_ability,
       "content_production_ability",

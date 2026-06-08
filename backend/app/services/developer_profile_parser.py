@@ -15,15 +15,15 @@ from app.schemas.developer_profile import (
 from app.services.fixture_pipeline import ContractViolation
 
 
+# Only these gate completeness. References, desired experiences, and constraints
+# are optional — a profile can be confirmed without them. Kept in sync with the
+# frontend BLOCKING_FIELDS in frontend/lib/profile/parser.ts.
 BLOCKING_FIELDS = {
     "team_size",
     "time_budget",
     "programming_ability",
     "art_ability",
     "content_production_ability",
-    "liked_references",
-    "desired_player_experiences",
-    "constraints",
 }
 
 

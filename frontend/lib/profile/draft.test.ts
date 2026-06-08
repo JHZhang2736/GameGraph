@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { promoteDraftToProfile, recomputeDraftCompleteness } from "@/lib/profile/draft";
+import {
+  createEmptyDraft,
+  promoteDraftToProfile,
+  recomputeDraftCompleteness,
+} from "@/lib/profile/draft";
 import type { DeveloperProfileDraft } from "@/lib/types";
 
 function completeDraft(): DeveloperProfileDraft {
@@ -41,10 +45,18 @@ describe("recomputeDraftCompleteness", () => {
     });
   });
 
-  it("treats empty arrays as missing blocking fields", () => {
-    const draft = recomputeDraftCompleteness({ ...completeDraft(), constraints: [] });
-    expect(draft.is_complete).toBe(false);
-    expect(draft.missing_fields.map((field) => field.field)).toContain("constraints");
+  it("keeps optional fields (references, experiences, constraints) out of blocking", () => {
+    const draft = recomputeDraftCompleteness({
+      ...completeDraft(),
+      liked_references: [],
+      desired_player_experiences: [],
+      constraints: [],
+    });
+    expect(draft.is_complete).toBe(true);
+    const names = draft.missing_fields.map((field) => field.field);
+    expect(names).not.toContain("liked_references");
+    expect(names).not.toContain("desired_player_experiences");
+    expect(names).not.toContain("constraints");
   });
 
   it("clears a missing field once the user fills it", () => {
@@ -58,6 +70,16 @@ describe("recomputeDraftCompleteness", () => {
     const draft = recomputeDraftCompleteness({ ...completeDraft(), audio_ability: null });
     expect(draft.is_complete).toBe(true);
     expect(draft.missing_fields.map((field) => field.field)).not.toContain("audio_ability");
+  });
+});
+
+describe("createEmptyDraft", () => {
+  it("starts incomplete with required fields unset and audio defaulted", () => {
+    const draft = createEmptyDraft();
+    expect(draft.is_complete).toBe(false);
+    expect(draft.team_size).toBeNull();
+    expect(draft.audio_ability).toBe("basic");
+    expect(draft.missing_fields.map((field) => field.field)).toContain("team_size");
   });
 });
 

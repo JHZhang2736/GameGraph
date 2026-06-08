@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import type { FieldOption } from "@/lib/profile/field-options";
 
 const CUSTOM_VALUE = "__custom__";
 const EMPTY_VALUE = "";
@@ -8,15 +9,16 @@ const EMPTY_VALUE = "";
 interface EditableSelectProps {
   id?: string;
   value: string | null;
-  options: string[];
+  options: FieldOption[];
   onChange: (value: string | null) => void;
   placeholder?: string;
   invalid?: boolean;
 }
 
-// A dropdown of common values plus a "自定义" path that reveals a free text input.
-// `null` means the field is unset (shown as 缺失). Custom mode is also forced when
-// the current value is not one of the preset options (e.g. after a reparse).
+// A dropdown of common values (Chinese labels) plus a "自定义" path that reveals a
+// free text input. `null` means the field is unset (shown as 缺失). Custom mode is
+// also forced when the current value is not one of the preset options (e.g. after
+// a reparse returns a value outside the curated list).
 export function EditableSelect({
   id,
   value,
@@ -26,7 +28,8 @@ export function EditableSelect({
   invalid,
 }: EditableSelectProps) {
   const [customActive, setCustomActive] = useState(false);
-  const valueIsCustom = value !== null && value !== "" && !options.includes(value);
+  const valueIsCustom =
+    value !== null && value !== "" && !options.some((o) => o.value === value);
   const showCustom = customActive || valueIsCustom;
 
   const selectClass =
@@ -52,8 +55,8 @@ export function EditableSelect({
       >
         <option value={EMPTY_VALUE}>缺失</option>
         {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
+          <option key={option.value} value={option.value}>
+            {option.label}
           </option>
         ))}
         <option value={CUSTOM_VALUE}>自定义…</option>
