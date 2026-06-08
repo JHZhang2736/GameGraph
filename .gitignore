@@ -5,3 +5,9 @@
 .vscode/
 .clone/
 .claire/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+frontend/.next/
+frontend/node_modules/
