@@ -29,7 +29,7 @@
 - 新增首选词表文件 `preferred-terms`（位置见 §6）。
 - 修改技能 `.claude/skills/researching-games-for-import/SKILL.md`：增加"输出语言/原子化/优先选词/新词上报"规则与 bad→good 示例。
 - 修改字段指令模板 `docs/superpowers/import-guide/game-import-prompt.md`：把原子化与中文约束写进逐字段规则。
-- 用现有 8 款游戏 bootstrap 出初版 `preferred-terms`（一次性）。
+- bootstrap 出初版 `preferred-terms`：`fixtures/games/` 已清空，没有旧数据可采集，因此词表从空起步，随新生成的游戏逐步积累；建议先用新规则生成一批种子游戏（≥3）作为初值来源。
 
 ### 范围外（本期不做，留后续）
 
@@ -46,6 +46,8 @@
 3. **散文与标签分离**：散文字段保持自然语言（给人读，且整份文档已存进 `Game.document_json`，细节不丢）；只有"会变成图节点"的 list 字段原子化（负责连接）。
 4. **全中文**：见 §7。
 5. **本期不引入 embedding**：~80 词体量，LLM 聚类对"同义"判断优于 embedding 阈值聚类（embedding 测"相关"非"同义"，易把"二段跳/墙跳"这类不同机制 over-merge）。embedding 留作二期"未命中建议"的召回器，且只做建议。
+6. **claims 主宾纳入规范**：`claims[].subject`/`object` 同样写成中文；`object`（进图建 Concept 节点）须原子，以便跨游戏在概念层连接；`subject` 同样中文、尽量原子。`explanation` 为散文保持完整中文句子。
+7. **无历史数据迁移**：`fixtures/games/` 已清空，不存在英文旧数据重做；重新入库前清空 Neo4j 旧节点。
 
 ## 5. 字段规则：哪些原子化、哪些保持散文
 
@@ -127,15 +129,15 @@ bad → good 示例（取自 `animal_well`）：
 
 ## 8. 对现有数据的影响（迁移）
 
-现有 8 款 fixtures 是**英文 + 描述性短语**，与新规则不一致，不会和新生成的中文原子标签连接。
+`backend/app/fixtures/games/` 下的 8 款 JSON **已被清空**，因此**没有英文描述性数据需要迁移**，省去重做工作。
 
-- **本期（bootstrap）**：用新规则一次性重做 8 款的**进图 list 字段**（5b 列出的字段），改成中文原子标签，并据此填充初版 `preferred-terms`。这一步直接解决"连接"问题，是验收的基础。
-- **可选后续**：把 8 款的**散文字段**也翻成中文（工作量较大，不影响连接，只影响一致性/可读性）。本期不强制。
+- **新生成**：用新规则（中文 + 原子）从头生成游戏文档，`preferred-terms` 随之积累。
+- **Neo4j 清库（操作注意）**：之前入库的 8 款可能仍残留在 Neo4j 中（旧的英文碎片节点）。重新入库前**建议清空 Neo4j**，避免新中文节点与旧英文节点并存、互不连接造成混淆。清库可用 `MATCH (n) DETACH DELETE n;` 或重建 Docker 卷。
 
 ## 9. 验收标准
 
 1. 新生成的游戏文档：5b 的字段全部为中文原子标签，无整句、无填充词后缀，且多数取自 `preferred-terms`。
-2. bootstrap 后重新入库 8 款，跑诊断 Cypher，**被 ≥2 个游戏共享的属性节点数量显著 > 0** 且语义合理：
+2. 用新规则生成并入库一批游戏（≥3 款），跑诊断 Cypher，**被 ≥2 个游戏共享的属性节点数量显著 > 0** 且语义合理：
 
    ```cypher
    MATCH (g:Game)-->(n) WHERE NOT n:Game
