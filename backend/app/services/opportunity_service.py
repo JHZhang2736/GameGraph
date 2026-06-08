@@ -9,6 +9,9 @@ from app.schemas.opportunity import (
     TransformationType,
 )
 
+MAX_EXISTING_COMBINATIONS = 2   # 已有相同组合的游戏数超过该阈值视为不够稀缺，丢弃
+TOP_N = 30                      # 送 LLM 判断的最大候选数
+
 # 替代作用的维度 label -> GameDimensions 属性名
 _SUBSTITUTE_DIMENSIONS: dict[str, str] = {
     "Perspective": "perspectives",
@@ -116,3 +119,19 @@ def _combine_candidates(
             )
         )
     return out
+
+
+def rank_candidates(
+    candidates: list[CandidateOpportunityArea],
+    max_existing: int = MAX_EXISTING_COMBINATIONS,
+    top_n: int = TOP_N,
+) -> list[CandidateOpportunityArea]:
+    viable = [c for c in candidates if c.existing_combination_count <= max_existing]
+    viable.sort(
+        key=lambda c: (
+            c.existing_combination_count,
+            -len(c.evidence.target_value_game_ids),
+            c.id,
+        )
+    )
+    return viable[:top_n]

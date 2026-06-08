@@ -1,5 +1,10 @@
-from app.schemas.opportunity import TransformationType
-from app.services.opportunity_service import GameDimensions, enumerate_candidates
+from app.schemas.opportunity import (
+    CandidateOpportunityArea,
+    OpportunityEvidence,
+    Transformation,
+    TransformationType,
+)
+from app.services.opportunity_service import GameDimensions, enumerate_candidates, rank_candidates
 
 
 def _games() -> list[GameDimensions]:
@@ -106,3 +111,57 @@ def test_existing_combination_count_counts_genre_sharing_games_with_target_value
     )
     assert picked.existing_combination_count == 2
     assert set(picked.evidence.combination_game_ids) == {"g2", "g3"}
+
+
+# ---------------------------------------------------------------------------
+# rank_candidates tests
+# ---------------------------------------------------------------------------
+
+
+def _cand(cid: str, existing: int, target_count: int) -> CandidateOpportunityArea:
+    return CandidateOpportunityArea(
+        id=cid,
+        anchor_game_id="a",
+        anchor_summary="s",
+        transformation=Transformation(
+            type=TransformationType.COMBINE,
+            dimension="Mechanic",
+            from_value=None,
+            to_value=cid,
+        ),
+        existing_combination_count=existing,
+        evidence=OpportunityEvidence(
+            anchor_game_id="a",
+            target_value_game_ids=[f"g{i}" for i in range(target_count)] or ["g0"],
+            combination_game_ids=[f"c{i}" for i in range(existing)],
+        ),
+    )
+
+
+def test_rank_filters_out_candidates_above_ceiling() -> None:
+    ranked = rank_candidates(
+        [_cand("keep", 1, 2), _cand("drop", 5, 2)], max_existing=2, top_n=10
+    )
+    ids = [c.id for c in ranked]
+    assert "keep" in ids
+    assert "drop" not in ids
+
+
+def test_rank_sorts_by_scarcity_then_target_attestation() -> None:
+    ranked = rank_candidates(
+        [
+            _cand("novel_weak", 0, 1),
+            _cand("novel_strong", 0, 3),
+            _cand("less_novel", 1, 5),
+        ],
+        max_existing=2,
+        top_n=10,
+    )
+    assert [c.id for c in ranked] == ["novel_strong", "novel_weak", "less_novel"]
+
+
+def test_rank_truncates_to_top_n() -> None:
+    ranked = rank_candidates(
+        [_cand(f"c{i}", 0, 1) for i in range(40)], max_existing=2, top_n=30
+    )
+    assert len(ranked) == 30
