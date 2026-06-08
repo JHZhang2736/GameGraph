@@ -93,13 +93,27 @@ export async function getDeveloperProfile(): Promise<DeveloperProfile> {
   return settle(goldenFlow.developer_profile);
 }
 
-// Parses free-form developer input into a structured draft. Today this runs the
-// local deterministic parser; swap the body for `fetch('/api/profile/parse')`
-// when the backend route lands. The signature and result shape stay the same.
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
+
 export async function parseDeveloperProfileInput(
   input: ProfileParseInput,
 ): Promise<ProfileParseResult> {
-  return settle(parseLocalDeveloperProfileInput(input));
+  try {
+    const response = await fetch(`${API_BASE}/profile/parse`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(input),
+    });
+    if (!response.ok) throw new Error(`profile/parse responded ${response.status}`);
+    return (await response.json()) as ProfileParseResult;
+  } catch (error) {
+    console.warn("profile/parse failed; using local parser", error);
+    const local = parseLocalDeveloperProfileInput(input);
+    return {
+      ...local,
+      warnings: ["后端不可用，已使用本地规则解析。", ...local.warnings],
+    };
+  }
 }
 
 // Confirms a complete draft into the authoritative DeveloperProfile. Today this

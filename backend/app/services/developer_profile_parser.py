@@ -220,6 +220,18 @@ def _constraints(
     return constraints, _source("constraints", raw_text)
 
 
+def finalize_completeness(
+    values: dict[str, object],
+) -> tuple[list[MissingProfileField], bool]:
+    missing_fields = [
+        _missing(field, f"Could not infer {field} from developer profile input.")
+        for field, value in values.items()
+        if field in BLOCKING_FIELDS and not value
+    ]
+    is_complete = not any(field.blocking for field in missing_fields)
+    return missing_fields, is_complete
+
+
 def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParseResult:
     raw_text = input_data.raw_text
     field_sources: list[ProfileFieldSource] = []
@@ -296,9 +308,8 @@ def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParse
     if constraints_source:
         field_sources.append(constraints_source)
 
-    missing_fields = [
-        _missing(field, f"Could not infer {field} from developer profile input.")
-        for field, value in {
+    missing_fields, is_complete = finalize_completeness(
+        {
             "team_size": team_size,
             "time_budget": time_budget,
             "programming_ability": programming_ability,
@@ -307,10 +318,8 @@ def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParse
             "liked_references": liked_references,
             "desired_player_experiences": desired_player_experiences,
             "constraints": constraints,
-        }.items()
-        if field in BLOCKING_FIELDS and not value
-    ]
-    is_complete = not any(field.blocking for field in missing_fields)
+        }
+    )
 
     return ProfileParseResult(
         draft=DeveloperProfileDraft(
