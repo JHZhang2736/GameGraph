@@ -9,7 +9,7 @@ import {
   useSetSettings,
   useSigma,
 } from "@react-sigma/core";
-import { useWorkerLayoutForceAtlas2 } from "@react-sigma/layout-forceatlas2";
+import forceAtlas2 from "graphology-layout-forceatlas2";
 import { EdgeCurvedArrowProgram } from "@sigma/edge-curve";
 import "@react-sigma/core/lib/style.css";
 import type { GraphData } from "@/lib/data";
@@ -52,9 +52,6 @@ function GraphController({
   const loadGraph = useLoadGraph();
   const registerEvents = useRegisterEvents();
   const setSettings = useSetSettings();
-  const { start, stop } = useWorkerLayoutForceAtlas2({
-    settings: { slowDown: 10 },
-  });
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
   // 数据变化时(挂载 / 展开邻居)重建 graphology 图。useLoadGraph 会清空并
@@ -83,21 +80,16 @@ function GraphController({
         size: edgeSize(e),
       });
     });
+    // 进场前同步预计算力导向布局,一次性摆到收敛位置再渲染,避免实时 worker
+    // 带来的可见抖动;拖拽后位置也不会被仿真拉回。
+    if (g.order > 0) {
+      forceAtlas2.assign(g, {
+        iterations: 300,
+        settings: forceAtlas2.inferSettings(g),
+      });
+    }
     loadGraph(g);
   }, [graph, loadGraph]);
-
-  // 力导向布局:数据变化(含展开)后重新跑一段时间收敛再自动停下,避免无限
-  // 运行抢占拖拽。用 stop(可暂停可重启)而非 kill(永久销毁 worker);worker
-  // 的销毁交由 hook 自身在卸载时处理。start/stop 在 layout 就绪后会改变身份,
-  // 从而触发本 effect 重新运行并真正启动布局。
-  useEffect(() => {
-    start();
-    const timer = window.setTimeout(() => stop(), 2000);
-    return () => {
-      window.clearTimeout(timer);
-      stop();
-    };
-  }, [graph, start, stop]);
 
   // 注册交互:点击展开 / 看证据,hover 记录,拖拽。
   useEffect(() => {
