@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from neo4j import Driver
 
+from app.schemas.graph import GameSummary, NeighborhoodResult, NodeSearchHit
+from app.services.graph_query import NeighborRow, build_neighborhood
 from app.schemas.import_document import GameImportDocument
 from app.services.import_service import (
     EdgeMerge,
@@ -36,12 +38,96 @@ class GameRepository:
             session.execute_write(self._write_plan, plan)
         return summarize(document)
 
+    def list_games(self) -> list[GameSummary]:
+        with self._driver.session() as session:
+            rows = session.execute_read(self._read_games)
+        return [GameSummary(**row) for row in rows]
+
+    @staticmethod
+    def _read_games(tx) -> list[dict]:
+        result = tx.run(
+            "MATCH (g:Game) RETURN g.id AS id, g.title AS title, "
+            "g.short_description AS short_description, g.confidence AS confidence, "
+            "g.quality_status AS quality_status ORDER BY g.title"
+        )
+        return [dict(record) for record in result]
+
     def get_game(self, game_id: str) -> GameImportDocument | None:
         with self._driver.session() as session:
             record = session.execute_read(self._read_game, game_id)
         if record is None:
             return None
         return GameImportDocument.model_validate_json(record)
+
+    def search_nodes(self, q: str, limit: int = 20) -> list[NodeSearchHit]:
+        with self._driver.session() as session:
+            rows = session.execute_read(self._search_nodes, q, limit)
+        return [NodeSearchHit(**row) for row in rows]
+
+    @staticmethod
+    def _search_nodes(tx, q: str, limit: int) -> list[dict]:
+        result = tx.run(
+            "MATCH (n) WHERE n.title IS NOT NULL OR n.name IS NOT NULL "
+            "WITH n, coalesce(n.title, n.name) AS label "
+            "WHERE toLower(label) CONTAINS toLower($q) "
+            "RETURN coalesce(n.id, n.name) AS id, label, head(labels(n)) AS node_type "
+            "LIMIT $limit",
+            q=q,
+            limit=limit,
+        )
+        return [dict(record) for record in result]
+
+    def neighbors(
+        self,
+        node_id: str,
+        hops: int = 1,
+        limit: int = 150,
+        rel_types: list[str] | None = None,
+    ) -> NeighborhoodResult | None:
+        with self._driver.session() as session:
+            data = session.execute_read(
+                self._read_neighbors, node_id, limit, rel_types
+            )
+        if data is None:
+            return None
+        focus, rows = data
+        return build_neighborhood(focus, rows, limit)
+
+    @staticmethod
+    def _read_neighbors(tx, node_id, limit, rel_types):
+        focus_rec = tx.run(
+            "MATCH (n) WHERE n.id = $id OR n.name = $id "
+            "RETURN coalesce(n.id, n.name) AS id, "
+            "coalesce(n.title, n.name) AS label, head(labels(n)) AS node_type "
+            "LIMIT 1",
+            id=node_id,
+        ).single()
+        if focus_rec is None:
+            return None
+        result = tx.run(
+            "MATCH (n) WHERE n.id = $id OR n.name = $id "
+            "MATCH (n)-[r]->(m) "
+            "WHERE $rel_types IS NULL OR type(r) IN $rel_types "
+            "RETURN type(r) AS rel_type, properties(r) AS rel_props, "
+            "head(labels(m)) AS neighbor_label, "
+            "coalesce(m.id, m.name) AS neighbor_key, "
+            "coalesce(m.title, m.name) AS neighbor_display "
+            "LIMIT $cap",
+            id=node_id,
+            rel_types=rel_types,
+            cap=limit + 1,
+        )
+        rows = [
+            NeighborRow(
+                rel_type=rec["rel_type"],
+                rel_props=dict(rec["rel_props"]),
+                neighbor_label=rec["neighbor_label"],
+                neighbor_key=rec["neighbor_key"],
+                neighbor_display=rec["neighbor_display"],
+            )
+            for rec in result
+        ]
+        return dict(focus_rec), rows
 
     @staticmethod
     def _write_plan(tx, plan: GraphWritePlan) -> None:

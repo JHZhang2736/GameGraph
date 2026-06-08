@@ -3,7 +3,6 @@ import {
   getDeveloperProfile,
   getGoldenFlow,
   getGameProfile,
-  getGraph,
 } from "@/lib/data";
 import { saveStoredProfile } from "@/lib/profile/storage";
 import type { DeveloperProfile } from "@/lib/types";
@@ -52,13 +51,4 @@ describe("data layer", () => {
     expect(bundle?.claims.some((c) => c.subject === "Balatro")).toBe(true);
   });
 
-  it("derives graph nodes and edges from relations", async () => {
-    const { nodes, edges } = await getGraph();
-    expect(edges).toHaveLength(4);
-    const nodeIds = new Set(nodes.map((n) => n.id));
-    for (const edge of edges) {
-      expect(nodeIds.has(edge.source)).toBe(true);
-      expect(nodeIds.has(edge.target)).toBe(true);
-    }
-  });
 });

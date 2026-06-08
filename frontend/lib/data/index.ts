@@ -10,13 +10,17 @@ import type {
   DesignClaim,
   EvidenceRef,
   GameDesignProfile,
+  GameSummary,
   GoldenFlow,
+  ImportSummary,
+  NodeSearchHit,
   OpportunityFrame,
   ProfileParseInput,
   ProfileParseResult,
   PrototypeBrief,
   SeedGame,
 } from "@/lib/types";
+import type { ImportDocument } from "@/lib/import/schema";
 
 // Simulate a network round-trip so loading/error states are real.
 // Swap these bodies for `fetch(...)` when the backend API lands; signatures stay.
@@ -51,6 +55,7 @@ export async function getGameProfile(id: string): Promise<GameProfileBundle | nu
 export interface GraphNode {
   id: string;
   label: string;
+  node_type: string;
 }
 
 export interface GraphEdge {
@@ -58,36 +63,15 @@ export interface GraphEdge {
   source: string;
   target: string;
   relation: string;
-  confidence: GoldenFlow["graph_relations"][number]["confidence"];
-  quality_status: GoldenFlow["graph_relations"][number]["quality_status"];
-  claim_id: string;
+  confidence?: GoldenFlow["graph_relations"][number]["confidence"];
+  quality_status?: GoldenFlow["graph_relations"][number]["quality_status"];
+  claim_id?: string;
   evidence: EvidenceRef[];
 }
 
 export interface GraphData {
   nodes: GraphNode[];
   edges: GraphEdge[];
-}
-
-export async function getGraph(): Promise<GraphData> {
-  const nodeMap = new Map<string, GraphNode>();
-  const edges: GraphEdge[] = [];
-  for (const rel of goldenFlow.graph_relations) {
-    for (const label of [rel.source_node, rel.target_node]) {
-      if (!nodeMap.has(label)) nodeMap.set(label, { id: label, label });
-    }
-    edges.push({
-      id: rel.id,
-      source: rel.source_node,
-      target: rel.target_node,
-      relation: rel.relation,
-      confidence: rel.confidence,
-      quality_status: rel.quality_status,
-      claim_id: rel.claim_id,
-      evidence: rel.evidence,
-    });
-  }
-  return settle({ nodes: [...nodeMap.values()], edges });
 }
 
 // Returns the developer profile that drives downstream steps. A profile the user
@@ -147,4 +131,71 @@ export async function getConcepts(): Promise<ConceptsBundle> {
 
 export async function getPrototypeBrief(): Promise<PrototypeBrief> {
   return settle(goldenFlow.prototype_brief);
+}
+
+export interface NeighborhoodResult {
+  focus: GraphNode;
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  truncated: boolean;
+}
+
+export class ImportError extends Error {
+  constructor(message: string, readonly status: number) {
+    super(message);
+    this.name = "ImportError";
+  }
+}
+
+export async function listGames(): Promise<GameSummary[]> {
+  const res = await fetch(`${API_BASE}/games`);
+  if (!res.ok) throw new Error(`GET /games responded ${res.status}`);
+  return (await res.json()) as GameSummary[];
+}
+
+export async function getGameDocument(id: string): Promise<ImportDocument> {
+  const res = await fetch(`${API_BASE}/games/${encodeURIComponent(id)}`);
+  if (!res.ok) throw new Error(`GET /games/${id} responded ${res.status}`);
+  return (await res.json()) as ImportDocument;
+}
+
+export interface NeighborsParams {
+  nodeId: string;
+  hops?: number;
+  limit?: number;
+  relTypes?: string[];
+}
+
+export async function getNeighbors(
+  params: NeighborsParams,
+): Promise<NeighborhoodResult> {
+  const query = new URLSearchParams({ node_id: params.nodeId });
+  if (params.hops) query.set("hops", String(params.hops));
+  if (params.limit) query.set("limit", String(params.limit));
+  if (params.relTypes?.length) query.set("rel_types", params.relTypes.join(","));
+  const res = await fetch(`${API_BASE}/graph/neighbors?${query.toString()}`);
+  if (!res.ok) throw new Error(`GET /graph/neighbors responded ${res.status}`);
+  return (await res.json()) as NeighborhoodResult;
+}
+
+export async function searchGraphNodes(q: string): Promise<NodeSearchHit[]> {
+  const res = await fetch(`${API_BASE}/graph/search?q=${encodeURIComponent(q)}`);
+  if (!res.ok) throw new Error(`GET /graph/search responded ${res.status}`);
+  return (await res.json()) as NodeSearchHit[];
+}
+
+export async function importGame(doc: ImportDocument): Promise<ImportSummary> {
+  const res = await fetch(`${API_BASE}/import/game`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(doc),
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({}));
+    throw new ImportError(
+      (body as { detail?: string }).detail ?? `import responded ${res.status}`,
+      res.status,
+    );
+  }
+  return (await res.json()) as ImportSummary;
 }

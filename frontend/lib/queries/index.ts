@@ -1,18 +1,23 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import {
   getConcepts,
   getDeveloperProfile,
   getGameProfile,
   getGoldenFlow,
-  getGraph,
+  getNeighbors,
   getOpportunityFrame,
   getPrototypeBrief,
   getSeedGames,
+  importGame,
+  listGames,
   parseDeveloperProfileInput,
+  searchGraphNodes,
+  type NeighborsParams,
 } from "@/lib/data";
 import type { ProfileParseInput } from "@/lib/types";
+import type { ImportDocument } from "@/lib/import/schema";
 
 export function useGoldenFlow() {
   return useQuery({ queryKey: ["golden-flow"], queryFn: getGoldenFlow });
@@ -27,10 +32,6 @@ export function useGameProfile(id: string) {
     queryKey: ["game-profile", id],
     queryFn: () => getGameProfile(id),
   });
-}
-
-export function useGraph() {
-  return useQuery({ queryKey: ["graph"], queryFn: getGraph });
 }
 
 export function useDeveloperProfile() {
@@ -57,4 +58,28 @@ export function useConcepts() {
 
 export function usePrototypeBrief() {
   return useQuery({ queryKey: ["prototype-brief"], queryFn: getPrototypeBrief });
+}
+
+export function useGames() {
+  return useQuery({ queryKey: ["games"], queryFn: listGames });
+}
+
+export function useNeighbors(params: NeighborsParams | null) {
+  return useQuery({
+    queryKey: ["neighbors", params],
+    queryFn: () => getNeighbors(params as NeighborsParams),
+    enabled: params !== null,
+  });
+}
+
+export function useGraphSearch(q: string) {
+  return useQuery({
+    queryKey: ["graph-search", q],
+    queryFn: () => searchGraphNodes(q),
+    enabled: q.trim().length > 0,
+  });
+}
+
+export function useImportGame() {
+  return useMutation({ mutationFn: (doc: ImportDocument) => importGame(doc) });
 }

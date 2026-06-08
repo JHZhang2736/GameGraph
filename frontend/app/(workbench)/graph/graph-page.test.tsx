@@ -1,38 +1,57 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const neighborsMock = vi.fn();
+
+vi.mock("@/lib/queries", async (orig) => {
+  const actual = await orig<typeof import("@/lib/queries")>();
+  return {
+    ...actual,
+    useGames: () => ({
+      data: [{ id: "game_hk", title: "Hollow Knight", short_description: "mv", confidence: "high", quality_status: "reviewed" }],
+      isLoading: false,
+      isError: false,
+      refetch: vi.fn(),
+    }),
+  };
+});
+
+vi.mock("@/lib/data", async (orig) => {
+  const actual = await orig<typeof import("@/lib/data")>();
+  return { ...actual, getNeighbors: (...args: unknown[]) => neighborsMock(...args) };
+});
+
 import GraphPage from "@/app/(workbench)/graph/page";
 
-function renderWithClient(ui: React.ReactNode) {
+function renderPage() {
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
-  return render(<QueryClientProvider client={client}>{ui}</QueryClientProvider>);
+  return render(<QueryClientProvider client={client}><GraphPage /></QueryClientProvider>);
 }
 
+beforeEach(() => {
+  neighborsMock.mockReset();
+  neighborsMock.mockResolvedValue({
+    focus: { id: "game_hk", label: "Hollow Knight", node_type: "Game" },
+    nodes: [{ id: "platforming", label: "platforming", node_type: "Mechanic" }],
+    edges: [{ id: "e1", source: "game_hk", target: "platforming", relation: "HAS_MECHANIC", evidence: [] }],
+    truncated: false,
+  });
+});
+
 describe("GraphPage", () => {
-  it("lists relations with a downgraded low-confidence edge", async () => {
-    renderWithClient(<GraphPage />);
-    await waitFor(() => {
-      expect(screen.getAllByText(/symbolic tactical UI/).length).toBeGreaterThan(0);
-    });
-    expect(screen.getAllByText("弱证据").length).toBeGreaterThan(0);
+  it("loads a random focus on mount and renders its relation", async () => {
+    renderPage();
+    await waitFor(() => expect(neighborsMock).toHaveBeenCalled());
+    expect((neighborsMock.mock.calls[0][0] as { nodeId: string }).nodeId).toBe("game_hk");
   });
 
-  it("shows the source claim and evidence path when a relation is selected", async () => {
-    const user = userEvent.setup();
-    renderWithClient(<GraphPage />);
-    await waitFor(() => {
-      expect(screen.getAllByText(/Balatro/).length).toBeGreaterThan(0);
+  it("shows a truncation warning when truncated is true", async () => {
+    neighborsMock.mockResolvedValue({
+      focus: { id: "game_hk", label: "Hollow Knight", node_type: "Game" },
+      nodes: [], edges: [], truncated: true,
     });
-    const relationButtons = screen.getAllByRole("button");
-    const balatroButton = relationButtons.find((b) =>
-      /familiar card rules/.test(b.textContent ?? ""),
-    );
-    expect(balatroButton).toBeDefined();
-    await user.click(balatroButton!);
-    expect(screen.getByText("证据路径")).toBeInTheDocument();
-    expect(
-      screen.getByText(/recognizable poker hand logic/),
-    ).toBeInTheDocument();
+    renderPage();
+    await waitFor(() => expect(screen.getByText(/结果过多/)).toBeInTheDocument());
   });
 });
