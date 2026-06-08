@@ -15,7 +15,7 @@ import { EdgeCurvedArrowProgram } from "@sigma/edge-curve";
 import "@react-sigma/core/lib/style.css";
 import type { GraphData } from "@/lib/data";
 import { nodeColor, nodeSize } from "@/components/graph/node-style";
-import { edgeColor, edgeSize } from "@/components/graph/edge-style";
+import { edgeColor, isDowngraded } from "@/components/graph/edge-style";
 import { relationLabel } from "@/components/graph/relation-labels";
 
 const DIMMED_NODE = "#e2e8f0";
@@ -33,11 +33,24 @@ function degreeMap(graph: GraphData): Map<string, number> {
 
 const SIGMA_SETTINGS = {
   renderEdgeLabels: true,
+  // Sigma 默认不派发边事件(性能考虑);开启后 clickEdge 才会触发,否则右侧
+  // 证据面板永远点不到边。
+  enableEdgeEvents: true,
   defaultEdgeType: "curved",
   edgeProgramClasses: { curved: EdgeCurvedArrowProgram },
   labelDensity: 0.07,
-  labelGridCellSize: 60,
+  labelGridCellSize: 30,
   zIndex: true,
+};
+
+// FA2 力参数:边引力 vs 节点斥力的平衡。预计算与实时收尾两处共用。
+const FA2_SETTINGS = {
+  gravity: 1,             // 向中心的引力,↑ 整体更聚拢、↓ 更松散
+  scalingRatio: 10,       // 节点间斥力(这才是"斥力"),↓ 更紧凑、↑ 更散开
+  // adjustSizes: true,     // 考虑节点尺寸(半径)的引力计算,↑ 大节点更聚拢、↓ 大节点更松散
+  // outboundAttractionDistribution: true,
+  // edgeWeightInfluence: 1, // 边权重对引力的影响程度
+  // linLogMode: true,    // 取消注释 → 簇更紧凑(常见的"抱团"高级感)
 };
 
 function GraphController({
@@ -54,7 +67,7 @@ function GraphController({
   const registerEvents = useRegisterEvents();
   const setSettings = useSetSettings();
   const { start, stop } = useWorkerLayoutForceAtlas2({
-    settings: { slowDown: 10 },
+    settings: { slowDown: 20, ...FA2_SETTINGS },
   });
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
@@ -77,11 +90,15 @@ function GraphController({
     graph.edges.forEach((e) => {
       if (!g.hasNode(e.source) || !g.hasNode(e.target)) return;
       if (g.hasEdge(e.id)) return;
+      const refSize = Math.min(
+        nodeSize(degrees.get(e.source) ?? 0),
+        nodeSize(degrees.get(e.target) ?? 0),
+      );
       g.addEdgeWithKey(e.id, e.source, e.target, {
         label: relationLabel(e.relation),
         type: "curved",
         color: edgeColor(e),
-        size: edgeSize(e),
+        size: isDowngraded(e) ? refSize * 0.12 : refSize * 0.22,
       });
     });
     // 先轻量预计算把拓扑摆开(避免节点挤成一团后被 worker 剧烈甩开导致抖动),
@@ -89,7 +106,7 @@ function GraphController({
     if (g.order > 0) {
       forceAtlas2.assign(g, {
         iterations: 50,
-        settings: forceAtlas2.inferSettings(g),
+        settings: { ...forceAtlas2.inferSettings(g), ...FA2_SETTINGS },
       });
     }
     loadGraph(g);
@@ -169,7 +186,7 @@ export function GraphCanvas({
   onSelectNode?: (nodeId: string) => void;
 }) {
   return (
-    <div className="h-[560px] rounded-lg border">
+    <div className="h-full w-full rounded-lg border">
       <SigmaContainer
         graph={MultiDirectedGraph}
         style={{ height: "100%", width: "100%" }}
