@@ -26,9 +26,9 @@ export default function GraphPage() {
   const [loadError, setLoadError] = useState(false);
 
   async function focusOn(nodeId: string, replace: boolean) {
-    setLoadError(false);
     try {
       const result = await getNeighbors({ nodeId });
+      setLoadError(false);
       setTruncated(result.truncated);
       setGraph((prev) =>
         replace ? mergeNeighborhood({ nodes: [], edges: [] }, result) : mergeNeighborhood(prev, result),
@@ -43,8 +43,9 @@ export default function GraphPage() {
     const params = new URLSearchParams(window.location.search);
     const requested = params.get("focus");
     const focusId = requested ?? games[Math.floor(Math.random() * games.length)].id;
+    // focusOn 仅在 await 之后 setState(异步),不会造成同步级联渲染;挂载时按需取焦点邻域本就需在 effect 内发起。
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     void focusOn(focusId, true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [games]);
 
   function reroll() {
