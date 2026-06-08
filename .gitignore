@@ -2,3 +2,6 @@
 .worktrees/
 .superpowers/
 .claude/
+.vscode/
+.clone/
+.claire/
