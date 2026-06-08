@@ -15,15 +15,14 @@ import type {
   ProfileParseResult,
 } from "@/lib/types";
 
+// Only these gate completeness. References, desired experiences, and constraints
+// are optional (the user can confirm a profile without them).
 export const BLOCKING_FIELDS = [
   "team_size",
   "time_budget",
   "programming_ability",
   "art_ability",
   "content_production_ability",
-  "liked_references",
-  "desired_player_experiences",
-  "constraints",
 ] as const;
 
 export type BlockingField = (typeof BLOCKING_FIELDS)[number];
@@ -272,22 +271,16 @@ export function parseDeveloperProfileInput(
   }
 
   // Blocking missing fields drive completeness.
-  const values: Record<(typeof BLOCKING_FIELDS)[number], string | string[] | null> = {
+  const values: Record<(typeof BLOCKING_FIELDS)[number], string | null> = {
     team_size: teamSize,
     time_budget: timeBudget,
     programming_ability: programmingAbility,
     art_ability: artAbility,
     content_production_ability: contentProductionAbility,
-    liked_references: likedReferences,
-    desired_player_experiences: desiredExperiences,
-    constraints: constraints.map((item) => item.id),
   };
-  const missingFields = BLOCKING_FIELDS.flatMap((field) => {
-    const value = values[field];
-    const isEmpty =
-      value === null || (Array.isArray(value) && value.length === 0);
-    return isEmpty ? [missing(field)] : [];
-  });
+  const missingFields = BLOCKING_FIELDS.flatMap((field) =>
+    values[field] ? [] : [missing(field)],
+  );
 
   return {
     draft: {

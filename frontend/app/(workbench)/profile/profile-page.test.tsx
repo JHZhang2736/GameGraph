@@ -24,25 +24,42 @@ async function fillAndParse(user: User, text: string = EXAMPLE_TEXT) {
 }
 
 describe("ProfilePage", () => {
-  it("does not parse until the user asks", async () => {
+  it("shows an empty editable preview without parsing on load", async () => {
     renderWithClient(<ProfilePage />);
 
     expect(screen.getByText("开发者画像")).toBeInTheDocument();
     expect(screen.getByLabelText("自由描述")).toBeInTheDocument();
-    // No auto-parse on load: the preview placeholder shows, not the preview.
-    expect(screen.getByText(/等待解析画像/)).toBeInTheDocument();
-    expect(screen.queryByText("结构化预览")).not.toBeInTheDocument();
+    // The structured preview is available immediately, but nothing is parsed:
+    // required fields sit at 缺失 and confirmation is gated.
+    expect(screen.getByText("结构化预览")).toBeInTheDocument();
+    expect(screen.getByText("缺少关键信息")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "确认画像" })).toBeDisabled();
+    expect((screen.getByLabelText("团队规模") as HTMLSelectElement).value).toBe("");
   });
 
-  it("renders the structured preview only after parsing", async () => {
+  it("lets the user complete the profile by selecting fields, no free text", async () => {
     const user = userEvent.setup();
     renderWithClient(<ProfilePage />);
 
-    await fillAndParse(user);
+    // Pick canonical values directly from the Chinese dropdowns.
+    await user.selectOptions(screen.getByLabelText("团队规模"), "solo");
+    await user.selectOptions(screen.getByLabelText("时间预算"), "three month prototype");
+    await user.selectOptions(screen.getByLabelText("程序能力"), "strong");
+    await user.selectOptions(screen.getByLabelText("美术能力"), "weak");
+    await user.selectOptions(screen.getByLabelText("内容生产能力"), "limited");
 
     await waitFor(() => {
-      expect(screen.getByText("结构化预览")).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "确认画像" })).toBeEnabled();
     });
+  });
+
+  it("renders Chinese option labels in the dropdowns", async () => {
+    renderWithClient(<ProfilePage />);
+
+    const teamSize = screen.getByLabelText("团队规模") as HTMLSelectElement;
+    const labels = Array.from(teamSize.options).map((option) => option.text);
+    expect(labels).toContain("独立开发者（单人）");
+    expect(labels).toContain("小团队");
   });
 
   it("surfaces missing fields in the preview after parsing vague input", async () => {
@@ -95,12 +112,15 @@ describe("ProfilePage", () => {
     renderWithClient(<ProfilePage />);
 
     await fillAndParse(user);
+    // Wait for the parse to populate the field (the preview renders immediately,
+    // so we must wait on the value, not just the element).
     await waitFor(() => {
-      expect(screen.getByLabelText("程序能力")).toBeInTheDocument();
+      expect((screen.getByLabelText("程序能力") as HTMLSelectElement).value).toBe(
+        "strong",
+      );
     });
 
     const programming = screen.getByLabelText("程序能力") as HTMLSelectElement;
-    expect(programming.value).toBe("strong");
     await user.selectOptions(programming, "weak");
     expect(programming.value).toBe("weak");
   });
