@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_hellblade_senuas_sacrifice",
+    "title": "Hellblade: Senua's Sacrifice",
+    "source_refs": [
+      {
+        "title": "Hellblade: Senua's Sacrifice（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Hellblade:_Senua%27s_Sacrifice",
+        "notes": "类型（第三人称动作冒险含砍杀战斗）、轻重攻击/招架/闪避/聚焦能力、聚焦（Focus）放慢时间或驱散幻影、被击倒需快速按键挣脱、靠视角对位的透视解谜推进、双耳录音呈现「狂怒之声」幻听、患精神病的皮克特战士 Senua 前往海尔海姆、刻意设计的伪永久死亡（手部腐化随死亡蔓延但实际不会真死）、Ninja Theory 用虚幻4开发、约20人团队、独立3A、与神经科学家及精神病患者合作、2017 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款第三人称动作冒险游戏，玩家操控患精神病的皮克特战士 Senua 前往北欧神话的海尔海姆拯救爱人之魂：用轻重攻击、招架、闪避与可放慢时间的「聚焦」能力作战，靠在特定视角下对位图形的透视解谜推进，全程由双耳录音的幻听之声引导与扰乱；Ninja Theory 以约20人的独立3A团队用虚幻4开发、2017 年发售。",
+    "selection_reason": "作为「用双耳音频与不可靠幻觉把精神病主观体验做成核心机制」的代表：把幻听之声做成既引导又扰乱玩家的叙事与战斗信息源，用伪永久死亡制造纯心理威慑，再以视角对位透视解谜承载推进，是研究主观感知表达、音频沉浸与小团队独立3A的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_hellblade_senuas_sacrifice",
+    "one_sentence_summary": "玩家操控患精神病的战士 Senua 穿行海尔海姆，用招架闪避与可放慢时间的聚焦能力作战，靠在特定视角下对位图形的透视解谜推进，全程由双耳录音的幻听之声引导与扰乱，在真假难辨的幻觉中走向终点。",
+    "core_hook": "把「精神病的主观感知」做成可玩的核心：环绕的双耳幻听之声既会提醒你身后的敌人、也会撒谎扰乱你，视觉幻觉让真实、记忆与妄想难以分辨；再叠加「死亡会让腐化蔓延、蔓延到头就永久删档」的伪永久死亡威慑，把恐惧做成纯心理压力，让玩家亲身体验 Senua 眼中扭曲的世界。",
+    "core_loop": "自由行走探索与触发幻象、在视角对位的透视谜题处寻找正确观察点解锁通路、遭遇时以招架闪避与聚焦能力作战、被幻听之声引导或误导着推进，穿插剧情幻象走向终局。",
+    "progression_model": "本作无传统数值成长，靠剧情章节推进 Senua 的旅程与心理揭示、靠聚焦能力与战斗熟练度提升应对力；进度体现为已通过的场景、收集的图腾旁白与对真相的逐步揭露。",
+    "failure_model": "战斗失败或被击倒后未能及时挣脱即死亡、回到检查点，反复死亡会使手部腐化可见蔓延并以「蔓延到头将永久删档」相威胁，但该腐化机制实际被设计为无法真正触发永久死亡，威慑纯属心理层面。",
+    "content_structure": "以线性章节式旅程为骨架，靠招架战斗、视角对位透视解谜、双耳幻听叙事与剧情幻象承载流程与情感，单人、流程较短且不可重复初见。",
+    "main_player_actions": ["近战攻击", "翻滚闪避", "秘密解谜"],
+    "main_player_decisions": ["风险取舍", "探索路线"],
+    "main_player_experiences": ["氛围营造", "情感叙事", "抉择沉浸"],
+    "main_mechanics": ["视角解谜", "招架反击", "焦点系统", "伪永久死亡", "环境叙事"],
+    "replayability_sources": ["彩蛋收集"],
+    "production_constraints": ["Unreal 引擎", "小型团队", "全管弦乐配乐"],
+    "innovation_patterns": ["视角解谜", "伪永久死亡"],
+    "reusable_reference_patterns": ["氛围营造", "环境叙事"],
+    "non_replicable_risks": ["一次性体验", "强美术风格"],
+    "genre": ["动作冒险"],
+    "art_style": ["写实美术"],
+    "audio_style": ["双耳音频", "管弦乐"],
+    "perspective": ["第三人称"],
+    "theme": ["北欧神话", "精神疾病"],
+    "narrative_style": ["碎片化叙事", "情感叙事"],
+    "game_feel": ["厚重打击", "沉浸代入"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "双耳音频",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "双耳录音的幻听之声",
+            "quote_or_summary": "用双耳录音技术让多位配音者在不同距离录制，营造环绕 Senua 的幻听之声，既引导又与玩家行动相冲突。",
+            "notes": "维基百科可观察的音频设计。"
+          }
+        ]
+      },
+      {
+        "tag": "伪永久死亡",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "刻意设计的永久死亡威慑",
+            "quote_or_summary": "反复死亡使手部腐化蔓延，并以「蔓延到头将永久删档」相威胁，但该机制实际无法真正触发永久死亡。",
+            "notes": "维基百科记载的设计意图。"
+          }
+        ]
+      },
+      {
+        "tag": "视角解谜",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "视角对位透视谜题",
+            "quote_or_summary": "玩家需站到特定观察点，让环境中的形状对位成符文或通路才能推进，是基于视角的透视解谜。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Hellblade: Senua's Sacrifice 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Hellblade:_Senua%27s_Sacrifice",
+        "quote_or_summary": "第三人称动作冒险，招架闪避与聚焦战斗、视角对位透视解谜、双耳录音幻听之声引导与扰乱、伪永久死亡心理威慑，患精神病的皮克特战士前往海尔海姆，Ninja Theory 约20人独立3A 用虚幻4开发，2017 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_hellblade_voices_immersion",
+      "subject": "双耳音频",
+      "relation": "creates",
+      "object": "世界沉浸",
+      "explanation": "用双耳录音让幻听之声从四面八方环绕玩家、且时而引导时而撒谎，使「声音」从背景氛围升级为既是战斗预警、又是不可靠叙事者的双重信息源，玩家被迫像 Senua 一样在真假难辨的声音里行动，把精神病的主观感知直接灌进玩家耳中而非靠旁白转述，可复用于希望以「空间化、不可靠的音频」把角色的主观心理状态做成可体验机制的设计。",
+      "evidence": [
+        {
+          "title": "幻听之声制造沉浸解读",
+          "quote_or_summary": "环绕且时而误导的双耳之声同时充当战斗预警与不可靠叙事者，让玩家亲身体验主观幻听。",
+          "notes": "基于可观察音频设计的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

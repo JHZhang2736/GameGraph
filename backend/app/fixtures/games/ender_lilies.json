@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_ender_lilies",
+    "title": "Ender Lilies: Quietus of the Knights",
+    "source_refs": [
+      {
+        "title": "Ender Lilies: Quietus of the Knights（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Ender_Lilies:_Quietus_of_the_Knights",
+        "notes": "类型（类银河城）、净化敌人召唤灵体战斗、灵体换装与技能、休息回满与刷新敌人、水彩黑暗童话美术、Mili 钢琴配乐、Adglobe/Live Wire 团队与 Unreal 引擎等事实来源。"
+      }
+    ],
+    "short_description": "一款黑暗水彩风的 2D 类银河城动作角色扮演游戏，玩家操控少女 Lily 净化倒下的骑士与敌人的灵魂，由这些被净化的灵体代为战斗，探索被「污秽」侵蚀的终结之地。",
+    "selection_reason": "作为「敌即武器」的代表：被净化的 Boss 与敌人化为可装备的灵体，玩家不亲自挥刀而是指挥灵体战斗，使战斗成长与叙事高度绑定；其水彩黑暗童话美术与 Mili 钢琴配乐共同营造的情感氛围亦具参考价值。"
+  },
+  "profile": {
+    "game_id": "game_ender_lilies",
+    "one_sentence_summary": "玩家操控少女 Lily，在黑暗水彩的终结之地探索，净化倒下的骑士与敌人并将其灵体装备上身，由灵体代为战斗，逐步解锁能力、揭开关于污秽与牺牲的故事。",
+    "core_hook": "玩家不直接战斗，而是净化倒下的敌人与 Boss、把它们化为可换装的灵体来代为出战，让每件「武器」都承载一段被救赎者的故事。",
+    "core_loop": "探索连通世界、与敌和 Boss 交战并净化它们获得新灵体，搭配两套灵体装载在战斗与探索间切换，靠能力解锁开辟新路、在据点休息回满技能后继续深入。",
+    "progression_model": "战斗获得经验提升等级，击败 Boss 与敌人解锁可装备的灵体技能；玩家在两套各装三个灵体的配置间切换，部分灵体兼作探索门控，推动类银河城式开图。",
+    "failure_model": "灵体技能有使用次数，耗尽需找红花或回据点休息恢复；生命耗尽即死亡回到据点，休息会回满状态但同时刷新已清的敌人，形成类银河城式取舍。",
+    "content_structure": "一张围绕「终结之地」展开的连通地图，串联多个被污秽侵蚀的区域与 Boss，灵体随击败解锁；叙事经碎片化文本与场景推进，并通向三种不同结局。",
+    "main_player_actions": ["魔法释放", "灵体召唤", "冲刺", "平台跳跃", "攀墙"],
+    "main_player_decisions": ["灵体搭配", "探索路线", "风险取舍", "存档时机"],
+    "main_player_experiences": ["情感叙事", "氛围营造", "探索发现", "战斗精通"],
+    "main_mechanics": ["召唤战斗", "敌即武器", "能力门控探索", "手动存档", "技能切换"],
+    "replayability_sources": ["全收集", "Boss 挑战", "多结局", "速通"],
+    "production_constraints": ["手绘美术", "Unreal 引擎", "小型团队"],
+    "innovation_patterns": ["召唤战斗", "敌即武器", "情感叙事"],
+    "reusable_reference_patterns": ["召唤战斗", "氛围营造", "情感叙事", "能力门控探索"],
+    "non_replicable_risks": ["授权配乐成本", "高品质手绘量"],
+    "genre": ["类银河城"],
+    "art_style": ["手绘美术", "水彩画风"],
+    "audio_style": ["管弦乐", "钢琴配乐"],
+    "perspective": ["横版2D"],
+    "theme": ["黑暗童话", "废墟王国"],
+    "narrative_style": ["碎片化叙事", "环境叙事", "情感叙事"],
+    "game_feel": ["精准近战", "精准平台"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "召唤战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "灵体代战机制",
+            "quote_or_summary": "Lily 净化倒下骑士的灵魂，由感激的灵体加入她、代替她战斗；玩家同时装备三个灵体并可在两套配置间切换。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "敌即武器",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "击败即解锁灵体",
+            "quote_or_summary": "击败 Boss 与敌人解锁其灵体技能，使被打败者成为玩家的新「武器」。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "手动存档",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "据点休息",
+            "quote_or_summary": "在据点休息可恢复状态与技能次数，但同时刷新已清除的敌人。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Ender Lilies 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Ender_Lilies:_Quietus_of_the_Knights",
+        "quote_or_summary": "2D 类银河城动作 RPG，净化敌人召唤灵体代战，灵体换装与技能，休息回满并刷新敌人，水彩黑暗童话美术，Mili 钢琴配乐，Adglobe/Live Wire 用 Unreal 引擎开发，2021 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_ender_lilies_enemy_as_weapon",
+      "subject": "敌即武器",
+      "relation": "creates",
+      "object": "情感叙事",
+      "explanation": "把每件可装备的灵体设计成一名被净化、被救赎的倒下者，使获取战斗能力的过程同时是了结一段悲剧的过程，让战斗成长与叙事在同一动作中统一，低成本地放大情感投入，可跨题材复用。",
+      "evidence": [
+        {
+          "title": "灵体叙事解读",
+          "quote_or_summary": "每个灵体都承载一名被净化者的来历，战斗强化即叙事推进。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

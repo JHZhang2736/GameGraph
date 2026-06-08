@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_astroneer",
+    "title": "Astroneer",
+    "source_refs": [
+      {
+        "title": "Astroneer（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Astroneer",
+        "notes": "类型（沙盒冒险）、地形工具实时改造地形、采集与用「字节」解锁科技、合成与基地建造、自动化、程序生成行星、单人/多人第三人称、曲面几何鲜艳色彩美术、氧气管理、System Era 用虚幻 4 开发、2019 年发售、激活七颗行星核心通关等事实来源。"
+      }
+    ],
+    "short_description": "一款太空殖民题材的沙盒冒险游戏，玩家用地形工具自由挖掘与堆塑星球地表，采集资源、用「字节」解锁科技、合成物件并建造基地，可单人或多人探索程序生成的行星与卫星。",
+    "selection_reason": "作为「实时体素地形改造」的代表：用一把地形工具让玩家自由挖掘、堆叠与重塑整个星球地表，把探索与建造从平面操作变成可任意成型的立体雕塑，再叠加自动化与多人协作，是研究沙盒地形系统的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_astroneer",
+    "one_sentence_summary": "玩家用地形工具实时挖掘与堆塑星球地表，采集资源、用「字节」解锁科技、合成物件并搭建可自动化的基地，单人或多人探索程序生成的多颗行星，并可选完成激活全部行星核心的主线。",
+    "core_hook": "用一把地形工具让玩家像捏黏土一样自由挖掘、堆叠与重塑整个星球地表，把采集与建造变成可任意成型的立体雕塑过程。",
+    "core_loop": "用地形工具挖掘采集资源、运回基地合成物件与解锁科技、扩建并自动化基地、乘载具探索更多星球，循环推进装备与据点，可选激活行星核心。",
+    "progression_model": "用采集来的资源研究并以「字节」解锁科技树，制造更强的工具、载具与自动化设施；进度体现为科技解锁、基地规模与跨星球探索范围，可单人或多人合作。",
+    "failure_model": "氧气耗尽会窒息死亡；坠落、危险植物或风暴亦可致死，死亡后会在原地掉落物资需回收，所处星球世界与已建基地保留。",
+    "content_structure": "由多颗程序生成、各具地貌与资源的行星和卫星构成，以地形改造、采集、科技解锁与基地自动化为骨架，含可选的传送门核心激活主线；单人或多人第三人称协作。",
+    "main_player_actions": ["地形改造", "采集", "合成制作", "建造"],
+    "main_player_decisions": ["基地规划", "资源取舍", "探索路线"],
+    "main_player_experiences": ["探索发现", "经营成就", "创作乐趣"],
+    "main_mechanics": ["地形改造", "采集", "合成制作", "建造", "自动化", "多人合作"],
+    "replayability_sources": ["程序生成", "多人合作", "全收集"],
+    "production_constraints": ["低多边形", "Unreal 引擎", "小型团队"],
+    "innovation_patterns": ["地形改造", "自动化"],
+    "reusable_reference_patterns": ["地形改造", "自动化", "程序生成"],
+    "non_replicable_risks": ["技术复杂度", "长期更新运营"],
+    "genre": ["沙盒", "动作冒险"],
+    "art_style": ["低多边形", "极简风格"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["太空殖民", "科幻"],
+    "narrative_style": ["环境叙事"],
+    "game_feel": ["自由操控", "轻松休闲"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "地形改造",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "地形工具",
+            "quote_or_summary": "玩家用「地形工具」实时挖掘、抓取与堆塑星球地表，可自由改变地形形状。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "自动化",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "基地自动化",
+            "quote_or_summary": "玩家可建造可自动运转的设施与传送链来处理资源生产。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "科技解锁",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "字节解锁",
+            "quote_or_summary": "玩家分析资源获得「字节」，用以解锁新的科技与可制造物件。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Astroneer 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Astroneer",
+        "quote_or_summary": "沙盒冒险，地形工具实时改造地形，采集与字节解锁科技，合成与基地建造，自动化，程序生成行星，单人/多人第三人称，曲面几何鲜艳色彩美术，氧气管理，System Era 用虚幻 4 开发，2019 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_astroneer_terrain_volumetric",
+      "subject": "地形改造",
+      "relation": "creates",
+      "object": "立体探索",
+      "explanation": "用可实时挖掘与堆塑的体素地形，让玩家能向地心垂直挖掘、搭建坡道与桥梁，把通常停留在平面的探索与建造拓展成可任意成型的三维空间操作，既是导航手段也是创作媒介，可复用于沙盒与生存建造设计。",
+      "evidence": [
+        {
+          "title": "体素地形解读",
+          "quote_or_summary": "可自由变形的地形使探索与建造成为立体的雕塑式操作。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

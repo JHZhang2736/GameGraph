@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_dying_light",
+    "title": "Dying Light",
+    "source_refs": [
+      {
+        "title": "Dying Light（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Dying_Light",
+        "notes": "类型（生存恐怖动作）、开放世界城市 Harran、第一人称跑酷（攀爬、跳跃、滑行、屋顶穿行、滑索）与近战为核心、动态昼夜循环（白天僵尸迟钝、夜晚极具攻击性）、最多四人合作、武器制作与角色技能成长、Techland 用自研引擎开发、2015 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款第一人称生存恐怖动作游戏，玩家在被僵尸吞没的开放世界城市 Harran 中以跑酷穿行、近战搏杀，应对白天迟钝、夜晚却极度凶猛的僵尸，并可与至多三名玩家合作求生。",
+    "selection_reason": "作为「把第一人称跑酷与昼夜恐惧循环融进僵尸开放世界」的代表：用流畅的攀爬穿行让玩家在战或逃间自由切换，再用夜晚僵尸暴走的昼夜循环制造高低起伏的风险节奏，是研究移动手感与昼夜张力设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_dying_light",
+    "one_sentence_summary": "玩家在被僵尸占领的开放世界城市 Harran 中以第一人称跑酷攀爬穿行、用自制近战武器搏杀，借动态昼夜循环在白天搜刮、夜晚躲避暴走僵尸，可单人或最多四人合作完成任务并成长。",
+    "core_hook": "用流畅的第一人称跑酷把战与逃变成实时抉择，再用夜晚僵尸变得极度凶猛的昼夜循环，把同一座城市在不同时段拉出截然不同的风险与紧张感。",
+    "core_loop": "白天在城中跑酷穿行、搜刮物资、制作与升级武器、推进主支线任务，入夜后躲避或周旋于暴走僵尸、冒险换取更高收益，循环提升角色技能与装备并探索新区域。",
+    "progression_model": "靠完成任务与活动积累经验，分别提升体能、格斗与求生三条技能树，并搜集图纸制作升级武器；进度体现为技能解锁、装备强度与地图开放，标准模式死亡在检查点重生。",
+    "failure_model": "生命归零即死亡并回退到最近检查点；夜间被僵尸群围杀风险极高，部分模式下死亡会损失夜间积累的额外经验。",
+    "content_structure": "在开放世界城市 Harran（贫民窟与旧城两大区域）中以第一人称跑酷、近战搏杀、武器制作、昼夜循环与主支线任务为骨架，支持单人与最多四人合作。",
+    "main_player_actions": ["攀墙", "近战攻击", "平台跳跃"],
+    "main_player_decisions": ["风险取舍", "探索路线", "资源取舍"],
+    "main_player_experiences": ["氛围营造", "战斗精通", "探索发现"],
+    "main_mechanics": ["开放世界探索", "昼夜循环", "武器构筑", "能力树", "合作生存"],
+    "replayability_sources": ["难度分级", "全收集", "任务多样"],
+    "production_constraints": ["自研引擎", "大团队协作"],
+    "innovation_patterns": ["昼夜循环", "第一人称跑酷"],
+    "reusable_reference_patterns": ["昼夜循环", "开放世界探索", "合作生存"],
+    "non_replicable_risks": ["大团队协作", "技术复杂度"],
+    "genre": ["动作角色扮演", "开放世界"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐", "电子配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["丧尸末世", "科幻"],
+    "narrative_style": ["过场驱动", "对话叙事"],
+    "game_feel": ["流畅跑酷", "厚重打击"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "第一人称跑酷",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "自然移动跑酷",
+            "quote_or_summary": "跑酷系统强调自然移动，玩家可攀爬边缘、跳跃、滑行、在屋顶间穿行与滑索，并请来跑酷先驱 David Belle 担任顾问。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "昼夜循环",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "夜晚僵尸暴走",
+            "quote_or_summary": "游戏设有动态昼夜循环，僵尸在白天迟钝笨拙，到夜晚则变得极具攻击性。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "合作生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "四人合作",
+            "quote_or_summary": "游戏支持最多四名玩家在线合作求生。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Dying Light 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Dying_Light",
+        "quote_or_summary": "第一人称生存恐怖动作，开放世界 Harran，跑酷攀爬穿行与近战为核心，动态昼夜循环夜晚僵尸暴走，最多四人合作，武器制作与技能树，Techland 自研引擎，2015 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_dying_light_daynight_tension",
+      "subject": "昼夜循环",
+      "relation": "creates",
+      "object": "时间压力",
+      "explanation": "让僵尸在夜晚变得极度凶猛、收益也更高，使玩家被迫在「趁夜冒险换取更多回报」与「天黑前撤回安全」之间承受持续的时间压力，把同一张地图在不同时段拉出截然不同的风险，可复用于希望用环境周期制造张力的开放世界设计。",
+      "evidence": [
+        {
+          "title": "昼夜风险解读",
+          "quote_or_summary": "夜晚高威胁高回报让昼夜循环成为玩家的时间压力来源。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

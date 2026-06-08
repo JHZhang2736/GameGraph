@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_the_evil_within",
+    "title": "The Evil Within",
+    "source_refs": [
+      {
+        "title": "The Evil Within（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/The_Evil_Within",
+        "notes": "类型（第三人称生存恐怖）、强调心理恐惧与资源管理而非火力、弹药极度稀缺但可用零件合成「痛苦弩」弩矢、潜行可对未察觉敌人一击处决、可解除熊夹与陷阱、医疗包扩容但会引发短暂幻觉、收集绿色凝胶升级能力、Beacon 精神病院的扭曲梦境世界、三上真司执导 Tango Gameworks 开发、基于改造版 id Tech 5、2014 年 10 月发售、15 章剧情等事实来源。"
+      },
+      {
+        "title": "The Evil Within（Steam）",
+        "url": "https://store.steampowered.com/app/268050/The_Evil_Within/",
+        "notes": "生存恐怖、资源稀缺、陷阱与处决、绿色凝胶升级等事实来源。"
+      }
+    ],
+    "short_description": "一款第三人称生存恐怖游戏，刑警 Sebastian 被卷入一处不断扭曲坍缩的梦境世界，在弹药极度稀缺的处境下靠潜行、处决、布设与解除陷阱以及可发射多种弩矢的「痛苦弩」求生；医疗与升级资源同样紧缺，迫使玩家在战斗与躲避间反复权衡，Tango Gameworks 由三上真司执导、2014 年发售。",
+    "selection_reason": "作为「资源极度稀缺 + 心理恐怖」的代表：用稀缺弹药与可解除/可利用的环境陷阱逼出步步为营的紧张感，再用医疗包扩容却引发幻觉的取舍，把「变强」本身也做成风险，是研究生存恐怖中资源压力与恐惧节奏营造的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_the_evil_within",
+    "one_sentence_summary": "玩家扮演刑警 Sebastian，在不断扭曲坍缩的梦境世界里潜行躲避、用稀缺弹药与多用途的痛苦弩迎战怪物、布设与解除陷阱，并在资源紧缺中反复权衡战斗与逃避，穿过 15 章心理恐怖剧情。",
+    "core_hook": "把资源稀缺推到极致：弹药、医疗与升级材料都不够用，逼玩家靠潜行处决、把敌人引入陷阱、用可发射冰冻/致盲/电击/爆炸弩矢的多用途痛苦弩省着打，再用「医疗包扩容却引发幻觉」的取舍让变强也带着代价，制造步步惊心的恐惧节奏。",
+    "core_loop": "在扭曲场景中探索与潜行、躲避或诱杀怪物、收集稀缺弹药与零件合成弩矢、布设并解除陷阱、收集绿色凝胶升级能力、对峙 Boss 推进章节，循环深入愈发危险的梦境。",
+    "progression_model": "靠收集绿色凝胶在升级界面强化生命、弹匣、潜行与武器，靠合成弩矢补充火力推进；进度体现为已通章节、升级等级与武器解锁，资源稀缺决定推进的稳健程度。",
+    "failure_model": "被怪物或 Boss 击杀、踩中未解除的陷阱或在追逐序列中被抓住即死亡，回到最近检查点重来，弹药与资源的误用会让后续步步维艰。",
+    "content_structure": "以 15 章线性剧情为骨架，靠潜行、稀缺资源战斗、陷阱攻防与 Boss 战承载紧张与恐惧，穿插扭曲场景切换与心理恐怖叙事，单人。",
+    "main_player_actions": ["潜行", "射击", "道具运用"],
+    "main_player_decisions": ["资源取舍", "风险取舍", "探索路线"],
+    "main_player_experiences": ["氛围营造", "战斗精通", "探索发现"],
+    "main_mechanics": ["资源管理", "潜行暗杀", "理智系统", "处决演出", "多用途道具"],
+    "replayability_sources": ["难度分级", "全收集"],
+    "production_constraints": ["id Tech 5引擎", "大团队协作"],
+    "innovation_patterns": ["资源管理", "理智系统"],
+    "reusable_reference_patterns": ["资源管理", "氛围营造", "多用途道具"],
+    "non_replicable_risks": ["强美术风格", "技术复杂度"],
+    "genre": ["生存", "动作冒险"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["生存恐怖", "超现实"],
+    "narrative_style": ["过场驱动", "碎片化叙事"],
+    "game_feel": ["紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "资源管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "弹药极度稀缺",
+            "quote_or_summary": "武器弹药非常稀缺，但可收集机械零件合成额外弩矢，迫使玩家精打细算。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "理智系统",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "医疗包扩容引发幻觉",
+            "quote_or_summary": "使用医疗包可扩展生命，但会引发短暂幻觉，使「治疗/变强」本身带来风险。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "潜行暗杀",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "潜行一击处决",
+            "quote_or_summary": "玩家可潜行到未察觉的敌人背后实施一击处决，以节省稀缺弹药。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "The Evil Within 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/The_Evil_Within",
+        "quote_or_summary": "第三人称生存恐怖，弹药极稀缺、可合成痛苦弩矢，潜行处决、陷阱攻防、绿色凝胶升级、医疗包扩容引发幻觉，扭曲梦境世界，三上真司执导 Tango Gameworks 开发，基于改造版 id Tech 5，2014 年发售，15 章。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_tew_sanity_fear",
+      "subject": "理智系统",
+      "relation": "creates",
+      "object": "恐惧张力",
+      "explanation": "把「治疗/扩容生命」与「引发幻觉」绑在一起，让玩家每次想变强都要承受短暂失真与失控的代价，再叠加全程稀缺的弹药与资源，使「该不该用」这件小事持续紧绷，制造出比单纯吓人更持久的恐惧张力，可复用于希望用「变强即代价」的资源取舍把恐怖体验从一惊一乍变成长期心理压力的设计。",
+      "evidence": [
+        {
+          "title": "幻觉代价制造恐惧解读",
+          "quote_or_summary": "医疗扩容引发幻觉与稀缺资源叠加，让「该不该用」持续紧绷，形成长期恐惧张力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

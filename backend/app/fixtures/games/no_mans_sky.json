@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_no_mans_sky",
+    "title": "No Man's Sky",
+    "source_refs": [
+      {
+        "title": "No Man's Sky（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/No_Man%27s_Sky",
+        "notes": "类型（动作冒险生存）、程序生成含逾 1800 亿亿颗行星的宇宙、生存（危害防护）、采集合成、基地建造、太空飞行与战斗、贸易、多人、第一/第三人称、科幻太空探索题材、Hello Games 用自研引擎开发、2016 年发售、上线后多年免费大更新口碑逆转等事实来源。"
+      }
+    ],
+    "short_description": "一款科幻太空探索的动作冒险生存游戏，玩家在程序生成、含逾 1800 亿亿颗行星的宇宙中探索、采集合成、建造基地、驾船飞行与作战、贸易求生，目标自定，支持多人。",
+    "selection_reason": "作为「程序生成撑起近乎无限宇宙」与「上线后长期免费更新逆转口碑」的双重代表：用确定性算法生成海量星球承载探索，又以多年持续的大型免费更新把灾难性首发扭转为口碑佳作，是研究程序生成规模与长线运营救赎的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_no_mans_sky",
+    "one_sentence_summary": "玩家在程序生成、含逾 1800 亿亿颗行星的科幻宇宙中探索、采集合成、建造基地、驾船飞行与作战、贸易求生，可单人或多人，目标高度自定，并持续受多年免费大更新扩充。",
+    "core_hook": "用确定性算法生成一个几乎无限的宇宙，让任何一颗星球都可降落、可探索、可命名，把「下一颗星会有什么」的未知作为持续的探索驱动。",
+    "core_loop": "降落星球采集资源与扫描生物、合成技术与升级、建造基地、驾船在星系间飞行作战与贸易，应对环境危害补充生命维持，循环向更远星系扩张并推进可选剧情。",
+    "progression_model": "靠解锁蓝图、升级多功能工具与飞船、扩建基地与积累资源推进，并通过太空舰队与剧情线扩展；进度体现为科技升级、舰队规模与探索范围，标准模式死亡在存档点重生并掉落部分物资。",
+    "failure_model": "需管理生命维持与危害防护，毒性大气、极端温度、风暴或敌对生物/哨兵会致死；标准模式死亡在存档点重生并丢失部分物资，永久死亡模式下死亡即删档结束。",
+    "content_structure": "在程序生成的银河系中以星球探索、生存、采集合成、基地建造与太空飞行/战斗/贸易为骨架，含可选剧情线与多人，并由多年持续的免费大更新不断扩充内容。",
+    "main_player_actions": ["采集", "合成", "建造", "飞行作战"],
+    "main_player_decisions": ["探索路线", "资源取舍", "基地规划"],
+    "main_player_experiences": ["探索发现", "经营成就", "系统掌控"],
+    "main_mechanics": ["程序生成", "开放世界探索", "采集", "合成制作", "建造"],
+    "replayability_sources": ["程序生成", "全收集", "赛季更新"],
+    "production_constraints": ["自研引擎", "小型团队", "长期更新运营"],
+    "innovation_patterns": ["程序生成", "长线更新救赎"],
+    "reusable_reference_patterns": ["程序生成", "长线更新救赎", "开放世界探索"],
+    "non_replicable_risks": ["技术复杂度", "长期更新运营"],
+    "genre": ["生存", "开放世界"],
+    "art_style": ["写实美术", "多样风格"],
+    "audio_style": ["氛围音乐", "动态配乐"],
+    "perspective": ["第一人称", "第三人称"],
+    "theme": ["科幻", "太空殖民"],
+    "narrative_style": ["碎片化叙事", "环境叙事"],
+    "game_feel": ["自由操控", "轻松休闲"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "程序生成",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "海量行星",
+            "quote_or_summary": "用确定性算法程序生成含逾 1800 亿亿颗行星的宇宙，每颗星的地貌、生物均可被发现与命名。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "长线更新救赎",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "持续免费大更新",
+            "quote_or_summary": "上线后获得多年持续的免费大型更新（多人、基地、载具、剧情等），把初期毁誉参半逆转为广泛好评。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      },
+      {
+        "tag": "开放世界探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "无缝星球探索",
+            "quote_or_summary": "玩家可在行星表面与太空间无缝飞行、降落任意星球自由探索。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "No Man's Sky 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/No_Man%27s_Sky",
+        "quote_or_summary": "动作冒险生存，程序生成逾 1800 亿亿颗行星，生存采集合成，基地建造，太空飞行战斗与贸易，多人，第一/第三人称，Hello Games 用自研引擎开发，2016 年发售，上线后多年免费大更新口碑逆转。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_nms_post_launch_redemption",
+      "subject": "长线更新救赎",
+      "relation": "demonstrates",
+      "object": "口碑逆转",
+      "explanation": "用上线后数年持续的免费大型更新不断补齐缺失功能与内容，把一款因过度承诺而灾难性首发的作品逐步扭转为广受好评，证明了长线运营与兑现承诺可以重建玩家信任，可作为发行后挽救与长期运营的策略参考，但高度依赖团队持续投入。",
+      "evidence": [
+        {
+          "title": "口碑逆转解读",
+          "quote_or_summary": "持续免费更新兑现承诺，使灾难性首发逐步逆转为好评。",
+          "notes": "基于可观察事实的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

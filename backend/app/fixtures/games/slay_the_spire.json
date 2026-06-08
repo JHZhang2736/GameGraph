@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_slay_the_spire",
+    "title": "Slay the Spire",
+    "source_refs": [
+      {
+        "title": "Slay the Spire（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Slay_the_Spire",
+        "notes": "类型（肉鸽牌组构筑）、能量出牌与攻击/技能/能力卡、遗物永久增益、分支地图与节点、永久死亡、20 层进阶难度、敌人意图预告、MegaCrit 小团队与 libGDX 等事实来源。"
+      }
+    ],
+    "short_description": "一款融合肉鸽与卡牌构筑的回合制游戏，玩家选择角色沿分支地图攀爬高塔，靠能量出牌进行回合战斗、不断获取与精简卡牌、搭配遗物，死亡即从塔底重来。",
+    "selection_reason": "作为「肉鸽 + 牌组构筑」类型的奠基范本：单局内边打边构筑牌组与遗物组合、敌人意图全程预告，把卡牌战斗变成可规划的策略博弈，是研究构筑深度、随机性与回合制可读性的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_slay_the_spire",
+    "one_sentence_summary": "玩家选定角色，沿分支地图层层攀塔，靠能量在回合内出牌战斗、按奖励与商店增删卡牌并搭配遗物构筑牌组，依据全程预告的敌人意图做决策，死亡即从塔底重来。",
+    "core_hook": "把肉鸽的单局成长落在「牌组」上——每场战斗后增删卡牌、拾取遗物，配合全程显示的敌人意图，让构筑与战斗都成为可推演的策略选择。",
+    "core_loop": "在分支地图上选择前往的节点，进入回合战斗用能量打出攻击/技能/能力卡，胜利后从奖励中挑选或拒收卡牌、在篝火与商店精简优化牌组并搭配遗物，逐层逼近每幕 Boss。",
+    "progression_model": "单局内靠获取卡牌与遗物构筑越发强力的牌组，并主动移除弱卡保持效率；跨局解锁新卡与新角色、并以多达 20 层的进阶难度逐级加压，本身不保留单局战力。",
+    "failure_model": "生命归零即游戏结束，须从塔底重新开始，本局牌组与进度全部清零。",
+    "content_structure": "由三幕组成，每幕是一张含普通敌人、精英、篝火、商店、宝箱与随机事件的分支地图，幕末以 Boss 收束，最终面对真结局 Boss「尖塔之心」。",
+    "main_player_actions": ["出牌", "卡牌取舍", "路线选择"],
+    "main_player_decisions": ["卡牌取舍", "路线选择", "风险取舍", "遗物搭配"],
+    "main_player_experiences": ["构筑乐趣", "战斗精通", "涌现玩法"],
+    "main_mechanics": ["牌组构筑", "卡牌战斗", "程序生成", "永久死亡", "遗物系统"],
+    "replayability_sources": ["难度分级", "构筑多样", "程序生成", "角色解锁"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["牌组构筑", "意图预告"],
+    "reusable_reference_patterns": ["牌组构筑", "意图预告", "程序生成"],
+    "non_replicable_risks": ["平衡复杂度"],
+    "genre": ["类肉鸽", "卡牌构筑"],
+    "art_style": ["像素美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["横版2D"],
+    "theme": ["奇幻"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "卡牌增删构筑",
+            "quote_or_summary": "玩家通过奖励、商店与事件不断获取卡牌，并主动移除弱卡以保持牌组效率，单局内逐步构筑流派。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "意图预告",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "敌人意图系统",
+            "quote_or_summary": "战斗中以带确切数值的图标预告每个敌人下一回合的行动，开发者发现展示数值比让玩家记符号更易上手且更具参与感。",
+            "notes": "维基百科可观察机制与开发者陈述。"
+          }
+        ]
+      },
+      {
+        "tag": "遗物系统",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "遗物永久增益",
+            "quote_or_summary": "遗物提供单局内永久的增益，如增加生命、能量、降低费用或自动格挡。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Slay the Spire 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Slay_the_Spire",
+        "quote_or_summary": "肉鸽牌组构筑，能量出牌与攻击/技能/能力卡，遗物永久增益，分支地图节点，永久死亡，20 层进阶难度，敌人意图带数值预告，MegaCrit 小团队用 libGDX 开发，2019 年正式发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_sts_intent_telegraph",
+      "subject": "意图预告",
+      "relation": "enables",
+      "object": "策略深度",
+      "explanation": "把每个敌人下一步的确切行动与数值公开，使回合战斗从靠记忆与运气变成纯粹的规划问题，玩家可据此精确安排出牌与格挡，让牌组构筑的决策变得可读且凭技术取胜，可复用于任何回合制战斗。",
+      "evidence": [
+        {
+          "title": "意图机制解读",
+          "quote_or_summary": "公开敌人意图消除了信息不对称，决策从猜测转为推演。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

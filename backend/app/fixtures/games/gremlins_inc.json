@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_gremlins_inc",
+    "title": "Gremlins, Inc.",
+    "source_refs": [
+      {
+        "title": "Gremlins, Inc.（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Gremlins,_Inc.",
+        "notes": "类型（蒸汽朋克世界的回合制策略桌游）、含合作/多人/单人模式、立陶宛独立工作室 Charlie Oscar 开发、Alexey Bokulev 设计、2015 年 10 月抢先体验、2016 年 3 月正式发售、登陆 Windows/Mac/Linux 等事实来源。"
+      },
+      {
+        "title": "Gremlins, Inc.（Steam）",
+        "url": "https://store.steampowered.com/app/369990/Gremlins_Inc/",
+        "notes": "卡牌一卡多用（既能走子、又能建造或施放法术）、沿固定轨道移动、用恶意手段干扰对手、靠声望/选票等多路径取胜、PvP 桌游对抗等事实来源。"
+      }
+    ],
+    "short_description": "一款蒸汽朋克世界的数字桌游与回合制经济策略游戏：玩家手中的每张卡都「一卡多用」——可用来走子、建造或施放法术，沿固定轨道移动、用各种恶意手段算计与干扰对手，并通过声望、选票等多条路径争夺胜利；立陶宛工作室 Charlie Oscar 开发、2016 年正式发售，支持单人、合作与多人对抗。",
+    "selection_reason": "作为「一卡多用 + 强互动干扰的数字桌游」代表：把每张卡做成可走子/建造/施法的多用途资源，逼出「自己推进还是算计对手」的两难，再以恶意干扰与多路径胜利让每回合都是攻守兼备的博弈，是研究卡牌一卡多用、玩家间互动干扰与桌游数字化的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_gremlins_inc",
+    "one_sentence_summary": "玩家在蒸汽朋克世界里用「一卡多用」的卡牌走子、建造或施法，沿固定轨道移动、用恶意手段算计干扰对手，并通过声望、选票等多条路径争夺胜利，进行单人、合作或多人对抗。",
+    "core_hook": "把每张卡做成「走子/建造/施法」的多用途资源，让出牌永远是两难：这张牌是用来推进自己，还是用来算计、阻挠对手？再叠加沿固定轨道移动与丰富的恶意干扰手段，使每个回合都成为攻守兼备、彼此使绊子的桌面博弈。",
+    "core_loop": "抽牌、决定每张卡用于走子/建造/施法、沿轨道移动到能触发收益或陷害对手的位置、施放恶意手段干扰他人、积累声望与选票，循环直到有人达成胜利条件。",
+    "progression_model": "单局靠积累声望、金钱与选票推进，并解锁地点与能力；跨局靠熟悉卡库与多路径胜利策略提升胜率；进度体现为单局的声望/选票领先与对路径取舍的掌握。",
+    "failure_model": "本作是 PvP 竞争桌游，单局以「他人先达成胜利条件」即告负，被对手的恶意干扰拖入监狱、罚款或错失时机都会导致落败，重开一局再战。",
+    "content_structure": "以固定轨道的棋盘、多用途卡库与多条胜利路径为骨架，靠一卡多用、互动干扰与声望/选票竞争承载对抗，含单人、合作与多人模式。",
+    "main_player_actions": ["出牌", "棋盘移动", "外交博弈"],
+    "main_player_decisions": ["卡牌取舍", "风险取舍", "胜利路线"],
+    "main_player_experiences": ["运筹帷幄", "欢乐混乱", "竞技紧张"],
+    "main_mechanics": ["卡牌交互", "多元胜利", "互动干扰", "回合制", "桌游数字化"],
+    "replayability_sources": ["随机道具", "难度分级"],
+    "production_constraints": ["小型团队"],
+    "innovation_patterns": ["桌游数字化", "互动干扰"],
+    "reusable_reference_patterns": ["桌游数字化", "多元胜利"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["回合制策略"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["俯视"],
+    "theme": ["桌游风", "蒸汽朋克"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["桌游质感", "策略权衡"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "互动干扰",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "恶意手段算计对手",
+            "quote_or_summary": "玩家可用各种恶意手段算计、阻挠与陷害对手，玩家间的直接干扰是对抗核心。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "卡牌交互",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "一卡多用",
+            "quote_or_summary": "每张卡都可用于走子、建造或施放法术，迫使玩家在多种用途间取舍。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "多元胜利",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "多路径取胜",
+            "quote_or_summary": "玩家可通过声望、选票等多条路径争夺胜利，鼓励不同策略取向。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Gremlins, Inc. 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Gremlins,_Inc.",
+        "quote_or_summary": "蒸汽朋克回合制策略数字桌游，卡牌一卡多用（走子/建造/施法）、沿固定轨道移动、恶意手段干扰对手、声望与选票多路径取胜，Charlie Oscar 开发，2016 年正式发售，含单人/合作/多人。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_gremlins_interference_tension",
+      "subject": "互动干扰",
+      "relation": "creates",
+      "object": "对抗张力",
+      "explanation": "把「一卡多用」与丰富的恶意手段结合，让每张卡既能推进自己、又能阻挠对手，于是每个回合玩家都被迫在「发育」与「拆台」间权衡，并时刻提防被他人算计，使桌面对抗从各自刷分变成持续的攻防拉锯，制造强烈的玩家间对抗张力，可复用于希望以「资源既可自利又可干扰」放大多人对抗紧张感与社交博弈的设计。",
+      "evidence": [
+        {
+          "title": "互动干扰制造对抗解读",
+          "quote_or_summary": "卡牌既可自利又可拆台，让每回合在发育与干扰间权衡，把对抗变成持续攻防拉锯。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

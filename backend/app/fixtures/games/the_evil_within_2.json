@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_the_evil_within_2",
+    "title": "The Evil Within 2",
+    "source_refs": [
+      {
+        "title": "The Evil Within 2（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/The_Evil_Within_2",
+        "notes": "类型（第三人称生存恐怖）、刑警 Sebastian 进入 STEM 模拟出的小镇 Union 营救女儿 Lily（Lily 被用作新 STEM 系统的核心）、玩法近似生化危机4 由玩家决定何时用陷阱/伏击/精准射击、何时潜行避敌、引入半开放世界探索与可选支线以推进能力与线性主线、可在工作台合成弹药与道具并在野外采集资源、John Johanas 任总监三上真司转任制作人、基于 id Tech 改造的 STEM 引擎、Tango Gameworks 开发 Bethesda 发行、2017 年 10 月发售等事实来源。"
+      },
+      {
+        "title": "The Evil Within 2（Steam，appid 601430）",
+        "url": "https://store.steampowered.com/app/601430/The_Evil_Within_2/",
+        "notes": "半开放生存恐怖、潜行与战斗取舍、采集合成、STEM 世界 Union 等事实来源。"
+      }
+    ],
+    "short_description": "一款第三人称生存恐怖游戏，前作主角刑警 Sebastian 潜入 STEM 系统模拟出的小镇 Union 营救被用作系统核心的女儿 Lily；相比前作引入了半开放世界探索与可选支线，玩家在资源稀缺中自行决定何时用陷阱伏击与精准射击、何时潜行避敌，并可在野外采集材料、在工作台合成弹药与道具，Tango Gameworks 开发、2017 年发售。",
+    "selection_reason": "作为「把半开放探索缝进生存恐怖」的代表：在保留资源稀缺与潜行/战斗取舍的恐怖内核上，开放出可自由搜刮的小镇 Union 与可选支线，让玩家靠主动探索去缓解物资压力、自定推进节奏，是研究恐怖游戏如何用半开放结构平衡资源张力与玩家能动性的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_the_evil_within_2",
+    "one_sentence_summary": "刑警 Sebastian 潜入 STEM 模拟的小镇 Union 营救女儿 Lily，在资源稀缺中自行决定何时用陷阱伏击与精准射击、何时潜行避敌，并在半开放的 Union 里采集材料、于工作台合成弹药道具、接可选支线推进能力与主线。",
+    "core_hook": "把生存恐怖的稀缺压力放进一座半开放小镇：物资依旧紧缺、潜行与开火的取舍依旧步步惊心，但 Union 是可自由搜刮探索的——玩家要主动钻进危险街区采集材料、在工作台合成弹药与道具、接可选支线变强，于是「探索得越深、补给越足，但暴露在怪物前的风险也越大」，把恐怖的资源张力交给玩家用探索节奏自己掌控。",
+    "core_loop": "在 Union 的半开放街区探索与潜行、躲避或诱杀变异怪物、采集稀缺材料、在工作台合成弹药与升级装备、接可选支线、对峙 Boss 推进主线，循环深入更扭曲危险的 STEM 世界。",
+    "progression_model": "靠采集材料与绿色凝胶在工作台与升级界面强化武器、生命、潜行与能力推进，靠探索 Union 与支线获取更多资源；进度体现为已通章节、升级强度、武器解锁与已探索区域。",
+    "failure_model": "被怪物或 Boss 击杀、踩中陷阱或在追逐序列中被抓住即死亡，回到最近检查点重来，资源误用会让后续步步维艰。",
+    "content_structure": "以半开放小镇 Union 的可探索街区、线性主线章节与可选支线为骨架，靠潜行、稀缺资源战斗、采集合成与 Boss 战承载紧张与恐惧，单人。",
+    "main_player_actions": ["潜行", "射击", "合成制作"],
+    "main_player_decisions": ["资源取舍", "风险取舍", "探索路线"],
+    "main_player_experiences": ["氛围营造", "战斗精通", "探索发现"],
+    "main_mechanics": ["资源管理", "潜行暗杀", "合成制作", "开放世界探索", "处决演出"],
+    "replayability_sources": ["难度分级", "全收集"],
+    "production_constraints": ["id Tech 5引擎", "大团队协作"],
+    "innovation_patterns": ["类型缝合", "资源管理"],
+    "reusable_reference_patterns": ["资源管理", "氛围营造"],
+    "non_replicable_risks": ["强美术风格", "技术复杂度"],
+    "genre": ["生存", "动作冒险"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["生存恐怖", "心理恐怖"],
+    "narrative_style": ["过场驱动", "情感叙事"],
+    "game_feel": ["紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "开放世界探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "半开放小镇 Union 探索",
+            "quote_or_summary": "本作引入半开放世界探索与可选支线，玩家可在小镇 Union 自由搜刮材料、推进能力与线性主线。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "资源管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "稀缺资源与采集合成",
+            "quote_or_summary": "弹药与材料稀缺，玩家需在野外采集资源、在工作台合成弹药与道具，精打细算地战斗。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "潜行暗杀",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "潜行与战斗自由取舍",
+            "quote_or_summary": "玩家自行决定何时用陷阱伏击与精准射击、何时潜行避敌，以应对资源稀缺的处境。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "The Evil Within 2 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/The_Evil_Within_2",
+        "quote_or_summary": "第三人称生存恐怖，潜入 STEM 小镇 Union 营救女儿、引入半开放探索与可选支线、资源稀缺下潜行与战斗自由取舍、野外采集与工作台合成，Tango Gameworks 开发，基于 id Tech 改造的 STEM 引擎，2017 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_tew2_open_world_horror",
+      "subject": "开放世界探索",
+      "relation": "creates",
+      "object": "探索张力",
+      "explanation": "把生存恐怖放进一座可自由搜刮的半开放小镇后，探索本身就背上了取舍：越深入危险街区，能采到的弹药与材料越多、越能缓解稀缺压力，但暴露在游荡怪物前的时间也越长、风险越高，于是「绕路搜刮 vs 直奔目标」的每一次决定都紧绷，把恐怖的资源张力从线性关卡的被动稀缺，转成玩家主动权衡的探索张力，可复用于希望用「半开放搜刮 + 暴露风险」让玩家自定恐怖节奏、把资源压力转为主动探索张力的设计。",
+      "evidence": [
+        {
+          "title": "半开放搜刮制造张力解读",
+          "quote_or_summary": "越深入危险街区补给越足但暴露风险越高，使绕路搜刮与直奔目标的取舍持续紧绷。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

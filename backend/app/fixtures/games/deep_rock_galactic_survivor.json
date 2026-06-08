@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_deep_rock_galactic_survivor",
+    "title": "Deep Rock Galactic: Survivor",
+    "source_refs": [
+      {
+        "title": "Deep Rock Galactic: Survivor（Steam）",
+        "url": "https://store.steampowered.com/app/2321470/Deep_Rock_Galactic_Survivor/",
+        "notes": "单人「幸存者类」自动射击、武器自动开火、用镐主动挖掘岩石开路获取资源、升级时三选一强化、四个职业（如 Scout 轻武器游走、Driller 范围输出）、Gold/Nitra 在关间商店买玩家与武器升级、可破坏地形、太空采矿主题、Funday Games 开发 Ghost Ship 发行、2025 年 9 月 17 日 1.0 发售等事实来源。"
+      },
+      {
+        "title": "Deep Rock Galactic: Survivor 评测（PC Gamer）",
+        "url": "https://www.pcgamer.com/games/roguelike/deep-rock-galactic-survivor-review/",
+        "notes": "以「可破坏地形 + 战术挖矿」区别于 Vampire Survivors 等同类、自动射击/手动挖掘的分工、关卡分级递增等评测来源。"
+      }
+    ],
+    "short_description": "一款 Deep Rock Galactic 世界观下的单人「幸存者类」自动射击游戏：武器自动朝逼近的虫潮开火，玩家则手动用镐挖穿岩石开路、采集资源升级，每次升级三选一强化角色或武器；四个职业各有打法，关间用 Gold 与 Nitra 购买升级，靠可破坏地形与战术走位在愈发凶险的矿洞中幸存，Funday Games 开发、2025 年发售。",
+    "selection_reason": "作为「把可破坏地形挖矿融入幸存者类自动射击」的代表：在 Vampire Survivors 式的自动开火与堆叠构筑之上，加入需要玩家主动挖掘的地形破坏，让走位、开路与采集成为新的操作维度，是研究幸存者类玩法差异化与可破坏地形战术价值的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_deep_rock_galactic_survivor",
+    "one_sentence_summary": "玩家选定一个职业进入矿洞，武器自动朝虫潮开火，自己则手动用镐挖穿岩石开路与采集资源，靠升级三选一与关间商店堆叠构筑，在可破坏地形中走位、开路、幸存到撤离，挑战愈发凶险的分级关卡。",
+    "core_hook": "在幸存者类的自动开火与堆叠构筑之上，加入「需要玩家主动挖掘的可破坏地形」：你一边躲虫潮一边用镐挖穿岩石开辟路线、绕后、采矿，把原本只剩走位的同类玩法多出了开路与采集这一层主动操作。",
+    "core_loop": "选职业进入关卡、自动射击清虫潮、手动挖掘岩石开路并采集 Gold/Nitra、升级时三选一强化、活到撤离点撤离，关间用资源在商店买玩家与武器升级，循环挑战更高分级的关卡。",
+    "progression_model": "单局靠升级三选一与采集资源即时堆叠构筑，跨局靠 Gold/Nitra 在商店买永久升级与解锁职业推进；进度体现为构筑强度、已解锁职业/武器与可挑战的关卡分级。",
+    "failure_model": "生命归零即本局阵亡、失去本局构筑，保留已购的永久升级；未能在时限内活到撤离同样判定失败，需重新开局。",
+    "content_structure": "以一关关分级递增的矿洞幸存任务为骨架，靠自动射击、可破坏地形挖矿、升级三选一与职业差异承载流程与重玩，单人。",
+    "main_player_actions": ["采集", "走位", "射击"],
+    "main_player_decisions": ["增益选择", "探索路线", "风险取舍"],
+    "main_player_experiences": ["滚雪球快感", "构筑乐趣", "战斗精通"],
+    "main_mechanics": ["自动战斗", "采集", "可破坏地形", "增益构筑", "难度递增"],
+    "replayability_sources": ["程序生成", "构筑多样", "难度分级"],
+    "production_constraints": ["系列复用", "小型团队"],
+    "innovation_patterns": ["可破坏地形", "弹幕生存"],
+    "reusable_reference_patterns": ["弹幕生存", "可破坏地形", "增益构筑"],
+    "non_replicable_risks": ["品牌积淀", "玩家留存"],
+    "genre": ["类肉鸽", "俯视射击"],
+    "art_style": ["低多边形"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["俯视"],
+    "theme": ["太空采矿", "科幻"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["爽快射击", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "可破坏地形",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "手动挖掘开路",
+            "quote_or_summary": "玩家用镐主动挖穿岩石开辟路线、绕后与采集资源，可破坏地形是区别于同类的核心。",
+            "notes": "Steam 商店页与评测可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "弹幕生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "自动开火抵御虫潮",
+            "quote_or_summary": "武器自动朝逼近的虫潮开火，玩家专注走位与生存，是典型的幸存者类自动射击。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "增益构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "升级三选一",
+            "quote_or_summary": "每次升级在三个选项中选择强化武器、挖掘或角色属性，逐步堆叠出构筑。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Deep Rock Galactic: Survivor 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/2321470/Deep_Rock_Galactic_Survivor/",
+        "quote_or_summary": "DRG 世界观下的单人幸存者类自动射击，武器自动开火、手动挖矿开路采集、升级三选一、四职业、Gold/Nitra 关间商店升级、可破坏地形、分级递增，Funday Games 开发 Ghost Ship 发行，2025 年 9 月 17 日 1.0 发售。",
+        "notes": "事实取自 Steam 商店页与 PC Gamer 评测。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_drgs_terrain_spatial",
+      "subject": "可破坏地形",
+      "relation": "creates",
+      "object": "空间决策",
+      "explanation": "幸存者类同质化的根源是玩家只剩走位一条操作线；本作让岩石可被玩家用镐主动挖穿，于是「往哪挖、何时开一条退路、要不要凿穿去抢矿」成为持续的空间决策，把单一的躲弹幕拓展成开路、绕后与采集并行的主动博弈，可复用于希望以「玩家可改造的地形」为同质化的自动战斗品类注入新操作维度的设计。",
+      "evidence": [
+        {
+          "title": "可破坏地形拓展决策解读",
+          "quote_or_summary": "可被玩家挖穿的地形把幸存者类从单纯走位拓展为开路、绕后与采集并行的空间决策。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

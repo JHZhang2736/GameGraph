@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_repo",
+    "title": "R.E.P.O.",
+    "source_refs": [
+      {
+        "title": "R.E.P.O.（Steam）",
+        "url": "https://store.steampowered.com/app/3241660/REPO/",
+        "notes": "类型（最多 6 人在线合作生存恐怖）、用基于物理的抓取工具搬运易碎贵重物、每关须在撤离点凑够配额再逃回卡车、贪多则增加搬运与遇怪风险、含近距语音（proximity voice chat）、关卡随机、怪物惊吓、Semiwork 开发、2025 年 2 月 26 日抢先体验等事实来源。"
+      },
+      {
+        "title": "R.E.P.O.（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/R.E.P.O.",
+        "notes": "瑞典 Semiwork 开发、最多 6 人在线合作、物理抓取、撤离配额、近距语音、肉鸽式不可预测性等背景事实来源。"
+      }
+    ],
+    "short_description": "一款最多 6 人在线合作的生存恐怖游戏，玩家用基于物理的抓取工具小心搬运易碎贵重物，在每关的撤离点凑够配额后逃回卡车；贪多虽能多赚却会加大搬运与遇怪的风险，配合近距语音与随机关卡，制造紧张又混乱的合作恐怖。",
+    "selection_reason": "作为「物理搬运 + 撤离配额 + 近距语音的合作恐怖」代表：用易碎物的物理抓取把「小心搬运」本身变成紧张来源，再以撤离配额逼出贪婪与风险的权衡，并靠近距语音让恐惧与笑料随距离自然发生，是研究物理协作张力与合作恐怖设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_repo",
+    "one_sentence_summary": "玩家最多 6 人在线组队，用基于物理的抓取工具在阴森场景中小心搬运易碎贵重物、在撤离点凑够配额再逃回卡车，一路提防怪物、靠近距语音沟通，在贪多与求稳间反复权衡。",
+    "core_hook": "把「搬运」本身做成恐惧与笑料的来源：贵重物易碎、抓取靠物理，多人合力搬一件大东西时手忙脚乱；再用撤离配额逼你贪心多拿、用近距语音让队友的喘息与尖叫随距离自然传来。",
+    "core_loop": "潜入随机生成的阴森场景、用物理抓取工具搬运易碎贵重物、提防并躲避怪物、在撤离点凑够配额、合力把战利品运回卡车，达标后用收益升级，循环挑战更深更险的关卡。",
+    "progression_model": "靠达成撤离配额积累收益、升级装备与能力推进；进度体现为已通过的关卡、收益与升级，贪多带来的额外风险与减员决定推进的稳健程度。",
+    "failure_model": "队员被怪物杀死即减员，贵重物在搬运中摔碎则损失收益，未能凑够撤离配额或全队覆灭即任务失败，需重整重来。",
+    "content_structure": "以一关关随机生成的撤离任务为骨架，靠物理抓取搬运、撤离配额、怪物威胁与近距语音承载紧张与重玩，主打最多 6 人在线合作。",
+    "main_player_actions": ["抓取", "道具运用", "走位"],
+    "main_player_decisions": ["风险取舍", "资源取舍", "探索路线"],
+    "main_player_experiences": ["协作默契", "欢乐混乱", "氛围营造"],
+    "main_mechanics": ["物理抓取", "撤离机制", "合作生存", "物理模拟", "近距语音"],
+    "replayability_sources": ["程序生成", "难度分级"],
+    "production_constraints": ["小型团队", "Unity 引擎"],
+    "innovation_patterns": ["物理抓取", "撤离机制", "近距语音"],
+    "reusable_reference_patterns": ["物理抓取", "撤离机制", "合作生存"],
+    "non_replicable_risks": ["技术复杂度", "玩家留存"],
+    "genre": ["生存", "动作冒险"],
+    "art_style": ["低多边形"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第一人称"],
+    "theme": ["生存恐怖", "黑色幽默"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["软弹物理", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "物理抓取",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "物理抓取搬运易碎物",
+            "quote_or_summary": "玩家用基于物理的抓取工具搬运易碎的贵重物，需在搬运与管理战利品时小心翼翼。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "撤离机制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "撤离点配额",
+            "quote_or_summary": "每关须在撤离点凑够配额再逃回卡车，鼓励多拿贵重物多赚，但也增加搬运与遇怪风险。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "近距语音",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "近距语音聊天",
+            "quote_or_summary": "游戏内置近距语音（proximity voice chat），队友的声音随距离强弱变化，强化恐惧与合作。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "R.E.P.O. 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/3241660/REPO/",
+        "quote_or_summary": "最多 6 人在线合作生存恐怖，用物理抓取工具搬运易碎贵重物，撤离点凑够配额再逃回卡车，贪多增加风险，近距语音，随机关卡与怪物惊吓，瑞典 Semiwork 开发，2025 年 2 月抢先体验。",
+        "notes": "事实取自 Steam 商店页与维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_repo_physgrab_tension",
+      "subject": "物理抓取",
+      "relation": "creates",
+      "object": "协作张力",
+      "explanation": "让贵重物易碎、搬运靠物理且常需多人合力，把「把东西安全搬出去」这件平凡小事变成持续的协作考验：一人失手或配合不齐就摔碎损失，使队伍必须实时沟通走位与节奏，既制造紧张也催生笑料，可复用于希望用「易碎物的物理协作搬运」把多人合作从各自行动拉成必须配合的设计。",
+      "evidence": [
+        {
+          "title": "物理搬运协作解读",
+          "quote_or_summary": "易碎物的物理搬运常需多人合力，把搬运变成需实时沟通配合的持续协作张力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

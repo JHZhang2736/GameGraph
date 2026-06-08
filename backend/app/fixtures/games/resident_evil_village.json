@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_resident_evil_village",
+    "title": "Resident Evil Village",
+    "source_refs": [
+      {
+        "title": "Resident Evil Village（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Resident_Evil_Village",
+        "notes": "类型（第一人称生存恐怖，可选第三人称）、敌人增多更偏动作、手提箱式网格库存可旋转整理、商人「公爵」买卖供给/武器/升级、可狩猎动物烹饪获增益、打字机手动存档、狼人 Lycan 敏捷且会用武器成群进攻、雪夜维多利亚式村庄、Capcom 用 RE Engine 开发、2021 年 5 月发售、Ethan 寻女剧情等事实来源。"
+      },
+      {
+        "title": "Resident Evil Village（Steam）",
+        "url": "https://store.steampowered.com/app/1196590/Resident_Evil_Village/",
+        "notes": "第一人称生存恐怖、库存管理、公爵商店、合成与狩猎、手动存档等事实来源。"
+      }
+    ],
+    "short_description": "一款第一人称生存恐怖游戏（含可选第三人称），玩家扮演 Ethan Winters 在一座雪夜维多利亚式村庄里寻找被掳走的女儿，靠网格化手提箱库存管理、向商人「公爵」买卖与升级武器、合成弹药、狩猎动物烹饪增益，对抗成群且会用武器的敏捷狼人与四位变异领主，Capcom 用 RE Engine 开发、2021 年发售。",
+    "selection_reason": "作为「生存恐怖中资源经济与节奏张弛」的代表：用可旋转整理的网格库存、商人公爵的买卖升级与合成狩猎，把资源管理做成贯穿全程的策略层，再用安全的交易间歇与凶险的探索交替制造恐怖节奏的张弛，是研究生存恐怖经济系统与节奏设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_resident_evil_village",
+    "one_sentence_summary": "玩家以第一人称扮演寻女的 Ethan，在雪夜村庄里探索四位领主的领地，管理网格化手提箱库存、向商人公爵买卖与升级武器、合成弹药与狩猎烹饪，迎战成群且会用武器的狼人，在恐怖与动作交织中推进剧情。",
+    "core_hook": "把资源经济织进生存恐怖：手提箱式网格库存要旋转拼放取舍，商人公爵贯穿全程提供买卖、升级与烹饪，狩猎动物可换增益；再让安全的交易、整理间歇与凶险的探索、遭遇交替出现，使「攒资源、升武器、闯下一片领地」成为恐怖节奏张弛的引擎。",
+    "core_loop": "探索领主领地、躲避或迎战狼人与怪物、搜刮并旋转拼放库存、向公爵买卖与升级武器、合成弹药与狩猎烹饪、用打字机存档、击败领主推进，循环挑战更难的区域。",
+    "progression_model": "靠探索拾取资源与现金、向公爵升级武器与购置补给、合成弹药与解锁新区域推进；进度体现为武器等级、库存容量、已通领地与剧情章节，资源经营决定面对强敌的底气。",
+    "failure_model": "被狼人、领主或环境击杀即死亡，回到最近的打字机存档或检查点重来，弹药与资源的浪费会让后续遭遇更为吃紧。",
+    "content_structure": "以四位领主各具风格的领地与中枢村庄为骨架，靠第一人称探索战斗、库存管理、公爵经济与 Boss 战承载流程，含可选第三人称与多周目，单人。",
+    "main_player_actions": ["射击", "道具运用", "近战攻击"],
+    "main_player_decisions": ["资源取舍", "风险取舍", "探索路线"],
+    "main_player_experiences": ["氛围营造", "战斗精通", "探索发现"],
+    "main_mechanics": ["资源管理", "合成制作", "智能敌人", "手动存档", "商店经济"],
+    "replayability_sources": ["难度分级", "全收集"],
+    "production_constraints": ["RE Engine", "大团队协作"],
+    "innovation_patterns": ["智能敌人", "商店经济"],
+    "reusable_reference_patterns": ["资源管理", "氛围营造", "智能敌人"],
+    "non_replicable_risks": ["品牌积淀", "技术复杂度"],
+    "genre": ["生存", "第一人称射击"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第一人称"],
+    "theme": ["生存恐怖", "黑暗奇幻"],
+    "narrative_style": ["过场驱动", "环境叙事"],
+    "game_feel": ["紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "商店经济",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "商人公爵买卖升级",
+            "quote_or_summary": "商人公爵贯穿全程，玩家可向其买卖供给、武器与升级，并把狩猎所得烹饪成提供增益的料理。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "资源管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "网格库存旋转整理",
+            "quote_or_summary": "手提箱式网格库存需旋转物品拼放以优化空间，限制携带迫使玩家取舍。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "智能敌人",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "狼人成群进攻",
+            "quote_or_summary": "狼人 Lycan 敏捷而聪明，会使用武器并成群结队进攻，制造高压遭遇。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Resident Evil Village 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Resident_Evil_Village",
+        "quote_or_summary": "第一人称生存恐怖（含可选第三人称），网格手提箱库存、公爵商人买卖升级、合成弹药与狩猎烹饪、打字机存档、成群会用武器的狼人，雪夜村庄四领主，Capcom 用 RE Engine 开发，2021 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_rev_shop_pacing",
+      "subject": "商店经济",
+      "relation": "creates",
+      "object": "节奏张力",
+      "explanation": "贯穿全程的商人公爵把「整理库存、买卖升级、规划下一片领地」做成安全的喘息节点，与凶险的探索、遭遇交替出现，让恐怖体验在「紧绷—松弛—再紧绷」间形成可控的节奏曲线，玩家既被持续施压又不断获得攒资源、变强的正反馈，可复用于希望用「贯穿式经济/补给节点」为高压体验编排张弛节奏的设计。",
+      "evidence": [
+        {
+          "title": "经济节点编排节奏解读",
+          "quote_or_summary": "贯穿式商人节点提供安全喘息，与凶险探索交替，形成紧绷—松弛的恐怖节奏曲线。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

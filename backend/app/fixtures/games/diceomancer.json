@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_diceomancer",
+    "title": "DICEOMANCER",
+    "source_refs": [
+      {
+        "title": "DICEOMANCER（Steam）",
+        "url": "https://store.steampowered.com/app/2501600/DICEOMANCER/",
+        "notes": "类型（骰子牌组构筑肉鸽）、核心是「用骰子直接修改界面上的任意数字」（敌人血量、自身法力、卡牌效果、遗物充能皆可改）、许多事件与卡牌效果需 D20 检定、6 种法力对应 6 个职业、近 500 张卡与约 200 件遗物、手绘背景、超厚皮猪猪 Ultra Piggy Studio 开发、Gamirror Games 发行、2024 年 10 月发售等事实来源。"
+      }
+    ],
+    "short_description": "一款骰子牌组构筑肉鸽，玩家被卷入剑与魔法、枪械并存的世界，靠卡组与骰子杀出回家之路；其核心是「骰子可直接修改界面上的任意数字」——改敌人血量、改自身法力、改卡牌效果、改遗物充能，许多事件与效果则用 D20 检定决定成败。",
+    "selection_reason": "作为「把骰子从随机判定升格为通用数值编辑器」的代表：传统骰子只决定成败，本作让骰子可以直接篡改场上几乎任何数字，把随机变成玩家可主动操纵的资源，是研究骰子机制深化与数值篡改式破局设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_diceomancer",
+    "one_sentence_summary": "玩家在剑、魔法与枪械并存的世界里以骰子牌组构筑肉鸽闯关，用卡组迎战、用 D20 检定决定事件成败，并能用骰子直接修改界面上几乎任意数字——敌人血量、自身法力、卡牌效果、遗物充能皆可篡改。",
+    "core_hook": "把骰子从「决定成败的随机数」升格为「可直接编辑场上任意数字的工具」：玩家能用骰子把敌人血量改低、把法力改高、把卡牌效果与遗物充能改写，让随机性变成可主动操纵的破局资源。",
+    "core_loop": "在肉鸽路线上推进战斗与事件、用卡组迎敌、遇 D20 检定时掷骰定成败、用骰子直接篡改关键数字扭转局势、战后拣选卡牌与遗物升级构筑，循环深入直至通关或阵亡重开。",
+    "progression_model": "单局靠拾取与组合近 500 张卡、约 200 件遗物及 6 种法力对应职业构筑变强；跨局解锁职业与内容；进度兼有单局牌组遗物滚雪球与跨局元解锁。",
+    "failure_model": "战斗中生命归零即本局失败、需重开新一轮肉鸽；D20 检定的失败与不利随机会让局势骤然恶化，逼玩家权衡是否动用骰子篡改化解。",
+    "content_structure": "以肉鸽分支路线为骨架，每段由战斗、D20 检定事件与拣选构成，靠牌组构筑、遗物与「骰子篡改数值」承载策略与重玩，单人。",
+    "main_player_actions": ["出牌", "掷骰", "卡牌取舍"],
+    "main_player_decisions": ["卡牌取舍", "装备搭配", "风险取舍"],
+    "main_player_experiences": ["构筑乐趣", "运筹帷幄", "滚雪球快感"],
+    "main_mechanics": ["牌组构筑", "骰子判定", "数值篡改", "遗物系统", "元进度"],
+    "replayability_sources": ["构筑多样", "角色解锁", "程序生成"],
+    "production_constraints": ["手绘美术", "小型团队"],
+    "innovation_patterns": ["数值篡改", "骰子判定"],
+    "reusable_reference_patterns": ["数值篡改", "骰子判定", "牌组构筑"],
+    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
+    "genre": ["卡牌构筑", "类肉鸽"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第一人称"],
+    "theme": ["奇幻"],
+    "narrative_style": ["对话叙事"],
+    "game_feel": ["策略权衡"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "数值篡改",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "骰子直接改任意数字",
+            "quote_or_summary": "玩家可用骰子直接修改界面上的任意数字：改敌人血量、改自身法力、改卡牌效果、改遗物充能。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "骰子判定",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "D20 检定决定成败",
+            "quote_or_summary": "许多事件与卡牌效果需要进行 D20 检定，由骰子点数决定结果。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "近 500 张卡与遗物",
+            "quote_or_summary": "游戏含近 500 张卡牌与约 200 件遗物，6 种法力对应 6 个职业，支撑牌组构筑变化。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "DICEOMANCER 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/2501600/DICEOMANCER/",
+        "quote_or_summary": "骰子牌组构筑肉鸽，核心为骰子可直接修改界面任意数字（敌血/法力/卡效/遗物充能），事件与效果用 D20 检定，6 法力 6 职业，近 500 卡约 200 遗物，手绘背景，Ultra Piggy Studio 开发，2024 年 10 月发售。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_diceomancer_numberedit_depth",
+      "subject": "数值篡改",
+      "relation": "creates",
+      "object": "策略深度",
+      "explanation": "把骰子从只决定成败的随机数，做成可直接编辑敌血、法力、卡效、遗物充能等任意数字的通用工具，玩家得以在每个回合主动权衡「把哪个数字改成多少」来扭转局势，使随机性从被动承受变成可经营的策略资源，极大拓宽了构筑与破局的空间，可复用于希望让玩家直接操纵底层数值以提升掌控感与策略深度的设计；但也带来沉重的平衡负担。",
+      "evidence": [
+        {
+          "title": "数值篡改深度解读",
+          "quote_or_summary": "可编辑任意数字的骰子把随机变成可操纵资源，拓宽构筑与破局空间，但平衡负担沉重。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_crashlands",
+    "title": "Crashlands",
+    "source_refs": [
+      {
+        "title": "Crashlands（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Crashlands",
+        "notes": "类型（动作冒险 / 生存制作 RPG）、玩家扮演星际货运司机 Flux Dabes 迫降异星、采集制作建造与战斗、500+ 可制作物、可孵蛋驯养任意生物作战斗伙伴、无背包容量限制的自动整理系统、剧情驱动、Butterscotch Shenanigans（三兄弟工作室）开发、2016 年发售、登陆 PC 与移动端等事实来源。"
+      },
+      {
+        "title": "Crashlands（Steam）",
+        "url": "https://store.steampowered.com/app/391720/Crashlands/",
+        "notes": "无库存管理负担、孵蛋驯宠、建造模式与战斗系统、跨平台等事实来源。"
+      }
+    ],
+    "short_description": "一款剧情驱动的动作冒险 / 生存制作 RPG，玩家扮演迫降异星的星际货运司机 Flux Dabes，采集资源、制作 500+ 物品、建造基地、孵蛋驯养生物当战斗伙伴并迎战外星威胁；其特色是去掉背包容量限制、自动整理资源，让制作毫无库存管理负担。",
+    "selection_reason": "作为「去掉库存管理负担的生存制作」代表：把传统生存制作里繁琐的背包整理彻底拿掉、资源自动归类无上限，让玩家专注探索、制作与驯宠，再叠加可驯养任意生物作伙伴的设定，是研究无背包摩擦的便利化设计与生存制作 RPG 化的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_crashlands",
+    "one_sentence_summary": "玩家扮演迫降异星的货运司机 Flux Dabes，采集资源、制作 500+ 物品、建造基地、孵蛋驯养生物当战斗伙伴并迎战外星反派，全程资源自动归类、背包无上限，沿剧情主线在开放异星世界求生壮大。",
+    "core_hook": "把生存制作里最磨人的背包整理彻底删掉——资源自动归类、容量无上限，让玩家心无旁骛地探索、制作 500+ 物品与孵蛋驯宠，再用一条幽默的剧情主线把开放异星求生串成有目标的冒险。",
+    "core_loop": "在异星上采集资源、解锁并制作新工具与装备、建造基地、孵化与驯养生物作战斗伙伴、推进剧情任务并迎战敌人，循环解锁更高阶的制作与区域，逐步壮大。",
+    "progression_model": "靠采集稀有资源、解锁 500+ 制作配方、升级装备与扩充驯养伙伴推进，剧情任务引导玩家走向新区域；进度体现为配方解锁、装备等级、伙伴阵容与主线章节。",
+    "failure_model": "在战斗或环境中生命归零即死亡、于附近复活并保留进度与物品，失败惩罚轻微，整体以解锁与剧情推进为主而非惩罚求存。",
+    "content_structure": "以剧情主线串联的开放异星世界为骨架，靠采集制作、基地建造、孵蛋驯宠与战斗承载流程，含 500+ 制作物与大量任务，主打单人。",
+    "main_player_actions": ["采集", "近战攻击", "抓取"],
+    "main_player_decisions": ["装备搭配", "资源取舍", "任务取舍"],
+    "main_player_experiences": ["收集养成", "探索发现", "经营成就"],
+    "main_mechanics": ["合成制作", "采集", "怪物捕捉", "无限背包", "建造"],
+    "replayability_sources": ["任务多样", "全收集"],
+    "production_constraints": ["GameMaker引擎", "小型团队"],
+    "innovation_patterns": ["无限背包", "怪物捕捉"],
+    "reusable_reference_patterns": ["无限背包", "合成制作", "怪物捕捉"],
+    "non_replicable_risks": ["高内容产量", "玩家留存"],
+    "genre": ["动作角色扮演", "沙盒"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["俯视"],
+    "theme": ["科幻", "异星求生"],
+    "narrative_style": ["对话叙事"],
+    "game_feel": ["轻松休闲", "流畅操作"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "无限背包",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "无库存管理负担",
+            "quote_or_summary": "游戏没有背包容量限制，资源自动整理归类，玩家无需管理库存即可专注制作与冒险。",
+            "notes": "Steam 商店页与官方介绍可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "怪物捕捉",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "孵蛋驯养战斗伙伴",
+            "quote_or_summary": "游戏中几乎每种生物都能成为战斗伙伴：找到蛋、孵化它，养出自己的可爱或丑萌帮手。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "合成制作",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "500+ 可制作物",
+            "quote_or_summary": "游戏提供超过 500 种可制作物品，随探索与解锁逐步开放。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Crashlands 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Crashlands",
+        "quote_or_summary": "剧情驱动生存制作 RPG，迫降异星的货运司机采集制作建造战斗，500+ 制作物，孵蛋驯养生物作战斗伙伴，无背包上限自动整理，Butterscotch Shenanigans 三兄弟工作室开发，2016 年发售，登陆 PC 与移动端。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_crashlands_noinventory_friction",
+      "subject": "无限背包",
+      "relation": "reduces",
+      "object": "操作摩擦",
+      "explanation": "生存制作品类的乐趣常被背包整理、容量取舍与往返囤货的杂务稀释；本作直接取消容量上限并自动归类资源，把这部分重复劳动连根拔掉，让玩家的时间几乎全部留给探索、制作与战斗，显著降低上手与持续游玩的操作摩擦，可复用于希望以「删除繁琐管理」而非增加功能来提升体验顺滑度的便利化设计。",
+      "evidence": [
+        {
+          "title": "无背包减摩擦解读",
+          "quote_or_summary": "取消容量上限并自动整理资源，拔掉库存管理杂务，显著降低操作摩擦。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

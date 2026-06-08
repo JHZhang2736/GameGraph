@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_xcom_2",
+    "title": "XCOM 2",
+    "source_refs": [
+      {
+        "title": "XCOM 2（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/XCOM_2",
+        "notes": "类型（回合制战术）、《XCOM: Enemy Unknown》续作、分为指挥小队的回合制战斗与管理移动基地「复仇者号」的战略层、俯视视角、引入程序生成地图与 mod 支持、士兵永久死亡、设定为外星占领下的抵抗组织、Firaxis 用虚幻引擎开发、2K 发行、2016 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款回合制战术游戏，作为前作续作设定在外星占领地球之后，玩家既要指挥一支小队进行回合制战斗，又要管理移动基地「复仇者号」的研发与战略；士兵会永久死亡，地图程序生成并支持 mod。",
+    "selection_reason": "作为「回合制战术与永久死亡张力结合」的代表：用掩体、命中率与回合调度构筑战棋深度，再用具名士兵的永久死亡把每次失误都变成真实代价，并以程序生成地图与 mod 支持延长寿命，是研究战棋张力与永久死亡情感投入的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_xcom_2",
+    "one_sentence_summary": "玩家在外星占领地球的背景下既指挥一支具名小队进行掩体与命中率驱动的回合制战斗，又管理移动基地「复仇者号」的研发与资源，士兵一旦阵亡即永久死亡，地图程序生成且支持 mod。",
+    "core_hook": "把战棋的掩体、命中率与回合调度做深，再用具名士兵的永久死亡，让每一次冒险开火、每一处站位失误都可能换来无法挽回的损失，把战术抉择压上真实的情感代价。",
+    "core_loop": "在战略层用复仇者号研发科技、管理资源与抵抗网络、选择任务，进入战术层指挥小队利用掩体与技能歼敌、完成限时目标，战后带着伤亡与缴获回到战略层循环推进。",
+    "progression_model": "战略层靠研发科技、升级设施与扩展抵抗网络推进；战术层靠士兵晋升兵种、解锁技能与升级装备成长；进度体现为科技树、兵员强度与战局推进，士兵永久死亡会打断养成。",
+    "failure_model": "战术任务中士兵生命归零即永久死亡、无法复活；关键任务失败或末日计划完成会危及战役，整体战役亦可能因连锁失利而失败。",
+    "content_structure": "在「复仇者号」战略管理层与程序生成的战术任务层双轨展开，以回合制小队战斗、科技研发、限时目标与永久死亡为骨架，支持 mod 扩展，单人。",
+    "main_player_actions": ["回合战斗", "单位调度", "科技研发"],
+    "main_player_decisions": ["战略规划", "风险取舍", "优先级排序"],
+    "main_player_experiences": ["运筹帷幄", "战斗精通", "系统掌控"],
+    "main_mechanics": ["回合制网格战术", "永久死亡", "程序生成", "站位战斗"],
+    "replayability_sources": ["程序生成", "难度分级", "用户生成内容"],
+    "production_constraints": ["Unreal 引擎", "大团队协作"],
+    "innovation_patterns": ["回合制网格战术", "用户生成内容"],
+    "reusable_reference_patterns": ["回合制网格战术", "永久死亡", "程序生成"],
+    "non_replicable_risks": ["大团队协作", "系统复杂度", "品牌积淀"],
+    "genre": ["回合制策略"],
+    "art_style": ["写实美术"],
+    "audio_style": ["管弦乐", "动态配乐"],
+    "perspective": ["等距"],
+    "theme": ["科幻", "反乌托邦"],
+    "narrative_style": ["过场驱动"],
+    "game_feel": ["策略权衡", "紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "回合制网格战术",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "掩体命中回合战斗",
+            "quote_or_summary": "采用回合制战术，玩家以俯视视角指挥一支小队，利用掩体与命中率在地图上歼灭外星人并完成目标。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "永久死亡",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "士兵永久阵亡",
+            "quote_or_summary": "小队由可命名、可养成的士兵组成，一旦在任务中阵亡即永久死亡、无法复活。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "程序生成",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "程序生成地图与 mod",
+            "quote_or_summary": "根据前作反馈，Firaxis 为本作加入了地图的程序生成与 mod 支持。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "XCOM 2 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/XCOM_2",
+        "quote_or_summary": "回合制战术，分小队战斗与复仇者号战略管理双层，掩体与命中率，士兵永久死亡，程序生成地图与 mod 支持，外星占领抵抗设定，Firaxis 用虚幻引擎开发，2016 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_xcom2_permadeath_attachment",
+      "subject": "永久死亡",
+      "relation": "creates",
+      "object": "永死挫败感",
+      "explanation": "让可命名、可养成的士兵一旦阵亡即永久消失，使玩家在长期养成中对队员产生情感投入，每次失误都换来无法挽回的损失，从而把战术决策的紧张与失败的痛感大幅放大，可复用于希望以永久损失强化情感投入与决策分量的策略设计。",
+      "evidence": [
+        {
+          "title": "永久死亡情感解读",
+          "quote_or_summary": "具名士兵的永久死亡把养成投入转化为强烈的失败痛感与决策分量。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

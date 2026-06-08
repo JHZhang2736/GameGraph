@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_kingdom_two_crowns",
+    "title": "Kingdom Two Crowns",
+    "source_refs": [
+      {
+        "title": "Kingdom Two Crowns（Steam）",
+        "url": "https://store.steampowered.com/app/701160/Kingdom_Two_Crowns/",
+        "notes": "类型（极简横版策略）、玩家扮演骑马君主靠投撒金币间接指挥子民、白天扩张建造夜晚抵御「贪婪」怪物、昼夜循环驱动「赚钱—扩张—防守」循环、无文字叙事、像素美术、单人或双君主合作分屏、Noio 与 CoatSink 开发、Raw Fury 发行等事实来源。"
+      },
+      {
+        "title": "Kingdom Two Crowns（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Kingdom_Two_Crowns",
+        "notes": "系列由 Thomas \"Noio\" van den Berg 创作、2D 资源管理横版策略、程序生成岛屿与多场景战役、合作双人等背景事实来源。"
+      }
+    ],
+    "short_description": "一款极简横版策略游戏，玩家扮演骑马的君主，仅靠投撒金币间接指挥子民砍树、建墙、招募与征战，白天扩张领地、夜晚抵御「贪婪」怪物的进攻，沿昼夜循环推进，全程几乎无文字，支持单人或双君主合作。",
+    "selection_reason": "作为「以投币间接控制把策略指挥极简化」的代表：玩家从不直接下令，只通过在场景中投放金币让子民自发执行，再配合昼夜攻防与无文字呈现，把一套资源管理与防守策略压缩成几乎零界面的优雅形态，是研究间接控制与极简策略表达的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_kingdom_two_crowns",
+    "one_sentence_summary": "玩家骑马扮演君主，沿横版世界左右移动、向地面投撒金币间接驱使子民采集与建造，白天扩张王国、夜晚据墙抵御「贪婪」的进攻，逐岛推进并可与第二位君主合作。",
+    "core_hook": "玩家永远不直接操控子民，只能骑马走动、投撒金币，让臣民自行去砍树、修墙、扛弓征战，把一整套建造与防守策略收束成「投币」这一个极简动作，再以昼夜攻防制造节奏。",
+    "core_loop": "白天骑马探索、投币招募子民与采集资源、向外扩建城墙与设施，夜晚退守抵御「贪婪」的来袭，次日用积累的资源继续向更远的疆界推进，循环攻占并最终摧毁怪物巢穴。",
+    "progression_model": "靠积累金币扩建城墙、升级据点、解锁坐骑与兵种、向更远岛屿推进；进度体现为王国规模、防线层级与战役章节，资源一旦在夜袭中被打散则需重新积累。",
+    "failure_model": "夜晚防线被「贪婪」攻破、王冠被夺走即告失势，若君主本人被夺冠且无人继承则本局王国覆灭，需重整旗鼓或重开。",
+    "content_structure": "以数座程序生成的岛屿战役为骨架，每座岛按昼夜循环展开「扩张—防守—推进」，靠投币间接控制、资源管理与逐步攻坚承载流程，支持单人与双君主合作。",
+    "main_player_actions": ["骑乘移动", "单位调度", "采集"],
+    "main_player_decisions": ["基地规划", "资源取舍", "探索路线"],
+    "main_player_experiences": ["经营成就", "协作默契", "运筹帷幄"],
+    "main_mechanics": ["间接控制", "昼夜循环", "建造", "资源管理", "合作生存"],
+    "replayability_sources": ["程序生成", "难度分级", "角色解锁"],
+    "production_constraints": ["像素美术", "小型团队"],
+    "innovation_patterns": ["间接控制", "昼夜循环"],
+    "reusable_reference_patterns": ["间接控制", "昼夜循环", "合作生存"],
+    "non_replicable_risks": ["平衡复杂度", "强美术风格"],
+    "genre": ["微策略", "模拟经营"],
+    "art_style": ["像素美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["横版2D"],
+    "theme": ["废墟王国", "奇幻"],
+    "narrative_style": ["无文字"],
+    "game_feel": ["规划满足", "策略权衡"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "间接控制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "投币间接指挥",
+            "quote_or_summary": "玩家扮演骑马君主，不直接操控单位，而是通过投撒金币让子民自发去砍树、建造、招募与战斗。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "昼夜循环",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "白天扩张夜晚防守",
+            "quote_or_summary": "游戏沿昼夜循环展开，君主白天探索与建造、夜晚抵御「贪婪」的进攻。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "无文字",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "几乎无文字呈现",
+            "quote_or_summary": "游戏以极简风格呈现，几乎不依赖文字与教程，靠图示与试错传达规则。",
+            "notes": "Steam 商店页与评测可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Kingdom Two Crowns 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/701160/Kingdom_Two_Crowns/",
+        "quote_or_summary": "极简横版策略，骑马君主投币间接指挥子民，白天扩张夜晚抵御贪婪，昼夜循环驱动赚钱扩张防守，无文字呈现，像素美术，单人或双君主合作，程序生成岛屿，Noio 与 CoatSink 开发，Raw Fury 发行。",
+        "notes": "事实取自 Steam 商店页与维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_ktc_daynight_rhythm",
+      "subject": "昼夜循环",
+      "relation": "creates",
+      "object": "节奏张力",
+      "explanation": "用白天扩张、夜晚防守的固定昼夜节拍，把开放的经营策略切成一段段有明确截止点的小循环，玩家必须在天黑前完成布防，使每个白天的扩张抉择都带着「来不来得及」的张力，可复用于希望以周期性威胁为松散经营注入节奏与紧迫感的设计。",
+      "evidence": [
+        {
+          "title": "昼夜节奏解读",
+          "quote_or_summary": "白天扩张、夜晚防守的循环为开放经营注入周期性截止点与节奏张力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

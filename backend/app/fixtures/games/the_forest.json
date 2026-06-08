@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_the_forest",
+    "title": "The Forest",
+    "source_refs": [
+      {
+        "title": "The Forest（Steam）",
+        "url": "https://store.steampowered.com/app/242760/The_Forest/",
+        "notes": "类型（开放世界生存恐怖）、空难后扮演 Eric LeBlanc 寻找被掳走的儿子、白天采集建造夜晚据守、自由建造从木屋到树屋到船屋、地表与地下洞穴探险、食人变异部落具动态 AI（会观察、惧火、甚至退却投降）、Endnight Games 用 Unity 开发、可合作、2018 年正式发售等事实来源。"
+      },
+      {
+        "title": "The Forest（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/The_Forest_(video_game)",
+        "notes": "Endnight Games 由具影视特效背景的小团队组成、初始预算约 12.5 万美元、设计上刻意让玩家质疑食人部落与自己谁是入侵者等背景事实来源。"
+      }
+    ],
+    "short_description": "一款开放世界生存恐怖游戏，玩家在空难后扮演 Eric LeBlanc 在密林半岛上寻找被掳走的儿子，白天采集、合成与自由建造庇护所，夜晚据守抵御具动态 AI 的食人变异部落，并深入越来越凶险的地下洞穴探险，支持合作。",
+    "selection_reason": "作为「具动态 AI 的食人敌人 + 自由生存建造」代表：食人部落会观察、惧火、试探乃至退却投降，让对峙充满不确定的心理张力；再叠加白天建造、夜晚据守与深洞探险，是研究智能敌人 AI 与生存恐怖氛围营造的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_the_forest",
+    "one_sentence_summary": "玩家在空难后扮演 Eric LeBlanc 于密林半岛求生寻子，白天采集资源、合成工具并自由搭建从木屋到树屋的庇护所，夜晚据守抵御会观察、惧火、试探的食人变异部落，并不断深入更凶险的地下洞穴推进剧情。",
+    "core_hook": "让食人变异部落拥有会观察、会惧火、会试探甚至退却的动态 AI，使每次对峙都不知对方下一步是进攻还是撤退，再把这种心理张力放进白天自由建造、夜晚据守、深洞越钻越恐怖的生存框架里。",
+    "core_loop": "白天采集木石与物资、合成工具与陷阱、自由搭建并加固庇护所，夜晚据守抵御食人部落的来袭，间或深入地下洞穴探索以获取关键补给与推进寻子剧情，循环求存。",
+    "progression_model": "靠解锁建造蓝图、积累装备与武器、逐步深入更危险的洞穴推进剧情；进度体现为基地规模、装备等级与已探明的洞穴区域，资源与安全的平衡决定推进速度。",
+    "failure_model": "饥饿、失温、坠落或被食人部落与洞穴怪物杀死即死亡，依难度可能导致永久死亡或读档重来；夜袭与深洞探险是持续的致死风险来源。",
+    "content_structure": "以地表密林与地下洞穴双层的开放世界为骨架，靠采集建造、昼夜攻防、动态 AI 食人部落与洞穴探险承载流程，含寻子主线，支持单人与合作。",
+    "main_player_actions": ["采集", "近战攻击", "道具运用"],
+    "main_player_decisions": ["基地规划", "资源取舍", "风险取舍"],
+    "main_player_experiences": ["氛围营造", "探索发现", "协作默契"],
+    "main_mechanics": ["建造", "合成制作", "采集", "昼夜循环", "智能敌人"],
+    "replayability_sources": ["难度分级", "构筑多样", "彩蛋收集"],
+    "production_constraints": ["Unity 引擎", "小型团队"],
+    "innovation_patterns": ["智能敌人", "昼夜循环"],
+    "reusable_reference_patterns": ["智能敌人", "建造", "合作生存"],
+    "non_replicable_risks": ["技术复杂度", "强美术风格"],
+    "genre": ["生存", "动作冒险"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第一人称"],
+    "theme": ["自然", "生存恐怖"],
+    "narrative_style": ["环境叙事"],
+    "game_feel": ["沉浸代入", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "智能敌人",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "动态食人部落 AI",
+            "quote_or_summary": "食人部落的 AI 会动态反应：会观察、巡逻，惧怕火焰，甚至在被攻击时退却或投降，玩家可选择对峙或潜行。",
+            "notes": "Steam 商店页与评测可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "建造",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "自由搭建庇护所",
+            "quote_or_summary": "玩家可自由建造从简陋木屋、庞大树屋到船屋等多种庇护所，按需打造基地。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "昼夜循环",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "白天建造夜晚据守",
+            "quote_or_summary": "玩家白天探索与建造，夜晚则需据守庇护所抵御食人部落的进攻。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "The Forest 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/The_Forest_(video_game)",
+        "quote_or_summary": "开放世界生存恐怖，空难后寻子，白天采集建造夜晚据守，自由建造庇护所，地表与洞穴探险，食人变异部落具动态 AI，Endnight Games 用 Unity 开发，小团队约 12.5 万美元预算，2018 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_theforest_smartenemy_dread",
+      "subject": "智能敌人",
+      "relation": "creates",
+      "object": "恐惧张力",
+      "explanation": "让食人敌人会观察、试探、惧火乃至退却，而非一味直冲，使玩家无法预测对方下一步是进攻还是撤离，把战斗从可量化的强度对抗变成持续的心理博弈，未交火时的「它在看着我」比交火本身更令人不安，可复用于希望用敌人行为的不可预测性而非堆数值来营造恐惧的设计。",
+      "evidence": [
+        {
+          "title": "智能敌人恐惧解读",
+          "quote_or_summary": "会观察试探、惧火退却的敌人 AI 让对峙充满不可预测的心理张力，营造持续恐惧。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

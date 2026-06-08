@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_elden_ring",
+    "title": "Elden Ring",
+    "source_refs": [
+      {
+        "title": "Elden Ring（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Elden_Ring",
+        "notes": "类型（开放世界类魂动作 RPG）、近战/远程/法术与翻滚招架、骑乘坐骑 Torrent、赐福点与符文死亡惩罚、六大区域与可选地牢、六种结局、FromSoftware 与 Bandai Namco、2022 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款由 FromSoftware 开发的开放世界类魂动作角色扮演游戏，玩家在「交界地」骑乘坐骑自由探索，与敌人和 Boss 鏖战、收集符文升级，死亡掉落符文需返回原地取回。",
+    "selection_reason": "作为把类魂硬核战斗与开放世界探索成功融合的标杆：以地貌、光线与远景地标取代任务标记的隐性引导，让玩家自主规划路线；其死亡掉落符文的惩罚与高自由度构筑亦是高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_elden_ring",
+    "one_sentence_summary": "玩家在开放的交界地骑乘坐骑自由探索，靠耐力管理的近战、法术与招架与强敌鏖战，击败敌人获取符文升级属性与构筑流派，死亡掉落符文需冒险返回原地取回。",
+    "core_hook": "把类魂的高难战斗放进一张取消任务标记、靠地标与光线隐性引导的开放世界，让「去哪、何时挑战」完全由玩家自主决定，使探索本身成为风险与发现的来源。",
+    "core_loop": "骑乘坐骑探索区域、发现地牢与 Boss，靠耐力管理的攻防与招架交战，胜利获取符文，回到赐福点升级属性、调整武器与法术构筑，再向更深更险处推进。",
+    "progression_model": "以击败敌人获得的符文为通用经验，在赐福点提升属性；武器靠材料强化、法术需记忆装载，玩家围绕武器与法术自由构筑流派，能力多样而非线性升级。",
+    "failure_model": "死亡掉落全部符文并留在原地，于最近赐福点或附近石碑重生；若取回途中再次死亡，符文将永久丢失。",
+    "content_structure": "一张围绕交界地展开的开放世界，含六大主区域与大量可选地牢、墓窟与隐藏 Boss；六种结局由玩家选择决定，并支持召唤合作与入侵 PvP。",
+    "main_player_actions": ["近战攻击", "翻滚闪避", "格挡", "魔法释放", "骑乘探索"],
+    "main_player_decisions": ["构筑搭配", "风险取舍", "探索路线", "Boss 时机"],
+    "main_player_experiences": ["战斗精通", "探索发现", "氛围营造"],
+    "main_mechanics": ["死亡惩罚", "耐力管理", "开放世界探索", "招架反击", "骑乘移动"],
+    "replayability_sources": ["多结局", "构筑多样", "Boss 挑战"],
+    "production_constraints": ["系列复用", "模板化地牢"],
+    "innovation_patterns": ["开放世界类魂", "隐性引导"],
+    "reusable_reference_patterns": ["死亡惩罚", "隐性引导", "开放世界探索"],
+    "non_replicable_risks": ["大团队协作", "高内容产量"],
+    "genre": ["类魂", "开放世界"],
+    "art_style": ["写实美术"],
+    "audio_style": ["管弦乐"],
+    "perspective": ["第三人称"],
+    "theme": ["黑暗奇幻"],
+    "narrative_style": ["碎片化叙事", "环境叙事"],
+    "game_feel": ["厚重打击", "精准近战", "动量"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "死亡惩罚",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "符文掉落与取回",
+            "quote_or_summary": "死亡掉落全部符文并留在原地，若取回前再死则永久丢失。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "开放世界探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "六大区域骑乘探索",
+            "quote_or_summary": "交界地含六大主区域与隐藏地牢墓窟，玩家骑乘坐骑 Torrent 自由探索，战斗外可快速旅行。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "隐性引导",
+        "confidence": "medium",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "无难度设定与自主路线",
+            "quote_or_summary": "游戏没有难度设定，玩家可选择避开强敌、积累实力后再回来，路线高度自主。",
+            "notes": "可观察设计，但「以地标取代任务标记引导探索」属解释性判断。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Elden Ring 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Elden_Ring",
+        "quote_or_summary": "开放世界类魂动作 RPG，骑乘坐骑探索六大区域，近战/远程/法术与翻滚招架，赐福点升级，死亡掉落符文需取回，六种结局，FromSoftware 开发、Bandai Namco 发行，2022 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_elden_ring_implicit_guidance",
+      "subject": "隐性引导",
+      "relation": "creates",
+      "object": "探索张力",
+      "explanation": "用黄金树、远景废墟与光线等环境地标取代任务标记来指引方向，使玩家自行规划路线、自负风险，把导航变成发现与抉择，让开放世界的探索持续保有张力而非被指引消解，可复用于开放世界设计。",
+      "evidence": [
+        {
+          "title": "引导设计解读",
+          "quote_or_summary": "取消明确任务标记，靠地标与可见远景驱动玩家自主探索。",
+          "notes": "基于可观察设计的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

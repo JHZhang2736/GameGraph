@@ -1,0 +1,123 @@
+{
+  "candidate": {
+    "id": "game_dead_cells",
+    "title": "Dead Cells",
+    "source_refs": [
+      {
+        "title": "Dead Cells（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Dead_Cells",
+        "notes": "「roguevania」类型、永久死亡与跑局结构、Cells 元进度、武器与变异、程序生成、团队（Motion Twin 合作社）等事实来源。"
+      }
+    ],
+    "short_description": "一款融合类肉鸽与类银河城的 2D 横版动作平台游戏，玩家操控「囚徒」在程序生成、彼此连通的瘟疫之岛上战斗、收集武器，死亡即失去本局战利品。",
+    "selection_reason": "作为「roguevania」融合范式的代表：把类肉鸽的随机跑局与永久死亡，叠加类银河城的能力解锁与永久元进度，并辅以约 50 种独立手感武器与变异构筑，是研究随机性与构筑深度如何兼顾的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_dead_cells",
+    "one_sentence_summary": "玩家操控不断重生的「囚徒」，在每次都会重排的连通关卡中快节奏战斗、组合武器与变异，死亡后保留少量永久解锁、带着积累的成长再次出发。",
+    "core_hook": "把类肉鸽的随机跑局与永久死亡，和类银河城的能力门控探索与永久元进度缝合在一起，配上爽快灵动的近战手感与海量可换武器构筑。",
+    "core_loop": "在程序生成的关卡中战斗、捡取武器与道具、击杀敌人掉落 Cells，抵达 Boss；死亡后用 Cells 购买永久升级与新武器蓝图，再带着略强的起点重新开局。",
+    "progression_model": "双层进展：局内靠拾取武器、技能与变异即时变强，局外用 Cells 在安全点兑换永久升级、新武器与新通路解锁；类银河城式能力（如藤蔓、传送）则永久开启新区域。",
+    "failure_model": "永久死亡：角色死亡即失去本局获得的全部武器与升级（除少数永久物品），需从头开始新一局。",
+    "content_structure": "由预制段落随机拼接而成的连通关卡网络，含分支路线、限时奖励门与多个 Boss；通过「Boss 细胞」难度分级层层加深的长期挑战曲线。",
+    "main_player_actions": ["近战攻击", "远程攻击", "冲刺", "翻滚闪避", "平台跳跃"],
+    "main_player_decisions": ["武器搭配", "风险取舍", "探索路线", "Boss 时机"],
+    "main_player_experiences": ["战斗精通", "高难跑酷", "探索发现"],
+    "main_mechanics": ["程序生成", "永久死亡", "武器构筑", "死亡惩罚", "能力门控探索", "元进度"],
+    "replayability_sources": ["程序生成", "难度分级", "武器构筑", "Boss 挑战", "速通"],
+    "production_constraints": ["像素美术", "程序生成", "小型团队"],
+    "innovation_patterns": ["肉鸽类银河城", "武器构筑", "元进度"],
+    "reusable_reference_patterns": ["程序生成", "元进度", "死亡惩罚"],
+    "non_replicable_risks": ["高内容产量", "长期更新运营"],
+    "genre": ["类肉鸽", "类银河城"],
+    "art_style": ["像素美术"],
+    "audio_style": ["动态配乐"],
+    "perspective": ["横版2D"],
+    "theme": ["废墟王国", "黑暗奇幻"],
+    "narrative_style": ["碎片化叙事", "环境叙事"],
+    "game_feel": ["精准近战", "流畅跑酷", "动量"],
+    "team_model": ["小团队", "工人合作社"],
+    "reference_value_tags": [
+      {
+        "tag": "肉鸽类银河城",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "类型融合",
+            "quote_or_summary": "游戏被称为「roguevania」，混合了类肉鸽与类银河城元素。",
+            "notes": "维基百科类型描述。"
+          }
+        ]
+      },
+      {
+        "tag": "元进度",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "Cells 永久升级",
+            "quote_or_summary": "玩家用击杀掉落的 Cells 在安全点购买跨局保留的永久升级与新武器。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "武器构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "武器与变异",
+            "quote_or_summary": "约 50 种各具独立动画与行为的武器，配合局内变异（mutations）形成多样构筑。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Dead Cells 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Dead_Cells",
+        "quote_or_summary": "「roguevania」2D 动作平台，永久死亡，Cells 元进度，程序生成关卡，约 50 种武器与变异，Motion Twin 合作社开发，2018 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_dead_cells_meta_progression",
+      "subject": "元进度",
+      "relation": "reduces",
+      "object": "永死挫败感",
+      "explanation": "在永久死亡之上叠一层跨局保留的永久解锁，使每次失败仍换回长期变强的资源，把单局的全损转化为整体推进，从而缓解纯类肉鸽的挫败、留住玩家反复开局。",
+      "evidence": [
+        {
+          "title": "双层进展解读",
+          "quote_or_summary": "死亡丢失本局成果，但 Cells 兑换的永久升级跨局保留。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    },
+    {
+      "id": "claim_dead_cells_timed_doors",
+      "subject": "限时奖励门",
+      "relation": "creates",
+      "object": "探索张力",
+      "explanation": "用只在限定时间内可进入的奖励门，把「快速推进」与「停下探索搜刮」对立起来，迫使玩家在速度与收益之间做实时取舍，为线性推进注入持续的风险感。",
+      "evidence": [
+        {
+          "title": "限时门解读",
+          "quote_or_summary": "限时门奖励快速通关，与彻底搜刮形成张力。",
+          "notes": "基于可观察设计的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

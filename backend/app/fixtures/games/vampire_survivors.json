@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_vampire_survivors",
+    "title": "Vampire Survivors",
+    "source_refs": [
+      {
+        "title": "Vampire Survivors（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Vampire_Survivors",
+        "notes": "类型（弹幕生存/自动射击肉鸽）、武器自动攻击、玩家只控制移动、在自动生成的循环场地里尽量久存活、升级时拣选可进化与叠加的武器与道具、用金币做跨局解锁、被视为「弹幕天堂（bullet heaven）」类型奠基作、Luca Galante（poncle）独立开发、2022 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款弹幕生存肉鸽，玩家只控制角色移动，武器全自动攻击，在不断刷怪的循环场地里尽量久地存活，每次升级拣选可进化、可叠加的武器与道具滚雪球变强，并用金币做跨局永久解锁。",
+    "selection_reason": "作为「弹幕天堂（bullet heaven）」类型的奠基与定义之作：把操作简化到只剩移动、武器自动开火，再用可叠加进化的构筑制造爆炸式滚雪球，以极低门槛换取极强爽感，是研究自动战斗与极简操作滚雪球的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_vampire_survivors",
+    "one_sentence_summary": "玩家只控制角色移动，武器全自动攻击，在不断涌来的怪潮中尽量久地存活，每次升级拣选可进化、可叠加的武器与道具滚雪球式变强，被打死则用本局金币做跨局永久解锁后重开。",
+    "core_hook": "把操作砍到只剩「走位」，让武器自动开火，再用可叠加、可进化的构筑把屏幕逐渐铺满弹幕，以几乎零门槛换取屏幕炸裂般的滚雪球爽感。",
+    "core_loop": "走位躲避怪潮、自动武器持续清怪、击杀掉落经验、升级时拣选并叠加进化武器与道具、构筑越滚越强直至被淹没或撑满时长，用金币做跨局解锁再开新局。",
+    "progression_model": "单局靠升级拣选、叠加与进化武器道具滚雪球变强；跨局用金币永久解锁角色、武器与增益；进度兼有单局构筑与长期解锁，含大量可解锁角色与隐藏内容。",
+    "failure_model": "生命被持续接触伤害耗尽即本局死亡（多数关卡亦设有定时大限），结束后保留所得金币用于跨局解锁，再重开新局。",
+    "content_structure": "以自动生成、可无限延伸的循环场地与定时关卡为骨架，靠海量可叠加进化的武器、道具与可解锁角色承载构筑与重玩深度，单人。",
+    "main_player_actions": ["走位"],
+    "main_player_decisions": ["装备搭配", "优先级排序", "风险取舍"],
+    "main_player_experiences": ["滚雪球快感", "欢乐混乱", "构筑乐趣"],
+    "main_mechanics": ["自动战斗", "道具叠加", "元进度", "难度递增"],
+    "replayability_sources": ["角色解锁", "构筑多样", "全收集"],
+    "production_constraints": ["单人开发", "像素美术"],
+    "innovation_patterns": ["弹幕生存", "自动战斗"],
+    "reusable_reference_patterns": ["弹幕生存", "自动战斗", "道具叠加"],
+    "non_replicable_risks": ["平衡复杂度"],
+    "genre": ["类肉鸽", "俯视射击"],
+    "art_style": ["像素美术"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["俯视"],
+    "theme": ["黑暗奇幻"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["流畅操作", "紧张节奏"],
+    "team_model": ["单人开发"],
+    "reference_value_tags": [
+      {
+        "tag": "弹幕生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "存活越久越强",
+            "quote_or_summary": "玩家在自动生成、不断重复的场地里尽量久地存活，对抗不断涌来、接触即伤的怪潮，被视为最早的「弹幕天堂」之一。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "自动战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "武器自动攻击",
+            "quote_or_summary": "玩家的武器自动攻击，玩家只需控制角色移动以躲避敌人。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "道具叠加",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "升级叠加进化",
+            "quote_or_summary": "玩家在升级时拣选不同武器与道具，可叠加并进化，逐步把伤害堆叠成铺满屏幕的弹幕。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Vampire Survivors 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Vampire_Survivors",
+        "quote_or_summary": "弹幕生存/自动射击肉鸽，武器自动攻击玩家只控制移动，循环场地里尽量久存活，升级拣选可叠加进化的武器道具，金币跨局解锁，弹幕天堂奠基作，poncle 独立开发，2022 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_vampire_survivors_autocombat_lowbar",
+      "subject": "自动战斗",
+      "relation": "creates",
+      "object": "滚雪球快感",
+      "explanation": "把武器开火完全自动化、操作只剩走位，使玩家几乎零门槛即可上手，并将全部注意力让位于升级时的构筑选择，让可叠加进化的伤害随时间堆成铺满屏幕的弹幕，以极简操作换取爆炸式滚雪球快感，可复用于追求低门槛高爽感的肉鸽设计。",
+      "evidence": [
+        {
+          "title": "自动战斗滚雪球解读",
+          "quote_or_summary": "操作只剩走位、武器自动开火，把焦点放到构筑叠加上制造滚雪球快感。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

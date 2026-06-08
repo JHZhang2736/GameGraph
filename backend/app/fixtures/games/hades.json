@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_hades",
+    "title": "Hades",
+    "source_refs": [
+      {
+        "title": "Hades（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Hades_(video_game)",
+        "notes": "类型（肉鸽动作角色扮演）、逐局闯关与随机房间、奥林匹斯神祇恩赐（boon）构筑、多种武器、跨局元进度、把死亡与对话叙事绑定、等距视角、Jen Zee 手绘美术、希腊神话题材、Supergiant 用 C++ 自研引擎、2020 年发售、生命归零退回冥府之家等事实来源。"
+      }
+    ],
+    "short_description": "一款希腊神话题材的肉鸽动作角色扮演游戏，玩家扮演冥王之子 Zagreus 逐次逃出冥界，沿途从奥林匹斯诸神处获取恩赐构筑能力、操多种武器闯过随机房间，每次死亡都会推进角色对话与剧情。",
+    "selection_reason": "作为「把肉鸽反复死亡编织进叙事」的标杆：让每次失败都触发新的角色对话与剧情推进，使「死亡—重来」从纯粹惩罚变成故事前进的引擎，再叠加神恩构筑的高自由度，是研究叙事与肉鸽结构融合的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_hades",
+    "one_sentence_summary": "玩家扮演冥王之子 Zagreus 逐次尝试逃出冥界，途中从奥林匹斯诸神处选取恩赐构筑能力、操多种武器闯过随机生成的房间，生命归零即被送回冥府之家，而每次死亡都会推进丰富的角色对话与剧情。",
+    "core_hook": "把肉鸽的反复死亡与不断展开的角色对话绑定，让每一次失败都触发新的剧情与人物互动，使「死亡—重来」成为推进故事的引擎而非单纯惩罚。",
+    "core_loop": "从冥府之家出发，逐房间战斗、在诸神恩赐与奖励间二选一构筑能力，闯过各区域与 Boss，阵亡或通关后回到枢纽消费货币做永久强化、推进对话，再开新一轮逃脱。",
+    "progression_model": "单局靠诸神恩赐临时构筑能力；跨局以镜中永久升级、武器解锁与资源积累稳步变强，并通过持续对话解锁剧情，进度兼有战力成长与叙事推进两条线。",
+    "failure_model": "生命归零且无剩余「死亡抗性」时 Zagreus 被击败，送回冥府之家枢纽，需从头开始新一轮逃脱，但保留永久升级与剧情进度。",
+    "content_structure": "由塔尔塔罗斯、阿斯福德尔、埃律西昂与冥河神殿等随机房间区域组成的逃脱路线，以神恩构筑、多武器、镜中元进度与海量分支对话为骨架，单人。",
+    "main_player_actions": ["近战攻击", "远程攻击", "翻滚闪避", "技能释放"],
+    "main_player_decisions": ["增益选择", "武器搭配", "探索路线"],
+    "main_player_experiences": ["战斗精通", "构筑乐趣", "情感叙事", "滚雪球快感"],
+    "main_mechanics": ["程序生成", "永久死亡", "增益构筑", "武器构筑", "元进度", "死亡叙事"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["手绘美术", "自研引擎", "小型团队"],
+    "innovation_patterns": ["死亡叙事", "增益构筑"],
+    "reusable_reference_patterns": ["死亡叙事", "增益构筑", "元进度"],
+    "non_replicable_risks": ["高品质手绘量", "强美术风格"],
+    "genre": ["类肉鸽", "动作角色扮演"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["摇滚配乐", "动态配乐"],
+    "perspective": ["等距"],
+    "theme": ["神话"],
+    "narrative_style": ["对话叙事", "碎片化叙事"],
+    "game_feel": ["精准近战", "流畅响应"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "死亡叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "死亡推进对话",
+            "quote_or_summary": "对话与剧情跨多次游玩逐步展开，反复尝试本身受到奖励，死亡后回到枢纽会触发新的角色互动。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "增益构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "诸神恩赐",
+            "quote_or_summary": "奥林匹斯诸神提供恩赐（boon），每局沿途选取以临时强化主攻、特攻、施法、冲刺与召唤。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "元进度",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "跨局永久升级",
+            "quote_or_summary": "玩家用收集的货币在两局之间购买永久升级，逐步增强后续逃脱。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Hades 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Hades_(video_game)",
+        "quote_or_summary": "肉鸽动作角色扮演，随机房间，诸神恩赐构筑，多武器，跨局元进度，死亡与对话叙事绑定，等距视角，Jen Zee 手绘，希腊神话，Supergiant 用 C++ 自研引擎，2020 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_hades_death_as_narrative",
+      "subject": "死亡叙事",
+      "relation": "demonstrates",
+      "object": "失败叙事化",
+      "explanation": "把肉鸽必然的反复死亡设计成触发新对话与剧情推进的契机，使失败既不打断沉浸也不只是惩罚，反而成为玩家继续游玩的叙事动机，化解了「重复死亡令人疲惫」这一肉鸽通病，可复用于任何高重复性的 roguelike 叙事设计。",
+      "evidence": [
+        {
+          "title": "失败叙事化解读",
+          "quote_or_summary": "死亡推进剧情，使重复失败成为故事前进的动力而非纯惩罚。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

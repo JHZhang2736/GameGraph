@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_shape_of_dreams",
+    "title": "Shape of Dreams",
+    "source_refs": [
+      {
+        "title": "Shape of Dreams（Steam 社区）",
+        "url": "https://steamcommunity.com/app/2444750",
+        "notes": "类型（MOBA 式动作肉鸽）、等距视角、1 至 4 人合作、8 名各具机制的旅人、以「记忆与精华」构筑技能、穿越 8 个梦境并挑战手工首领、韩国工作室 Lizard Smoothie 开发、2025 年 9 月发售、首月销量逾 50 万份等事实来源。"
+      }
+    ],
+    "short_description": "一款带 MOBA 元素的等距动作肉鸽，支持 1 至 4 人合作，玩家从 8 名各具战斗机制的旅人中选择，用超过 150 种「记忆与精华」构筑与调整技能，穿越多个梦境、迎战手工首领并逐步变强。",
+    "selection_reason": "作为「把 MOBA 式技能构筑嫁接到合作肉鸽」的代表：用类 MOBA 的技能搭配与等距战斗，承载肉鸽式的随机遭遇与滚雪球成长，并支持多人合作，是研究类型缝合与构筑深度的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_shape_of_dreams",
+    "one_sentence_summary": "玩家从 8 名各具机制的旅人中选择，在等距视角下用「记忆与精华」构筑与升级技能，单人或最多四人合作穿越多个梦境、迎战手工首领，并随每局随机成长而滚雪球变强。",
+    "core_hook": "把 MOBA 的技能搭配与构筑思路，嫁接到肉鸽式的随机遭遇与不断走强的成长曲线上，让每局都因不同记忆、精华与队伍配合而走出全新构筑。",
+    "core_loop": "选定旅人进入梦境、在战斗中释放与组合技能、拾取记忆与精华强化并改写技能、推进关卡挑战首领，失败带累积解锁重开下一局。",
+    "progression_model": "单局靠拾取与搭配记忆、精华即时构筑技能并滚雪球变强，跨局解锁旅人、记忆与内容；进度兼有单局构筑与长期解锁，含 8 名旅人与逾 150 种构筑素材。",
+    "failure_model": "队伍在梦境推进中被敌人或首领击败即本局结束，需带跨局解锁重新开始新一局。",
+    "content_structure": "以 8 个梦境关卡为骨架，每局随机生成遭遇与强化，穿插手工设计的首领战，支持单人与最多四人合作，靠记忆与精华系统承载构筑深度。",
+    "main_player_actions": ["技能释放", "走位", "冲刺"],
+    "main_player_decisions": ["装备搭配", "能力树优先级", "风险取舍"],
+    "main_player_experiences": ["滚雪球快感", "战斗精通", "协作默契"],
+    "main_mechanics": ["增益构筑", "能力树", "多人合作", "元进度", "程序生成"],
+    "replayability_sources": ["角色解锁", "构筑多样", "程序生成"],
+    "production_constraints": ["小型团队", "卡通渲染"],
+    "innovation_patterns": ["类型缝合", "增益构筑"],
+    "reusable_reference_patterns": ["类型缝合", "增益构筑", "多人合作"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["类肉鸽", "动作角色扮演"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["动态配乐"],
+    "perspective": ["等距"],
+    "theme": ["奇幻", "超现实"],
+    "narrative_style": ["碎片化叙事"],
+    "game_feel": ["流畅操作", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "增益构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "记忆与精华构筑",
+            "quote_or_summary": "玩家用逾 150 种「记忆与精华」构筑并调整旅人技能，形成 MOBA 式的可深度搭配的成长路径。",
+            "notes": "Steam 社区页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "多人合作",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "至多四人合作",
+            "quote_or_summary": "支持 1 至 4 人合作的肉鸽动作，多人共同穿越梦境、挑战首领。",
+            "notes": "Steam 社区页可观察事实。"
+          }
+        ]
+      },
+      {
+        "tag": "类型缝合",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "MOBA 与肉鸽融合",
+            "quote_or_summary": "把 MOBA 式操控与构筑，融进具备随机遭遇与渐进成长的现代肉鸽框架，形成新的混合玩法。",
+            "notes": "媒体报道可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Shape of Dreams 玩法与制作综述",
+        "url": "https://steamcommunity.com/app/2444750",
+        "quote_or_summary": "MOBA 式等距动作肉鸽，1 至 4 人合作，8 名旅人，逾 150 种记忆与精华构筑技能，多个梦境与手工首领，Lizard Smoothie 开发，2025 年发售，首月销量逾 50 万。",
+        "notes": "事实取自 Steam 社区页与媒体报道。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_shape_of_dreams_moba_build_replay",
+      "subject": "增益构筑",
+      "relation": "creates",
+      "object": "重玩动力",
+      "explanation": "用 MOBA 式可深度搭配的记忆与精华系统替代固定数值升级，让每局因不同构筑组合而走向不同强度与玩法，并与多名旅人、多人配合叠加出大量组合空间，可复用于希望以构筑驱动重玩的肉鸽设计。",
+      "evidence": [
+        {
+          "title": "构筑驱动重玩解读",
+          "quote_or_summary": "海量记忆与精华组合让每局构筑各异，支撑长期重玩。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_the_witcher_3_wild_hunt",
+    "title": "The Witcher 3: Wild Hunt",
+    "source_refs": [
+      {
+        "title": "The Witcher 3: Wild Hunt（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/The_Witcher_3:_Wild_Hunt",
+        "notes": "类型（开放世界动作 RPG）、剑术/法印/炼金战斗、分支任务与后果、怪物狩猎契约、四系技能树、斯拉夫民俗黑暗奇幻、CD Projekt Red 用 REDengine 3、2015 年发售、约 250 人团队等事实来源。"
+      }
+    ],
+    "short_description": "一款开放世界动作角色扮演游戏，玩家操控猎魔人 Geralt 在斯拉夫民俗风的黑暗奇幻世界中以剑术、法印与炼金战斗，完成主线、支线与怪物狩猎契约，寻找养女 Ciri。",
+    "selection_reason": "作为「支线与抉择驱动世界沉浸」的标杆：把可媲美主线的写作与分支后果投入大量可选内容，使开放世界显得可信、可反应；其法印/剑术/炼金的战斗与多结局抉择亦是高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_the_witcher_3_wild_hunt",
+    "one_sentence_summary": "玩家操控猎魔人 Geralt 在斯拉夫民俗风的黑暗奇幻开放世界中以剑术、法印与炼金战斗，通过对话抉择推进充满分支后果的主线、支线与怪物狩猎契约，寻找养女 Ciri。",
+    "core_hook": "把可媲美主线的写作与分支后果投入大量可选支线与契约，使开放世界显得有人居住、会对玩家选择作出反应，让探索本身具备叙事回报。",
+    "core_loop": "接取主线、支线与怪物狩猎契约，骑马或乘船探索开放世界、调查线索，以剑术、法印与炼金备战并战斗，靠经验与金钱升级技能与装备，循环推进剧情与世界探索。",
+    "progression_model": "完成任务获取经验与金钱，投入战斗、法印、炼金与通用四系技能树并搭配变异诱发剂；装备靠锻造升级，能力点亦可在威能之地获得，围绕战斗流派与剧情推进成长。",
+    "failure_model": "受击会损失生命，可经冥想或食物、药水恢复，护甲减伤；生命归零即死亡需读档，难度设定可调整战斗挑战。",
+    "content_structure": "分多个可探索区域的开放世界，含主线、支线、怪物狩猎契约与寻宝；对话树与抉择带来多达数十种结局与不同剧情走向，配新游戏+模式。",
+    "main_player_actions": ["剑术攻击", "法印释放", "炼金调配", "对话选择"],
+    "main_player_decisions": ["道德抉择", "构筑搭配", "探索路线"],
+    "main_player_experiences": ["情感叙事", "探索发现", "抉择沉浸"],
+    "main_mechanics": ["分支叙事", "技能树", "怪物狩猎", "开放世界探索"],
+    "replayability_sources": ["多结局", "构筑多样", "全收集"],
+    "production_constraints": ["自研引擎", "大团队协作"],
+    "innovation_patterns": ["高质量支线", "分支叙事"],
+    "reusable_reference_patterns": ["分支叙事", "高质量支线", "怪物狩猎"],
+    "non_replicable_risks": ["大团队协作", "高内容产量", "自研引擎"],
+    "genre": ["开放世界", "动作角色扮演"],
+    "art_style": ["写实美术"],
+    "audio_style": ["管弦乐", "民谣配乐"],
+    "perspective": ["第三人称"],
+    "theme": ["黑暗奇幻", "斯拉夫民俗"],
+    "narrative_style": ["分支叙事", "过场驱动", "情感叙事"],
+    "game_feel": ["沉浸代入"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "分支叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "抉择与多结局",
+            "quote_or_summary": "叙事含多达数十种结局，由玩家在对话树中的选择与连带后果决定。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "怪物狩猎",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "猎魔人契约",
+            "quote_or_summary": "怪物狩猎契约要求调查、备药并对症作战，是独立于主线的核心可选内容。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "高质量支线",
+        "confidence": "medium",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "支线写作评价",
+            "quote_or_summary": "评论盛赞其对话质量与角色深度，支线与主线一样含分支后果。",
+            "notes": "可观察评价，但「支线质量媲美主线」属解释性判断。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "The Witcher 3 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/The_Witcher_3:_Wild_Hunt",
+        "quote_or_summary": "开放世界动作 RPG，剑术/法印/炼金战斗，分支任务与多结局，怪物狩猎契约，四系技能树，斯拉夫民俗黑暗奇幻，CD Projekt Red 用 REDengine 3 开发、约 250 人团队，2015 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_witcher3_sidequest_immersion",
+      "subject": "高质量支线",
+      "relation": "creates",
+      "object": "世界沉浸",
+      "explanation": "把媲美主线的写作与分支后果投入到可选支线与契约，使开放世界显得有人居住、会对玩家选择作出反应，让探索带来叙事回报而非填充式跑腿，可复用于开放世界 RPG 设计。",
+      "evidence": [
+        {
+          "title": "支线沉浸解读",
+          "quote_or_summary": "高水准的可选内容使世界可信、可反应，提升沉浸。",
+          "notes": "基于可观察评价的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

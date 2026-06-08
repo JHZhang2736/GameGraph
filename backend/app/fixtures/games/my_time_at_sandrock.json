@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_my_time_at_sandrock",
+    "title": "My Time at Sandrock",
+    "source_refs": [
+      {
+        "title": "My Time at Sandrock（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/My_Time_at_Sandrock",
+        "notes": "类型（农场生活模拟角色扮演）、《My Time at Portia》续作、设定在科技崩坏 300 年后的沙漠小镇、经营工坊建造小镇、务农采矿采集制作、接取委托（commissions）、探索地牢与旧世界废墟、砍杀战斗、可与 21 名 NPC 社交恋爱、Pathea Games 开发、2022 年抢先体验、2023 年正式发售等事实来源。"
+      }
+    ],
+    "short_description": "一款农场生活模拟角色扮演游戏，作为《My Time at Portia》续作设定在科技崩坏后的沙漠小镇，玩家经营工坊、务农采矿、制作建造、接取委托并探索废墟地牢，同时与 21 名居民社交恋爱。",
+    "selection_reason": "作为「以工坊制作循环串起沙盒生活模拟」的代表：把建造、务农、采集与战斗探索都收束到「接委托—采料—制作交付」的工坊主线上，再叠加社交恋爱与末世重建的沙漠题材，是研究生活模拟节奏编排与委托驱动进度的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_my_time_at_sandrock",
+    "one_sentence_summary": "玩家作为一名建造师在科技崩坏后的沙漠小镇 Sandrock 经营工坊，接取委托、务农采矿、制作建造与探索废墟地牢，同时与 21 名居民社交恋爱，逐步把濒危小镇重建繁荣。",
+    "core_hook": "把建造、务农、采集与战斗探索全部收束到「接委托—采集原料—制作交付」的工坊循环上，让玩家在沙漠末世里既当手艺人又当小镇生活的参与者。",
+    "core_loop": "查看公告板接取委托、采集与采矿获取原料、用机器制作所需物件并交付、用收入升级工坊与工具，闲时务农、社交、恋爱与探索废墟，循环推进小镇重建与剧情。",
+    "progression_model": "靠完成委托赚取收入与声望、升级工坊机器与工具、解锁新配方与区域、推进剧情与人物关系；进度体现为工坊等级、小镇繁荣度与关系网，含主线剧情与节庆活动。",
+    "failure_model": "无传统失败清零；战斗中生命耗尽会昏厥并损失部分时间或资源，未按期完成关键委托会影响小镇进展与评价，但游戏整体以生活经营推进而非生死。",
+    "content_structure": "在沙漠小镇 Sandrock 的开放区域中以工坊制作、委托主线、务农采集、社交恋爱与废墟地牢探索为骨架，含 21 名可恋爱 NPC、节庆与剧情线，单人为主。",
+    "main_player_actions": ["采集", "社交互动", "近战攻击"],
+    "main_player_decisions": ["时间分配", "关系经营", "优先级排序"],
+    "main_player_experiences": ["经营成就", "收集养成", "情感叙事"],
+    "main_mechanics": ["工坊经营", "合成制作", "采集", "委托任务", "好感系统"],
+    "replayability_sources": ["任务多样", "恋爱线", "全收集"],
+    "production_constraints": ["Unity 引擎", "系列复用"],
+    "innovation_patterns": ["工坊经营", "委托任务"],
+    "reusable_reference_patterns": ["工坊经营", "委托任务", "好感系统"],
+    "non_replicable_risks": ["高内容产量", "系统复杂度"],
+    "genre": ["模拟经营", "角色扮演"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["第三人称"],
+    "theme": ["末世重建", "田园生活"],
+    "narrative_style": ["对话叙事"],
+    "game_feel": ["轻松休闲", "规划满足"],
+    "team_model": ["中型团队"],
+    "reference_value_tags": [
+      {
+        "tag": "工坊经营",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "建造师工坊主线",
+            "quote_or_summary": "玩家经营自己的工坊，采集原料、用机器制作物件并完成委托，以此重建小镇。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "委托任务",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "commissions 驱动",
+            "quote_or_summary": "玩家通过接取被称为 commissions 的委托来推进游戏，串联制作、采集与探索。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "好感系统",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "社交与恋爱",
+            "quote_or_summary": "玩家可与 21 名 NPC 社交并发展恋爱关系。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "My Time at Sandrock 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/My_Time_at_Sandrock",
+        "quote_or_summary": "农场生活模拟 RPG，Portia 续作，沙漠末世小镇，经营工坊建造、务农采矿制作、接取委托、探索废墟、砍杀战斗、与 21 名 NPC 社交恋爱，Pathea 开发，2023 年正式发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_sandrock_commission_pacing",
+      "subject": "委托任务",
+      "relation": "creates",
+      "object": "进度节奏",
+      "explanation": "用公告板上的委托把开放的务农、采集、制作与探索串成一连串有明确目标与交付期限的小任务，让自由度很高的生活模拟仍保有清晰的阶段进度与节奏，避免玩家在沙盒中迷失，可复用于需要为开放经营玩法提供驱动力的设计。",
+      "evidence": [
+        {
+          "title": "委托驱动节奏解读",
+          "quote_or_summary": "委托为开放生活模拟提供明确目标与阶段节奏。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

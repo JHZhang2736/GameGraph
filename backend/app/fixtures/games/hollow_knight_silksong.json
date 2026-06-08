@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_hollow_knight_silksong",
+    "title": "Hollow Knight: Silksong",
+    "source_refs": [
+      {
+        "title": "Hollow Knight: Silksong（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Hollow_Knight:_Silksong",
+        "notes": "类型（类银河城）、主角 Hornet、更灵活的机动与更快回血、可装备工具（被动与攻击）、丝线能力、解锁式移动、Wishes 任务追踪、手绘美术、虫族宗教废墟王国 Pharloom 与「Haunting」、Team Cherry 用 Unity 开发、2025 年发售、生命（面具）耗尽于长椅重生等事实来源。"
+      }
+    ],
+    "short_description": "一款手绘类银河城动作冒险游戏，玩家操控被掳至废墟王国 Pharloom 的 Hornet，以更灵活的机动与近战、可装备的工具和丝线能力探索互联地图、解锁能力推进，是《空洞骑士》的续作。",
+    "selection_reason": "作为类银河城续作的精炼范本：用更灵活敏捷的主角、可装备工具与 Wishes 任务系统，在保留能力门控探索与环境叙事的同时为开放探索补上明确目标，是研究银河城节奏迭代与任务引导的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_hollow_knight_silksong",
+    "one_sentence_summary": "玩家操控被掳至废墟王国 Pharloom 的 Hornet，以比前作更灵活的机动与近战、可装备的工具和丝线回血/能力探索互联的手绘地图，借解锁式移动门控推进，并通过 Wishes 任务系统获取目标。",
+    "core_hook": "让一位机动更敏捷、回血更快的主角接棒，叠加可自由搭配的工具与丝线能力，并用 Wishes 任务为开放的银河城探索补上明确目标与方向。",
+    "core_loop": "探索互联地图、近战清敌与躲避、用丝线回血与释放能力、击败 Boss 解锁新移动手段以打通先前受阻的区域，沿途接取并完成 Wishes 任务推进剧情。",
+    "progression_model": "靠击败 Boss 与探索解锁新的移动与战斗能力，实现能力门控式推进，并通过装备工具横向定制能力组合，进度体现为地图开度、能力解锁与任务完成。",
+    "failure_model": "生命（面具）耗尽后 Hornet 在最近的长椅重生，需跑回死亡地点（runback），不丢失永久进度。",
+    "content_structure": "在受「Haunting」侵蚀的废墟王国 Pharloom 的互联手绘地图中推进，以能力门控探索、可装备工具、丝线能力、Boss 战与 Wishes 任务为骨架，单人。",
+    "main_player_actions": ["平台跳跃", "近战攻击", "攀墙", "滑翔"],
+    "main_player_decisions": ["探索路线", "护符定制", "任务取舍"],
+    "main_player_experiences": ["探索发现", "战斗精通", "氛围营造", "高难跑酷"],
+    "main_mechanics": ["能力门控探索", "委托任务", "护符定制", "环境叙事", "Boss 门控"],
+    "replayability_sources": ["全收集", "Boss 挑战", "速通"],
+    "production_constraints": ["手绘美术", "Unity 引擎", "小型团队"],
+    "innovation_patterns": ["能力门控探索", "委托任务"],
+    "reusable_reference_patterns": ["能力门控探索", "环境叙事", "护符定制"],
+    "non_replicable_risks": ["超长开发周期", "高品质手绘量"],
+    "genre": ["类银河城", "动作冒险"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["管弦乐", "氛围音乐"],
+    "perspective": ["横版2D"],
+    "theme": ["虫族", "宗教", "黑暗奇幻"],
+    "narrative_style": ["环境叙事", "碎片化叙事"],
+    "game_feel": ["精准平台", "精准近战", "流畅跑酷"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "能力门控探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "解锁式移动",
+            "quote_or_summary": "Hornet 逐步解锁抓钩、御风滑翔、攀附、垂直跃升等移动能力，以打通先前无法到达的区域。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "委托任务",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "Wishes 任务系统",
+            "quote_or_summary": "游戏含名为「Wishes」的任务追踪系统，为玩家提供可接取与追踪的目标。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "护符定制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "可装备工具",
+            "quote_or_summary": "玩家可装备「工具」，含被动辅助与攻击型武器，用以横向定制 Hornet 的能力组合。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Hollow Knight: Silksong 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Hollow_Knight:_Silksong",
+        "quote_or_summary": "类银河城，主角 Hornet 机动更灵活、回血更快，可装备工具与丝线能力，解锁式移动，Wishes 任务系统，手绘美术，虫族宗教废墟王国 Pharloom，Team Cherry 用 Unity 开发，2025 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_silksong_quests_guide_exploration",
+      "subject": "委托任务",
+      "relation": "reduces",
+      "object": "随机挫败",
+      "explanation": "在以「自行迷路、自行发现」著称的银河城结构上叠加 Wishes 任务追踪系统，为开放探索提供可选的明确目标与方向，缓解纯靠自由探索带来的迷失与无所适从，同时不剥夺探索乐趣，可复用于开放式探索游戏的引导设计。",
+      "evidence": [
+        {
+          "title": "任务引导解读",
+          "quote_or_summary": "Wishes 任务为开放银河城探索补上明确目标，缓解迷路与方向缺失。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

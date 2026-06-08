@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_ring_of_pain",
+    "title": "Ring of Pain",
+    "source_refs": [
+      {
+        "title": "Ring of Pain（Steam）",
+        "url": "https://store.steampowered.com/app/998740/Ring_of_Pain/",
+        "notes": "类型（肉鸽卡牌地牢爬行）、关卡由卡组随机生成并排成一个环、玩家沿环行进遭遇怪物/宝物/药水/道具、回合制且站位是生存关键、背包格有限每格一件道具、道具协同决定成败、通关解锁可在后续出现的卡牌、twicedifferent 开发等事实来源。"
+      }
+    ],
+    "short_description": "一款肉鸽卡牌地牢爬行游戏，关卡由卡组随机生成并排成一个环，玩家沿环逐一遭遇以卡牌表示的怪物、宝物、药水与道具，在回合制中靠站位与有限背包里的道具协同决定生死。",
+    "selection_reason": "作为「把地牢爬行抽象成一圈可观察的卡环」的代表：用环形排布让玩家一眼看清当前房间全部威胁与收益再从容决策，把走位、取舍与道具协同压缩进极简的卡牌界面，是研究空间化卡牌决策与信息透明设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_ring_of_pain",
+    "one_sentence_summary": "玩家在由卡组随机生成、排成环形的关卡里沿环逐一遭遇以卡牌表示的怪物、宝物与道具，在回合制中靠走位、有限背包与道具协同求生，通关解锁可在后续局出现的卡牌以逐步变强。",
+    "core_hook": "把整个房间的怪物、宝物与道具排成一圈可一眼看清的卡环，让玩家在出手前就能权衡走哪一步、打谁、拿什么，把地牢爬行变成信息透明的空间博弈。",
+    "core_loop": "观察环上排布、决定向前或绕行、与卡牌代表的怪物战斗或拾取道具、用有限背包搭出道具协同、推进楼层，失败带解锁重开并让更强卡牌进入后续局。",
+    "progression_model": "单局靠沿途拾取道具与搭出被动协同即时变强，背包格有限迫使取舍；跨局通关会解锁不同强度的卡牌进入后续生成池，进度兼有单局构筑与长期解锁。",
+    "failure_model": "生命归零即本局死亡，需带已解锁卡牌重新开始新的一局地牢。",
+    "content_structure": "以由卡组随机生成、排成环形的逐层房间为骨架，怪物、宝物、药水与道具均以卡牌呈现，靠有限背包与道具协同承载策略，单人。",
+    "main_player_actions": ["出牌", "卡牌取舍", "走位"],
+    "main_player_decisions": ["风险取舍", "道具取舍", "装备搭配"],
+    "main_player_experiences": ["运筹帷幄", "构筑乐趣", "氛围营造"],
+    "main_mechanics": ["卡牌战斗", "站位战斗", "道具协同", "元进度", "程序生成"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["环形布局", "站位战斗"],
+    "reusable_reference_patterns": ["站位战斗", "道具协同", "程序生成"],
+    "non_replicable_risks": ["平衡复杂度"],
+    "genre": ["类肉鸽", "卡牌构筑"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["俯视"],
+    "theme": ["黑暗奇幻", "超现实"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "环形布局",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "卡牌排成环",
+            "quote_or_summary": "关卡由卡组随机生成并排成一个环，让玩家可观察整层并据此制定策略，玩家沿环行进遭遇各物件。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "站位战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "站位是生存关键",
+            "quote_or_summary": "这是一款回合制肉鸽，站位（positioning）是生存的关键。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "道具协同",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "有限背包与协同",
+            "quote_or_summary": "背包格有限、每格只放一件道具，找出道具之间的协同能显著提高通关概率。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Ring of Pain 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/998740/Ring_of_Pain/",
+        "quote_or_summary": "肉鸽卡牌地牢爬行，关卡随机生成排成环，沿环遭遇以卡牌表示的怪物宝物道具，回合制且站位关键，背包有限每格一件，道具协同定成败，通关解锁卡牌。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_ring_of_pain_ring_layout",
+      "subject": "环形布局",
+      "relation": "creates",
+      "object": "空间决策",
+      "explanation": "把整层地牢抽象成一圈可一眼看清的卡环，让玩家在出手前即掌握全部威胁与收益的相对位置，从而把战斗化为关于「走哪一步、先打谁、绕过什么」的空间取舍，可复用于希望以信息透明换取深度决策的卡牌或地牢设计。",
+      "evidence": [
+        {
+          "title": "环形信息透明解读",
+          "quote_or_summary": "可观察的卡环让决策从盲抽变为基于位置的空间取舍。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_book_of_demons",
+    "title": "Book of Demons",
+    "source_refs": [
+      {
+        "title": "Book of Demons（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Book_of_Demons",
+        "notes": "类型（等距砍杀动作 RPG）、用卡牌替代传统装备与技能树（物品卡/法术卡/神器卡，各有普通/魔法/传奇）、角色沿预设轨道移动而非自由行走、Flexiscope 可让玩家自定单局时长、三职业（战士/法师/盗贼）、全部美术为剪纸与立体书元素（Paperverse）、Thing Trunk 开发、2018 年 12 月发售等事实来源。"
+      },
+      {
+        "title": "Book of Demons（Steam）",
+        "url": "https://store.steampowered.com/app/449960/Book_of_Demons/",
+        "notes": "卡牌替代装备技能、轨道移动、可调单局时长、纸艺美术等事实来源。"
+      }
+    ],
+    "short_description": "一款等距视角的砍杀动作 RPG，玩家在大教堂下的地牢中战斗，但用一套卡牌（物品/法术/神器）替代传统装备与技能树、角色沿预设轨道移动而非自由行走，并能通过 Flexiscope 自定每局时长；全部画面以剪纸与立体书元素呈现（Paperverse），Thing Trunk 开发、2018 年发售。",
+    "selection_reason": "作为「用卡牌与可调时长重构砍杀 RPG」代表：把装备与技能树压缩成可构筑的卡组、把自由走位简化为轨道移动以聚焦战斗决策，再用 Flexiscope 让玩家按可用时间裁剪单局长度，是研究品类简化、卡牌化构筑与「按时间裁剪单局」便利化设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_book_of_demons",
+    "one_sentence_summary": "玩家在剪纸立体书风格的大教堂地牢中战斗，用物品/法术/神器卡组替代装备与技能树、角色沿预设轨道移动，并能用 Flexiscope 按可用时间裁剪单局长度，逐层深入清剿恶魔。",
+    "core_hook": "把砍杀 RPG 做减法又做巧思：装备与技能树压缩成可构筑的卡组，自由走位简化为沿轨道移动以让玩家专注出牌与战斗决策，再用 Flexiscope 让你按手头时间把单局裁成几分钟或更长，把「没空玩」这道门槛也设计掉。",
+    "core_loop": "选职业带卡组下地牢、沿轨道推进并出牌战斗、击杀恶魔与 Boss、用掉落升级卡牌与解锁新卡、按 Flexiscope 设定的时长完成单局，循环深入更深层并扩充卡组。",
+    "progression_model": "靠地牢掉落升级卡牌、解锁新卡与职业、提升角色等级推进；进度体现为卡组强度、已解锁卡牌与职业、地牢深度，构筑随卡池扩充愈发多样。",
+    "failure_model": "生命归零即本局阵亡、退回城镇，损失本局进度但保留已升级的卡牌与解锁，重整卡组再次下潜。",
+    "content_structure": "以大教堂下逐层加深的地牢为骨架，靠卡牌构筑、轨道移动战斗与可调单局时长承载流程，含三职业与纸艺叙事，单人。",
+    "main_player_actions": ["出牌", "近战攻击", "技能释放"],
+    "main_player_decisions": ["卡牌取舍", "装备搭配", "风险取舍"],
+    "main_player_experiences": ["战斗精通", "构筑乐趣", "系统掌控"],
+    "main_mechanics": ["牌组构筑", "卡牌战斗", "轨道移动", "可调时长", "随机关卡"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["小型团队", "纸艺美术"],
+    "innovation_patterns": ["卡牌交互", "可调时长"],
+    "reusable_reference_patterns": ["牌组构筑", "卡牌交互"],
+    "non_replicable_risks": ["强美术风格", "玩家留存"],
+    "genre": ["动作角色扮演", "卡牌构筑"],
+    "art_style": ["纸艺美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["等距"],
+    "theme": ["黑暗奇幻"],
+    "narrative_style": ["对话叙事"],
+    "game_feel": ["策略权衡", "厚重打击"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "可调时长",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "Flexiscope 自定时长",
+            "quote_or_summary": "Flexiscope 让玩家自定每局游戏时长，按可用时间裁剪地牢长度。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "卡牌交互",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "卡牌替代装备技能",
+            "quote_or_summary": "用物品/法术/神器三类卡牌替代传统装备与技能树，构筑出战斗能力。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "轨道移动",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "沿预设轨道移动",
+            "quote_or_summary": "角色沿预设轨道移动而非自由行走，让玩家专注于战斗与出牌决策。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Book of Demons 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Book_of_Demons",
+        "quote_or_summary": "等距砍杀动作 RPG，卡牌替代装备与技能树、角色沿轨道移动、Flexiscope 自定单局时长、三职业、剪纸立体书 Paperverse 美术，Thing Trunk 开发，2018 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_bod_flexiscope_replay",
+      "subject": "可调时长",
+      "relation": "increases",
+      "object": "重玩动力",
+      "explanation": "砍杀品类常因「一坐下就得长时间投入」而劝退碎片时间玩家；Flexiscope 让玩家在开局就按手头时间把单局裁成短或长，使「随时来一局」变得低负担，从而显著提高重复游玩的频率与意愿，把可用时间这一外部约束转化为可调参数，可复用于希望以「玩家自定单局时长」降低进入门槛、提升重玩频率的便利化设计。",
+      "evidence": [
+        {
+          "title": "可调时长提升重玩解读",
+          "quote_or_summary": "开局即可按手头时间裁剪单局长度，让随时来一局变得低负担，提高重玩频率与意愿。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

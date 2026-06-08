@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_dice_and_fold",
+    "title": "Dice & Fold",
+    "source_refs": [
+      {
+        "title": "Dice & Fold（Steam，appid 2693930）",
+        "url": "https://store.steampowered.com/app/2693930/Dice__Fold/",
+        "notes": "类型（回合制掷骰地牢爬塔肉鸽）、唯一攻击方式是掷骰、敌人以卡牌形式排布在俯视牌桌上、掷出后把骰子拖放到敌人槽位（有的要精确点数、有的可累加任意点数直至清零、有的有多个槽位）使敌人「弃牌」、灵感取自纸牌接龙、20 个可选职业、失败后获得元进度货币强化后续局、Tinymice Entertainment 开发 Rogue Duck 与 Gamersky 发行、2024 年 6 月 24 日发售等事实来源。"
+      }
+    ],
+    "short_description": "一款回合制掷骰地牢爬塔肉鸽：玩家唯一的攻击方式是掷骰，敌人以卡牌形式排布在俯视牌桌上，掷出骰子后把它拖放到敌人的点数槽位——有的槽位要求精确点数、有的可累加任意点数直至清零、有的有多个槽位要逐一填满——把敌人「弃牌」消灭；灵感取自纸牌接龙，提供 20 个可选职业，战败后获得元进度货币强化后续挑战，Tinymice Entertainment 开发、2024 年发售。",
+    "selection_reason": "作为「把掷骰与配装做成对抗随机性的策略层」的代表：玩家靠职业能力、道具与重投手段去调整、复用与精算骰子点数，把「掷骰看脸」转化为「如何让骰子刚好落进对的槽位」的运筹，再以纸牌接龙式的敌人槽位与肉鸽元进度承载，是研究骰子配装、点数运筹与缓解随机挫败的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_dice_and_fold",
+    "one_sentence_summary": "玩家带领一支队伍在俯视牌桌上以掷骰为唯一攻击手段，把骰子拖放到卡牌敌人的精确点数或累加槽位中将其「弃牌」消灭，靠 20 个职业的能力与道具调整骰子点数运筹取胜，战败后用元进度货币强化后续挑战。",
+    "core_hook": "把战斗压缩成一桌掷骰拼图：敌人是排在牌桌上的卡牌，每张有不同的点数槽位（要精确点数、可累加任意点数、或多槽位），而玩家唯一的输出就是掷骰；于是核心不在「掷得多大」，而在如何用职业能力、道具与重投把手里这几颗骰子的点数刚好凑进对的槽位、用最少的骰子清掉最多的威胁，把看脸的掷骰变成一道每回合的运筹谜题。",
+    "core_loop": "进入回合掷出骰子、评估敌人卡牌的点数槽位需求、用职业能力与道具调整或重投点数、把骰子拖放进对应槽位将敌人弃牌、清场后选择路线与奖励推进地牢，战败则带着元进度货币重开强化后的新局。",
+    "progression_model": "单局靠掷骰清怪、拾取道具与升级职业能力增强骰子运用，跨局靠战败获得的元进度货币永久强化角色与解锁职业推进；进度体现为已解锁职业、元进度强度与可抵达的地牢深度。",
+    "failure_model": "队伍被敌人击败即本局结束，但不以挫败收场——战败会奖励元进度货币与解锁，用于强化后续挑战，核心是「死了也在变强」的肉鸽循环而非纯惩罚。",
+    "content_structure": "以俯视牌桌、卡牌敌人的点数槽位与回合掷骰为骨架，靠职业能力、道具与点数运筹承载战斗，以肉鸽式地牢推进与元进度解锁承载长线与重玩，单人。",
+    "main_player_actions": ["掷骰", "物件操控", "队伍管理"],
+    "main_player_decisions": ["风险取舍", "装备搭配", "资源取舍"],
+    "main_player_experiences": ["构筑乐趣", "运筹帷幄", "滚雪球快感"],
+    "main_mechanics": ["骰子判定", "骰子配装", "元进度", "回合制", "职业分工"],
+    "replayability_sources": ["程序生成", "角色解锁", "构筑多样"],
+    "production_constraints": ["小型团队"],
+    "innovation_patterns": ["骰子配装", "骰子判定"],
+    "reusable_reference_patterns": ["骰子配装", "骰子判定"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["类肉鸽", "回合制策略"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["俯视"],
+    "theme": ["奇幻", "桌游风"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡", "桌游质感"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "骰子判定",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "掷骰为唯一攻击",
+            "quote_or_summary": "玩家唯一的攻击方式是掷骰，把骰子拖放到敌人卡牌的点数槽位（精确点数/累加/多槽位）将其弃牌消灭。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "骰子配装",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "职业道具调整点数",
+            "quote_or_summary": "20 个职业各有不同能力与道具，用于调整、复用与重投骰子点数，把随机掷骰变成可运筹的资源。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "元进度",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "战败奖励元进度货币",
+            "quote_or_summary": "战败不致挫败，玩家获得元进度货币与解锁用于强化后续挑战，形成「死亡也在变强」的肉鸽循环。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Dice & Fold 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/2693930/Dice__Fold/",
+        "quote_or_summary": "回合制掷骰地牢爬塔肉鸽，掷骰为唯一攻击、敌人为牌桌上的卡牌、骰子拖入点数槽位使其弃牌、20 职业、元进度货币强化后续局，Tinymice Entertainment 开发，2024 年发售。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_dice_and_fold_dice_loadout",
+      "subject": "骰子配装",
+      "relation": "reduces",
+      "object": "随机挫败",
+      "explanation": "把掷骰的随机性交还给玩家管理：职业能力、道具与重投让玩家能在掷出后调整、累加、复用骰子点数，再配合敌人槽位中「可累加任意点数」这类宽容判定，使一手坏骰也能被运筹成可用资源，于是失败更多归因于规划而非纯运气，缓解了掷骰玩法最常见的「看脸挫败」，可复用于希望保留骰子随机张力、又用「点数可调整/可累加」的配装与判定设计把运气转化为可决策资源、降低随机劝退的设计。",
+      "evidence": [
+        {
+          "title": "点数可运筹缓解随机解读",
+          "quote_or_summary": "职业道具与可累加槽位让坏骰也能被调整复用，使失败更多归因规划而非运气，缓解掷骰看脸挫败。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_hellcard",
+    "title": "HELLCARD",
+    "source_refs": [
+      {
+        "title": "HELLCARD（Steam）",
+        "url": "https://store.steampowered.com/app/1201540/HELLCARD/",
+        "notes": "类型（合作肉鸽卡牌构筑）、可单人或最多三人合作、承《Book of Demons》纸片地牢世界观、牌组构筑与快节奏战术卡战、怪物站位会影响战局（范围攻击与推挤）、单人可招募 AI 同伴、Thing Trunk 开发、Skystone Games 发行、2024 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款主打合作的肉鸽卡牌构筑游戏，玩家可单人或最多三人合作，在《Book of Demons》的纸片地牢里组牌、打快节奏战术卡战，且怪物的站位会显著影响战局，单人时可招募 AI 同伴。",
+    "selection_reason": "作为「把站位空间引入合作卡牌构筑」的代表：在牌组构筑肉鸽上叠加怪物站位、范围攻击与推挤等空间要素，并以多人合作为核心，让卡牌战斗从数值对拼变成讲究阵型与配合的战术，是研究卡牌肉鸽合作化与空间化的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_hellcard",
+    "one_sentence_summary": "玩家可单人或最多三人合作，在《Book of Demons》的纸片地牢里组牌、打快节奏战术卡战，利用会显著影响战局的怪物站位、范围攻击与推挤击退魔王军团，单人时可招募 AI 同伴。",
+    "core_hook": "在牌组构筑肉鸽之上叠加怪物站位与范围/推挤等空间要素，并以多人合作为核心，让卡牌战斗从数值对拼变成讲究阵型与队友配合的战术博弈。",
+    "core_loop": "组队（真人或 AI）进入地牢、逐场卡牌战斗中利用怪物站位打出范围与击退、战后拣选卡牌强化牌组、推进楼层挑战魔王，失败则带解锁重开新局。",
+    "progression_model": "单局靠拣选卡牌构筑职业牌组即时变强；跨局解锁职业、卡牌与内容，进度兼有单局构筑与长期解锁，含多个可玩职业与 DLC 扩充。",
+    "failure_model": "队伍被魔王军团击败即本局失败，需带跨局解锁重新开始地牢挑战。",
+    "content_structure": "承《Book of Demons》纸片地牢世界观，以合作牌组构筑、讲究站位的回合卡战、多职业与肉鸽推进为骨架，支持单人（含 AI 同伴）与最多三人合作。",
+    "main_player_actions": ["出牌", "卡牌取舍", "走位"],
+    "main_player_decisions": ["卡牌取舍", "职业搭配", "风险取舍"],
+    "main_player_experiences": ["构筑乐趣", "战术博弈", "协作默契"],
+    "main_mechanics": ["牌组构筑", "站位战斗", "多人合作", "程序生成", "元进度"],
+    "replayability_sources": ["程序生成", "构筑多样", "多人合作"],
+    "production_constraints": ["小型团队", "系列复用"],
+    "innovation_patterns": ["站位战斗", "合作卡牌"],
+    "reusable_reference_patterns": ["站位战斗", "合作卡牌", "牌组构筑"],
+    "non_replicable_risks": ["平衡复杂度"],
+    "genre": ["卡牌构筑", "类肉鸽"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["黑暗奇幻", "宗教恐怖"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "站位战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "怪物站位影响战局",
+            "quote_or_summary": "怪物的摆位会显著影响策略，许多攻击呈范围扩散或可将敌人横向推挤穿过战场，玩家可加以利用。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "多人合作",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "至多三人合作",
+            "quote_or_summary": "支持单人或最多三名英雄合作迎战魔王军团，单人时可招募 AI 同伴。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      },
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "肉鸽组牌",
+            "quote_or_summary": "核心玩法围绕牌组构筑与快节奏战术卡战展开。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "HELLCARD 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/1201540/HELLCARD/",
+        "quote_or_summary": "合作肉鸽卡牌构筑，单人或最多三人合作，承 Book of Demons 纸片地牢世界观，牌组构筑与快节奏战术卡战，怪物站位影响战局（范围与推挤），单人可招 AI 同伴，Thing Trunk 开发，2024 年发售。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_hellcard_positioning_in_deckbuilder",
+      "subject": "站位战斗",
+      "relation": "creates",
+      "object": "战术深度",
+      "explanation": "在牌组构筑肉鸽中引入怪物站位、范围攻击与推挤等空间要素，使出牌不再只是数值对拼，而要考虑敌人阵型与击退连锁，并与多人合作叠加出阵型配合，把卡牌战斗空间化、协作化，可复用于希望增加战术维度的卡牌设计。",
+      "evidence": [
+        {
+          "title": "卡牌空间化解读",
+          "quote_or_summary": "站位与范围/推挤让组牌战斗增添空间与配合维度。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_cat_god_ranch",
+    "title": "Cat God Ranch",
+    "source_refs": [
+      {
+        "title": "Cat God Ranch（Steam）",
+        "url": "https://store.steampowered.com/app/2797340/Cat_God_Ranch/",
+        "notes": "类型（肉鸽卡牌构筑 + 牧场经营）、玩家经营牧场壮大畜群以取悦猫神、含 7 个动物家族 100+ 动物 10+ 猫神 100+ 道具/地形卡、靠动物与道具组合产出收益、每周末须向猫神进贡否则牧场被关停、CrazyPotato Studio 开发、2024 年 9 月发售、支持中文等事实来源。"
+      }
+    ],
+    "short_description": "一款融合肉鸽卡牌构筑与牧场经营的游戏，玩家经营牧场、搭配动物与道具/地形卡产出收益，把畜群养到足以取悦猫神；含 7 个动物家族、上百种动物与猫神，而每周末都必须向猫神进贡，否则牧场会被关停。",
+    "selection_reason": "作为「以周期性进贡截止驱动牧场构筑」的代表：把卡牌构筑的协同搭配套进牧场经营，再用「每周末必须凑够贡品否则关停」的硬性进贡截止持续施压，把悠闲种田变成有节奏的优化博弈，是研究进贡截止机制与经营/构筑缝合的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_cat_god_ranch",
+    "one_sentence_summary": "玩家经营一座牧场，靠搭配动物与道具/地形卡造出协同、产出尽可能多的收益，把畜群养到能取悦猫神，并在每个周末凑够贡品向猫神进贡，否则牧场被关停。",
+    "core_hook": "把卡牌构筑的协同搭配放进牧场经营，再用「每周末必须向猫神凑够进贡，否则牧场关停」的硬性截止反复施压，让原本悠闲的养畜变成一周一结、必须不断优化产出的紧绷循环。",
+    "core_loop": "在牧场里布置动物与道具/地形卡、利用相互组合放大收益、积累产出，待周末向猫神进贡以续命，达标后用猫神赐予的道具卡进一步强化下一周的产出，循环冲击更高要求。",
+    "progression_model": "靠解锁更多动物家族、道具与地形卡、猫神赐福强化构筑推进；进度体现为畜群规模、卡牌组合强度与已闯过的周数，进贡门槛逐周抬高施压。",
+    "failure_model": "周末未能凑够向猫神的贡品即触怒猫神、牧场被关停、本局结束，需带解锁重开；逐周抬高的进贡门槛使产出一旦掉队便迅速崩盘。",
+    "content_structure": "以按周推进的牧场经营单局为骨架，靠动物与道具/地形卡的组合构筑、周末进贡截止与猫神赐福承载策略与重玩，单人。",
+    "main_player_actions": ["卡牌取舍", "道具运用", "队伍管理"],
+    "main_player_decisions": ["装备搭配", "资源取舍", "风险取舍"],
+    "main_player_experiences": ["经营成就", "构筑乐趣", "滚雪球快感"],
+    "main_mechanics": ["农场种植", "道具协同", "进贡机制", "卡牌交互", "随机道具"],
+    "replayability_sources": ["构筑多样", "难度分级", "角色解锁"],
+    "production_constraints": ["小型团队", "卡通渲染"],
+    "innovation_patterns": ["进贡机制", "类型缝合"],
+    "reusable_reference_patterns": ["进贡机制", "农场种植", "道具协同"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["卡牌构筑", "模拟经营"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["俯视"],
+    "theme": ["动物", "田园生活"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["规划满足", "策略权衡"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "进贡机制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "每周向猫神进贡",
+            "quote_or_summary": "每个周末玩家都必须向猫神进贡，否则将触怒猫神、牧场被关停。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "道具协同",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "动物与道具组合",
+            "quote_or_summary": "游戏含上百种动物与上百张道具/地形卡，靠彼此组合搭出协同来放大牧场收益。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "农场种植",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "牧场经营壮大畜群",
+            "quote_or_summary": "玩家作为牧场经理经营并壮大畜群，被归类为模拟经营/牧场模拟与肉鸽卡牌构筑。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Cat God Ranch 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/2797340/Cat_God_Ranch/",
+        "quote_or_summary": "肉鸽卡牌构筑加牧场经营，搭配动物与道具/地形卡放大收益取悦猫神，7 动物家族 100+ 动物 10+ 猫神 100+ 卡，每周末须进贡否则牧场关停，CrazyPotato Studio 开发，2024 年 9 月发售。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_catgodranch_tribute_pressure",
+      "subject": "进贡机制",
+      "relation": "creates",
+      "object": "时间压力",
+      "explanation": "用「每周末必须凑够贡品否则关停」的周期性硬截止，把本来可以慢慢经营的牧场切成一周一结的紧凑回合，逐周抬高的门槛逼玩家持续优化动物与道具组合、不容产出掉队，为悠闲品类注入清晰的节奏与紧迫感，可复用于希望以递增的周期性贡献门槛为经营/构筑玩法施加时间压力的设计。",
+      "evidence": [
+        {
+          "title": "进贡截止施压解读",
+          "quote_or_summary": "周期性递增的进贡门槛把悠闲经营切成紧凑回合，制造持续的优化时间压力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

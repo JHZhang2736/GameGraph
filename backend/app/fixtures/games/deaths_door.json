@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_deaths_door",
+    "title": "Death's Door",
+    "source_refs": [
+      {
+        "title": "Death's Door（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Death%27s_Door_(video_game)",
+        "notes": "类型（等距视角动作冒险）、初始剑与弓、近战连段攒蓄并用剑攻击回复弓的弹药、随进度解锁四件武器与三种魔法弹、用击杀与隐藏拾取的「灵魂」升级基础能力、新装备开启此前不可达区域（塞尔达式设计）、四点生命被击一点扣一、种植种子回血、死亡在最近门重生不丢进度、扮演收割亡魂的乌鸦、收集三枚巨魂、Acid Nerve 两人工作室用 Unity 开发、Devolver 发行、2021 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款等距视角动作冒险游戏，玩家扮演为「收割委员会」工作的乌鸦死神：用剑近战攒连段、并以剑攻击回复弓的弹药、随进度解锁更多武器与魔法弹，用击杀与隐藏拾取的「灵魂」升级能力，靠新装备开启此前不可达的区域（塞尔达式锁钥推进），死亡在最近的门重生不丢进度；Acid Nerve 两人工作室用 Unity 开发、Devolver 发行、2021 年发售。",
+    "selection_reason": "作为「两人团队把类塞尔达探索、紧凑近战与灵魂升级打磨成轻松上手的精致小品」的代表：用剑回复弓弹把近战与远程绑成一个攻击循环，以新装备门控开放区域、灵魂货币升级能力，再以「死亡仅回到门口、不丢进度」降低挫败，是研究轻量类塞尔达结构与小团队精致化的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_deaths_door",
+    "one_sentence_summary": "玩家扮演收割亡魂的乌鸦，用剑近战攒连段并以剑攻击回复弓弹，解锁更多武器与魔法弹，用击杀获得的灵魂升级能力，靠新装备开启此前不可达的区域，收集三枚巨魂打开死亡之门。",
+    "core_hook": "把近战与远程拧成一个循环：弓的弹药只能靠用剑命中敌人回复，于是玩家被迫在近身搏杀与拉开放箭之间不断切换、维持攻击节奏；再叠加塞尔达式的「新装备开启旧区域」探索与灵魂升级，配上「死亡只回到门口、不丢进度」的温和惩罚，做出一款门槛低却扎实的类魂小品。",
+    "core_loop": "在互联场景探索与战斗、用剑攒连段并回复弓弹、击杀与搜寻隐藏点积累灵魂、升级基础能力、用新解锁的武器与魔法开启此前不可达的区域、寻找巨魂推进，死亡在最近门重生再战。",
+    "progression_model": "靠击杀与隐藏拾取的灵魂升级生命、近战、远程等基础能力，靠解锁四件武器与三种魔法弹拓展手段并门控开放新区域；进度体现为能力等级、已解锁装备、已开启区域与已收集巨魂。",
+    "failure_model": "四点生命被敌人逐点扣减归零即死亡，在最近的门重生且不损失进度，凭种植种子回血续航，死亡惩罚轻微。",
+    "content_structure": "以互联的等距世界、数处区域 Boss 与隐藏谜题为骨架，靠近战连段、弓箭与魔法、灵魂升级与能力门控探索承载流程与探索，单人。",
+    "main_player_actions": ["近战攻击", "远程攻击", "翻滚闪避", "技能释放"],
+    "main_player_decisions": ["探索路线", "武器搭配", "风险取舍"],
+    "main_player_experiences": ["探索发现", "战斗精通", "氛围营造"],
+    "main_mechanics": ["连招", "能力门控探索", "灵魂货币", "轻度死亡惩罚", "分层秘密"],
+    "replayability_sources": ["全收集", "彩蛋收集"],
+    "production_constraints": ["双人团队", "Unity 引擎"],
+    "innovation_patterns": ["能力门控探索", "类型缝合"],
+    "reusable_reference_patterns": ["能力门控探索", "氛围营造"],
+    "non_replicable_risks": ["双人高产", "强美术风格"],
+    "genre": ["动作冒险"],
+    "art_style": ["低多边形"],
+    "audio_style": ["管弦乐"],
+    "perspective": ["等距"],
+    "theme": ["黑暗童话", "黑色幽默"],
+    "narrative_style": ["环境叙事", "极简叙事"],
+    "game_feel": ["精准近战", "流畅操作"],
+    "team_model": ["双人团队"],
+    "reference_value_tags": [
+      {
+        "tag": "灵魂货币",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "灵魂升级能力",
+            "quote_or_summary": "灵魂作为货币，靠击杀敌人与发现隐藏拾取获得，用于升级生命、近战、远程等基础能力。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "能力门控探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "新装备开启旧区域",
+            "quote_or_summary": "新解锁的武器与魔法会开启此前不可达的区域，采用塞尔达式的锁钥推进。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "连招",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "剑攻击回复弓弹",
+            "quote_or_summary": "用剑近战可攒连段，弓的弹药靠用剑命中敌人回复，把近战与远程绑成一个攻击循环。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Death's Door 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Death%27s_Door_(video_game)",
+        "quote_or_summary": "等距动作冒险，剑近战攒连段并以剑回复弓弹、解锁多武器与魔法弹、灵魂升级能力、新装备门控开放区域、死亡在最近门重生不丢进度，Acid Nerve 两人工作室用 Unity 开发，Devolver 发行，2021 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_deaths_door_ammo_loop",
+      "subject": "连招",
+      "relation": "creates",
+      "object": "战术深度",
+      "explanation": "把弓的弹药设计成「只能靠用剑命中敌人回复」，于是远程不再是安全的消耗资源，而是必须先冒险近身、再拉开距离释放的奖励，玩家每场战斗都被迫在近战进场与远程输出之间编织节奏，把简单的剑与弓拧成一套有取舍的攻击循环，可复用于希望用「资源互相供给」把多种攻击手段绑成一体、避免玩家只用单一手段的设计。",
+      "evidence": [
+        {
+          "title": "剑弓循环制造深度解读",
+          "quote_or_summary": "弓弹依赖剑命中回复，使远程成为先近身后释放的奖励，逼玩家在近战与远程间编织节奏。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

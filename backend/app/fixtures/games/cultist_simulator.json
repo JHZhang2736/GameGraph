@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_cultist_simulator",
+    "title": "Cultist Simulator",
+    "source_refs": [
+      {
+        "title": "Cultist Simulator（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Cultist_Simulator",
+        "notes": "类型（卡牌模拟）、桌面式卡牌操作、实时计时的「动词」格、资源与牌库管理、靠试错探索的隐晦设计、1920 年代克苏鲁神秘学题材、Weather Factory（Alexis Kennedy）用 Unity 开发、2018 年发售、可因饥饿/绝望/疯狂/敌人而死亡等事实来源。"
+      }
+    ],
+    "short_description": "一款克苏鲁题材的卡牌模拟游戏，玩家在桌面上把代表欲望、记忆与信徒的卡牌拖入实时计时的「动词」格中，组合出工作、研习与献祭等行动，于无明确指引的隐晦系统中创立并经营一个秘密教团。",
+    "selection_reason": "作为「无指引、靠试错解读隐晦系统」的代表：刻意不给教程与提示，让玩家在桌面卡牌与实时计时的张力中自行拼凑规则、解读神秘学符号，把「理解系统本身」做成核心乐趣，是研究隐晦设计与发现式玩法的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_cultist_simulator",
+    "one_sentence_summary": "玩家在桌面上把代表欲望、记忆与信徒的卡牌拖入实时计时的「动词」格中，组合出工作、研习与献祭等行动，在无明确指引的隐晦系统里靠试错创立并经营一个克苏鲁式秘密教团。",
+    "core_hook": "刻意不给教程与提示，让玩家在桌面卡牌与实时计时的双重压力下自行拼凑规则、解读神秘学符号，把「读懂系统本身」做成最大的乐趣。",
+    "core_loop": "把卡牌拖入计时的动词格触发行动、等待产出新卡与后果、管理健康/理智/金钱等资源与不断刷新的牌库，循环研习神秘学、扩张教团并规避调查者，直至触发某种结局或死亡。",
+    "progression_model": "靠研习提升神秘学等级、积累信徒与禁忌知识、解锁更高阶的行动与剧情；进度体现为教团规模、知识层级与剧情线，多在死亡或失败后于新角色处部分重来。",
+    "failure_model": "角色可能因饥饿、绝望、疯狂或招致敌人（猎人、对手教团）的注意而死亡；死亡会触发后续角色的调查，构成持续威胁。",
+    "content_structure": "以桌面卡牌与实时计时动词格为核心，含资源与牌库管理、神秘学研习、教团经营与多结局，1920 年代欧洲都市的克苏鲁神秘学题材，单人。",
+    "main_player_actions": ["出牌", "卡牌取舍", "社交互动"],
+    "main_player_decisions": ["资源取舍", "风险取舍", "优先级排序"],
+    "main_player_experiences": ["探索发现", "氛围营造", "系统掌控"],
+    "main_mechanics": ["卡牌战斗", "实时计时", "资源管理", "隐晦设计", "牌库构筑"],
+    "replayability_sources": ["多结局", "构筑多样", "分层秘密"],
+    "production_constraints": ["小型团队", "Unity 引擎", "极简界面"],
+    "innovation_patterns": ["隐晦设计", "实时计时"],
+    "reusable_reference_patterns": ["隐晦设计", "实时计时", "卡牌战斗"],
+    "non_replicable_risks": ["强文化母题", "玩家留存"],
+    "genre": ["卡牌构筑", "模拟经营"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["桌面背景"],
+    "theme": ["宗教恐怖", "超现实"],
+    "narrative_style": ["碎片化叙事", "极简叙事"],
+    "game_feel": ["策略权衡", "沉浸代入"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "隐晦设计",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "靠试错发现",
+            "quote_or_summary": "游戏几乎不提供教程与明确指引，玩家须通过反复试错与实验自行探索规则。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "实时计时",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "计时动词格",
+            "quote_or_summary": "卡牌被放入实时计时的「动词」格中，行动在倒计时后结算，制造时间压力。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "卡牌战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "桌面卡牌操作",
+            "quote_or_summary": "玩家通过在桌面界面上摆放与组合卡牌来进行所有交互。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Cultist Simulator 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Cultist_Simulator",
+        "quote_or_summary": "卡牌模拟，桌面卡牌操作，实时计时动词格，资源与牌库管理，靠试错探索的隐晦设计，1920 年代克苏鲁神秘学题材，Weather Factory（Alexis Kennedy）用 Unity 开发，2018 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_cultist_obscurity_as_play",
+      "subject": "隐晦设计",
+      "relation": "creates",
+      "object": "发现乐趣",
+      "explanation": "刻意抽走教程与提示，让玩家必须亲手实验、记录与推断才能读懂卡牌组合与系统规则，把「理解游戏怎么玩」本身变成主要的解谜乐趣与叙事沉浸，代价是较高的劝退门槛，可作为发现式、研究型玩法的设计参考。",
+      "evidence": [
+        {
+          "title": "隐晦即玩法解读",
+          "quote_or_summary": "抽走指引使解读系统本身成为核心乐趣，同时抬高上手门槛。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

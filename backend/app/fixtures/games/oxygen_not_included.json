@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_oxygen_not_included",
+    "title": "Oxygen Not Included",
+    "source_refs": [
+      {
+        "title": "Oxygen Not Included（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Oxygen_Not_Included",
+        "notes": "类型（生存模拟）、间接指派任务管理复制人、气体扩散与液体重力等物理模拟、氧气/温度/疾病/饥饿威胁、程序生成小行星、自动化、Klei 用 Unity 开发、2019 年正式发售等事实来源。"
+      }
+    ],
+    "short_description": "一款太空殖民地生存模拟游戏，玩家不直接操控而是为「复制人」排定优先任务，在程序生成的小行星里管理氧气、温度、食物与疾病，靠对气体液体热量的物理模拟建立可持续的地下基地。",
+    "selection_reason": "作为「深度物理模拟驱动涌现挑战」与「间接控制」的范本：气体扩散、液体重力与热传导让每个操作牵一发而动全身，以紧凑规则催生无尽的系统性难题，是研究模拟深度与殖民地管理的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_oxygen_not_included",
+    "one_sentence_summary": "玩家不直接操控而是为复制人排定优先级任务，在程序生成的小行星里采集、种植、研究并建造，靠对气体、液体与热量的物理模拟维持氧气、温度与卫生，建立可持续的太空殖民地。",
+    "core_hook": "对气体扩散、液体重力与热传导做深度物理模拟，使每个建造与操作都会沿相互关联的系统层层扩散，用一套紧凑规则催生无穷的涌现难题。",
+    "core_loop": "为复制人排定挖掘、建造、研究与维生任务的优先级，扩张基地、布置维生与自动化系统，监控氧气、温度、卫生与食物，应对模拟带来的连锁问题并持续优化。",
+    "progression_model": "无传统等级，进度体现为研究解锁的科技、基地规模与维生系统的复杂度提升；玩家从勉强求生走向稳态循环与自动化，靠系统掌控而非数值成长推进。",
+    "failure_model": "当玩家无法维持可生存条件时，殖民地会因缺氧、疾病、饥饿或温度失控而走向崩溃、复制人死亡。",
+    "content_structure": "一颗程序生成、含多生物群系的小行星，由玩家逐步开掘扩张；以研究科技树、维生与自动化系统为骨架，单人游玩，灵感取自《矮人要塞》《监狱建筑师》《模拟人生》。",
+    "main_player_actions": ["任务指派", "建造", "资源调度"],
+    "main_player_decisions": ["优先级排序", "资源取舍", "布局规划"],
+    "main_player_experiences": ["系统掌控", "涌现玩法", "经营成就"],
+    "main_mechanics": ["气液模拟", "资源管理", "殖民地管理", "程序生成", "自动化"],
+    "replayability_sources": ["程序生成", "构筑多样"],
+    "production_constraints": ["手绘美术", "Unity 引擎", "小型团队"],
+    "innovation_patterns": ["气液模拟", "间接控制"],
+    "reusable_reference_patterns": ["气液模拟", "间接控制", "自动化"],
+    "non_replicable_risks": ["系统复杂度", "技术复杂度"],
+    "genre": ["模拟经营", "生存"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["横版2D"],
+    "theme": ["太空殖民", "科幻"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["规划满足"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "气液模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "气体液体物理模拟",
+            "quote_or_summary": "游戏模拟气体扩散与新腔室开启时的气压平衡，可致既有腔室氧气下降，并模拟液体受重力排放。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "间接控制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "排优先级而非直接操控",
+            "quote_or_summary": "玩家通过下达带优先级的任务指令来管理复制人，而非直接操控其行动。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "殖民地管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "维生与资源管理",
+            "quote_or_summary": "玩家管理复制人的进食、休息、卫生与健康，并监控饥饿、废物与氧气以维持可持续的太空殖民地。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Oxygen Not Included 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Oxygen_Not_Included",
+        "quote_or_summary": "太空殖民地生存模拟，间接排优先级管理复制人，气体扩散与液体重力等物理模拟，氧气/温度/疾病/饥饿威胁，程序生成小行星，自动化，Klei 用 Unity 开发，2019 年正式发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_oni_simulation_depth",
+      "subject": "气液模拟",
+      "relation": "creates",
+      "object": "系统深度",
+      "explanation": "对气体扩散、液体重力与热传导做底层物理模拟，使玩家每个操作都会沿相互关联的系统层层扩散，生成任何脚本内容都无法预设的涌现难题，从一套紧凑规则中得到巨大深度，可复用于模拟类设计。",
+      "evidence": [
+        {
+          "title": "模拟涌现解读",
+          "quote_or_summary": "物理模拟让操作牵一发而动全身，催生涌现式系统挑战。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

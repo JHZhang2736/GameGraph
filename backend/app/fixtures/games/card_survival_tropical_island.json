@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_card_survival_tropical_island",
+    "title": "Card Survival: Tropical Island",
+    "source_refs": [
+      {
+        "title": "Card Survival: Tropical Island（Steam）",
+        "url": "https://store.steampowered.com/app/1694420/Card_Survival_Tropical_Island/",
+        "notes": "类型（卡牌式生存 RPG）、全部交互靠出牌与组合卡牌、回合制、流落荒岛求生、精细模拟（体重、手脚老茧等）、可选预设或自创角色与天赋、含 16+ 环境的大岛屿、WinterSpring Games 开发、2022 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款卡牌式荒岛生存 RPG，玩家流落热带荒岛，所有交互都通过出牌与组合卡牌完成，以回合制节奏管理饥渴、健康与体征，从衣不蔽体的遇难者逐步发展为自给自足的岛民。",
+    "selection_reason": "作为「用卡牌组合承载深度生存模拟」的代表：把采集、合成、进食、身体状态等全部交互抽象成出牌与组合卡牌，再以高精细的拟真模拟（体重、老茧等）支撑，用极简界面与回合制节奏换来从容深度，是研究卡牌化交互与慢节奏生存的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_card_survival_tropical_island",
+    "one_sentence_summary": "玩家流落热带荒岛，所有交互都通过出牌与组合卡牌完成，以回合制节奏管理饥渴、健康与精细模拟的身体状态，探索含 16+ 环境的大岛屿，从遇难者逐步发展为自给自足的岛民。",
+    "core_hook": "把采集、合成、进食与身体状态等全部生存交互抽象成出牌与组合卡牌，用极简界面与回合制节奏，承载一套高精细的拟真生存模拟。",
+    "core_loop": "出牌或组合卡牌进行采集、制作、进食与探索，维持饥渴与健康等体征、应对环境，循环积累技能与物资、解锁更多环境与发展阶段。",
+    "progression_model": "靠提升技能、积累工具与建筑、解锁更多环境推进，身体状态（如体重、老茧）随行为长期演变；进度体现为生存技能、据点发展与岛屿开度，无传统等级。",
+    "failure_model": "饥渴、伤病或体征恶化到极限会导致角色死亡；危险环境与野生动物亦构成致死风险，求生失败即一局结束。",
+    "content_structure": "在含沙滩、丛林、草地、红树林与洞穴等 16+ 环境的大岛屿上展开，以卡牌化交互、回合制生存、精细身体模拟与角色天赋自定义为骨架，单人。",
+    "main_player_actions": ["出牌", "卡牌取舍", "采集", "合成"],
+    "main_player_decisions": ["资源取舍", "探索路线", "风险取舍"],
+    "main_player_experiences": ["探索发现", "经营成就", "系统掌控"],
+    "main_mechanics": ["卡牌交互", "采集", "合成制作", "生存模拟", "回合制"],
+    "replayability_sources": ["角色解锁", "构筑多样", "难度分级"],
+    "production_constraints": ["小型团队", "极简界面"],
+    "innovation_patterns": ["卡牌交互", "生存模拟"],
+    "reusable_reference_patterns": ["卡牌交互", "生存模拟", "采集"],
+    "non_replicable_risks": ["系统复杂度", "平衡复杂度"],
+    "genre": ["生存", "角色扮演"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐", "环境音"],
+    "perspective": ["桌面背景"],
+    "theme": ["异星求生", "自然"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡", "轻松休闲"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "卡牌交互",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "全交互靠卡牌",
+            "quote_or_summary": "游戏所有交互都通过使用单张卡牌或将多张卡牌组合完成。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "生存模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "精细身体模拟",
+            "quote_or_summary": "拟真模拟追踪从体重到手脚老茧等细节，玩家从挨饿的遇难者发展为富足的岛民。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "回合制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "回合制节奏",
+            "quote_or_summary": "采用回合制与简洁界面，提供比动作类生存更从容的玩法节奏。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Card Survival: Tropical Island 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/1694420/Card_Survival_Tropical_Island/",
+        "quote_or_summary": "卡牌式荒岛生存 RPG，全交互靠出牌与组合卡牌，回合制，精细身体模拟，可选预设或自创角色天赋，含 16+ 环境的大岛屿，WinterSpring Games 开发，2022 年发售。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_card_survival_card_abstraction",
+      "subject": "卡牌交互",
+      "relation": "enables",
+      "object": "系统深度",
+      "explanation": "把采集、合成、进食与身体状态等全部生存交互统一抽象为出牌与组合卡牌，使一套极简界面就能承载高度复杂的拟真模拟，既降低了表现层的制作成本，又让玩家以从容的回合节奏消化深度系统，可复用于以低成本承载复杂模拟的设计。",
+      "evidence": [
+        {
+          "title": "卡牌抽象解读",
+          "quote_or_summary": "统一的卡牌交互让极简界面承载复杂生存模拟，并放慢节奏便于消化。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

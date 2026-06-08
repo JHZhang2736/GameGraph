@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_atomicrops",
+    "title": "Atomicrops",
+    "source_refs": [
+      {
+        "title": "Atomicrops（Steam）",
+        "url": "https://store.steampowered.com/app/757320/Atomicrops/",
+        "notes": "类型（双摇杆弹幕肉鸽种田）、玩家在末世废土上耕作并守卫最后一片农场、白天种植与经营夜晚抵御变异生物的弹幕围攻、可与镇民结婚、升级武器、像素美术、Bird Bath Games 开发、Raw Fury 发行、2020 年发售等事实来源。"
+      },
+      {
+        "title": "Atomicrops（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Atomicrops",
+        "notes": "种田部分受《Stardew Valley》启发、弹幕肉鸽部分受《Enter the Gungeon》《Nuclear Throne》启发、Metacritic 78 分等背景事实来源。"
+      }
+    ],
+    "short_description": "一款双摇杆弹幕肉鸽种田游戏，玩家在核战后的废土上耕种变异作物、经营最后一片农场，白天种地与升级、夜晚迎击成群变异生物的弹幕围攻，还能与镇民结婚获得帮手，单局内昼夜交替不断升级求存。",
+    "selection_reason": "作为「把种田模拟与弹幕肉鸽强行缝合」的代表：白天像《星露谷》般经营农场、夜晚像弹幕射击般据守反击，用昼夜切换强行把两种节奏迥异的玩法拼成一个紧绷的单局循环，是研究类型缝合与昼夜双玩法节奏的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_atomicrops",
+    "one_sentence_summary": "玩家在末世废土上耕种变异作物、经营最后一片农场，白天播种浇灌与升级武器、夜晚以双摇杆射击迎击成群变异生物的弹幕围攻，并可与镇民结婚获得助力，在昼夜交替的单局里滚雪球求存。",
+    "core_hook": "把《星露谷》式的白天种田经营，和弹幕射击式的夜晚据守反击，用昼夜切换硬缝进同一个肉鸽单局里，让玩家在「侍弄庄稼」与「枪林弹雨」两种截然相反的节奏间反复横跳，时间永远不够用。",
+    "core_loop": "白天播种、浇灌、收割变异作物换取资源、升级武器与农场、与镇民联姻，夜幕降临则据守农场用双摇杆射击迎击变异生物的弹幕围攻，次日带着收益继续扩产与变强，循环冲击更高季节。",
+    "progression_model": "单局靠卖作物换钱升级武器、种子、农具与盟友、强化农场推进；跨局解锁新角色、作物与永久增益；进度兼有单局滚雪球与跨局元解锁，节奏由季节推进施压。",
+    "failure_model": "夜战中生命归零、或农场被变异生物摧毁即本局失败，需带已解锁内容重开；昼夜时间紧迫使任一环节拖延都可能导致夜里防线崩溃。",
+    "content_structure": "以按季节推进的单局为骨架，每个昼夜由白天种田经营与夜晚弹幕防守交替组成，靠类型缝合、武器构筑与元解锁承载重玩，单人或合作。",
+    "main_player_actions": ["射击", "走位", "采集"],
+    "main_player_decisions": ["时间分配", "增益选择", "武器搭配"],
+    "main_player_experiences": ["滚雪球快感", "战斗精通", "经营成就"],
+    "main_mechanics": ["农场种植", "弹幕生存", "昼夜循环", "元进度", "武器构筑"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["像素美术", "小型团队"],
+    "innovation_patterns": ["类型缝合", "昼夜循环"],
+    "reusable_reference_patterns": ["类型缝合", "弹幕生存", "昼夜循环"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["类肉鸽", "俯视射击"],
+    "art_style": ["像素美术"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["俯视"],
+    "theme": ["末世重建"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["爽快射击", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "类型缝合",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "种田与弹幕肉鸽缝合",
+            "quote_or_summary": "游戏把种田模拟与双摇杆弹幕肉鸽缝合在一起，种田部分受《Stardew Valley》启发、弹幕部分受《Enter the Gungeon》《Nuclear Throne》启发。",
+            "notes": "维基百科与商店页可观察事实。"
+          }
+        ]
+      },
+      {
+        "tag": "弹幕生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "夜战弹幕围攻",
+            "quote_or_summary": "夜晚成群的变异生物会以弹幕围攻农场，玩家须用双摇杆射击走位据守。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "昼夜循环",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "白天种田夜晚防守",
+            "quote_or_summary": "单局内昼夜交替：白天种植经营与升级，夜晚迎击变异生物的进攻。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Atomicrops 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/757320/Atomicrops/",
+        "quote_or_summary": "双摇杆弹幕肉鸽种田，末世废土耕种并守卫农场，白天种地经营夜晚迎击变异生物弹幕，可与镇民结婚，升级武器，种田与弹幕双玩法缝合，Bird Bath Games 开发，Raw Fury 发行，2020 年发售。",
+        "notes": "事实取自 Steam 商店页与维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_atomicrops_daynight_pressure",
+      "subject": "昼夜循环",
+      "relation": "creates",
+      "object": "时间压力",
+      "explanation": "用昼夜切换把节奏迥异的种田经营与弹幕防守压进同一段有限时间，玩家白天既要尽量多干农活、又得在天黑前备好防线，使两种玩法争抢同一份时间预算，产生持续的取舍紧迫感，可复用于希望以共享时间预算的双玩法切换为经营类游戏注入压力的设计。",
+      "evidence": [
+        {
+          "title": "昼夜时间压力解读",
+          "quote_or_summary": "种田与防守争抢同一份昼夜时间预算，制造持续的取舍紧迫感。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

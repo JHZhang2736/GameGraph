@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_palworld",
+    "title": "Palworld",
+    "source_refs": [
+      {
+        "title": "Palworld（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Palworld",
+        "notes": "类型（开放世界生存怪物收集）、用帕鲁球捕捉帕鲁、帕鲁自动化劳作与作战坐骑、基地建造与科技树、枪械战斗、最多 32 人多人、Pocketpair 用虚幻 5 开发、2024 抢先体验等事实来源。"
+      }
+    ],
+    "short_description": "一款开放世界生存建造与怪物收集融合的游戏，玩家在岛屿上捕捉名为「帕鲁」的生物，将其用于战斗、坐骑或在基地自动从事采集、制作与生产等劳作，同时手持枪械求生。",
+    "selection_reason": "作为「类型缝合制造市场差异化」的范本：把怪物收集、开放生存、枪械战斗与基地自动化劳作这几套熟悉但少被组合的系统拼到一起，造出新鲜循环与强话题度；其帕鲁自动化劳作机制亦具复用价值。"
+  },
+  "profile": {
+    "game_id": "game_palworld",
+    "one_sentence_summary": "玩家在开放岛屿上采集、合成、建造求生，用帕鲁球捕捉名为「帕鲁」的生物，将其投入战斗、当坐骑或在基地自动从事采集与生产，同时手持枪械对抗敌对生物与人类，支持最多 32 人多人。",
+    "core_hook": "把怪物收集、开放生存、枪械战斗与基地自动化劳作这几套熟悉但少被组合的系统拼到一起，造出既眼熟又新鲜的循环与强烈话题度。",
+    "core_loop": "采集资源、合成与建造基地、用帕鲁球捕捉帕鲁，把帕鲁分配到基地自动劳作或带上作战与骑乘，解锁科技推进装备，循环扩张基地与帕鲁图鉴。",
+    "progression_model": "解锁科技树获取武器、建筑与设施，捕捉与培养更多帕鲁充实战力与基地产能；进度体现为帕鲁收集、基地规模与科技解锁，可单人或最多 32 人合作。",
+    "failure_model": "需管理饥饿等生存需求，生命耗尽会被击败；对人类犯罪会触发通缉等级，敌对派系与环境构成失败风险。",
+    "content_structure": "一张含 187 种帕鲁的开放岛屿世界，以基地建造、科技树、帕鲁捕捉养成与派系冲突为骨架，单人或最多 32 人同服，规划中含 PvP、公会团本与跨服交易。",
+    "main_player_actions": ["采集", "建造", "捕捉", "射击"],
+    "main_player_decisions": ["随从搭配", "基地规划", "风险取舍"],
+    "main_player_experiences": ["收集养成", "涌现玩法", "经营成就"],
+    "main_mechanics": ["怪物捕捉", "自动化劳作", "基地建造", "合成制作", "多人合作"],
+    "replayability_sources": ["收集养成", "构筑多样", "多人合作"],
+    "production_constraints": ["Unreal 引擎", "小型团队"],
+    "innovation_patterns": ["类型缝合", "自动化劳作"],
+    "reusable_reference_patterns": ["自动化劳作", "类型缝合", "怪物捕捉"],
+    "non_replicable_risks": ["题材争议", "长期更新运营"],
+    "genre": ["生存", "怪物收集"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["怪物题材", "黑色幽默"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["爽快射击"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "自动化劳作",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "帕鲁基地劳作",
+            "quote_or_summary": "玩家把帕鲁分配到基地，它们会自动完成采集、制作、烹饪等任务，明确含将帕鲁用作矿场工厂劳力的元素。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "怪物捕捉",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "帕鲁球捕捉",
+            "quote_or_summary": "玩家用帕鲁球捕捉名为帕鲁的生物，用于作战、基地任务或作坐骑。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "类型缝合",
+        "confidence": "medium",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "多类型融合",
+            "quote_or_summary": "融合怪物收集、开放生存制作（受《方舟》《Rust》启发）与枪械战斗。",
+            "notes": "可观察的系统组合，但「缝合制造差异化」属解释性判断。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Palworld 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Palworld",
+        "quote_or_summary": "开放世界生存怪物收集，帕鲁球捕捉帕鲁，帕鲁自动化劳作与作战坐骑，基地建造与科技树，枪械战斗，最多 32 人多人，Pocketpair 用虚幻 5 开发，2024 抢先体验。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_palworld_genre_mashup",
+      "subject": "类型缝合",
+      "relation": "creates",
+      "object": "市场差异化",
+      "explanation": "把怪物收集、开放生存制作、枪械战斗与基地自动化劳作这几套各自成熟但少被组合的系统拼到一起，造出新颖循环与强口碑传播，使作品在每一部分都不算原创的情况下仍获得显著差异化，可作为产品组合策略复用。",
+      "evidence": [
+        {
+          "title": "类型缝合解读",
+          "quote_or_summary": "少被组合的系统拼接产生新鲜感与话题度。",
+          "notes": "基于可观察系统组合的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_it_takes_two",
+    "title": "It Takes Two",
+    "source_refs": [
+      {
+        "title": "It Takes Two（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/It_Takes_Two_(video_game)",
+        "notes": "类型（双人合作动作冒险）、强制双人（在线或本地分屏）、两名玩家各有不同能力须配合才能推进、融合平台跳跃/解谜/动作、每章引入全新机制、讲述变成玩偶的夫妻 Cody 与 May 修复关系、Hazelight 由 Josef Fares 执导、约 60 人团队用虚幻引擎开发、2021 年发售、获年度游戏等事实来源。"
+      }
+    ],
+    "short_description": "一款强制双人的合作动作冒险游戏，两名玩家分饰变成玩偶的夫妻 Cody 与 May，各自握有不同能力、必须配合才能推进，穿越融合平台跳跃、解谜与动作且每章不断翻新机制的关卡，修复彼此关系。",
+    "selection_reason": "作为「为双人协作量身设计、且每章翻新机制」的代表：两名玩家能力互补、关卡必须协作才能通过，再用近乎每章一套全新玩法的高产内容维持新鲜感，是研究非对称协作设计与机制密度的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_it_takes_two",
+    "one_sentence_summary": "两名玩家分饰变成玩偶的夫妻 Cody 与 May，各自握有不同能力、必须互相配合，穿越融合平台跳跃、解谜与动作且几乎每章都翻新机制的关卡，在协作中修复彼此的关系。",
+    "core_hook": "把整款游戏建立在「两人各有一半能力、缺一不可」之上，再让几乎每个章节都引入一套全新玩法，使协作既是叙事主题也是核心机制，全程逼着两名玩家沟通配合。",
+    "core_loop": "两名玩家各用专属能力解开需要配合的平台与解谜关卡、协力击败障碍与首领、进入引入全新机制的下一章，循环推进 Cody 与 May 的修复之旅。",
+    "progression_model": "线性章节推进，进度体现为不断解锁的新能力与新机制章节而非数值成长；每章给两名玩家一套互补的新工具，靠内容更替而非角色变强驱动前进。",
+    "failure_model": "在平台或战斗中失误会死亡并退回最近检查点重试，本质是合作闯关式的失败，不存在永久损失。",
+    "content_structure": "以一连串各引入全新机制的线性章节为骨架，每章给两名玩家互补能力并要求协作通关，穿插小游戏与首领，专为双人合作（在线或分屏）设计。",
+    "main_player_actions": ["平台跳跃", "技能释放", "物件操控"],
+    "main_player_decisions": ["优先级排序", "风险取舍"],
+    "main_player_experiences": ["协作默契", "情感叙事", "欢乐混乱"],
+    "main_mechanics": ["非对称协作", "技能切换", "类型缝合"],
+    "replayability_sources": ["任务多样", "彩蛋收集"],
+    "production_constraints": ["Unreal 引擎", "中型团队"],
+    "innovation_patterns": ["非对称协作", "类型缝合"],
+    "reusable_reference_patterns": ["非对称协作", "类型缝合", "高质量支线"],
+    "non_replicable_risks": ["高内容产量", "系统复杂度"],
+    "genre": ["动作冒险", "平台跳跃"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["管弦乐", "动态配乐"],
+    "perspective": ["第三人称"],
+    "theme": ["家庭情感", "奇幻"],
+    "narrative_style": ["过场驱动", "情感叙事"],
+    "game_feel": ["流畅操作", "沉浸代入"],
+    "team_model": ["中型团队"],
+    "reference_value_tags": [
+      {
+        "tag": "非对称协作",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "能力互补须配合",
+            "quote_or_summary": "两名玩家各获得不同能力，必须协同使用才能推进，游戏围绕协作作为核心设计主题。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "类型缝合",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "每章翻新机制",
+            "quote_or_summary": "玩法融合平台跳跃、解谜与动作，几乎每个章节都引入一套全新机制。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "情感叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "夫妻修复故事",
+            "quote_or_summary": "游戏讲述一对被变成玩偶的夫妻 Cody 与 May 被迫协作、试图修复关系并变回人类。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "It Takes Two 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/It_Takes_Two_(video_game)",
+        "quote_or_summary": "强制双人合作动作冒险，两名玩家能力互补须配合，融合平台跳跃/解谜/动作，每章翻新机制，讲述玩偶夫妻修复关系，Hazelight（Josef Fares）约 60 人用虚幻引擎开发，2021 年发售，年度游戏。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_it_takes_two_asymmetric_coop",
+      "subject": "非对称协作",
+      "relation": "creates",
+      "object": "协作默契",
+      "explanation": "把关卡设计成两名玩家各持一半能力、缺一不可，使每道难关都必须靠双方实时沟通与配合才能解开，把「协作」从可选项变成强制的核心机制，从而稳定地催生默契与共同体验，可复用于希望让合作成为不可绕过的核心而非附加项的设计。",
+      "evidence": [
+        {
+          "title": "强制互补协作解读",
+          "quote_or_summary": "能力互补且缺一不可的设计逼出实时沟通与协作默契。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

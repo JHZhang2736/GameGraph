@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_subnautica",
+    "title": "Subnautica",
+    "source_refs": [
+      {
+        "title": "Subnautica（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Subnautica",
+        "notes": "类型（动作冒险生存）、水下开放世界探索、氧气管理、采集与合成、基地建造、潜水器/载具建造与驾驶、第一人称、异星海洋行星 4546B、Unknown Worlds 用 Unity 开发、2018 年正式发售、生命/饥饿/口渴/氧气与深海生物威胁等事实来源。"
+      }
+    ],
+    "short_description": "一款第一人称水下开放世界生存冒险游戏，玩家在飞船坠毁后流落异星海洋行星 4546B，靠管理氧气、采集与合成、建造基地与潜水器深入海洋，探索险境并推进剧情。",
+    "selection_reason": "作为「把生存探索整体搬到水下三维空间」的代表：用氧气与深度构成的纵向压力，把资源采集、载具建造与未知恐惧编织进一个垂直的海洋世界，是研究三维生存探索与氛围营造的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_subnautica",
+    "one_sentence_summary": "玩家在飞船坠毁后流落异星海洋行星 4546B，以第一人称管理氧气、采集与合成、建造海底基地与潜水器，逐步深入更深更危险的海域探索险境并推进剧情。",
+    "core_hook": "把生存探索整体搬进水下三维空间，用氧气与下潜深度构成的纵向压力，让每一次向更深、更黑暗海域的探索都伴随补给与恐惧的双重张力。",
+    "core_loop": "采集资源与扫描蓝图、合成装备与升级、建造基地与潜水器、携带氧气向更深海域探索发现新区域与剧情线索，循环扩展可达深度与生存能力。",
+    "progression_model": "靠扫描获取蓝图、合成更强的工具、装备与可潜更深的载具，逐步解锁更深海域与剧情；进度体现为可达深度、载具等级与故事推进，无角色等级。",
+    "failure_model": "生存模式下需管理生命、饥饿、口渴与氧气，氧气耗尽会溺亡，深海巨型生物亦可致死；死亡后在存档点重生并丢失部分物品，硬核模式则永久死亡并删档。",
+    "content_structure": "在异星海洋行星 4546B 的开放水下世界中推进，以氧气生存、采集合成、基地与载具建造、按深度递进的生物群系与剧情任务为骨架，本体为单人。",
+    "main_player_actions": ["采集", "合成", "建造", "探索"],
+    "main_player_decisions": ["探索路线", "资源取舍", "风险取舍"],
+    "main_player_experiences": ["探索发现", "氛围营造", "经营成就"],
+    "main_mechanics": ["开放世界探索", "采集", "合成制作", "建造", "氧气管理"],
+    "replayability_sources": ["全收集", "程序生成"],
+    "production_constraints": ["Unity 引擎", "小型团队"],
+    "innovation_patterns": ["水下生存", "氛围营造"],
+    "reusable_reference_patterns": ["水下生存", "氛围营造", "开放世界探索"],
+    "non_replicable_risks": ["技术复杂度", "强美术风格"],
+    "genre": ["生存", "动作冒险"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐", "环境音"],
+    "perspective": ["第一人称"],
+    "theme": ["科幻", "异星求生"],
+    "narrative_style": ["环境叙事", "碎片化叙事"],
+    "game_feel": ["沉浸代入", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "水下生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "水下开放世界",
+            "quote_or_summary": "玩家在异星海洋的水下开放世界中探索与求生，全程管理氧气并按深度推进。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "氧气管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "氧气与深度",
+            "quote_or_summary": "生存模式下玩家须管理生命、饥饿、口渴与氧气，氧气耗尽即溺亡。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "建造",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "基地与载具",
+            "quote_or_summary": "玩家可建造与定制海底基地，并制造与驾驶潜水器深入海洋。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Subnautica 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Subnautica",
+        "quote_or_summary": "动作冒险生存，水下开放世界探索，氧气管理，采集合成，基地与潜水器建造，第一人称，异星海洋行星 4546B，Unknown Worlds 用 Unity 开发，2018 年正式发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_subnautica_depth_as_pressure",
+      "subject": "氧气管理",
+      "relation": "creates",
+      "object": "探索张力",
+      "explanation": "用氧气存量与下潜深度构成的纵向限制，把「想看更深处」的探索欲与「氧气与黑暗带来的恐惧」对立起来，使每次深潜都成为一次有去有回的风险决策，把资源管理转化为持续的探索张力与氛围压力，可复用于任何纵深探索设计。",
+      "evidence": [
+        {
+          "title": "深度张力解读",
+          "quote_or_summary": "氧气与深度共同制造下潜的风险与恐惧，使探索充满张力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

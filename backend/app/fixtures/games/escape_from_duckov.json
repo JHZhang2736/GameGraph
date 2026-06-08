@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_escape_from_duckov",
+    "title": "Escape From Duckov",
+    "source_refs": [
+      {
+        "title": "Escape From Duckov（Steam）",
+        "url": "https://store.steampowered.com/app/3167020/Escape_From_Duckov/",
+        "notes": "类型（俯视 PVE 撤离射击）、单人、操控一只可自定义外观的鸭子、潜入据点搜刮高价值物资并在死亡前撤离否则丢失全部战利品、建造工坊/医疗站/庇护所改善装备、50 余种武器、戏仿《逃离塔科夫》、Team Soda（隶属 Bilibili）开发、2025 年 10 月发售、销量数百万等事实来源。"
+      }
+    ],
+    "short_description": "一款俯视视角的单人 PVE 撤离射击游戏，玩家操控一只可自定义的鸭子潜入据点搜刮高价值物资，必须在阵亡前带着战利品撤离、否则全部丢失，并靠建造工坊与庇护所逐步改善装备求生。",
+    "selection_reason": "作为「把硬核撤离射击门槛降到亲民」的代表：用俯视单人 PVE 与可爱鸭子外观，承载「搜刮—活着撤离否则丢光」的撤离循环与基地养成，把塔科夫式的高压玩法做得易上手，是研究撤离机制与风险撤离张力的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_escape_from_duckov",
+    "one_sentence_summary": "玩家操控一只可自定义的鸭子，在俯视单人 PVE 中潜入据点用 50 余种武器搜刮高价值物资，必须在阵亡前带着战利品撤离、否则全部丢失，并靠建造工坊、医疗站与庇护所逐步改善装备。",
+    "core_hook": "把硬核撤离射击「搜刮—活着撤离否则丢光」的核心张力，用俯视单人 PVE 与可爱鸭子的轻松外壳包装起来，让高压的贪婪与撤离抉择变得人人能上手。",
+    "core_loop": "带装备潜入据点、搜刮高价值物资并应对威胁、在「再贪一点」与「安全撤离」间抉择、带战利品撤离回基地、建造与升级工坊医疗庇护改善装备，再带更好配置出击。",
+    "progression_model": "靠每次撤离带回的战利品发展基地——建造工坊、医疗站与庇护所、解锁更好武器与装备；进度体现为基地设施、装备库与可挑战区域，死亡会丢失本次未撤离的战利品。",
+    "failure_model": "在据点中阵亡即丢失本次携带与搜刮到的全部战利品（撤离成功才能保住），需带基地与剩余装备重新出击。",
+    "content_structure": "以多张可潜入搜刮的据点地图为骨架，外接一座可持续建造升级的基地，靠「搜刮—撤离—养成」循环与 50 余种武器承载深度，单人 PVE。",
+    "main_player_actions": ["射击", "采集", "走位"],
+    "main_player_decisions": ["风险取舍", "装备搭配", "道具取舍"],
+    "main_player_experiences": ["战斗精通", "经营成就", "系统掌控"],
+    "main_mechanics": ["撤离机制", "建造", "装备分层", "资源管理", "元进度"],
+    "replayability_sources": ["程序生成", "全收集", "难度分级"],
+    "production_constraints": ["小型团队", "卡通渲染"],
+    "innovation_patterns": ["撤离机制", "类型缝合"],
+    "reusable_reference_patterns": ["撤离机制", "建造", "元进度"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["俯视射击", "生存"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["俯视"],
+    "theme": ["黑色幽默", "废墟王国"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["爽快射击", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "撤离机制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "搜刮后撤离否则丢光",
+            "quote_or_summary": "撤离机制要求玩家从据点取走最有价值的物资并在死亡前撤离，否则会丢失全部战利品。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "建造",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "基地养成",
+            "quote_or_summary": "玩家通过建造工坊、医疗站与庇护所发展基地，逐步改善装备以求生。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "装备分层",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "50 余种武器",
+            "quote_or_summary": "可选武器超过 50 种，从顶级枪械到一根普通木棍，形成由弱到强的装备层级。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Escape From Duckov 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/3167020/Escape_From_Duckov/",
+        "quote_or_summary": "俯视单人 PVE 撤离射击，操控鸭子潜入据点搜刮并在阵亡前撤离否则丢光，建造工坊医疗庇护改善装备，50 余种武器，戏仿塔科夫，Team Soda（Bilibili）开发，2025 年 10 月发售。",
+        "notes": "事实取自 Steam 商店页与媒体报道。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_duckov_extraction_greed_tension",
+      "subject": "撤离机制",
+      "relation": "creates",
+      "object": "探索张力",
+      "explanation": "用「撤离成功才能保住战利品、阵亡则全部丢失」的规则，让玩家每次深入据点都在「再多搜一点」与「趁早安全撤离」之间承受贪婪与风险的拉扯，把搜刮做成处处抉择的高张力探索，可复用于希望以损失风险驱动玩家自我设限的设计。",
+      "evidence": [
+        {
+          "title": "撤离贪婪张力解读",
+          "quote_or_summary": "丢光风险让搜刮与撤离间的抉择制造持续探索张力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

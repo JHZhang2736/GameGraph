@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_wingspan",
+    "title": "Wingspan",
+    "source_refs": [
+      {
+        "title": "Wingspan（Steam）",
+        "url": "https://store.steampowered.com/app/1054490/Wingspan/",
+        "notes": "正版授权的同名桌游数字化、原作为 Elizabeth Hargrave 设计、Stonemaier 出版的引擎构筑桌游、玩家在有限回合内把鸟打入栖息地、每只鸟提供产蛋/抽牌/觅食等能力并相互联动、含 170 余种鸟、最多 5 人对战、Monster Couch 数字化、2020 年上线 Steam 等事实来源。"
+      }
+    ],
+    "short_description": "热门引擎构筑桌游《展翅翱翔》的正版数字化版本，最多 5 名玩家在有限回合内把各种鸟打入自己的栖息地，每只鸟都提供产蛋、抽牌或觅食等可相互联动的能力，逐步搭出越转越强的得分引擎。",
+    "selection_reason": "作为「桌游引擎构筑数字化」的代表：每张鸟牌都为产蛋、抽牌或觅食三条链路之一加力并彼此联动，让有限回合内搭出的引擎越转越快，是研究引擎构筑节奏与忠实桌游数字化的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_wingspan",
+    "one_sentence_summary": "最多 5 名玩家在有限回合内把各种鸟打入自己的三类栖息地，每只鸟提供产蛋、抽牌或觅食等可相互联动的能力，玩家逐步搭出越转越强的得分引擎，回合用尽后比拼总分。",
+    "core_hook": "把每一只鸟都做成一台为产蛋、抽牌或觅食加力的小引擎，且鸟与鸟之间相互触发联动，让玩家在有限回合里搭出一套越转越快、自我增益的得分机器。",
+    "core_loop": "每回合在打鸟、觅食（取食骰）、产蛋、抽鸟牌四种行动中择一并触发已有鸟的连锁能力、为某条链路加力，循环数回合后由蛋、鸟、奖励等综合计分。",
+    "progression_model": "单局内进度体现为栖息地里逐渐铺开的鸟与不断增强的产蛋/抽牌/觅食引擎；没有跨局成长，重复价值来自 170 余种鸟带来的不同构筑组合。",
+    "failure_model": "无淘汰式失败；游戏在固定回合数后结束，比拼累计分数，落败即总分低于对手，本质是一局制的得分竞赛。",
+    "content_structure": "在三类栖息地与四种行动构成的回合骨架上，以 170 余种各具能力、相互联动的鸟牌承载引擎构筑深度，支持单人对 AI 与最多 5 人对战。",
+    "main_player_actions": ["出牌", "掷骰", "卡牌取舍"],
+    "main_player_decisions": ["优先级排序", "装备搭配", "资源取舍"],
+    "main_player_experiences": ["运筹帷幄", "经营成就", "视觉享受"],
+    "main_mechanics": ["引擎构筑", "资源管理", "道具协同", "回合制"],
+    "replayability_sources": ["构筑多样", "全收集", "任务多样"],
+    "production_constraints": ["桌游改编", "小型团队"],
+    "innovation_patterns": ["桌游数字化", "引擎构筑"],
+    "reusable_reference_patterns": ["桌游数字化", "引擎构筑", "道具协同"],
+    "non_replicable_risks": ["品牌积淀", "平衡复杂度"],
+    "genre": ["回合制策略"],
+    "art_style": ["写实美术"],
+    "audio_style": ["轻松配乐", "环境音"],
+    "perspective": ["俯视"],
+    "theme": ["动物", "自然"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["桌游质感", "规划满足"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "引擎构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "鸟即小引擎",
+            "quote_or_summary": "每只加入保护区的鸟都让你更擅长产蛋、抽牌或觅食，是一款卡牌驱动的引擎构筑桌游。",
+            "notes": "Steam 商店页与桌游资料可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "桌游数字化",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "正版授权数字版",
+            "quote_or_summary": "本作是获奖桌游 Wingspan 的正版授权数字化版本，由 Monster Couch 制作，2020 年上线 Steam。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      },
+      {
+        "tag": "道具协同",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "鸟与鸟联动",
+            "quote_or_summary": "许多鸟的能力呼应现实并相互触发——鹰会捕猎、鹈鹕会捕鱼、雁会成群，形成连锁联动。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Wingspan 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/1054490/Wingspan/",
+        "quote_or_summary": "引擎构筑桌游的正版数字化，最多 5 人在有限回合内把鸟打入栖息地，鸟提供产蛋/抽牌/觅食能力并相互联动，170 余种鸟，Monster Couch 数字化，2020 年上线 Steam。",
+        "notes": "事实取自 Steam 商店页与桌游资料。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_wingspan_engine_acceleration",
+      "subject": "引擎构筑",
+      "relation": "creates",
+      "object": "滚雪球快感",
+      "explanation": "让每张鸟牌都为产蛋、抽牌或觅食某条链路加力并彼此触发联动，使前期铺设的引擎在后续回合里相互放大、产出越来越多，在一局制桌游里也能制造逐步加速的滚雪球快感，可复用于希望以联动加力驱动正反馈的构筑设计。",
+      "evidence": [
+        {
+          "title": "引擎加速解读",
+          "quote_or_summary": "鸟牌联动让引擎逐回合相互放大，制造一局内的滚雪球快感。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

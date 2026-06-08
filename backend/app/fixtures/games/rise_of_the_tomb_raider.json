@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_rise_of_the_tomb_raider",
+    "title": "Rise of the Tomb Raider",
+    "source_refs": [
+      {
+        "title": "Rise of the Tomb Raider（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Rise_of_the_Tomb_Raider",
+        "notes": "类型（第三人称动作冒险）、半开放枢纽地图与营地快速旅行、弓箭潜行处决与环境击杀、采集兽皮材料合成弹药与燃烧瓶、生存直觉视野标记资源、可选挑战墓室含互联物理谜题、经验解锁三系技能树（格斗/猎手/生存）、学习语言解锁遗物、Lara 寻找失落之城基捷与 Trinity 组织对抗、Crystal Dynamics 自研 Foundation 引擎、52 人管弦乐配乐、2015/2016 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款第三人称动作冒险游戏，玩家操控 Lara Croft 在西伯利亚的半开放枢纽地图中探索：靠弓箭潜行处决与枪械作战、狩猎野生动物并采集材料合成弹药与投掷物、攀爬绳箭速降穿行地形、深入可选挑战墓室破解互联物理谜题，用经验解锁格斗/猎手/生存三系技能；Crystal Dynamics 自研 Foundation 引擎、2015 年发售。",
+    "selection_reason": "作为「AAA 动作冒险把生存采集、合成与挑战墓室物理谜题缝进探索枢纽」的代表：用狩猎采集与合成驱动玩家彻底探索枢纽地图，再以能力门控逐步开放区域、可选墓室承载物理解谜深度，是研究高品质探索枢纽、采集合成循环与可选高难内容的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_rise_of_the_tomb_raider",
+    "one_sentence_summary": "玩家操控 Lara 在西伯利亚半开放枢纽中潜行处决、枪战与攀爬，狩猎采集材料合成弹药与投掷物，深入可选挑战墓室破解互联物理谜题，用经验解锁三系技能逐步开放更多区域。",
+    "core_hook": "把生存采集与合成缝进 AAA 动作冒险：玩家必须狩猎动物、采集材料才能合成弹药与燃烧瓶，于是探索不再只是看风景，而是为战斗续命做准备；再用绳箭速降等能力逐步门控开放枢纽，配可选挑战墓室里的互联物理谜题，让探索同时承载战斗、解谜与收集。",
+    "core_loop": "在枢纽地图探索与攀爬、潜行或枪战清场、狩猎采集材料、在营地合成弹药与升级、用新能力开启此前无法到达的区域、深入挑战墓室解谜取奖励，循环推进剧情。",
+    "progression_model": "靠经验解锁格斗/猎手/生存三系技能、靠采集合成升级武器装备、靠学习古代语言解锁更多遗物与奖励推进；进度体现为技能解锁、装备等级、已探索枢纽与已通关墓室。",
+    "failure_model": "Lara 被敌人击杀或在攀爬/陷阱场景失误坠亡即回到最近检查点重来，无永久死亡惩罚，提供章节重玩远征以不同限制条件刷分挑战。",
+    "content_structure": "以数张半开放枢纽地图、主线流程与大量可选挑战墓室、支线与收集为骨架，靠潜行/枪战、采集合成、攀爬探索与物理解谜承载流程与重玩，单人。",
+    "main_player_actions": ["射击", "潜行", "攀墙", "道具运用"],
+    "main_player_decisions": ["探索路线", "能力树优先级", "风险取舍"],
+    "main_player_experiences": ["探索发现", "战斗精通", "收集养成"],
+    "main_mechanics": ["潜行暗杀", "合成制作", "能力树", "物理模拟", "非线性探索"],
+    "replayability_sources": ["全收集", "难度分级", "任务多样"],
+    "production_constraints": ["自研引擎", "大团队协作", "全管弦乐配乐"],
+    "innovation_patterns": ["类型缝合", "能力门控探索"],
+    "reusable_reference_patterns": ["能力门控探索", "高质量支线"],
+    "non_replicable_risks": ["自研引擎", "大团队协作", "品牌积淀"],
+    "genre": ["动作冒险", "第三人称射击"],
+    "art_style": ["写实美术"],
+    "audio_style": ["管弦乐"],
+    "perspective": ["第三人称"],
+    "theme": ["考古探险", "历史"],
+    "narrative_style": ["过场驱动", "情感叙事"],
+    "game_feel": ["流畅操作", "紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "合成制作",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "采集合成弹药与投掷物",
+            "quote_or_summary": "玩家狩猎动物、采集材料，在营地合成弹药、毒箭、燃烧瓶与手雷，把探索与战斗续命绑在一起。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "能力门控探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "新能力开放旧区域",
+            "quote_or_summary": "绳箭速降、学习语言等能力逐步解锁此前无法到达的区域与遗物，枢纽地图随能力增长逐步开放。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "挑战墓室互联物理谜题",
+            "quote_or_summary": "可选挑战墓室内含一组互相联动的物理谜题，需操纵机关与重物逐步破解。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Rise of the Tomb Raider 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Rise_of_the_Tomb_Raider",
+        "quote_or_summary": "第三人称动作冒险，半开放枢纽与营地、弓箭潜行处决与枪战、狩猎采集合成弹药与投掷物、可选挑战墓室物理谜题、三系技能树、能力门控开放区域，Crystal Dynamics 自研 Foundation 引擎，2015/2016 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_rottr_crafting_exploration",
+      "subject": "合成制作",
+      "relation": "creates",
+      "object": "探索张力",
+      "explanation": "把弹药与投掷物从商店购买改为「必须狩猎采集材料才能合成」，于是战斗消耗会反向逼迫玩家在地图里持续搜寻动物与资源点，让原本可有可无的探索变成维持战斗能力的刚需，把开放枢纽的每一次绕路都赋予功利动机，可复用于希望用「战斗资源依赖采集」把探索从观光升级为必要循环的设计。",
+      "evidence": [
+        {
+          "title": "采集驱动探索解读",
+          "quote_or_summary": "弹药与投掷物依赖狩猎采集的材料合成，使战斗消耗反向逼出对地图资源的持续搜寻。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_potion_craft",
+    "title": "Potion Craft: Alchemist Simulator",
+    "source_refs": [
+      {
+        "title": "Potion Craft: Alchemist Simulator（Steam，appid 1210320）",
+        "url": "https://store.steampowered.com/app/1210320/Potion_Craft_Alchemist_Simulator/",
+        "notes": "类型（中世纪炼金术士经营模拟）、亲手研磨原料并在坩埚中加热搅拌混合、通过「炼金地图」规划路线把药水推向不同效果、原料越多路径越复杂可叠加多种效果、约 58 种原料与 43 种可组合效果、向往来商人买卖与讨价还价、接待顾客售卖与定价、经营自己的炼金铺、niceplay games 开发 tinyBuild 发行等事实来源。"
+      }
+    ],
+    "short_description": "一款中世纪炼金术士经营模拟游戏：玩家亲手研磨原料、在坩埚中加热搅拌混合，借助「炼金地图」一步步把瓶中药液推向地图上的各种炼金效果——每加一味原料，药液都会沿地图移动一段、改变走向，最终抵达并叠加出想要的效果；调好后还要接待顾客、定价售卖、向商人采购原料，经营自己的炼金铺，niceplay games 开发、tinyBuild 发行。",
+    "selection_reason": "作为「把配方调制做成地图寻路而非数值堆叠」的代表：玩家不是选配方，而是靠在炼金地图上规划路线、用原料把药液推向目标效果，于是「调一瓶药」变成一道空间寻路谜题，再叠加买卖经营与顾客定价，是研究把制作玩法可视化为路径规划、以及炼金经营循环的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_potion_craft",
+    "one_sentence_summary": "玩家亲手研磨原料并在坩埚中加热搅拌，借助炼金地图把瓶中药液一步步推向并叠加出目标效果，再接待顾客定价售卖、向商人采购原料，经营自己的中世纪炼金铺。",
+    "core_hook": "把「调制药水」做成在地图上寻路：每加一味原料、每次搅拌，瓶中药液就会沿炼金地图移动一段并改变走向，玩家要规划路线、绕开障碍、依次穿过多个效果点，才能调出叠加了多种效果的强力药水，于是制作从「凑配方」升级成一道可视的空间寻路谜题；调好后还要接待顾客、给药水定价、和往来商人讨价还价采购原料。",
+    "core_loop": "采购或采集原料、研磨并在坩埚中加热搅拌混合、在炼金地图上规划路线把药液推向目标效果、接待顾客按需求售卖药水并定价、用收益采购更多原料与解锁配方，循环扩大炼金铺经营。",
+    "progression_model": "靠在炼金地图上探索发现新效果与新配方、靠买卖收益采购更稀有原料、解锁更多炼金能力推进；进度体现为已发现的效果与配方、地图可达范围、声望与收入水平。",
+    "failure_model": "本作为经营养成无明确失败：调坏一瓶药只是浪费原料与金钱，经营不善表现为收入停滞、顾客需求满足不了，玩家靠改进配方与采购回升，核心是持续积累而非失败惩罚。",
+    "content_structure": "以亲手操作的坩埚调制、可视的炼金地图与买卖经营为骨架，靠原料研磨混合、地图寻路发现效果、顾客接待与定价承载流程与长线，单人。",
+    "main_player_actions": ["炼金调配", "道具运用", "社交互动"],
+    "main_player_decisions": ["探索路线", "优先级排序", "资源取舍"],
+    "main_player_experiences": ["创作乐趣", "经营成就", "系统掌控"],
+    "main_mechanics": ["炼金地图", "炼金反应", "顾客经营", "商店经济", "配方探索"],
+    "replayability_sources": ["全收集", "任务多样"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["炼金地图", "工坊经营"],
+    "reusable_reference_patterns": ["工坊经营", "炼金地图"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["模拟经营"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["横版2D"],
+    "theme": ["奇幻", "炼金术"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["规划满足", "轻松休闲"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "炼金地图",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "地图寻路决定药水效果",
+            "quote_or_summary": "玩家通过炼金地图规划路线，每加一味原料药液都会在地图上移动并改变走向，依次穿过多个效果点叠加效果。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "炼金反应",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "亲手研磨加热搅拌混合",
+            "quote_or_summary": "玩家亲手研磨原料、在坩埚里加热煮沸并搅拌、加入水或油等底液，物理地操作工具调制药水。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "顾客经营",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "接待顾客定价售卖",
+            "quote_or_summary": "玩家经营炼金铺、按顾客需求售卖药水并定价、向往来商人采购原料并讨价还价。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Potion Craft 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/1210320/Potion_Craft_Alchemist_Simulator/",
+        "quote_or_summary": "中世纪炼金术士经营模拟，亲手研磨加热搅拌混合、借炼金地图把药液推向并叠加效果、约 58 种原料与 43 种效果、接待顾客定价售卖与向商人采购，niceplay games 开发 tinyBuild 发行。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_potion_craft_map_navigation",
+      "subject": "炼金地图",
+      "relation": "creates",
+      "object": "空间决策",
+      "explanation": "把「调制药水」从「凑齐配方数值」改成「在一张二维炼金地图上为药液规划路线」：每味原料决定一段位移与方向、效果点散布在地图各处、还要绕开障碍依次穿过多个目标，于是制作变成一道需要预判、试错与路线优化的空间谜题，同一批原料按不同顺序与用量会把药液带到完全不同的位置，可复用于希望把抽象的合成/配方玩法可视化为「地图寻路」、用空间决策为制作注入深度与钻研感的设计。",
+      "evidence": [
+        {
+          "title": "制作可视化为寻路解读",
+          "quote_or_summary": "原料决定药液在地图上的位移与方向，调药变成绕障碍、依次穿效果点的空间寻路谜题。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

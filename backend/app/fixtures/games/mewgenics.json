@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_mewgenics",
+    "title": "Mewgenics",
+    "source_refs": [
+      {
+        "title": "Mewgenics（Steam）",
+        "url": "https://store.steampowered.com/app/686060/Mewgenics/",
+        "notes": "类型（养猫繁殖战术肉鸽）、繁育带遗传性状的猫、给猫戴职业颈圈（战士/坦克/法师等）、回合制网格战术战斗（强调站位、连携与环境互动）、传承式 roguelite、Edmund McMillen 与 Tyler Glaiel 开发、2026 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款养猫繁殖结合回合制战术的肉鸽游戏，玩家在不断壮大的猫舍里繁育带遗传性状的猫、为它们戴上决定职业的颈圈，再派出小队进行讲究站位与连携的网格战斗，闯关搜刮食物、金钱与宝藏。",
+    "selection_reason": "作为「把繁殖遗传做成肉鸽传承核心」的代表：用可繁育、带遗传性状的猫作为可消耗又可传承的战斗单位，将育成、随机变异与回合战术编织成一套独特的传承式 roguelite，是研究遗传养成与战术肉鸽融合的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_mewgenics",
+    "one_sentence_summary": "玩家在不断壮大的猫舍中繁育带遗传性状的猫、为其戴上决定职业的颈圈，再派出突变猫小队进行讲究站位、连携与环境互动的回合制网格战斗，闯关搜刮食物、金钱与宝藏。",
+    "core_hook": "把可繁育、带遗传性状的猫做成既可消耗又可代代传承的战斗单位，让玩家通过育种与变异打造专属猫军，再投入讲究站位的回合战术。",
+    "core_loop": "从猫舍挑选并搭配猫、用职业颈圈分配战斗角色，派小队进入回合制网格战斗讲究走位与连携，胜利搜刮资源，回家繁育下一代、培养与传承性状，循环壮大猫舍。",
+    "progression_model": "靠繁育积累带优良遗传性状的猫、培养与装备颈圈、跨代传承变强，单只猫可阵亡但血脉延续；进度体现为猫舍规模、性状库与解锁内容，属传承式 roguelite。",
+    "failure_model": "战斗中猫会受伤或阵亡，单只阵亡是传承的一部分；小队团灭或关键资源耗尽会导致本次远征失败，需依靠猫舍重整再战。",
+    "content_structure": "以猫舍繁育与回合制战术远征两层循环构成，含多种职业颈圈、遗传性状、随机事件与网格战斗，强调站位、连携与环境互动，单人。",
+    "main_player_actions": ["回合战斗", "队伍管理", "走位"],
+    "main_player_decisions": ["队伍搭配", "职业搭配", "风险取舍"],
+    "main_player_experiences": ["战术博弈", "收集养成", "涌现玩法"],
+    "main_mechanics": ["遗传繁育", "回合制网格战术", "永久死亡", "元进度", "随机变异"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["手绘美术", "双人团队"],
+    "innovation_patterns": ["遗传繁育", "回合制网格战术"],
+    "reusable_reference_patterns": ["遗传繁育", "回合制网格战术", "元进度"],
+    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
+    "genre": ["类肉鸽", "回合制策略"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["俯视"],
+    "theme": ["动物", "黑色幽默"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡"],
+    "team_model": ["双人团队"],
+    "reference_value_tags": [
+      {
+        "tag": "遗传繁育",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "繁育带性状的猫",
+            "quote_or_summary": "玩家繁育带遗传性状的猫，组建不断壮大的猫舍，用作战斗单位。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "回合制网格战术",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "战术战斗",
+            "quote_or_summary": "派出戴职业颈圈的猫小队进行回合制战斗，讲究站位、连携组合与环境互动。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "职业搭配",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "职业颈圈",
+            "quote_or_summary": "用战士、坦克、法师等职业颈圈为猫指定战斗角色，组合不同职业构成队伍。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Mewgenics 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/686060/Mewgenics/",
+        "quote_or_summary": "养猫繁殖战术肉鸽，繁育带遗传性状的猫，职业颈圈，回合制网格战术，传承式 roguelite，Edmund McMillen 与 Tyler Glaiel 开发，2026 年发售。",
+        "notes": "事实取自 Steam 商店页与公开报道。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_mewgenics_breeding_as_legacy",
+      "subject": "遗传繁育",
+      "relation": "creates",
+      "object": "传承养成",
+      "explanation": "把可繁育、带遗传性状的猫做成既可在战斗中消耗、又能跨代传承的单位，使「损失」不再是纯粹挫败而成为血脉迭代的一环，玩家的长期投入沉淀在性状库而非单只角色上，把养成、随机变异与战术肉鸽缝成独特循环，可复用于含育成与传承的 roguelite 设计。",
+      "evidence": [
+        {
+          "title": "繁育传承解读",
+          "quote_or_summary": "可繁育传承的猫让单只损失成为血脉迭代，长期投入沉淀于性状库。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

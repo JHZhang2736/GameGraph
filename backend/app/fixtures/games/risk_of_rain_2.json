@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_risk_of_rain_2",
+    "title": "Risk of Rain 2",
+    "source_refs": [
+      {
+        "title": "Risk of Rain 2（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Risk_of_Rain_2",
+        "notes": "类型（肉鸽第三人称射击）、开箱获取可无限叠加道具、随时间被动升级的难度递增、传送器与波次、多结局、合作、程序关卡、Hopoo Games 用 Unity 开发、2020 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款 3D 第三人称射击肉鸽游戏，玩家在程序生成的关卡中清怪开箱、收集可无限叠加的道具，激活传送器迎战波次后进入下一关，而难度随时间持续上涨。",
+    "selection_reason": "作为「难度随时间递增 + 道具无限叠加」的代表：把敌人强度绑定到流逝的时间，迫使玩家在「多刷道具变强」与「赶进度避免被难度超车」间持续权衡；其滚雪球式构筑成长亦是高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_risk_of_rain_2",
+    "one_sentence_summary": "玩家在程序生成的 3D 关卡中清怪、开箱收集可无限叠加的道具，激活传送器迎战波次后进入下一关，而敌人强度随流逝的时间持续上涨，逼迫玩家在变强与赶路间权衡。",
+    "core_hook": "把难度绑定到流逝的时间而非进度，使「多停留刷道具」与「快速推进避免被难度超车」成为贯穿全局的风险取舍，让每一秒都成为决策。",
+    "core_loop": "在关卡内清怪、用货币开箱获取随机且可无限叠加的道具，找到并激活传送器、抵御涌来的波次，胜利后进入下一关，循环至死亡、击败终盘 Boss 或无限循环。",
+    "progression_model": "单局内靠无限叠加的道具滚雪球式增强攻防与机动；跨局靠挑战解锁新幸存者与修正词条，月币跨局留存可购外观或选关，单局战力不保留。",
+    "failure_model": "敌人随游玩时间、过关数、人数与难度被动升级，强度持续上涨；生命归零即死亡、本局结束，难度越拖越高形成时间压力。",
+    "content_structure": "由一系列程序生成关卡串联，关卡含宝箱、传送器与精英敌人；多种结局（死亡、击败终盘 Boss、进入秘密关或无限循环）与可解锁幸存者支撑变化。",
+    "main_player_actions": ["射击", "技能释放", "走位"],
+    "main_player_decisions": ["风险取舍", "道具取舍", "传送时机"],
+    "main_player_experiences": ["滚雪球快感", "战斗精通", "涌现玩法"],
+    "main_mechanics": ["程序生成", "道具叠加", "难度递增", "永久死亡", "元进度"],
+    "replayability_sources": ["程序生成", "角色解锁", "多结局", "构筑多样"],
+    "production_constraints": ["低多边形", "Unity 引擎", "小型团队"],
+    "innovation_patterns": ["道具叠加", "难度递增"],
+    "reusable_reference_patterns": ["道具叠加", "难度递增", "元进度"],
+    "non_replicable_risks": ["平衡复杂度"],
+    "genre": ["类肉鸽", "第三人称射击"],
+    "art_style": ["低多边形"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["第三人称"],
+    "theme": ["科幻", "异星求生"],
+    "narrative_style": ["碎片化叙事"],
+    "game_feel": ["爽快射击"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "道具叠加",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "无限叠加道具",
+            "quote_or_summary": "开箱获取的随机道具可无限叠加，提供攻、防、机动等增益，从 2D 转 3D 后能在角色身上展示已拾道具。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "难度递增",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "敌人随时间升级",
+            "quote_or_summary": "敌人依游玩时间、过关数、玩家数与所选难度被动升级，制造随时间上涨的挑战。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "元进度",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "跨局解锁",
+            "quote_or_summary": "局间靠挑战解锁新幸存者与修正词条，月币跨局留存可购外观或选关。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Risk of Rain 2 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Risk_of_Rain_2",
+        "quote_or_summary": "肉鸽第三人称射击，开箱获取可无限叠加道具，敌人随时间被动升级的难度递增，传送器与波次，多结局，合作，程序关卡，Hopoo Games 用 Unity 开发，2020 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_ror2_time_as_difficulty",
+      "subject": "难度递增",
+      "relation": "creates",
+      "object": "时间压力",
+      "explanation": "把敌人强度绑定到流逝的时间而非过关进度，使「停留多刷道具以变强」与「快速推进以免被难度曲线超车」成为贯穿全局的实时权衡，让每一秒都带上风险与收益，可复用于肉鸽节奏设计。",
+      "evidence": [
+        {
+          "title": "时间难度解读",
+          "quote_or_summary": "难度随时钟上涨，迫使玩家在刷取与推进间持续权衡。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

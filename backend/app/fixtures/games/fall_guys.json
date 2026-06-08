@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_fall_guys",
+    "title": "Fall Guys",
+    "source_refs": [
+      {
+        "title": "Fall Guys（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Fall_Guys",
+        "notes": "类型（大逃杀派对游戏）、最多数十人逐轮淘汰、跑跳扑抓与软体布偶物理、综艺闯关灵感、随机小游戏变体、免费游玩与赛季通行证、Mediatonic 用 Unity 开发、2020 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款大逃杀式派对游戏，数十名豆人玩家在一连串随机的物理闯关小游戏中竞争，靠跑、跳、扑、抓通过障碍并逐轮淘汰，直到决赛决出优胜者。",
+    "selection_reason": "作为「大逃杀框架 + 派对小游戏」融合的标杆：用软体布偶物理把跌倒和失败变得滑稽好笑而非惩罚性，降低竞技挫败、保持全年龄欢乐，是研究失败趣味化与休闲竞技节奏的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_fall_guys",
+    "one_sentence_summary": "数十名豆人玩家在一连串随机的物理闯关小游戏中以跑跳扑抓竞争通关，每轮淘汰部分人，靠软体布偶物理把失败演成喜剧，最终决赛决出唯一优胜者。",
+    "core_hook": "把大逃杀的逐轮淘汰套进无暴力的综艺闯关，靠夸张软体物理让摔倒、被挤、失手都变成滑稽场面，使「输」也好笑好看。",
+    "core_loop": "进入随机选出的一轮小游戏，靠跑跳扑抓与抓取通过障碍或抢占名额，存活者晋级下一轮、被淘汰者出局，逐轮收窄至决赛抢夺皇冠。",
+    "progression_model": "单局是即时淘汰赛，无局内成长；长期进度体现为赛季通行证解锁外观与皇冠等收集物，以及随赛季更新的关卡与主题。",
+    "failure_model": "每轮按小游戏表现淘汰垫底者，失误多来自物理碰撞与环境导航而非被对手直接消灭，被淘汰即出局、本局结束。",
+    "content_structure": "由课程、生存、计分、团队、解谜、隐身豆与决赛等多类小游戏构成的逐轮淘汰赛，许多关卡含随机变体，并按赛季更换中世纪、冬季、丛林、太空等主题。",
+    "main_player_actions": ["平台跳跃", "扑跳", "抓取"],
+    "main_player_decisions": ["路线选择", "风险取舍"],
+    "main_player_experiences": ["欢乐混乱", "竞技紧张"],
+    "main_mechanics": ["淘汰赛制", "物理碰撞", "随机关卡"],
+    "replayability_sources": ["随机关卡", "赛季更新", "外观收集"],
+    "production_constraints": ["Unity 引擎", "物理玩法"],
+    "innovation_patterns": ["大逃杀派对化", "物理喜剧"],
+    "reusable_reference_patterns": ["淘汰赛制", "物理喜剧"],
+    "non_replicable_risks": ["长期更新运营", "玩家留存"],
+    "genre": ["大逃杀", "派对游戏"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["第三人称"],
+    "theme": ["综艺竞技"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["软弹物理"],
+    "team_model": ["中型团队"],
+    "reference_value_tags": [
+      {
+        "tag": "淘汰赛制",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "逐轮淘汰",
+            "quote_or_summary": "最多数十名玩家同场竞争，每轮小游戏淘汰部分人，逐轮收窄直到决赛决出优胜者。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理碰撞",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "软体布偶物理",
+            "quote_or_summary": "跑跳扑抓与软体布偶物理产生的碰撞和笨拙动作制造喜剧效果，失误多源于物理互动与环境。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "随机关卡",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "随机小游戏与变体",
+            "quote_or_summary": "每轮从多类小游戏中随机选取，许多关卡还含随机选择的变体，保证重玩差异。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Fall Guys 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Fall_Guys",
+        "quote_or_summary": "大逃杀派对游戏，数十人逐轮淘汰，跑跳扑抓与软体布偶物理，综艺闯关灵感，随机小游戏与变体，免费游玩加赛季通行证，Mediatonic 用 Unity 开发，2020 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_fall_guys_failure_as_comedy",
+      "subject": "物理喜剧",
+      "relation": "creates",
+      "object": "失败趣味化",
+      "explanation": "用夸张的软体布偶物理把摔倒、被挤和失手演成滑稽场面，使淘汰赛里的失败带来笑声而非挫败，既缓和竞技压力，又让出局玩家仍能从观看混乱中获得乐趣，可复用于派对与竞技设计。",
+      "evidence": [
+        {
+          "title": "物理喜剧解读",
+          "quote_or_summary": "布偶物理让失败显得好笑，降低淘汰的惩罚感。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

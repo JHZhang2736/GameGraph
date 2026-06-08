@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_quantum_break",
+    "title": "Quantum Break",
+    "source_refs": [
+      {
+        "title": "Quantum Break（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Quantum_Break",
+        "notes": "类型（第三人称射击动作冒险）、主角 Jack Joyce 因时间机器实验获得时间操控能力（加速冲刺、时间护盾、定格）、鼓励玩家移动而非据守掩体、内嵌真人出演的真人剧集、五个章节间穿插剧集、玩家在「抉择节点」的选择会影响剧集走向、Remedy 开发、微软发行、2016 年发售等事实来源。"
+      },
+      {
+        "title": "Quantum Break（Steam）",
+        "url": "https://store.steampowered.com/app/474960/Quantum_Break/",
+        "notes": "PC 版玩法、时间能力与真人剧集整合、抉择影响剧情等事实来源。"
+      }
+    ],
+    "short_description": "一款第三人称射击动作冒险，主角 Jack Joyce 在一次失败的时间机器实验后获得时间操控能力——加速冲刺、定格敌人、张开减速护盾，并在游戏章节之间穿插真人出演的剧集，玩家在「抉择节点」的选择会反过来改变剧集与剧情走向。",
+    "selection_reason": "作为「时间操控射击 + 真人剧集跨媒介整合」的代表：把定格、加速、护盾等时间能力融入鼓励走位的枪战，再在章节间插入真人剧集并让玩家抉择影响其走向，是研究时间操控战斗与游戏/影视交替叙事的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_quantum_break",
+    "one_sentence_summary": "玩家扮演获得时间操控能力的 Jack Joyce，在第三人称枪战中以加速冲刺、定格敌人与减速护盾配合射击不断走位歼敌，并在五个游戏章节之间观看真人出演的剧集，靠「抉择节点」的选择改变剧集与后续剧情走向。",
+    "core_hook": "把定格、加速、时间护盾等能力做进鼓励不断移动的枪战，再用游戏章节与真人剧集交替推进、并让玩家在反派视角的「抉择节点」做出影响剧集的选择，把一款 TPS 同时变成一部可分支的互动剧。",
+    "core_loop": "在第三人称枪战中混用枪械与时间能力（冲刺切入、定格压制、护盾防身）清剿敌人、推进关卡，章节末做出抉择节点的选择，随后观看据此变化的真人剧集，再带着剧情后果进入下一章。",
+    "progression_model": "靠拾取时间源点升级各项时间能力、解锁更强战斗手段推进；剧情进度则由章节与穿插剧集推进，抉择节点的选择改变剧集内容与若干后续情节，呈线性多分支结构。",
+    "failure_model": "战斗中生命归零即死亡、需回到检查点重来；时间能力的冷却与定位失误会让玩家在敌群中被快速击倒。",
+    "content_structure": "以五个游戏章节与其间穿插的真人剧集交替为骨架，靠时间操控枪战与抉择节点分支承载流程，含影响剧集走向的关键选择，单人。",
+    "main_player_actions": ["射击", "技能释放", "走位"],
+    "main_player_decisions": ["道德抉择", "增益选择", "风险取舍"],
+    "main_player_experiences": ["战斗精通", "抉择沉浸", "情感叙事"],
+    "main_mechanics": ["时间操控", "分支叙事", "真人影视", "交替章节", "能力树"],
+    "replayability_sources": ["多结局", "彩蛋收集"],
+    "production_constraints": ["大团队协作", "真人拍摄"],
+    "innovation_patterns": ["真人影视", "时间操控", "交替章节"],
+    "reusable_reference_patterns": ["时间操控", "分支叙事", "交替章节"],
+    "non_replicable_risks": ["影视制作成本", "大团队协作"],
+    "genre": ["第三人称射击", "动作冒险"],
+    "art_style": ["写实美术"],
+    "audio_style": ["动态配乐"],
+    "perspective": ["第三人称"],
+    "theme": ["科幻"],
+    "narrative_style": ["过场驱动", "分支叙事"],
+    "game_feel": ["爽快射击", "紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "时间操控",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "时间能力枪战",
+            "quote_or_summary": "Jack 拥有加速冲刺、定格局部时间、张开减速护盾等时间能力，与枪械配合作战，玩家被鼓励保持移动而非据守掩体。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "真人影视",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "内嵌真人剧集",
+            "quote_or_summary": "游戏在章节之间穿插由演员真人出演的剧集，与游戏叙事整合。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      },
+      {
+        "tag": "分支叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "抉择影响剧集",
+            "quote_or_summary": "玩家在抉择节点的选择会改变随后真人剧集的走向，并反过来影响游戏剧情。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Quantum Break 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Quantum_Break",
+        "quote_or_summary": "第三人称射击动作冒险，主角因时间机器实验获得加速、定格、护盾等时间能力，鼓励走位而非掩体，章节间穿插真人剧集，抉择节点影响剧集与剧情，Remedy 开发，微软发行，2016 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_qb_liveaction_immersion",
+      "subject": "真人影视",
+      "relation": "creates",
+      "object": "世界沉浸",
+      "explanation": "在章节之间插入真人出演、并随玩家抉择而变化的剧集，让游戏世界以另一种媒介的质感被「实拍」出来，反派与配角的戏份获得电视剧式的演绎与篇幅，扩展了单靠游戏内过场难以承载的人物与世界纵深，可复用于希望用跨媒介实拍内容加厚世界观与配角塑造的叙事设计；但其代价是高昂的影视拍摄与分支制作成本。",
+      "evidence": [
+        {
+          "title": "真人剧集沉浸解读",
+          "quote_or_summary": "随抉择变化的真人剧集以实拍质感扩展世界与配角纵深，加深沉浸，但拍摄成本高昂。",
+          "notes": "基于可观察事实的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

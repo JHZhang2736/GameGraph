@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_grime",
+    "title": "Grime",
+    "source_refs": [
+      {
+        "title": "Grime（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Grime_(video_game)",
+        "notes": "类型（类魂类银河城）、黑洞吸收招架、mass 货币与雕像存档、死亡不丢进度、超现实石/肉美术、Clover Bite 团队与 Unity 引擎等事实来源。"
+      }
+    ],
+    "short_description": "一款融合类魂与类银河城的动作平台游戏，玩家操控以黑洞为头的「容器」，用吸收敌人与攻击的招架机制在超现实的石与肉世界中战斗、探索。",
+    "selection_reason": "作为把「招架」与「资源获取」合并为同一动作的范例：用黑洞吸收敌人攻击既是防御也是进攻与成长来源，且死亡不丢进度，是研究进攻性防御与降低类魂惩罚摩擦的高价值参考；超现实雕塑美术亦具风格辨识度。"
+  },
+  "profile": {
+    "game_id": "game_grime",
+    "one_sentence_summary": "玩家操控以黑洞为头的「容器」，在超现实的石与肉世界中用吸收式招架反击、近战与平台移动战斗，靠吸收敌人积累的 mass 强化角色并解锁能力。",
+    "core_hook": "把招架、反击与成长资源合并到「黑洞吸收」这一个动作里——吸入敌人的攻击与躯体既化解伤害，又转化为反击和角色成长。",
+    "core_loop": "探索连通世界、与敌和 Boss 交战，靠吸收招架抵消攻击并反弹、击碎弱敌获取 mass，在雕像据点用 mass 提升属性与解锁能力，开辟新路深入探索。",
+    "progression_model": "以击杀吸收获得的 mass 为货币，在石柱雕像（surrogates）据点提升属性、解锁主动与被动能力；部分能力兼作探索门控，推动类银河城式开图。",
+    "failure_model": "生命耗尽即死亡并回到雕像据点重生，但与多数类魂不同——玩家死亡不丢失已积累的进度，惩罚更轻。",
+    "content_structure": "一张相互连通的超现实世界地图，含 Cenotaph City 等奇诡建筑、多个区域与硬核 Boss，NPC 以谜语隐喻推进晦涩叙事，辅以收集与能力解锁。",
+    "main_player_actions": ["近战攻击", "吸收招架", "冲刺", "平台跳跃", "攀墙"],
+    "main_player_decisions": ["风险取舍", "Boss 时机", "能力树优先级", "探索路线"],
+    "main_player_experiences": ["战斗精通", "氛围营造", "探索发现"],
+    "main_mechanics": ["吸收招架", "能力门控探索", "近战攻击", "吸收成长", "轻度死亡惩罚"],
+    "replayability_sources": ["Boss 挑战", "全收集", "速通", "难度分级"],
+    "production_constraints": ["Unity 引擎", "小型团队"],
+    "innovation_patterns": ["吸收招架", "吸收成长"],
+    "reusable_reference_patterns": ["氛围营造", "能力门控探索", "进攻性防御"],
+    "non_replicable_risks": ["超现实美术量", "强美术风格"],
+    "genre": ["类魂", "类银河城"],
+    "art_style": ["超现实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["横版2D"],
+    "theme": ["超现实", "血肉造物"],
+    "narrative_style": ["碎片化叙事", "环境叙事"],
+    "game_feel": ["精准近战", "流畅跑酷"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "吸收招架",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "黑洞吸收机制",
+            "quote_or_summary": "「容器」用黑洞般的头部吸入敌人或其攻击，既作闪避防御，也用于反弹攻击或消灭弱敌。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "吸收成长",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "mass 货币",
+            "quote_or_summary": "游戏以吸收敌人获得的 mass 作为提升属性与解锁能力的货币。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "轻度死亡惩罚",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "死亡不丢进度",
+            "quote_or_summary": "玩家死亡后不丢失已积累的进度，是对典型类魂惩罚的偏离。",
+            "notes": "维基百科可观察设计。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Grime 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Grime_(video_game)",
+        "quote_or_summary": "类魂类银河城动作平台，黑洞吸收式招架兼成长，mass 货币与雕像据点，死亡不丢进度，超现实石/肉美术，Clover Bite 用 Unity 开发，2021 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_grime_absorb_offensive_defense",
+      "subject": "吸收招架",
+      "relation": "creates",
+      "object": "进攻性防御",
+      "explanation": "把化解伤害、反击与获取成长资源压缩进同一个吸收动作，使最优防御本身就是进攻与变强，鼓励玩家迎着攻击而非退避，重塑类魂战斗的心流与节奏，是可跨题材复用的机制缝合范式。",
+      "evidence": [
+        {
+          "title": "吸收机制解读",
+          "quote_or_summary": "吸收同时承担防御、反击与资源获取三重职能。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

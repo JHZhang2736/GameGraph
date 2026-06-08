@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_griftlands",
+    "title": "Griftlands",
+    "source_refs": [
+      {
+        "title": "Griftlands（Steam）",
+        "url": "https://store.steampowered.com/app/601840/Griftlands/",
+        "notes": "类型（牌组构筑肉鸽）、破败科幻世界、双牌组系统（战斗一套、谈判一套）、谈判以削减对手「决心」取胜、谈判分外交/操纵/威吓且部分互斥、3 名角色各有专属牌组与地图、按天推进含选择事件与首领战、关系会受影响、Klei Entertainment 开发等事实来源。"
+      }
+    ],
+    "short_description": "一款破败科幻世界里的牌组构筑肉鸽，玩家用谈判、战斗、偷窃等手段达成目的，独有「战斗 + 谈判」双牌组系统：战斗削血、谈判则用另一套牌削减对手的「决心」，三名角色各有专属牌组与剧情。",
+    "selection_reason": "作为「为非战斗交涉单独做一套牌组」的代表：在传统战斗牌组之外并行一套谈判牌组，让「说服」与「打架」成为同等深度的解决路径，并让关系与抉择影响后续，是研究双牌组结构与多元解法的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_griftlands",
+    "one_sentence_summary": "玩家在破败科幻世界里用「战斗」与「谈判」两套并行牌组解决冲突——战斗削减对手生命、谈判则削减其「决心」，从三名各有专属牌组与剧情的角色中选择，按天推进选择事件与首领战。",
+    "core_hook": "在传统战斗牌组之外，并行做出一套同等深度的谈判牌组，让「打一架」与「谈下来」成为两条都值得钻研的解决路径，并让你的选择与结下的关系影响后续遭遇。",
+    "core_loop": "按天推进遭遇、在战斗或谈判中分别用对应牌组削减对手生命或决心、战后与事件中拣选卡牌与升级、结交或得罪 NPC、迎接当日首领，循环推进剧情，失败带解锁重开。",
+    "progression_model": "单局靠分别构筑战斗与谈判两套牌组、招募盟友与升级卡牌变强；跨局解锁三名角色的专属战役、卡牌与内容；进度兼有单局双牌组构筑与长期解锁。",
+    "failure_model": "战斗中生命归零、或谈判中己方决心被削尽即落败，可能导致本局战役失败，需带解锁重新开始角色战役。",
+    "content_structure": "以三名角色各自分天推进的战役为骨架，每天由若干遭遇、选择事件与首领战组成，靠战斗与谈判双牌组及人际关系承载分支与重玩，单人。",
+    "main_player_actions": ["出牌", "卡牌取舍", "对话选择"],
+    "main_player_decisions": ["道德抉择", "卡牌取舍", "装备搭配"],
+    "main_player_experiences": ["构筑乐趣", "抉择沉浸", "运筹帷幄"],
+    "main_mechanics": ["牌组构筑", "谈判战斗", "双牌组", "分支叙事", "元进度"],
+    "replayability_sources": ["构筑多样", "多结局", "角色解锁"],
+    "production_constraints": ["手绘美术", "中型团队"],
+    "innovation_patterns": ["谈判战斗", "双牌组"],
+    "reusable_reference_patterns": ["谈判战斗", "双牌组", "牌组构筑"],
+    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
+    "genre": ["卡牌构筑", "类肉鸽"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["科幻", "黑色幽默"],
+    "narrative_style": ["分支叙事", "对话叙事"],
+    "game_feel": ["策略权衡"],
+    "team_model": ["中型团队"],
+    "reference_value_tags": [
+      {
+        "tag": "谈判战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "削减决心的谈判",
+            "quote_or_summary": "谈判是一对一进行的，目标是削减对手在此阶段的生命值——即「决心」，谈判牌分外交、操纵与威吓。",
+            "notes": "Steam 商店页与评测可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "双牌组",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "战斗与谈判两套牌",
+            "quote_or_summary": "游戏让玩家管理两套牌组：一套用于传统战斗，另一套用于谈判。",
+            "notes": "Steam 商店页与评测可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "三角色专属牌组",
+            "quote_or_summary": "玩家可从三名角色的战役中选择，各有专属牌组、能力与可探索地图。",
+            "notes": "Steam 商店页可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Griftlands 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/601840/Griftlands/",
+        "quote_or_summary": "破败科幻牌组构筑肉鸽，战斗与谈判双牌组，谈判削减对手决心且分外交/操纵/威吓，三名角色各有专属牌组与剧情，按天推进选择事件与首领，关系受影响，Klei 开发。",
+        "notes": "事实取自 Steam 商店页与评测。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_griftlands_dual_deck_depth",
+      "subject": "双牌组",
+      "relation": "creates",
+      "object": "系统深度",
+      "explanation": "在战斗牌组之外并行一套同等深度的谈判牌组，让「说服」与「动手」成为两条各自需要独立构筑与钻研的路径，使同一处冲突可有多种解法并与人际后果挂钩，把单一战斗系统拓成双系统的策略深度，可复用于希望以并行子系统提供多元解法的牌组设计。",
+      "evidence": [
+        {
+          "title": "双牌组深度解读",
+          "quote_or_summary": "并行的战斗与谈判牌组提供两条需独立构筑的解法，扩展系统深度。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

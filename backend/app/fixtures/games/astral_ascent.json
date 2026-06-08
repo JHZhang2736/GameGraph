@@ -1,0 +1,95 @@
+{
+  "candidate": {
+    "id": "game_astral_ascent",
+    "title": "Astral Ascent",
+    "source_refs": [
+      {
+        "title": "Astral Ascent（Steam）",
+        "url": "https://store.steampowered.com/app/1280930/Astral_Ascent/",
+        "notes": "类型（2D 平台肉鸽，快节奏战斗）、四名风格迥异的英雄、用数十种法术自由搭配构筑打法、强调闪避与法术优化、12 名黄道十二宫 Boss、手绘逐帧像素动画四个奇幻世界、本地双人合作、Hibernian Workshop 开发、2023 年 11 月 14 日正式发售等事实来源。"
+      },
+      {
+        "title": "Astral Ascent（维基百科条目检索）",
+        "url": "https://en.wikipedia.org/wiki/Astral_Ascent",
+        "notes": "四角色（Ayla/Kiran/Calie/Octave）各具打法、随多周目逐步揭开剧情、Metacritic 86、Steam 好评等事实来源。"
+      }
+    ],
+    "short_description": "一款快节奏的 2D 平台肉鸽游戏，玩家从四名风格迥异的英雄中选择，靠数十种可自由搭配的法术与闪避走位，在四个手绘奇幻世界中闯关并迎战 12 名黄道十二宫 Boss；每次失败都带回成长，随多周目逐步揭开剧情，Hibernian Workshop 开发、2023 年发售、支持本地双人。",
+    "selection_reason": "作为「法术自由搭配驱动的 2D 平台肉鸽」代表：用可任意组合的法术槽位与闪避手感，让每局打法都由玩家的构筑与操作共同塑造，再以四角色、12 宫 Boss 与多周目叙事延展重玩，是研究构筑多样性与快节奏平台战斗手感的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_astral_ascent",
+    "one_sentence_summary": "玩家选定四名英雄之一，用数十种可自由搭配的法术与闪避走位，在四个手绘奇幻世界里快节奏闯关、迎战 12 名黄道十二宫 Boss，每次失败都带回成长并随多周目揭开剧情。",
+    "core_hook": "把快节奏 2D 平台战斗与「法术自由搭配」结合：四名英雄各有基底，玩家从数十种法术里挑选并组合进槽位，配合精准闪避，让每局的打法既来自构筑也来自手上的走位与时机，重复挑战中不断打磨自己的套路。",
+    "core_loop": "选英雄进入关卡、用搭配好的法术与闪避清怪、在房间间拾取并组合新法术与强化、闯过区域 Boss、推进到下一世界，死亡后带回元进度成长再次开局。",
+    "progression_model": "单局靠拾取法术与强化即时构筑，跨局靠元进度解锁法术池、强化与剧情推进；进度体现为已解锁法术、角色、通关深度与多周目剧情，构筑随解锁愈发多样。",
+    "failure_model": "生命归零即本局结束、失去本局构筑，保留元进度成长，回到基地重整再战。",
+    "content_structure": "以四个手绘世界与 12 名黄道宫 Boss 为骨架，靠快节奏平台战斗、法术搭配、元进度与多周目叙事承载流程与重玩，含本地双人。",
+    "main_player_actions": ["魔法释放", "翻滚闪避", "平台跳跃"],
+    "main_player_decisions": ["增益选择", "装备搭配", "风险取舍"],
+    "main_player_experiences": ["战斗精通", "构筑乐趣", "高难跑酷"],
+    "main_mechanics": ["技能切换", "增益构筑", "随机关卡", "元进度", "护符定制"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["增益构筑", "技能切换"],
+    "reusable_reference_patterns": ["元进度", "增益构筑"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["类肉鸽", "平台跳跃"],
+    "art_style": ["像素美术"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["横版2D"],
+    "theme": ["奇幻", "神话"],
+    "narrative_style": ["碎片化叙事"],
+    "game_feel": ["精准平台", "流畅响应"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "增益构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "数十法术自由搭配",
+            "quote_or_summary": "玩家从数十种法术中自由挑选组合到槽位，塑造个人化的快节奏打法。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "技能切换",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "四英雄各异打法",
+            "quote_or_summary": "Ayla、Kiran、Calie、Octave 四名英雄风格迥异，配合不同法术形成多样套路。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      },
+      {
+        "tag": "元进度",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "失败带回成长",
+            "quote_or_summary": "每次失败都能带回成长并解锁新内容，随多周目逐步揭开剧情。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Astral Ascent 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/1280930/Astral_Ascent/",
+        "quote_or_summary": "快节奏 2D 平台肉鸽，四英雄、数十法术自由搭配、闪避、12 黄道宫 Boss、手绘逐帧像素四世界、元进度与多周目叙事，本地双人，Hibernian Workshop 开发，2023 年发售。",
+        "notes": "事实取自 Steam 商店页与维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": []
+}

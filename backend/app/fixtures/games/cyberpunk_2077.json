@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_cyberpunk_2077",
+    "title": "Cyberpunk 2077",
+    "source_refs": [
+      {
+        "title": "Cyberpunk 2077（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Cyberpunk_2077",
+        "notes": "类型（动作角色扮演）、夜之城开放世界、第一人称、技能树与赛博植入构筑、分支叙事与选择、黑客快速入侵、枪战与驾驶、反乌托邦赛博朋克题材、CD Projekt Red 用 REDengine 4 开发、2020 年发售、灾难性首发与后续修复及《往日之影》资料片口碑回升等事实来源。"
+      }
+    ],
+    "short_description": "一款赛博朋克题材的开放世界动作角色扮演游戏，玩家以第一人称在反乌托邦巨型都市夜之城中自由行动，靠技能树与赛博植入构筑角色，穿行于枪战、黑客入侵、驾驶与充满选择的分支剧情。",
+    "selection_reason": "作为「高保真开放世界叙事 RPG」与「灾难性首发后长线修复翻盘」的双重案例：用电影级演出、分支抉择与可自定义的构筑承载沉浸都市，又因跨世代首发崩坏被下架退款、再凭数年更新与资料片重建口碑，是研究大型 RPG 制作风险与发行后挽救的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_cyberpunk_2077",
+    "one_sentence_summary": "玩家以第一人称在反乌托邦巨型都市夜之城中自由行动，靠技能树与赛博植入构筑角色 V，穿行于枪战、黑客快速入侵、驾驶与充满选择的分支剧情，追寻一段关乎生死与身份的故事。",
+    "core_hook": "用电影级演出、可自定义的构筑与处处分叉的抉择，把一座高密度、阶层分明的赛博朋克都市做成可深度沉浸、随选择走向不同结局的叙事舞台。",
+    "core_loop": "接取主线与各类委托、潜入或强攻据点、用枪械与快速入侵作战、驾车穿行夜之城、用所得强化技能与赛博植入并做出影响剧情的抉择，循环推进故事与角色成长。",
+    "progression_model": "靠经验与街头声望提升等级、点技能树、加装与升级赛博植入来构筑战斗风格；进度体现为角色等级、装备与赛博构筑及剧情推进，叙事随选择分支走向不同结局。",
+    "failure_model": "生命归零即死亡并回退到最近存档点重来；游戏亦提供非致命路线，可在不杀人的前提下通关。",
+    "content_structure": "在分区分明的开放都市夜之城中以主线、支线委托与突发事件为骨架，含第一人称枪战、黑客入侵、驾驶、技能树与赛博植入构筑及分支多结局叙事，单人，后由《往日之影》资料片扩充。",
+    "main_player_actions": ["射击", "黑客入侵", "驾驶", "对话选择"],
+    "main_player_decisions": ["道德抉择", "构筑搭配", "任务取舍"],
+    "main_player_experiences": ["抉择沉浸", "情感叙事", "战斗精通"],
+    "main_mechanics": ["开放世界探索", "技能树", "分支叙事", "赛博植入", "黑客入侵"],
+    "replayability_sources": ["多结局", "构筑多样", "分支叙事"],
+    "production_constraints": ["自研引擎", "大团队协作", "全管弦乐配乐"],
+    "innovation_patterns": ["分支叙事", "赛博植入"],
+    "reusable_reference_patterns": ["分支叙事", "高质量支线", "赛博植入"],
+    "non_replicable_risks": ["技术复杂度", "大团队协作", "授权配乐成本"],
+    "genre": ["动作角色扮演", "开放世界"],
+    "art_style": ["写实美术"],
+    "audio_style": ["电子配乐", "动态配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["科幻", "反乌托邦"],
+    "narrative_style": ["分支叙事", "过场驱动"],
+    "game_feel": ["爽快射击", "沉浸代入"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "分支叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "选择影响走向",
+            "quote_or_summary": "玩家的选择影响剧情与结局，含可不杀人通关的非致命路线等多种走向。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "赛博植入",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "植入构筑",
+            "quote_or_summary": "角色进程含技能树与赛博植入，植入解锁特殊能力以构筑不同战斗风格。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "首发崩坏",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "灾难性首发",
+            "quote_or_summary": "2020 年发售时在 PS4/Xbox One 旧主机上严重缺陷，被索尼从商店下架并引发退款，后经更新与资料片修复口碑。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Cyberpunk 2077 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Cyberpunk_2077",
+        "quote_or_summary": "动作角色扮演，夜之城开放世界，第一人称，技能树与赛博植入构筑，分支叙事与选择，黑客快速入侵，枪战与驾驶，赛博朋克题材，CD Projekt Red 用 REDengine 4 开发，2020 年发售，灾难性首发后修复与《往日之影》资料片回升。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_cyberpunk_scope_launch_risk",
+      "subject": "技术复杂度",
+      "relation": "demonstrates",
+      "object": "跨平台首发风险",
+      "explanation": "在一座高保真开放都市上同时支持新旧两代主机，使最弱硬件成为质量短板，导致旧主机版本严重缺陷、被下架退款，表明过大的技术与平台范围会放大首发崩坏风险；其后续靠数年更新与资料片才扭转口碑，可作为评估制作范围与发行平台取舍的反面参考。",
+      "evidence": [
+        {
+          "title": "范围与首发风险解读",
+          "quote_or_summary": "覆盖旧主机的过大技术范围放大了首发崩坏风险，后续靠长线修复回升。",
+          "notes": "基于可观察事实的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

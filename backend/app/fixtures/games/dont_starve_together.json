@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_dont_starve_together",
+    "title": "Don't Starve Together",
+    "source_refs": [
+      {
+        "title": "Don't Starve（含 Together，维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Don%27t_Starve",
+        "notes": "类型（生存）、昼夜循环与采集合成、饥饿/生命/理智三仪表、理智系统、永久死亡与复活道具、最多六人合作、程序生成开放世界、Tim Burton 式剪纸美术、Klei Entertainment 等事实来源。"
+      }
+    ],
+    "short_description": "一款黑暗哥特卡通风的多人合作生存游戏，是《Don't Starve》的联机版，玩家在程序生成的荒野中采集、合成、应对昼夜与怪物，同时维持饥饿、生命与理智三项仪表以求存活。",
+    "selection_reason": "作为把「理智」做成第四条生存仪表的代表：黑暗、怪物与失常行为会消耗理智并引发幻象威胁，使氛围与心理状态成为可管理的资源；其合作生存与强辨识度剪纸美术亦具参考价值。"
+  },
+  "profile": {
+    "game_id": "game_dont_starve_together",
+    "one_sentence_summary": "玩家在程序生成的黑暗荒野中昼采夜防，靠采集与合成维持饥饿、生命与理智三条仪表，多人协作抵御怪物与环境，死亡多为永久，靠稀有道具方可复活。",
+    "core_hook": "在饥饿与生命之外，把「理智」做成会被黑暗、怪物和失常行为持续消耗的第三条生存仪表，让恐惧与氛围本身变成必须经营的资源。",
+    "core_loop": "白昼采集资源、合成工具与建筑，黄昏前备好光源与防御，夜间抵御黑暗与怪物，多人分工维持三仪表并探索扩张，循环推进直至建立稳定营地或团灭。",
+    "progression_model": "无固定等级，进度体现为解锁配方、搭建营地与积累资源装备；玩家通过存活天数积累经验解锁拥有不同优劣的角色，强调横向能力差异而非数值碾压。",
+    "failure_model": "饥饿耗尽会扣血，生命归零即死亡；死亡通常为永久，除非事先备有肉块雕像、复活石或重生护符等稀有道具，否则需从头开始。",
+    "content_structure": "一张程序生成的连通开放世界，含多生物群系、Boss 与季节变化；多名可解锁角色各带独特增益与短板，合作模式支持最多六人共享一局。",
+    "main_player_actions": ["采集", "合成制作", "近战攻击"],
+    "main_player_decisions": ["资源取舍", "风险取舍", "探索路线"],
+    "main_player_experiences": ["涌现玩法", "探索发现", "氛围营造"],
+    "main_mechanics": ["资源管理", "合成制作", "永久死亡", "理智系统", "合作生存"],
+    "replayability_sources": ["程序生成", "角色解锁"],
+    "production_constraints": ["手绘美术", "小型团队"],
+    "innovation_patterns": ["理智系统", "合作生存"],
+    "reusable_reference_patterns": ["理智系统", "程序生成", "资源管理"],
+    "non_replicable_risks": ["强美术风格"],
+    "genre": ["生存", "沙盒"],
+    "art_style": ["手绘美术", "哥特卡通"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["俯视"],
+    "theme": ["黑暗奇幻"],
+    "narrative_style": ["环境叙事"],
+    "game_feel": ["紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "理智系统",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "理智仪表",
+            "quote_or_summary": "理智在黑暗中或做出令人不安的行为时下降，可经睡眠、花朵或衣着恢复；过低会引发幻象威胁。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "合作生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "多人联机",
+            "quote_or_summary": "Together 版支持最多六人在公开或私人局中共同生存，并含单人版没有的角色。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "永久死亡",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "死亡惩罚",
+            "quote_or_summary": "死亡通常为永久，除非使用肉块雕像、重生石或重生护符等稀有复活道具。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Don't Starve Together 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Don%27t_Starve",
+        "quote_or_summary": "程序生成荒野生存，昼夜循环，采集合成，饥饿/生命/理智三仪表与理智系统，永久死亡与稀有复活道具，最多六人合作，Klei 的黑暗剪纸卡通美术，Together 版 2016 年正式发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_dst_sanity_as_resource",
+      "subject": "理智系统",
+      "relation": "demonstrates",
+      "object": "情绪资源化",
+      "explanation": "把恐惧与精神状态做成一条会被黑暗和怪物消耗、可经梳理恢复的可管理仪表，使「氛围」从单纯的美术氛围变成驱动决策的玩法资源，无需新增战斗系统即可加深紧张与沉浸，可跨生存与恐怖题材复用。",
+      "evidence": [
+        {
+          "title": "理智机制解读",
+          "quote_or_summary": "理智过低触发幻象威胁，使心理状态直接影响生存难度。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

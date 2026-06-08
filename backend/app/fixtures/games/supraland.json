@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_supraland",
+    "title": "Supraland",
+    "source_refs": [
+      {
+        "title": "Supraland（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Supraland",
+        "notes": "类型（第一人称类银河城，融合解谜与动作，自比 Portal+塞尔达+银河战士）、解锁工具（如力量方块）开启此前去不了的区域的能力门控探索、以物理解谜为核心、与敌人战斗、无地图靠远处地标导航、整座游戏发生在儿童沙坑里的橡皮泥文明、独立开发者 David Münnich 用虚幻引擎 4 约 16 个月独立完成、2019 年 4 月 PC 发售等事实来源。"
+      },
+      {
+        "title": "Supraland（Steam）",
+        "url": "https://store.steampowered.com/app/612780/Supraland/",
+        "notes": "第一人称解谜探索、能力门控、物理解谜、玩具沙盒设定、独立开发等事实来源。"
+      }
+    ],
+    "short_description": "一款第一人称类银河城游戏，融合解谜与动作，自比 Portal、塞尔达与银河战士：玩家在一座儿童沙坑里的橡皮泥世界中探索，靠解锁力量方块等工具打开此前无法抵达的区域、用物理特性破解谜题并与敌人战斗，全程无地图、靠远处地标导航；David Münnich 用虚幻引擎 4 独立开发、2019 年发售。",
+    "selection_reason": "作为「第一人称物理解谜 + 能力门控探索」代表：把工具解锁开路的银河城结构与高自由度的物理谜题结合，让同一件工具能在不同情境衍生多种解法，再用玩具沙盒设定与无地图地标导航鼓励好奇心驱动的探索，是研究物理解谜深度与能力门控探索的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_supraland",
+    "one_sentence_summary": "玩家以第一人称在儿童沙坑里的橡皮泥世界中探索，靠解锁力量方块等工具打开此前去不了的区域、用物理特性破解开放式谜题并与敌人战斗，全程无地图、循着远处地标与好奇心一路深入。",
+    "core_hook": "把第一人称物理解谜与能力门控探索拧在一起：每解锁一件工具就既开启新区域、又为旧谜题添一种解法，配合高自由度的物理特性，让同一件工具能在不同情境衍生多种玩家自创的解答，把「想到办法」本身做成乐趣。",
+    "core_loop": "在橡皮泥世界探索、用现有工具破解物理谜题并战斗、找到并解锁新工具、回到此前去不了的区域开辟新路、收集升级与秘密，循着地标推进，循环深入更广的世界。",
+    "progression_model": "靠解锁新工具与能力门控开启新区域、收集升级强化角色推进；进度体现为已解锁工具、可抵达区域与收集度，新工具同时拓展战斗、移动与解谜手段。",
+    "failure_model": "战斗或坠落致生命归零即死亡、于附近重生并保留进度，失败惩罚轻微，整体以解谜推进与探索发现为主而非惩罚。",
+    "content_structure": "以一座连通的橡皮泥沙盒世界为骨架，靠物理解谜、能力门控探索、战斗与大量隐藏收集承载流程，无地图靠地标导航，单人。",
+    "main_player_actions": ["平台跳跃", "道具运用", "秘密解谜"],
+    "main_player_decisions": ["探索路线", "秘密取舍", "道具选择"],
+    "main_player_experiences": ["探索发现", "系统掌控", "发现乐趣"],
+    "main_mechanics": ["能力门控探索", "物理模拟", "多用途道具", "分层秘密", "环境叙事"],
+    "replayability_sources": ["分层秘密", "全收集", "速通"],
+    "production_constraints": ["Unreal 引擎", "小型团队"],
+    "innovation_patterns": ["物理模拟", "分层秘密"],
+    "reusable_reference_patterns": ["能力门控探索", "物理模拟", "分层秘密"],
+    "non_replicable_risks": ["技术复杂度", "玩家留存"],
+    "genre": ["类银河城", "解谜平台"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["玩具沙盒", "奇幻"],
+    "narrative_style": ["环境叙事"],
+    "game_feel": ["流畅响应", "规划满足"],
+    "team_model": ["单人开发"],
+    "reference_value_tags": [
+      {
+        "tag": "能力门控探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "工具解锁开路",
+            "quote_or_summary": "解锁力量方块等工具能开启此前无法抵达的区域，是典型的能力门控探索结构。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "物理解谜为核心",
+            "quote_or_summary": "游戏以物理特性的解谜为核心，鼓励玩家利用工具的物理交互自创解法。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "分层秘密",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "无地图地标探索",
+            "quote_or_summary": "全程无地图，靠远处地标导航，世界中藏有大量奖励好奇心的秘密与升级。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Supraland 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Supraland",
+        "quote_or_summary": "第一人称类银河城，融合物理解谜与动作，工具解锁开启新区域的能力门控探索，玩具沙坑橡皮泥世界，无地图靠地标导航，David Münnich 用虚幻引擎 4 独立开发，2019 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_supraland_physics_puzzle",
+      "subject": "物理模拟",
+      "relation": "creates",
+      "object": "谜题深度",
+      "explanation": "把谜题建立在可自由组合的物理特性而非固定开关上，让同一件工具在不同情境能衍生多种玩家自创的解法，使解谜深度来自系统的开放交互而非预设的唯一答案，玩家「想到一个没被明示的办法」时获得强烈成就感，可复用于希望以「开放物理系统 + 多用途工具」让谜题支持涌现式多解、加深探索成就感的设计。",
+      "evidence": [
+        {
+          "title": "物理多解加深谜题解读",
+          "quote_or_summary": "谜题建立在开放物理特性上，同一工具衍生多种自创解法，使深度来自系统交互而非唯一答案。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

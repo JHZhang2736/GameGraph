@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_vampire_crawlers",
+    "title": "Vampire Crawlers",
+    "source_refs": [
+      {
+        "title": "Vampire Crawlers（Steam）",
+        "url": "https://store.steampowered.com/app/3265700/Vampire_Crawlers_The_Turbo_Wildcard_from_Vampire_Survivors/",
+        "notes": "类型（卡牌肉鸽，Vampire Survivors 衍生作）、第一人称逐格地牢探索（沿走廊与房间一格格推进）、核心机制为按法力升序出牌串联连锁、每一步放大下一张牌的效果、构筑流派打出世界级连段、poncle 与 Nosebleed Interactive 开发、2026 年 4 月 21 日发售、首周百万用户等事实来源。"
+      },
+      {
+        "title": "Vampire Crawlers（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Vampire_Crawlers",
+        "notes": "Vampire Survivors 衍生卡牌战斗游戏、按法力升序出牌的连锁倍增、第一人称地牢爬行、2025 年 11 月公布、2026 年 4 月发售等事实来源。"
+      }
+    ],
+    "short_description": "一款 Vampire Survivors 衍生的卡牌肉鸽游戏，把原作滚雪球的快感改造成战术牌组构筑：玩家在第一人称视角下逐格穿行地牢的走廊与房间，核心是按法力升序出牌串联连锁、每一步放大下一张牌的效果，构筑流派打出毁天灭地的连段，poncle 与 Nosebleed Interactive 开发、2026 年发售。",
+    "selection_reason": "作为「以出牌顺序为核心的连锁牌组构筑」代表：把卡牌的强度从单张数值转移到「按法力升序排布、逐张放大」的出牌序列上，让构筑与临场排序共同决定连段威力，再借 Vampire Survivors 的滚雪球快感与逐格地牢框架承载，是研究连锁出牌机制与衍生作差异化的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_vampire_crawlers",
+    "one_sentence_summary": "玩家在第一人称下逐格穿行地牢，构筑一副牌组，靠按法力升序出牌串联连锁、每一步放大下一张牌的效果，打出滚雪球般的毁灭连段，逐层深入并解锁更多卡牌与流派。",
+    "core_hook": "把卡牌的威力从单张数值挪到「出牌顺序」上：按法力升序排布卡牌时，每一张都会放大下一张的效果，于是「先打什么、再接什么」的排序本身成为构筑与临场的核心博弈，复刻了 Vampire Survivors 滚雪球的爽感，却换成了回合制的连锁运算。",
+    "core_loop": "逐格探索地牢的走廊与房间、遭遇敌人时按法力升序排布并打出连锁、用收益强化与扩充牌组、深入更深层并解锁新卡与流派，死亡后带回解锁再次开局。",
+    "progression_model": "单局靠拾取与升级卡牌即时构筑连锁流派，跨局靠解锁新卡、角色与流派推进；进度体现为卡池规模、已解锁流派与地牢深度，连段随卡池扩充愈发夸张。",
+    "failure_model": "生命归零即本局结束、失去本局牌组，保留已解锁卡牌与流派，回到起点重整再次下潜。",
+    "content_structure": "以逐格推进的第一人称地牢与回合制连锁战斗为骨架，靠牌组构筑、按法力升序的连锁出牌与解锁承载流程与重玩，单人。",
+    "main_player_actions": ["出牌", "卡牌取舍", "走位"],
+    "main_player_decisions": ["装备搭配", "风险取舍", "优先级排序"],
+    "main_player_experiences": ["构筑乐趣", "滚雪球快感", "运筹帷幄"],
+    "main_mechanics": ["牌组构筑", "卡牌连锁", "网格探索", "随机关卡", "元进度"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["系列复用", "小型团队"],
+    "innovation_patterns": ["卡牌连锁", "牌组构筑"],
+    "reusable_reference_patterns": ["牌组构筑", "元进度"],
+    "non_replicable_risks": ["品牌积淀", "平衡复杂度"],
+    "genre": ["卡牌构筑", "类肉鸽"],
+    "art_style": ["像素美术"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["怪物题材"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡", "滚雪球快感"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "卡牌连锁",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "按法力升序连锁",
+            "quote_or_summary": "核心机制是按法力升序出牌串联连锁，每一步放大下一张牌的效果，打出毁灭连段。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "构筑连锁流派",
+            "quote_or_summary": "玩家构筑一副为连锁服务的牌组，搭配出能滚雪球的世界级连段流派。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "网格探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "第一人称逐格爬行",
+            "quote_or_summary": "游戏以第一人称逐格穿行地牢的走廊与房间，是格子式地牢爬行结构。",
+            "notes": "Steam 商店页与维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Vampire Crawlers 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/3265700/Vampire_Crawlers_The_Turbo_Wildcard_from_Vampire_Survivors/",
+        "quote_or_summary": "Vampire Survivors 衍生卡牌肉鸽，第一人称逐格地牢爬行，按法力升序出牌串联连锁、每步放大下一张效果，构筑流派打连段，poncle 与 Nosebleed Interactive 开发，2026 年 4 月发售。",
+        "notes": "事实取自 Steam 商店页与维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_vc_chain_strategy",
+      "subject": "卡牌连锁",
+      "relation": "creates",
+      "object": "策略深度",
+      "explanation": "把卡牌强度从单张数值转移到「按法力升序、逐张放大」的出牌序列，使同一副牌在不同排序下威力天差地别，于是「先打哪张、用谁垫高谁」的临场排序与构筑预案共同决定连段上限，把卡牌战斗的深度从选牌延伸到排序运算，可复用于希望以「出牌顺序倍增」为牌组构筑注入序列规划深度的设计。",
+      "evidence": [
+        {
+          "title": "连锁排序深度解读",
+          "quote_or_summary": "升序连锁让同一副牌在不同排序下威力悬殊，把深度从选牌延伸到出牌序列的规划。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

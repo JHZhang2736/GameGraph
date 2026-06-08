@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_dark_souls_iii",
+    "title": "Dark Souls III",
+    "source_refs": [
+      {
+        "title": "Dark Souls III（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Dark_Souls_III",
+        "notes": "类型（动作角色扮演，类魂）、耐力制战斗与翻滚闪避、篝火为存档点、艾斯图瓶回血、灵魂作货币且死亡掉落、互联世界与高难 Boss、在线合作与入侵、战技系统、第三人称、黑暗奇幻、FromSoftware（宫崎英高）开发、2016 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款黑暗奇幻类魂动作角色扮演游戏，玩家扮演「无名灰烬」以耐力制战斗、翻滚闪避与战技对抗高难敌人与 Boss，靠篝火存档、用灵魂作货币升级，死亡会掉落灵魂需返回拾回，支持在线合作与入侵。",
+    "selection_reason": "作为「类魂」公式的成熟集大成者：以耐力管理、翻滚与精准应对构成的高风险战斗、死亡掉落灵魂的惩罚循环、互联世界与篝火节奏，把「受苦—精通」的硬核体验打磨到标杆水平，是研究动作难度曲线与惩罚设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_dark_souls_iii",
+    "one_sentence_summary": "玩家扮演「无名灰烬」，以耐力制战斗、翻滚闪避与战技对抗互联世界中的高难敌人与 Boss，靠篝火存档与艾斯图瓶回血、用灵魂作货币升级，死亡掉落灵魂需返回原地拾回，支持在线合作与入侵。",
+    "core_hook": "用耐力管理、翻滚时机与精准应对构成的高风险近战，配合死亡掉落灵魂的惩罚循环，把每一场遭遇都变成需要反复学习与克制的硬核博弈。",
+    "core_loop": "在互联世界中探索与谨慎推进、以耐力制战斗应对敌人与 Boss、在篝火处存档与回复并消费灵魂升级，死亡后赶回掉落点拾回灵魂，循环精进操作与角色强度。",
+    "progression_model": "击败敌人获取灵魂作为经验与货币，用于升级属性、强化武器与购买装备；进度体现为角色属性、装备 build 与世界推进，死亡会暂时丢失未拾回的灵魂。",
+    "failure_model": "生命归零即死亡，掉落当前持有的灵魂并退回最近篝火重生，敌人复位；若在拾回前再次死亡，掉落的灵魂将永久丢失。",
+    "content_structure": "在洛斯里克等互联的黑暗奇幻世界中推进，以耐力制战斗、篝火节点、灵魂经济、战技系统与高难 Boss 战为骨架，含在线合作与 PvP 入侵。",
+    "main_player_actions": ["近战攻击", "翻滚闪避", "格挡", "魔法释放"],
+    "main_player_decisions": ["武器搭配", "风险取舍", "探索路线"],
+    "main_player_experiences": ["战斗精通", "氛围营造", "探索发现"],
+    "main_mechanics": ["耐力管理", "死亡惩罚", "招架反击", "开放世界探索", "召唤战斗"],
+    "replayability_sources": ["构筑多样", "Boss 挑战", "多结局"],
+    "production_constraints": ["自研引擎", "大团队协作", "系列复用"],
+    "innovation_patterns": ["类魂", "死亡惩罚"],
+    "reusable_reference_patterns": ["死亡惩罚", "耐力管理", "招架反击"],
+    "non_replicable_risks": ["品牌积淀", "大团队协作"],
+    "genre": ["动作角色扮演", "类魂"],
+    "art_style": ["写实美术"],
+    "audio_style": ["管弦乐", "氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["黑暗奇幻"],
+    "narrative_style": ["环境叙事", "碎片化叙事"],
+    "game_feel": ["厚重打击", "紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "耐力管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "耐力制战斗",
+            "quote_or_summary": "战斗以耐力为核心，攻击、格挡与翻滚闪避均消耗耐力，迫使玩家克制出招。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "死亡惩罚",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "灵魂掉落",
+            "quote_or_summary": "灵魂既是货币也是经验，死亡会掉落，需返回原地拾回，拾回前再死则永久丢失。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "篝火节点",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "篝火存档",
+            "quote_or_summary": "篝火作为互联世界中的存档点，休息可回血但同时重置普通敌人。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Dark Souls III 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Dark_Souls_III",
+        "quote_or_summary": "动作角色扮演类魂，耐力制战斗与翻滚闪避，篝火存档，灵魂作货币且死亡掉落，互联世界与高难 Boss，在线合作与入侵，战技系统，第三人称，FromSoftware（宫崎英高）开发，2016 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_ds3_death_penalty_mastery",
+      "subject": "死亡惩罚",
+      "relation": "creates",
+      "object": "战斗精通",
+      "explanation": "把死亡掉落灵魂、拾回前再死即永久丢失的惩罚循环与篝火复位绑定，使每次失败都付出可感成本、又给出明确的「赶回拾回」目标，迫使玩家观察、学习并精进操作而非莽撞推进，把「受苦」转化为可积累的精通感，可复用于强调技巧成长的动作设计。",
+      "evidence": [
+        {
+          "title": "惩罚驱动精通解读",
+          "quote_or_summary": "有成本的死亡循环迫使玩家学习敌人模式、精进操作，将受苦转为精通。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

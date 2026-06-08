@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_dicey_dungeons",
+    "title": "Dicey Dungeons",
+    "source_refs": [
+      {
+        "title": "Dicey Dungeons（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Dicey_Dungeons",
+        "notes": "类型（骰子肉鸽，近牌组构筑）、玩家化身骰子被幸运女神挑战、每回合掷骰并把骰子放入装备格触发效果、6 名角色各有不同起始装备、在地牢地图上遭遇怪物/宝箱/商店/升级、综艺节目式背景、Terry Cavanagh 开发、Marlowe Dobbe 美术、chipzel 配乐、2019 年发售等事实来源。"
+      }
+    ],
+    "short_description": "一款骰子驱动的肉鸽游戏，玩家化身被幸运女神挑战的骰子，每回合掷骰并把骰子嵌入各种装备格触发效果，用 6 名各具起始装备的角色穿越综艺节目式地牢，遭遇怪物、商店与升级。",
+    "selection_reason": "作为「把骰子点数当作可分配的构筑资源」的代表：用每回合掷出的骰子去填充不同装备的需求格，把随机点数变成需要规划取舍的资源，让骰子运气与装备搭配共同决定战斗，是研究骰子配装与随机资源调度的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_dicey_dungeons",
+    "one_sentence_summary": "玩家化身被幸运女神挑战的骰子，每回合掷出骰子并把它们嵌入各种装备的需求格以触发攻击或效果，用 6 名各具起始装备的角色穿越综艺式地牢、遭遇怪物商店与升级，争取逃出生天。",
+    "core_hook": "把每回合掷出的骰子点数当作一份需要精打细算分配的资源——塞进哪个装备格、凑够哪条触发条件，让随机的骰子与固定的装备搭配共同决定这一回合怎么打。",
+    "core_loop": "在地牢地图上移动遭遇战斗、每回合掷骰并把骰子分配进装备格触发效果、击败怪物获取装备、在商店与升级站调整配装，推进至首领，失败带角色与剧集解锁重开。",
+    "progression_model": "单局靠拾取与搭配装备、围绕骰子需求优化配装即时变强；跨局解锁 6 名角色与多个剧集、更高难度；进度兼有单局配装与长期角色/剧集解锁。",
+    "failure_model": "角色在地牢战斗中生命归零即本局失败，需带已解锁角色与剧集重新挑战。",
+    "content_structure": "以综艺节目式的逐层地牢（怪物、宝箱、商店、升级站）为骨架，靠 6 名机制迥异的角色与各自的剧集、装备池承载重玩深度，单人。",
+    "main_player_actions": ["掷骰", "物件操控"],
+    "main_player_decisions": ["装备搭配", "优先级排序", "风险取舍"],
+    "main_player_experiences": ["运筹帷幄", "构筑乐趣", "滚雪球快感"],
+    "main_mechanics": ["骰子判定", "骰子配装", "装备分层", "难度递增"],
+    "replayability_sources": ["角色解锁", "难度分级", "构筑多样"],
+    "production_constraints": ["手绘美术", "小型团队"],
+    "innovation_patterns": ["骰子配装", "骰子判定"],
+    "reusable_reference_patterns": ["骰子配装", "装备分层", "难度递增"],
+    "non_replicable_risks": ["平衡复杂度"],
+    "genre": ["类肉鸽", "回合制策略"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["芯片音乐"],
+    "perspective": ["俯视"],
+    "theme": ["综艺竞技", "奇幻"],
+    "narrative_style": ["对话叙事"],
+    "game_feel": ["策略权衡", "轻松休闲"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "骰子配装",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "骰子嵌入装备格",
+            "quote_or_summary": "玩家每回合掷出骰子，并把骰子放入各类装备来触发其效果，骰子点数成为需要分配的资源。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "骰子判定",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "掷骰驱动战斗",
+            "quote_or_summary": "战斗由每回合掷出的骰子点数驱动，结合装备需求决定可打出的效果。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "装备分层",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "六角色起始装备各异",
+            "quote_or_summary": "玩家从 6 名角色中选择，决定其起始装备类型，沿途再拾取与升级形成不同强度的配装。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Dicey Dungeons 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Dicey_Dungeons",
+        "quote_or_summary": "骰子肉鸽，玩家化身骰子被幸运女神挑战，每回合掷骰嵌入装备格触发效果，6 名角色各具起始装备，综艺式地牢遭遇怪物商店升级，Terry Cavanagh 开发，2019 年发售。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_dicey_dungeons_dice_as_resource",
+      "subject": "骰子配装",
+      "relation": "creates",
+      "object": "策略深度",
+      "explanation": "把每回合掷出的随机骰子点数变成必须分配进不同装备需求格的资源，让玩家在「哪颗骰子塞哪件装备、先满足哪条触发条件」上反复权衡，使骰子的随机性成为可规划的策略而非纯运气，可复用于希望把随机资源转化为决策深度的设计。",
+      "evidence": [
+        {
+          "title": "骰子即资源解读",
+          "quote_or_summary": "把随机骰子点数当作可分配资源，使运气转化为配装规划的策略深度。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

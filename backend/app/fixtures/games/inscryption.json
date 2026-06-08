@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_inscryption",
+    "title": "Inscryption",
+    "source_refs": [
+      {
+        "title": "Inscryption（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Inscryption",
+        "notes": "类型（肉鸽牌组构筑）、融合牌组构筑/肉鸽/回合策略/密室解谜/冒险、被困小屋里与神秘主持人对弈、以献祭随从作召唤代价、夹带元叙事/伪造录像/ARG 等手法、Daniel Mullins Games 开发、Devolver 发行、2021 年发售、获多项年度奖等事实来源。"
+      }
+    ],
+    "short_description": "一款融合牌组构筑、肉鸽、密室解谜与恐怖的卡牌游戏，玩家被困在一间小屋里，与神秘主持人对弈、以献祭随从作召唤代价，并在牌局之外解开层层逃脱谜题与不断翻转的元叙事真相。",
+    "selection_reason": "作为「把卡牌对弈、密室解谜与元叙事缝合并不断打破框架」的代表：表面是肉鸽牌组构筑，实则随剧情层层揭开自身是何物，把游戏框架本身变成谜题，是研究类型缝合与元叙事惊喜设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_inscryption",
+    "one_sentence_summary": "玩家被困在一间幽暗小屋里与神秘主持人对弈牌局、以献祭随从作召唤代价，同时在牌桌之外探索小屋、解开逃脱谜题，并随剧情层层揭开这款游戏自身不断翻转的元叙事真相。",
+    "core_hook": "把肉鸽牌组构筑、密室解谜与恐怖缝在一起，再用层层元叙事不断打破玩家对「这是什么游戏」的认知，让框架本身成为最大的谜。",
+    "core_loop": "在牌局中构筑卡组、献祭随从召唤强力随从、击败主持人推进，并在牌桌之外探索小屋、收集线索解开密室谜题，循环揭开剧情与游戏框架的真相。",
+    "progression_model": "进度由剧情驱动、随谜题解开层层推进而非单纯数值成长；牌局构筑在各幕间被打散重来，附带的 Kaycee's Mod 提供肉鸽式反复挑战，整体以叙事与发现而非升级前进。",
+    "failure_model": "牌局落败会受罚或推动剧情（首幕死亡甚至被并入叙事），需重整卡组再战；附带肉鸽模式下失败则带解锁重开。",
+    "content_structure": "以一间可探索的小屋与其中的卡牌对弈为骨架，叠加密室解谜、分幕推进的元叙事与伪录像/ARG 手法，并以 Kaycee's Mod 提供肉鸽重玩，单人。",
+    "main_player_actions": ["出牌", "卡牌取舍", "秘密解谜"],
+    "main_player_decisions": ["卡牌取舍", "风险取舍", "道具取舍"],
+    "main_player_experiences": ["氛围营造", "探索发现", "构筑乐趣"],
+    "main_mechanics": ["牌组构筑", "卡牌战斗", "秘密解谜", "分层秘密"],
+    "replayability_sources": ["分层秘密", "构筑多样"],
+    "production_constraints": ["小型团队", "低分辨率"],
+    "innovation_patterns": ["元叙事", "类型缝合"],
+    "reusable_reference_patterns": ["元叙事", "牌组构筑", "分层秘密"],
+    "non_replicable_risks": ["一次性体验", "系统复杂度"],
+    "genre": ["卡牌构筑", "类肉鸽"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第一人称"],
+    "theme": ["宗教恐怖", "超现实"],
+    "narrative_style": ["碎片化叙事", "过场驱动"],
+    "game_feel": ["策略权衡", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "元叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "层层翻转的框架",
+            "quote_or_summary": "游戏夹带元叙事、伪造录像与 ARG 手法，随剧情不断揭开自身真相、打破玩家对游戏框架的认知。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "献祭召唤的卡牌对弈",
+            "quote_or_summary": "玩家在牌局中构筑卡组、以献祭随从作为召唤强力随从的代价，与主持人对弈。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "类型缝合",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "多类型融合",
+            "quote_or_summary": "游戏融合牌组构筑、肉鸽、回合策略、密室解谜、解谜与冒险等多种类型。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Inscryption 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Inscryption",
+        "quote_or_summary": "融合牌组构筑/肉鸽/回合策略/密室解谜/冒险，小屋中与主持人对弈献祭召唤，元叙事/伪录像/ARG，Daniel Mullins 开发，2021 年发售，多项年度奖。",
+        "notes": "事实取自维基百科。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_inscryption_meta_narrative_surprise",
+      "subject": "元叙事",
+      "relation": "creates",
+      "object": "发现乐趣",
+      "explanation": "把游戏自身「是什么、由谁掌控」做成随剧情层层翻转的谜，让玩家不断打破对框架的预期、在密室与牌局之外揭开更大的真相，从而把惊喜与发现而非数值成长作为核心驱动；但这种冲击高度依赖初见，难以重复复制。",
+      "evidence": [
+        {
+          "title": "框架翻转惊喜解读",
+          "quote_or_summary": "层层打破游戏框架的元叙事把发现与惊喜变成核心乐趣，但只在初见时最强。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

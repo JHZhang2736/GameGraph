@@ -1,0 +1,107 @@
+{
+  "candidate": {
+    "id": "game_travellers_rest",
+    "title": "Travellers Rest",
+    "source_refs": [
+      {
+        "title": "Travellers Rest（Steam，appid 1139980）",
+        "url": "https://store.steampowered.com/app/1139980/Travellers_Rest/",
+        "notes": "类型（俯视像素中世纪奇幻酒馆经营模拟）、经营与扩建可自定义的酒馆、酿造酒水与烹饪菜肴、服务大量顾客并管理声望、种田采集与打造家具物品、出租房间给客人、探索世界解锁配方与收藏、含经验与科技树等 RPG 系统、最多 4 人在线合作经营、Isolated Games 开发、2020 年 7 月 28 日抢先体验、好评如潮等事实来源。"
+      }
+    ],
+    "short_description": "一款俯视像素风的中世纪奇幻酒馆经营模拟游戏：玩家经营并扩建自己的酒馆——酿造啤酒等酒水、烹饪菜肴、服务川流不息的顾客并积累声望，同时种田采集、打造家具装潢、出租房间、探索世界解锁新配方，含经验与科技树等 RPG 成长，支持最多 4 人在线合作；Isolated Games 开发、2020 年抢先体验。",
+    "selection_reason": "作为「把酒馆经营拆成酿造—烹饪—待客的完整生产链 + 合作经营」的代表：玩家要从种田采集到酿造烹饪、再到上桌待客一条龙打理，用声望与配方解锁驱动长线扩张，并支持多人各司其职合作经营，是研究生产链经营模拟、待客循环与合作经营的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_travellers_rest",
+    "one_sentence_summary": "玩家经营并扩建一座中世纪奇幻酒馆，从种田采集到酿造酒水、烹饪菜肴，再到服务川流不息的顾客、积累声望与解锁配方，还可打造家具装潢、出租房间、探索世界，支持最多 4 人合作经营。",
+    "core_hook": "把「开酒馆」拆成一条完整的生产与待客链：玩家要自己种田采集原料、酿造啤酒与烹饪菜肴、再端上桌服务源源不断的顾客并维持声望，每个环节都要打理；再叠加家具装潢、房间出租、配方解锁与科技树成长，并支持多人分工——有人后厨酿造、有人前台待客——把单人忙不过来的经营变成协作。",
+    "core_loop": "种田采集原料、酿造酒水与烹饪菜肴备货、营业时服务顾客上酒上菜并收钱、用收益扩建装潢酒馆与升级设备、探索世界与升级解锁新配方与科技，循环扩大经营规模。",
+    "progression_model": "靠经营收益扩建酒馆、升级设备与解锁科技树，靠探索与升级解锁更多酒水菜肴配方推进；进度体现为酒馆规模与装潢、配方与科技解锁、声望与收入水平。",
+    "failure_model": "本作为经营养成，无明确失败/淘汰，经营不善表现为声望与收入停滞、顾客不满，玩家通过改善供给与服务回升，核心是持续成长而非失败惩罚。",
+    "content_structure": "以可扩建的酒馆、酿造—烹饪—待客生产链与种田采集为骨架，靠生产经营、顾客服务、装潢建造与配方解锁承载流程与长线，支持单人与最多 4 人合作。",
+    "main_player_actions": ["道具运用", "合成制作", "社交互动"],
+    "main_player_decisions": ["基地规划", "优先级排序", "资源取舍"],
+    "main_player_experiences": ["经营成就", "协作默契", "收集养成"],
+    "main_mechanics": ["顾客经营", "酿造", "农场种植", "合成制作", "建造"],
+    "replayability_sources": ["任务多样", "创意工坊"],
+    "production_constraints": ["小型团队", "像素美术"],
+    "innovation_patterns": ["工坊经营", "合作生存"],
+    "reusable_reference_patterns": ["工坊经营", "合作生存", "农场种植"],
+    "non_replicable_risks": ["内容产量", "玩家留存"],
+    "genre": ["模拟经营"],
+    "art_style": ["像素美术"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["俯视"],
+    "theme": ["田园生活", "奇幻"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["轻松休闲", "规划满足"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "顾客经营",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "服务顾客积累声望",
+            "quote_or_summary": "玩家服务川流不息的顾客、上酒上菜并维持声望，待客与口碑是经营核心。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "酿造",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "酿造酒水",
+            "quote_or_summary": "玩家可酿造啤酒等多种酒水并烹饪菜肴，配方随探索与升级解锁。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "合作生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "最多 4 人合作经营",
+            "quote_or_summary": "支持最多 4 人在线合作，可一起探索或在酒馆里分工同时经营。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Travellers Rest 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/1139980/Travellers_Rest/",
+        "quote_or_summary": "俯视像素中世纪奇幻酒馆经营模拟，酿造酒水与烹饪、服务顾客积累声望、种田采集、打造家具与出租房间、配方与科技树成长、最多 4 人合作，Isolated Games 开发，2020 年抢先体验。",
+        "notes": "事实取自 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_travellers_rest_supply_chain",
+      "subject": "顾客经营",
+      "relation": "creates",
+      "object": "经营成就",
+      "explanation": "把「待客」做成压在整条生产链末端的需求端：顾客的点单反向拉动后厨的酿造与烹饪、再拉动前端的种田采集，于是玩家的每一次扩建与升级都能立刻在更满的客席与更高的声望上看到回报，把分散的种植、酿造、烹饪环节用「顾客满意」这个统一目标串成有成就反馈的闭环，可复用于希望用「需求端可视回报」把多环节生产链拧成持续正反馈、强化经营成就感的设计。",
+      "evidence": [
+        {
+          "title": "待客拉动生产链解读",
+          "quote_or_summary": "顾客点单反向拉动酿造、烹饪与种植，使每次扩建升级都在客席与声望上即时见到回报。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}
