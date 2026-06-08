@@ -15,6 +15,9 @@
 > - 不要断言这款游戏「好玩」或「会商业成功」。
 > - `confidence` 取值：`low` / `medium` / `high`。`quality_status` 取值：`draft` / `reviewed` / `weak_evidence` / `conflicting`。
 > - 每个 `EvidenceRef` 必须有 `title` 与 `notes`，并且 `url` 与 `quote_or_summary` 至少有一个；没有外部链接时填 `quote_or_summary`。
+> - **全部输出简体中文**；专有名词（游戏名/人名/引擎/语言如 `C++`）保留原文。
+> - **进图字段必须是原子标签**：`main_player_actions` / `main_player_decisions` / `main_player_experiences` / `main_mechanics` / `replayability_sources` / `production_constraints` / `innovation_patterns` / `reusable_reference_patterns` / `non_replicable_risks` / `reference_value_tags[].tag` / `claims[].object`（含 `subject`）——每项一个名词或 1–4 字名词短语，不写整句、不带「玩法/参考/设计」等填充后缀，复合的拆成多项。散文字段（各 `*_summary`/`core_loop`/`progression_model`/`failure_model`/`content_structure`/`explanation`/evidence 文本）写成完整中文句子。
+> - **原子标签优先从 `.claude/skills/researching-games-for-import/preferred-terms.md` 选词**；没有合适的才造新词，并在交付 JSON 时另行列出新词供人工回填。
 
 ## JSON 骨架（字段说明见注释）
 
@@ -36,15 +39,15 @@
     "progression_model": "...",
     "failure_model": "...",
     "content_structure": "...",
-    "main_player_actions": ["..."],
-    "main_player_decisions": ["..."],
-    "main_player_experiences": ["..."],
-    "main_mechanics": ["..."],
-    "replayability_sources": ["..."],
-    "production_constraints": ["..."],
-    "innovation_patterns": ["..."],
-    "reusable_reference_patterns": ["..."],
-    "non_replicable_risks": ["..."],
+    "main_player_actions": ["..."],        // 原子标签
+    "main_player_decisions": ["..."],      // 原子标签
+    "main_player_experiences": ["..."],    // 原子标签
+    "main_mechanics": ["..."],             // 原子标签
+    "replayability_sources": ["..."],      // 原子标签
+    "production_constraints": ["..."],     // 原子标签
+    "innovation_patterns": ["..."],        // 原子标签
+    "reusable_reference_patterns": ["..."],// 原子标签
+    "non_replicable_risks": ["..."],       // 原子标签
     "reference_value_tags": [
       {
         "tag": "...",
@@ -62,7 +65,7 @@
       "id": "claim_<slug>",
       "subject": "<主体，可为游戏名或某机制>",
       "relation": "<关系动词，如 reduces / creates>",
-      "object": "<客体概念>",
+      "object": "<客体概念，原子标签>",
       "explanation": "...",
       "evidence": [ { "title": "...", "quote_or_summary": "...", "notes": "..." } ],
       "confidence": "high|medium|low",
@@ -74,7 +77,7 @@
 
 ## 真实样例
 
-见 `backend/app/fixtures/games/balatro.json`，可照着改游戏名复用。
+见 `backend/app/fixtures/games/animal_well.json`（中文 + 原子标签），可照着改游戏名复用。
 
 ## 导入流程
 
