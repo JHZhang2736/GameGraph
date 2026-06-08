@@ -67,6 +67,27 @@ export default function OpportunitiesPage() {
         </div>
       </section>
 
+      <section className="grid gap-4 md:grid-cols-3">
+        <div>
+          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
+            来源游戏
+          </h2>
+          <Chips items={data.source_game_ids} />
+        </div>
+        <div>
+          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
+            相关制作约束
+          </h2>
+          <Chips items={data.related_constraints} />
+        </div>
+        <div>
+          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
+            相关创新模式
+          </h2>
+          <Chips items={data.related_innovation_patterns} />
+        </div>
+      </section>
+
       <section className="grid gap-4 md:grid-cols-2">
         <div>
           <h2 className="mb-1 text-xs uppercase tracking-wide text-muted-foreground/70">

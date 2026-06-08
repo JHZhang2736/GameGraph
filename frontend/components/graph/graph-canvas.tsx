@@ -17,6 +17,14 @@ const EDGE_COLOR: Record<GraphEdge["confidence"], string> = {
   low: "#d97706",
 };
 
+function isDowngraded(edge: GraphEdge): boolean {
+  return (
+    edge.confidence === "low" ||
+    edge.quality_status === "weak_evidence" ||
+    edge.quality_status === "conflicting"
+  );
+}
+
 export function GraphCanvas({
   graph,
   onSelectEdge,
@@ -37,17 +45,20 @@ export function GraphCanvas({
 
   const edges = useMemo<Edge[]>(
     () =>
-      graph.edges.map((edge) => ({
-        id: edge.id,
-        source: edge.source,
-        target: edge.target,
-        label: edge.relation,
-        animated: edge.confidence === "low",
-        style: {
-          stroke: EDGE_COLOR[edge.confidence],
-          strokeDasharray: edge.confidence === "low" ? "5 5" : undefined,
-        },
-      })),
+      graph.edges.map((edge) => {
+        const downgraded = isDowngraded(edge);
+        return {
+          id: edge.id,
+          source: edge.source,
+          target: edge.target,
+          label: edge.relation,
+          animated: downgraded,
+          style: {
+            stroke: downgraded ? "#d97706" : EDGE_COLOR[edge.confidence],
+            strokeDasharray: downgraded ? "5 5" : undefined,
+          },
+        };
+      }),
     [graph.edges],
   );
 

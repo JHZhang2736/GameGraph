@@ -4,6 +4,7 @@ import type {
   ConceptEvaluation,
   DeveloperProfile,
   DesignClaim,
+  EvidenceRef,
   GameDesignProfile,
   GoldenFlow,
   OpportunityFrame,
@@ -54,6 +55,7 @@ export interface GraphEdge {
   confidence: GoldenFlow["graph_relations"][number]["confidence"];
   quality_status: GoldenFlow["graph_relations"][number]["quality_status"];
   claim_id: string;
+  evidence: EvidenceRef[];
 }
 
 export interface GraphData {
@@ -76,6 +78,7 @@ export async function getGraph(): Promise<GraphData> {
       confidence: rel.confidence,
       quality_status: rel.quality_status,
       claim_id: rel.claim_id,
+      evidence: rel.evidence,
     });
   }
   return settle({ nodes: [...nodeMap.values()], edges });
