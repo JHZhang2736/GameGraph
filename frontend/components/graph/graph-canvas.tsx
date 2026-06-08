@@ -131,14 +131,16 @@ function GraphController({
   useEffect(() => {
     setSettings({
       nodeReducer: (node, data) => {
-        if (!hoveredNode) return data;
         const g = sigma.getGraph();
+        // hoveredNode 可能指向已被重建图移除的旧节点(展开/换焦点时 leaveNode
+        // 未触发),此时按"无 hover"处理,避免 areNeighbors 抛 NotFoundGraphError。
+        if (!hoveredNode || !g.hasNode(hoveredNode)) return data;
         if (node === hoveredNode || g.areNeighbors(hoveredNode, node)) return data;
         return { ...data, color: DIMMED_NODE, label: "" };
       },
       edgeReducer: (edge, data) => {
         const g = sigma.getGraph();
-        if (!hoveredNode) return { ...data, label: "" };
+        if (!hoveredNode || !g.hasNode(hoveredNode)) return { ...data, label: "" };
         const [s, t] = g.extremities(edge);
         if (s === hoveredNode || t === hoveredNode) return data;
         return { ...data, color: DIMMED_EDGE, label: "" };
