@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 import pytest
 from pydantic import ValidationError
 
@@ -124,3 +127,17 @@ def test_import_document_accepts_claims() -> None:
     document = GameImportDocument(**kwargs)
     assert len(document.claims) == 1
     assert document.claims[0].subject == "Balatro"
+
+
+def test_balatro_fixture_is_a_valid_import_document() -> None:
+    fixture_path = (
+        Path(__file__).resolve().parents[1]
+        / "app" / "fixtures" / "games" / "balatro.json"
+    )
+    raw = json.loads(fixture_path.read_text(encoding="utf-8"))
+    document = GameImportDocument.model_validate(raw)
+
+    assert document.candidate.id == "game_balatro"
+    assert document.profile.game_id == document.candidate.id
+    assert len(document.profile.reference_value_tags) >= 1
+    assert len(document.claims) >= 1
