@@ -8,8 +8,6 @@ import {
   type ProfileInputState,
 } from "@/components/profile/profile-input-panel";
 import { ProfileDraftPreview } from "@/components/profile/profile-draft-preview";
-import { ProfileMissingFields } from "@/components/profile/profile-missing-fields";
-import { ProfileSourceList } from "@/components/profile/profile-source-list";
 import { ProfileConfirmedView } from "@/components/profile/profile-confirmed-view";
 import { useParseDeveloperProfileInput } from "@/lib/queries";
 import { confirmDeveloperProfile } from "@/lib/data";
@@ -85,7 +83,7 @@ export default function ProfilePage() {
 
   return (
     <div className="space-y-6">
-      <PageHeader title="开发者画像" description="自由表达、结构化草稿与缺失信息" />
+      <PageHeader title="开发者画像" description="自由表达与结构化草稿" />
 
       <div className="grid gap-4 xl:grid-cols-[minmax(320px,0.9fr)_minmax(420px,1.1fr)]">
         <ProfileInputPanel
@@ -101,13 +99,6 @@ export default function ProfilePage() {
           </section>
         )}
       </div>
-
-      {draft ? (
-        <div className="grid gap-4 xl:grid-cols-2">
-          <ProfileMissingFields fields={draft.missing_fields} />
-          <ProfileSourceList sources={draft.field_sources} />
-        </div>
-      ) : null}
 
       {confirmed ? <ProfileConfirmedView profile={confirmed} /> : null}
 
