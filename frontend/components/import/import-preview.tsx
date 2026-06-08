@@ -11,8 +11,8 @@ function Chips({ label, items }: { label: string; items: string[] }) {
     <div className="mb-2">
       <div className="mb-1 text-xs uppercase tracking-wide text-muted-foreground/70">{label}</div>
       <div className="flex flex-wrap gap-1">
-        {items.map((item) => (
-          <span key={item} className="rounded border bg-muted px-2 py-0.5 text-xs">{item}</span>
+        {items.map((item, i) => (
+          <span key={`${item}-${i}`} className="rounded border bg-muted px-2 py-0.5 text-xs">{item}</span>
         ))}
       </div>
     </div>

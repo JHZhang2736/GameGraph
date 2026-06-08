@@ -35,7 +35,7 @@ export default function ImportPage() {
         <div className="space-y-3">
           {mutation.isError ? (
             <p className="rounded-md bg-destructive/10 p-2 text-sm text-destructive">
-              {"入库失败:"}{(mutation.error as Error).message}
+              {"入库失败:"}{mutation.error instanceof Error ? mutation.error.message : "未知错误"}
             </p>
           ) : null}
           <ImportPreview
