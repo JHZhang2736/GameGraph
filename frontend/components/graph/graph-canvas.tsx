@@ -62,8 +62,7 @@ export function GraphCanvas({
         style: {
           fontSize: 12,
           width: 160,
-          borderColor: nodeColor(node.node_type),
-          borderWidth: 2,
+          border: `2px solid ${nodeColor(node.node_type)}`,
         },
       })),
     [graph.nodes],
