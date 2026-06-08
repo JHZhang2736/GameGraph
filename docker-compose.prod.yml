@@ -58,7 +58,8 @@ services:
     depends_on:
       - backend
     ports:
-      - "3000:3000"
+      # Host 3100 -> container 3000 (avoids the other project already on 3000).
+      - "3100:3000"
 
 volumes:
   neo4j_data:
