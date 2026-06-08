@@ -31,3 +31,19 @@ def test_search_returns_hits(client: TestClient) -> None:
     response = client.get("/graph/search", params={"q": "hollow"})
     assert response.status_code == 200
     assert response.json()[0]["node_type"] == "Game"
+
+
+def test_neighbors_returns_bounded_subgraph(client: TestClient) -> None:
+    response = client.get("/graph/neighbors", params={"node_id": "game_hk"})
+    assert response.status_code == 200
+    body = response.json()
+    assert body["focus"]["id"] == "game_hk"
+    assert body["truncated"] is False
+
+
+def test_neighbors_parses_rel_types_csv(client: TestClient) -> None:
+    response = client.get(
+        "/graph/neighbors",
+        params={"node_id": "game_hk", "rel_types": "HAS_MECHANIC,CLAIM"},
+    )
+    assert response.status_code == 200
