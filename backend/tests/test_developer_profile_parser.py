@@ -1,6 +1,9 @@
 from app.schemas.common import ConfidenceLevel, ConstraintType
 from app.schemas.developer_profile import ProfileParseInput
-from app.services.developer_profile_parser import parse_developer_profile_input
+from app.services.developer_profile_parser import (
+    parse_developer_profile_input,
+    promote_draft_to_profile,
+)
 
 
 DEFAULT_TEXT = (
@@ -30,6 +33,36 @@ def test_parse_default_text_returns_complete_draft() -> None:
         "systemic decisions",
         "tactical prediction",
     ]
+
+
+def test_parser_complete_draft_can_be_promoted_to_profile() -> None:
+    result = parse_developer_profile_input(ProfileParseInput(raw_text=DEFAULT_TEXT))
+
+    profile = promote_draft_to_profile(result.draft)
+
+    assert profile.id == "profile_draft_current"
+    assert profile.liked_references == ["Balatro", "Into the Breach"]
+    assert [constraint.id for constraint in profile.constraints] == [
+        "constraint_no_online",
+        "constraint_avoid_long_narrative",
+        "constraint_limited_content",
+    ]
+
+
+def test_missing_promotion_required_data_keeps_draft_incomplete() -> None:
+    result = parse_developer_profile_input(
+        ProfileParseInput(
+            raw_text=(
+                "我是 solo 开发者，程序强，美术弱，三个月原型。"
+                "limited content，想要短局和系统性决策。"
+            )
+        )
+    )
+
+    assert result.draft.is_complete is False
+    missing = {field.field: field for field in result.draft.missing_fields}
+    assert missing["liked_references"].blocking is True
+    assert missing["constraints"].blocking is True
 
 
 def test_parse_separates_hard_and_strong_preference_constraints() -> None:

@@ -10,6 +10,7 @@ from app.schemas.developer_profile import (
     ProfileFieldSource,
     ProfileParseInput,
     ProfileParseResult,
+    SourceKind,
 )
 from app.services.fixture_pipeline import ContractViolation
 
@@ -20,7 +21,9 @@ BLOCKING_FIELDS = {
     "programming_ability",
     "art_ability",
     "content_production_ability",
+    "liked_references",
     "desired_player_experiences",
+    "constraints",
 }
 
 
@@ -28,7 +31,7 @@ def _source(
     field: str,
     source_text: str,
     confidence: ConfidenceLevel = ConfidenceLevel.HIGH,
-    source_kind: str = "raw_text",
+    source_kind: SourceKind = "raw_text",
 ) -> ProfileFieldSource:
     return ProfileFieldSource(
         field=field,
@@ -51,9 +54,10 @@ def _unique(values: Iterable[str]) -> list[str]:
     seen: set[str] = set()
     unique_values: list[str] = []
     for value in values:
-        if value not in seen:
+        normalized = value.casefold()
+        if normalized not in seen:
             unique_values.append(value)
-            seen.add(value)
+            seen.add(normalized)
     return unique_values
 
 
@@ -300,7 +304,9 @@ def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParse
             "programming_ability": programming_ability,
             "art_ability": art_ability,
             "content_production_ability": content_production_ability,
+            "liked_references": liked_references,
             "desired_player_experiences": desired_player_experiences,
+            "constraints": constraints,
         }.items()
         if field in BLOCKING_FIELDS and not value
     ]
