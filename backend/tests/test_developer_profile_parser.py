@@ -1,4 +1,4 @@
-from app.schemas.common import ConstraintType
+from app.schemas.common import ConfidenceLevel, ConstraintType
 from app.schemas.developer_profile import ProfileParseInput
 from app.services.developer_profile_parser import parse_developer_profile_input
 
@@ -108,3 +108,42 @@ def test_key_fields_have_sources() -> None:
         "desired_player_experiences",
         "constraints",
     }.issubset(sourced_fields)
+
+
+def test_parse_programming_and_art_chinese_aliases() -> None:
+    first_result = parse_developer_profile_input(
+        ProfileParseInput(
+            raw_text="我是 solo 开发者，擅长编程，不会画，三个月原型。不想做大量内容，想要短局。"
+        )
+    )
+    second_result = parse_developer_profile_input(
+        ProfileParseInput(
+            raw_text="我是 solo 开发者，会写系统，低美术，三个月原型。不想做大量内容，想要短局。"
+        )
+    )
+
+    assert first_result.draft.programming_ability == "strong"
+    assert first_result.draft.art_ability == "weak"
+    assert second_result.draft.programming_ability == "strong"
+    assert second_result.draft.art_ability == "weak"
+
+
+def test_parse_explicit_audio_basic_aliases_with_inferred_source() -> None:
+    first_result = parse_developer_profile_input(
+        ProfileParseInput(
+            raw_text="我是 solo 开发者，程序强，美术弱，音频一般，三个月原型。不想做大量内容，想要短局。"
+        )
+    )
+    second_result = parse_developer_profile_input(
+        ProfileParseInput(
+            raw_text="我是 solo 开发者，程序强，美术弱，基础音效，三个月原型。不想做大量内容，想要短局。"
+        )
+    )
+
+    for result in [first_result, second_result]:
+        assert result.draft.audio_ability == "basic"
+        source = next(
+            item for item in result.draft.field_sources if item.field == "audio_ability"
+        )
+        assert source.source_text != "defaulted to basic"
+        assert source.confidence != ConfidenceLevel.LOW

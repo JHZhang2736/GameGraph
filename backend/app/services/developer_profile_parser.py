@@ -233,7 +233,13 @@ def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParse
     programming_ability, programming_source = _ability(
         raw_text,
         "programming_ability",
-        strong_terms=["程序能力强", "程序强", "strong programming"],
+        strong_terms=[
+            "程序能力强",
+            "程序强",
+            "擅长编程",
+            "会写系统",
+            "strong programming",
+        ],
         weak_terms=["程序能力弱", "程序弱", "weak programming"],
         basic_terms=["程序基础", "basic programming"],
     )
@@ -244,7 +250,7 @@ def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParse
         raw_text,
         "art_ability",
         strong_terms=["美术能力强", "美术强", "strong art"],
-        weak_terms=["美术能力弱", "美术弱", "weak art"],
+        weak_terms=["美术能力弱", "美术弱", "不会画", "低美术", "weak art"],
         basic_terms=["美术基础", "basic art"],
     )
     if art_source:
@@ -255,7 +261,7 @@ def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParse
         "audio_ability",
         strong_terms=["音频能力强", "音频强", "strong audio"],
         weak_terms=["音频能力弱", "音频弱", "weak audio"],
-        basic_terms=["音频基础", "basic audio"],
+        basic_terms=["音频基础", "音频一般", "基础音效", "basic audio"],
     )
     if audio_source:
         field_sources.append(audio_source)
