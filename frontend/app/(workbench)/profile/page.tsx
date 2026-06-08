@@ -10,8 +10,16 @@ import {
 import { ProfileDraftPreview } from "@/components/profile/profile-draft-preview";
 import { ProfileMissingFields } from "@/components/profile/profile-missing-fields";
 import { ProfileSourceList } from "@/components/profile/profile-source-list";
+import { ProfileConfirmedView } from "@/components/profile/profile-confirmed-view";
 import { useParseDeveloperProfileInput } from "@/lib/queries";
-import type { ProfileParseInput } from "@/lib/types";
+import { confirmDeveloperProfile } from "@/lib/data";
+import { recomputeDraftCompleteness } from "@/lib/profile/draft";
+import type {
+  DeveloperProfile,
+  DeveloperProfileDraft,
+  ProfileParseInput,
+  ProfileParseResult,
+} from "@/lib/types";
 
 const DEFAULT_PROFILE_TEXT =
   "我是 solo 开发者，程序能力强，美术能力弱，想做三个月内能验证的原型。" +
@@ -27,7 +35,7 @@ const DEFAULT_INPUT: ProfileInputState = {
 
 function splitList(value: string) {
   return value
-    .split(",")
+    .split(/[,，、]/)
     .map((item) => item.trim())
     .filter(Boolean);
 }
@@ -48,9 +56,32 @@ export default function ProfilePage() {
   const [submitted, setSubmitted] = useState<ProfileParseInput>(() =>
     toParseInput(DEFAULT_INPUT),
   );
-
   const { data: result } = useParseDeveloperProfileInput(submitted);
-  const draft = result?.draft;
+
+  // The editable draft is seeded from each parse, then owned locally so inline
+  // edits stay until the next parse. Re-seeding during render (not in an effect)
+  // is the supported way to reset state when the parse result changes.
+  const [seed, setSeed] = useState<ProfileParseResult | undefined>(result);
+  const [draft, setDraft] = useState<DeveloperProfileDraft | null>(
+    result?.draft ?? null,
+  );
+  const [confirmed, setConfirmed] = useState<DeveloperProfile | null>(null);
+
+  if (result !== seed) {
+    setSeed(result);
+    setDraft(result?.draft ?? null);
+    setConfirmed(null);
+  }
+
+  function updateDraft(next: DeveloperProfileDraft) {
+    setDraft(recomputeDraftCompleteness(next));
+    setConfirmed(null);
+  }
+
+  async function handleConfirm() {
+    if (!draft) return;
+    setConfirmed(await confirmDeveloperProfile(draft));
+  }
 
   return (
     <div className="space-y-6">
@@ -63,7 +94,7 @@ export default function ProfilePage() {
           onParse={() => setSubmitted(toParseInput(input))}
         />
         {draft ? (
-          <ProfileDraftPreview draft={draft} />
+          <ProfileDraftPreview draft={draft} onChange={updateDraft} />
         ) : (
           <section className="rounded-lg border p-4 text-sm text-muted-foreground">
             等待解析画像。
@@ -78,8 +109,14 @@ export default function ProfilePage() {
         </div>
       ) : null}
 
+      {confirmed ? <ProfileConfirmedView profile={confirmed} /> : null}
+
       <div className="flex justify-end">
-        <Button type="button" disabled={!draft?.is_complete}>
+        <Button
+          type="button"
+          disabled={!draft?.is_complete}
+          onClick={() => void handleConfirm()}
+        >
           确认画像
         </Button>
       </div>

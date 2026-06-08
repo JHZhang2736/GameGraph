@@ -15,7 +15,7 @@ import type {
   ProfileParseResult,
 } from "@/lib/types";
 
-const BLOCKING_FIELDS = [
+export const BLOCKING_FIELDS = [
   "team_size",
   "time_budget",
   "programming_ability",
@@ -25,6 +25,18 @@ const BLOCKING_FIELDS = [
   "desired_player_experiences",
   "constraints",
 ] as const;
+
+export type BlockingField = (typeof BLOCKING_FIELDS)[number];
+
+// A blocking field is missing when it has no usable value. Shared by the parser
+// and the live draft recompute so the panel reads the same either way.
+export function missingProfileField(field: string): MissingProfileField {
+  return {
+    field,
+    reason: `Could not infer ${field} from developer profile input.`,
+    blocking: true,
+  };
+}
 
 function containsAny(value: string, needles: string[]): boolean {
   const normalized = value.toLowerCase();
@@ -66,13 +78,7 @@ function constraint(
   return { id, type, statement };
 }
 
-function missing(field: string): MissingProfileField {
-  return {
-    field,
-    reason: `Could not infer ${field} from developer profile input.`,
-    blocking: true,
-  };
-}
+const missing = missingProfileField;
 
 function ability(
   rawText: string,

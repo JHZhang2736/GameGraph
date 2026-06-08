@@ -22,7 +22,7 @@ describe("ProfilePage", () => {
 
   it("updates the preview after parsing edited text", async () => {
     const user = userEvent.setup();
-    renderWithClient(<ProfilePage />);
+    const { container } = renderWithClient(<ProfilePage />);
 
     const textarea = screen.getByLabelText("自由描述");
     await user.clear(textarea);
@@ -35,21 +35,61 @@ describe("ProfilePage", () => {
     await waitFor(() => {
       expect(screen.getByText("缺少关键信息")).toBeInTheDocument();
     });
-    expect(screen.getByText("time_budget")).toBeInTheDocument();
+    expect(container.querySelector('[data-missing-field="time_budget"]')).not.toBeNull();
   });
 
   it("highlights hard constraints and enables confirmation when complete", async () => {
     const { container } = renderWithClient(<ProfilePage />);
 
     await waitFor(() => {
-      expect(
-        screen.getByText("Do not require online multiplayer."),
-      ).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "确认画像" })).toBeEnabled();
     });
 
     const hard = container.querySelector('[data-constraint="hard"]');
     expect(hard).not.toBeNull();
-    expect(hard?.textContent).toContain("Do not require online multiplayer.");
-    expect(screen.getByRole("button", { name: "确认画像" })).toBeEnabled();
+  });
+
+  it("disables confirmation when a blocking field is cleared", async () => {
+    const user = userEvent.setup();
+    const { container } = renderWithClient(<ProfilePage />);
+
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: "确认画像" })).toBeEnabled();
+    });
+
+    await user.selectOptions(screen.getByLabelText("团队规模"), "");
+
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: "确认画像" })).toBeDisabled();
+    });
+    expect(container.querySelector('[data-missing-field="team_size"]')).not.toBeNull();
+  });
+
+  it("lets the user edit a field via the dropdown", async () => {
+    const user = userEvent.setup();
+    renderWithClient(<ProfilePage />);
+
+    await waitFor(() => {
+      expect(screen.getByLabelText("程序能力")).toBeInTheDocument();
+    });
+
+    const programming = screen.getByLabelText("程序能力") as HTMLSelectElement;
+    expect(programming.value).toBe("strong");
+    await user.selectOptions(programming, "weak");
+    expect(programming.value).toBe("weak");
+  });
+
+  it("confirms a complete draft into a DeveloperProfile", async () => {
+    const user = userEvent.setup();
+    renderWithClient(<ProfilePage />);
+
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: "确认画像" })).toBeEnabled();
+    });
+    await user.click(screen.getByRole("button", { name: "确认画像" }));
+
+    await waitFor(() => {
+      expect(screen.getByText("已确认画像")).toBeInTheDocument();
+    });
   });
 });

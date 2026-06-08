@@ -1,9 +1,11 @@
 import { goldenFlow } from "@/lib/fixtures/golden-flow";
 import { parseDeveloperProfileInput as parseLocalDeveloperProfileInput } from "@/lib/profile/parser";
+import { promoteDraftToProfile } from "@/lib/profile/draft";
 import type {
   ConceptCard,
   ConceptEvaluation,
   DeveloperProfile,
+  DeveloperProfileDraft,
   DesignClaim,
   EvidenceRef,
   GameDesignProfile,
@@ -98,6 +100,15 @@ export async function parseDeveloperProfileInput(
   input: ProfileParseInput,
 ): Promise<ProfileParseResult> {
   return settle(parseLocalDeveloperProfileInput(input));
+}
+
+// Confirms a complete draft into the authoritative DeveloperProfile. Today this
+// runs the local promotion; swap the body for `fetch('/api/profile/confirm')`
+// when the backend route lands. Throws if the draft is not complete.
+export async function confirmDeveloperProfile(
+  draft: DeveloperProfileDraft,
+): Promise<DeveloperProfile> {
+  return settle(promoteDraftToProfile(draft));
 }
 
 export async function getOpportunityFrame(): Promise<OpportunityFrame> {
