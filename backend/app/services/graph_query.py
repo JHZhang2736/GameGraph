@@ -14,6 +14,9 @@ class NeighborRow:
     neighbor_label: str = ""
     neighbor_key: str = ""
     neighbor_display: str = ""
+    # 边的真实端点(无向遍历下,焦点可能是 source 也可能是 target)。
+    source_key: str = ""
+    target_key: str = ""
 
 
 def _evidence(rel_props: dict) -> list[EvidenceRef]:
@@ -23,14 +26,14 @@ def _evidence(rel_props: dict) -> list[EvidenceRef]:
     return [EvidenceRef.model_validate(item) for item in json.loads(raw)]
 
 
-def _edge(focus_id: str, row: NeighborRow) -> GraphEdgeDTO:
+def _edge(row: NeighborRow) -> GraphEdgeDTO:
     props = row.rel_props
     claim_id = props.get("claim_id")
-    edge_id = claim_id or f"{focus_id}-{row.rel_type}-{row.neighbor_key}"
+    edge_id = claim_id or f"{row.source_key}-{row.rel_type}-{row.target_key}"
     return GraphEdgeDTO(
         id=edge_id,
-        source=focus_id,
-        target=row.neighbor_key,
+        source=row.source_key,
+        target=row.target_key,
         relation=props.get("relation") or row.rel_type,
         confidence=props.get("confidence"),
         quality_status=props.get("quality_status"),
@@ -51,7 +54,7 @@ def build_neighborhood(
         )
         for row in capped
     ]
-    edges = [_edge(focus["id"], row) for row in capped]
+    edges = [_edge(row) for row in capped]
     return NeighborhoodResult(
         focus=GraphNodeDTO(**focus),
         nodes=nodes,
