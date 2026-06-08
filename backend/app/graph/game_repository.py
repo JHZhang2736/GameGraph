@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import json
-
 from neo4j import Driver
 
 from app.schemas.import_document import GameImportDocument
@@ -23,6 +21,9 @@ _ALLOWED_EDGES["TAGGED"] = "ReferenceTag"
 _ALLOWED_EDGES["CLAIM"] = "Concept"
 
 _ALLOWED_NODE_LABELS = {"Game", *_ALLOWED_EDGES.values()}
+
+# 节点 key 的字段名也会被插值进 Cypher，限制为已知常量名以防注入
+_ALLOWED_KEY_FIELDS = {"id", "name"}
 
 
 class GameRepository:
@@ -84,11 +85,18 @@ class GameRepository:
         return record["document_json"]
 
 
+def _validate_key(key: dict[str, str], field_label: str) -> None:
+    if len(key) != 1:
+        raise ValueError(f"{field_label} must contain exactly one field")
+    (field_name,) = key
+    if field_name not in _ALLOWED_KEY_FIELDS:
+        raise ValueError(f"Unexpected key field: {field_name}")
+
+
 def _validate_node(node: NodeMerge) -> None:
     if node.label not in _ALLOWED_NODE_LABELS:
         raise ValueError(f"Unexpected node label: {node.label}")
-    if len(node.key) != 1:
-        raise ValueError("NodeMerge.key must contain exactly one field")
+    _validate_key(node.key, "NodeMerge.key")
 
 
 def _validate_edge(edge: EdgeMerge) -> None:
@@ -96,5 +104,5 @@ def _validate_edge(edge: EdgeMerge) -> None:
         raise ValueError(f"Unexpected from_label: {edge.from_label}")
     if _ALLOWED_EDGES.get(edge.rel_type) != edge.to_label:
         raise ValueError(f"Unexpected edge: {edge.rel_type} -> {edge.to_label}")
-    if len(edge.from_key) != 1 or len(edge.to_key) != 1:
-        raise ValueError("Edge keys must contain exactly one field")
+    _validate_key(edge.from_key, "EdgeMerge.from_key")
+    _validate_key(edge.to_key, "EdgeMerge.to_key")
