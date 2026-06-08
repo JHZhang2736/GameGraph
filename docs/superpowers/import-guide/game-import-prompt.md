@@ -93,3 +93,24 @@ curl -X POST http://localhost:8000/import/game \
 # 4) 读回核对
 curl http://localhost:8000/games/game_<slug>
 ```
+
+### 批量导入脚本
+
+`backend/scripts/import_games.py` 封装了上面的 POST，支持单文件或整个文件夹，
+并打印成功/失败汇总（仅走 HTTP，校验仍在服务端）：
+
+```bash
+cd backend
+
+# 导入单个文件
+python scripts/import_games.py path/to/your-game.json
+
+# 导入整个文件夹下所有 *.json
+python scripts/import_games.py app/fixtures/games/
+
+# 指向远程 ECS（默认 http://localhost:8000）
+GAMEGRAPH_API=http://<ECS_IP>:8100 python scripts/import_games.py games/
+```
+
+任一文件失败（422 schema 不合法 / 409 契约冲突 / 连接失败）脚本会以非零退出码结束。
+
