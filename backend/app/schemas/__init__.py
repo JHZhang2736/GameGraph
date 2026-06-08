@@ -16,6 +16,13 @@ from app.schemas.common import (
     QualityStatus,
     StrictBaseModel,
 )
+from app.schemas.developer_profile import (
+    DeveloperProfileDraft,
+    MissingProfileField,
+    ProfileFieldSource,
+    ProfileParseInput,
+    ProfileParseResult,
+)
 
 __all__ = [
     "ConceptCard",
@@ -24,10 +31,15 @@ __all__ = [
     "DesignClaim",
     "DeveloperConstraint",
     "DeveloperProfile",
+    "DeveloperProfileDraft",
     "EvidenceRef",
     "GraphRelation",
+    "MissingProfileField",
     "NonEmptyStr",
     "OpportunityFrame",
+    "ProfileFieldSource",
+    "ProfileParseInput",
+    "ProfileParseResult",
     "PrototypeBrief",
     "QualityStatus",
     "SeedGame",

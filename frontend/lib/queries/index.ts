@@ -10,7 +10,9 @@ import {
   getOpportunityFrame,
   getPrototypeBrief,
   getSeedGames,
+  parseDeveloperProfileInput,
 } from "@/lib/data";
+import type { ProfileParseInput } from "@/lib/types";
 
 export function useGoldenFlow() {
   return useQuery({ queryKey: ["golden-flow"], queryFn: getGoldenFlow });
@@ -33,6 +35,13 @@ export function useGraph() {
 
 export function useDeveloperProfile() {
   return useQuery({ queryKey: ["developer-profile"], queryFn: getDeveloperProfile });
+}
+
+export function useParseDeveloperProfileInput(input: ProfileParseInput) {
+  return useQuery({
+    queryKey: ["profile-parse", input],
+    queryFn: () => parseDeveloperProfileInput(input),
+  });
 }
 
 export function useOpportunityFrame() {

@@ -75,6 +75,53 @@ export interface DeveloperProfile {
   constraints: DeveloperConstraint[];
 }
 
+// Developer profile workbench (6.4). Mirrors backend
+// app/schemas/developer_profile.py and the deterministic parser.
+export type ProfileFieldSourceKind = "raw_text" | "explicit_field";
+
+export interface ProfileParseInput {
+  raw_text: string;
+  liked_references?: string[];
+  disliked_references_or_mechanics?: string[];
+  expected_project_scale?: string;
+}
+
+export interface ProfileFieldSource {
+  field: string;
+  source_text: string;
+  source_kind: ProfileFieldSourceKind;
+  confidence: ConfidenceLevel;
+}
+
+export interface MissingProfileField {
+  field: string;
+  reason: string;
+  blocking: boolean;
+}
+
+export interface DeveloperProfileDraft {
+  id: string;
+  team_size: string | null;
+  time_budget: string | null;
+  programming_ability: string | null;
+  art_ability: string | null;
+  audio_ability: string | null;
+  content_production_ability: string | null;
+  liked_references: string[];
+  disliked_references_or_mechanics: string[];
+  desired_player_experiences: string[];
+  constraints: DeveloperConstraint[];
+  missing_fields: MissingProfileField[];
+  field_sources: ProfileFieldSource[];
+  raw_text: string;
+  is_complete: boolean;
+}
+
+export interface ProfileParseResult {
+  draft: DeveloperProfileDraft;
+  warnings: string[];
+}
+
 export interface OpportunityFrame {
   id: string;
   developer_profile_id: string;
