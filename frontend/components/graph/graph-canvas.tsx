@@ -70,6 +70,7 @@ function GraphController({
     settings: { slowDown: 20, ...FA2_SETTINGS },
   });
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const [hoveredEdge, setHoveredEdge] = useState<string | null>(null);
 
   // 数据变化时(挂载 / 展开邻居)重建 graphology 图。useLoadGraph 会清空并
   // 重新导入到 sigma 持有的同一个图实例,故 FA2 worker 始终挂在活动图上。
@@ -130,8 +131,22 @@ function GraphController({
     registerEvents({
       clickNode: (e) => onSelectNode?.(e.node),
       clickEdge: (e) => onSelectEdge?.(e.edge),
-      enterNode: (e) => setHoveredNode(e.node),
-      leaveNode: () => setHoveredNode(null),
+      enterNode: (e) => {
+        setHoveredNode(e.node);
+        sigma.getContainer().style.cursor = "pointer";
+      },
+      leaveNode: () => {
+        setHoveredNode(null);
+        sigma.getContainer().style.cursor = "default";
+      },
+      enterEdge: (e) => {
+        setHoveredEdge(e.edge);
+        sigma.getContainer().style.cursor = "pointer";
+      },
+      leaveEdge: () => {
+        setHoveredEdge(null);
+        sigma.getContainer().style.cursor = "default";
+      },
       downNode: (e) => {
         dragged = e.node;
         sigma.getGraph().setNodeAttribute(dragged, "highlighted", true);
@@ -165,13 +180,18 @@ function GraphController({
       },
       edgeReducer: (edge, data) => {
         const g = sigma.getGraph();
+        // 鼠标悬停的边:加粗 + 强制显示中文关系标签 + 置顶。
+        if (edge === hoveredEdge) {
+          const size = typeof data.size === "number" ? data.size : 1;
+          return { ...data, size: size * 1.8, zIndex: 1, forceLabel: true };
+        }
         if (!hoveredNode || !g.hasNode(hoveredNode)) return { ...data, label: "" };
         const [s, t] = g.extremities(edge);
         if (s === hoveredNode || t === hoveredNode) return data;
         return { ...data, color: DIMMED_EDGE, label: "" };
       },
     });
-  }, [hoveredNode, setSettings, sigma]);
+  }, [hoveredNode, hoveredEdge, setSettings, sigma]);
 
   return null;
 }
