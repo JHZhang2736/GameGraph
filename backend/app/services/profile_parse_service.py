@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import logging
+
 from app.schemas.artifacts import DeveloperConstraint
 from app.schemas.common import ConfidenceLevel
 from app.schemas.developer_profile import (
@@ -14,6 +16,8 @@ from app.services.developer_profile_parser import (
 )
 from app.services.profile_llm import ProfileExtraction, ProfileLlmClient
 
+logger = logging.getLogger(__name__)
+
 
 def parse_profile(
     input_data: ProfileParseInput,
@@ -25,6 +29,9 @@ def parse_profile(
         extraction = client.extract(input_data)
         return _result_from_extraction(input_data, extraction)
     except Exception:
+        logger.warning(
+            "Profile LLM extraction failed; falling back to rule parser", exc_info=True
+        )
         fallback = parse_developer_profile_input(input_data)
         return ProfileParseResult(
             draft=fallback.draft,

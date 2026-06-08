@@ -109,3 +109,20 @@ def test_llm_error_falls_back_to_rules_with_warning() -> None:
     assert client.calls == 1
     assert result.draft.is_complete is True
     assert result.warnings[0] == "LLM 解析失败，已降级为规则解析。"
+
+
+def test_explicit_disliked_references_override_llm_extraction() -> None:
+    result = parse_profile(
+        ProfileParseInput(
+            raw_text="我一个人做游戏",
+            disliked_references_or_mechanics=["precision platforming"],
+        ),
+        FakeClient(complete_extraction()),
+    )
+    assert result.draft.disliked_references_or_mechanics == ["precision platforming"]
+    source = next(
+        s
+        for s in result.draft.field_sources
+        if s.field == "disliked_references_or_mechanics"
+    )
+    assert source.source_kind == "explicit_field"
