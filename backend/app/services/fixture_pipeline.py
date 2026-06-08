@@ -20,25 +20,27 @@ from app.schemas.common import StrictBaseModel
 
 
 PROMISED_CONCEPT_OUTCOME_PATTERNS = (
-    r"\bguaranteed\s+(?:to\s+be\s+)?fun\b",
-    r"\bguaranteed\s+to\s+have\s+fun\b",
-    r"\b(?:is|are)\s+guaranteed\s+to\s+have\s+fun\b",
-    r"\bguaranteed\s+to\s+be\s+(?:a\s+)?(?:hit|success|successful)\b",
-    r"\b(?:is|are)\s+guaranteed\s+to\s+be\s+(?:a\s+)?(?:hit|success|successful)\b",
-    r"\bguarantees?\s+fun\b",
-    r"\bwill\s+have\s+fun\b",
-    r"\bwill\s+be\s+(?:a\s+)?fun\b",
     r"\bcommercial\s+success\b",
     r"\bcommercial\s+hit\b",
-    r"\bcommercially\s+successful\b",
-    r"\bguaranteed\s+(?:commercial\s+)?success\b",
-    r"\bguaranteed\s+hit\b",
     r"\bmarket\s+success\b",
     r"\bprofitable\b",
     r"\bviral\s+hit\b",
-    r"\bwill\s+be\s+(?:commercially\s+)?successful\b",
+    r"\bcommercially\s+successful\b",
+    r"\bguaranteed\s+fun\b",
+    r"\bwill\s+have\s+fun\b",
+    r"\bwill\s+be\s+fun\b",
+    r"\bwill\s+be\s+a\s+fun\b",
+    r"\bwill\s+be\s+successful\b",
+    r"\bwill\s+be\s+commercially\s+successful\b",
+    r"\bwill\s+be\s+a\s+hit\b",
+    r"\bwill\s+be\s+a\s+success\b",
     r"\bwill\s+succeed\b",
     r"\bwill\s+sell\b",
+    r"\b(?:will|guaranteed(?:\s+to)?|sure\s+to|certain\s+to|definitely)\b"
+    r".{0,40}\b(?:fun|hit|success|successful|succeed|sell|commercially\s+successful)\b",
+    r"\b(?:is|are)\s+guaranteed\s+to\s+.{0,30}"
+    r"\b(?:fun|hit|success|successful|succeed)\b",
+    r"\bguarantees?\b.{0,30}\b(?:fun|hit|success|successful|succeed)\b",
 )
 
 PROMISED_CONCEPT_OUTCOME_PHRASES = (
