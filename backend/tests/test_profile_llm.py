@@ -131,3 +131,10 @@ def test_extract_raises_value_error_on_http_error() -> None:
     )
     with pytest.raises(ValueError, match="401"):
         client.extract(ProfileParseInput(raw_text="solo"))
+
+
+def test_extraction_ignores_unexpected_keys() -> None:
+    extraction = ProfileExtraction.model_validate(
+        {"team_size": "solo", "reasoning": "the developer said 我一个人", "extra": 1}
+    )
+    assert extraction.team_size == "solo"

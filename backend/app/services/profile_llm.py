@@ -4,7 +4,7 @@ import os
 from dataclasses import dataclass
 
 import httpx
-from pydantic import Field
+from pydantic import ConfigDict, Field
 
 from app.schemas.common import ConfidenceLevel, ConstraintType, StrictBaseModel
 from app.schemas.developer_profile import ProfileParseInput
@@ -43,17 +43,23 @@ class LlmSettings:
 
 
 class ExtractedConstraint(StrictBaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     type: ConstraintType
     statement: str = Field(min_length=1)
 
 
 class ExtractedSource(StrictBaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     field: str = Field(min_length=1)
     source_text: str = Field(min_length=1)
     confidence: ConfidenceLevel
 
 
 class ProfileExtraction(StrictBaseModel):
+    model_config = ConfigDict(extra="ignore")
+
     team_size: str | None = None
     time_budget: str | None = None
     programming_ability: str | None = None
