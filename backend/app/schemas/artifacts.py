@@ -105,3 +105,32 @@ class PrototypeBrief(StrictBaseModel):
     success_signals: list[NonEmptyStr] = Field(min_length=1)
     failure_signals: list[NonEmptyStr] = Field(min_length=1)
     do_not_build_yet: list[NonEmptyStr] = Field(min_length=1)
+
+
+class ReferenceValueTag(StrictBaseModel):
+    tag: str = Field(min_length=1)
+    confidence: ConfidenceLevel
+    quality_status: QualityStatus
+    evidence: list[EvidenceRef] = Field(default_factory=list)
+
+
+class GameDesignProfile(StrictBaseModel):
+    game_id: str = Field(min_length=1)
+    one_sentence_summary: str = Field(min_length=1)
+    core_loop: str = Field(min_length=1)
+    progression_model: str = Field(min_length=1)
+    failure_model: str = Field(min_length=1)
+    content_structure: str = Field(min_length=1)
+    main_player_actions: list[NonEmptyStr] = Field(min_length=1)
+    main_player_decisions: list[NonEmptyStr] = Field(min_length=1)
+    main_player_experiences: list[NonEmptyStr] = Field(min_length=1)
+    main_mechanics: list[NonEmptyStr] = Field(min_length=1)
+    replayability_sources: list[NonEmptyStr] = Field(min_length=1)
+    production_constraints: list[NonEmptyStr] = Field(min_length=1)
+    innovation_patterns: list[NonEmptyStr] = Field(min_length=1)
+    reusable_reference_patterns: list[NonEmptyStr] = Field(min_length=1)
+    non_replicable_risks: list[NonEmptyStr] = Field(min_length=1)
+    reference_value_tags: list[ReferenceValueTag] = Field(min_length=1)
+    evidence: list[EvidenceRef] = Field(min_length=1)
+    confidence: ConfidenceLevel
+    quality_status: QualityStatus

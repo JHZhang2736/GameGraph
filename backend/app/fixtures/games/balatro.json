@@ -1,0 +1,135 @@
+{
+  "candidate": {
+    "id": "game_balatro",
+    "title": "Balatro",
+    "source_refs": [
+      {
+        "title": "Balatro store page",
+        "url": "https://store.steampowered.com/app/2379780/Balatro/",
+        "notes": "Primary reference for the game candidate."
+      }
+    ],
+    "short_description": "Poker-inspired roguelike deckbuilder built around familiar card semantics.",
+    "selection_reason": "Strong sample for transforming familiar rules into systemic depth at low art cost."
+  },
+  "profile": {
+    "game_id": "game_balatro",
+    "one_sentence_summary": "A poker-hand roguelike deckbuilder where score multipliers, not direct combat, drive a snowballing run.",
+    "core_loop": "Play poker hands, buy and arrange jokers that rewrite scoring, then beat escalating blind targets.",
+    "progression_model": "Run-based economy where the player spends winnings on jokers and upgrades between blinds.",
+    "failure_model": "Failing to reach a blind's score threshold ends the current run.",
+    "content_structure": "Procedural run over a fixed escalating ladder of blinds with shop phases between them.",
+    "main_player_actions": [
+      "select cards to form a poker hand",
+      "buy jokers and consumables in the shop",
+      "arrange joker order for scoring"
+    ],
+    "main_player_decisions": [
+      "which poker hand to commit to this round",
+      "which joker synergy to invest in",
+      "when to reroll or save money"
+    ],
+    "main_player_experiences": [
+      "snowballing scoring payoff",
+      "combo discovery",
+      "tense threshold pushing"
+    ],
+    "main_mechanics": [
+      "poker hand building",
+      "score multiplier engine",
+      "joker synergies"
+    ],
+    "replayability_sources": [
+      "randomized joker pools",
+      "deck and stake variety",
+      "emergent scoring combos"
+    ],
+    "production_constraints": [
+      "abstract card UI",
+      "no character animation",
+      "text and number driven feedback"
+    ],
+    "innovation_patterns": [
+      "familiar rules as an on-ramp to systemic depth",
+      "scoring engine as the core toy"
+    ],
+    "reusable_reference_patterns": [
+      "score multiplier engine",
+      "familiar rule vocabulary",
+      "shop-driven run economy"
+    ],
+    "non_replicable_risks": [
+      "balancing exponential scoring is difficult",
+      "depth depends on a large tuned joker set"
+    ],
+    "reference_value_tags": [
+      {
+        "tag": "low art cost reference",
+        "confidence": "high",
+        "quality_status": "reviewed",
+        "evidence": [
+          {
+            "title": "Balatro presentation",
+            "quote_or_summary": "The game communicates almost entirely through cards, text, and numbers rather than animation.",
+            "notes": "Observable from store media."
+          }
+        ]
+      },
+      {
+        "tag": "high systemic depth reference",
+        "confidence": "medium",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "Design interpretation",
+            "quote_or_summary": "Joker combinations create deep emergent scoring strategies.",
+            "notes": "Model analysis, not externally cited."
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Balatro design summary",
+        "quote_or_summary": "Starts from recognizable poker hand logic and layers score modifiers over it.",
+        "notes": "Curated design interpretation."
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "reviewed"
+  },
+  "claims": [
+    {
+      "id": "claim_balatro_familiar_rules",
+      "subject": "Balatro",
+      "relation": "reduces",
+      "object": "new player learning cost",
+      "explanation": "Players already understand poker hands, so the systemic depth layers onto known rules instead of new ones.",
+      "evidence": [
+        {
+          "title": "Balatro design summary",
+          "quote_or_summary": "Recognizable poker hands give an immediate rules vocabulary before modifiers add depth.",
+          "notes": "Curated design interpretation."
+        }
+      ],
+      "confidence": "high",
+      "quality_status": "reviewed"
+    },
+    {
+      "id": "claim_balatro_abstract_ui_low_art",
+      "subject": "abstract card UI",
+      "relation": "reduces",
+      "object": "solo developer art production burden",
+      "explanation": "Card, text, and number feedback avoids animation and bespoke art, lowering production load for a small team.",
+      "evidence": [
+        {
+          "title": "Design interpretation",
+          "quote_or_summary": "Pure card and number presentation needs no animation pipeline.",
+          "notes": "Model analysis, not externally cited."
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}
