@@ -173,7 +173,12 @@ def _synth() -> FrameSynthesis:
 
 def test_build_frame_with_llm_assembles_full_frame() -> None:
     repo = _StubRepo(_games(), _facts())
-    frame = svc.build_frame(_profile(), _area(), repo, _StubLlm(_synth()))
+    llm = _StubLlm(_synth())
+    frame = svc.build_frame(_profile(), _area(), repo, llm)
+    # LLM 收到的是确定性组装好的材料（related_* + 次变形池）
+    assert llm.seen is not None
+    assert llm.seen.related_mechanics == ["护符定制", "能力树"]
+    assert all(c.anchor_game_id == "game_vs" for c in llm.seen.secondary_pool)
     assert frame.id == "frame|opp|game_vs|sub|Perspective|第一人称"
     assert frame.developer_profile_id == "profile_1"
     assert frame.source_game_ids == ["game_vs", "game_fps"]
