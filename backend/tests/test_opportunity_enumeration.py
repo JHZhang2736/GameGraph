@@ -35,7 +35,7 @@ def test_substitute_borrows_target_value_from_other_game() -> None:
     picked = next(c for c in subs if c.transformation.to_value == "第一人称")
     assert picked.transformation.from_value == "横版2D"
     assert picked.evidence.target_value_game_ids == ["game_fps"]
-    assert picked.novelty_count == 0
+    assert picked.existing_combination_count == 0
     assert picked.evidence.combination_game_ids == []
 
 
@@ -63,6 +63,34 @@ def test_no_candidate_for_value_anchor_already_has() -> None:
     )
 
 
+def test_substitute_skipped_when_anchor_has_no_value_in_dimension() -> None:
+    games = [
+        GameDimensions("g1", "s1", {"类肉鸽"}, set(), {"像素美术"}, set()),  # 无 perspective
+        GameDimensions("g2", "s2", {"类肉鸽"}, {"第一人称"}, {"低多边形"}, set()),
+    ]
+    candidates = enumerate_candidates(games)
+    # g1 在 Perspective 上无值 → 不应为它生成任何 Perspective 替代候选
+    assert not any(
+        c.anchor_game_id == "g1" and c.transformation.dimension == "Perspective"
+        for c in candidates
+    )
+
+
+def test_substitute_from_value_is_lexicographically_smallest_for_multi_value_anchor() -> None:
+    games = [
+        GameDimensions("g1", "s1", {"类肉鸽", "动作"}, {"横版2D"}, {"像素美术"}, set()),
+        GameDimensions("g2", "s2", {"射击"}, {"横版2D"}, {"像素美术"}, set()),
+    ]
+    candidates = enumerate_candidates(games)
+    sub = next(
+        c for c in candidates
+        if c.anchor_game_id == "g1" and c.transformation.dimension == "Genre"
+        and c.transformation.to_value == "射击"
+    )
+    # anchor genres {"动作","类肉鸽"} → 词典序最小者为「动作」
+    assert sub.transformation.from_value == "动作"
+
+
 def test_novelty_count_counts_genre_sharing_games_with_target_value() -> None:
     games = [
         GameDimensions("g1", "s1", {"类肉鸽"}, {"横版2D"}, {"像素美术"}, set()),
@@ -76,5 +104,5 @@ def test_novelty_count_counts_genre_sharing_games_with_target_value() -> None:
         and c.transformation.dimension == "Perspective"
         and c.transformation.to_value == "第一人称"
     )
-    assert picked.novelty_count == 2
+    assert picked.existing_combination_count == 2
     assert set(picked.evidence.combination_game_ids) == {"g2", "g3"}

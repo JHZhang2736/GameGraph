@@ -28,7 +28,7 @@ class GameDimensions:
 
 
 def _candidate_id(anchor: str, kind: str, dimension: str, to_value: str) -> str:
-    return f"opp_{anchor}_{kind}_{dimension}_{to_value}"
+    return f"opp|{anchor}|{kind}|{dimension}|{to_value}"
 
 
 def _games_with_value(games: list[GameDimensions], attr: str, value: str) -> list[str]:
@@ -62,7 +62,7 @@ def _substitute_candidates(
         if not anchor_values:
             continue  # 锚点在该维度无值则无「原值」可替代（schema 要求 substitute 必带 from_value）
         all_values = {v for g in games for v in getattr(g, attr)}
-        from_value = sorted(anchor_values)[0]
+        from_value = sorted(anchor_values)[0]  # 多值时取词典序最小者作为代表原值（保证确定性）
         for target in sorted(all_values - anchor_values):
             target_games = _games_with_value(games, attr, target)
             combo = _combination_game_ids(games, anchor, attr, target)
@@ -77,7 +77,7 @@ def _substitute_candidates(
                         from_value=from_value,
                         to_value=target,
                     ),
-                    novelty_count=len(combo),
+                    existing_combination_count=len(combo),
                     evidence=OpportunityEvidence(
                         anchor_game_id=anchor.game_id,
                         target_value_game_ids=target_games,
@@ -107,7 +107,7 @@ def _combine_candidates(
                     from_value=None,
                     to_value=target,
                 ),
-                novelty_count=len(combo),
+                existing_combination_count=len(combo),
                 evidence=OpportunityEvidence(
                     anchor_game_id=anchor.game_id,
                     target_value_game_ids=target_games,

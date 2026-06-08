@@ -25,7 +25,7 @@ def _candidate(**overrides) -> CandidateOpportunityArea:
             from_value="横版2D",
             to_value="第一人称",
         ),
-        novelty_count=0,
+        existing_combination_count=0,
         evidence=OpportunityEvidence(
             anchor_game_id="game_a",
             target_value_game_ids=["game_b"],

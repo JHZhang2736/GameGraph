@@ -38,7 +38,7 @@ class CandidateOpportunityArea(StrictBaseModel):
     anchor_game_id: str = Field(min_length=1)
     anchor_summary: str = Field(min_length=1)
     transformation: Transformation
-    novelty_count: int = Field(ge=0)
+    existing_combination_count: int = Field(ge=0)  # 已有相同组合的游戏数；越小越新颖
     evidence: OpportunityEvidence
 
 
