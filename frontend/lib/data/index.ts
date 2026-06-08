@@ -73,27 +73,6 @@ export interface GraphData {
   edges: GraphEdge[];
 }
 
-export async function getGraph(): Promise<GraphData> {
-  const nodeMap = new Map<string, GraphNode>();
-  const edges: GraphEdge[] = [];
-  for (const rel of goldenFlow.graph_relations) {
-    for (const label of [rel.source_node, rel.target_node]) {
-      if (!nodeMap.has(label)) nodeMap.set(label, { id: label, label, node_type: "Concept" });
-    }
-    edges.push({
-      id: rel.id,
-      source: rel.source_node,
-      target: rel.target_node,
-      relation: rel.relation,
-      confidence: rel.confidence,
-      quality_status: rel.quality_status,
-      claim_id: rel.claim_id,
-      evidence: rel.evidence,
-    });
-  }
-  return settle({ nodes: [...nodeMap.values()], edges });
-}
-
 export async function getDeveloperProfile(): Promise<DeveloperProfile> {
   return settle(goldenFlow.developer_profile);
 }

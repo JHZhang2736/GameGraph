@@ -6,7 +6,6 @@ import {
   getDeveloperProfile,
   getGameProfile,
   getGoldenFlow,
-  getGraph,
   getNeighbors,
   getOpportunityFrame,
   getPrototypeBrief,
@@ -33,10 +32,6 @@ export function useGameProfile(id: string) {
     queryKey: ["game-profile", id],
     queryFn: () => getGameProfile(id),
   });
-}
-
-export function useGraph() {
-  return useQuery({ queryKey: ["graph"], queryFn: getGraph });
 }
 
 export function useDeveloperProfile() {

@@ -88,7 +88,7 @@ GET /graph/neighbors?node_id=<游戏id 或 属性节点标识>&hops=1&limit=150&
 ```
 
 - `node_id`:游戏用 `id`,属性节点用 `name`(后端按 `node_type` 区分匹配键)。
-- `hops`:默认 1,上限 2。
+- `hops`:固定 1 跳(多跳通过前端「点击节点展开」增量实现)。
 - `limit`:节点上限(默认 150)。后端用 `LIMIT` 截断;命中上限则 `truncated=true`。
 - `rel_types`:可选,按关系类型过滤(对应 `PROFILE_LIST_EDGES` + `TAGGED`/`CLAIM`)。
 - `confidence`/`quality_status`/`evidence`/`claim_id` 等从边/关系属性还原(`evidence_json` 反序列化)。
