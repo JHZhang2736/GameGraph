@@ -1,0 +1,150 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  REGISTRY: ccr.ccs.tencentyun.com
+  BACKEND_IMAGE: ccr.ccs.tencentyun.com/gamegraph/gamegraph-backend
+  FRONTEND_IMAGE: ccr.ccs.tencentyun.com/gamegraph/gamegraph-frontend
+
+jobs:
+  build-backend:
+    name: Build & push backend image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to TCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.TCR_USERNAME }}
+          password: ${{ secrets.TCR_PASSWORD }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.BACKEND_IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix=sha-,format=short
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          push: true
+          # 关闭 provenance/SBOM attestation：否则推成 OCI manifest index，
+          # ECS 上 docker compose pull 会把 0B 的证明清单当镜像拉 → "error from registry: unknown error"
+          provenance: false
+          sbom: false
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=backend
+          cache-to: type=gha,scope=backend,mode=max
+
+  build-frontend:
+    name: Build & push frontend image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to TCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.TCR_USERNAME }}
+          password: ${{ secrets.TCR_PASSWORD }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.FRONTEND_IMAGE }}
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix=sha-,format=short
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          push: true
+          # 同 backend：关闭 attestation，避免 OCI index 导致 compose pull 失败
+          provenance: false
+          sbom: false
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha,scope=frontend
+          cache-to: type=gha,scope=frontend,mode=max
+
+  deploy:
+    name: Deploy to ECS
+    needs: [build-backend, build-frontend]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: 'placeholder-will-replace'
+
+      - name: Add ECS to known_hosts
+        run: |
+          ssh-keyscan -H -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy via SSH
+        run: |
+          ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            set -e
+            cd ~/workspace/GameGraph
+            echo "=== Login to TCR ==="
+            echo '${{ secrets.TCR_PASSWORD }}' | docker login ccr.ccs.tencentyun.com -u '${{ secrets.TCR_USERNAME }}' --password-stdin
+            echo "=== Sync repo ==="
+            git pull origin main
+            # 用生产 compose；先删旧出边再重建在应用层，这里只管镜像编排
+            export COMPOSE_FILE=docker-compose.prod.yml
+            # Neo4j 密码：注意仅在数据卷首次初始化时生效，后续改密需手动操作或重置卷
+            export NEO4J_PASSWORD='${{ secrets.NEO4J_PASSWORD }}'
+            # 按不可变的 commit sha 标签部署：仓库/加速器对可变标签 latest 可能给到旧缓存，
+            # 而每次部署的 sha-<commit> 都是全新标签，必定拉到本次构建的镜像。
+            SHA=$(git rev-parse --short HEAD)
+            export BACKEND_TAG="sha-$SHA"
+            export FRONTEND_TAG="sha-$SHA"
+            echo "=== Deploy commit: $SHA ==="
+            # 镜像拉取重试：网络抖动 / registry 偶发失败时最多尝试 5 次（间隔 10s）
+            retry() {
+              local n=1 max=5 delay=10
+              until "$@"; do
+                if [ $n -ge $max ]; then
+                  echo "[retry] 仍失败（已尝试 $max 次）: $*" >&2
+                  return 1
+                fi
+                echo "[retry] 第 $n/$max 次失败，${delay}s 后重试: $*"
+                n=$((n + 1))
+                sleep $delay
+              done
+            }
+            echo "=== Pull new images ==="
+            retry docker compose pull backend frontend
+            echo "=== Restart stack ==="
+            docker compose up -d --remove-orphans
+            echo "=== Status ==="
+            docker compose ps
+            echo "=== Prune old images (keep 7d) ==="
+            docker image prune -a -f --filter "until=168h" || true
+          EOF
