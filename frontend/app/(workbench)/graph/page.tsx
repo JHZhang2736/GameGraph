@@ -3,7 +3,20 @@
 import { useEffect, useMemo, useState } from "react";
 import { useGames } from "@/lib/queries";
 import { getNeighbors, type GraphData, type GraphEdge, type GraphNode, type NeighborhoodResult } from "@/lib/data";
-import { GraphCanvas } from "@/components/graph/graph-canvas";
+import dynamic from "next/dynamic";
+
+// 画布(后续将换成 Sigma)依赖 WebGL/window,禁用 SSR/构建预渲染。
+// page 已是 Client Component,故 next/dynamic 的 ssr:false 在此合法
+// (见 node_modules/next/dist/docs 的 lazy-loading 指南)。
+const GraphCanvas = dynamic(
+  () => import("@/components/graph/graph-canvas").then((m) => m.GraphCanvas),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[560px] animate-pulse rounded-lg border bg-muted/30" />
+    ),
+  },
+);
 import { EmptyState, ErrorState, LoadingState, PageHeader } from "@/components/shell/view-states";
 import { ConfidenceBadge } from "@/components/artifacts/confidence-badge";
 import { QualityBadge } from "@/components/artifacts/quality-badge";
