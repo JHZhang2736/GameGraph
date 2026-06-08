@@ -85,13 +85,26 @@ def test_concept_card_must_not_promise_fun_or_commercial_success() -> None:
     raw = golden_raw()
     raw["concept_cards"][0][
         "one_sentence_concept"
-    ] = "A short-run tactics game that will be fun."
+    ] = "A guaranteed fun tactics game."
 
     with pytest.raises(
         ContractViolation,
         match="ConceptCard must not promise fun or commercial success",
     ):
         run_fixture_pipeline_from_dict(raw)
+
+
+def test_concept_card_risk_may_describe_negative_fun_feedback() -> None:
+    raw = golden_raw()
+    raw["concept_cards"][0]["design_risks"] = [
+        "players may say it is not fun enough"
+    ]
+
+    result = run_fixture_pipeline_from_dict(raw)
+
+    assert result.concept_cards[0].design_risks == [
+        "players may say it is not fun enough"
+    ]
 
 
 def test_prototype_brief_must_reference_existing_concept_card() -> None:
@@ -113,5 +126,30 @@ def test_prototype_brief_must_define_observable_signals() -> None:
     with pytest.raises(
         ContractViolation,
         match="PrototypeBrief must define observable success and failure signals",
+    ):
+        run_fixture_pipeline_from_dict(raw)
+
+
+def test_prototype_brief_rejects_vague_multi_word_observable_signals() -> None:
+    raw = golden_raw()
+    raw["prototype_brief"]["success_signals"] = ["players have fun"]
+    raw["prototype_brief"]["failure_signals"] = ["players are bored"]
+
+    with pytest.raises(
+        ContractViolation,
+        match="PrototypeBrief must define observable success and failure signals",
+    ):
+        run_fixture_pipeline_from_dict(raw)
+
+
+def test_prototype_brief_must_define_specific_largest_risk_hypothesis() -> None:
+    raw = golden_raw()
+    raw["prototype_brief"][
+        "largest_risk_hypothesis"
+    ] = "Players have fun after the first few minutes of play."
+
+    with pytest.raises(
+        ContractViolation,
+        match="PrototypeBrief must define a specific largest risk hypothesis",
     ):
         run_fixture_pipeline_from_dict(raw)

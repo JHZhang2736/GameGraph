@@ -19,22 +19,30 @@ from app.schemas.artifacts import (
 from app.schemas.common import StrictBaseModel
 
 
-PROMISED_CONCEPT_OUTCOME_TERMS = (
-    "fun",
-    "commercial success",
-    "commercially successful",
-    "guaranteed hit",
-    "market success",
-    "profitable",
-    "viral hit",
-    "will sell",
+PROMISED_CONCEPT_OUTCOME_PATTERNS = (
+    r"\bguaranteed\s+(?:to\s+be\s+)?fun\b",
+    r"\bguarantees?\s+fun\b",
+    r"\bwill\s+be\s+fun\b",
+    r"\bcommercial\s+success\b",
+    r"\bcommercially\s+successful\b",
+    r"\bguaranteed\s+(?:commercial\s+)?success\b",
+    r"\bguaranteed\s+hit\b",
+    r"\bmarket\s+success\b",
+    r"\bprofitable\b",
+    r"\bviral\s+hit\b",
+    r"\bwill\s+be\s+(?:commercially\s+)?successful\b",
+    r"\bwill\s+succeed\b",
+    r"\bwill\s+sell\b",
+)
+
+PROMISED_CONCEPT_OUTCOME_PHRASES = (
+    "一定好玩",
+    "一定成功",
 )
 
 OBSERVABLE_SIGNAL_TERMS = (
     "ask",
     "asks",
-    "can",
-    "cannot",
     "choose",
     "chooses",
     "click",
@@ -45,9 +53,6 @@ OBSERVABLE_SIGNAL_TERMS = (
     "explains",
     "finish",
     "finishes",
-    "player",
-    "players",
-    "playtester",
     "predict",
     "predicts",
     "restart",
@@ -56,7 +61,7 @@ OBSERVABLE_SIGNAL_TERMS = (
     "says",
     "solve",
     "solves",
-    "tester",
+    "try",
     "tries",
     "use",
     "uses",
@@ -74,16 +79,82 @@ VAGUE_SIGNAL_VALUES = {
     "not fun",
     "success",
     "works",
+    "players are bored",
+    "players have fun",
 }
 
 VAGUE_RISK_HYPOTHESES = {
+    "boring",
     "fun",
     "it is fun",
     "it works",
+    "players are bored",
     "players have fun",
+    "players enjoy it",
     "players like it",
     "success",
 }
+
+GENERIC_EXPERIENCE_OUTCOME_PATTERNS = (
+    r"\bplayers?\s+(?:have|has|had)\s+fun\b",
+    r"\bplayers?\s+(?:are|were|is|was|feel|feels)\s+"
+    r"(?:bored|boring|engaged|engaging)\b",
+    r"\bplayers?\s+(?:enjoy|enjoys|like|likes)\s+(?:it|this|the\s+game|play)\b",
+    r"\b(?:game|prototype|concept|it|this)\s+"
+    r"(?:is|was|will\s+be|feels?)\s+"
+    r"(?:fun|boring|successful|engaging)\b",
+)
+
+LARGEST_RISK_SPECIFICITY_TERMS = (
+    "board",
+    "boards",
+    "change",
+    "changing",
+    "choose",
+    "chooses",
+    "complete",
+    "completes",
+    "consequence",
+    "consequences",
+    "encounter",
+    "encounters",
+    "explain",
+    "explains",
+    "feedback",
+    "identify",
+    "identifies",
+    "learn",
+    "predict",
+    "predicts",
+    "read",
+    "resolve",
+    "rule",
+    "rules",
+    "turn",
+    "turns",
+    "understand",
+    "understands",
+    "use",
+    "uses",
+)
+
+LARGEST_RISK_CONTEXT_TERMS = (
+    "after",
+    "before",
+    "during",
+    "encounter",
+    "encounters",
+    "first",
+    "minutes",
+    "player",
+    "players",
+    "playtest",
+    "prototype",
+    "scope",
+    "turn",
+    "turns",
+    "within",
+)
 
 
 class ContractViolation(ValueError):
@@ -164,6 +235,20 @@ def searchable_concept_text(concept: ConceptCard) -> str:
     return " ".join(search_values).lower()
 
 
+def searchable_concept_promise_text(concept: ConceptCard) -> str:
+    search_values: list[str] = []
+
+    for field_name, value in concept.model_dump().items():
+        if field_name in {"production_risks", "design_risks"}:
+            continue
+        if isinstance(value, str):
+            search_values.append(value)
+        elif isinstance(value, list):
+            search_values.extend(item for item in value if isinstance(item, str))
+
+    return " ".join(search_values).lower()
+
+
 def validate_concept_cards(
     concept_cards: list[ConceptCard],
     opportunity_frame: OpportunityFrame,
@@ -182,7 +267,9 @@ def validate_concept_cards(
         if any(direction in concept_text for direction in forbidden_directions):
             raise ContractViolation("ConceptCard must not include forbidden directions")
 
-        if _promises_fun_or_commercial_success(concept_text):
+        if _promises_fun_or_commercial_success(
+            searchable_concept_promise_text(concept)
+        ):
             raise ContractViolation("ConceptCard must not promise fun or commercial success")
 
 
@@ -207,12 +294,15 @@ def validate_prototype_brief(
 
 
 def _promises_fun_or_commercial_success(concept_text: str) -> bool:
-    normalized_text = concept_text.replace("-", " ")
+    normalized_text = _normalize_contract_text(concept_text.replace("-", " "))
 
-    if _contains_word(normalized_text, "fun"):
+    if any(phrase in normalized_text for phrase in PROMISED_CONCEPT_OUTCOME_PHRASES):
         return True
 
-    return any(term in normalized_text for term in PROMISED_CONCEPT_OUTCOME_TERMS[1:])
+    return any(
+        re.search(pattern, normalized_text)
+        for pattern in PROMISED_CONCEPT_OUTCOME_PATTERNS
+    )
 
 
 def _signals_are_observable(
@@ -232,6 +322,8 @@ def _observable_signal(signal: str) -> bool:
         return False
     if len(normalized.split()) < 3:
         return False
+    if _uses_generic_experience_outcome(normalized):
+        return False
 
     return any(_contains_word(normalized, term) for term in OBSERVABLE_SIGNAL_TERMS)
 
@@ -243,19 +335,25 @@ def _specific_largest_risk_hypothesis(hypothesis: str) -> bool:
         return False
     if len(normalized.split()) < 6:
         return False
+    if _uses_generic_experience_outcome(normalized):
+        return False
 
-    return any(
+    has_specificity = any(
         _contains_word(normalized, term)
-        for term in (
-            "after",
-            "before",
-            "can",
-            "cannot",
-            "during",
-            "player",
-            "players",
-            "within",
-        )
+        for term in LARGEST_RISK_SPECIFICITY_TERMS
+    )
+    has_context = any(
+        _contains_word(normalized, term)
+        for term in LARGEST_RISK_CONTEXT_TERMS
+    )
+
+    return has_specificity and has_context
+
+
+def _uses_generic_experience_outcome(value: str) -> bool:
+    return any(
+        re.search(pattern, value)
+        for pattern in GENERIC_EXPERIENCE_OUTCOME_PATTERNS
     )
 
 
