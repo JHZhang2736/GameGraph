@@ -3,7 +3,7 @@ from pydantic import ValidationError
 
 from app.schemas.common import ConfidenceLevel, EvidenceRef, QualityStatus
 from app.services.fixture_pipeline import ContractViolation
-from app.services.import_service import validate_import_document
+from app.services.import_service import build_graph_write_plan, summarize, validate_import_document
 
 
 def evidence() -> dict:
@@ -77,3 +77,80 @@ def test_validate_import_document_raises_validation_error_on_bad_schema() -> Non
     payload["profile"]["main_mechanics"] = []
     with pytest.raises(ValidationError):
         validate_import_document(payload)
+
+
+def test_build_graph_write_plan_creates_game_node_with_document_json() -> None:
+    document = validate_import_document(document_payload())
+    plan = build_graph_write_plan(document)
+
+    assert plan.game_id == "game_balatro"
+    game_nodes = [node for node in plan.nodes if node.label == "Game"]
+    assert len(game_nodes) == 1
+    game = game_nodes[0]
+    assert game.key == {"id": "game_balatro"}
+    assert game.properties["title"] == "Balatro"
+    assert game.properties["core_loop"].startswith("Play poker hands")
+    assert game.properties["evidence_json"].startswith("[")
+    assert game.properties["document_json"].startswith("{")
+
+
+def test_build_graph_write_plan_creates_mechanic_and_tag_edges() -> None:
+    document = validate_import_document(document_payload())
+    plan = build_graph_write_plan(document)
+
+    mechanic_edges = [edge for edge in plan.edges if edge.rel_type == "HAS_MECHANIC"]
+    assert {edge.to_key["name"] for edge in mechanic_edges} == {
+        "poker hand building",
+        "score multiplier engine",
+    }
+
+    tag_edges = [edge for edge in plan.edges if edge.rel_type == "TAGGED"]
+    assert len(tag_edges) == 1
+    assert tag_edges[0].to_key["name"] == "low art cost reference"
+    assert tag_edges[0].properties["confidence"] == "high"
+    assert tag_edges[0].properties["evidence_json"].startswith("[")
+
+
+def test_build_graph_write_plan_with_zero_claims_has_no_claim_edges() -> None:
+    document = validate_import_document(document_payload())
+    plan = build_graph_write_plan(document)
+    assert [edge for edge in plan.edges if edge.rel_type == "CLAIM"] == []
+
+
+def test_build_graph_write_plan_creates_claim_edges() -> None:
+    payload = document_payload()
+    payload["claims"] = [
+        {
+            "id": "claim_balatro_familiar_rules",
+            "subject": "Balatro",
+            "relation": "reduces",
+            "object": "new player learning cost",
+            "explanation": "Players already know poker hands.",
+            "evidence": [evidence()],
+            "confidence": "high",
+            "quality_status": "reviewed",
+        }
+    ]
+    document = validate_import_document(payload)
+    plan = build_graph_write_plan(document)
+
+    claim_edges = [edge for edge in plan.edges if edge.rel_type == "CLAIM"]
+    assert len(claim_edges) == 1
+    edge = claim_edges[0]
+    assert edge.from_key == {"id": "game_balatro"}
+    assert edge.to_label == "Concept"
+    assert edge.to_key == {"name": "new player learning cost"}
+    assert edge.properties["claim_id"] == "claim_balatro_familiar_rules"
+    assert edge.properties["relation"] == "reduces"
+    assert edge.properties["confidence"] == "high"
+
+
+def test_summarize_counts_written_elements() -> None:
+    document = validate_import_document(document_payload())
+    summary = summarize(document)
+    assert summary.game_id == "game_balatro"
+    assert summary.mechanics_written == 2
+    assert summary.experiences_written == 2
+    assert summary.tags_written == 1
+    assert summary.claims_written == 0
+    assert summary.concepts_written == 0
