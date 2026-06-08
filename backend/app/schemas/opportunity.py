@@ -2,8 +2,9 @@
 from __future__ import annotations
 
 from enum import StrEnum
+from typing import Self
 
-from pydantic import Field
+from pydantic import Field, model_validator
 
 from app.schemas.common import NonEmptyStr, StrictBaseModel
 
@@ -18,6 +19,12 @@ class Transformation(StrictBaseModel):
     dimension: str = Field(min_length=1)          # "Perspective"/"ArtStyle"/"Genre"/"Mechanic"
     from_value: str | None = Field(default=None, min_length=1)  # 替代=原值；组合=None
     to_value: str = Field(min_length=1)           # 替代=新值；组合=借入机制名
+
+    @model_validator(mode="after")
+    def substitute_requires_from_value(self) -> Self:
+        if self.type == TransformationType.SUBSTITUTE and self.from_value is None:
+            raise ValueError("substitute transformation requires from_value")
+        return self
 
 
 class OpportunityEvidence(StrictBaseModel):

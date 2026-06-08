@@ -93,3 +93,13 @@ def test_empty_fit_reason_is_rejected() -> None:
             fit_reason="",
             risk_reason="ok",
         )
+
+
+def test_substitute_requires_from_value() -> None:
+    with pytest.raises(ValidationError):
+        Transformation(
+            type=TransformationType.SUBSTITUTE,
+            dimension="Perspective",
+            from_value=None,
+            to_value="第一人称",
+        )
