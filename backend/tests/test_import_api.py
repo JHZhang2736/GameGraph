@@ -35,33 +35,33 @@ def client(fake_repo: FakeRepository) -> TestClient:
     app.dependency_overrides.clear()
 
 
-def balatro_payload() -> dict:
+def animal_well_payload() -> dict:
     fixture_path = (
         Path(__file__).resolve().parents[1]
-        / "app" / "fixtures" / "games" / "balatro.json"
+        / "app" / "fixtures" / "games" / "animal_well.json"
     )
     return json.loads(fixture_path.read_text(encoding="utf-8"))
 
 
 def test_import_game_returns_summary(client: TestClient) -> None:
-    response = client.post("/import/game", json=balatro_payload())
+    response = client.post("/import/game", json=animal_well_payload())
     assert response.status_code == 200
     body = response.json()
-    assert body["game_id"] == "game_balatro"
-    assert body["mechanics_written"] == 3
-    assert body["tags_written"] == 2
+    assert body["game_id"] == "game_animal_well"
+    assert body["mechanics_written"] == 7
+    assert body["tags_written"] == 3
     assert body["claims_written"] == 2
 
 
 def test_import_game_rejects_invalid_schema_with_422(client: TestClient) -> None:
-    payload = balatro_payload()
+    payload = animal_well_payload()
     payload["profile"]["main_mechanics"] = []
     response = client.post("/import/game", json=payload)
     assert response.status_code == 422
 
 
 def test_import_game_rejects_contract_violation_with_409(client: TestClient) -> None:
-    payload = balatro_payload()
+    payload = animal_well_payload()
     payload["profile"]["game_id"] = "game_other"
     response = client.post("/import/game", json=payload)
     assert response.status_code == 409
@@ -69,10 +69,10 @@ def test_import_game_rejects_contract_violation_with_409(client: TestClient) -> 
 
 
 def test_get_game_returns_imported_document(client: TestClient) -> None:
-    client.post("/import/game", json=balatro_payload())
-    response = client.get("/games/game_balatro")
+    client.post("/import/game", json=animal_well_payload())
+    response = client.get("/games/game_animal_well")
     assert response.status_code == 200
-    assert response.json()["candidate"]["id"] == "game_balatro"
+    assert response.json()["candidate"]["id"] == "game_animal_well"
 
 
 def test_get_game_returns_404_when_missing(client: TestClient) -> None:
