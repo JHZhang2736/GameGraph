@@ -291,6 +291,9 @@ export interface CandidateOpportunityArea {
   evidence: OpportunityEvidence;
 }
 
+// 6.5 机会区域的风险分档,镜像后端 opportunity.py 的 RiskPosture 枚举。与
+// EVALUATION_CATEGORIES(6.7 概念评估分档)当前字面值相同纯属巧合——二者是各自
+// 后端模块的独立枚举,任一改动都不应牵连另一,故刻意分开、不要合并复用。
 export const RISK_POSTURES = ["safe", "balanced", "challenging"] as const;
 export type RiskPosture = (typeof RISK_POSTURES)[number];
 
