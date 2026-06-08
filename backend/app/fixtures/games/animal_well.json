@@ -15,6 +15,7 @@
   "profile": {
     "game_id": "game_animal_well",
     "one_sentence_summary": "一款非线性的类银河城解谜平台游戏，玩家操控一只小生物在地下迷宫中用多用途道具解谜并揭开层层秘密。",
+    "core_hook": "用一小组多用途玩具撬动层层嵌套的秘密，并把最深的解谜延伸成社区协作的 ARG 元谜题。",
     "core_loop": "探索相互连通的翻屏房间，寻找道具，试验它们的多种用途来解开环境谜题，逐层解锁路径与秘密。",
     "progression_model": "通过获得的道具（弹簧、飞盘、泡泡棒等）进行类银河城式门控，这些道具兼作移动与解谜工具；后期进展来自秘密、彩蛋与未公开的交互，而非数值成长。",
     "failure_model": "危险与某些生物会杀死角色并送回存档点；生存依赖道具（鞭炮吓退生物、火柴驱散幽灵）而非正面战斗。",
@@ -24,10 +25,18 @@
     "main_player_experiences": ["氛围营造", "诡异", "探索发现", "涌现玩法"],
     "main_mechanics": ["多用途道具", "非线性探索", "翻屏房间", "分层秘密", "社区协作解谜", "非战斗", "生物应对"],
     "replayability_sources": ["分层秘密", "社区协作解谜", "速通", "彩蛋收集"],
-    "production_constraints": ["独立开发", "自研引擎", "低分辨率", "无武器战斗", "无过场动画"],
+    "production_constraints": ["自研引擎", "低分辨率", "无武器战斗", "无过场动画"],
     "innovation_patterns": ["多用途道具", "分层秘密", "社区协作解谜"],
     "reusable_reference_patterns": ["多用途道具", "分层秘密", "自我限制设计"],
     "non_replicable_risks": ["超长开发周期", "自研引擎", "大规模玩家社区"],
+    "genre": ["类银河城", "解谜平台"],
+    "art_style": ["像素美术"],
+    "audio_style": ["极简音效", "环境音"],
+    "perspective": ["横版2D"],
+    "theme": ["动物", "超现实"],
+    "narrative_style": ["无文字", "环境叙事"],
+    "game_feel": ["精准平台"],
+    "team_model": ["单人开发"],
     "reference_value_tags": [
       {
         "tag": "多用途道具",

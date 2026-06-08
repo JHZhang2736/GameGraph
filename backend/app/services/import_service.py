@@ -22,6 +22,14 @@ PROFILE_LIST_EDGES: dict[str, tuple[str, str]] = {
     "reusable_reference_patterns": ("REUSABLE_PATTERN", "ReferencePattern"),
     "non_replicable_risks": ("NON_REPLICABLE_RISK", "Risk"),
     "replayability_sources": ("HAS_REPLAYABILITY_SOURCE", "ReplayabilitySource"),
+    "genre": ("HAS_GENRE", "Genre"),
+    "art_style": ("HAS_ART_STYLE", "ArtStyle"),
+    "audio_style": ("HAS_AUDIO_STYLE", "AudioStyle"),
+    "perspective": ("HAS_PERSPECTIVE", "Perspective"),
+    "theme": ("HAS_THEME", "Theme"),
+    "narrative_style": ("HAS_NARRATIVE_STYLE", "NarrativeStyle"),
+    "game_feel": ("HAS_GAME_FEEL", "GameFeel"),
+    "team_model": ("HAS_TEAM_MODEL", "TeamModel"),
 }
 
 
@@ -78,6 +86,7 @@ def _game_node(document: GameImportDocument) -> NodeMerge:
         "short_description": candidate.short_description,
         "selection_reason": candidate.selection_reason,
         "one_sentence_summary": profile.one_sentence_summary,
+        "core_hook": profile.core_hook,
         "core_loop": profile.core_loop,
         "progression_model": profile.progression_model,
         "failure_model": profile.failure_model,

@@ -117,6 +117,7 @@ class ReferenceValueTag(StrictBaseModel):
 class GameDesignProfile(StrictBaseModel):
     game_id: str = Field(min_length=1)
     one_sentence_summary: str = Field(min_length=1)
+    core_hook: str = Field(min_length=1)
     core_loop: str = Field(min_length=1)
     progression_model: str = Field(min_length=1)
     failure_model: str = Field(min_length=1)
@@ -130,6 +131,14 @@ class GameDesignProfile(StrictBaseModel):
     innovation_patterns: list[NonEmptyStr] = Field(min_length=1)
     reusable_reference_patterns: list[NonEmptyStr] = Field(min_length=1)
     non_replicable_risks: list[NonEmptyStr] = Field(min_length=1)
+    genre: list[NonEmptyStr] = Field(min_length=1)
+    art_style: list[NonEmptyStr] = Field(min_length=1)
+    audio_style: list[NonEmptyStr] = Field(min_length=1)
+    perspective: list[NonEmptyStr] = Field(min_length=1)
+    theme: list[NonEmptyStr] = Field(min_length=1)
+    narrative_style: list[NonEmptyStr] = Field(min_length=1)
+    game_feel: list[NonEmptyStr] = Field(min_length=1)
+    team_model: list[NonEmptyStr] = Field(min_length=1)
     reference_value_tags: list[ReferenceValueTag] = Field(min_length=1)
     evidence: list[EvidenceRef] = Field(min_length=1)
     confidence: ConfidenceLevel
