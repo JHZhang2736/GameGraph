@@ -69,6 +69,7 @@ def test_frame_endpoint_returns_frame() -> None:
         assert body["recommended_transformations"][0] == "将 Perspective 从「横版2D」替代为「第一人称」"
         assert body["source_game_ids"] == ["game_vs", "game_fps"]
         assert any("违反硬约束" in x for x in body["forbidden_directions"])
+        assert body["warnings"] == []  # 有 LLM 且无异常时不应有降级警告
     finally:
         app.dependency_overrides.clear()
 
