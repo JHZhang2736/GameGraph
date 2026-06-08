@@ -76,6 +76,7 @@ class OpportunityFrame(StrictBaseModel):
     evidence_path: list[NonEmptyStr] = Field(min_length=1)
     fit_reason: str = Field(min_length=1)
     risk_reason: str = Field(min_length=1)
+    warnings: list[NonEmptyStr] = Field(default_factory=list)
 
 
 class ConceptCard(StrictBaseModel):
