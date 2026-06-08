@@ -180,3 +180,28 @@ def test_parse_explicit_audio_basic_aliases_with_inferred_source() -> None:
         )
         assert source.source_text != "defaulted to basic"
         assert source.confidence != ConfidenceLevel.LOW
+
+
+def test_finalize_completeness_flags_only_empty_blocking_fields() -> None:
+    from app.services.developer_profile_parser import finalize_completeness
+
+    missing, is_complete = finalize_completeness(
+        {
+            "team_size": "solo",
+            "time_budget": None,
+            "programming_ability": "strong",
+            "art_ability": "weak",
+            "content_production_ability": "limited",
+            "liked_references": ["Balatro"],
+            "desired_player_experiences": ["short runs"],
+            "constraints": [object()],
+        }
+    )
+
+    assert is_complete is False
+    names = {field.field: field for field in missing}
+    assert set(names) == {"time_budget"}
+    assert names["time_budget"].blocking is True
+    assert names["time_budget"].reason == (
+        "Could not infer time_budget from developer profile input."
+    )
