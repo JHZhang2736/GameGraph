@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Graph from "graphology";
+import Graph, { MultiDirectedGraph } from "graphology";
 import {
   SigmaContainer,
   useLoadGraph,
@@ -161,6 +161,7 @@ export function GraphCanvas({
   return (
     <div className="h-[560px] rounded-lg border">
       <SigmaContainer
+        graph={MultiDirectedGraph}
         style={{ height: "100%", width: "100%" }}
         settings={SIGMA_SETTINGS}
       >
