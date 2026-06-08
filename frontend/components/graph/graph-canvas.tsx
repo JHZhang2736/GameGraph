@@ -11,7 +11,7 @@ import {
 import "@xyflow/react/dist/style.css";
 import type { GraphData, GraphEdge } from "@/lib/data";
 
-const EDGE_COLOR: Record<GraphEdge["confidence"], string> = {
+const EDGE_COLOR: Record<string, string> = {
   high: "#16a34a",
   medium: "#71717a",
   low: "#d97706",
@@ -54,7 +54,7 @@ export function GraphCanvas({
           label: edge.relation,
           animated: downgraded,
           style: {
-            stroke: downgraded ? "#d97706" : EDGE_COLOR[edge.confidence],
+            stroke: downgraded ? "#d97706" : edge.confidence ? EDGE_COLOR[edge.confidence] : "#94a3b8",
             strokeDasharray: downgraded ? "5 5" : undefined,
           },
         };

@@ -42,8 +42,8 @@ export default function GraphPage() {
                 {selectedEdge.source} · {selectedEdge.relation} · {selectedEdge.target}
               </div>
               <div className="mb-2 flex items-center gap-2">
-                <ConfidenceBadge level={selectedEdge.confidence} />
-                <QualityBadge status={selectedEdge.quality_status} />
+                {selectedEdge.confidence ? <ConfidenceBadge level={selectedEdge.confidence} /> : null}
+                {selectedEdge.quality_status ? <QualityBadge status={selectedEdge.quality_status} /> : null}
               </div>
               <div className="mb-2 text-xs text-muted-foreground">
                 来源论断:{selectedEdge.claim_id}
@@ -77,8 +77,8 @@ export default function GraphPage() {
                   {edge.source} · {edge.relation} · {edge.target}
                 </div>
                 <div className="flex items-center gap-2">
-                  <ConfidenceBadge level={edge.confidence} />
-                  <QualityBadge status={edge.quality_status} />
+                  {edge.confidence ? <ConfidenceBadge level={edge.confidence} /> : null}
+                  {edge.quality_status ? <QualityBadge status={edge.quality_status} /> : null}
                 </div>
                 <div className="mt-1 text-xs text-muted-foreground">
                   来源论断:{edge.claim_id}
