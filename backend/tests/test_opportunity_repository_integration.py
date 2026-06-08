@@ -40,3 +40,13 @@ def test_fetch_game_dimensions_returns_anchor_values(driver) -> None:
     assert "类银河城" in aw.genres
     assert "多用途道具" in aw.mechanics
     assert aw.perspectives  # 非空
+
+
+def test_fetch_game_design_facts_returns_profile_lists(driver) -> None:
+    GameRepository(driver).upsert_game(_document("animal_well"))
+    facts = OpportunityRepository(driver).fetch_game_design_facts(["game_animal_well"])
+    aw = next(f for f in facts if f.game_id == "game_animal_well")
+    assert aw.mechanics       # HAS_MECHANIC 非空
+    assert aw.experiences     # DELIVERS_EXPERIENCE 非空
+    assert aw.constraints     # CONSTRAINED_BY 非空
+    assert aw.innovation_patterns  # USES_INNOVATION 非空

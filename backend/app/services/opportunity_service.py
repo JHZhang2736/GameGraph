@@ -40,6 +40,17 @@ class GameDimensions:
     mechanics: set[str] = field(default_factory=set)
 
 
+@dataclass
+class GameDesignFacts:
+    # 用 list（非 GameDimensions 的 set）：6.6 的 related_* 需保序去重供展示，
+    # 而 GameDimensions 的 set 是为成员判断（value in ...）。两者用途不同，刻意有别。
+    game_id: str
+    mechanics: list[str] = field(default_factory=list)
+    experiences: list[str] = field(default_factory=list)
+    constraints: list[str] = field(default_factory=list)
+    innovation_patterns: list[str] = field(default_factory=list)
+
+
 def _candidate_id(anchor: str, kind: str, dimension: str, to_value: str) -> str:
     return f"opp|{anchor}|{kind}|{dimension}|{to_value}"
 
