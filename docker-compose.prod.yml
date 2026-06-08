@@ -1,0 +1,52 @@
+# Production stack deployed on the Tencent Cloud ECS host.
+# Images are built & pushed by .github/workflows/cd.yml; the deploy step sets
+# BACKEND_TAG / FRONTEND_TAG (sha-<commit>) and NEO4J_PASSWORD in the shell env.
+#
+# NOTE: adjust the image registry/namespace below to match your TCR namespace
+# (here: ccr.ccs.tencentyun.com/gamegraph/...).
+name: gamegraph
+
+services:
+  neo4j:
+    image: neo4j:5.20
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: "neo4j/${NEO4J_PASSWORD:?set NEO4J_PASSWORD}"
+    volumes:
+      - neo4j_data:/data
+    ports:
+      # Bound to localhost only: the graph DB is not exposed publicly.
+      - "127.0.0.1:7474:7474"
+      - "127.0.0.1:7687:7687"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:7474 >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  backend:
+    image: "ccr.ccs.tencentyun.com/gamegraph/gamegraph-backend:${BACKEND_TAG:-latest}"
+    restart: unless-stopped
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    environment:
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: "${NEO4J_PASSWORD:?set NEO4J_PASSWORD}"
+    ports:
+      # Bound to localhost: put nginx/caddy in front, or change to 0.0.0.0:8000
+      # if the browser must call the API directly.
+      - "127.0.0.1:8000:8000"
+
+  frontend:
+    image: "ccr.ccs.tencentyun.com/gamegraph/gamegraph-frontend:${FRONTEND_TAG:-latest}"
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  neo4j_data:
