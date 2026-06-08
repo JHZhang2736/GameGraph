@@ -1,8 +1,9 @@
 import pytest
 from pydantic import ValidationError
 
-from app.schemas.artifacts import GameDesignProfile, ReferenceValueTag
+from app.schemas.artifacts import DesignClaim, GameDesignProfile, ReferenceValueTag
 from app.schemas.common import ConfidenceLevel, EvidenceRef, QualityStatus
+from app.schemas.import_document import GameImportDocument
 
 
 def evidence() -> EvidenceRef:
@@ -72,3 +73,54 @@ def test_game_design_profile_rejects_unknown_field() -> None:
     kwargs["extra_field"] = "nope"
     with pytest.raises(ValidationError):
         GameDesignProfile(**kwargs)
+
+
+def valid_candidate_kwargs() -> dict:
+    return {
+        "id": "game_balatro",
+        "title": "Balatro",
+        "source_refs": [evidence()],
+        "short_description": "Poker-inspired roguelike deckbuilder.",
+        "selection_reason": "Strong sample for familiar rules into systemic depth.",
+    }
+
+
+def valid_document_kwargs() -> dict:
+    return {
+        "candidate": valid_candidate_kwargs(),
+        "profile": valid_profile_kwargs(),
+        "claims": [],
+    }
+
+
+def test_import_document_accepts_zero_claims() -> None:
+    document = GameImportDocument(**valid_document_kwargs())
+    assert document.claims == []
+    assert document.candidate.id == "game_balatro"
+    assert document.profile.game_id == "game_balatro"
+
+
+def test_import_document_defaults_claims_to_empty_list() -> None:
+    kwargs = valid_document_kwargs()
+    del kwargs["claims"]
+    document = GameImportDocument(**kwargs)
+    assert document.claims == []
+
+
+def test_import_document_accepts_claims() -> None:
+    kwargs = valid_document_kwargs()
+    kwargs["claims"] = [
+        DesignClaim(
+            id="claim_balatro_familiar_rules",
+            subject="Balatro",
+            relation="reduces",
+            object="new player learning cost",
+            explanation="Players already know poker hands.",
+            evidence=[evidence()],
+            confidence=ConfidenceLevel.HIGH,
+            quality_status=QualityStatus.REVIEWED,
+        ).model_dump()
+    ]
+    document = GameImportDocument(**kwargs)
+    assert len(document.claims) == 1
+    assert document.claims[0].subject == "Balatro"
