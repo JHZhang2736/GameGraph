@@ -49,20 +49,20 @@ def test_parser_complete_draft_can_be_promoted_to_profile() -> None:
     ]
 
 
-def test_missing_promotion_required_data_keeps_draft_incomplete() -> None:
+def test_optional_fields_absent_keeps_draft_complete() -> None:
+    # No liked games, desired experiences, or constraints stated — all optional,
+    # so a profile with the five required fields is still complete.
     result = parse_developer_profile_input(
         ProfileParseInput(
-            raw_text=(
-                "我是 solo 开发者，程序强，美术弱，三个月原型。"
-                "limited content，想要短局和系统性决策。"
-            )
+            raw_text="我是 solo 开发者，程序强，美术弱，三个月原型，limited content。"
         )
     )
 
-    assert result.draft.is_complete is False
-    missing = {field.field: field for field in result.draft.missing_fields}
-    assert missing["liked_references"].blocking is True
-    assert missing["constraints"].blocking is True
+    assert result.draft.is_complete is True
+    missing = field_names(result)
+    assert "liked_references" not in missing
+    assert "desired_player_experiences" not in missing
+    assert "constraints" not in missing
 
 
 def test_parse_separates_hard_and_strong_preference_constraints() -> None:
@@ -89,7 +89,10 @@ def test_liked_games_do_not_create_hard_constraints() -> None:
     ]
 
     assert hard_constraints == []
-    assert "desired_player_experiences" in field_names(result)
+    missing = field_names(result)
+    # Desired experiences are optional now; the unstated required field still blocks.
+    assert "desired_player_experiences" not in missing
+    assert "content_production_ability" in missing
 
 
 def test_vague_time_budget_is_blocking_missing_field() -> None:
