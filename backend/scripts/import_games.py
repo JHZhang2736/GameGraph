@@ -24,7 +24,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-API_BASE = os.environ.get("GAMEGRAPH_API", "http://localhost:8000").rstrip("/")
+API_BASE = os.environ.get("GAMEGRAPH_API", "http://localhost:8100").rstrip("/")
 
 
 def json_files(target: Path) -> list[Path]:
