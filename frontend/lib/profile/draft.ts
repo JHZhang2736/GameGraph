@@ -50,6 +50,30 @@ export function createEmptyDraft(): DeveloperProfileDraft {
   });
 }
 
+// Seeds an editable draft from an already-confirmed DeveloperProfile so a
+// restored profile (e.g. loaded from browser storage) can be re-edited in the
+// workbench. The audit-only fields (sources, raw_text) start empty; this is the
+// inverse of promoteDraftToProfile.
+export function createDraftFromProfile(profile: DeveloperProfile): DeveloperProfileDraft {
+  return recomputeDraftCompleteness({
+    id: profile.id,
+    team_size: profile.team_size,
+    time_budget: profile.time_budget,
+    programming_ability: profile.programming_ability,
+    art_ability: profile.art_ability,
+    audio_ability: profile.audio_ability,
+    content_production_ability: profile.content_production_ability,
+    liked_references: profile.liked_references,
+    disliked_references_or_mechanics: profile.disliked_references_or_mechanics,
+    desired_player_experiences: profile.desired_player_experiences,
+    constraints: profile.constraints,
+    missing_fields: [],
+    field_sources: [],
+    raw_text: "",
+    is_complete: false,
+  });
+}
+
 function required(value: string | null, field: string): string {
   if (value === null || value === "") {
     throw new Error(`DeveloperProfileDraft missing required field: ${field}`);
