@@ -8,6 +8,8 @@ from pydantic import ConfigDict, Field
 from app.schemas.artifacts import DeveloperProfile
 from app.schemas.common import StrictBaseModel
 from app.schemas.opportunity import CandidateOpportunityArea, OpportunityArea
+# 有意复用 6.5 的 LLM 设施（DRY）：_candidate_block / _profile_block 是 6.5 的私有 prompt
+# 渲染器，6.6 沿用以保证两模块 prompt 风格一致。若 6.5 改这两者的格式，会同步影响本模块。
 from app.services.opportunity_llm import (
     LlmSettings,
     _candidate_block,

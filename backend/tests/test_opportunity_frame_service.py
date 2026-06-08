@@ -220,3 +220,24 @@ def test_build_frame_forbidden_never_empty_without_constraints() -> None:
     repo = _StubRepo(_games(), _facts())
     frame = svc.build_frame(profile, _area(), repo, None)
     assert len(frame.forbidden_directions) >= 1
+
+
+def test_build_frame_drops_empty_warning_from_llm() -> None:
+    # LLM 返回含空串的 warnings：必须被过滤，否则 OpportunityFrame.warnings(NonEmptyStr) 校验失败
+    synth = _synth()
+    synth.warnings = ["", "真实警告", ""]
+    repo = _StubRepo(_games(), _facts())
+    frame = svc.build_frame(_profile(), _area(), repo, _StubLlm(synth))
+    assert frame.warnings == ["真实警告"]
+
+
+def test_build_frame_dedups_primary_echoed_as_secondary() -> None:
+    # LLM 把主变形又作为次变形回传：去重后主变形只在首位出现一次
+    primary = "将 Perspective 从「横版2D」替代为「第一人称」"
+    synth = _synth()
+    synth.secondary_transformations = [primary, "叠加能力树"]
+    repo = _StubRepo(_games(), _facts())
+    frame = svc.build_frame(_profile(), _area(), repo, _StubLlm(synth))
+    assert frame.recommended_transformations[0] == primary
+    assert frame.recommended_transformations.count(primary) == 1
+    assert "叠加能力树" in frame.recommended_transformations

@@ -145,6 +145,11 @@ def build_frame(
     llm_client: SupportsFrameSynthesis | None,
 ) -> OpportunityFrame:
     source_ids = _source_game_ids(area)
+    # related_* 的非空（OpportunityFrame 要求 min_length=1）依赖一条跨模块不变量：
+    # 任何入库 Game 都经 GameImportDocument，其 GameDesignProfile 的 main_mechanics /
+    # main_player_experiences / production_constraints / innovation_patterns 均 min_length=1，
+    # 故每个源游戏必有对应边，并集必非空。source_ids 又必含 anchor。若图谱被部分删改破坏此前提，
+    # 此处会在 _assemble 时抛 ValidationError（响亮失败，优于产出空证据的退化框架）。
     related = _union_related(repository.fetch_game_design_facts(source_ids))
     primary = _describe_transformation(area.transformation)
     evidence_path = _evidence_path(area)
@@ -182,5 +187,5 @@ def build_frame(
         opportunity_area=synth.opportunity_area or _fallback_area_label(area),
         fit_reason=synth.fit_reason or area.fit_reason,
         risk_reason=synth.risk_reason or area.risk_reason,
-        warnings=list(synth.warnings),
+        warnings=_dedup(list(synth.warnings)),  # 过滤 LLM 可能返回的空串，否则 NonEmptyStr 校验 500
     )
