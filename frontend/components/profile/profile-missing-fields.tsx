@@ -21,7 +21,8 @@ export function ProfileMissingFields({ fields }: { fields: MissingProfileField[]
             className="rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-800"
           >
             <div className="font-medium">
-              {field.blocking ? "阻断" : "提示"}：{field.field}
+              <span className="mr-1">{field.blocking ? "阻断" : "提示"}：</span>
+              <span>{field.field}</span>
             </div>
             <div className="mt-1 text-xs">{field.reason}</div>
           </div>

@@ -140,13 +140,16 @@ export function parseDeveloperProfileInput(
   );
   if (artSource) fieldSources.push(artSource);
 
-  let [audioAbility, audioSource] = ability(
+  const [parsedAudioAbility, audioSource] = ability(
     rawText,
     "audio_ability",
     ["音频能力强", "音频强", "strong audio"],
     ["音频能力弱", "音频弱", "weak audio"],
     ["音频基础", "音频一般", "基础音效", "basic audio"],
   );
+  // Audio is non-blocking: when unstated, default to basic with a low-confidence
+  // source so the preview shows the value is inferred, not user-provided.
+  let audioAbility = parsedAudioAbility;
   if (audioSource) {
     fieldSources.push(audioSource);
   } else {
