@@ -39,10 +39,14 @@ export function JsonInput({
     }
   }
 
-  function onFile(event: React.ChangeEvent<HTMLInputElement>) {
+  async function onFile(event: React.ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (!file) return;
-    file.text().then(setText);
+    try {
+      setText(await file.text());
+    } catch {
+      setParseError("无法读取文件,请重试");
+    }
   }
 
   return (
