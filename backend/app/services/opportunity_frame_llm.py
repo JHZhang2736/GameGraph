@@ -41,8 +41,11 @@ class FrameInputs:
 
 
 class FrameSynthesis(StrictBaseModel):
+    # extra="ignore"：LLM 可能多返字段，宽容忽略（与 opportunity_llm.OpportunityJudgment 一致）。
     model_config = ConfigDict(extra="ignore")
 
+    # 文本字段默认 ""（而非必填）是有意的：build_frame 用 `synth.x or 回退值` 做字段级降级，
+    # LLM 漏填单个字段时保留其余已填字段，不让整次综合炸成全量降级。
     opportunity_area: str = ""
     secondary_transformations: list[str] = Field(default_factory=list)
     forbidden_directions: list[str] = Field(default_factory=list)
