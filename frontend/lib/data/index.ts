@@ -1,4 +1,5 @@
 import { goldenFlow } from "@/lib/fixtures/golden-flow";
+import { parseDeveloperProfileInput as parseLocalDeveloperProfileInput } from "@/lib/profile/parser";
 import type {
   ConceptCard,
   ConceptEvaluation,
@@ -8,6 +9,8 @@ import type {
   GameDesignProfile,
   GoldenFlow,
   OpportunityFrame,
+  ProfileParseInput,
+  ProfileParseResult,
   PrototypeBrief,
   SeedGame,
 } from "@/lib/types";
@@ -86,6 +89,15 @@ export async function getGraph(): Promise<GraphData> {
 
 export async function getDeveloperProfile(): Promise<DeveloperProfile> {
   return settle(goldenFlow.developer_profile);
+}
+
+// Parses free-form developer input into a structured draft. Today this runs the
+// local deterministic parser; swap the body for `fetch('/api/profile/parse')`
+// when the backend route lands. The signature and result shape stay the same.
+export async function parseDeveloperProfileInput(
+  input: ProfileParseInput,
+): Promise<ProfileParseResult> {
+  return settle(parseLocalDeveloperProfileInput(input));
 }
 
 export async function getOpportunityFrame(): Promise<OpportunityFrame> {
