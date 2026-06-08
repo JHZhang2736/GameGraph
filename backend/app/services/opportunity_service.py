@@ -42,6 +42,8 @@ class GameDimensions:
 
 @dataclass
 class GameDesignFacts:
+    # 用 list（非 GameDimensions 的 set）：6.6 的 related_* 需保序去重供展示，
+    # 而 GameDimensions 的 set 是为成员判断（value in ...）。两者用途不同，刻意有别。
     game_id: str
     mechanics: list[str] = field(default_factory=list)
     experiences: list[str] = field(default_factory=list)
