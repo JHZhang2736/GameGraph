@@ -7,6 +7,7 @@ from app.schemas.opportunity import (
     Transformation,
     TransformationType,
 )
+from app.services.opportunity_frame_llm import FrameInputs, FrameSynthesis
 from app.services.opportunity_service import GameDesignFacts, GameDimensions
 from app.services import opportunity_frame_service as svc
 
@@ -142,3 +143,75 @@ class _StubRepo:
 
     def fetch_game_design_facts(self, game_ids):
         return [f for f in self._facts if f.game_id in game_ids]
+
+
+class _StubLlm:
+    def __init__(self, synth: FrameSynthesis) -> None:
+        self._synth = synth
+        self.seen: FrameInputs | None = None
+
+    def synthesize(self, profile, area, inputs):
+        self.seen = inputs
+        return self._synth
+
+
+class _BrokenLlm:
+    def synthesize(self, profile, area, inputs):
+        raise RuntimeError("boom")
+
+
+def _synth() -> FrameSynthesis:
+    return FrameSynthesis(
+        opportunity_area="第一人称生存割草",
+        secondary_transformations=["叠加能力树以延长单局成长"],
+        forbidden_directions=["看似新颖但不可行：实时联网协作割草"],
+        fit_reason="契合 solo 程序强",
+        risk_reason="第一人称抬高美术成本",
+        warnings=[],
+    )
+
+
+def test_build_frame_with_llm_assembles_full_frame() -> None:
+    repo = _StubRepo(_games(), _facts())
+    frame = svc.build_frame(_profile(), _area(), repo, _StubLlm(_synth()))
+    assert frame.id == "frame|opp|game_vs|sub|Perspective|第一人称"
+    assert frame.developer_profile_id == "profile_1"
+    assert frame.source_game_ids == ["game_vs", "game_fps"]
+    assert frame.related_mechanics == ["护符定制", "能力树"]
+    # 主变形恒在首位
+    assert frame.recommended_transformations[0] == "将 Perspective 从「横版2D」替代为「第一人称」"
+    assert "叠加能力树以延长单局成长" in frame.recommended_transformations
+    # 硬约束禁止项 + LLM dead-zone 都在
+    assert any("违反硬约束：不做联网多人" in x for x in frame.forbidden_directions)
+    assert any("实时联网协作割草" in x for x in frame.forbidden_directions)
+    assert frame.fit_reason == "契合 solo 程序强"
+    assert frame.opportunity_area == "第一人称生存割草"
+    assert frame.warnings == []
+
+
+def test_build_frame_without_llm_degrades_with_warning() -> None:
+    repo = _StubRepo(_games(), _facts())
+    frame = svc.build_frame(_profile(), _area(), repo, None)
+    assert frame.recommended_transformations == ["将 Perspective 从「横版2D」替代为「第一人称」"]
+    assert frame.fit_reason == "契合短局"        # 沿用 area 自带
+    assert frame.risk_reason == "3D 抬高美术成本"  # 沿用 area 自带
+    assert any("未配置 LLM" in w for w in frame.warnings)
+    assert frame.forbidden_directions  # 非空(硬约束基底)
+
+
+def test_build_frame_falls_back_when_llm_raises() -> None:
+    repo = _StubRepo(_games(), _facts())
+    frame = svc.build_frame(_profile(), _area(), repo, _BrokenLlm())
+    assert any("降级" in w for w in frame.warnings)
+    assert not any("未配置 LLM" in w for w in frame.warnings)
+    assert frame.fit_reason == "契合短局"
+
+
+def test_build_frame_forbidden_never_empty_without_constraints() -> None:
+    profile = _profile(
+        constraints=[DeveloperConstraint(id="c1", type=ConstraintType.SOFT_PREFERENCE, statement="偏好短局")],
+        disliked=[],
+    )
+    repo = _StubRepo(_games(), _facts())
+    frame = svc.build_frame(profile, _area(), repo, None)
+    assert len(frame.forbidden_directions) >= 1

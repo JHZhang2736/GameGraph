@@ -99,3 +99,88 @@ def _secondary_pool(
         if c.anchor_game_id == area.anchor_game_id and c.id != area.id
     ]
     return rank_candidates(pool)
+
+
+def _fallback_area_label(area: OpportunityArea) -> str:
+    return f"基于「{area.anchor_summary}」的机会：{_describe_transformation(area.transformation)}"
+
+
+def _assemble(
+    *,
+    profile: DeveloperProfile,
+    area: OpportunityArea,
+    source_ids: list[str],
+    related: tuple[list[str], list[str], list[str], list[str]],
+    recommended: list[str],
+    forbidden: list[str],
+    evidence_path: list[str],
+    opportunity_area: str,
+    fit_reason: str,
+    risk_reason: str,
+    warnings: list[str],
+) -> OpportunityFrame:
+    mechanics, experiences, constraints, innovations = related
+    return OpportunityFrame(
+        id=f"frame|{area.id}",
+        developer_profile_id=profile.id,
+        opportunity_area=opportunity_area,
+        source_game_ids=source_ids,
+        related_mechanics=mechanics,
+        related_player_experiences=experiences,
+        related_constraints=constraints,
+        related_innovation_patterns=innovations,
+        recommended_transformations=recommended,
+        forbidden_directions=forbidden,
+        evidence_path=evidence_path,
+        fit_reason=fit_reason,
+        risk_reason=risk_reason,
+        warnings=warnings,
+    )
+
+
+def build_frame(
+    profile: DeveloperProfile,
+    area: OpportunityArea,
+    repository: SupportsFrameRepository,
+    llm_client: SupportsFrameSynthesis | None,
+) -> OpportunityFrame:
+    source_ids = _source_game_ids(area)
+    related = _union_related(repository.fetch_game_design_facts(source_ids))
+    primary = _describe_transformation(area.transformation)
+    evidence_path = _evidence_path(area)
+    forbidden_base = _forbidden_base(profile)
+
+    def fallback(warning: str) -> OpportunityFrame:
+        return _assemble(
+            profile=profile, area=area, source_ids=source_ids, related=related,
+            recommended=[primary], forbidden=forbidden_base, evidence_path=evidence_path,
+            opportunity_area=_fallback_area_label(area),
+            fit_reason=area.fit_reason, risk_reason=area.risk_reason, warnings=[warning],
+        )
+
+    if llm_client is None:
+        return fallback(_NO_LLM_WARNING)
+
+    inputs = FrameInputs(
+        related_mechanics=related[0],
+        related_player_experiences=related[1],
+        related_constraints=related[2],
+        related_innovation_patterns=related[3],
+        secondary_pool=_secondary_pool(repository, area),
+    )
+    try:
+        synth = llm_client.synthesize(profile, area, inputs)
+    except Exception:
+        logger.warning("Opportunity frame LLM synthesize failed; falling back", exc_info=True)
+        return fallback(_LLM_FAILED_WARNING)
+
+    recommended = _dedup([primary, *synth.secondary_transformations])
+    forbidden = _dedup([*forbidden_base, *synth.forbidden_directions])
+    return _assemble(
+        profile=profile, area=area, source_ids=source_ids, related=related,
+        recommended=recommended, forbidden=forbidden, evidence_path=evidence_path,
+        opportunity_area=synth.opportunity_area or _fallback_area_label(area),
+        fit_reason=synth.fit_reason or area.fit_reason,
+        risk_reason=synth.risk_reason or area.risk_reason,
+        warnings=list(synth.warnings),
+    )
