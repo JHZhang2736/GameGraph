@@ -18,6 +18,7 @@ _driver = None
 
 
 def get_opportunity_repository() -> OpportunityRepository:
+    # 默认 provider：惰性创建单例 driver。测试通过 dependency_overrides 覆盖本函数。
     global _driver
     if _driver is None:
         _driver = create_driver()
@@ -25,6 +26,7 @@ def get_opportunity_repository() -> OpportunityRepository:
 
 
 def get_opportunity_llm() -> OpportunityLlmClient | None:
+    # 默认 provider：返回可选 LLM 客户端。测试通过 dependency_overrides 覆盖本函数。
     return get_opportunity_llm_client()
 
 

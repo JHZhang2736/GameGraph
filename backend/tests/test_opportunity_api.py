@@ -51,3 +51,14 @@ def test_match_endpoint_returns_areas() -> None:
         assert body["areas"][0]["risk_posture"] == "balanced"
     finally:
         app.dependency_overrides.clear()
+
+
+def test_match_endpoint_rejects_malformed_profile() -> None:
+    app.dependency_overrides[get_opportunity_repository] = lambda: StubRepo()
+    app.dependency_overrides[get_opportunity_llm] = lambda: StubLlm()
+    try:
+        client = TestClient(app)
+        response = client.post("/opportunity/match", json={"id": "profile_1"})  # 缺必填字段
+        assert response.status_code == 422
+    finally:
+        app.dependency_overrides.clear()
