@@ -5,6 +5,7 @@ import {
   searchGraphNodes,
   importGame,
   ImportError,
+  matchOpportunities,
 } from "@/lib/data";
 
 function mockFetch(status: number, body: unknown) {
@@ -44,5 +45,26 @@ describe("backend data layer", () => {
   it("importGame throws ImportError with backend detail on 409", async () => {
     vi.stubGlobal("fetch", mockFetch(409, { detail: "profile.game_id must match candidate.id" }));
     await expect(importGame({} as never)).rejects.toBeInstanceOf(ImportError);
+  });
+
+  it("matchOpportunities posts the profile and parses the result", async () => {
+    const result = {
+      profile_id: "dev_profile_1",
+      areas: [],
+      rejected: [],
+      warnings: ["图谱规模较小。"],
+    };
+    const fetchMock = mockFetch(200, result);
+    vi.stubGlobal("fetch", fetchMock);
+    const parsed = await matchOpportunities({ id: "dev_profile_1" } as never);
+    expect(parsed.warnings).toEqual(["图谱规模较小。"]);
+    const [url, init] = fetchMock.mock.calls[0];
+    expect(url).toContain("/opportunity/match");
+    expect((init as RequestInit).method).toBe("POST");
+  });
+
+  it("matchOpportunities throws on a 500", async () => {
+    vi.stubGlobal("fetch", mockFetch(500, {}));
+    await expect(matchOpportunities({ id: "x" } as never)).rejects.toThrow();
   });
 });
