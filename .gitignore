@@ -1,7 +1,8 @@
 .worktrees
 .worktrees/
 .superpowers/
-.claude/
+.claude/*
+!.claude/skills/
 .vscode/
 .clone/
 .claire/
