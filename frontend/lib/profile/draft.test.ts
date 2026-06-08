@@ -1,10 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
+  createDraftFromProfile,
   createEmptyDraft,
   promoteDraftToProfile,
   recomputeDraftCompleteness,
 } from "@/lib/profile/draft";
-import type { DeveloperProfileDraft } from "@/lib/types";
+import type { DeveloperProfile, DeveloperProfileDraft } from "@/lib/types";
 
 function completeDraft(): DeveloperProfileDraft {
   return {
@@ -80,6 +81,41 @@ describe("createEmptyDraft", () => {
     expect(draft.team_size).toBeNull();
     expect(draft.audio_ability).toBe("basic");
     expect(draft.missing_fields.map((field) => field.field)).toContain("team_size");
+  });
+});
+
+describe("createDraftFromProfile", () => {
+  function sampleProfile(): DeveloperProfile {
+    return {
+      id: "profile_draft_current",
+      team_size: "solo",
+      time_budget: "three month prototype",
+      programming_ability: "strong",
+      art_ability: "weak",
+      audio_ability: "basic",
+      content_production_ability: "limited",
+      liked_references: ["Balatro"],
+      disliked_references_or_mechanics: ["online multiplayer"],
+      desired_player_experiences: ["short runs"],
+      constraints: [
+        { id: "constraint_no_online", type: "hard", statement: "Do not require online multiplayer." },
+      ],
+    };
+  }
+
+  it("seeds a complete, editable draft from a confirmed profile", () => {
+    const draft = createDraftFromProfile(sampleProfile());
+    expect(draft.is_complete).toBe(true);
+    expect(draft.missing_fields).toHaveLength(0);
+    expect(draft.team_size).toBe("solo");
+    expect(draft.programming_ability).toBe("strong");
+    expect(draft.liked_references).toEqual(["Balatro"]);
+    expect(draft.constraints[0].type).toBe("hard");
+  });
+
+  it("round-trips through promoteDraftToProfile", () => {
+    const profile = sampleProfile();
+    expect(promoteDraftToProfile(createDraftFromProfile(profile))).toEqual(profile);
   });
 });
 

@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { afterEach, describe, it, expect } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -24,6 +24,10 @@ async function fillAndParse(user: User, text: string = EXAMPLE_TEXT) {
 }
 
 describe("ProfilePage", () => {
+  afterEach(() => {
+    localStorage.clear();
+  });
+
   it("shows an empty editable preview without parsing on load", async () => {
     renderWithClient(<ProfilePage />);
 
@@ -138,5 +142,30 @@ describe("ProfilePage", () => {
     await waitFor(() => {
       expect(screen.getByText("已确认画像")).toBeInTheDocument();
     });
+  });
+
+  it("restores a confirmed profile from storage when the page is re-entered", async () => {
+    const user = userEvent.setup();
+    const first = renderWithClient(<ProfilePage />);
+
+    await fillAndParse(user);
+    await waitFor(() => {
+      expect(screen.getByRole("button", { name: "确认画像" })).toBeEnabled();
+    });
+    await user.click(screen.getByRole("button", { name: "确认画像" }));
+    await waitFor(() => {
+      expect(screen.getByText("已确认画像")).toBeInTheDocument();
+    });
+
+    // Leave and re-enter the page with a fresh component + query client. The
+    // confirmed profile must come back from storage without any re-parsing.
+    first.unmount();
+    renderWithClient(<ProfilePage />);
+
+    await waitFor(() => {
+      expect(screen.getByText("已确认画像")).toBeInTheDocument();
+    });
+    // The editable draft is re-seeded from the stored profile so it stays editable.
+    expect((screen.getByLabelText("团队规模") as HTMLSelectElement).value).toBe("solo");
   });
 });
