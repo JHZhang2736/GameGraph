@@ -382,8 +382,10 @@ def _substitute_candidates(
     out: list[CandidateOpportunityArea] = []
     for dimension, attr in _SUBSTITUTE_DIMENSIONS.items():
         anchor_values = getattr(anchor, attr)
+        if not anchor_values:
+            continue  # 锚点在该维度无值则无「原值」可替代（schema 要求 substitute 必带 from_value）
         all_values = {v for g in games for v in getattr(g, attr)}
-        from_value = sorted(anchor_values)[0] if anchor_values else None
+        from_value = sorted(anchor_values)[0]
         for target in sorted(all_values - anchor_values):
             target_games = _games_with_value(games, attr, target)
             combo = _combination_game_ids(games, anchor, attr, target)
@@ -474,7 +476,7 @@ from app.schemas.opportunity import (
 from app.services.opportunity_service import rank_candidates
 
 
-def _cand(cid: str, novelty: int, target_count: int) -> CandidateOpportunityArea:
+def _cand(cid: str, existing: int, target_count: int) -> CandidateOpportunityArea:
     return CandidateOpportunityArea(
         id=cid,
         anchor_game_id="a",
@@ -485,32 +487,32 @@ def _cand(cid: str, novelty: int, target_count: int) -> CandidateOpportunityArea
             from_value=None,
             to_value=cid,
         ),
-        novelty_count=novelty,
+        existing_combination_count=existing,
         evidence=OpportunityEvidence(
             anchor_game_id="a",
             target_value_game_ids=[f"g{i}" for i in range(target_count)] or ["g0"],
-            combination_game_ids=[f"c{i}" for i in range(novelty)],
+            combination_game_ids=[f"c{i}" for i in range(existing)],
         ),
     )
 
 
-def test_rank_filters_out_candidates_above_novelty_ceiling() -> None:
+def test_rank_filters_out_candidates_above_ceiling() -> None:
     ranked = rank_candidates(
-        [_cand("keep", 1, 2), _cand("drop", 5, 2)], novelty_ceiling=2, top_n=10
+        [_cand("keep", 1, 2), _cand("drop", 5, 2)], max_existing=2, top_n=10
     )
     ids = [c.id for c in ranked]
     assert "keep" in ids
     assert "drop" not in ids
 
 
-def test_rank_sorts_by_novelty_then_target_attestation() -> None:
+def test_rank_sorts_by_scarcity_then_target_attestation() -> None:
     ranked = rank_candidates(
         [
             _cand("novel_weak", 0, 1),
             _cand("novel_strong", 0, 3),
             _cand("less_novel", 1, 5),
         ],
-        novelty_ceiling=2,
+        max_existing=2,
         top_n=10,
     )
     assert [c.id for c in ranked] == ["novel_strong", "novel_weak", "less_novel"]
@@ -518,7 +520,7 @@ def test_rank_sorts_by_novelty_then_target_attestation() -> None:
 
 def test_rank_truncates_to_top_n() -> None:
     ranked = rank_candidates(
-        [_cand(f"c{i}", 0, 1) for i in range(40)], novelty_ceiling=2, top_n=30
+        [_cand(f"c{i}", 0, 1) for i in range(40)], max_existing=2, top_n=30
     )
     assert len(ranked) == 30
 ```
@@ -532,18 +534,22 @@ Expected: FAIL with `ImportError: cannot import name 'rank_candidates'`.
 
 ```python
 # append to backend/app/services/opportunity_service.py
-NOVELTY_CEILING = 2   # 组合现存次数超过该阈值视为不够稀缺，丢弃
-TOP_N = 30            # 送 LLM 判断的最大候选数
+MAX_EXISTING_COMBINATIONS = 2   # 已有相同组合的游戏数超过该阈值视为不够稀缺，丢弃
+TOP_N = 30                      # 送 LLM 判断的最大候选数
 
 
 def rank_candidates(
     candidates: list[CandidateOpportunityArea],
-    novelty_ceiling: int = NOVELTY_CEILING,
+    max_existing: int = MAX_EXISTING_COMBINATIONS,
     top_n: int = TOP_N,
 ) -> list[CandidateOpportunityArea]:
-    viable = [c for c in candidates if c.novelty_count <= novelty_ceiling]
+    viable = [c for c in candidates if c.existing_combination_count <= max_existing]
     viable.sort(
-        key=lambda c: (c.novelty_count, -len(c.evidence.target_value_game_ids), c.id)
+        key=lambda c: (
+            c.existing_combination_count,
+            -len(c.evidence.target_value_game_ids),
+            c.id,
+        )
     )
     return viable[:top_n]
 ```
@@ -551,7 +557,7 @@ def rank_candidates(
 - [ ] **Step 4: Run test to verify it passes**
 
 Run: `python -m pytest tests/test_opportunity_enumeration.py -q`
-Expected: PASS (7 passed).
+Expected: PASS (9 passed — 6 enumeration + 3 ranking).
 
 - [ ] **Step 5: Commit**
 
@@ -927,7 +933,7 @@ def _candidate_block(candidates: list[CandidateOpportunityArea]) -> str:
         change = f"{t.from_value}->{t.to_value}" if t.from_value else f"+{t.to_value}"
         out.append(
             f"[{c.id}] 锚点={c.anchor_summary} 变形={t.type.value}:{t.dimension}({change}) "
-            f"稀缺度={c.novelty_count}"
+            f"已有相同组合的游戏数={c.existing_combination_count}（越少越新颖）"
         )
     return "\n".join(out)
 
