@@ -7,7 +7,7 @@ from app.services.opportunity_service import GameDimensions
 _FETCH_QUERY = """
 MATCH (g:Game)
 RETURN g.id AS game_id,
-       coalesce(g.one_sentence_summary, '') AS summary,
+       coalesce(g.one_sentence_summary, g.title, g.id) AS summary,
        [(g)-[:HAS_GENRE]->(x) | x.name] AS genres,
        [(g)-[:HAS_PERSPECTIVE]->(x) | x.name] AS perspectives,
        [(g)-[:HAS_ART_STYLE]->(x) | x.name] AS art_styles,
