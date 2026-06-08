@@ -114,9 +114,18 @@ class ProfileLlmClient:
             headers={"Authorization": f"Bearer {self._settings.api_key}"},
             json=payload,
         )
-        response.raise_for_status()
+        try:
+            response.raise_for_status()
+        except httpx.HTTPStatusError as error:
+            raise ValueError(
+                f"LLM request failed with {error.response.status_code}: {error.response.text}"
+            ) from error
         data = response.json()
-        tool_calls = data["choices"][0]["message"].get("tool_calls") or []
+        try:
+            message = data["choices"][0]["message"]
+        except (KeyError, IndexError, TypeError) as error:
+            raise ValueError(f"Unexpected LLM response shape: {data}") from error
+        tool_calls = message.get("tool_calls") or []
         if not tool_calls:
             raise ValueError("LLM response missing tool_call")
         arguments = tool_calls[0]["function"]["arguments"]

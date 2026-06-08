@@ -120,3 +120,14 @@ def test_get_llm_client_builds_client_when_configured(monkeypatch: pytest.Monkey
     monkeypatch.setenv("LLM_MODEL", "test-model")
     client = get_llm_client()
     assert isinstance(client, ProfileLlmClient)
+
+
+def test_extract_raises_value_error_on_http_error() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(401, json={"error": {"message": "invalid_api_key"}})
+
+    client = ProfileLlmClient(
+        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
+    )
+    with pytest.raises(ValueError, match="401"):
+        client.extract(ProfileParseInput(raw_text="solo"))
