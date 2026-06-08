@@ -1,10 +1,17 @@
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass, field
+from typing import Protocol
 
+from app.schemas.artifacts import DeveloperProfile
 from app.schemas.opportunity import (
     CandidateOpportunityArea,
+    OpportunityArea,
     OpportunityEvidence,
+    OpportunityMatchResult,
+    RejectedOpportunity,
+    RiskPosture,
     Transformation,
     TransformationType,
 )
@@ -135,3 +142,111 @@ def rank_candidates(
         )
     )
     return viable[:top_n]
+
+
+logger = logging.getLogger(__name__)
+
+SPARSE_AREA_THRESHOLD = 3
+_NO_LLM_WARNING = "未配置 LLM，未做约束过滤与可行性判定。"
+
+
+class SupportsGameDimensions(Protocol):
+    def fetch_game_dimensions(self) -> list[GameDimensions]: ...
+
+
+class SupportsOpportunityJudgment(Protocol):
+    def judge(self, profile: DeveloperProfile, candidates): ...
+
+
+def _area_from_candidate(
+    candidate: CandidateOpportunityArea,
+    posture: RiskPosture,
+    fit_reason: str,
+    risk_reason: str,
+) -> OpportunityArea:
+    return OpportunityArea(
+        **candidate.model_dump(),
+        risk_posture=posture,
+        fit_reason=fit_reason,
+        risk_reason=risk_reason,
+    )
+
+
+def _fallback_result(
+    profile_id: str, candidates: list[CandidateOpportunityArea], warnings: list[str]
+) -> OpportunityMatchResult:
+    areas = [
+        _area_from_candidate(c, RiskPosture.BALANCED, _NO_LLM_WARNING, _NO_LLM_WARNING)
+        for c in candidates
+    ]
+    return _finalize(profile_id, areas, [], [_NO_LLM_WARNING, *warnings])
+
+
+def _finalize(
+    profile_id: str,
+    areas: list[OpportunityArea],
+    rejected: list[RejectedOpportunity],
+    warnings: list[str],
+) -> OpportunityMatchResult:
+    final_warnings = list(warnings)
+    if len(areas) < SPARSE_AREA_THRESHOLD:
+        final_warnings.append(
+            "匹配结果稀疏：当前图谱规模或约束压窄了可用机会，可继续入库更多游戏以拓宽。"
+        )
+    return OpportunityMatchResult(
+        profile_id=profile_id, areas=areas, rejected=rejected, warnings=final_warnings
+    )
+
+
+def match_opportunities(
+    profile: DeveloperProfile,
+    repository: SupportsGameDimensions,
+    llm_client: SupportsOpportunityJudgment | None,
+) -> OpportunityMatchResult:
+    games = repository.fetch_game_dimensions()
+    candidates = rank_candidates(enumerate_candidates(games))
+
+    if llm_client is None:
+        return _fallback_result(profile.id, candidates, [])
+
+    try:
+        batch = llm_client.judge(profile, candidates)
+    except Exception:
+        logger.warning("Opportunity LLM judge failed; falling back", exc_info=True)
+        return _fallback_result(profile.id, candidates, ["LLM 判断失败，已降级。"])
+
+    by_id = {j.candidate_id: j for j in batch.judgments}
+    areas: list[OpportunityArea] = []
+    rejected: list[RejectedOpportunity] = []
+    warnings = list(batch.warnings)
+    unjudged: list[str] = []
+
+    for candidate in candidates:
+        judgment = by_id.get(candidate.id)
+        if judgment is None:
+            unjudged.append(candidate.id)
+            areas.append(
+                _area_from_candidate(
+                    candidate, RiskPosture.BALANCED, "LLM 未判定，默认保留。", "未判定。"
+                )
+            )
+        elif judgment.decision == "reject":
+            rejected.append(
+                RejectedOpportunity(
+                    candidate_id=candidate.id,
+                    rejection_reason=judgment.rejection_reason or "未说明拒绝理由。",
+                )
+            )
+        else:
+            areas.append(
+                _area_from_candidate(
+                    candidate,
+                    judgment.risk_posture or RiskPosture.BALANCED,
+                    judgment.fit_reason or "LLM 未给出适配理由。",
+                    judgment.risk_reason or "LLM 未给出风险说明。",
+                )
+            )
+
+    if unjudged:
+        warnings.append(f"以下候选未判定（LLM 未返回结果），已默认保留：{', '.join(unjudged)}")
+    return _finalize(profile.id, areas, rejected, warnings)
