@@ -57,6 +57,12 @@ PROMISED_CONCEPT_OUTCOME_PHRASES = (
     "一定成功",
 )
 
+NEGATED_CONCEPT_OUTCOME_PATTERNS = (
+    r"\b(?:will|may|might|could)\s+say\b.{0,40}\bnot\s+fun(?:\s+enough)?\b",
+    r"\b(?:will|going\s+to|(?:is|are)\s+going\s+to)\s+not\b"
+    r".{0,40}\b(?:have\s+fun|be\s+fun|fun|hit|success|successful|succeed|sell)\b",
+)
+
 OBSERVABLE_SIGNAL_TERMS = (
     "ask",
     "asks",
@@ -310,6 +316,7 @@ def validate_prototype_brief(
 
 def _promises_fun_or_commercial_success(concept_text: str) -> bool:
     normalized_text = _normalize_contract_text(concept_text.replace("-", " "))
+    normalized_text = _remove_negated_concept_outcomes(normalized_text)
 
     if any(phrase in normalized_text for phrase in PROMISED_CONCEPT_OUTCOME_PHRASES):
         return True
@@ -318,6 +325,13 @@ def _promises_fun_or_commercial_success(concept_text: str) -> bool:
         re.search(pattern, normalized_text)
         for pattern in PROMISED_CONCEPT_OUTCOME_PATTERNS
     )
+
+
+def _remove_negated_concept_outcomes(value: str) -> str:
+    cleaned = value
+    for pattern in NEGATED_CONCEPT_OUTCOME_PATTERNS:
+        cleaned = re.sub(pattern, " ", cleaned)
+    return _normalize_contract_text(cleaned)
 
 
 def _signals_are_observable(

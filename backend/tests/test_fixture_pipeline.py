@@ -169,17 +169,22 @@ def test_concept_card_risk_must_not_promise_fun(promise_text: str) -> None:
         run_fixture_pipeline_from_dict(raw)
 
 
-def test_concept_card_risk_may_describe_negative_fun_feedback() -> None:
+@pytest.mark.parametrize(
+    "risk_text",
+    [
+        "players may say it is not fun enough",
+        "players will say it is not fun enough",
+    ],
+)
+def test_concept_card_risk_may_describe_negative_fun_feedback(
+    risk_text: str,
+) -> None:
     raw = golden_raw()
-    raw["concept_cards"][0]["design_risks"] = [
-        "players may say it is not fun enough"
-    ]
+    raw["concept_cards"][0]["design_risks"] = [risk_text]
 
     result = run_fixture_pipeline_from_dict(raw)
 
-    assert result.concept_cards[0].design_risks == [
-        "players may say it is not fun enough"
-    ]
+    assert result.concept_cards[0].design_risks == [risk_text]
 
 
 def test_prototype_brief_must_reference_existing_concept_card() -> None:
