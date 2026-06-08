@@ -1,14 +1,18 @@
 import { ConstraintTag } from "@/components/artifacts/constraint-tag";
+import { scalarLabel } from "@/lib/profile/field-options";
 import type { DeveloperProfile } from "@/lib/types";
 
 export function ProfileConfirmedView({ profile }: { profile: DeveloperProfile }) {
   const fields: [string, string][] = [
-    ["团队规模", profile.team_size],
-    ["时间预算", profile.time_budget],
-    ["程序能力", profile.programming_ability],
-    ["美术能力", profile.art_ability],
-    ["音频能力", profile.audio_ability],
-    ["内容生产能力", profile.content_production_ability],
+    ["团队规模", scalarLabel("team_size", profile.team_size)],
+    ["时间预算", scalarLabel("time_budget", profile.time_budget)],
+    ["程序能力", scalarLabel("programming_ability", profile.programming_ability)],
+    ["美术能力", scalarLabel("art_ability", profile.art_ability)],
+    ["音频能力", scalarLabel("audio_ability", profile.audio_ability)],
+    [
+      "内容生产能力",
+      scalarLabel("content_production_ability", profile.content_production_ability),
+    ],
   ];
 
   return (

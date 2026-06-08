@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { EditableSelect } from "@/components/profile/editable-select";
+import { SCALAR_FIELD_OPTIONS, type ScalarFieldKey } from "@/lib/profile/field-options";
 import { cn } from "@/lib/utils";
 import type {
   ConstraintType,
@@ -11,32 +12,17 @@ import type {
 } from "@/lib/types";
 
 interface ScalarField {
-  key:
-    | "team_size"
-    | "time_budget"
-    | "programming_ability"
-    | "art_ability"
-    | "audio_ability"
-    | "content_production_ability";
+  key: ScalarFieldKey;
   label: string;
-  options: string[];
 }
 
 const SCALAR_FIELDS: ScalarField[] = [
-  { key: "team_size", label: "团队规模", options: ["solo", "small team"] },
-  {
-    key: "time_budget",
-    label: "时间预算",
-    options: ["three month prototype", "six week prototype", "part-time prototype"],
-  },
-  { key: "programming_ability", label: "程序能力", options: ["strong", "basic", "weak"] },
-  { key: "art_ability", label: "美术能力", options: ["strong", "basic", "weak"] },
-  { key: "audio_ability", label: "音频能力", options: ["strong", "basic", "weak"] },
-  {
-    key: "content_production_ability",
-    label: "内容生产能力",
-    options: ["full", "limited"],
-  },
+  { key: "team_size", label: "团队规模" },
+  { key: "time_budget", label: "时间预算" },
+  { key: "programming_ability", label: "程序能力" },
+  { key: "art_ability", label: "美术能力" },
+  { key: "audio_ability", label: "音频能力" },
+  { key: "content_production_ability", label: "内容生产能力" },
 ];
 
 interface ListField {
@@ -45,9 +31,9 @@ interface ListField {
 }
 
 const LIST_FIELDS: ListField[] = [
-  { key: "liked_references", label: "喜欢参考" },
-  { key: "disliked_references_or_mechanics", label: "讨厌方向" },
-  { key: "desired_player_experiences", label: "期望体验" },
+  { key: "liked_references", label: "喜欢参考（选填）" },
+  { key: "disliked_references_or_mechanics", label: "讨厌方向（选填）" },
+  { key: "desired_player_experiences", label: "期望体验（选填）" },
 ];
 
 const CONSTRAINT_LABEL: Record<ConstraintType, string> = {
@@ -107,7 +93,7 @@ export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProp
             <EditableSelect
               id={`field-${field.key}`}
               value={draft[field.key]}
-              options={field.options}
+              options={SCALAR_FIELD_OPTIONS[field.key]}
               invalid={missing.has(field.key)}
               onChange={(value) => onChange({ ...draft, [field.key]: value })}
             />
@@ -142,7 +128,7 @@ export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProp
 
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <h3 className="text-xs font-medium text-muted-foreground">约束与偏好</h3>
+          <h3 className="text-xs font-medium text-muted-foreground">约束与偏好（选填）</h3>
           <Button
             type="button"
             variant="outline"

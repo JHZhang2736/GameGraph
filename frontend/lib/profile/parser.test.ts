@@ -54,16 +54,21 @@ describe("parseDeveloperProfileInput", () => {
     });
   });
 
-  it("keeps liked games out of hard constraints", () => {
+  it("keeps liked games out of hard constraints and optional fields out of blocking", () => {
     const result = parseDeveloperProfileInput({
       raw_text: "我是 solo，程序能力强，美术弱，三个月原型。我喜欢 Balatro。",
     });
 
     const hard = result.draft.constraints.filter((item) => item.type === "hard");
     expect(hard).toHaveLength(0);
-    expect(result.draft.missing_fields.map((item) => item.field)).toContain(
-      "desired_player_experiences",
-    );
+
+    const missing = result.draft.missing_fields.map((item) => item.field);
+    // Optional fields never block completeness...
+    expect(missing).not.toContain("desired_player_experiences");
+    expect(missing).not.toContain("liked_references");
+    // ...but a required field that was not stated still does.
+    expect(missing).toContain("content_production_ability");
+    expect(result.draft.is_complete).toBe(false);
   });
 
   it("uses explicit references before inferred references", () => {
