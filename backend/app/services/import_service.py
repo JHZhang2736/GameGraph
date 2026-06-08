@@ -173,6 +173,6 @@ def summarize(document: GameImportDocument) -> ImportSummary:
         mechanics_written=len(document.profile.main_mechanics),
         experiences_written=len(document.profile.main_player_experiences),
         tags_written=len(document.profile.reference_value_tags),
-        concepts_written=len(document.claims),
+        concepts_written=len({claim.object for claim in document.claims}),
         claims_written=len(document.claims),
     )
