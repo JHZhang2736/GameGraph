@@ -40,6 +40,15 @@ class GameDimensions:
     mechanics: set[str] = field(default_factory=set)
 
 
+@dataclass
+class GameDesignFacts:
+    game_id: str
+    mechanics: list[str] = field(default_factory=list)
+    experiences: list[str] = field(default_factory=list)
+    constraints: list[str] = field(default_factory=list)
+    innovation_patterns: list[str] = field(default_factory=list)
+
+
 def _candidate_id(anchor: str, kind: str, dimension: str, to_value: str) -> str:
     return f"opp|{anchor}|{kind}|{dimension}|{to_value}"
 
