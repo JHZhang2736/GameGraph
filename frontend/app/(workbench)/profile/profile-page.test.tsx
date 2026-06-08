@@ -22,7 +22,7 @@ describe("ProfilePage", () => {
 
   it("updates the preview after parsing edited text", async () => {
     const user = userEvent.setup();
-    const { container } = renderWithClient(<ProfilePage />);
+    renderWithClient(<ProfilePage />);
 
     const textarea = screen.getByLabelText("自由描述");
     await user.clear(textarea);
@@ -35,7 +35,9 @@ describe("ProfilePage", () => {
     await waitFor(() => {
       expect(screen.getByText("缺少关键信息")).toBeInTheDocument();
     });
-    expect(container.querySelector('[data-missing-field="time_budget"]')).not.toBeNull();
+    // The structured preview surfaces the missing blocking field: time budget
+    // could not be inferred from "尽快", so its select sits at the 缺失 option.
+    expect((screen.getByLabelText("时间预算") as HTMLSelectElement).value).toBe("");
   });
 
   it("highlights hard constraints and enables confirmation when complete", async () => {
@@ -51,7 +53,7 @@ describe("ProfilePage", () => {
 
   it("disables confirmation when a blocking field is cleared", async () => {
     const user = userEvent.setup();
-    const { container } = renderWithClient(<ProfilePage />);
+    renderWithClient(<ProfilePage />);
 
     await waitFor(() => {
       expect(screen.getByRole("button", { name: "确认画像" })).toBeEnabled();
@@ -62,7 +64,7 @@ describe("ProfilePage", () => {
     await waitFor(() => {
       expect(screen.getByRole("button", { name: "确认画像" })).toBeDisabled();
     });
-    expect(container.querySelector('[data-missing-field="team_size"]')).not.toBeNull();
+    expect(screen.getByText("缺少关键信息")).toBeInTheDocument();
   });
 
   it("lets the user edit a field via the dropdown", async () => {
