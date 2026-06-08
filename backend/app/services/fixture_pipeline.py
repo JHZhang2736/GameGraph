@@ -21,6 +21,10 @@ from app.schemas.common import StrictBaseModel
 
 PROMISED_CONCEPT_OUTCOME_PATTERNS = (
     r"\bguaranteed\s+(?:to\s+be\s+)?fun\b",
+    r"\bguaranteed\s+to\s+have\s+fun\b",
+    r"\b(?:is|are)\s+guaranteed\s+to\s+have\s+fun\b",
+    r"\bguaranteed\s+to\s+be\s+(?:a\s+)?(?:hit|success|successful)\b",
+    r"\b(?:is|are)\s+guaranteed\s+to\s+be\s+(?:a\s+)?(?:hit|success|successful)\b",
     r"\bguarantees?\s+fun\b",
     r"\bwill\s+have\s+fun\b",
     r"\bwill\s+be\s+(?:a\s+)?fun\b",

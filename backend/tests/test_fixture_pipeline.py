@@ -97,12 +97,17 @@ def test_concept_card_must_not_promise_fun_or_commercial_success() -> None:
 @pytest.mark.parametrize(
     ("field_name", "promise_text"),
     [
+        (
+            "one_sentence_concept",
+            "Players are guaranteed to have fun every run.",
+        ),
         ("core_fantasy", "Players will have fun every run."),
         (
             "fit_reason",
             "This will be a fun tactics game for the developer's audience.",
         ),
         ("novelty_reason", "The game will be a commercial hit."),
+        ("novelty_reason", "The game is guaranteed to be a hit."),
     ],
 )
 def test_concept_card_fields_must_not_promise_fun_or_commercial_success(
@@ -132,11 +137,16 @@ def test_concept_card_risk_must_not_promise_commercial_success() -> None:
         run_fixture_pipeline_from_dict(raw)
 
 
-def test_concept_card_risk_must_not_promise_fun() -> None:
+@pytest.mark.parametrize(
+    "promise_text",
+    [
+        "players will have fun every run",
+        "players are guaranteed to have fun every run",
+    ],
+)
+def test_concept_card_risk_must_not_promise_fun(promise_text: str) -> None:
     raw = golden_raw()
-    raw["concept_cards"][0]["design_risks"] = [
-        "players will have fun every run"
-    ]
+    raw["concept_cards"][0]["design_risks"] = [promise_text]
 
     with pytest.raises(
         ContractViolation,
