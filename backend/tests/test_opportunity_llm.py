@@ -81,6 +81,7 @@ def test_build_tool_schema_exposes_function_name() -> None:
     tools = build_tool_schema()
     assert tools[0]["function"]["name"] == "emit_opportunity_judgments"
     assert "parameters" in tools[0]["function"]
+    assert tools[0]["function"]["parameters"]["properties"]
 
 
 def test_judge_posts_request_and_parses_batch() -> None:
@@ -108,6 +109,9 @@ def test_judge_posts_request_and_parses_batch() -> None:
     assert batch.judgments[0].decision == "keep"
     assert seen["url"] == "https://example.test/v1/chat/completions"
     assert seen["body"]["tool_choice"]["function"]["name"] == "emit_opportunity_judgments"
+    assert seen["body"]["model"] == "m"
+    assert seen["body"]["messages"][0]["role"] == "system"
+    assert seen["body"]["messages"][1]["role"] == "user"
 
 
 def test_judge_raises_when_no_tool_call() -> None:
@@ -123,3 +127,12 @@ def test_get_client_returns_none_when_unconfigured(monkeypatch: pytest.MonkeyPat
     for var in ("LLM_BASE_URL", "LLM_API_KEY", "LLM_MODEL"):
         monkeypatch.delenv(var, raising=False)
     assert get_opportunity_llm_client() is None
+
+
+def test_judge_raises_value_error_on_http_error() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(401, json={"error": {"message": "invalid_api_key"}})
+
+    client = OpportunityLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    with pytest.raises(ValueError, match="401"):
+        client.judge(_profile(), [_candidate()])

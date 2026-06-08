@@ -49,7 +49,9 @@ class OpportunityJudgment(StrictBaseModel):
     model_config = ConfigDict(extra="ignore")
 
     candidate_id: str = Field(min_length=1)
-    decision: Literal["keep", "reject"]
+    decision: Literal["keep", "reject"] = Field(
+        description="keep 时需给出 risk_posture/fit_reason/risk_reason；reject 时需给出 rejection_reason",
+    )
     risk_posture: RiskPosture | None = None
     fit_reason: str | None = None
     risk_reason: str | None = None
@@ -80,14 +82,15 @@ def _profile_block(profile: DeveloperProfile) -> str:
     lines = [
         f"团队:{profile.team_size} 时间:{profile.time_budget}",
         f"能力 程序:{profile.programming_ability} 美术:{profile.art_ability} "
-        f"音频:{profile.audio_ability} 内容:{profile.content_production_ability}",
+        f"音频:{profile.audio_ability} 内容产出:{profile.content_production_ability}",
         f"喜欢:{', '.join(profile.liked_references)}",
         f"讨厌:{', '.join(profile.disliked_references_or_mechanics)}",
         f"期望体验:{', '.join(profile.desired_player_experiences)}",
-        "约束:",
     ]
-    for c in profile.constraints:
-        lines.append(f"  - [{c.type.value}] {c.statement}")
+    if profile.constraints:
+        lines.append("约束:")
+        for c in profile.constraints:
+            lines.append(f"  - [{c.type.value}] {c.statement}")
     return "\n".join(lines)
 
 
@@ -98,6 +101,7 @@ def _candidate_block(candidates: list[CandidateOpportunityArea]) -> str:
         change = f"{t.from_value}->{t.to_value}" if t.from_value else f"+{t.to_value}"
         out.append(
             f"[{c.id}] 锚点={c.anchor_summary} 变形={t.type.value}:{t.dimension}({change}) "
+            f"目标值佐证游戏数={len(c.evidence.target_value_game_ids)} "
             f"已有相同组合的游戏数={c.existing_combination_count}（越少越新颖）"
         )
     return "\n".join(out)
