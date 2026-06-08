@@ -20,6 +20,7 @@
   "profile": {
     "game_id": "game_ori_and_the_blind_forest",
     "one_sentence_summary": "玩家操控 Ori 在相互连通的森林世界中以能力门控方式解锁新区域，手动放置存档点的资源管理系统使每段探索都带有风险权衡。",
+    "core_hook": "用消耗资源的手动存档与视听情感叙事，把高难跑酷的探索升华成情绪体验。",
     "core_loop": "在单张大型互联地图中探索，击败敌人与环境障碍积累能力点，用能力点解锁技能树中的移动与战斗能力，进入此前无法抵达的区域，推动叙事向前发展。",
     "progression_model": "三条平行能力树（效率、力量、机动），每条树内须按顺序解锁；新移动能力（墙跳、二段跳、冲刺）直接解锁新区域；精确版（Definitive Edition）追加折跃点快速传送，降低回溯成本。",
     "failure_model": "角色生命值耗尽后送回最近的灵魂链接存档点；灵魂链接需消耗能量主动放置，能量资源有限，迫使玩家在安全存档与节约能量之间做权衡；逃跑序列死亡后重置至该序列起点。",
@@ -29,10 +30,18 @@
     "main_player_experiences": ["氛围营造", "探索发现", "情感叙事", "高难跑酷"],
     "main_mechanics": ["能力门控探索", "非线性探索", "手动存档", "能力树", "逃跑序列"],
     "replayability_sources": ["速通", "全收集", "难度分级"],
-    "production_constraints": ["小型团队", "手绘美术", "Unity 引擎", "全管弦乐配乐"],
+    "production_constraints": ["Unity 引擎"],
     "innovation_patterns": ["手动存档", "逃跑序列", "氛围营造"],
     "reusable_reference_patterns": ["能力门控探索", "手动存档", "氛围营造"],
     "non_replicable_risks": ["超长开发周期", "高品质手绘量", "全管弦乐制作成本"],
+    "genre": ["类银河城", "平台跳跃"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["管弦乐"],
+    "perspective": ["横版2D"],
+    "theme": ["自然", "森林童话"],
+    "narrative_style": ["过场驱动", "情感叙事"],
+    "game_feel": ["流畅跑酷", "动量"],
+    "team_model": ["小团队"],
     "reference_value_tags": [
       {
         "tag": "能力门控探索",
