@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_the_outer_worlds",
+    "title": "The Outer Worlds",
+    "source_refs": [
+      {
+        "title": "The Outer Worlds（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/The_Outer_Worlds",
+        "notes": "类型（第一人称科幻角色扮演）、企业集团统治的 Halcyon 殖民地、第一人称视角、遇敌可选战斗/潜行/对话（说服/谎言/恐吓）解决、6 名各有专属任务与能力的同伴可带 2 名随行、缺陷（Flaw）系统：接受某类伤害积累带来的缺陷可换得一个额外技能点、玩家选择影响剧情走向与结局、Obsidian Entertainment 开发 Private Division 发行、2019 年发售等事实来源。"
+      },
+      {
+        "title": "The Outer Worlds（Steam，appid 578650）",
+        "url": "https://store.steampowered.com/app/578650/The_Outer_Worlds/",
+        "notes": "第一人称科幻 RPG、对话/潜行/战斗多解、同伴系统、阵营、选择驱动剧情等事实来源。"
+      }
+    ],
+    "short_description": "一款第一人称科幻角色扮演游戏，设定在由企业集团统治的 Halcyon 殖民地：玩家自定义角色，在多方势力间穿行，遇到冲突可用战斗、潜行或对话（说服、谎言、恐吓）三种方式解决；可招募 6 名各有专属任务与能力的同伴并带 2 名随行，独特的「缺陷」系统让玩家接受某类反复受伤带来的缺陷以换取额外技能点，所有选择都影响剧情走向与结局，Obsidian Entertainment 开发、2019 年发售。",
+    "selection_reason": "作为「Obsidian 式选择驱动 RPG」的代表：用战斗/潜行/对话三路多解、可携同伴与阵营反应让玩家以自己的角色构筑去解决冲突，并用反直觉的「缺陷」系统把反复失败做成可主动接受的成长取舍，是研究多解任务设计、同伴系统与「把失败转为收益」的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_the_outer_worlds",
+    "one_sentence_summary": "玩家在企业统治的 Halcyon 殖民地自定义角色，用战斗、潜行或对话说服三路方式解决冲突，招募各有专属任务与能力的同伴随行，并可接受「缺陷」换取额外技能点，所有选择都改变剧情走向与结局。",
+    "core_hook": "把冲突做成多解：几乎每个遭遇都能用枪战、潜行绕过或纯对话（说服/谎言/恐吓）化解，玩家的角色构筑——加点偏战斗还是口才——直接决定能走哪条路；再叠加 6 名带专属剧情的同伴、会对你的行为与立场作出反应的阵营，以及一个反直觉的「缺陷」系统：当某类伤害反复折磨你时，游戏会提议你「接受」一个永久缺陷来换取一个额外技能点，把吃瘪变成一次可自愿的成长取舍。",
+    "core_loop": "在殖民地各星球探索与接任务、用战斗/潜行/对话三路之一解决遭遇、与同伴和阵营互动并触发反应、按构筑加点与抉择推进、面对缺陷提议时权衡接受与否，循着选择推进交织的剧情。",
+    "progression_model": "靠经验升级技能与专长、靠同伴能力与装备强化战力、靠对话与阵营选择改变可走路径推进，缺陷系统提供「以永久弱点换技能点」的额外取舍；进度体现为角色构筑、同伴关系、阵营立场与剧情章节。",
+    "failure_model": "战斗中角色倒下即载入存档重来，但多数冲突可用潜行或对话绕过失败；真正的长线代价是抉择带来的不可逆剧情后果与阵营关系变化，而非单纯的战斗失败。",
+    "content_structure": "以多个殖民星球的开放区域、主线与大量反应式支线为骨架，靠战斗/潜行/对话多解、同伴专属任务、阵营反应与缺陷取舍承载流程与重玩，单人。",
+    "main_player_actions": ["射击", "对话选择", "社交互动"],
+    "main_player_decisions": ["道德抉择", "装备搭配", "任务取舍"],
+    "main_player_experiences": ["抉择沉浸", "个性化表达", "情感叙事"],
+    "main_mechanics": ["分支叙事", "委托任务", "好感系统", "谈判战斗", "缺陷增益"],
+    "replayability_sources": ["多结局", "难度分级", "构筑多样"],
+    "production_constraints": ["大团队协作", "Unreal 引擎"],
+    "innovation_patterns": ["分支叙事", "缺陷增益"],
+    "reusable_reference_patterns": ["分支叙事", "好感系统"],
+    "non_replicable_risks": ["大团队协作", "玩家留存"],
+    "genre": ["角色扮演", "第一人称射击"],
+    "art_style": ["写实美术"],
+    "audio_style": ["管弦乐"],
+    "perspective": ["第一人称"],
+    "theme": ["科幻", "反乌托邦", "黑色幽默"],
+    "narrative_style": ["分支叙事", "对话叙事"],
+    "game_feel": ["沉浸代入", "策略权衡"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "分支叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "战斗潜行对话三路多解",
+            "quote_or_summary": "遇到冲突可用战斗、潜行或对话（说服/谎言/恐吓）解决，玩家的角色构筑决定能走哪条路、影响剧情与结局。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "缺陷增益",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "接受缺陷换技能点",
+            "quote_or_summary": "当某类伤害反复折磨玩家时，游戏提议接受一个永久缺陷以换取额外技能点，把反复吃瘪做成可自愿的成长取舍。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "好感系统",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "同伴专属任务与能力",
+            "quote_or_summary": "可招募 6 名各有专属任务、动机与能力的同伴并带 2 名随行，同伴有各自的剧情线。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "The Outer Worlds 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/The_Outer_Worlds",
+        "quote_or_summary": "第一人称科幻 RPG，企业统治的 Halcyon、战斗/潜行/对话三路多解、6 同伴可带 2 名、缺陷系统以永久弱点换技能点、选择影响剧情与结局，Obsidian 开发，2019 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_outer_worlds_flaw_system",
+      "subject": "缺陷增益",
+      "relation": "creates",
+      "object": "失败趣味化",
+      "explanation": "缺陷系统把「反复栽在同一种伤害上」从纯粹的挫败转成一次可自愿的交易：游戏侦测到玩家屡屡吃某类亏后，主动提议「接受一个永久缺陷，换一个额外技能点」，于是失败不再只是损失，而成了一个带诱惑的构筑选择——拿不拿这点强度、愿不愿背上对应弱点，全凭玩家权衡，把吃瘪体验赋予了正向意义与玩家能动性，可复用于希望把玩家的重复失败转化为「可选的风险/收益取舍」、让挫败也变得有趣且服务构筑的设计。",
+      "evidence": [
+        {
+          "title": "缺陷换收益解读",
+          "quote_or_summary": "系统在玩家反复吃亏后提议以永久缺陷换技能点，把失败转成带诱惑的可选构筑取舍。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}
