@@ -113,7 +113,7 @@ def test_evidence_path_starts_with_anchor() -> None:
 def test_forbidden_base_includes_hard_constraint_and_dislikes() -> None:
     base = svc._forbidden_base(_profile())
     assert any("违反硬约束：不做联网多人" in x for x in base)
-    assert any("联网多人" in x for x in base)
+    assert any("避免开发者明确反感的方向：联网多人" in x for x in base)
 
 
 def test_forbidden_base_never_empty_without_constraints() -> None:
