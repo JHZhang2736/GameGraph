@@ -2,9 +2,12 @@
 
 # ---- deps: install node_modules from lockfile ----
 FROM node:22-alpine AS deps
+# Override at build time (compose passes a China mirror on the ECS host).
+# Defaults to the official registry so CI / overseas builds are unaffected.
+ARG NPM_REGISTRY=https://registry.npmjs.org
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci
+RUN npm ci --registry "${NPM_REGISTRY}"
 
 # ---- builder: produce the standalone output ----
 FROM node:22-alpine AS builder

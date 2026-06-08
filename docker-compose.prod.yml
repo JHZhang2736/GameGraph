@@ -2,6 +2,12 @@
 # Images are BUILT on the host by .github/workflows/cd.yml (SSH -> git pull ->
 # docker compose build -> up), so there is no container registry round-trip.
 # The deploy step provides NEO4J_PASSWORD in the shell env.
+#
+# build.args point npm/pip at China mirrors so the on-host build is fast; the
+# Dockerfiles default to the official registries when these args are absent.
+# Inside Tencent Cloud you can swap to the free intranet mirror for max speed:
+#   PIP_INDEX_URL: http://mirrors.tencentyun.com/pypi/simple
+#   NPM_REGISTRY:  http://mirrors.tencentyun.com/npm/
 name: gamegraph
 
 services:
@@ -26,6 +32,8 @@ services:
   backend:
     build:
       context: ./backend
+      args:
+        PIP_INDEX_URL: https://mirrors.cloud.tencent.com/pypi/simple
     image: gamegraph-backend:latest
     restart: unless-stopped
     depends_on:
@@ -43,6 +51,8 @@ services:
   frontend:
     build:
       context: ./frontend
+      args:
+        NPM_REGISTRY: https://registry.npmmirror.com
     image: gamegraph-frontend:latest
     restart: unless-stopped
     depends_on:

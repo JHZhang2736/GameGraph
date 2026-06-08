@@ -3,6 +3,10 @@
 # ---- builder: install runtime deps + the app package into a venv ----
 FROM python:3.12-slim AS builder
 
+# Override at build time (compose passes a China mirror on the ECS host).
+# Defaults to the official index so CI / overseas builds are unaffected.
+ARG PIP_INDEX_URL=https://pypi.org/simple
+
 ENV PIP_NO_CACHE_DIR=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1
 
@@ -15,8 +19,8 @@ COPY app ./app
 # Non-editable install: pulls in fastapi/uvicorn/neo4j/pydantic and installs the `app`
 # package into the venv. dev extras (pytest/httpx) are intentionally excluded.
 RUN python -m venv /opt/venv \
-    && /opt/venv/bin/pip install --upgrade pip \
-    && /opt/venv/bin/pip install .
+    && /opt/venv/bin/pip install --index-url "${PIP_INDEX_URL}" --upgrade pip \
+    && /opt/venv/bin/pip install --index-url "${PIP_INDEX_URL}" .
 
 # ---- runtime: only the venv, run as non-root ----
 FROM python:3.12-slim AS runtime
