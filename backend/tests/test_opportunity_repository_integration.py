@@ -37,5 +37,6 @@ def test_fetch_game_dimensions_returns_anchor_values(driver) -> None:
     rows = OpportunityRepository(driver).fetch_game_dimensions()
     aw = next(r for r in rows if r.game_id == "game_animal_well")
     assert aw.summary
-    assert aw.genres   # 非空
-    assert isinstance(aw.mechanics, set)
+    assert "类银河城" in aw.genres
+    assert "多用途道具" in aw.mechanics
+    assert aw.perspectives  # 非空

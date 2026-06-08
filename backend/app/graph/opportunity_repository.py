@@ -36,4 +36,5 @@ class OpportunityRepository:
                 mechanics=set(record["mechanics"]),
             )
             for record in result
+            if record["game_id"] is not None
         ]
