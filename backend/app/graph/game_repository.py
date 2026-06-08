@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from neo4j import Driver
 
-from app.schemas.graph import GameSummary
+from app.schemas.graph import GameSummary, NodeSearchHit
 from app.schemas.import_document import GameImportDocument
 from app.services.import_service import (
     EdgeMerge,
@@ -57,6 +57,24 @@ class GameRepository:
         if record is None:
             return None
         return GameImportDocument.model_validate_json(record)
+
+    def search_nodes(self, q: str, limit: int = 20) -> list[NodeSearchHit]:
+        with self._driver.session() as session:
+            rows = session.execute_read(self._search_nodes, q, limit)
+        return [NodeSearchHit(**row) for row in rows]
+
+    @staticmethod
+    def _search_nodes(tx, q: str, limit: int) -> list[dict]:
+        result = tx.run(
+            "MATCH (n) WHERE n.title IS NOT NULL OR n.name IS NOT NULL "
+            "WITH n, coalesce(n.title, n.name) AS label "
+            "WHERE toLower(label) CONTAINS toLower($q) "
+            "RETURN coalesce(n.id, n.name) AS id, label, head(labels(n)) AS node_type "
+            "LIMIT $limit",
+            q=q,
+            limit=limit,
+        )
+        return [dict(record) for record in result]
 
     @staticmethod
     def _write_plan(tx, plan: GraphWritePlan) -> None:
