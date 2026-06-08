@@ -87,3 +87,15 @@ def test_unjudged_candidate_is_kept_balanced_with_warning() -> None:
     assert result.areas  # 候选未被静默丢弃
     assert all(a.risk_posture == RiskPosture.BALANCED for a in result.areas)
     assert any("未判定" in w for w in result.warnings)
+
+
+def test_match_falls_back_with_warning_when_llm_raises() -> None:
+    class BrokenLlm:
+        def judge(self, profile, candidates):
+            raise RuntimeError("boom")
+
+    result = match_opportunities(_profile(), StubRepo(_games()), BrokenLlm())
+    assert result.areas
+    assert all(a.risk_posture == RiskPosture.BALANCED for a in result.areas)
+    assert any("降级" in w for w in result.warnings)
+    assert not any("未配置 LLM" in w for w in result.warnings)  # 异常路径不应误报未配置

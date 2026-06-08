@@ -15,6 +15,9 @@ from app.schemas.opportunity import (
     Transformation,
     TransformationType,
 )
+from app.services.opportunity_llm import OpportunityJudgment, OpportunityJudgmentBatch
+
+logger = logging.getLogger(__name__)
 
 MAX_EXISTING_COMBINATIONS = 2   # 已有相同组合的游戏数超过该阈值视为不够稀缺，丢弃
 TOP_N = 30                      # 送 LLM 判断的最大候选数
@@ -144,10 +147,11 @@ def rank_candidates(
     return viable[:top_n]
 
 
-logger = logging.getLogger(__name__)
-
 SPARSE_AREA_THRESHOLD = 3
 _NO_LLM_WARNING = "未配置 LLM，未做约束过滤与可行性判定。"
+_LLM_FAILED_WARNING = "LLM 判断失败，已降级为全量保留。"
+_FALLBACK_FIT_REASON = "未做适配判断（降级保留）。"
+_FALLBACK_RISK_REASON = "未做风险判断（降级保留）。"
 
 
 class SupportsGameDimensions(Protocol):
@@ -155,7 +159,9 @@ class SupportsGameDimensions(Protocol):
 
 
 class SupportsOpportunityJudgment(Protocol):
-    def judge(self, profile: DeveloperProfile, candidates): ...
+    def judge(
+        self, profile: DeveloperProfile, candidates: list[CandidateOpportunityArea]
+    ) -> OpportunityJudgmentBatch: ...
 
 
 def _area_from_candidate(
@@ -173,13 +179,17 @@ def _area_from_candidate(
 
 
 def _fallback_result(
-    profile_id: str, candidates: list[CandidateOpportunityArea], warnings: list[str]
+    profile_id: str,
+    candidates: list[CandidateOpportunityArea],
+    warning: str,
 ) -> OpportunityMatchResult:
     areas = [
-        _area_from_candidate(c, RiskPosture.BALANCED, _NO_LLM_WARNING, _NO_LLM_WARNING)
+        _area_from_candidate(
+            c, RiskPosture.BALANCED, _FALLBACK_FIT_REASON, _FALLBACK_RISK_REASON
+        )
         for c in candidates
     ]
-    return _finalize(profile_id, areas, [], [_NO_LLM_WARNING, *warnings])
+    return _finalize(profile_id, areas, [], [warning])
 
 
 def _finalize(
@@ -207,15 +217,22 @@ def match_opportunities(
     candidates = rank_candidates(enumerate_candidates(games))
 
     if llm_client is None:
-        return _fallback_result(profile.id, candidates, [])
+        return _fallback_result(profile.id, candidates, _NO_LLM_WARNING)
 
     try:
         batch = llm_client.judge(profile, candidates)
     except Exception:
         logger.warning("Opportunity LLM judge failed; falling back", exc_info=True)
-        return _fallback_result(profile.id, candidates, ["LLM 判断失败，已降级。"])
+        return _fallback_result(profile.id, candidates, _LLM_FAILED_WARNING)
 
-    by_id = {j.candidate_id: j for j in batch.judgments}
+    by_id: dict[str, OpportunityJudgment] = {}
+    duplicate_ids: list[str] = []
+    for j in batch.judgments:
+        if j.candidate_id in by_id:
+            duplicate_ids.append(j.candidate_id)
+        else:
+            by_id[j.candidate_id] = j
+
     areas: list[OpportunityArea] = []
     rejected: list[RejectedOpportunity] = []
     warnings = list(batch.warnings)
@@ -248,5 +265,14 @@ def match_opportunities(
             )
 
     if unjudged:
-        warnings.append(f"以下候选未判定（LLM 未返回结果），已默认保留：{', '.join(unjudged)}")
+        warnings.append(
+            f"以下候选未判定（LLM 未返回结果），已默认保留：{', '.join(unjudged)}"
+        )
+    if duplicate_ids:
+        warnings.append(
+            f"LLM 对以下候选给出重复判断，仅采用首个：{', '.join(sorted(set(duplicate_ids)))}"
+        )
+    unknown_ids = sorted(set(by_id) - {c.id for c in candidates})
+    if unknown_ids:
+        warnings.append(f"LLM 返回了未知候选 id，已忽略：{', '.join(unknown_ids)}")
     return _finalize(profile.id, areas, rejected, warnings)
