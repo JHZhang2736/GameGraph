@@ -22,6 +22,11 @@ vi.mock("@/lib/data", async (orig) => {
   return { ...actual, getNeighbors: (...args: unknown[]) => neighborsMock(...args) };
 });
 
+// 画布依赖 WebGL,在 jsdom 不可渲染;页面测试只关心页面逻辑,故 stub 掉画布。
+vi.mock("@/components/graph/graph-canvas", () => ({
+  GraphCanvas: () => null,
+}));
+
 import GraphPage from "@/app/(workbench)/graph/page";
 
 function renderPage() {
