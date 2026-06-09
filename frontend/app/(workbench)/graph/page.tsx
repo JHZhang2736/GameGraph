@@ -3,8 +3,22 @@
 import { useEffect, useMemo, useState } from "react";
 import { useGames } from "@/lib/queries";
 import { getNeighbors, type GraphData, type GraphEdge, type GraphNode, type NeighborhoodResult } from "@/lib/data";
-import { GraphCanvas } from "@/components/graph/graph-canvas";
-import { EmptyState, ErrorState, LoadingState, PageHeader } from "@/components/shell/view-states";
+import dynamic from "next/dynamic";
+
+// 画布(后续将换成 Sigma)依赖 WebGL/window,禁用 SSR/构建预渲染。
+// page 已是 Client Component,故 next/dynamic 的 ssr:false 在此合法
+// (见 node_modules/next/dist/docs 的 lazy-loading 指南)。
+const GraphCanvas = dynamic(
+  () => import("@/components/graph/graph-canvas").then((m) => m.GraphCanvas),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-full w-full animate-pulse rounded-lg border bg-muted/30" />
+    ),
+  },
+);
+import { EmptyState, ErrorState, LoadingState } from "@/components/shell/view-states";
+import { GraphLegend } from "@/components/graph/graph-legend";
 import { ConfidenceBadge } from "@/components/artifacts/confidence-badge";
 import { QualityBadge } from "@/components/artifacts/quality-badge";
 import { EvidenceList } from "@/components/artifacts/evidence-list";
@@ -58,18 +72,24 @@ export default function GraphPage() {
     [graph.edges, selectedEdge],
   );
 
+  // 图例只显示当前图里实际出现的节点类型。
+  const presentTypes = useMemo(
+    () => Array.from(new Set(graph.nodes.map((n) => n.node_type))),
+    [graph.nodes],
+  );
+
   if (gamesLoading) return <LoadingState />;
   if (gamesError) return <ErrorState onRetry={() => refetch()} />;
   if (!games || games.length === 0) return <EmptyState message="暂无已入库游戏,先去导入" />;
 
   return (
-    <div>
-      <PageHeader title="知识图谱" description="聚焦 + 按需展开;低置信度关系以琥珀色虚线降级展示。" />
-      <div className="mb-3 flex items-center gap-2">
+    <div className="flex h-full flex-col">
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <h1 className="text-lg font-semibold">{"知识图谱"}</h1>
         <button type="button" onClick={reroll} className="rounded-md border px-3 py-1.5 text-sm hover:bg-accent">
           {"🎲 换一个"}
         </button>
-        <span className="text-sm text-muted-foreground">{"焦点节点已加载,点节点可展开邻居。"}</span>
+        <span className="text-sm text-muted-foreground">{"点节点展开邻居,点边查看证据;低置信度关系以琥珀色降级。"}</span>
       </div>
       {truncated ? (
         <p className="mb-2 rounded-md bg-amber-50 p-2 text-sm text-amber-700">
@@ -79,13 +99,16 @@ export default function GraphPage() {
       {loadError ? (
         <p className="mb-2 rounded-md bg-destructive/10 p-2 text-sm text-destructive">{"加载邻域失败,请重试。"}</p>
       ) : null}
-      <div className="grid gap-4 lg:grid-cols-[1fr_320px]">
-        <GraphCanvas
-          graph={graph}
-          onSelectEdge={setSelectedEdge}
-          onSelectNode={(id) => focusOn(id, false)}
-        />
-        <aside className="space-y-3">
+      <div className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[1fr_320px]">
+        <div className="relative min-h-0">
+          <GraphCanvas
+            graph={graph}
+            onSelectEdge={setSelectedEdge}
+            onSelectNode={(id) => focusOn(id, false)}
+          />
+          <GraphLegend types={presentTypes} className="absolute left-3 top-3 z-10" />
+        </div>
+        <aside className="min-h-0 space-y-3 overflow-auto">
           {selected ? (
             <div className="rounded-lg border p-3">
               <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">{"证据路径"}</h2>
