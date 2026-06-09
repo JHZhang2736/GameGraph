@@ -5,11 +5,10 @@ import pytest
 
 from app.schemas.common import ConfidenceLevel, ConstraintType
 from app.schemas.developer_profile import ProfileParseInput
+from app.services.llm_client import LlmClient, LlmRequestError, LlmResponseError, LlmSettings
 from app.services.profile_llm import (
-    LlmSettings,
     ProfileExtraction,
     ProfileLlmClient,
-    build_tool_schema,
     get_llm_client,
 )
 
@@ -46,13 +45,6 @@ def _extraction_arguments() -> str:
     )
 
 
-def test_build_tool_schema_exposes_function_name() -> None:
-    tools = build_tool_schema()
-    assert tools[0]["type"] == "function"
-    assert tools[0]["function"]["name"] == "emit_developer_profile"
-    assert "parameters" in tools[0]["function"]
-
-
 def test_extract_posts_tool_call_request_and_parses_arguments() -> None:
     seen: dict[str, object] = {}
 
@@ -82,7 +74,7 @@ def test_extract_posts_tool_call_request_and_parses_arguments() -> None:
         )
 
     client = ProfileLlmClient(
-        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
     )
     extraction = client.extract(ProfileParseInput(raw_text="我一个人做游戏"))
 
@@ -102,9 +94,9 @@ def test_extract_raises_when_no_tool_call() -> None:
         return httpx.Response(200, json={"choices": [{"message": {"content": "hi"}}]})
 
     client = ProfileLlmClient(
-        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
     )
-    with pytest.raises(ValueError, match="tool_call"):
+    with pytest.raises(LlmResponseError, match="tool_call"):
         client.extract(ProfileParseInput(raw_text="solo"))
 
 
@@ -127,9 +119,9 @@ def test_extract_raises_value_error_on_http_error() -> None:
         return httpx.Response(401, json={"error": {"message": "invalid_api_key"}})
 
     client = ProfileLlmClient(
-        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
     )
-    with pytest.raises(ValueError, match="401"):
+    with pytest.raises(LlmRequestError, match="401"):
         client.extract(ProfileParseInput(raw_text="solo"))
 
 
