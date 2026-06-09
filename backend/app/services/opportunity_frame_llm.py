@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 import httpx
-from pydantic import ConfigDict, Field
+from pydantic import ConfigDict, Field, ValidationError
 
 from app.schemas.artifacts import DeveloperProfile
 from app.schemas.common import StrictBaseModel
@@ -17,6 +17,9 @@ from app.services.opportunity_llm import (
 )
 
 TOOL_NAME = "emit_opportunity_frame"
+
+# LLM 偶发返回非法 JSON（中段漏逗号 / 未转义引号），多为一次性；解析失败重试一次。
+_MAX_SYNTHESIZE_ATTEMPTS = 2
 
 SYSTEM_PROMPT = (
     "你是独立游戏创意系统的机会框架综合器。"
@@ -111,6 +114,18 @@ class OpportunityFrameLlmClient:
             "tools": build_frame_tool_schema(),
             "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
         }
+        # 仅对「JSON 非法」重试（多为一次性）；HTTP/响应结构错误立即抛出，不重试。
+        last_error: ValidationError | None = None
+        for _ in range(_MAX_SYNTHESIZE_ATTEMPTS):
+            arguments = self._request_arguments(payload)
+            try:
+                return FrameSynthesis.model_validate_json(arguments)
+            except ValidationError as error:
+                last_error = error
+        assert last_error is not None  # 循环至少执行一次，必已赋值
+        raise last_error  # 重试耗尽，向上抛由 build_frame 兜底
+
+    def _request_arguments(self, payload: dict) -> str:
         response = self._client.post(
             f"{self._settings.base_url.rstrip('/')}/chat/completions",
             headers={"Authorization": f"Bearer {self._settings.api_key}"},
@@ -130,7 +145,7 @@ class OpportunityFrameLlmClient:
         tool_calls = message.get("tool_calls") or []
         if not tool_calls:
             raise ValueError("LLM response missing tool_call")
-        return FrameSynthesis.model_validate_json(tool_calls[0]["function"]["arguments"])
+        return tool_calls[0]["function"]["arguments"]
 
 
 def get_opportunity_frame_llm_client() -> OpportunityFrameLlmClient | None:

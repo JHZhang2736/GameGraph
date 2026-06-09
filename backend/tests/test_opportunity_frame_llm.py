@@ -2,6 +2,7 @@ import json
 
 import httpx
 import pytest
+from pydantic import ValidationError
 
 from app.schemas.artifacts import DeveloperConstraint, DeveloperProfile
 from app.schemas.common import ConstraintType
@@ -136,3 +137,45 @@ def test_get_client_returns_none_when_unconfigured(monkeypatch: pytest.MonkeyPat
     for var in ("LLM_BASE_URL", "LLM_API_KEY", "LLM_MODEL"):
         monkeypatch.delenv(var, raising=False)
     assert get_opportunity_frame_llm_client() is None
+
+
+def _bad_arguments() -> str:
+    # 数组元素间漏逗号：结构闭合但中段语法错，复刻线上 "expected ',' or ']'"。
+    return '{"opportunity_area": "x", "secondary_transformations": ["a" "b"]}'
+
+
+def test_synthesize_retries_once_on_invalid_json() -> None:
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        arguments = _bad_arguments() if calls["n"] == 1 else _arguments()
+        return httpx.Response(200, json={"choices": [{"message": {"tool_calls": [
+            {"function": {"name": "emit_opportunity_frame", "arguments": arguments}}
+        ]}}]})
+
+    client = OpportunityFrameLlmClient(
+        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
+    )
+    synth = client.synthesize(_profile(), _area(), _inputs())
+
+    assert calls["n"] == 2  # 首次坏 JSON 触发一次重试
+    assert synth.opportunity_area == "第一人称生存割草"
+
+
+def test_synthesize_raises_after_retry_exhausted_on_invalid_json() -> None:
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        return httpx.Response(200, json={"choices": [{"message": {"tool_calls": [
+            {"function": {"name": "emit_opportunity_frame", "arguments": _bad_arguments()}}
+        ]}}]})
+
+    client = OpportunityFrameLlmClient(
+        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
+    )
+    with pytest.raises(ValidationError):
+        client.synthesize(_profile(), _area(), _inputs())
+
+    assert calls["n"] == 2  # 初次 + 一次重试，均失败后向上抛由 build_frame 兜底
