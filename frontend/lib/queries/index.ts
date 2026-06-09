@@ -7,7 +7,6 @@ import {
   getGameProfile,
   getGoldenFlow,
   getNeighbors,
-  getOpportunityFrame,
   getPrototypeBrief,
   getSeedGames,
   importGame,
@@ -48,10 +47,6 @@ export function useParseDeveloperProfileInput(input: ProfileParseInput | null) {
     queryFn: () => parseDeveloperProfileInput(input as ProfileParseInput),
     enabled: input !== null,
   });
-}
-
-export function useOpportunityFrame() {
-  return useQuery({ queryKey: ["opportunity-frame"], queryFn: getOpportunityFrame });
 }
 
 export function useConcepts() {

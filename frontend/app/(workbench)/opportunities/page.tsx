@@ -1,114 +1,55 @@
 "use client";
 
-import { useOpportunityFrame } from "@/lib/queries";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import Link from "next/link";
+import { EmptyState, PageHeader } from "@/components/shell/view-states";
+import { OpportunityFrameCard } from "@/components/opportunity/opportunity-frame-card";
 import {
-  ErrorState,
-  LoadingState,
-  PageHeader,
-} from "@/components/shell/view-states";
-
-function Chips({ items }: { items: string[] }) {
-  return (
-    <div className="flex flex-wrap gap-1.5">
-      {items.map((item) => (
-        <span
-          key={item}
-          className="rounded-full border px-2.5 py-0.5 text-xs text-muted-foreground"
-        >
-          {item}
-        </span>
-      ))}
-    </div>
-  );
-}
+  clearLastFrameId,
+  loadFrames,
+  peekLastFrameId,
+  removeFrame,
+  subscribeFrames,
+} from "@/lib/opportunity/frame-history";
 
 export default function OpportunitiesPage() {
-  const { data, isLoading, isError, refetch } = useOpportunityFrame();
+  const frames = useSyncExternalStore(subscribeFrames, loadFrames, () => []);
+  // lazy 初始化时 peek（纯读，不改 storage），使高亮项首帧即展开；清除放到 effect。
+  const [lastId] = useState<string | null>(() => peekLastFrameId());
 
-  if (isLoading) return <LoadingState />;
-  if (isError || !data) return <ErrorState onRetry={() => refetch()} />;
+  useEffect(() => {
+    clearLastFrameId();
+  }, []);
+
+  if (frames.length === 0) {
+    return (
+      <div className="space-y-6">
+        <PageHeader title="机会框架" description="从机会匹配生成的框架历史" />
+        <EmptyState message="还没有机会框架，先去机会匹配选一个方向。" />
+        <Link
+          href="/match"
+          className="text-sm text-primary underline-offset-4 hover:underline"
+        >
+          去机会匹配 →
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
-      <PageHeader title="机会框架" description={data.opportunity_area} />
-
-      <section className="grid gap-4 md:grid-cols-2">
-        <div>
-          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
-            相关机制
-          </h2>
-          <Chips items={data.related_mechanics} />
-        </div>
-        <div>
-          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
-            相关玩家体验
-          </h2>
-          <Chips items={data.related_player_experiences} />
-        </div>
-        <div>
-          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
-            推荐变形
-          </h2>
-          <ul className="list-disc pl-5 text-sm">
-            {data.recommended_transformations.map((t) => (
-              <li key={t}>{t}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="rounded-lg border border-red-200 bg-red-50 p-3">
-          <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-red-700">
-            禁止方向
-          </h2>
-          <ul className="list-disc pl-5 text-sm text-red-700">
-            {data.forbidden_directions.map((d) => (
-              <li key={d}>{d}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="grid gap-4 md:grid-cols-3">
-        <div>
-          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
-            来源游戏
-          </h2>
-          <Chips items={data.source_game_ids} />
-        </div>
-        <div>
-          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
-            相关制作约束
-          </h2>
-          <Chips items={data.related_constraints} />
-        </div>
-        <div>
-          <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
-            相关创新模式
-          </h2>
-          <Chips items={data.related_innovation_patterns} />
-        </div>
-      </section>
-
-      <section className="grid gap-4 md:grid-cols-2">
-        <div>
-          <h2 className="mb-1 text-xs uppercase tracking-wide text-muted-foreground/70">
-            适配理由
-          </h2>
-          <p className="text-sm text-muted-foreground">{data.fit_reason}</p>
-        </div>
-        <div>
-          <h2 className="mb-1 text-xs uppercase tracking-wide text-muted-foreground/70">
-            风险理由
-          </h2>
-          <p className="text-sm text-muted-foreground">{data.risk_reason}</p>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">
-          证据路径
-        </h2>
-        <Chips items={data.evidence_path} />
-      </section>
+      <PageHeader title="机会框架" description="从机会匹配生成的框架历史" />
+      <div className="space-y-4">
+        {frames.map((frame) => (
+          <OpportunityFrameCard
+            key={frame.id}
+            frame={frame}
+            defaultOpen={frame.id === lastId}
+            highlighted={frame.id === lastId}
+            onRemove={removeFrame}
+          />
+        ))}
+      </div>
     </div>
   );
 }

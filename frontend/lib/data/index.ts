@@ -120,10 +120,6 @@ export async function confirmDeveloperProfile(
   return settle(promoteDraftToProfile(draft));
 }
 
-export async function getOpportunityFrame(): Promise<OpportunityFrame> {
-  return settle(goldenFlow.opportunity_frame);
-}
-
 // 6.5 机会匹配。把开发者画像发给后端,拿回一批候选机会区域 + 被拒方向 + 警告。
 // 这是一个由按钮触发的动作(非 load-on-mount),配套 hook 用 useMutation。
 export async function matchOpportunities(
