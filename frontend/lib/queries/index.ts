@@ -83,7 +83,8 @@ export function useImportGame() {
 
 export function useMatchOpportunities() {
   return useMutation({
-    mutationFn: (profile: DeveloperProfile) => matchOpportunities(profile),
+    mutationFn: ({ profile, seenIds }: { profile: DeveloperProfile; seenIds: string[] }) =>
+      matchOpportunities(profile, seenIds),
   });
 }
 

@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends
+from pydantic import Field
 
 from app.graph.connection import create_driver
 from app.graph.opportunity_repository import OpportunityRepository
 from app.schemas.artifacts import DeveloperProfile, OpportunityFrame
-from app.schemas.common import StrictBaseModel
+from app.schemas.common import NonEmptyStr, StrictBaseModel
 from app.schemas.opportunity import OpportunityArea, OpportunityMatchResult
 from app.services.opportunity_frame_llm import (
     OpportunityFrameLlmClient,
@@ -36,13 +37,20 @@ def get_opportunity_llm() -> OpportunityLlmClient | None:
     return get_opportunity_llm_client()
 
 
+class OpportunityMatchRequest(StrictBaseModel):
+    profile: DeveloperProfile
+    seen_ids: list[NonEmptyStr] = Field(default_factory=list)
+
+
 @router.post("/opportunity/match", response_model=OpportunityMatchResult)
 def match_endpoint(
-    profile: DeveloperProfile,
+    request: OpportunityMatchRequest,
     repository: OpportunityRepository = Depends(get_opportunity_repository),
     llm_client: OpportunityLlmClient | None = Depends(get_opportunity_llm),
 ) -> OpportunityMatchResult:
-    return match_opportunities(profile, repository, llm_client)
+    return match_opportunities(
+        request.profile, repository, llm_client, seen_ids=request.seen_ids
+    )
 
 
 class OpportunityFrameRequest(StrictBaseModel):

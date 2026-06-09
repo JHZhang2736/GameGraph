@@ -3,6 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MatchPage from "@/app/(workbench)/match/page";
+import { goldenFlow } from "@/lib/fixtures/golden-flow";
 import type { OpportunityFrame, OpportunityMatchResult } from "@/lib/types";
 
 const { pushMock } = vi.hoisted(() => ({ pushMock: vi.fn() }));
@@ -133,5 +134,50 @@ describe("MatchPage", () => {
     const stored = JSON.parse(localStorage.getItem("gamegraph.opportunity-frames")!);
     expect(stored[0].id).toBe(FRAME.id);
     expect(sessionStorage.getItem("gamegraph.last-frame-id")).toBe(FRAME.id);
+  });
+
+  it("appends results into a persisted board", async () => {
+    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    renderWithClient(<MatchPage />);
+    await clickMatch();
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+    // Key derived from the same fixture the page reads (getDeveloperProfile falls
+    // back to goldenFlow.developer_profile when nothing is stored), so we don't
+    // hardcode the id nor scan Object.keys(localStorage).
+    const boardKey = `gamegraph.opportunity-board.${goldenFlow.developer_profile.id}`;
+    const board = JSON.parse(localStorage.getItem(boardKey)!);
+    expect(board.areas).toHaveLength(1);
+    expect(board.seen_ids).toContain("opp|vampire_survivors|sub|Perspective|第一人称");
+    expect(board.seen_ids).toContain("opp|x|comb|Mechanic|在线匹配");
+  });
+
+  it("restores the board on remount (survives refresh)", async () => {
+    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    const first = renderWithClient(<MatchPage />);
+    await clickMatch();
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+    first.unmount();
+    renderWithClient(<MatchPage />);
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+  });
+
+  it("clears the board", async () => {
+    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    const user = userEvent.setup();
+    renderWithClient(<MatchPage />);
+    await clickMatch();
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+    await user.click(screen.getByRole("button", { name: "清空看板" }));
+    await waitFor(() =>
+      expect(screen.queryByText("视角:第三人称 → 第一人称")).not.toBeInTheDocument(),
+    );
   });
 });

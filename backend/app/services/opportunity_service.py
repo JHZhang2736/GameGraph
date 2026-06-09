@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import logging
 import os
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from typing import Protocol
 
@@ -165,6 +166,7 @@ def rank_candidates(
 SPARSE_AREA_THRESHOLD = 3
 _NO_LLM_WARNING = "未配置 LLM，未做约束过滤与可行性判定。"
 _LLM_FAILED_WARNING = "LLM 判断失败，已降级为全量保留。"
+_EXHAUSTED_WARNING = "已无更多新机会：当前图谱中可探索的候选已全部呈现，可入库更多游戏以拓宽。"
 _FALLBACK_FIT_REASON = "未做适配判断（降级保留）。"
 _FALLBACK_RISK_REASON = "未做风险判断（降级保留）。"
 
@@ -197,6 +199,7 @@ def _fallback_result(
     profile_id: str,
     candidates: list[CandidateOpportunityArea],
     warning: str,
+    extra_warnings: Iterable[str] = (),
 ) -> OpportunityMatchResult:
     areas = [
         _area_from_candidate(
@@ -204,7 +207,7 @@ def _fallback_result(
         )
         for c in candidates
     ]
-    return _finalize(profile_id, areas, [], [warning])
+    return _finalize(profile_id, areas, [], [*extra_warnings, warning])
 
 
 def _finalize(
@@ -227,18 +230,23 @@ def match_opportunities(
     profile: DeveloperProfile,
     repository: SupportsGameDimensions,
     llm_client: SupportsOpportunityJudgment | None,
+    seen_ids: Iterable[str] = (),
 ) -> OpportunityMatchResult:
     games = repository.fetch_game_dimensions()
-    candidates = rank_candidates(enumerate_candidates(games))
+    seen = set(seen_ids)
+    enumerated = enumerate_candidates(games)
+    fresh = [c for c in enumerated if c.id not in seen]
+    candidates = rank_candidates(fresh)
+    exhausted = [_EXHAUSTED_WARNING] if (enumerated and not fresh) else []
 
     if llm_client is None:
-        return _fallback_result(profile.id, candidates, _NO_LLM_WARNING)
+        return _fallback_result(profile.id, candidates, _NO_LLM_WARNING, exhausted)
 
     try:
         batch = llm_client.judge(profile, candidates)
     except Exception:
         logger.warning("Opportunity LLM judge failed; falling back", exc_info=True)
-        return _fallback_result(profile.id, candidates, _LLM_FAILED_WARNING)
+        return _fallback_result(profile.id, candidates, _LLM_FAILED_WARNING, exhausted)
 
     by_id: dict[str, OpportunityJudgment] = {}
     duplicate_ids: list[str] = []
@@ -290,4 +298,4 @@ def match_opportunities(
     unknown_ids = sorted(set(by_id) - {c.id for c in candidates})
     if unknown_ids:
         warnings.append(f"LLM 返回了未知候选 id，已忽略：{', '.join(unknown_ids)}")
-    return _finalize(profile.id, areas, rejected, warnings)
+    return _finalize(profile.id, areas, rejected, [*exhausted, *warnings])

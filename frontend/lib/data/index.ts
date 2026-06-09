@@ -120,15 +120,16 @@ export async function confirmDeveloperProfile(
   return settle(promoteDraftToProfile(draft));
 }
 
-// 6.5 机会匹配。把开发者画像发给后端,拿回一批候选机会区域 + 被拒方向 + 警告。
-// 这是一个由按钮触发的动作(非 load-on-mount),配套 hook 用 useMutation。
+// 6.5 机会匹配。把开发者画像 + 已见候选 id 发给后端,拿回一批没见过的新候选。
+// seen_ids 用于跨批去重(累积式发现看板)。按钮触发,配套 hook 用 useMutation。
 export async function matchOpportunities(
   profile: DeveloperProfile,
+  seenIds: string[] = [],
 ): Promise<OpportunityMatchResult> {
   const res = await fetch(`${apiBase()}/opportunity/match`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(profile),
+    body: JSON.stringify({ profile, seen_ids: seenIds }),
   });
   if (!res.ok) throw new Error(`POST /opportunity/match responded ${res.status}`);
   return (await res.json()) as OpportunityMatchResult;

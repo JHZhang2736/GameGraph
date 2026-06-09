@@ -43,7 +43,7 @@ def test_match_endpoint_returns_areas() -> None:
     app.dependency_overrides[get_opportunity_llm] = lambda: StubLlm()
     try:
         client = TestClient(app)
-        response = client.post("/opportunity/match", json=_profile_payload())
+        response = client.post("/opportunity/match", json={"profile": _profile_payload(), "seen_ids": []})
         assert response.status_code == 200
         body = response.json()
         assert body["profile_id"] == "profile_1"
@@ -53,12 +53,23 @@ def test_match_endpoint_returns_areas() -> None:
         app.dependency_overrides.clear()
 
 
+def test_match_endpoint_rejects_bare_profile_body() -> None:
+    app.dependency_overrides[get_opportunity_repository] = lambda: StubRepo()
+    app.dependency_overrides[get_opportunity_llm] = lambda: StubLlm()
+    try:
+        client = TestClient(app)
+        resp = client.post("/opportunity/match", json=_profile_payload())
+        assert resp.status_code == 422
+    finally:
+        app.dependency_overrides.clear()
+
+
 def test_match_endpoint_rejects_malformed_profile() -> None:
     app.dependency_overrides[get_opportunity_repository] = lambda: StubRepo()
     app.dependency_overrides[get_opportunity_llm] = lambda: StubLlm()
     try:
         client = TestClient(app)
-        response = client.post("/opportunity/match", json={"id": "profile_1"})  # 缺必填字段
+        response = client.post("/opportunity/match", json={"profile": {"id": "profile_1"}, "seen_ids": []})  # 缺必填字段
         assert response.status_code == 422
     finally:
         app.dependency_overrides.clear()
@@ -75,7 +86,7 @@ def test_match_endpoint_accepts_profile_without_optional_lists() -> None:
     app.dependency_overrides[get_opportunity_llm] = lambda: StubLlm()
     try:
         client = TestClient(app)
-        response = client.post("/opportunity/match", json=payload)
+        response = client.post("/opportunity/match", json={"profile": payload, "seen_ids": []})
         assert response.status_code == 200
         assert response.json()["profile_id"] == "profile_1"
     finally:
