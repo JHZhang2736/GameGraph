@@ -72,6 +72,7 @@ def test_generate_endpoint_503_without_llm() -> None:
         client = TestClient(app)
         response = client.post("/concept/generate", json={"frame": _frame_dict()})
         assert response.status_code == 503
+        assert "未配置 LLM" in response.json()["detail"]
     finally:
         app.dependency_overrides.clear()
 
@@ -82,6 +83,7 @@ def test_generate_endpoint_502_on_llm_error() -> None:
         client = TestClient(app)
         response = client.post("/concept/generate", json={"frame": _frame_dict()})
         assert response.status_code == 502
+        assert "upstream boom" in response.json()["detail"]
     finally:
         app.dependency_overrides.clear()
 
