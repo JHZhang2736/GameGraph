@@ -136,6 +136,7 @@ export interface OpportunityFrame {
   evidence_path: string[];
   fit_reason: string;
   risk_reason: string;
+  warnings?: string[];
 }
 
 export interface ConceptCard {

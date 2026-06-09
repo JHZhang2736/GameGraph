@@ -14,6 +14,7 @@ import type {
   GoldenFlow,
   ImportSummary,
   NodeSearchHit,
+  OpportunityArea,
   OpportunityFrame,
   OpportunityMatchResult,
   ProfileParseInput,
@@ -135,6 +136,21 @@ export async function matchOpportunities(
   });
   if (!res.ok) throw new Error(`POST /opportunity/match responded ${res.status}`);
   return (await res.json()) as OpportunityMatchResult;
+}
+
+// 6.6 机会框架。把开发者画像 + 选中的机会区域发给后端，拿回一个机会框架。
+// 同样是按钮触发的动作，配套 hook 用 useMutation。
+export async function buildOpportunityFrame(
+  profile: DeveloperProfile,
+  area: OpportunityArea,
+): Promise<OpportunityFrame> {
+  const res = await fetch(`${apiBase()}/opportunity/frame`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ profile, area }),
+  });
+  if (!res.ok) throw new Error(`POST /opportunity/frame responded ${res.status}`);
+  return (await res.json()) as OpportunityFrame;
 }
 
 export interface ConceptsBundle {
