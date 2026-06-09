@@ -212,15 +212,21 @@ def test_rank_caps_candidates_per_anchor() -> None:
 
 
 def test_rank_caps_candidates_per_dimension() -> None:
-    cands = [
-        _dcand(f"p{i}", 0, 1, f"anchor{i}", "Perspective", to_value=f"v{i}")
-        for i in range(6)
-    ]
-    ranked = rank_candidates(
-        cands, max_existing=2, top_n=5, max_per_anchor=2, max_per_dimension=5
+    # 6 条 Perspective(各自不同锚点,锚点配额不触发)更新颖,排在前;另有 3 条 Genre
+    # 兜底。top_n=8 > 维度上限 5,且 Genre 足以把剩余槽填满 —— 所以第 6 条 Perspective
+    # 是被「维度配额」挡掉的(既非 top_n 截断,也没被放宽兜底补回),这才真正测到次轴。
+    cands = (
+        [_dcand(f"p{i}", 0, 2, f"panchor{i}", "Perspective", to_value=f"v{i}") for i in range(6)]
+        + [_dcand(f"q{i}", 0, 1, f"qanchor{i}", "Genre", to_value=f"w{i}") for i in range(3)]
     )
+    ranked = rank_candidates(
+        cands, max_existing=2, top_n=8, max_per_anchor=2, max_per_dimension=5
+    )
+    ids = {c.id for c in ranked}
     persp = [c for c in ranked if c.transformation.dimension == "Perspective"]
-    assert len(persp) == 5
+    assert len(ranked) == 8          # 填满到 top_n
+    assert len(persp) == 5           # 维度配额生效(不是 6)
+    assert "p5" not in ids           # 被配额挡掉的那条确实没入选
 
 
 def test_rank_relaxes_caps_when_underfilled() -> None:

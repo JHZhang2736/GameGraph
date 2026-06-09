@@ -184,7 +184,7 @@ def rank_candidates(
             per_anchor[anchor] = per_anchor.get(anchor, 0) + 1
             per_dimension[dimension] = per_dimension.get(dimension, 0) + 1
 
-    # 第二遍:放宽兜底——配额导致没凑满时,用剩余候选按新颖度补齐
+    # 第二遍:放宽兜底——配额导致没凑满时,用剩余候选按新颖度补齐(刻意不更新配额计数)
     if len(selected) < top_n:
         for c in viable:
             if len(selected) >= top_n:
