@@ -165,3 +165,91 @@ def test_rank_truncates_to_top_n() -> None:
         [_cand(f"c{i}", 0, 1) for i in range(40)], max_existing=2, top_n=30
     )
     assert len(ranked) == 30
+
+
+def _dcand(
+    cid: str,
+    existing: int,
+    target: int,
+    anchor: str,
+    dimension: str,
+    to_value: str | None = None,
+) -> CandidateOpportunityArea:
+    # 替代类维度必须带 from_value(schema 校验);组合类(Mechanic)from_value 为 None
+    is_combine = dimension == "Mechanic"
+    return CandidateOpportunityArea(
+        id=cid,
+        anchor_game_id=anchor,
+        anchor_summary="s",
+        transformation=Transformation(
+            type=TransformationType.COMBINE if is_combine else TransformationType.SUBSTITUTE,
+            dimension=dimension,
+            from_value=None if is_combine else "x",
+            to_value=to_value or cid,
+        ),
+        existing_combination_count=existing,
+        evidence=OpportunityEvidence(
+            anchor_game_id=anchor,
+            target_value_game_ids=[f"g{i}" for i in range(target)],
+            combination_game_ids=[f"c{i}" for i in range(existing)],
+        ),
+    )
+
+
+def test_rank_caps_candidates_per_anchor() -> None:
+    cands = (
+        [_dcand(f"a{i}", 0, 1, "a", "Mechanic") for i in range(5)]
+        + [_dcand(f"b{i}", 0, 1, "b", "Genre") for i in range(2)]
+        + [_dcand(f"c{i}", 0, 1, "c", "ArtStyle") for i in range(2)]
+    )
+    ranked = rank_candidates(
+        cands, max_existing=2, top_n=6, max_per_anchor=2, max_per_dimension=5
+    )
+    anchors = [c.anchor_game_id for c in ranked]
+    assert anchors.count("a") == 2
+    assert anchors.count("b") == 2
+    assert anchors.count("c") == 2
+
+
+def test_rank_caps_candidates_per_dimension() -> None:
+    cands = [
+        _dcand(f"p{i}", 0, 1, f"anchor{i}", "Perspective", to_value=f"v{i}")
+        for i in range(6)
+    ]
+    ranked = rank_candidates(
+        cands, max_existing=2, top_n=5, max_per_anchor=2, max_per_dimension=5
+    )
+    persp = [c for c in ranked if c.transformation.dimension == "Perspective"]
+    assert len(persp) == 5
+
+
+def test_rank_relaxes_caps_when_underfilled() -> None:
+    cands = [_dcand(f"a{i}", 0, 1, "a", "Mechanic") for i in range(5)]
+    ranked = rank_candidates(
+        cands, max_existing=2, top_n=5, max_per_anchor=2, max_per_dimension=5
+    )
+    assert len(ranked) == 5
+    assert {c.id for c in ranked} == {"a0", "a1", "a2", "a3", "a4"}
+
+
+def test_rank_keeps_global_most_novel_first() -> None:
+    cands = [
+        _dcand("most_novel", 0, 5, "b", "Genre"),
+        _dcand("mid", 0, 1, "c", "ArtStyle"),
+        _dcand("less_novel", 1, 9, "a", "Mechanic"),
+    ]
+    ranked = rank_candidates(
+        cands, max_existing=2, top_n=10, max_per_anchor=2, max_per_dimension=5
+    )
+    assert ranked[0].id == "most_novel"
+
+
+def test_rank_diversity_is_deterministic() -> None:
+    cands = (
+        [_dcand(f"a{i}", 0, 1, "a", "Mechanic") for i in range(4)]
+        + [_dcand(f"b{i}", 0, 2, "b", "Genre") for i in range(4)]
+        + [_dcand(f"c{i}", 1, 1, "c", "ArtStyle") for i in range(4)]
+    )
+    r1 = [c.id for c in rank_candidates(cands, max_existing=2, top_n=8)]
+    r2 = [c.id for c in rank_candidates(list(reversed(cands)), max_existing=2, top_n=8)]
+    assert r1 == r2
