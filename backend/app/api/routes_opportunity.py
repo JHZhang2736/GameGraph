@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends
+from pydantic import Field
 
 from app.graph.connection import create_driver
 from app.graph.opportunity_repository import OpportunityRepository
 from app.schemas.artifacts import DeveloperProfile, OpportunityFrame
-from pydantic import Field
-
 from app.schemas.common import NonEmptyStr, StrictBaseModel
 from app.schemas.opportunity import OpportunityArea, OpportunityMatchResult
 from app.services.opportunity_frame_llm import (
