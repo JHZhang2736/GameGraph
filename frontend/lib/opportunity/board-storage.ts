@@ -7,16 +7,19 @@ export interface OpportunityBoard {
   seen_ids: string[];
 }
 
-const EMPTY_BOARD: OpportunityBoard = { areas: [], seen_ids: [] };
+// 每次返回新的空看板,避免共享可变哨兵被调用方意外改动。
+function emptyBoard(): OpportunityBoard {
+  return { areas: [], seen_ids: [] };
+}
 
 function key(profileId: string): string {
   return `gamegraph.opportunity-board.${profileId}`;
 }
 
 export function loadBoard(profileId: string): OpportunityBoard {
-  if (typeof window === "undefined") return EMPTY_BOARD;
+  if (typeof window === "undefined") return emptyBoard();
   const raw = window.localStorage.getItem(key(profileId));
-  if (!raw) return EMPTY_BOARD;
+  if (!raw) return emptyBoard();
   try {
     const parsed = JSON.parse(raw) as Partial<OpportunityBoard>;
     return {
@@ -24,7 +27,7 @@ export function loadBoard(profileId: string): OpportunityBoard {
       seen_ids: Array.isArray(parsed.seen_ids) ? parsed.seen_ids : [],
     };
   } catch {
-    return EMPTY_BOARD;
+    return emptyBoard();
   }
 }
 
