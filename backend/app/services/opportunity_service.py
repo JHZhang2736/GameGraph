@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import os
 from dataclasses import dataclass, field
 from typing import Protocol
 
@@ -20,7 +21,10 @@ from app.services.opportunity_llm import OpportunityJudgment, OpportunityJudgmen
 logger = logging.getLogger(__name__)
 
 MAX_EXISTING_COMBINATIONS = 2   # 已有相同组合的游戏数超过该阈值视为不够稀缺，丢弃
-TOP_N = 30                      # 送 LLM 判断的最大候选数
+# 送 LLM 判断的最大候选数。候选越多,单次 judge 的输入/输出越大、越慢——30 个会让
+# 同步请求耗时远超前端代理容忍度(socket hang up)。默认 10 兼顾覆盖与延迟,可用
+# LLM_MAX_CANDIDATES 环境变量按需调整。
+TOP_N = int(os.environ.get("LLM_MAX_CANDIDATES", "10"))
 
 # 替代作用的维度 label -> GameDimensions 属性名
 _SUBSTITUTE_DIMENSIONS: dict[str, str] = {
