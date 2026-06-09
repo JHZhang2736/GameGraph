@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   EmptyState,
@@ -7,15 +9,40 @@ import {
   PageHeader,
 } from "@/components/shell/view-states";
 import { OpportunityCandidateCard } from "@/components/opportunity/opportunity-candidate-card";
-import { useDeveloperProfile, useMatchOpportunities } from "@/lib/queries";
+import { rememberLastFrameId, upsertFrame } from "@/lib/opportunity/frame-history";
+import {
+  useBuildOpportunityFrame,
+  useDeveloperProfile,
+  useMatchOpportunities,
+} from "@/lib/queries";
+import type { OpportunityArea } from "@/lib/types";
 
 export default function MatchPage() {
+  const router = useRouter();
   const { data: profile } = useDeveloperProfile();
   const match = useMatchOpportunities();
+  const buildFrame = useBuildOpportunityFrame();
+  const [generatingId, setGeneratingId] = useState<string | null>(null);
   const result = match.data;
 
   function runMatch() {
     if (profile) match.mutate(profile);
+  }
+
+  function generate(area: OpportunityArea) {
+    if (!profile) return;
+    setGeneratingId(area.id);
+    buildFrame.mutate(
+      { profile, area },
+      {
+        onSuccess: (frame) => {
+          upsertFrame(frame);
+          rememberLastFrameId(frame.id);
+          router.push("/opportunities");
+        },
+        onSettled: () => setGeneratingId(null),
+      },
+    );
   }
 
   return (
@@ -23,16 +50,13 @@ export default function MatchPage() {
       <PageHeader title="机会匹配" description="从你的画像匹配出的创新机会" />
 
       <div>
-        <Button
-          type="button"
-          disabled={!profile || match.isPending}
-          onClick={runMatch}
-        >
+        <Button type="button" disabled={!profile || match.isPending} onClick={runMatch}>
           {match.isPending ? "匹配中…" : "匹配机会"}
         </Button>
       </div>
 
       {match.isError ? <ErrorState onRetry={runMatch} /> : null}
+      {buildFrame.isError ? <ErrorState /> : null}
 
       {result ? (
         <div className="space-y-6">
@@ -49,7 +73,12 @@ export default function MatchPage() {
           {result.areas.length > 0 ? (
             <section className="grid gap-4 md:grid-cols-2">
               {result.areas.map((area) => (
-                <OpportunityCandidateCard key={area.id} area={area} />
+                <OpportunityCandidateCard
+                  key={area.id}
+                  area={area}
+                  onGenerate={generate}
+                  isGenerating={generatingId === area.id}
+                />
               ))}
             </section>
           ) : (

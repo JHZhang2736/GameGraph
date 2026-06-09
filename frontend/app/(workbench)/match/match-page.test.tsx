@@ -3,7 +3,10 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MatchPage from "@/app/(workbench)/match/page";
-import type { OpportunityMatchResult } from "@/lib/types";
+import type { OpportunityFrame, OpportunityMatchResult } from "@/lib/types";
+
+const { pushMock } = vi.hoisted(() => ({ pushMock: vi.fn() }));
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push: pushMock }) }));
 
 function renderWithClient(ui: React.ReactNode) {
   const client = new QueryClient({
@@ -53,9 +56,27 @@ const RESULT: OpportunityMatchResult = {
   warnings: ["图谱规模较小，新颖度判断偏粗。"],
 };
 
+const FRAME: OpportunityFrame = {
+  id: "frame|opp|vampire_survivors|sub|Perspective|第一人称",
+  developer_profile_id: "dev_profile_1",
+  opportunity_area: "第一人称弹幕生存",
+  source_game_ids: ["doom"],
+  related_mechanics: [],
+  related_player_experiences: [],
+  related_constraints: [],
+  related_innovation_patterns: [],
+  recommended_transformations: ["主变形"],
+  forbidden_directions: ["禁止"],
+  evidence_path: ["rel"],
+  fit_reason: "f",
+  risk_reason: "r",
+};
+
 afterEach(() => {
   vi.restoreAllMocks();
+  pushMock.mockClear();
   localStorage.clear();
+  sessionStorage.clear();
 });
 
 async function clickMatch() {
@@ -74,9 +95,7 @@ describe("MatchPage", () => {
       expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
     );
     expect(screen.getByText("平衡")).toBeInTheDocument();
-    expect(
-      screen.getByText("图谱规模较小，新颖度判断偏粗。"),
-    ).toBeInTheDocument();
+    expect(screen.getByText("图谱规模较小，新颖度判断偏粗。")).toBeInTheDocument();
     expect(screen.getByText(/不做在线多人/)).toBeInTheDocument();
   });
 
@@ -87,17 +106,32 @@ describe("MatchPage", () => {
     );
     renderWithClient(<MatchPage />);
     await clickMatch();
-    await waitFor(() =>
-      expect(screen.getByText(/未匹配到候选/)).toBeInTheDocument(),
-    );
+    await waitFor(() => expect(screen.getByText(/未匹配到候选/)).toBeInTheDocument());
   });
 
   it("shows an error state on a 500", async () => {
     vi.stubGlobal("fetch", mockFetch(500, {}));
     renderWithClient(<MatchPage />);
     await clickMatch();
+    await waitFor(() => expect(screen.getByText("加载失败")).toBeInTheDocument());
+  });
+
+  it("generates a frame, stores it in history, and navigates to /opportunities", async () => {
+    const user = userEvent.setup();
+    const fetchMock = vi
+      .fn()
+      .mockResolvedValueOnce({ ok: true, status: 200, json: async () => RESULT })
+      .mockResolvedValueOnce({ ok: true, status: 200, json: async () => FRAME });
+    vi.stubGlobal("fetch", fetchMock);
+    renderWithClient(<MatchPage />);
+    await clickMatch();
     await waitFor(() =>
-      expect(screen.getByText("加载失败")).toBeInTheDocument(),
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
     );
+    await user.click(screen.getByRole("button", { name: "生成机会框架" }));
+    await waitFor(() => expect(pushMock).toHaveBeenCalledWith("/opportunities"));
+    const stored = JSON.parse(localStorage.getItem("gamegraph.opportunity-frames")!);
+    expect(stored[0].id).toBe(FRAME.id);
+    expect(sessionStorage.getItem("gamegraph.last-frame-id")).toBe(FRAME.id);
   });
 });

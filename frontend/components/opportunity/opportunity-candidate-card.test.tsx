@@ -1,5 +1,6 @@
-import { describe, it, expect } from "vitest";
+import { afterEach, describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { OpportunityCandidateCard } from "@/components/opportunity/opportunity-candidate-card";
 import type { OpportunityArea } from "@/lib/types";
 
@@ -24,9 +25,11 @@ const AREA: OpportunityArea = {
   risk_reason: "第一人称弹幕密度需要重新调校。",
 };
 
+afterEach(() => vi.restoreAllMocks());
+
 describe("OpportunityCandidateCard", () => {
   it("renders the transformation, novelty, risk label, summary and reasons", () => {
-    render(<OpportunityCandidateCard area={AREA} />);
+    render(<OpportunityCandidateCard area={AREA} onGenerate={() => {}} />);
     expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument();
     expect(screen.getByText("全新组合")).toBeInTheDocument();
     expect(screen.getByText("平衡")).toBeInTheDocument();
@@ -35,5 +38,18 @@ describe("OpportunityCandidateCard", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("契合短周期、强系统性的偏好。")).toBeInTheDocument();
     expect(screen.getByText("第一人称弹幕密度需要重新调校。")).toBeInTheDocument();
+  });
+
+  it("calls onGenerate with the area when the generate button is clicked", async () => {
+    const user = userEvent.setup();
+    const onGenerate = vi.fn();
+    render(<OpportunityCandidateCard area={AREA} onGenerate={onGenerate} />);
+    await user.click(screen.getByRole("button", { name: "生成机会框架" }));
+    expect(onGenerate).toHaveBeenCalledWith(AREA);
+  });
+
+  it("disables the button and shows progress while generating", () => {
+    render(<OpportunityCandidateCard area={AREA} onGenerate={() => {}} isGenerating />);
+    expect(screen.getByRole("button", { name: "生成中…" })).toBeDisabled();
   });
 });

@@ -7,17 +7,17 @@ import {
   getGameProfile,
   getGoldenFlow,
   getNeighbors,
-  getOpportunityFrame,
   getPrototypeBrief,
   getSeedGames,
   importGame,
   listGames,
+  buildOpportunityFrame,
   matchOpportunities,
   parseDeveloperProfileInput,
   searchGraphNodes,
   type NeighborsParams,
 } from "@/lib/data";
-import type { DeveloperProfile, ProfileParseInput } from "@/lib/types";
+import type { DeveloperProfile, OpportunityArea, ProfileParseInput } from "@/lib/types";
 import type { ImportDocument } from "@/lib/import/schema";
 
 export function useGoldenFlow() {
@@ -47,10 +47,6 @@ export function useParseDeveloperProfileInput(input: ProfileParseInput | null) {
     queryFn: () => parseDeveloperProfileInput(input as ProfileParseInput),
     enabled: input !== null,
   });
-}
-
-export function useOpportunityFrame() {
-  return useQuery({ queryKey: ["opportunity-frame"], queryFn: getOpportunityFrame });
 }
 
 export function useConcepts() {
@@ -88,5 +84,12 @@ export function useImportGame() {
 export function useMatchOpportunities() {
   return useMutation({
     mutationFn: (profile: DeveloperProfile) => matchOpportunities(profile),
+  });
+}
+
+export function useBuildOpportunityFrame() {
+  return useMutation({
+    mutationFn: ({ profile, area }: { profile: DeveloperProfile; area: OpportunityArea }) =>
+      buildOpportunityFrame(profile, area),
   });
 }
