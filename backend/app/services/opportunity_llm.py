@@ -1,15 +1,13 @@
 from __future__ import annotations
 
-import os
-from dataclasses import dataclass
 from typing import Literal
 
-import httpx
 from pydantic import ConfigDict, Field
 
 from app.schemas.artifacts import DeveloperProfile
 from app.schemas.common import StrictBaseModel
 from app.schemas.opportunity import CandidateOpportunityArea, RiskPosture
+from app.services.llm_client import LlmClient, LlmSettings, get_llm_client  # noqa: F401  (LlmSettings 再导出)
 
 TOOL_NAME = "emit_opportunity_judgments"
 
@@ -22,27 +20,6 @@ SYSTEM_PROMPT = (
     "尽量让保留的候选覆盖稳妥/平衡/挑战多种风险姿态。"
     "你不得修改候选的锚点、变形或稀缺度，只做判断。"
 )
-
-
-@dataclass(frozen=True)
-class LlmSettings:
-    base_url: str
-    api_key: str
-    model: str
-    timeout: float
-
-    @classmethod
-    def from_env(cls) -> "LlmSettings":
-        return cls(
-            base_url=os.environ.get("LLM_BASE_URL", "").strip(),
-            api_key=os.environ.get("LLM_API_KEY", "").strip(),
-            model=os.environ.get("LLM_MODEL", "").strip(),
-            timeout=float(os.environ.get("LLM_TIMEOUT", "30")),
-        )
-
-    @property
-    def is_configured(self) -> bool:
-        return bool(self.base_url and self.api_key and self.model)
 
 
 class OpportunityJudgment(StrictBaseModel):
@@ -63,19 +40,6 @@ class OpportunityJudgmentBatch(StrictBaseModel):
 
     judgments: list[OpportunityJudgment] = Field(default_factory=list)
     warnings: list[str] = Field(default_factory=list)
-
-
-def build_tool_schema() -> list[dict]:
-    return [
-        {
-            "type": "function",
-            "function": {
-                "name": TOOL_NAME,
-                "description": "Return keep/reject judgments for the supplied opportunity candidates.",
-                "parameters": OpportunityJudgmentBatch.model_json_schema(),
-            },
-        }
-    ]
 
 
 def _profile_block(profile: DeveloperProfile) -> str:
@@ -108,47 +72,24 @@ def _candidate_block(candidates: list[CandidateOpportunityArea]) -> str:
 
 
 class OpportunityLlmClient:
-    def __init__(self, settings: LlmSettings, http_client: httpx.Client | None = None) -> None:
-        self._settings = settings
-        self._client = http_client or httpx.Client(timeout=settings.timeout)
+    def __init__(self, llm: LlmClient) -> None:
+        self._llm = llm
 
     def judge(
         self, profile: DeveloperProfile, candidates: list[CandidateOpportunityArea]
     ) -> OpportunityJudgmentBatch:
         user = f"开发者画像：\n{_profile_block(profile)}\n\n候选机会：\n{_candidate_block(candidates)}"
-        payload = {
-            "model": self._settings.model,
-            "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": user},
-            ],
-            "tools": build_tool_schema(),
-            "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
-        }
-        response = self._client.post(
-            f"{self._settings.base_url.rstrip('/')}/chat/completions",
-            headers={"Authorization": f"Bearer {self._settings.api_key}"},
-            json=payload,
+        return self._llm.call_tool(
+            system_prompt=SYSTEM_PROMPT,
+            user_message=user,
+            tool_name=TOOL_NAME,
+            response_model=OpportunityJudgmentBatch,
+            tool_description="Return keep/reject judgments for the supplied opportunity candidates.",
         )
-        try:
-            response.raise_for_status()
-        except httpx.HTTPStatusError as error:
-            raise ValueError(
-                f"LLM request failed with {error.response.status_code}: {error.response.text}"
-            ) from error
-        data = response.json()
-        try:
-            message = data["choices"][0]["message"]
-        except (KeyError, IndexError, TypeError) as error:
-            raise ValueError(f"Unexpected LLM response shape: {data}") from error
-        tool_calls = message.get("tool_calls") or []
-        if not tool_calls:
-            raise ValueError("LLM response missing tool_call")
-        return OpportunityJudgmentBatch.model_validate_json(tool_calls[0]["function"]["arguments"])
 
 
 def get_opportunity_llm_client() -> OpportunityLlmClient | None:
-    settings = LlmSettings.from_env()
-    if not settings.is_configured:
+    llm = get_llm_client()
+    if llm is None:
         return None
-    return OpportunityLlmClient(settings)
+    return OpportunityLlmClient(llm)

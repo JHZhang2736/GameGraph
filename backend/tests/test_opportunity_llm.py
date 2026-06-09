@@ -11,11 +11,11 @@ from app.schemas.opportunity import (
 )
 from app.schemas.artifacts import DeveloperConstraint, DeveloperProfile
 from app.schemas.common import ConstraintType
+from app.services.llm_client import LlmClient, LlmRequestError, LlmResponseError
 from app.services.opportunity_llm import (
     LlmSettings,
     OpportunityJudgmentBatch,
     OpportunityLlmClient,
-    build_tool_schema,
     get_opportunity_llm_client,
 )
 
@@ -77,13 +77,6 @@ def _arguments() -> str:
     )
 
 
-def test_build_tool_schema_exposes_function_name() -> None:
-    tools = build_tool_schema()
-    assert tools[0]["function"]["name"] == "emit_opportunity_judgments"
-    assert "parameters" in tools[0]["function"]
-    assert tools[0]["function"]["parameters"]["properties"]
-
-
 def test_judge_posts_request_and_parses_batch() -> None:
     seen: dict[str, object] = {}
 
@@ -101,7 +94,9 @@ def test_judge_posts_request_and_parses_batch() -> None:
             },
         )
 
-    client = OpportunityLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    client = OpportunityLlmClient(
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    )
     batch = client.judge(_profile(), [_candidate()])
 
     assert isinstance(batch, OpportunityJudgmentBatch)
@@ -118,8 +113,10 @@ def test_judge_raises_when_no_tool_call() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json={"choices": [{"message": {"content": "hi"}}]})
 
-    client = OpportunityLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError, match="tool_call"):
+    client = OpportunityLlmClient(
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    )
+    with pytest.raises(LlmResponseError, match="tool_call"):
         client.judge(_profile(), [_candidate()])
 
 
@@ -133,6 +130,8 @@ def test_judge_raises_value_error_on_http_error() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(401, json={"error": {"message": "invalid_api_key"}})
 
-    client = OpportunityLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError, match="401"):
+    client = OpportunityLlmClient(
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    )
+    with pytest.raises(LlmRequestError):
         client.judge(_profile(), [_candidate()])
