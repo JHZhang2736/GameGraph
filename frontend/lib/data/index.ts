@@ -149,6 +149,30 @@ export async function buildOpportunityFrame(
   return (await res.json()) as OpportunityFrame;
 }
 
+// 6.7 概念生成。把选中的机会框架发给后端，拿回 3 张概念卡。按钮触发，hook 用 useMutation。
+// 区分错误码：503=未配置 LLM、502=生成失败（见 ConceptGenerationError.status）。
+export class ConceptGenerationError extends Error {
+  constructor(message: string, readonly status: number) {
+    super(message);
+    this.name = "ConceptGenerationError";
+  }
+}
+
+export async function generateConcepts(frame: OpportunityFrame): Promise<ConceptCard[]> {
+  const res = await fetch(`${apiBase()}/concept/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ frame }),
+  });
+  if (!res.ok) {
+    throw new ConceptGenerationError(
+      `POST /concept/generate responded ${res.status}`,
+      res.status,
+    );
+  }
+  return (await res.json()) as ConceptCard[];
+}
+
 export interface ConceptsBundle {
   cards: ConceptCard[];
   evaluations: ConceptEvaluation[];

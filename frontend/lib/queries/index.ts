@@ -12,12 +12,13 @@ import {
   importGame,
   listGames,
   buildOpportunityFrame,
+  generateConcepts,
   matchOpportunities,
   parseDeveloperProfileInput,
   searchGraphNodes,
   type NeighborsParams,
 } from "@/lib/data";
-import type { DeveloperProfile, OpportunityArea, ProfileParseInput } from "@/lib/types";
+import type { DeveloperProfile, OpportunityArea, OpportunityFrame, ProfileParseInput } from "@/lib/types";
 import type { ImportDocument } from "@/lib/import/schema";
 
 export function useGoldenFlow() {
@@ -91,5 +92,11 @@ export function useBuildOpportunityFrame() {
   return useMutation({
     mutationFn: ({ profile, area }: { profile: DeveloperProfile; area: OpportunityArea }) =>
       buildOpportunityFrame(profile, area),
+  });
+}
+
+export function useGenerateConcepts() {
+  return useMutation({
+    mutationFn: (frame: OpportunityFrame) => generateConcepts(frame),
   });
 }
