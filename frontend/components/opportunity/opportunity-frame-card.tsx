@@ -24,11 +24,15 @@ export function OpportunityFrameCard({
   defaultOpen = false,
   highlighted = false,
   onRemove,
+  onGenerateConcepts,
+  isGenerating = false,
 }: {
   frame: OpportunityFrame;
   defaultOpen?: boolean;
   highlighted?: boolean;
   onRemove?: (id: string) => void;
+  onGenerateConcepts?: (frame: OpportunityFrame) => void;
+  isGenerating?: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
   const [primary, ...secondary] = frame.recommended_transformations;
@@ -54,6 +58,16 @@ export function OpportunityFrameCard({
             </span>
           ) : null}
         </button>
+        {onGenerateConcepts ? (
+          <Button
+            type="button"
+            size="xs"
+            onClick={() => onGenerateConcepts(frame)}
+            disabled={isGenerating}
+          >
+            {isGenerating ? "生成中…" : "生成概念"}
+          </Button>
+        ) : null}
         {onRemove ? (
           <Button type="button" variant="ghost" size="xs" onClick={() => onRemove(frame.id)}>
             移除
