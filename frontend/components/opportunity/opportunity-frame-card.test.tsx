@@ -1,5 +1,6 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { OpportunityFrameCard } from "@/components/opportunity/opportunity-frame-card";
 import type { OpportunityFrame } from "@/lib/types";
 
@@ -35,5 +36,18 @@ describe("OpportunityFrameCard", () => {
     expect(screen.getByText("次变形")).toBeInTheDocument();
     expect(screen.getByText("引入合作视角")).toBeInTheDocument();
     expect(screen.getByText("图谱规模偏小。")).toBeInTheDocument();
+  });
+
+  it("calls onGenerateConcepts with the frame when the button is clicked", async () => {
+    const onGenerateConcepts = vi.fn();
+    const user = userEvent.setup();
+    render(
+      <OpportunityFrameCard
+        frame={FRAME}
+        onGenerateConcepts={onGenerateConcepts}
+      />,
+    );
+    await user.click(screen.getByRole("button", { name: "生成概念" }));
+    expect(onGenerateConcepts).toHaveBeenCalledWith(FRAME);
   });
 });
