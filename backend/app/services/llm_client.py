@@ -1,10 +1,11 @@
 from __future__ import annotations
 
+import json
 import logging
 import os
 import time
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import TypeVar
 
 import httpx
@@ -31,6 +32,23 @@ class LlmResponseError(LlmError):
     """响应结构异常 / 缺 tool_call / schema 校验失败。"""
 
 
+def _parse_extra_body(raw: str) -> dict:
+    # provider 专属顶层参数（如 Qwen 的 enable_thinking、DashScope 限流项），由 LLM_EXTRA_BODY
+    # 以 JSON 对象提供。非法/非对象时记 warning 并忽略，避免一个配置错误让每次请求 500。
+    raw = raw.strip()
+    if not raw:
+        return {}
+    try:
+        parsed = json.loads(raw)
+    except json.JSONDecodeError:
+        logger.warning("LLM_EXTRA_BODY is not valid JSON; ignoring: %r", raw)
+        return {}
+    if not isinstance(parsed, dict):
+        logger.warning("LLM_EXTRA_BODY must be a JSON object; ignoring: %r", raw)
+        return {}
+    return parsed
+
+
 @dataclass(frozen=True)
 class LlmSettings:
     base_url: str
@@ -40,6 +58,7 @@ class LlmSettings:
     max_retries: int = 2
     backoff_base: float = 0.5
     max_invalid_retries: int = 1
+    extra_body: dict = field(default_factory=dict)
 
     @classmethod
     def from_env(cls) -> "LlmSettings":
@@ -51,6 +70,7 @@ class LlmSettings:
             max_retries=int(os.environ.get("LLM_MAX_RETRIES", "2")),
             backoff_base=float(os.environ.get("LLM_BACKOFF_BASE", "0.5")),
             max_invalid_retries=int(os.environ.get("LLM_MAX_INVALID_RETRIES", "1")),
+            extra_body=_parse_extra_body(os.environ.get("LLM_EXTRA_BODY", "")),
         )
 
     @property
@@ -92,6 +112,8 @@ class LlmClient:
         tool_description: str = "",
     ) -> T:
         payload = {
+            # extra_body 先铺底，核心字段在后覆盖，保证 model/messages/tools/tool_choice 不被改写
+            **self._settings.extra_body,
             "model": self._settings.model,
             "messages": [
                 {"role": "system", "content": system_prompt},

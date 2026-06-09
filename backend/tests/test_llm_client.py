@@ -182,3 +182,44 @@ def test_call_tool_no_invalid_retry_when_zero() -> None:
     with pytest.raises(LlmResponseError):
         _call(client)
     assert calls["n"] == 1  # 不重试
+
+
+def test_call_tool_merges_extra_body_into_payload() -> None:
+    seen: dict = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen["body"] = __import__("json").loads(request.content)
+        return httpx.Response(200, json=_ok_body())
+
+    # 关思考模式等 provider 专属参数靠 extra_body 透传到请求体顶层
+    _call(_client(handler, extra_body={"enable_thinking": False}))
+    assert seen["body"]["enable_thinking"] is False
+    assert seen["body"]["model"] == "test-model"
+    assert seen["body"]["tool_choice"]["function"]["name"] == "echo"
+
+
+def test_extra_body_cannot_override_core_fields() -> None:
+    seen: dict = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        seen["body"] = __import__("json").loads(request.content)
+        return httpx.Response(200, json=_ok_body())
+
+    _call(_client(handler, extra_body={"model": "hacked", "tool_choice": "none"}))
+    # 核心字段优先，extra_body 不能覆盖
+    assert seen["body"]["model"] == "test-model"
+    assert seen["body"]["tool_choice"] == {"type": "function", "function": {"name": "echo"}}
+
+
+def test_from_env_parses_extra_body(monkeypatch: pytest.MonkeyPatch) -> None:
+    for var in ("LLM_BASE_URL", "LLM_API_KEY", "LLM_MODEL"):
+        monkeypatch.setenv(var, "x")
+    monkeypatch.setenv("LLM_EXTRA_BODY", '{"enable_thinking": false}')
+    assert LlmSettings.from_env().extra_body == {"enable_thinking": False}
+
+
+def test_from_env_ignores_invalid_extra_body(monkeypatch: pytest.MonkeyPatch) -> None:
+    for var in ("LLM_BASE_URL", "LLM_API_KEY", "LLM_MODEL"):
+        monkeypatch.setenv(var, "x")
+    monkeypatch.setenv("LLM_EXTRA_BODY", "not json")
+    assert LlmSettings.from_env().extra_body == {}
