@@ -114,7 +114,11 @@ class ConceptLlmClient:
         tool_calls = message.get("tool_calls") or []
         if not tool_calls:
             raise ValueError("LLM response missing tool_call")
-        return ConceptGenerationBatch.model_validate_json(tool_calls[0]["function"]["arguments"])
+        try:
+            arguments = tool_calls[0]["function"]["arguments"]
+        except (KeyError, IndexError, TypeError) as error:
+            raise ValueError(f"Malformed tool_call in LLM response: {data}") from error
+        return ConceptGenerationBatch.model_validate_json(arguments)
 
 
 def get_concept_llm_client() -> ConceptLlmClient | None:

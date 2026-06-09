@@ -107,3 +107,14 @@ def test_get_client_returns_none_when_unconfigured(monkeypatch: pytest.MonkeyPat
     for var in ("LLM_BASE_URL", "LLM_API_KEY", "LLM_MODEL"):
         monkeypatch.delenv(var, raising=False)
     assert get_concept_llm_client() is None
+
+
+def test_generate_raises_on_malformed_tool_call() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={"choices": [{"message": {"tool_calls": [
+            {"id": "call_1"}  # 缺 "function" 键
+        ]}}]})
+
+    client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    with pytest.raises(ValueError, match="Malformed tool_call"):
+        client.generate(_frame())
