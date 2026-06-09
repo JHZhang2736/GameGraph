@@ -1,6 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
+from app.schemas.artifacts import DeveloperProfile
 from app.schemas.common import ConfidenceLevel, ConstraintType
 from app.schemas.developer_profile import (
     DeveloperProfileDraft,
@@ -111,3 +112,37 @@ def test_promote_draft_to_profile_returns_existing_profile_contract() -> None:
     assert profile.time_budget == "three month prototype"
     assert profile.constraints[0].type == ConstraintType.HARD
     assert not hasattr(profile, "missing_fields")
+
+
+def test_developer_profile_allows_empty_optional_lists() -> None:
+    # 只有 6 个标量能力字段必填；liked_references / desired_player_experiences /
+    # constraints / disliked_references_or_mechanics 均可选（可空、可省略）。
+    profile = DeveloperProfile(
+        id="profile_min",
+        team_size="solo",
+        time_budget="three month prototype",
+        programming_ability="strong",
+        art_ability="weak",
+        audio_ability="basic",
+        content_production_ability="limited",
+    )
+    assert profile.liked_references == []
+    assert profile.disliked_references_or_mechanics == []
+    assert profile.desired_player_experiences == []
+    assert profile.constraints == []
+
+
+def test_promote_draft_to_profile_allows_empty_optional_lists() -> None:
+    # 一个完整（5 个 blocking 字段齐全）但可选列表为空的 draft 应能 promote 成功，
+    # 不再因 DeveloperProfile 的 min_length 在 promote 时崩。
+    draft = complete_draft().model_copy(
+        update={
+            "liked_references": [],
+            "disliked_references_or_mechanics": [],
+            "desired_player_experiences": [],
+            "constraints": [],
+        }
+    )
+    profile = promote_draft_to_profile(draft)
+    assert profile.liked_references == []
+    assert profile.constraints == []
