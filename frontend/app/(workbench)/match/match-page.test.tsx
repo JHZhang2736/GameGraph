@@ -134,4 +134,49 @@ describe("MatchPage", () => {
     expect(stored[0].id).toBe(FRAME.id);
     expect(sessionStorage.getItem("gamegraph.last-frame-id")).toBe(FRAME.id);
   });
+
+  it("appends results into a persisted board", async () => {
+    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    renderWithClient(<MatchPage />);
+    await clickMatch();
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+    const boardKey = Object.keys(localStorage).find((k) =>
+      k.startsWith("gamegraph.opportunity-board."),
+    );
+    expect(boardKey).toBeDefined();
+    const board = JSON.parse(localStorage.getItem(boardKey!)!);
+    expect(board.areas).toHaveLength(1);
+    expect(board.seen_ids).toContain("opp|vampire_survivors|sub|Perspective|第一人称");
+    expect(board.seen_ids).toContain("opp|x|comb|Mechanic|在线匹配");
+  });
+
+  it("restores the board on remount (survives refresh)", async () => {
+    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    const first = renderWithClient(<MatchPage />);
+    await clickMatch();
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+    first.unmount();
+    renderWithClient(<MatchPage />);
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+  });
+
+  it("clears the board", async () => {
+    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    const user = userEvent.setup();
+    renderWithClient(<MatchPage />);
+    await clickMatch();
+    await waitFor(() =>
+      expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
+    );
+    await user.click(screen.getByRole("button", { name: "清空看板" }));
+    await waitFor(() =>
+      expect(screen.queryByText("视角:第三人称 → 第一人称")).not.toBeInTheDocument(),
+    );
+  });
 });
