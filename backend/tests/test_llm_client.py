@@ -140,3 +140,45 @@ def test_get_llm_client_builds_when_configured(monkeypatch: pytest.MonkeyPatch) 
     monkeypatch.setenv("LLM_API_KEY", "secret")
     monkeypatch.setenv("LLM_MODEL", "test-model")
     assert isinstance(get_llm_client(), LlmClient)
+
+
+def test_call_tool_retries_on_invalid_response_then_succeeds() -> None:
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        if calls["n"] == 1:
+            # 第一次：结构合法但 tool 参数通不过 Echo 校验（缺 value）
+            bad = {"choices": [{"message": {"tool_calls": [{"function": {"name": "echo", "arguments": "{}"}}]}}]}
+            return httpx.Response(200, json=bad)
+        return httpx.Response(200, json=_ok_body("recovered"))
+
+    client = _client(handler, max_invalid_retries=1)
+    assert _call(client) == Echo(value="recovered")
+    assert calls["n"] == 2  # 重试一次后成功
+
+
+def test_call_tool_exhausts_invalid_retries() -> None:
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        return httpx.Response(200, json={"choices": [{"message": {"content": "no tool call"}}]})
+
+    client = _client(handler, max_invalid_retries=2)
+    with pytest.raises(LlmResponseError):
+        _call(client)
+    assert calls["n"] == 3  # max_invalid_retries=2 → 共 3 次尝试
+
+
+def test_call_tool_no_invalid_retry_when_zero() -> None:
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        return httpx.Response(200, json={"choices": [{"message": {"content": "no tool call"}}]})
+
+    client = _client(handler, max_invalid_retries=0)
+    with pytest.raises(LlmResponseError):
+        _call(client)
+    assert calls["n"] == 1  # 不重试

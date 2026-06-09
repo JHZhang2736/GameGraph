@@ -39,6 +39,7 @@ class LlmSettings:
     timeout: float
     max_retries: int = 2
     backoff_base: float = 0.5
+    max_invalid_retries: int = 1
 
     @classmethod
     def from_env(cls) -> "LlmSettings":
@@ -49,6 +50,7 @@ class LlmSettings:
             timeout=float(os.environ.get("LLM_TIMEOUT", "30")),
             max_retries=int(os.environ.get("LLM_MAX_RETRIES", "2")),
             backoff_base=float(os.environ.get("LLM_BACKOFF_BASE", "0.5")),
+            max_invalid_retries=int(os.environ.get("LLM_MAX_INVALID_RETRIES", "1")),
         )
 
     @property
@@ -98,8 +100,20 @@ class LlmClient:
             "tools": _tool_schema(tool_name, tool_description, response_model),
             "tool_choice": {"type": "function", "function": {"name": tool_name}},
         }
-        data = self._post_with_retry(payload, tool_name)
-        return self._parse(data, response_model)
+        attempts = self._settings.max_invalid_retries + 1
+        last_error: LlmResponseError | None = None
+        for attempt in range(attempts):
+            data = self._post_with_retry(payload, tool_name)
+            try:
+                return self._parse(data, response_model)
+            except LlmResponseError as error:
+                last_error = error
+                logger.warning(
+                    "llm invalid response model=%s tool=%s attempt=%d/%d: %s",
+                    self._settings.model, tool_name, attempt + 1, attempts, error,
+                )
+        assert last_error is not None  # 循环至少一次必赋值
+        raise last_error
 
     def _post_with_retry(self, payload: dict, tool_name: str) -> dict:
         url = f"{self._settings.base_url.rstrip('/')}/chat/completions"

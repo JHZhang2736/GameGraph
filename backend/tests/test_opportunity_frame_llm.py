@@ -158,4 +158,4 @@ def test_synthesize_raises_on_invalid_json() -> None:
     with pytest.raises(LlmResponseError):
         client.synthesize(_profile(), _area(), _inputs())
 
-    assert calls["n"] == 1  # LlmClient 不重试解析错误，调一次即失败
+    assert calls["n"] == 2  # LlmClient 默认 max_invalid_retries=1，重试一次后失败，共调 2 次
