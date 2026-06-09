@@ -16,14 +16,6 @@ function renderWithClient(ui: React.ReactNode) {
   return render(<QueryClientProvider client={client}>{ui}</QueryClientProvider>);
 }
 
-function mockFetch(status: number, body: unknown) {
-  return vi.fn().mockResolvedValue({
-    ok: status >= 200 && status < 300,
-    status,
-    json: async () => body,
-  });
-}
-
 function sseFetch(frames: string, status = 200) {
   const body = new ReadableStream<Uint8Array>({
     start(controller) {

@@ -7,7 +7,6 @@ import {
   ImportError,
   matchOpportunities,
   generateConcepts,
-  ConceptGenerationError,
 } from "@/lib/data";
 
 function mockFetch(status: number, body: unknown) {
