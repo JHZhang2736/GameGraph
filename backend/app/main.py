@@ -10,6 +10,7 @@ from fastapi.responses import JSONResponse
 
 from app.api.routes_graph import router as graph_router
 from app.api.routes_import import router
+from app.api.routes_concept import router as concept_router
 from app.api.routes_opportunity import router as opportunity_router
 from app.api.routes_profile import router as profile_router
 from app.services.fixture_pipeline import ContractViolation
@@ -43,6 +44,7 @@ app.include_router(router)
 app.include_router(profile_router)
 app.include_router(graph_router)
 app.include_router(opportunity_router)
+app.include_router(concept_router)
 
 
 @app.exception_handler(ContractViolation)
