@@ -5,13 +5,14 @@
 
 ## 背景与问题
 
-后端现有 3 处 LLM 调用，散落在三个 service 文件，且彼此重复：
+后端现有 4 处 LLM 调用，散落在四个 service 文件，且彼此重复：
 
 - `backend/app/services/profile_llm.py`（`ProfileLlmClient.extract`）
 - `backend/app/services/opportunity_llm.py`（`OpportunityLlmClient.judge`）
 - `backend/app/services/opportunity_frame_llm.py`（`OpportunityFrameLlmClient.synthesize`，已复用 `opportunity_llm` 的部分渲染器与 `LlmSettings`）
+- `backend/app/services/concept_llm.py`（`ConceptLlmClient.generate`，复用 `opportunity_llm.LlmSettings`）
 
-三者都是 OpenAI 兼容的 `/chat/completions` + **强制 tool-call** 模式，且各自重复了同一套基建：
+四者都是 OpenAI 兼容的 `/chat/completions` + **强制 tool-call** 模式，且各自重复了同一套基建：
 
 - `LlmSettings`（`from_env` / `is_configured`）—— 三处重复（frame 从 opportunity 复用）。
 - HTTP POST → `raise_for_status` → 解析 `choices[0].message.tool_calls[0].function.arguments` → `model_validate_json`。
@@ -26,11 +27,12 @@
 
 **现状关键事实：**
 
-- 上层 service 消费 seam：`opportunity_service` / `opportunity_frame_service` 已通过 Protocol（`SupportsOpportunityJudgment` / `SupportsFrameSynthesis`）依赖 client；`profile_parse_service` 直接依赖 `ProfileLlmClient`。三者都调用 domain 方法（`.extract` / `.judge` / `.synthesize`）。
-- 三个 LLM 端点全是同步 `def`：`POST /profile/parse`、`POST /opportunity/match`、`POST /opportunity/frame`。
+- 上层 service 消费 seam：`opportunity_service` / `opportunity_frame_service` 已通过 Protocol（`SupportsOpportunityJudgment` / `SupportsFrameSynthesis`）依赖 client；`profile_parse_service` 直接依赖 `ProfileLlmClient`；`concept_service` 直接依赖 `ConceptLlmClient`。四者都调用 domain 方法（`.extract` / `.judge` / `.synthesize` / `.generate`）。
+- 四个 LLM 端点全是同步 `def`：`POST /profile/parse`、`POST /opportunity/match`、`POST /opportunity/frame`、`POST /concept/generate`。
+- **错误契约差异**：前三个端点 LLM 失败时**优雅降级**（service 内 try/except 回退非 LLM 路径）；`/concept/generate` 是**硬依赖**——未配置 → `HTTPException(503)`，运行时 `ValueError`（含 `ValidationError`）→ `HTTPException(502)`，前端 `generateConcepts` 靠状态码抛 `ConceptGenerationError(status)` 区分。
 - 项目无中央 config 模块，无 tenacity/backoff/structlog 等依赖。
 - 测试 seam：domain 测试通过构造函数注入 `httpx.Client(transport=MockTransport(...))` 在 HTTP 层 mock。
-- 前端是 Next.js，三个调用集中在 `frontend/lib/data/index.ts` 三个 helper（`parseDeveloperProfileInput` / `matchOpportunities` / `buildOpportunityFrame`），经 Next `/api` rewrite 代理到后端。`parseDeveloperProfileInput` 带本地降级。
+- 前端是 Next.js，四个调用集中在 `frontend/lib/data/index.ts`（`parseDeveloperProfileInput` / `matchOpportunities` / `buildOpportunityFrame` / `generateConcepts`），经 Next `/api` rewrite 代理到后端。`parseDeveloperProfileInput` 带本地降级；`generateConcepts` 用 `ConceptGenerationError`。
 
 ## 决策摘要
 
@@ -89,17 +91,19 @@ def call_tool(
 
 ### Domain 模块迁移（最低 churn）
 
-三个 `*_llm.py` 保留：`SYSTEM_PROMPT`、`TOOL_NAME`、schema 模型、prompt 渲染 helper。
-其 client 类（`ProfileLlmClient` 等）**保留**（保住 Protocol seam 与方法签名 `.extract`/`.judge`/`.synthesize`），但内部改为：
+四个 `*_llm.py`（profile / opportunity / opportunity_frame / concept）保留：`SYSTEM_PROMPT`、`TOOL_NAME`、schema 模型、prompt 渲染 helper。
+其 client 类（`ProfileLlmClient` / `OpportunityLlmClient` / `OpportunityFrameLlmClient` / `ConceptLlmClient`）**保留**（保住 Protocol seam 与方法签名 `.extract`/`.judge`/`.synthesize`/`.generate`），但内部改为：
 
 - 构造从 `(settings, http_client)` 改为持有一个 `LlmClient`。
 - 方法体改为：渲染 prompt → `self._llm.call_tool(system_prompt=..., user_message=..., tool_name=..., response_model=...)`。
 
 `get_*_client()` 工厂保留（route 仍调用），内部用 `get_llm_client()` 构造共享 `LlmClient` 再包成 domain client。
 
+`LlmSettings` 现由 `opportunity_llm` 导出、被 `opportunity_frame_llm` / `concept_llm` / 多个测试 import；迁移到 `llm_client.py` 后，在 `opportunity_llm.py` 保留 `from app.services.llm_client import LlmSettings` 的再导出（re-export），避免改动所有 import 点。
+
 ## Part B — SSE 心跳保活
 
-覆盖三个 LLM 端点：`/profile/parse`、`/opportunity/match`、`/opportunity/frame`。
+覆盖四个 LLM 端点：`/profile/parse`、`/opportunity/match`、`/opportunity/frame`、`/concept/generate`。
 
 ### 共享 helper
 
@@ -126,33 +130,41 @@ async def sse_with_heartbeat(
 
 ### Route 改动
 
-三个 route：
+四个 route：
 
 - 改为 `async def`，返回 `StreamingResponse(sse_with_heartbeat(...), media_type="text/event-stream")`。
 - 响应头设 `X-Accel-Buffering: no`（防代理/Nginx 缓冲）。
 - 去掉 `response_model=`（现在是流），但保留 pydantic 模型用于序列化 result 事件。
-- 阻塞的 service 调用（含 LLM）包成 `work`，未配置 LLM 的降级路径维持原语义（仍走非 LLM 分支，照样可通过 result 事件返回）。
+- 前三个端点（profile/match/frame）：阻塞的 service 调用（含 LLM）包成 `work`，未配置 LLM 的降级路径维持原语义（仍走非 LLM 分支，照样通过 result 事件返回）。
+- **`/concept/generate`（硬依赖，特殊处理）**：
+  - **开流前**先判 `if llm_client is None: raise HTTPException(503, ...)`——此时流尚未开始，HTTP 状态仍是 503，保留原语义。
+  - 运行时 `LlmError`（原 `ValueError`/`ValidationError`）由 `sse_with_heartbeat` 捕获为 `error` 事件；`error` 事件的 `data` 携带 `{"detail": "...", "code": 502}`，让前端可重建 `ConceptGenerationError(status=502)`。
+  - 因此 `sse_with_heartbeat` 的 `error` 事件需支持可选 `code` 字段（默认不带 code；concept 传 `code=502`）。
 
 ### 前端改动（lib/data/index.ts）
 
-- 抽共享 helper `readSseResult<T>(response): Promise<T>`：读 body reader、解析 SSE 帧、忽略 `heartbeat`、收到 `result` resolve、收到 `error` throw。
-- 三个 helper 内部从 `await fetch().json()` 改为 `readSseResult(...)`，并在 fetch 时带 `Accept: text/event-stream`。
-- **三个函数对外签名（`Promise<ProfileParseResult>` 等）完全不变**，上层 hook/组件零改动。
+- 抽共享 helper `readSseResult<T>(response): Promise<T>`：读 body reader、解析 SSE 帧、忽略 `heartbeat`、收到 `result` resolve、收到 `error` throw（throw 的 Error 携带 `error` 事件 data 里的 `detail` 与可选 `code`）。
+- 四个 helper 内部从 `await fetch().json()` 改为 `readSseResult(...)`，并在 fetch 时带 `Accept: text/event-stream`。
+- **四个函数对外签名（`Promise<ProfileParseResult>` 等）完全不变**，上层 hook/组件零改动。
 - `parseDeveloperProfileInput` 现有本地降级保留（SSE 读取/连接失败时回退本地解析）。
+- **`generateConcepts`（保留 502/503 区分）**：
+  - `fetch` 后若 `!response.ok`（如 503）→ 沿用现逻辑抛 `ConceptGenerationError(message, response.status)`。
+  - 响应 ok（200 流）则 `readSseResult`；其抛出的 error（带 `code`）转成 `ConceptGenerationError(detail, code ?? 502)`。
+  - 对外签名 `Promise<ConceptCard[]>` 与 `ConceptGenerationError` 不变。
 
 ## 测试计划
 
 ### 后端
 
 - 新增 `tests/test_llm_client.py`：重试（网络错/5xx 重试、4xx 立即抛 `LlmRequestError`）、注入 no-op `sleep` 验证退避不真等、日志、`LlmResponseError`（缺 tool_call / 结构异常 / 校验失败）、`get_llm_client()` 未配置返 `None`。用 `MockTransport`。
-- 改三个 `tests/test_*_llm.py`：domain client 构造改为注入 `LlmClient(settings, mock_http)`；HTTP 层 payload 断言（带 tools/tool_choice）不变。
-- 新增 SSE helper 单测：可控的慢 `work` + 短 `interval` 验证「先若干 heartbeat 再 result」、「`work` 抛 `LlmError` → error 事件」。
-- route 测试：happy path 断言流里最终有 `result` 事件且内容等于原结果；失败断言 `error` 事件（不依赖计时）。
+- 改四个 `tests/test_*_llm.py`（profile / opportunity / opportunity_frame / concept）：domain client 构造改为注入 `LlmClient(settings, mock_http)`；HTTP 层 payload 断言（带 tools/tool_choice）不变；原断言 `pytest.raises(ValueError, ...)` 改为 `LlmError` 子类。
+- 新增 SSE helper 单测：可控的慢 `work` + 短 `interval` 验证「先若干 heartbeat 再 result」、「`work` 抛 `LlmError` → error 事件」、「error 事件带 `code` 字段」。
+- route 测试：happy path 断言流里最终有 `result` 事件且内容等于原结果；失败断言 `error` 事件（不依赖计时）。`/concept/generate` 额外断言：未配置 LLM → HTTP 503（非流）；运行时失败 → `error` 事件且 `code=502`。
 
 ### 前端
 
-- 新增 `readSseResult` helper 单测：解析帧、忽略 heartbeat、`result` resolve、`error` throw。
-- 改 `lib/data/api.test.ts`：三个 helper 的 mock 从返回 JSON 改为返回 SSE 流。
+- 新增 `readSseResult` helper 单测：解析帧、忽略 heartbeat、`result` resolve、`error` throw（含 `code`）。
+- 改 `lib/data/api.test.ts`：四个 helper 的 mock 从返回 JSON 改为返回 SSE 流；新增 `generateConcepts` 用例（503 非 ok → `ConceptGenerationError(503)`；error 事件 `code=502` → `ConceptGenerationError(502)`）。
 
 ### 测试环境注意（来自项目记忆）
 
@@ -163,11 +175,11 @@ async def sse_with_heartbeat(
 
 | 项 | 改动 |
 |---|---|
-| `LlmSettings` | 三处 → 一处（`llm_client.py`） |
-| 三个 `*_llm.py` | 删 HTTP 管线，仅留 prompt/schema/render；client 类内部改为持有 `LlmClient` |
-| 错误类型 | `ValueError` → `LlmError` 体系 |
-| 三个 route | 同步 JSON → `async` SSE StreamingResponse |
-| 前端 `lib/data/index.ts` | 三 helper 改读 SSE 流，签名不变 |
+| `LlmSettings` | 多处 → 一处（`llm_client.py`，`opportunity_llm` 再导出兼容旧 import） |
+| 四个 `*_llm.py` | 删 HTTP 管线，仅留 prompt/schema/render；client 类内部改为持有 `LlmClient` |
+| 错误类型 | `ValueError` → `LlmError` 体系；`routes_concept` 的 `except ValueError` → `except LlmError` |
+| 四个 route | 同步 JSON → `async` SSE StreamingResponse；concept 开流前保留 503 |
+| 前端 `lib/data/index.ts` | 四 helper 改读 SSE 流，签名不变；`generateConcepts` 保留 502/503 区分 |
 
 对外契约（service Protocol、前端函数签名）保持不变，blast radius 受控。
 
