@@ -36,13 +36,25 @@ const CARD: ConceptCard = {
   suggested_prototype_scope: "原型范围",
 };
 
+function sseFetch(frames: string, status = 200) {
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode(frames));
+      controller.close();
+    },
+  });
+  return vi.fn().mockResolvedValue({
+    ok: status >= 200 && status < 300,
+    status,
+    body,
+  } as unknown as Response);
+}
+
 afterEach(() => vi.restoreAllMocks());
 
 describe("generateConcepts", () => {
   it("POSTs { frame } to /api/concept/generate and returns the cards", async () => {
-    const fetchMock = vi
-      .fn()
-      .mockResolvedValue({ ok: true, status: 200, json: async () => [CARD] });
+    const fetchMock = sseFetch(`event: result\ndata: ${JSON.stringify([CARD])}\n\n`);
     vi.stubGlobal("fetch", fetchMock);
 
     const result = await generateConcepts(FRAME);
@@ -56,10 +68,7 @@ describe("generateConcepts", () => {
   });
 
   it("throws ConceptGenerationError carrying the status on 503", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({ ok: false, status: 503, json: async () => ({}) }),
-    );
+    vi.stubGlobal("fetch", sseFetch("", 503));
     await expect(generateConcepts(FRAME)).rejects.toMatchObject({
       name: "ConceptGenerationError",
       status: 503,
@@ -67,10 +76,7 @@ describe("generateConcepts", () => {
   });
 
   it("throws ConceptGenerationError carrying the status on 502", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({ ok: false, status: 502, json: async () => ({}) }),
-    );
+    vi.stubGlobal("fetch", sseFetch("", 502));
     await expect(generateConcepts(FRAME)).rejects.toBeInstanceOf(ConceptGenerationError);
     await expect(generateConcepts(FRAME)).rejects.toMatchObject({
       name: "ConceptGenerationError",

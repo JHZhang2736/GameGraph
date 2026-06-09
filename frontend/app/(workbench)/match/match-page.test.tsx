@@ -24,6 +24,20 @@ function mockFetch(status: number, body: unknown) {
   });
 }
 
+function sseFetch(frames: string, status = 200) {
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode(frames));
+      controller.close();
+    },
+  });
+  return vi.fn().mockResolvedValue({
+    ok: status >= 200 && status < 300,
+    status,
+    body,
+  } as unknown as Response);
+}
+
 const RESULT: OpportunityMatchResult = {
   profile_id: "dev_profile_1",
   areas: [
@@ -89,7 +103,7 @@ async function clickMatch() {
 
 describe("MatchPage", () => {
   it("renders candidates, warnings and rejected reasons after matching", async () => {
-    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    vi.stubGlobal("fetch", sseFetch(`event: result\ndata: ${JSON.stringify(RESULT)}\n\n`));
     renderWithClient(<MatchPage />);
     await clickMatch();
     await waitFor(() =>
@@ -103,7 +117,7 @@ describe("MatchPage", () => {
   it("shows an empty state when no areas match", async () => {
     vi.stubGlobal(
       "fetch",
-      mockFetch(200, { profile_id: "p", areas: [], rejected: [], warnings: [] }),
+      sseFetch(`event: result\ndata: ${JSON.stringify({ profile_id: "p", areas: [], rejected: [], warnings: [] })}\n\n`),
     );
     renderWithClient(<MatchPage />);
     await clickMatch();
@@ -111,7 +125,7 @@ describe("MatchPage", () => {
   });
 
   it("shows an error state on a 500", async () => {
-    vi.stubGlobal("fetch", mockFetch(500, {}));
+    vi.stubGlobal("fetch", sseFetch("", 500));
     renderWithClient(<MatchPage />);
     await clickMatch();
     await waitFor(() => expect(screen.getByText("加载失败")).toBeInTheDocument());
@@ -119,10 +133,19 @@ describe("MatchPage", () => {
 
   it("generates a frame, stores it in history, and navigates to /opportunities", async () => {
     const user = userEvent.setup();
+    const makeBody = (data: unknown) =>
+      new ReadableStream<Uint8Array>({
+        start(controller) {
+          controller.enqueue(
+            new TextEncoder().encode(`event: result\ndata: ${JSON.stringify(data)}\n\n`),
+          );
+          controller.close();
+        },
+      });
     const fetchMock = vi
       .fn()
-      .mockResolvedValueOnce({ ok: true, status: 200, json: async () => RESULT })
-      .mockResolvedValueOnce({ ok: true, status: 200, json: async () => FRAME });
+      .mockResolvedValueOnce({ ok: true, status: 200, body: makeBody(RESULT) })
+      .mockResolvedValueOnce({ ok: true, status: 200, body: makeBody(FRAME) });
     vi.stubGlobal("fetch", fetchMock);
     renderWithClient(<MatchPage />);
     await clickMatch();
@@ -137,7 +160,7 @@ describe("MatchPage", () => {
   });
 
   it("appends results into a persisted board", async () => {
-    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    vi.stubGlobal("fetch", sseFetch(`event: result\ndata: ${JSON.stringify(RESULT)}\n\n`));
     renderWithClient(<MatchPage />);
     await clickMatch();
     await waitFor(() =>
@@ -154,7 +177,7 @@ describe("MatchPage", () => {
   });
 
   it("restores the board on remount (survives refresh)", async () => {
-    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    vi.stubGlobal("fetch", sseFetch(`event: result\ndata: ${JSON.stringify(RESULT)}\n\n`));
     const first = renderWithClient(<MatchPage />);
     await clickMatch();
     await waitFor(() =>
@@ -168,7 +191,7 @@ describe("MatchPage", () => {
   });
 
   it("clears the board", async () => {
-    vi.stubGlobal("fetch", mockFetch(200, RESULT));
+    vi.stubGlobal("fetch", sseFetch(`event: result\ndata: ${JSON.stringify(RESULT)}\n\n`));
     const user = userEvent.setup();
     renderWithClient(<MatchPage />);
     await clickMatch();

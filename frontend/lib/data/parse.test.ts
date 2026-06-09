@@ -28,13 +28,25 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
+function sseFetch(frames: string, status = 200) {
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode(frames));
+      controller.close();
+    },
+  });
+  return vi.fn().mockResolvedValue({
+    ok: status >= 200 && status < 300,
+    status,
+    body,
+  } as unknown as Response);
+}
+
 describe("parseDeveloperProfileInput", () => {
   it("returns the backend result when the request succeeds", async () => {
     vi.stubGlobal(
       "fetch",
-      vi.fn(() =>
-        Promise.resolve(new Response(JSON.stringify(backendResult), { status: 200 })),
-      ),
+      sseFetch(`event: result\ndata: ${JSON.stringify(backendResult)}\n\n`),
     );
 
     const result = await parseDeveloperProfileInput({ raw_text: "我一个人做游戏" });
