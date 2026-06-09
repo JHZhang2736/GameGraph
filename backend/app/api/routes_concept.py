@@ -6,6 +6,7 @@ from app.schemas.artifacts import ConceptCard, OpportunityFrame
 from app.schemas.common import StrictBaseModel
 from app.services.concept_llm import ConceptLlmClient, get_concept_llm_client
 from app.services.concept_service import generate_concepts
+from app.services.llm_client import LlmError
 
 router = APIRouter()
 
@@ -29,5 +30,5 @@ def generate_endpoint(
         raise HTTPException(status_code=503, detail="未配置 LLM，概念生成不可用。")
     try:
         return generate_concepts(request.frame, llm_client)
-    except ValueError as error:
+    except (LlmError, ValueError) as error:
         raise HTTPException(status_code=502, detail=f"LLM 概念生成失败：{error}") from error
