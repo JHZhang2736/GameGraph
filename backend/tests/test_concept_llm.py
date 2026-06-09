@@ -118,3 +118,19 @@ def test_generate_raises_on_malformed_tool_call() -> None:
     client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
     with pytest.raises(ValueError, match="Malformed tool_call"):
         client.generate(_frame())
+
+
+def test_generate_raises_on_schema_invalid_draft() -> None:
+    # LLM 返回一张 title 为空的草稿——违反 ConceptDraft 的 min_length=1。
+    # model_validate_json 抛 ValidationError（ValueError 子类）→ 路由映射 502。
+    bad = _draft_dict("概念1")
+    bad["title"] = ""
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={"choices": [{"message": {"tool_calls": [
+            {"function": {"name": "emit_concept_cards", "arguments": json.dumps({"concepts": [bad]})}}
+        ]}}]})
+
+    client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    with pytest.raises(ValueError):
+        client.generate(_frame())
