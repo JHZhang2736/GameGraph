@@ -116,4 +116,19 @@ describe("OpportunitiesPage", () => {
     );
     expect(pushMock).not.toHaveBeenCalled();
   });
+
+  it("shows the 502 retry message and does not navigate when generation fails", async () => {
+    const user = userEvent.setup();
+    upsertFrame(frame("frame|a", "区域A"));
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({ ok: false, status: 502, json: async () => ({}) }),
+    );
+    renderWithClient(<OpportunitiesPage />);
+    await user.click(screen.getByRole("button", { name: "生成概念" }));
+    await waitFor(() =>
+      expect(screen.getByText(/概念生成失败，可重试/)).toBeInTheDocument(),
+    );
+    expect(pushMock).not.toHaveBeenCalled();
+  });
 });
