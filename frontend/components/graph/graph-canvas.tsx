@@ -57,10 +57,12 @@ function GraphController({
   graph,
   onSelectNode,
   onSelectEdge,
+  onHoverNode,
 }: {
   graph: GraphData;
   onSelectNode?: (id: string) => void;
   onSelectEdge?: (id: string) => void;
+  onHoverNode?: (id: string | null) => void;
 }) {
   const sigma = useSigma();
   const loadGraph = useLoadGraph();
@@ -129,14 +131,19 @@ function GraphController({
   useEffect(() => {
     let dragged: string | null = null;
     registerEvents({
-      clickNode: (e) => onSelectNode?.(e.node),
+      clickNode: (e) => {
+        onSelectNode?.(e.node);
+        onHoverNode?.(e.node);
+      },
       clickEdge: (e) => onSelectEdge?.(e.edge),
       enterNode: (e) => {
         setHoveredNode(e.node);
+        onHoverNode?.(e.node);
         sigma.getContainer().style.cursor = "pointer";
       },
       leaveNode: () => {
         setHoveredNode(null);
+        onHoverNode?.(null);
         sigma.getContainer().style.cursor = "default";
       },
       enterEdge: (e) => {
@@ -165,7 +172,7 @@ function GraphController({
         dragged = null;
       },
     });
-  }, [registerEvents, sigma, onSelectNode, onSelectEdge]);
+  }, [registerEvents, sigma, onSelectNode, onSelectEdge, onHoverNode]);
 
   // hover 高亮:淡化非邻居节点;默认隐藏边标签,仅在 hover 焦点的相连边上显示。
   useEffect(() => {
@@ -200,10 +207,12 @@ export function GraphCanvas({
   graph,
   onSelectEdge,
   onSelectNode,
+  onHoverNode,
 }: {
   graph: GraphData;
   onSelectEdge?: (edgeId: string) => void;
   onSelectNode?: (nodeId: string) => void;
+  onHoverNode?: (nodeId: string | null) => void;
 }) {
   return (
     <div className="h-full w-full rounded-lg border">
@@ -216,6 +225,7 @@ export function GraphCanvas({
           graph={graph}
           onSelectNode={onSelectNode}
           onSelectEdge={onSelectEdge}
+          onHoverNode={onHoverNode}
         />
       </SigmaContainer>
     </div>

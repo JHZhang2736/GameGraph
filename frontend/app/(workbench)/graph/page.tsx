@@ -38,6 +38,7 @@ export default function GraphPage() {
   const [truncated, setTruncated] = useState(false);
   const [selectedEdge, setSelectedEdge] = useState<string | null>(null);
   const [loadError, setLoadError] = useState(false);
+  const [hoverNodeId, setHoverNodeId] = useState<string | null>(null);
 
   async function focusOn(nodeId: string, replace: boolean) {
     try {
@@ -78,6 +79,15 @@ export default function GraphPage() {
     [graph.nodes],
   );
 
+  // 当前 hover/点击的节点类型,用于在图例里高亮对应项。
+  const hoverType = useMemo(
+    () =>
+      hoverNodeId
+        ? (graph.nodes.find((n) => n.id === hoverNodeId)?.node_type ?? null)
+        : null,
+    [graph.nodes, hoverNodeId],
+  );
+
   if (gamesLoading) return <LoadingState />;
   if (gamesError) return <ErrorState onRetry={() => refetch()} />;
   if (!games || games.length === 0) return <EmptyState message="暂无已入库游戏,先去导入" />;
@@ -105,8 +115,13 @@ export default function GraphPage() {
             graph={graph}
             onSelectEdge={setSelectedEdge}
             onSelectNode={(id) => focusOn(id, false)}
+            onHoverNode={setHoverNodeId}
           />
-          <GraphLegend types={presentTypes} className="absolute left-3 top-3 z-10" />
+          <GraphLegend
+            types={presentTypes}
+            highlight={hoverType}
+            className="absolute left-3 top-3 z-10"
+          />
         </div>
         <aside className="min-h-0 space-y-3 overflow-auto">
           {selected ? (
