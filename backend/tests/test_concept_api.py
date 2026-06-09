@@ -4,6 +4,7 @@ from app.api.routes_concept import get_concept_llm
 from app.main import app
 from app.schemas.artifacts import OpportunityFrame
 from app.services.concept_llm import ConceptDraft, ConceptGenerationBatch
+from tests.sse_helpers import sse_result, sse_error
 
 
 def _frame_dict() -> dict:
@@ -58,7 +59,7 @@ def test_generate_endpoint_returns_three_cards() -> None:
         client = TestClient(app)
         response = client.post("/concept/generate", json={"frame": _frame_dict()})
         assert response.status_code == 200
-        body = response.json()
+        body = sse_result(response)
         assert len(body) == 3
         assert body[0]["opportunity_frame_id"] == _frame_dict()["id"]
         assert body[0]["id"] == f"concept|{_frame_dict()['id']}|1"
@@ -82,8 +83,10 @@ def test_generate_endpoint_502_on_llm_error() -> None:
     try:
         client = TestClient(app)
         response = client.post("/concept/generate", json={"frame": _frame_dict()})
-        assert response.status_code == 502
-        assert "upstream boom" in response.json()["detail"]
+        assert response.status_code == 200  # 流已开，错误走 error 事件
+        err = sse_error(response)
+        assert err["code"] == 502
+        assert "upstream boom" in err["detail"]
     finally:
         app.dependency_overrides.clear()
 
