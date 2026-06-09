@@ -99,3 +99,30 @@ def test_match_falls_back_with_warning_when_llm_raises() -> None:
     assert all(a.risk_posture == RiskPosture.BALANCED for a in result.areas)
     assert any("降级" in w for w in result.warnings)
     assert not any("未配置 LLM" in w for w in result.warnings)  # 异常路径不应误报未配置
+
+
+def test_match_excludes_seen_candidates() -> None:
+    from app.services.opportunity_service import enumerate_candidates, rank_candidates
+    ranked = rank_candidates(enumerate_candidates(_games()))
+    assert len(ranked) >= 2  # 夹具应产出多个候选,便于排除其一
+    seen = ranked[0].id
+    batch = OpportunityJudgmentBatch(judgments=[], warnings=[])
+    result = match_opportunities(_profile(), StubRepo(_games()), StubLlm(batch), seen_ids=[seen])
+    all_ids = [a.id for a in result.areas] + [r.candidate_id for r in result.rejected]
+    assert seen not in all_ids
+
+
+def test_match_warns_when_all_candidates_seen() -> None:
+    from app.services.opportunity_service import enumerate_candidates
+    every_id = [c.id for c in enumerate_candidates(_games())]
+    batch = OpportunityJudgmentBatch(judgments=[], warnings=[])
+    result = match_opportunities(_profile(), StubRepo(_games()), StubLlm(batch), seen_ids=every_id)
+    assert result.areas == []
+    assert any("已无更多新机会" in w for w in result.warnings)
+
+
+def test_match_empty_seen_ids_is_unchanged() -> None:
+    batch = OpportunityJudgmentBatch(judgments=[], warnings=[])
+    a = match_opportunities(_profile(), StubRepo(_games()), StubLlm(batch))
+    b = match_opportunities(_profile(), StubRepo(_games()), StubLlm(batch), seen_ids=[])
+    assert [x.id for x in a.areas] == [x.id for x in b.areas]
