@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 from pydantic import Field
 
-from app.api.sse import sse_with_heartbeat
+from app.api.sse import SSE_HEADERS, sse_with_heartbeat
 from app.graph.connection import create_driver
 from app.graph.opportunity_repository import OpportunityRepository
 from app.schemas.artifacts import DeveloperProfile
@@ -22,8 +22,6 @@ from app.services.opportunity_llm import (
 from app.services.opportunity_service import match_opportunities
 
 router = APIRouter()
-
-_SSE_HEADERS = {"X-Accel-Buffering": "no", "Cache-Control": "no-cache"}
 
 _driver = None
 
@@ -60,7 +58,7 @@ async def match_endpoint(
     return StreamingResponse(
         sse_with_heartbeat(work, lambda r: r.model_dump_json()),
         media_type="text/event-stream",
-        headers=_SSE_HEADERS,
+        headers=SSE_HEADERS,
     )
 
 
@@ -86,5 +84,5 @@ async def frame_endpoint(
     return StreamingResponse(
         sse_with_heartbeat(work, lambda r: r.model_dump_json()),
         media_type="text/event-stream",
-        headers=_SSE_HEADERS,
+        headers=SSE_HEADERS,
     )

@@ -86,7 +86,7 @@ def test_generate_endpoint_502_on_llm_error() -> None:
         assert response.status_code == 200  # 流已开，错误走 error 事件
         err = sse_error(response)
         assert err["code"] == 502
-        assert "upstream boom" in err["detail"]
+        assert "概念生成失败" in err["detail"]
     finally:
         app.dependency_overrides.clear()
 

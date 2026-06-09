@@ -10,6 +10,8 @@ from app.services.llm_client import LlmError
 
 logger = logging.getLogger(__name__)
 
+SSE_HEADERS = {"X-Accel-Buffering": "no", "Cache-Control": "no-cache"}
+
 T = TypeVar("T")
 
 _HEARTBEAT = b"event: heartbeat\ndata: {}\n\n"
