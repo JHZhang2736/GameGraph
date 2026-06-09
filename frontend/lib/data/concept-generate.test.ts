@@ -72,5 +72,9 @@ describe("generateConcepts", () => {
       vi.fn().mockResolvedValue({ ok: false, status: 502, json: async () => ({}) }),
     );
     await expect(generateConcepts(FRAME)).rejects.toBeInstanceOf(ConceptGenerationError);
+    await expect(generateConcepts(FRAME)).rejects.toMatchObject({
+      name: "ConceptGenerationError",
+      status: 502,
+    });
   });
 });
