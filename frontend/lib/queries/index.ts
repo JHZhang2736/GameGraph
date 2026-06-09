@@ -2,7 +2,6 @@
 
 import { useMutation, useQuery } from "@tanstack/react-query";
 import {
-  getConcepts,
   getDeveloperProfile,
   getGameProfile,
   getGoldenFlow,
@@ -48,10 +47,6 @@ export function useParseDeveloperProfileInput(input: ProfileParseInput | null) {
     queryFn: () => parseDeveloperProfileInput(input as ProfileParseInput),
     enabled: input !== null,
   });
-}
-
-export function useConcepts() {
-  return useQuery({ queryKey: ["concepts"], queryFn: getConcepts });
 }
 
 export function usePrototypeBrief() {

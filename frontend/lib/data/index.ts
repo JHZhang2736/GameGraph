@@ -4,7 +4,6 @@ import { promoteDraftToProfile } from "@/lib/profile/draft";
 import { loadStoredProfile } from "@/lib/profile/storage";
 import type {
   ConceptCard,
-  ConceptEvaluation,
   DeveloperProfile,
   DeveloperProfileDraft,
   DesignClaim,
@@ -171,18 +170,6 @@ export async function generateConcepts(frame: OpportunityFrame): Promise<Concept
     );
   }
   return (await res.json()) as ConceptCard[];
-}
-
-export interface ConceptsBundle {
-  cards: ConceptCard[];
-  evaluations: ConceptEvaluation[];
-}
-
-export async function getConcepts(): Promise<ConceptsBundle> {
-  return settle({
-    cards: goldenFlow.concept_cards,
-    evaluations: goldenFlow.concept_evaluations,
-  });
 }
 
 export async function getPrototypeBrief(): Promise<PrototypeBrief> {
