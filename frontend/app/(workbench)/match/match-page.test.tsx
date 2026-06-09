@@ -3,6 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import MatchPage from "@/app/(workbench)/match/page";
+import { goldenFlow } from "@/lib/fixtures/golden-flow";
 import type { OpportunityFrame, OpportunityMatchResult } from "@/lib/types";
 
 const { pushMock } = vi.hoisted(() => ({ pushMock: vi.fn() }));
@@ -142,11 +143,11 @@ describe("MatchPage", () => {
     await waitFor(() =>
       expect(screen.getByText("视角:第三人称 → 第一人称")).toBeInTheDocument(),
     );
-    const boardKey = Object.keys(localStorage).find((k) =>
-      k.startsWith("gamegraph.opportunity-board."),
-    );
-    expect(boardKey).toBeDefined();
-    const board = JSON.parse(localStorage.getItem(boardKey!)!);
+    // Key derived from the same fixture the page reads (getDeveloperProfile falls
+    // back to goldenFlow.developer_profile when nothing is stored), so we don't
+    // hardcode the id nor scan Object.keys(localStorage).
+    const boardKey = `gamegraph.opportunity-board.${goldenFlow.developer_profile.id}`;
+    const board = JSON.parse(localStorage.getItem(boardKey)!);
     expect(board.areas).toHaveLength(1);
     expect(board.seen_ids).toContain("opp|vampire_survivors|sub|Perspective|第一人称");
     expect(board.seen_ids).toContain("opp|x|comb|Mechanic|在线匹配");
