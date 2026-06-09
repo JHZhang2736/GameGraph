@@ -56,15 +56,18 @@ describe("backend data layer", () => {
     };
     const fetchMock = mockFetch(200, result);
     vi.stubGlobal("fetch", fetchMock);
-    const parsed = await matchOpportunities({ id: "dev_profile_1" } as never);
+    const parsed = await matchOpportunities({ id: "dev_profile_1" } as never, ["opp|seen|1"]);
     expect(parsed.warnings).toEqual(["图谱规模较小。"]);
     const [url, init] = fetchMock.mock.calls[0];
     expect(url).toContain("/opportunity/match");
     expect((init as RequestInit).method).toBe("POST");
+    const body = JSON.parse((init as RequestInit).body as string);
+    expect(body.seen_ids).toEqual(["opp|seen|1"]);
+    expect(body.profile).toEqual({ id: "dev_profile_1" });
   });
 
   it("matchOpportunities throws on a 500", async () => {
     vi.stubGlobal("fetch", mockFetch(500, {}));
-    await expect(matchOpportunities({ id: "x" } as never)).rejects.toThrow();
+    await expect(matchOpportunities({ id: "x" } as never, [])).rejects.toThrow();
   });
 });
