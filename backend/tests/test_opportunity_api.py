@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 
 from app.api.routes_opportunity import get_opportunity_repository, get_opportunity_llm
+from tests.sse_helpers import sse_result
 from app.main import app
 from app.schemas.opportunity import RiskPosture
 from app.services.opportunity_llm import OpportunityJudgment, OpportunityJudgmentBatch
@@ -45,7 +46,7 @@ def test_match_endpoint_returns_areas() -> None:
         client = TestClient(app)
         response = client.post("/opportunity/match", json={"profile": _profile_payload(), "seen_ids": []})
         assert response.status_code == 200
-        body = response.json()
+        body = sse_result(response)
         assert body["profile_id"] == "profile_1"
         assert len(body["areas"]) >= 1
         assert body["areas"][0]["risk_posture"] == "balanced"
@@ -88,6 +89,6 @@ def test_match_endpoint_accepts_profile_without_optional_lists() -> None:
         client = TestClient(app)
         response = client.post("/opportunity/match", json={"profile": payload, "seen_ids": []})
         assert response.status_code == 200
-        assert response.json()["profile_id"] == "profile_1"
+        assert sse_result(response)["profile_id"] == "profile_1"
     finally:
         app.dependency_overrides.clear()

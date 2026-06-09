@@ -4,6 +4,7 @@ from app.api.routes_opportunity import (
     get_opportunity_frame_llm,
     get_opportunity_repository,
 )
+from tests.sse_helpers import sse_result
 from app.main import app
 from app.services.opportunity_frame_llm import FrameSynthesis
 from app.services.opportunity_service import GameDesignFacts, GameDimensions
@@ -64,7 +65,7 @@ def test_frame_endpoint_returns_frame() -> None:
         client = TestClient(app)
         response = client.post("/opportunity/frame", json={"profile": _profile(), "area": _area()})
         assert response.status_code == 200
-        body = response.json()
+        body = sse_result(response)
         assert body["developer_profile_id"] == "profile_1"
         assert body["recommended_transformations"][0] == "将 Perspective 从「横版2D」替代为「第一人称」"
         assert body["source_game_ids"] == ["game_vs", "game_fps"]
@@ -81,7 +82,7 @@ def test_frame_endpoint_degrades_without_llm() -> None:
         client = TestClient(app)
         response = client.post("/opportunity/frame", json={"profile": _profile(), "area": _area()})
         assert response.status_code == 200
-        body = response.json()
+        body = sse_result(response)
         assert any("未配置 LLM" in w for w in body["warnings"])
     finally:
         app.dependency_overrides.clear()
