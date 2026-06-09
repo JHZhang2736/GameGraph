@@ -1,13 +1,15 @@
 from __future__ import annotations
 
 from fastapi import APIRouter, Depends
+from fastapi.responses import StreamingResponse
 from pydantic import Field
 
+from app.api.sse import SSE_HEADERS, sse_with_heartbeat
 from app.graph.connection import create_driver
 from app.graph.opportunity_repository import OpportunityRepository
-from app.schemas.artifacts import DeveloperProfile, OpportunityFrame
+from app.schemas.artifacts import DeveloperProfile
 from app.schemas.common import NonEmptyStr, StrictBaseModel
-from app.schemas.opportunity import OpportunityArea, OpportunityMatchResult
+from app.schemas.opportunity import OpportunityArea
 from app.services.opportunity_frame_llm import (
     OpportunityFrameLlmClient,
     get_opportunity_frame_llm_client,
@@ -42,14 +44,21 @@ class OpportunityMatchRequest(StrictBaseModel):
     seen_ids: list[NonEmptyStr] = Field(default_factory=list)
 
 
-@router.post("/opportunity/match", response_model=OpportunityMatchResult)
-def match_endpoint(
+@router.post("/opportunity/match")
+async def match_endpoint(
     request: OpportunityMatchRequest,
     repository: OpportunityRepository = Depends(get_opportunity_repository),
     llm_client: OpportunityLlmClient | None = Depends(get_opportunity_llm),
-) -> OpportunityMatchResult:
-    return match_opportunities(
-        request.profile, repository, llm_client, seen_ids=request.seen_ids
+) -> StreamingResponse:
+    def work():
+        return match_opportunities(
+            request.profile, repository, llm_client, seen_ids=request.seen_ids
+        )
+
+    return StreamingResponse(
+        sse_with_heartbeat(work, lambda r: r.model_dump_json()),
+        media_type="text/event-stream",
+        headers=SSE_HEADERS,
     )
 
 
@@ -63,10 +72,17 @@ def get_opportunity_frame_llm() -> OpportunityFrameLlmClient | None:
     return get_opportunity_frame_llm_client()
 
 
-@router.post("/opportunity/frame", response_model=OpportunityFrame)
-def frame_endpoint(
+@router.post("/opportunity/frame")
+async def frame_endpoint(
     request: OpportunityFrameRequest,
     repository: OpportunityRepository = Depends(get_opportunity_repository),
     llm_client: OpportunityFrameLlmClient | None = Depends(get_opportunity_frame_llm),
-) -> OpportunityFrame:
-    return build_frame(request.profile, request.area, repository, llm_client)
+) -> StreamingResponse:
+    def work():
+        return build_frame(request.profile, request.area, repository, llm_client)
+
+    return StreamingResponse(
+        sse_with_heartbeat(work, lambda r: r.model_dump_json()),
+        media_type="text/event-stream",
+        headers=SSE_HEADERS,
+    )

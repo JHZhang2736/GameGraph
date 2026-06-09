@@ -2,7 +2,6 @@ import json
 
 import httpx
 import pytest
-from pydantic import ValidationError
 
 from app.schemas.artifacts import DeveloperConstraint, DeveloperProfile
 from app.schemas.common import ConstraintType
@@ -14,14 +13,13 @@ from app.schemas.opportunity import (
     Transformation,
     TransformationType,
 )
+from app.services.llm_client import LlmClient, LlmRequestError, LlmResponseError, LlmSettings
 from app.services.opportunity_frame_llm import (
     FrameInputs,
     FrameSynthesis,
     OpportunityFrameLlmClient,
-    build_frame_tool_schema,
     get_opportunity_frame_llm_client,
 )
-from app.services.opportunity_llm import LlmSettings
 
 
 def _settings() -> LlmSettings:
@@ -88,12 +86,6 @@ def _arguments() -> str:
     )
 
 
-def test_build_frame_tool_schema_exposes_function_name() -> None:
-    tools = build_frame_tool_schema()
-    assert tools[0]["function"]["name"] == "emit_opportunity_frame"
-    assert tools[0]["function"]["parameters"]["properties"]
-
-
 def test_synthesize_posts_request_and_parses() -> None:
     seen: dict[str, object] = {}
 
@@ -104,7 +96,9 @@ def test_synthesize_posts_request_and_parses() -> None:
             {"function": {"name": "emit_opportunity_frame", "arguments": _arguments()}}
         ]}}]})
 
-    client = OpportunityFrameLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    client = OpportunityFrameLlmClient(
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    )
     synth = client.synthesize(_profile(), _area(), _inputs())
 
     assert isinstance(synth, FrameSynthesis)
@@ -119,18 +113,23 @@ def test_synthesize_raises_when_no_tool_call() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json={"choices": [{"message": {"content": "hi"}}]})
 
-    client = OpportunityFrameLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError, match="tool_call"):
+    client = OpportunityFrameLlmClient(
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    )
+    with pytest.raises(LlmResponseError, match="tool_call"):
         client.synthesize(_profile(), _area(), _inputs())
 
 
-def test_synthesize_raises_value_error_on_http_error() -> None:
+def test_synthesize_raises_on_http_error() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(401, json={"error": {"message": "invalid_api_key"}})
 
-    client = OpportunityFrameLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError, match="401"):
+    client = OpportunityFrameLlmClient(
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    )
+    with pytest.raises(LlmRequestError) as exc_info:
         client.synthesize(_profile(), _area(), _inputs())
+    assert exc_info.value.status_code == 401
 
 
 def test_get_client_returns_none_when_unconfigured(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -144,26 +143,7 @@ def _bad_arguments() -> str:
     return '{"opportunity_area": "x", "secondary_transformations": ["a" "b"]}'
 
 
-def test_synthesize_retries_once_on_invalid_json() -> None:
-    calls = {"n": 0}
-
-    def handler(request: httpx.Request) -> httpx.Response:
-        calls["n"] += 1
-        arguments = _bad_arguments() if calls["n"] == 1 else _arguments()
-        return httpx.Response(200, json={"choices": [{"message": {"tool_calls": [
-            {"function": {"name": "emit_opportunity_frame", "arguments": arguments}}
-        ]}}]})
-
-    client = OpportunityFrameLlmClient(
-        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
-    )
-    synth = client.synthesize(_profile(), _area(), _inputs())
-
-    assert calls["n"] == 2  # 首次坏 JSON 触发一次重试
-    assert synth.opportunity_area == "第一人称生存割草"
-
-
-def test_synthesize_raises_after_retry_exhausted_on_invalid_json() -> None:
+def test_synthesize_raises_on_invalid_json() -> None:
     calls = {"n": 0}
 
     def handler(request: httpx.Request) -> httpx.Response:
@@ -173,9 +153,9 @@ def test_synthesize_raises_after_retry_exhausted_on_invalid_json() -> None:
         ]}}]})
 
     client = OpportunityFrameLlmClient(
-        _settings(), httpx.Client(transport=httpx.MockTransport(handler))
+        LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
     )
-    with pytest.raises(ValidationError):
+    with pytest.raises(LlmResponseError):
         client.synthesize(_profile(), _area(), _inputs())
 
-    assert calls["n"] == 2  # 初次 + 一次重试，均失败后向上抛由 build_frame 兜底
+    assert calls["n"] == 2  # LlmClient 默认 max_invalid_retries=1，重试一次后失败，共调 2 次

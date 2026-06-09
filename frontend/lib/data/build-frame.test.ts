@@ -50,13 +50,25 @@ const FRAME: OpportunityFrame = {
   warnings: ["注意"],
 };
 
+function sseFetch(frames: string, status = 200) {
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode(frames));
+      controller.close();
+    },
+  });
+  return vi.fn().mockResolvedValue({
+    ok: status >= 200 && status < 300,
+    status,
+    body,
+  } as unknown as Response);
+}
+
 afterEach(() => vi.restoreAllMocks());
 
 describe("buildOpportunityFrame", () => {
   it("POSTs profile+area to /api/opportunity/frame and returns the frame", async () => {
-    const fetchMock = vi
-      .fn()
-      .mockResolvedValue({ ok: true, status: 200, json: async () => FRAME });
+    const fetchMock = sseFetch(`event: result\ndata: ${JSON.stringify(FRAME)}\n\n`);
     vi.stubGlobal("fetch", fetchMock);
 
     const result = await buildOpportunityFrame(PROFILE, AREA);
@@ -70,10 +82,7 @@ describe("buildOpportunityFrame", () => {
   });
 
   it("throws on a non-2xx response", async () => {
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({ ok: false, status: 500, json: async () => ({}) }),
-    );
+    vi.stubGlobal("fetch", sseFetch("", 500));
     await expect(buildOpportunityFrame(PROFILE, AREA)).rejects.toThrow(/500/);
   });
 });

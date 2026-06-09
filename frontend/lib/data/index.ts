@@ -2,6 +2,7 @@ import { goldenFlow } from "@/lib/fixtures/golden-flow";
 import { parseDeveloperProfileInput as parseLocalDeveloperProfileInput } from "@/lib/profile/parser";
 import { promoteDraftToProfile } from "@/lib/profile/draft";
 import { loadStoredProfile } from "@/lib/profile/storage";
+import { readSseResult, SseStreamError } from "@/lib/data/sse";
 import type {
   ConceptCard,
   DeveloperProfile,
@@ -95,11 +96,11 @@ export async function parseDeveloperProfileInput(
   try {
     const response = await fetch(`${apiBase()}/profile/parse`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
       body: JSON.stringify(input),
     });
     if (!response.ok) throw new Error(`profile/parse responded ${response.status}`);
-    return (await response.json()) as ProfileParseResult;
+    return await readSseResult<ProfileParseResult>(response);
   } catch (error) {
     console.warn("profile/parse failed; using local parser", error);
     const local = parseLocalDeveloperProfileInput(input);
@@ -127,11 +128,11 @@ export async function matchOpportunities(
 ): Promise<OpportunityMatchResult> {
   const res = await fetch(`${apiBase()}/opportunity/match`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
     body: JSON.stringify({ profile, seen_ids: seenIds }),
   });
   if (!res.ok) throw new Error(`POST /opportunity/match responded ${res.status}`);
-  return (await res.json()) as OpportunityMatchResult;
+  return await readSseResult<OpportunityMatchResult>(res);
 }
 
 // 6.6 机会框架。把开发者画像 + 选中的机会区域发给后端，拿回一个机会框架。
@@ -142,11 +143,11 @@ export async function buildOpportunityFrame(
 ): Promise<OpportunityFrame> {
   const res = await fetch(`${apiBase()}/opportunity/frame`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
     body: JSON.stringify({ profile, area }),
   });
   if (!res.ok) throw new Error(`POST /opportunity/frame responded ${res.status}`);
-  return (await res.json()) as OpportunityFrame;
+  return await readSseResult<OpportunityFrame>(res);
 }
 
 // 6.7 概念生成。把选中的机会框架发给后端，拿回 3 张概念卡。按钮触发，hook 用 useMutation。
@@ -161,7 +162,7 @@ export class ConceptGenerationError extends Error {
 export async function generateConcepts(frame: OpportunityFrame): Promise<ConceptCard[]> {
   const res = await fetch(`${apiBase()}/concept/generate`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", Accept: "text/event-stream" },
     body: JSON.stringify({ frame }),
   });
   if (!res.ok) {
@@ -170,7 +171,14 @@ export async function generateConcepts(frame: OpportunityFrame): Promise<Concept
       res.status,
     );
   }
-  return (await res.json()) as ConceptCard[];
+  try {
+    return await readSseResult<ConceptCard[]>(res);
+  } catch (error) {
+    if (error instanceof SseStreamError) {
+      throw new ConceptGenerationError(error.message, error.code ?? 502);
+    }
+    throw error;
+  }
 }
 
 export async function getPrototypeBrief(): Promise<PrototypeBrief> {

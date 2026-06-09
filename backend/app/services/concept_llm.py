@@ -1,12 +1,10 @@
 from __future__ import annotations
 
-import httpx
 from pydantic import ConfigDict, Field
 
 from app.schemas.artifacts import OpportunityFrame
 from app.schemas.common import NonEmptyStr, StrictBaseModel
-# 有意复用 6.5 的 LLM 设施（DRY）：LlmSettings 的 env 读取与 is_configured。
-from app.services.opportunity_llm import LlmSettings
+from app.services.llm_client import LlmClient, get_llm_client
 
 TOOL_NAME = "emit_concept_cards"
 
@@ -51,19 +49,6 @@ class ConceptGenerationBatch(StrictBaseModel):
     concepts: list[ConceptDraft] = Field(default_factory=list)
 
 
-def build_concept_tool_schema() -> list[dict]:
-    return [
-        {
-            "type": "function",
-            "function": {
-                "name": TOOL_NAME,
-                "description": "Emit exactly three concept cards within the opportunity frame.",
-                "parameters": ConceptGenerationBatch.model_json_schema(),
-            },
-        }
-    ]
-
-
 def _frame_block(frame: OpportunityFrame) -> str:
     return (
         f"机会主题：{frame.opportunity_area}\n"
@@ -81,48 +66,21 @@ def _frame_block(frame: OpportunityFrame) -> str:
 
 
 class ConceptLlmClient:
-    def __init__(self, settings: LlmSettings, http_client: httpx.Client | None = None) -> None:
-        self._settings = settings
-        self._client = http_client or httpx.Client(timeout=settings.timeout)
+    def __init__(self, llm: LlmClient) -> None:
+        self._llm = llm
 
     def generate(self, frame: OpportunityFrame) -> ConceptGenerationBatch:
-        payload = {
-            "model": self._settings.model,
-            "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": _frame_block(frame)},
-            ],
-            "tools": build_concept_tool_schema(),
-            "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
-        }
-        response = self._client.post(
-            f"{self._settings.base_url.rstrip('/')}/chat/completions",
-            headers={"Authorization": f"Bearer {self._settings.api_key}"},
-            json=payload,
+        return self._llm.call_tool(
+            system_prompt=SYSTEM_PROMPT,
+            user_message=_frame_block(frame),
+            tool_name=TOOL_NAME,
+            response_model=ConceptGenerationBatch,
+            tool_description="Emit exactly three concept cards within the opportunity frame.",
         )
-        try:
-            response.raise_for_status()
-        except httpx.HTTPStatusError as error:
-            raise ValueError(
-                f"LLM request failed with {error.response.status_code}: {error.response.text}"
-            ) from error
-        data = response.json()
-        try:
-            message = data["choices"][0]["message"]
-        except (KeyError, IndexError, TypeError) as error:
-            raise ValueError(f"Unexpected LLM response shape: {data}") from error
-        tool_calls = message.get("tool_calls") or []
-        if not tool_calls:
-            raise ValueError("LLM response missing tool_call")
-        try:
-            arguments = tool_calls[0]["function"]["arguments"]
-        except (KeyError, IndexError, TypeError) as error:
-            raise ValueError(f"Malformed tool_call in LLM response: {data}") from error
-        return ConceptGenerationBatch.model_validate_json(arguments)
 
 
 def get_concept_llm_client() -> ConceptLlmClient | None:
-    settings = LlmSettings.from_env()
-    if not settings.is_configured:
+    llm = get_llm_client()
+    if llm is None:
         return None
-    return ConceptLlmClient(settings)
+    return ConceptLlmClient(llm)

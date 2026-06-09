@@ -6,6 +6,7 @@ import {
   importGame,
   ImportError,
   matchOpportunities,
+  generateConcepts,
 } from "@/lib/data";
 
 function mockFetch(status: number, body: unknown) {
@@ -14,6 +15,20 @@ function mockFetch(status: number, body: unknown) {
     status,
     json: async () => body,
   });
+}
+
+function sseFetch(frames: string, status = 200) {
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode(frames));
+      controller.close();
+    },
+  });
+  return vi.fn().mockResolvedValue({
+    ok: status >= 200 && status < 300,
+    status,
+    body,
+  } as unknown as Response);
 }
 
 afterEach(() => {
@@ -48,13 +63,8 @@ describe("backend data layer", () => {
   });
 
   it("matchOpportunities posts the profile and parses the result", async () => {
-    const result = {
-      profile_id: "dev_profile_1",
-      areas: [],
-      rejected: [],
-      warnings: ["图谱规模较小。"],
-    };
-    const fetchMock = mockFetch(200, result);
+    const result = { profile_id: "dev_profile_1", areas: [], rejected: [], warnings: ["图谱规模较小。"] };
+    const fetchMock = sseFetch(`event: result\ndata: ${JSON.stringify(result)}\n\n`);
     vi.stubGlobal("fetch", fetchMock);
     const parsed = await matchOpportunities({ id: "dev_profile_1" } as never, ["opp|seen|1"]);
     expect(parsed.warnings).toEqual(["图谱规模较小。"]);
@@ -67,7 +77,33 @@ describe("backend data layer", () => {
   });
 
   it("matchOpportunities throws on a 500", async () => {
-    vi.stubGlobal("fetch", mockFetch(500, {}));
+    vi.stubGlobal("fetch", sseFetch("", 500));
     await expect(matchOpportunities({ id: "x" } as never, [])).rejects.toThrow();
+  });
+
+  it("generateConcepts parses the SSE result", async () => {
+    const cards = [{ id: "concept|f|1", title: "A" }];
+    vi.stubGlobal("fetch", sseFetch(`event: result\ndata: ${JSON.stringify(cards)}\n\n`));
+    const out = await generateConcepts({ id: "f" } as never);
+    expect(out[0].id).toBe("concept|f|1");
+  });
+
+  it("generateConcepts throws ConceptGenerationError(503) when unconfigured", async () => {
+    vi.stubGlobal("fetch", sseFetch("", 503));
+    await expect(generateConcepts({ id: "f" } as never)).rejects.toMatchObject({
+      name: "ConceptGenerationError",
+      status: 503,
+    });
+  });
+
+  it("generateConcepts maps an error event to ConceptGenerationError(502)", async () => {
+    vi.stubGlobal(
+      "fetch",
+      sseFetch('event: error\ndata: {"detail":"LLM 失败","code":502}\n\n'),
+    );
+    await expect(generateConcepts({ id: "f" } as never)).rejects.toMatchObject({
+      name: "ConceptGenerationError",
+      status: 502,
+    });
   });
 });

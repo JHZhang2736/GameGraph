@@ -7,14 +7,19 @@ from app.schemas.artifacts import OpportunityFrame
 from app.services.concept_llm import (
     ConceptGenerationBatch,
     ConceptLlmClient,
-    build_concept_tool_schema,
     get_concept_llm_client,
 )
-from app.services.opportunity_llm import LlmSettings
+from app.services.llm_client import LlmClient, LlmRequestError, LlmResponseError, LlmSettings
 
 
-def _settings() -> LlmSettings:
-    return LlmSettings(base_url="https://example.test/v1", api_key="secret", model="m", timeout=5.0)
+def _settings(max_invalid_retries: int = 0) -> LlmSettings:
+    return LlmSettings(
+        base_url="https://example.test/v1",
+        api_key="secret",
+        model="m",
+        timeout=5.0,
+        max_invalid_retries=max_invalid_retries,
+    )
 
 
 def _frame() -> OpportunityFrame:
@@ -57,12 +62,6 @@ def _arguments() -> str:
     return json.dumps({"concepts": [_draft_dict(f"概念{i}") for i in (1, 2, 3)]})
 
 
-def test_build_concept_tool_schema_exposes_function_name() -> None:
-    tools = build_concept_tool_schema()
-    assert tools[0]["function"]["name"] == "emit_concept_cards"
-    assert tools[0]["function"]["parameters"]["properties"]
-
-
 def test_generate_posts_request_and_parses() -> None:
     seen: dict[str, object] = {}
 
@@ -73,7 +72,7 @@ def test_generate_posts_request_and_parses() -> None:
             {"function": {"name": "emit_concept_cards", "arguments": _arguments()}}
         ]}}]})
 
-    client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
+    client = ConceptLlmClient(LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler))))
     batch = client.generate(_frame())
 
     assert isinstance(batch, ConceptGenerationBatch)
@@ -89,8 +88,8 @@ def test_generate_raises_when_no_tool_call() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(200, json={"choices": [{"message": {"content": "hi"}}]})
 
-    client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError, match="tool_call"):
+    client = ConceptLlmClient(LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler))))
+    with pytest.raises(LlmResponseError, match="tool_call"):
         client.generate(_frame())
 
 
@@ -98,8 +97,8 @@ def test_generate_raises_value_error_on_http_error() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         return httpx.Response(401, json={"error": {"message": "invalid_api_key"}})
 
-    client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError, match="401"):
+    client = ConceptLlmClient(LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler))))
+    with pytest.raises(LlmRequestError, match="401"):
         client.generate(_frame())
 
 
@@ -115,14 +114,15 @@ def test_generate_raises_on_malformed_tool_call() -> None:
             {"id": "call_1"}  # 缺 "function" 键
         ]}}]})
 
-    client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError, match="Malformed tool_call"):
+    client = ConceptLlmClient(LlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler))))
+    with pytest.raises(LlmResponseError, match="Malformed tool_call"):
         client.generate(_frame())
 
 
 def test_generate_raises_on_schema_invalid_draft() -> None:
     # LLM 返回一张 title 为空的草稿——违反 ConceptDraft 的 min_length=1。
-    # model_validate_json 抛 ValidationError（ValueError 子类）→ 路由映射 502。
+    # LlmClient._parse 捕获 ValidationError 转为 LlmResponseError → 路由映射 502。
+    # max_invalid_retries=0：只调一次，不重试。
     bad = _draft_dict("概念1")
     bad["title"] = ""
 
@@ -131,6 +131,6 @@ def test_generate_raises_on_schema_invalid_draft() -> None:
             {"function": {"name": "emit_concept_cards", "arguments": json.dumps({"concepts": [bad]})}}
         ]}}]})
 
-    client = ConceptLlmClient(_settings(), httpx.Client(transport=httpx.MockTransport(handler)))
-    with pytest.raises(ValueError):
+    client = ConceptLlmClient(LlmClient(_settings(max_invalid_retries=0), httpx.Client(transport=httpx.MockTransport(handler))))
+    with pytest.raises(LlmResponseError):
         client.generate(_frame())

@@ -54,6 +54,20 @@ function card(id: string): ConceptCard {
   };
 }
 
+function sseFetch(frames: string, status = 200) {
+  const body = new ReadableStream<Uint8Array>({
+    start(controller) {
+      controller.enqueue(new TextEncoder().encode(frames));
+      controller.close();
+    },
+  });
+  return vi.fn().mockResolvedValue({
+    ok: status >= 200 && status < 300,
+    status,
+    body,
+  } as unknown as Response);
+}
+
 afterEach(() => {
   vi.restoreAllMocks();
   pushMock.mockClear();
@@ -88,11 +102,9 @@ describe("OpportunitiesPage", () => {
     upsertFrame(frame("frame|a", "区域A"));
     vi.stubGlobal(
       "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        status: 200,
-        json: async () => [card("c1"), card("c2"), card("c3")],
-      }),
+      sseFetch(
+        `event: result\ndata: ${JSON.stringify([card("c1"), card("c2"), card("c3")])}\n\n`,
+      ),
     );
     renderWithClient(<OpportunitiesPage />);
     await user.click(screen.getByRole("button", { name: "生成概念" }));
@@ -105,10 +117,7 @@ describe("OpportunitiesPage", () => {
   it("shows the 503 message and does not navigate when LLM is unconfigured", async () => {
     const user = userEvent.setup();
     upsertFrame(frame("frame|a", "区域A"));
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({ ok: false, status: 503, json: async () => ({}) }),
-    );
+    vi.stubGlobal("fetch", sseFetch("", 503));
     renderWithClient(<OpportunitiesPage />);
     await user.click(screen.getByRole("button", { name: "生成概念" }));
     await waitFor(() =>
@@ -120,10 +129,7 @@ describe("OpportunitiesPage", () => {
   it("shows the 502 retry message and does not navigate when generation fails", async () => {
     const user = userEvent.setup();
     upsertFrame(frame("frame|a", "区域A"));
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({ ok: false, status: 502, json: async () => ({}) }),
-    );
+    vi.stubGlobal("fetch", sseFetch("", 502));
     renderWithClient(<OpportunitiesPage />);
     await user.click(screen.getByRole("button", { name: "生成概念" }));
     await waitFor(() =>

@@ -2,24 +2,17 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-import httpx
-from pydantic import ConfigDict, Field, ValidationError
+from pydantic import ConfigDict, Field
 
 from app.schemas.artifacts import DeveloperProfile
 from app.schemas.common import StrictBaseModel
 from app.schemas.opportunity import CandidateOpportunityArea, OpportunityArea
 # 有意复用 6.5 的 LLM 设施（DRY）：_candidate_block / _profile_block 是 6.5 的私有 prompt
 # 渲染器，6.6 沿用以保证两模块 prompt 风格一致。若 6.5 改这两者的格式，会同步影响本模块。
-from app.services.opportunity_llm import (
-    LlmSettings,
-    _candidate_block,
-    _profile_block,
-)
+from app.services.llm_client import LlmClient, get_llm_client
+from app.services.opportunity_llm import _candidate_block, _profile_block
 
 TOOL_NAME = "emit_opportunity_frame"
-
-# LLM 偶发返回非法 JSON（中段漏逗号 / 未转义引号），多为一次性；解析失败重试一次。
-_MAX_SYNTHESIZE_ATTEMPTS = 2
 
 SYSTEM_PROMPT = (
     "你是独立游戏创意系统的机会框架综合器。"
@@ -59,19 +52,6 @@ class FrameSynthesis(StrictBaseModel):
     warnings: list[str] = Field(default_factory=list)
 
 
-def build_frame_tool_schema() -> list[dict]:
-    return [
-        {
-            "type": "function",
-            "function": {
-                "name": TOOL_NAME,
-                "description": "Synthesize the narrative fields of one opportunity frame.",
-                "parameters": FrameSynthesis.model_json_schema(),
-            },
-        }
-    ]
-
-
 def _related_block(inputs: FrameInputs) -> str:
     return (
         f"相关机制:{', '.join(inputs.related_mechanics)}\n"
@@ -98,58 +78,23 @@ def _user_block(profile: DeveloperProfile, area: OpportunityArea, inputs: FrameI
 
 
 class OpportunityFrameLlmClient:
-    def __init__(self, settings: LlmSettings, http_client: httpx.Client | None = None) -> None:
-        self._settings = settings
-        self._client = http_client or httpx.Client(timeout=settings.timeout)
+    def __init__(self, llm: LlmClient) -> None:
+        self._llm = llm
 
     def synthesize(
         self, profile: DeveloperProfile, area: OpportunityArea, inputs: FrameInputs
     ) -> FrameSynthesis:
-        payload = {
-            "model": self._settings.model,
-            "messages": [
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": _user_block(profile, area, inputs)},
-            ],
-            "tools": build_frame_tool_schema(),
-            "tool_choice": {"type": "function", "function": {"name": TOOL_NAME}},
-        }
-        # 仅对「JSON 非法」重试（多为一次性）；HTTP/响应结构错误立即抛出，不重试。
-        last_error: ValidationError | None = None
-        for _ in range(_MAX_SYNTHESIZE_ATTEMPTS):
-            arguments = self._request_arguments(payload)
-            try:
-                return FrameSynthesis.model_validate_json(arguments)
-            except ValidationError as error:
-                last_error = error
-        assert last_error is not None  # 循环至少执行一次，必已赋值
-        raise last_error  # 重试耗尽，向上抛由 build_frame 兜底
-
-    def _request_arguments(self, payload: dict) -> str:
-        response = self._client.post(
-            f"{self._settings.base_url.rstrip('/')}/chat/completions",
-            headers={"Authorization": f"Bearer {self._settings.api_key}"},
-            json=payload,
+        return self._llm.call_tool(
+            system_prompt=SYSTEM_PROMPT,
+            user_message=_user_block(profile, area, inputs),
+            tool_name=TOOL_NAME,
+            response_model=FrameSynthesis,
+            tool_description="Synthesize the narrative fields of one opportunity frame.",
         )
-        try:
-            response.raise_for_status()
-        except httpx.HTTPStatusError as error:
-            raise ValueError(
-                f"LLM request failed with {error.response.status_code}: {error.response.text}"
-            ) from error
-        data = response.json()
-        try:
-            message = data["choices"][0]["message"]
-        except (KeyError, IndexError, TypeError) as error:
-            raise ValueError(f"Unexpected LLM response shape: {data}") from error
-        tool_calls = message.get("tool_calls") or []
-        if not tool_calls:
-            raise ValueError("LLM response missing tool_call")
-        return tool_calls[0]["function"]["arguments"]
 
 
 def get_opportunity_frame_llm_client() -> OpportunityFrameLlmClient | None:
-    settings = LlmSettings.from_env()
-    if not settings.is_configured:
+    llm = get_llm_client()
+    if llm is None:
         return None
-    return OpportunityFrameLlmClient(settings)
+    return OpportunityFrameLlmClient(llm)
