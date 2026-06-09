@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   formatNovelty,
@@ -6,7 +7,15 @@ import {
 } from "@/lib/opportunity/format";
 import type { OpportunityArea } from "@/lib/types";
 
-export function OpportunityCandidateCard({ area }: { area: OpportunityArea }) {
+export function OpportunityCandidateCard({
+  area,
+  onGenerate,
+  isGenerating = false,
+}: {
+  area: OpportunityArea;
+  onGenerate: (area: OpportunityArea) => void;
+  isGenerating?: boolean;
+}) {
   const risk = riskPostureMeta(area.risk_posture);
   const targetCount = area.evidence.target_value_game_ids.length;
   const comboCount = area.evidence.combination_game_ids.length;
@@ -44,6 +53,9 @@ export function OpportunityCandidateCard({ area }: { area: OpportunityArea }) {
           证据:锚点 {area.anchor_game_id} · 目标值佐证 {targetCount} 款
           {comboCount > 0 ? ` · 组合佐证 ${comboCount} 款` : ""}
         </p>
+        <Button type="button" onClick={() => onGenerate(area)} disabled={isGenerating}>
+          {isGenerating ? "生成中…" : "生成机会框架"}
+        </Button>
       </CardContent>
     </Card>
   );
