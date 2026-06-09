@@ -62,6 +62,12 @@ def _candidate_id(anchor: str, kind: str, dimension: str, to_value: str) -> str:
     return f"opp|{anchor}|{kind}|{dimension}|{to_value}"
 
 
+def _normalize_candidate_id(raw: str) -> str:
+    # 模型常把 prompt 里 [id] 的方括号、引号、反引号与前后空白一起回显（实测 qwen 回显
+    # [opp|...]），exact-match 会全部对不上。去掉这些包裹再匹配；候选 id 本身不含这些字符。
+    return raw.strip().strip("[]`'\"").strip()
+
+
 def _games_with_value(games: list[GameDimensions], attr: str, value: str) -> list[str]:
     return sorted(g.game_id for g in games if value in getattr(g, attr))
 
@@ -285,10 +291,11 @@ def match_opportunities(
     by_id: dict[str, OpportunityJudgment] = {}
     duplicate_ids: list[str] = []
     for j in batch.judgments:
-        if j.candidate_id in by_id:
-            duplicate_ids.append(j.candidate_id)
+        key = _normalize_candidate_id(j.candidate_id)
+        if key in by_id:
+            duplicate_ids.append(key)
         else:
-            by_id[j.candidate_id] = j
+            by_id[key] = j
 
     areas: list[OpportunityArea] = []
     rejected: list[RejectedOpportunity] = []

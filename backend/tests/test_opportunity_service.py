@@ -66,6 +66,31 @@ def test_match_keeps_and_rejects_per_judgment() -> None:
     assert area_ids  # 其余候选都保留为机会区域
 
 
+def test_match_normalizes_wrapped_candidate_ids() -> None:
+    # 复现并防回归：LLM 把 prompt 里 [id] 的方括号/空白一起回显（实测 qwen），
+    # 旧逻辑 exact-match 全部对不上 → 全判未判定 + 未知 id。应规范化后正确匹配。
+    repo = StubRepo(_games())
+    from app.services.opportunity_service import enumerate_candidates, rank_candidates
+
+    ranked = rank_candidates(enumerate_candidates(_games()))
+    judgments = [
+        OpportunityJudgment(
+            candidate_id=f"  [{c.id}]  ",  # 方括号 + 前后空白
+            decision="keep",
+            risk_posture=RiskPosture.BALANCED,
+            fit_reason="契合",
+            risk_reason="可控",
+        )
+        for c in ranked
+    ]
+    batch = OpportunityJudgmentBatch(judgments=judgments, warnings=[])
+    result = match_opportunities(_profile(), repo, StubLlm(batch))
+
+    assert sorted(a.id for a in result.areas) == sorted(c.id for c in ranked)
+    assert not any("未判定" in w for w in result.warnings)
+    assert not any("未知候选 id" in w for w in result.warnings)
+
+
 def test_match_without_llm_returns_balanced_areas_with_warning() -> None:
     result = match_opportunities(_profile(), StubRepo(_games()), None)
     assert result.areas
