@@ -12,11 +12,12 @@ import {
   getSeedGames,
   importGame,
   listGames,
+  matchOpportunities,
   parseDeveloperProfileInput,
   searchGraphNodes,
   type NeighborsParams,
 } from "@/lib/data";
-import type { ProfileParseInput } from "@/lib/types";
+import type { DeveloperProfile, ProfileParseInput } from "@/lib/types";
 import type { ImportDocument } from "@/lib/import/schema";
 
 export function useGoldenFlow() {
@@ -82,4 +83,10 @@ export function useGraphSearch(q: string) {
 
 export function useImportGame() {
   return useMutation({ mutationFn: (doc: ImportDocument) => importGame(doc) });
+}
+
+export function useMatchOpportunities() {
+  return useMutation({
+    mutationFn: (profile: DeveloperProfile) => matchOpportunities(profile),
+  });
 }

@@ -263,3 +263,54 @@ export interface ImportSummary {
   concepts_written: number;
   claims_written: number;
 }
+
+// 6.5 机会匹配(opportunity matching)。镜像后端 app/schemas/opportunity.py。
+export const TRANSFORMATION_TYPES = ["substitute", "combine"] as const;
+export type TransformationType = (typeof TRANSFORMATION_TYPES)[number];
+
+export interface Transformation {
+  type: TransformationType;
+  // 替代: "Perspective" | "ArtStyle" | "Genre";组合: "Mechanic"
+  dimension: string;
+  from_value: string | null; // 替代必有;组合为 null
+  to_value: string;
+}
+
+export interface OpportunityEvidence {
+  anchor_game_id: string;
+  target_value_game_ids: string[];
+  combination_game_ids: string[];
+}
+
+export interface CandidateOpportunityArea {
+  id: string;
+  anchor_game_id: string;
+  anchor_summary: string;
+  transformation: Transformation;
+  existing_combination_count: number; // 图谱中已有相同组合的游戏数;越小越新颖
+  evidence: OpportunityEvidence;
+}
+
+// 6.5 机会区域的风险分档,镜像后端 opportunity.py 的 RiskPosture 枚举。与
+// EVALUATION_CATEGORIES(6.7 概念评估分档)当前字面值相同纯属巧合——二者是各自
+// 后端模块的独立枚举,任一改动都不应牵连另一,故刻意分开、不要合并复用。
+export const RISK_POSTURES = ["safe", "balanced", "challenging"] as const;
+export type RiskPosture = (typeof RISK_POSTURES)[number];
+
+export interface OpportunityArea extends CandidateOpportunityArea {
+  risk_posture: RiskPosture;
+  fit_reason: string;
+  risk_reason: string;
+}
+
+export interface RejectedOpportunity {
+  candidate_id: string;
+  rejection_reason: string;
+}
+
+export interface OpportunityMatchResult {
+  profile_id: string;
+  areas: OpportunityArea[];
+  rejected: RejectedOpportunity[];
+  warnings: string[];
+}

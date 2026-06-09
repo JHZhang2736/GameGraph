@@ -62,3 +62,21 @@ def test_match_endpoint_rejects_malformed_profile() -> None:
         assert response.status_code == 422
     finally:
         app.dependency_overrides.clear()
+
+
+def test_match_endpoint_accepts_profile_without_optional_lists() -> None:
+    # 复现 bug：只填 6 个必填标量、可选列表全部省略 → 应 200，而非 422
+    payload = {
+        "id": "profile_1", "team_size": "solo", "time_budget": "三个月",
+        "programming_ability": "强", "art_ability": "弱", "audio_ability": "弱",
+        "content_production_ability": "有限",
+    }
+    app.dependency_overrides[get_opportunity_repository] = lambda: StubRepo()
+    app.dependency_overrides[get_opportunity_llm] = lambda: StubLlm()
+    try:
+        client = TestClient(app)
+        response = client.post("/opportunity/match", json=payload)
+        assert response.status_code == 200
+        assert response.json()["profile_id"] == "profile_1"
+    finally:
+        app.dependency_overrides.clear()

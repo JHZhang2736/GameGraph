@@ -56,10 +56,12 @@ class DeveloperProfile(StrictBaseModel):
     art_ability: str = Field(min_length=1)
     audio_ability: str = Field(min_length=1)
     content_production_ability: str = Field(min_length=1)
-    liked_references: list[NonEmptyStr] = Field(min_length=1)
-    disliked_references_or_mechanics: list[NonEmptyStr]
-    desired_player_experiences: list[NonEmptyStr] = Field(min_length=1)
-    constraints: list[DeveloperConstraint] = Field(min_length=1)
+    # 仅 6 个标量能力字段必填；以下偏好/约束列表均可选（可空、可省略），
+    # 与 DeveloperProfileDraft 及 developer_profile_parser.BLOCKING_FIELDS 保持一致。
+    liked_references: list[NonEmptyStr] = Field(default_factory=list)
+    disliked_references_or_mechanics: list[NonEmptyStr] = Field(default_factory=list)
+    desired_player_experiences: list[NonEmptyStr] = Field(default_factory=list)
+    constraints: list[DeveloperConstraint] = Field(default_factory=list)
 
 
 class OpportunityFrame(StrictBaseModel):
@@ -76,6 +78,7 @@ class OpportunityFrame(StrictBaseModel):
     evidence_path: list[NonEmptyStr] = Field(min_length=1)
     fit_reason: str = Field(min_length=1)
     risk_reason: str = Field(min_length=1)
+    warnings: list[NonEmptyStr] = Field(default_factory=list)
 
 
 class ConceptCard(StrictBaseModel):

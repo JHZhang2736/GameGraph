@@ -11,6 +11,10 @@ describe("AppSidebar", () => {
       "href",
       "/opportunities",
     );
+    expect(screen.getByRole("link", { name: "机会匹配" })).toHaveAttribute(
+      "href",
+      "/match",
+    );
     expect(screen.getByRole("link", { name: "总览" })).toBeInTheDocument();
   });
 });
