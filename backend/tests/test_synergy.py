@@ -48,3 +48,28 @@ def test_rationale_for_combine() -> None:
     r = synergy.rationale_for(["共享账户"], "老虎机")
     assert r is not None and r.predicted_experience == "欢乐混乱"
     assert synergy.rationale_for(["分支叙事"], "回合制") is None
+
+
+def test_element_dimensions_lookup() -> None:
+    dims = synergy.load_element_dimensions()
+    assert "Mechanic" in dims["老虎机"]
+    assert "GameFeel" in dims["爽快射击"]
+    assert "Theme" in dims["生存恐怖"]
+    assert "Genre" in dims["生存恐怖"]      # 生存恐怖 同属 Theme 与 Genre
+    assert dims.get("不存在的词") in (None, frozenset(), set())
+
+
+def test_load_elements_by_role_returns_element_dim_pairs() -> None:
+    pairs = synergy.load_elements_by_role()[FunctionalRole.DREAD_SOURCE]
+    assert ("生存恐怖", "Theme") in pairs
+    assert ("紧张节奏", "GameFeel") in pairs
+    assert ("理智系统", "Mechanic") in pairs
+
+
+def test_flatten_unchanged_after_regroup() -> None:
+    table = synergy.load_element_roles()
+    assert FunctionalRole.HIGH_VARIANCE_FAILURE in table["老虎机"]
+    assert FunctionalRole.COGNITIVE_OFFLOAD in table["老虎机"]
+    assert FunctionalRole.SOCIAL_AMPLIFIER in table["共享账户"]
+    assert FunctionalRole.VISCERAL_EXECUTION in table["爽快射击"]
+    assert FunctionalRole.COZY_COMFORT in table["轻松休闲"]

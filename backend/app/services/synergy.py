@@ -16,11 +16,37 @@ def load_element_roles() -> dict[str, frozenset[FunctionalRole]]:
     """核心四段元素名 -> 它扮演的功能角色集合（去重并集）。非法角色键响亮失败。"""
     raw = json.loads((_FIXTURES / "element_roles.json").read_text(encoding="utf-8"))
     table: dict[str, set[FunctionalRole]] = defaultdict(set)
-    for role_value, terms in raw["roles"].items():
+    for role_value, buckets in raw["roles"].items():
         role = FunctionalRole(role_value)
-        for term in terms:
-            table[term].add(role)
+        for dim_terms in buckets.values():
+            for term in dim_terms:
+                table[term].add(role)
     return {term: frozenset(roles) for term, roles in table.items()}
+
+
+@lru_cache(maxsize=1)
+def load_element_dimensions() -> dict[str, frozenset[str]]:
+    """核心四段元素名 -> 它出现在哪些维度（Mechanic/GameFeel/Theme/Genre）。"""
+    raw = json.loads((_FIXTURES / "element_roles.json").read_text(encoding="utf-8"))
+    out: dict[str, set[str]] = defaultdict(set)
+    for buckets in raw["roles"].values():
+        for dim, terms in buckets.items():
+            for term in terms:
+                out[term].add(dim)
+    return {term: frozenset(dims) for term, dims in out.items()}
+
+
+@lru_cache(maxsize=1)
+def load_elements_by_role() -> dict[FunctionalRole, frozenset[tuple[str, str]]]:
+    """功能角色 -> {(元素, 维度)} 全量映射；调用方用 load_elements_by_role()[role] 取单角色。"""
+    raw = json.loads((_FIXTURES / "element_roles.json").read_text(encoding="utf-8"))
+    out: dict[FunctionalRole, set[tuple[str, str]]] = defaultdict(set)
+    for role_value, buckets in raw["roles"].items():
+        role = FunctionalRole(role_value)
+        for dim, terms in buckets.items():
+            for term in terms:
+                out[role].add((term, dim))
+    return {role: frozenset(pairs) for role, pairs in out.items()}
 
 
 @lru_cache(maxsize=1)

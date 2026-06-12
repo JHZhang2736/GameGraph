@@ -14,6 +14,7 @@ from app.schemas.opportunity import (
     OpportunityMatchResult,
     RejectedOpportunity,
     RiskPosture,
+    SynergyRationale,
     Transformation,
     TransformationType,
 )
@@ -39,6 +40,14 @@ MAX_PER_DIMENSION = 5  # 多样性次轴软护栏:防止一种变形维度极端
 _SUBSTITUTE_DIMENSIONS: dict[str, str] = {
     "Perspective": "perspectives",
     "ArtStyle": "art_styles",
+    "Genre": "genres",
+}
+
+# 规则驱动借入的四段维度 label -> GameDimensions 属性名
+_DIMENSION_ATTRS: dict[str, str] = {
+    "Mechanic": "mechanics",
+    "GameFeel": "game_feel",
+    "Theme": "theme",
     "Genre": "genres",
 }
 
@@ -90,12 +99,78 @@ def _combination_game_ids(
     )
 
 
+def _rule_driven_candidates(
+    games: list[GameDimensions], anchor: GameDimensions
+) -> list[CandidateOpportunityArea]:
+    """规则驱动跨维度借入生成器；flag-off 时返回空列表。"""
+    if not _synergy_enabled():
+        return []
+    anchor_elements = anchor.mechanics | anchor.game_feel | anchor.theme | anchor.genres
+    anchor_roles = synergy.roles_for_elements(anchor_elements)
+    elements_by_role = synergy.load_elements_by_role()
+    seen: dict[str, CandidateOpportunityArea] = {}
+    for rule in synergy.load_synergy_rules():
+        for anchor_role, borrow_role in (
+            (rule.role_a, rule.role_b),
+            (rule.role_b, rule.role_a),
+        ):
+            if anchor_role not in anchor_roles:
+                continue
+            for element, dim in elements_by_role.get(borrow_role, frozenset()):
+                attr = _DIMENSION_ATTRS.get(dim)
+                if attr is None:
+                    continue
+                if element in getattr(anchor, attr):
+                    continue
+                cid = _candidate_id(anchor.game_id, "comb", dim, element)
+                if cid in seen:
+                    continue
+                target_games = _games_with_value(games, attr, element)
+                if not target_games:
+                    continue  # 借入值须在库内某游戏出现过（evidence 非空约束）
+                combo = _combination_game_ids(games, anchor, attr, element)
+                seen[cid] = CandidateOpportunityArea(
+                    id=cid,
+                    anchor_game_id=anchor.game_id,
+                    anchor_summary=anchor.summary,
+                    transformation=Transformation(
+                        type=TransformationType.COMBINE,
+                        dimension=dim,
+                        from_value=None,
+                        to_value=element,
+                    ),
+                    existing_combination_count=len(combo),
+                    evidence=OpportunityEvidence(
+                        anchor_game_id=anchor.game_id,
+                        target_value_game_ids=target_games,
+                        combination_game_ids=combo,
+                    ),
+                    synergy=SynergyRationale(
+                        rule_id=rule.id,
+                        anchor_role=anchor_role,
+                        borrowed_role=borrow_role,
+                        predicted_experience=rule.experience,
+                    ),
+                )
+    return list(seen.values())
+
+
 def enumerate_candidates(games: list[GameDimensions]) -> list[CandidateOpportunityArea]:
-    candidates: list[CandidateOpportunityArea] = []
+    by_id: dict[str, CandidateOpportunityArea] = {}
+
+    def add(c: CandidateOpportunityArea) -> None:
+        prev = by_id.get(c.id)
+        if prev is None or (prev.synergy is None and c.synergy is not None):
+            by_id[c.id] = c
+
     for anchor in games:
-        candidates.extend(_substitute_candidates(games, anchor))
-        candidates.extend(_combine_candidates(games, anchor))
-    return candidates
+        for c in _substitute_candidates(games, anchor):
+            add(c)
+        for c in _combine_candidates(games, anchor):
+            add(c)
+        for c in _rule_driven_candidates(games, anchor):
+            add(c)
+    return list(by_id.values())
 
 
 def _substitute_candidates(
@@ -150,6 +225,9 @@ def _combine_candidates(
         target_games = _games_with_value(games, "mechanics", target)
         combo = _combination_game_ids(games, anchor, "mechanics", target)
         rationale = synergy.rationale_for(anchor_elements, target) if annotate else None
+        # Mechanic 候选与规则驱动候选共享同一 id 格式，enumerate_candidates 的 add()
+        # 按插入顺序保留首个；_combine_candidates 先于 _rule_driven_candidates 调用，
+        # 故此处已含 synergy 标注的候选会胜出，规则驱动的同名候选被静默丢弃（防御性分支）。
         out.append(
             CandidateOpportunityArea(
                 id=_candidate_id(anchor.game_id, "comb", "Mechanic", target),
@@ -173,18 +251,32 @@ def _combine_candidates(
     return out
 
 
+def _profile_tier(
+    c: CandidateOpportunityArea,
+    synergy_on: bool,
+    desired: set[str] | None,
+) -> int:
+    if not synergy_on or c.synergy is None:
+        return 2
+    if desired and c.synergy.predicted_experience in desired:
+        return 0
+    return 1
+
+
 def rank_candidates(
     candidates: list[CandidateOpportunityArea],
     max_existing: int = MAX_EXISTING_COMBINATIONS,
     top_n: int = TOP_N,
     max_per_anchor: int = MAX_PER_ANCHOR,
     max_per_dimension: int = MAX_PER_DIMENSION,
+    desired_experiences: set[str] | None = None,
 ) -> list[CandidateOpportunityArea]:
     viable = [c for c in candidates if c.existing_combination_count <= max_existing]
     synergy_on = _synergy_enabled()
+    tiers = {c.id: _profile_tier(c, synergy_on, desired_experiences) for c in viable}
     viable.sort(
         key=lambda c: (
-            0 if (synergy_on and c.synergy is not None) else 1,
+            tiers[c.id],
             c.existing_combination_count,
             -len(c.evidence.target_value_game_ids),
             c.id,
@@ -298,7 +390,10 @@ def match_opportunities(
     seen = set(seen_ids)
     enumerated = enumerate_candidates(games)
     fresh = [c for c in enumerated if c.id not in seen]
-    candidates = rank_candidates(fresh)
+    candidates = rank_candidates(
+        fresh,
+        desired_experiences=set(profile.desired_player_experiences),
+    )
     exhausted = [_EXHAUSTED_WARNING] if (enumerated and not fresh) else []
 
     if llm_client is None:
