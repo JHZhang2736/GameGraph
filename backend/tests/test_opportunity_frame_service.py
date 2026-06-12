@@ -241,3 +241,37 @@ def test_build_frame_dedups_primary_echoed_as_secondary() -> None:
     assert frame.recommended_transformations[0] == primary
     assert frame.recommended_transformations.count(primary) == 1
     assert "叠加能力树" in frame.recommended_transformations
+
+
+# ── Task 5: synergy rationale in evidence path ────────────────────────────────
+
+def _area_with_synergy() -> OpportunityArea:
+    from app.schemas.opportunity import SynergyRationale, FunctionalRole
+    rationale = SynergyRationale(
+        rule_id="social_high_variance_comedy",
+        anchor_role=FunctionalRole.SOCIAL_AMPLIFIER,
+        borrowed_role=FunctionalRole.HIGH_VARIANCE_FAILURE,
+        predicted_experience="欢乐混乱",
+    )
+    return OpportunityArea(
+        **_area().model_dump(exclude={"synergy"}),
+        synergy=rationale,
+    )
+
+
+def test_evidence_path_includes_synergy_line() -> None:
+    area = _area_with_synergy()
+    path = svc._evidence_path(area)
+    synergy_lines = [line for line in path if "欢乐混乱" in line]
+    assert len(synergy_lines) == 1, f"期望恰好一条协同行，实际 path={path}"
+    synergy_line = synergy_lines[0]
+    assert "社交放大器" in synergy_line, f"期望包含锚点角色「社交放大器」，实际：{synergy_line}"
+    assert "高方差失败源" in synergy_line, f"期望包含借入角色「高方差失败源」，实际：{synergy_line}"
+
+
+def test_evidence_path_no_synergy_line_when_synergy_is_none() -> None:
+    # 无协同时，evidence path 不应出现协同行（原有行为不变）
+    area = _area()  # synergy=None
+    assert area.synergy is None
+    path = svc._evidence_path(area)
+    assert not any("协同" in line for line in path), f"不期望出现协同行，实际 path={path}"

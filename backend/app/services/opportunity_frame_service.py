@@ -74,6 +74,11 @@ def _evidence_path(area: OpportunityArea) -> list[str]:
     path.append(
         f"该组合在策展库中的现存游戏数 = {area.existing_combination_count}（越小越新颖）"
     )
+    if area.synergy is not None:
+        r = area.synergy
+        path.append(
+            f"协同：锚点提供「{r.anchor_role}」，借入补「{r.borrowed_role}」，模式预测「{r.predicted_experience}」"
+        )
     return path
 
 
