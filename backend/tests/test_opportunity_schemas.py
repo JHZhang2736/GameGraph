@@ -141,7 +141,7 @@ def test_candidate_synergy_defaults_none_and_accepts() -> None:
         borrowed_role=FunctionalRole.HIGH_VARIANCE_FAILURE,
         predicted_experience="欢乐混乱",
     )
-    with_synergy = CandidateOpportunityArea(**_candidate().model_dump(exclude={"synergy"}), synergy=rationale)
+    with_synergy = _candidate(synergy=rationale)
     restored = CandidateOpportunityArea.model_validate_json(with_synergy.model_dump_json())
     assert restored.synergy is not None
     assert restored.synergy.rule_id == "r1"

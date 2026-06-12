@@ -1,9 +1,11 @@
 from app.schemas.artifacts import DeveloperConstraint, DeveloperProfile, OpportunityFrame
 from app.schemas.common import ConstraintType
 from app.schemas.opportunity import (
+    FunctionalRole,
     OpportunityArea,
     OpportunityEvidence,
     RiskPosture,
+    SynergyRationale,
     Transformation,
     TransformationType,
 )
@@ -246,7 +248,6 @@ def test_build_frame_dedups_primary_echoed_as_secondary() -> None:
 # ── Task 5: synergy rationale in evidence path ────────────────────────────────
 
 def _area_with_synergy() -> OpportunityArea:
-    from app.schemas.opportunity import SynergyRationale, FunctionalRole
     rationale = SynergyRationale(
         rule_id="social_high_variance_comedy",
         anchor_role=FunctionalRole.SOCIAL_AMPLIFIER,
