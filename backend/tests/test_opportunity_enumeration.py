@@ -487,3 +487,34 @@ def test_enumerate_opportunities_wildcard_capped(monkeypatch) -> None:
         "请检查 _source_elements/规则是否将所有借入都分配了协同规则。"
     )
     assert wildcard_count <= 1
+
+
+def _experiences(opps) -> set[str]:
+    return {o.synergy.predicted_experience for o in opps if o.synergy}
+
+
+def test_enumerate_opportunities_nonmatching_desired_falls_back_to_all_rules() -> None:
+    # 草稿/占位画像（desired=["none"]）或自由文本体验对不上任何规则时，
+    # 应退化为全量规则空间，而不是产出空。
+    games = [
+        GameDimensions("g_perma", "肉鸽", {"类肉鸽"}, set(), set(), {"永久死亡"}, set(), set()),
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+    ]
+    all_space = _experiences(enumerate_opportunities(games, set()))
+    nonmatch = _experiences(enumerate_opportunities(games, {"none"}))
+    assert all_space, "fixture 应能产出 recipe 候选"
+    assert nonmatch == all_space
+
+
+def test_enumerate_opportunities_excludes_disliked_experience() -> None:
+    # disliked 体验对应的协同规则根本不生成；其余体验照常。
+    games = [
+        GameDimensions("g_perma", "肉鸽", {"类肉鸽"}, set(), set(), {"永久死亡"}, set(), set()),
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+        GameDimensions("g_skill", "动作", {"类魂"}, set(), set(), {"连招"}, set(), set()),
+    ]
+    full = _experiences(enumerate_opportunities(games, set()))
+    assert {"欢乐混乱", "战斗精通"} <= full
+    filtered = _experiences(enumerate_opportunities(games, set(), {"欢乐混乱"}))
+    assert "欢乐混乱" not in filtered
+    assert "战斗精通" in filtered

@@ -37,7 +37,7 @@ interface ListField {
 
 const LIST_FIELDS: ListField[] = [
   { key: "liked_references", label: "喜欢参考（选填）" },
-  { key: "disliked_references_or_mechanics", label: "讨厌方向（选填）" },
+  { key: "disliked_references_or_mechanics", label: "讨厌体验（选填）" },
   { key: "desired_player_experiences", label: "期望体验（选填）" },
 ];
 
@@ -112,7 +112,8 @@ export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProp
               id={`field-${field.key}`}
               value={draft[field.key]}
               options={
-                field.key === "desired_player_experiences"
+                field.key === "desired_player_experiences" ||
+                field.key === "disliked_references_or_mechanics"
                   ? DESIRED_EXPERIENCE_OPTIONS
                   : undefined
               }

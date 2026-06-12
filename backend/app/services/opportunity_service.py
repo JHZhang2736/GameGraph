@@ -129,16 +129,26 @@ def role_combination_count(
 def enumerate_opportunities(
     games: list[GameDimensions],
     desired: set[str],
+    disliked: set[str] | None = None,
 ) -> list[CandidateOpportunityArea]:
     """体验/角色配方驱动的机会枚举（E-Task 1）。
 
     - Primary 通道：按协同规则推导「锚点角色 × 借入角色」的 COMBINE 候选（带 synergy）。
     - Wildcard 通道：收集不命中任何规则的 COMBINE-Mechanic 借入，按新颖度截断至 MAX_WILDCARD。
+
+    desired / disliked 是开发者期望 / 反感的体验（受控体验词）：
+    - 正向：desired 命中规则则只取命中的；否则（无偏好，或解析出的体验对不上任何规则，
+      如草稿占位 ["none"]）退化为全量规则空间，避免主通道产出空。
+    - 负向：去掉 disliked 体验对应的规则，这些机会根本不生成。
     """
-    target_rules = [
-        r for r in synergy.load_synergy_rules()
-        if (not desired) or r.experience in desired
-    ]
+    disliked = disliked or set()
+    all_rules = synergy.load_synergy_rules()
+    selected = (
+        [r for r in all_rules if r.experience in desired] if desired else list(all_rules)
+    )
+    if not selected:
+        selected = list(all_rules)
+    target_rules = [r for r in selected if r.experience not in disliked]
     elements_by_role = synergy.load_elements_by_role()
     max_wc = _max_wildcard()
 
@@ -244,6 +254,17 @@ def enumerate_opportunities(
         if c.id not in merged:
             merged[c.id] = c
 
+    logger.info(
+        "enumerate_opportunities: desired=%d disliked=%d target_rules=%d/%d "
+        "primary=%d wildcard=%d total=%d",
+        len(desired),
+        len(disliked),
+        len(target_rules),
+        len(all_rules),
+        len(primary),
+        len(capped_wildcards),
+        len(merged),
+    )
     return list(merged.values())
 
 
@@ -388,13 +409,27 @@ def match_opportunities(
     games = repository.fetch_game_dimensions()
     seen = set(seen_ids)
     desired = set(profile.desired_player_experiences)
-    enumerated = enumerate_opportunities(games, desired)
+    # disliked_references_or_mechanics 现在承载「讨厌的体验」（前端从受控体验词多选）。
+    disliked = set(profile.disliked_references_or_mechanics)
+    enumerated = enumerate_opportunities(games, desired, disliked)
     fresh = [c for c in enumerated if c.id not in seen]
     candidates = rank_candidates(
         fresh,
         desired_experiences=desired,
     )
     exhausted = [_EXHAUSTED_WARNING] if (enumerated and not fresh) else []
+    logger.info(
+        "match_opportunities: profile=%s desired=%s disliked=%s games=%d "
+        "enumerated=%d seen=%d fresh=%d ranked=%d",
+        profile.id,
+        sorted(desired) or "∅",
+        sorted(disliked) or "∅",
+        len(games),
+        len(enumerated),
+        len(seen),
+        len(fresh),
+        len(candidates),
+    )
 
     if llm_client is None:
         return _fallback_result(profile.id, candidates, _NO_LLM_WARNING, exhausted)
