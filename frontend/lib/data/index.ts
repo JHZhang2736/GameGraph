@@ -232,6 +232,14 @@ export async function searchGraphNodes(q: string): Promise<NodeSearchHit[]> {
   return (await res.json()) as NodeSearchHit[];
 }
 
+// 可靶向的体验（= 后端协同规则的 distinct experience）。画像「期望/讨厌体验」多选
+// 据此取值——加一条协同规则，其新体验自动出现，无需改前端（单一真相）。
+export async function listTargetableExperiences(): Promise<string[]> {
+  const res = await fetch(`${apiBase()}/synergy/experiences`);
+  if (!res.ok) throw new Error(`GET /synergy/experiences responded ${res.status}`);
+  return (await res.json()) as string[];
+}
+
 export async function importGame(doc: ImportDocument): Promise<ImportSummary> {
   const res = await fetch(`${apiBase()}/import/game`, {
     method: "POST",

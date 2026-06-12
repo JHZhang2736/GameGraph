@@ -10,6 +10,7 @@ import {
   getSeedGames,
   importGame,
   listGames,
+  listTargetableExperiences,
   buildOpportunityFrame,
   generateConcepts,
   matchOpportunities,
@@ -19,6 +20,15 @@ import {
 } from "@/lib/data";
 import type { DeveloperProfile, OpportunityArea, OpportunityFrame, ProfileParseInput } from "@/lib/types";
 import type { ImportDocument } from "@/lib/import/schema";
+
+// 可靶向体验，供画像「期望/讨厌体验」多选取值。staleTime 拉长：规则表很少变。
+export function useTargetableExperiences() {
+  return useQuery({
+    queryKey: ["synergy-experiences"],
+    queryFn: listTargetableExperiences,
+    staleTime: 5 * 60 * 1000,
+  });
+}
 
 export function useGoldenFlow() {
   return useQuery({ queryKey: ["golden-flow"], queryFn: getGoldenFlow });
