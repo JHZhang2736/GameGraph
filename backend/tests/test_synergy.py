@@ -1,3 +1,9 @@
+import json
+from pathlib import Path
+from unittest.mock import patch
+
+import pytest
+
 from app.schemas.opportunity import FunctionalRole, SynergyRule
 from app.services import synergy
 
@@ -54,8 +60,7 @@ def test_element_dimensions_lookup() -> None:
     dims = synergy.load_element_dimensions()
     assert "Mechanic" in dims["老虎机"]
     assert "GameFeel" in dims["爽快射击"]
-    assert "Theme" in dims["生存恐怖"]
-    assert "Genre" in dims["生存恐怖"]      # 生存恐怖 同属 Theme 与 Genre
+    assert dims["生存恐怖"] == frozenset({"Theme"})   # 单归一维：Theme（题材）
     assert dims.get("不存在的词") in (None, frozenset(), set())
 
 
@@ -73,3 +78,39 @@ def test_flatten_unchanged_after_regroup() -> None:
     assert FunctionalRole.SOCIAL_AMPLIFIER in table["共享账户"]
     assert FunctionalRole.VISCERAL_EXECUTION in table["爽快射击"]
     assert FunctionalRole.COZY_COMFORT in table["轻松休闲"]
+
+
+def test_load_elements_by_role_real_data_has_no_double_homed_terms() -> None:
+    """真实 fixture 加载时守卫不应触发（所有词在各自角色内单归一维）。"""
+    # 确保 lru_cache 不遮蔽测试：直接构造新调用路径，使用实际文件
+    synergy.load_elements_by_role.cache_clear()
+    result = synergy.load_elements_by_role()
+    # 只要没有抛出 ValueError，守卫通过
+    assert result  # 结果非空
+
+
+def test_load_elements_by_role_guard_rejects_double_homed_term(
+    tmp_path: Path,
+) -> None:
+    """构造含跨维度双归属词的 fixture，验证守卫以 ValueError 响亮失败。"""
+    bad_fixture = {
+        "version": 2,
+        "description": "test",
+        "roles": {
+            "高方差失败源": {
+                "Mechanic": ["双归属词"],
+                "Genre": ["双归属词"],   # 同一角色内重复出现
+            }
+        },
+    }
+    fixture_path = tmp_path / "element_roles.json"
+    fixture_path.write_text(json.dumps(bad_fixture), encoding="utf-8")
+
+    # 清除缓存并 monkeypatch _FIXTURES 指向 tmp_path
+    synergy.load_elements_by_role.cache_clear()
+    with patch.object(synergy, "_FIXTURES", tmp_path):
+        with pytest.raises(ValueError, match="双归属词"):
+            synergy.load_elements_by_role()
+
+    # 测试后还原缓存，确保其他测试不受影响
+    synergy.load_elements_by_role.cache_clear()
