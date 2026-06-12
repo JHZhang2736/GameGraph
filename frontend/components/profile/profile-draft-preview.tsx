@@ -4,11 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { EditableSelect } from "@/components/profile/editable-select";
 import { MultiSelectChips } from "@/components/profile/multi-select-chips";
-import {
-  DESIRED_EXPERIENCE_OPTIONS,
-  SCALAR_FIELD_OPTIONS,
-  type ScalarFieldKey,
-} from "@/lib/profile/field-options";
+import { SCALAR_FIELD_OPTIONS, type ScalarFieldKey } from "@/lib/profile/field-options";
 import { cn } from "@/lib/utils";
 import type {
   ConstraintType,
@@ -56,9 +52,15 @@ const CONSTRAINT_STYLE: Record<ConstraintType, string> = {
 interface ProfileDraftPreviewProps {
   draft: DeveloperProfileDraft;
   onChange: (draft: DeveloperProfileDraft) => void;
+  // 可靶向体验选项（后端 /synergy/experiences）；用于期望/讨厌体验。未就绪则仅自由输入。
+  experienceOptions?: string[];
 }
 
-export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProps) {
+export function ProfileDraftPreview({
+  draft,
+  onChange,
+  experienceOptions,
+}: ProfileDraftPreviewProps) {
   const missing = new Set(draft.missing_fields.map((field) => field.field));
 
   function setConstraints(constraints: DeveloperConstraint[]) {
@@ -114,7 +116,7 @@ export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProp
               options={
                 field.key === "desired_player_experiences" ||
                 field.key === "disliked_references_or_mechanics"
-                  ? DESIRED_EXPERIENCE_OPTIONS
+                  ? experienceOptions
                   : undefined
               }
               invalid={missing.has(field.key)}

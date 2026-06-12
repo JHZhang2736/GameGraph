@@ -40,26 +40,8 @@ export const SCALAR_FIELD_OPTIONS: Record<ScalarFieldKey, FieldOption[]> = {
   ],
 };
 
-// 可靶向的玩家体验 = 后端 synergy_rules.json 里所有 distinct experience。
-// desired_player_experiences 的取值须与这些字符串一致，匹配上才驱动机会匹配的「画像靶向」
-// （命中则该体验的机会优先；选 0 个则退化为全量机会空间）。
-// 新增/修改协同规则的 experience 时，请同步此列表。
-export const DESIRED_EXPERIENCE_OPTIONS: string[] = [
-  "欢乐混乱",
-  "战斗精通",
-  "构筑乐趣",
-  "涌现玩法",
-  "运筹帷幄",
-  "滚雪球快感",
-  "协作默契",
-  "收集养成",
-  "氛围营造",
-  "经营成就",
-  "竞技紧张",
-  "情感叙事",
-  "探索发现",
-  "个性化表达",
-];
+// 期望/讨厌体验的可选项不再硬编码——改由后端 GET /synergy/experiences 实时提供
+// （= 协同规则的 distinct experience），加规则前端自动更新。见 lib/data listTargetableExperiences。
 
 // Returns the Chinese label for a canonical value, or the raw value for custom
 // inputs that aren't in the preset list. Empty/null yields "".

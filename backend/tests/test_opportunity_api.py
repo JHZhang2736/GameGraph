@@ -95,3 +95,13 @@ def test_match_endpoint_accepts_profile_without_optional_lists() -> None:
         assert sse_result(response)["profile_id"] == "profile_1"
     finally:
         app.dependency_overrides.clear()
+
+
+def test_synergy_experiences_endpoint_lists_distinct_targetable() -> None:
+    # 无 Depends（直接读规则表），无需 override。
+    client = TestClient(app)
+    response = client.get("/synergy/experiences")
+    assert response.status_code == 200
+    body = response.json()
+    assert "欢乐混乱" in body and "高难跑酷" in body  # 既有 + 新增体验
+    assert body == sorted(set(body))  # 字典序去重

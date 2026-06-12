@@ -67,6 +67,13 @@ def load_synergy_rules() -> tuple[SynergyRule, ...]:
     return tuple(SynergyRule.model_validate(rule) for rule in raw["rules"])
 
 
+@lru_cache(maxsize=1)
+def targetable_experiences() -> tuple[str, ...]:
+    """所有协同规则能产出的 distinct 体验（字典序）。前端期望/讨厌体验多选据此取值，
+    单一真相：加一条规则其新体验自动出现，无需改前端。"""
+    return tuple(sorted({rule.experience for rule in load_synergy_rules()}))
+
+
 def roles_for_elements(
     elements: Iterable[str],
     table: dict[str, frozenset[FunctionalRole]] | None = None,

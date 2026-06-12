@@ -20,10 +20,17 @@ from app.services.opportunity_llm import (
     get_opportunity_llm_client,
 )
 from app.services.opportunity_service import match_opportunities
+from app.services import synergy
 
 router = APIRouter()
 
 _driver = None
+
+
+@router.get("/synergy/experiences", response_model=list[str])
+def list_targetable_experiences() -> list[str]:
+    """可靶向的体验（= 协同规则的 distinct experience）。前端期望/讨厌体验多选取值。"""
+    return list(synergy.targetable_experiences())
 
 
 def get_opportunity_repository() -> OpportunityRepository:

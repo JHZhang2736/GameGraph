@@ -10,7 +10,7 @@ import {
 } from "@/components/profile/profile-input-panel";
 import { ProfileDraftPreview } from "@/components/profile/profile-draft-preview";
 import { ProfileConfirmedView } from "@/components/profile/profile-confirmed-view";
-import { useParseDeveloperProfileInput } from "@/lib/queries";
+import { useParseDeveloperProfileInput, useTargetableExperiences } from "@/lib/queries";
 import { confirmDeveloperProfile } from "@/lib/data";
 import {
   createDraftFromProfile,
@@ -66,6 +66,8 @@ export default function ProfilePage() {
   // until the next click.
   const [submitted, setSubmitted] = useState<ProfileParseInput | null>(null);
   const { data: result } = useParseDeveloperProfileInput(submitted);
+  // 可靶向体验，作为「期望/讨厌体验」多选的选项（加载失败/未就绪则仅自由输入）。
+  const { data: experienceOptions } = useTargetableExperiences();
 
   // The editable draft starts as a blank profile so the right side is usable
   // without any free-text input, then gets re-seeded whenever a parse returns.
@@ -125,7 +127,11 @@ export default function ProfilePage() {
           onParse={() => setSubmitted(toParseInput(input))}
           rawTextPlaceholder={EXAMPLE_PROFILE_TEXT}
         />
-        <ProfileDraftPreview draft={draft} onChange={updateDraft} />
+        <ProfileDraftPreview
+          draft={draft}
+          onChange={updateDraft}
+          experienceOptions={experienceOptions}
+        />
       </div>
 
       {confirmed ? <ProfileConfirmedView profile={confirmed} /> : null}
