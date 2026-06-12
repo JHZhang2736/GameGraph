@@ -268,7 +268,8 @@ def test_rank_diversity_is_deterministic() -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_combine_candidate_annotated_with_synergy() -> None:
+def test_combine_candidate_annotated_with_synergy(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "1")
     # 锚点有「共享账户」(社交放大器)，借入「老虎机」(高方差失败源)
     # → 命中规则 social_high_variance_comedy → predicted_experience="欢乐混乱"
     games = [
@@ -326,7 +327,8 @@ def _synergy_cand(cid: str, existing: int, target_count: int, has_synergy: bool)
     )
 
 
-def test_synergy_candidate_ranks_before_scarcity_candidate() -> None:
+def test_synergy_candidate_ranks_before_scarcity_candidate(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "1")
     # 有 synergy 但 existing=1 的候选应排在无 synergy 且 existing=0 的候选前面
     with_synergy = _synergy_cand("syn", existing=1, target_count=2, has_synergy=True)
     without_synergy = _synergy_cand("no_syn", existing=0, target_count=2, has_synergy=False)
