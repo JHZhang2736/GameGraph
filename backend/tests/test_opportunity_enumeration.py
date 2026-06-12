@@ -539,4 +539,10 @@ def test_enumerate_opportunities_wildcard_capped(monkeypatch) -> None:
     ]
     opps = enumerate_opportunities(games, set())
     wildcard_count = sum(1 for o in opps if o.synergy is None)
+    # 前置断言：确认 fixture 确实产生了至少 1 条 wildcard，
+    # 防止 fixture/规则变化后 wildcard 被消除时测试悄悄空转
+    assert wildcard_count >= 1, (
+        "Fixture 未产生任何 wildcard 候选，cap 断言将空转；"
+        "请检查 _source_elements/规则是否将所有借入都分配了协同规则。"
+    )
     assert wildcard_count <= 1

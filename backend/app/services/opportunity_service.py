@@ -256,7 +256,8 @@ def _combine_candidates(
 # E-Task 1: experience/role-recipe opportunity generator (additive)
 # ---------------------------------------------------------------------------
 
-MAX_WILDCARD = int(os.environ.get("OPP_MAX_WILDCARD", "3"))
+def _max_wildcard() -> int:
+    return int(os.environ.get("OPP_MAX_WILDCARD", "3"))
 
 
 def _source_elements(g: GameDimensions) -> set[str]:
@@ -268,12 +269,22 @@ def role_combination_count(
     games: list[GameDimensions],
     role_a: FunctionalRole,
     role_b: FunctionalRole,
+    roles_by_id: dict[str, frozenset[FunctionalRole]] | None = None,
 ) -> int:
-    """库内同时覆盖 role_a 和 role_b 的游戏数量；值越小表示该组合越新颖。"""
+    """库内同时覆盖 role_a 和 role_b 的游戏数量；值越小表示该组合越新颖。
+
+    *roles_by_id* 为可选的预计算映射 {game_id → roles}；传入时直接复用，
+    省去每次调用重新推导角色的开销。不传时退化为按需计算（保持原有公共接口）。
+    """
     required = {role_a, role_b}
     count = 0
     for g in games:
-        if required <= synergy.roles_for_elements(_source_elements(g)):
+        roles = (
+            roles_by_id[g.game_id]
+            if roles_by_id is not None
+            else synergy.roles_for_elements(_source_elements(g))
+        )
+        if required <= roles:
             count += 1
     return count
 
@@ -292,6 +303,12 @@ def enumerate_opportunities(
         if (not desired) or r.experience in desired
     ]
     elements_by_role = synergy.load_elements_by_role()
+    max_wc = _max_wildcard()
+
+    # 预计算每个游戏的功能角色集合，避免在后续多层循环中重复推导
+    roles_by_id: dict[str, frozenset[FunctionalRole]] = {
+        g.game_id: synergy.roles_for_elements(_source_elements(g)) for g in games
+    }
 
     # ── Primary channel ────────────────────────────────────────────────────
     primary: dict[str, CandidateOpportunityArea] = {}
@@ -301,9 +318,9 @@ def enumerate_opportunities(
             (rule.role_a, rule.role_b),
             (rule.role_b, rule.role_a),
         ):
-            novelty = role_combination_count(games, anchor_role, borrow_role)
+            novelty = role_combination_count(games, anchor_role, borrow_role, roles_by_id)
             for anchor in games:
-                if anchor_role not in synergy.roles_for_elements(_source_elements(anchor)):
+                if anchor_role not in roles_by_id[anchor.game_id]:
                     continue
                 for element, dim in elements_by_role.get(borrow_role, frozenset()):
                     attr = _DIMENSION_ATTRS.get(dim)
@@ -380,9 +397,8 @@ def enumerate_opportunities(
                 )
             )
 
-    # 按 (existing_combination_count, id) 升序排，截断至 MAX_WILDCARD
+    # 按 (existing_combination_count, id) 升序排，截断至 max_wc
     wildcard_candidates.sort(key=lambda c: (c.existing_combination_count, c.id))
-    max_wc = int(os.environ.get("OPP_MAX_WILDCARD", str(MAX_WILDCARD)))
     capped_wildcards = wildcard_candidates[:max_wc]
 
     # ── Merge (primary wins on collision) ─────────────────────────────────
