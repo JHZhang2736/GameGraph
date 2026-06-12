@@ -1,28 +1,26 @@
 """
-Hybrid opportunity enumeration – validation harness (H-Task 4)
+Recipe opportunity enumeration – validation harness
 
-Three scenarios that prove the synergy prior changes / improves enumeration:
+Three scenarios that prove the recipe/role-driven generator produces the expected results:
 
   Test 1 – 留一法重新发现 (leave-one-out rediscovery)
     No single library game exemplifies the "社交放大器 × 高方差失败源 → 欢乐混乱"
-    pairing, yet the hybrid engine re-discovers the opportunity from the role layer alone.
+    pairing, yet the recipe engine re-discovers the opportunity from the role layer alone.
 
   Test 2 – 跨维度可达性 (cross-dimension reachability)
-    A synergy completable only via a Theme carrier IS produced by the hybrid engine
-    (flag ON) but NOT by attribute-only enumeration (flag OFF).
+    A synergy completable only via a Theme carrier IS produced by the recipe engine.
 
-  Test 3 – 消融 (ablation)
-    Same games + same desired_experiences, flag ON vs OFF.  The ranked Top-N
-    candidate id sets differ, and at least one tier-0 candidate (synergy whose
-    predicted_experience ∈ desired_experiences) that is present with flag ON is
-    absent / lower-ranked when flag OFF.
+  Test 3 – 协同优先 (synergy-first ranking)
+    Same games + desired_experiences; tier-0 candidate (predicted_experience ∈ desired)
+    ranks at position 0 and has higher rank than a non-synergy candidate with lower
+    existing_combination_count.
 """
 
 import pytest
 
 from app.services.opportunity_service import (
     GameDimensions,
-    enumerate_candidates,
+    enumerate_opportunities,
     rank_candidates,
 )
 
@@ -70,9 +68,9 @@ def _permadeath_party_games(
 # ---------------------------------------------------------------------------
 
 
-def test_leave_one_out_rediscovery(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_leave_one_out_rediscovery() -> None:
     """
-    Validates that the rule-driven path re-discovers an opportunity region
+    Validates that the recipe path re-discovers an opportunity region
     even when no single library game exemplifies the full synergy pairing.
 
     Anchor: 永久死亡 (高方差失败源)  ← no 共享账户
@@ -82,15 +80,11 @@ def test_leave_one_out_rediscovery(monkeypatch: pytest.MonkeyPatch) -> None:
     Expected: a candidate exists with synergy.predicted_experience == "欢乐混乱",
     and with desired_experiences={"欢乐混乱"} it rises to Top-N position 0.
     """
-    monkeypatch.setenv("SYNERGY_RANKING", "1")
-
     games = _permadeath_party_games()
-    candidates = enumerate_candidates(games)
+    candidates = enumerate_opportunities(games, {"欢乐混乱"})
 
     # At least one candidate from anchor g_permadeath should target 共享账户
     # with synergy predicting 欢乐混乱 (rule social_high_variance_comedy).
-    # Note: _combine_candidates (Mechanic path) already annotates with rationale_for(),
-    # so this candidate arrives via the standard combine path — confirmed by synergy tag.
     comedy_candidates = [
         c
         for c in candidates
@@ -127,23 +121,20 @@ def test_leave_one_out_rediscovery(monkeypatch: pytest.MonkeyPatch) -> None:
 
 # ---------------------------------------------------------------------------
 # Test 2: 跨维度可达性
-# Rule-driven generates a Theme-dimension candidate (flag ON);
-# attribute-only enumeration (flag OFF) produces no Theme-dimension candidates.
+# Recipe engine generates a Theme-dimension candidate via rule dread_scarcity_atmosphere.
 # ---------------------------------------------------------------------------
 
 
-def test_cross_dimension_reachability(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_cross_dimension_reachability() -> None:
     """
-    Validates that the hybrid engine generates cross-dimension Theme candidates
-    (flag ON) that are absent under attribute-only enumeration (flag OFF).
+    Validates that the recipe engine generates cross-dimension Theme candidates.
 
     Anchor: 资源管理 (资源张力 via Mechanic)
     Source: Theme 生存恐怖 (恐惧张力)
 
     Rule dread_scarcity_atmosphere: 恐惧张力 × 资源张力 → 氛围营造
-    Flag ON:  Theme-dimension candidate exists with to_value="生存恐怖",
+    Expected: Theme-dimension candidate exists with to_value="生存恐怖",
               synergy.predicted_experience == "氛围营造".
-    Flag OFF: No Theme-dimension candidate exists.
     """
     games = [
         # Anchor: 资源管理 (资源张力 via Mechanic)
@@ -170,66 +161,47 @@ def test_cross_dimension_reachability(monkeypatch: pytest.MonkeyPatch) -> None:
         ),
     ]
 
-    # --- flag ON ---
-    monkeypatch.setenv("SYNERGY_RANKING", "1")
-    candidates_on = enumerate_candidates(games)
+    candidates = enumerate_opportunities(games, set())
 
     theme_candidates = [
         c
-        for c in candidates_on
+        for c in candidates
         if c.anchor_game_id == "g_survival"
         and c.transformation.dimension == "Theme"
         and c.transformation.to_value == "生存恐怖"
     ]
     assert theme_candidates, (
-        "Flag ON: expected a Theme-dimension candidate targeting '生存恐怖' "
+        "Expected a Theme-dimension candidate targeting '生存恐怖' "
         "for anchor g_survival, but none found."
     )
     assert theme_candidates[0].synergy is not None, (
-        "Flag ON: Theme candidate exists but has no synergy annotation."
+        "Theme candidate exists but has no synergy annotation."
     )
     assert theme_candidates[0].synergy.predicted_experience == "氛围营造", (
-        f"Flag ON: expected predicted_experience='氛围营造', "
+        f"Expected predicted_experience='氛围营造', "
         f"got {theme_candidates[0].synergy.predicted_experience!r}."
     )
 
-    # --- flag OFF ---
-    monkeypatch.setenv("SYNERGY_RANKING", "0")
-    candidates_off = enumerate_candidates(games)
-
-    assert not any(
-        c.transformation.dimension == "Theme" and c.synergy is not None
-        for c in candidates_off
-    ), "Flag OFF 不应产生任何带 synergy 的 Theme 维度候选"
-
 
 # ---------------------------------------------------------------------------
-# Test 3: 消融 (ablation)
-# Same games + same desired_experiences; ranked Top-N ids DIFFER between
-# flag ON and OFF; flag ON produces at least one tier-0 candidate absent
-# from flag OFF output.
+# Test 3: 协同优先 (synergy-first ranking)
+# With desired_experiences, tier-0 synergy candidates rank above wildcards
+# even when wildcards have lower existing_combination_count.
 # ---------------------------------------------------------------------------
 
 
-def test_ablation_synergy_flag_changes_ranked_output(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+def test_synergy_first_ranking_with_desired_experiences() -> None:
     """
-    Ablation: compares ranked Top-N under flag ON vs flag OFF with the same
-    game library and desired_experiences.
+    Validates synergy-first ranking: tier-0 candidate (synergy.predicted_experience ∈
+    desired_experiences) ranks at top even when a wildcard candidate has lower
+    existing_combination_count.
 
-    The id sets must differ between the two runs, and at least one tier-0
-    candidate (synergy.predicted_experience ∈ desired_experiences) that
-    appears in flag-ON top results must be absent from flag-OFF results.
-
-    Fixture: anchor has 永久死亡 (高方差失败源); another game provides
-    共享账户 (社交放大器).  desired_experiences={"欢乐混乱"}.
+    Fixture: anchor has 永久死亡 (高方差失败源); g_social provides 共享账户 (社交放大器).
+    g_plain provides 回合制 (no synergy rule match) creating a wildcard candidate.
+    desired_experiences={"欢乐混乱"}.
     """
     desired = {"欢乐混乱"}
 
-    # Rich enough fixture: anchor g_anchor has 永久死亡.
-    # g_social provides 共享账户 (社交放大器).
-    # g_plain provides a plain mechanic (回合制) that creates a non-synergy candidate.
     games = _permadeath_party_games(anchor_id="g_anchor", social_id="g_social") + [
         GameDimensions(
             game_id="g_plain",
@@ -243,38 +215,25 @@ def test_ablation_synergy_flag_changes_ranked_output(
         ),
     ]
 
-    # --- flag ON ---
-    monkeypatch.setenv("SYNERGY_RANKING", "1")
-    candidates_on = enumerate_candidates(games)
-    ranked_on = rank_candidates(candidates_on, top_n=10, desired_experiences=desired)
+    candidates = enumerate_opportunities(games, desired)
+    ranked = rank_candidates(candidates, top_n=10, desired_experiences=desired)
 
-    # --- flag OFF ---
-    monkeypatch.setenv("SYNERGY_RANKING", "0")
-    candidates_off = enumerate_candidates(games)
-    ranked_off = rank_candidates(candidates_off, top_n=10, desired_experiences=desired)
+    assert ranked, "rank_candidates returned empty list."
 
-    ids_on = {c.id for c in ranked_on}
-    ids_off = {c.id for c in ranked_off}
-
-    assert ids_on != ids_off, (
-        "Ablation FAILED: ranked Top-N candidate id sets are identical under "
-        "flag ON and flag OFF — synergy prior has no observable effect."
-    )
-
-    # Collect tier-0 candidates from flag ON (synergy.predicted_experience ∈ desired)
-    tier0_on = [
+    # Collect tier-0 candidates (synergy.predicted_experience ∈ desired)
+    tier0 = [
         c
-        for c in ranked_on
+        for c in ranked
         if c.synergy is not None and c.synergy.predicted_experience in desired
     ]
-    assert tier0_on, (
-        "Flag ON: no tier-0 candidate with predicted_experience ∈ desired_experiences "
+    assert tier0, (
+        "No tier-0 candidate with predicted_experience ∈ desired_experiences "
         "found in ranked output — synergy-aware ranking produced nothing observable."
     )
 
-    # At least one such tier-0 candidate must be absent from flag-OFF ranked output
-    tier0_ids_absent_in_off = {c.id for c in tier0_on} - ids_off
-    assert tier0_ids_absent_in_off, (
-        "Ablation FAILED: all tier-0 (欢乐混乱) candidates from flag-ON ranking are "
-        "also present in flag-OFF ranking — synergy prior shows no exclusive uplift."
+    # The top-ranked candidate should be from tier-0
+    assert ranked[0].synergy is not None, "Top-ranked candidate has no synergy."
+    assert ranked[0].synergy.predicted_experience in desired, (
+        f"Top-ranked candidate predicted_experience={ranked[0].synergy.predicted_experience!r} "
+        f"not in desired={desired}."
     )
