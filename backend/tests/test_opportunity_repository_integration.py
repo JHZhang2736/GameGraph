@@ -50,3 +50,22 @@ def test_fetch_game_design_facts_returns_profile_lists(driver) -> None:
     assert aw.experiences     # DELIVERS_EXPERIENCE 非空
     assert aw.constraints     # CONSTRAINED_BY 非空
     assert aw.innovation_patterns  # USES_INNOVATION 非空
+
+
+@pytest.fixture()
+def driver_gwyf(driver):
+    """Extend the base driver fixture with gamble_with_your_friends cleanup."""
+    yield driver
+    with driver.session() as session:
+        session.run(
+            "MATCH (g:Game {id: $id}) DETACH DELETE g",
+            id="game_gamble_with_your_friends",
+        )
+
+
+def test_fetch_game_dimensions_returns_theme_and_game_feel(driver_gwyf) -> None:
+    GameRepository(driver_gwyf).upsert_game(_document("gamble_with_your_friends"))
+    rows = OpportunityRepository(driver_gwyf).fetch_game_dimensions()
+    gwyf = next(r for r in rows if r.game_id == "game_gamble_with_your_friends")
+    assert isinstance(gwyf.theme, set) and gwyf.theme        # HAS_THEME 非空
+    assert isinstance(gwyf.game_feel, set) and gwyf.game_feel  # HAS_GAME_FEEL 非空

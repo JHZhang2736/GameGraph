@@ -45,6 +45,8 @@ class GameDimensions:
     perspectives: set[str] = field(default_factory=set)
     art_styles: set[str] = field(default_factory=set)
     mechanics: set[str] = field(default_factory=set)
+    theme: set[str] = field(default_factory=set)
+    game_feel: set[str] = field(default_factory=set)
 
 
 @dataclass
