@@ -6,7 +6,11 @@ from app.schemas.opportunity import (
     Transformation,
     TransformationType,
 )
-from app.services.opportunity_service import GameDimensions, enumerate_candidates, rank_candidates
+from app.services.opportunity_service import (
+    GameDimensions,
+    enumerate_candidates,
+    rank_candidates,
+)
 
 
 def _games() -> list[GameDimensions]:
@@ -33,7 +37,8 @@ def _games() -> list[GameDimensions]:
 def test_substitute_borrows_target_value_from_other_game() -> None:
     candidates = enumerate_candidates(_games())
     subs = [
-        c for c in candidates
+        c
+        for c in candidates
         if c.anchor_game_id == "game_vs"
         and c.transformation.type == TransformationType.SUBSTITUTE
         and c.transformation.dimension == "Perspective"
@@ -49,7 +54,8 @@ def test_substitute_borrows_target_value_from_other_game() -> None:
 def test_combine_borrows_mechanic_anchor_lacks() -> None:
     candidates = enumerate_candidates(_games())
     combines = [
-        c for c in candidates
+        c
+        for c in candidates
         if c.anchor_game_id == "game_vs"
         and c.transformation.type == TransformationType.COMBINE
     ]
@@ -72,7 +78,9 @@ def test_no_candidate_for_value_anchor_already_has() -> None:
 
 def test_substitute_skipped_when_anchor_has_no_value_in_dimension() -> None:
     games = [
-        GameDimensions("g1", "s1", {"类肉鸽"}, set(), {"像素美术"}, set()),  # 无 perspective
+        GameDimensions(
+            "g1", "s1", {"类肉鸽"}, set(), {"像素美术"}, set()
+        ),  # 无 perspective
         GameDimensions("g2", "s2", {"类肉鸽"}, {"第一人称"}, {"低多边形"}, set()),
     ]
     candidates = enumerate_candidates(games)
@@ -83,22 +91,28 @@ def test_substitute_skipped_when_anchor_has_no_value_in_dimension() -> None:
     )
 
 
-def test_substitute_from_value_is_lexicographically_smallest_for_multi_value_anchor() -> None:
+def test_substitute_from_value_is_lexicographically_smallest_for_multi_value_anchor() -> (
+    None
+):
     games = [
         GameDimensions("g1", "s1", {"类肉鸽", "动作"}, {"横版2D"}, {"像素美术"}, set()),
         GameDimensions("g2", "s2", {"射击"}, {"横版2D"}, {"像素美术"}, set()),
     ]
     candidates = enumerate_candidates(games)
     sub = next(
-        c for c in candidates
-        if c.anchor_game_id == "g1" and c.transformation.dimension == "Genre"
+        c
+        for c in candidates
+        if c.anchor_game_id == "g1"
+        and c.transformation.dimension == "Genre"
         and c.transformation.to_value == "射击"
     )
     # anchor genres {"动作","类肉鸽"} → 词典序最小者为「动作」
     assert sub.transformation.from_value == "动作"
 
 
-def test_existing_combination_count_counts_genre_sharing_games_with_target_value() -> None:
+def test_existing_combination_count_counts_genre_sharing_games_with_target_value() -> (
+    None
+):
     games = [
         GameDimensions("g1", "s1", {"类肉鸽"}, {"横版2D"}, {"像素美术"}, set()),
         GameDimensions("g2", "s2", {"类肉鸽"}, {"第一人称"}, {"低多边形"}, set()),
@@ -106,7 +120,8 @@ def test_existing_combination_count_counts_genre_sharing_games_with_target_value
     ]
     candidates = enumerate_candidates(games)
     picked = next(
-        c for c in candidates
+        c
+        for c in candidates
         if c.anchor_game_id == "g1"
         and c.transformation.dimension == "Perspective"
         and c.transformation.to_value == "第一人称"
@@ -184,7 +199,11 @@ def _dcand(
         anchor_game_id=anchor,
         anchor_summary="s",
         transformation=Transformation(
-            type=TransformationType.COMBINE if is_combine else TransformationType.SUBSTITUTE,
+            type=(
+                TransformationType.COMBINE
+                if is_combine
+                else TransformationType.SUBSTITUTE
+            ),
             dimension=dimension,
             from_value=None if is_combine else "x",
             to_value=to_value or cid,
@@ -217,18 +236,21 @@ def test_rank_caps_candidates_per_dimension() -> None:
     # 6 条 Perspective(各自不同锚点,锚点配额不触发)更新颖,排在前;另有 3 条 Genre
     # 兜底。top_n=8 > 维度上限 5,且 Genre 足以把剩余槽填满 —— 所以第 6 条 Perspective
     # 是被「维度配额」挡掉的(既非 top_n 截断,也没被放宽兜底补回),这才真正测到次轴。
-    cands = (
-        [_dcand(f"p{i}", 0, 2, f"panchor{i}", "Perspective", to_value=f"v{i}") for i in range(6)]
-        + [_dcand(f"q{i}", 0, 1, f"qanchor{i}", "Genre", to_value=f"w{i}") for i in range(3)]
-    )
+    cands = [
+        _dcand(f"p{i}", 0, 2, f"panchor{i}", "Perspective", to_value=f"v{i}")
+        for i in range(6)
+    ] + [
+        _dcand(f"q{i}", 0, 1, f"qanchor{i}", "Genre", to_value=f"w{i}")
+        for i in range(3)
+    ]
     ranked = rank_candidates(
         cands, max_existing=2, top_n=8, max_per_anchor=2, max_per_dimension=5
     )
     ids = {c.id for c in ranked}
     persp = [c for c in ranked if c.transformation.dimension == "Perspective"]
-    assert len(ranked) == 8          # 填满到 top_n
-    assert len(persp) == 5           # 维度配额生效(不是 6)
-    assert "p5" not in ids           # 被配额挡掉的那条确实没入选
+    assert len(ranked) == 8  # 填满到 top_n
+    assert len(persp) == 5  # 维度配额生效(不是 6)
+    assert "p5" not in ids  # 被配额挡掉的那条确实没入选
 
 
 def test_rank_relaxes_caps_when_underfilled() -> None:
@@ -273,29 +295,42 @@ def test_combine_candidate_annotated_with_synergy(monkeypatch) -> None:
     # 锚点有「共享账户」(社交放大器)，借入「老虎机」(高方差失败源)
     # → 命中规则 social_high_variance_comedy → predicted_experience="欢乐混乱"
     games = [
-        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
-        GameDimensions("g_slot", "赌场", {"派对游戏"}, set(), set(), {"老虎机"}, set(), set()),
+        GameDimensions(
+            "g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()
+        ),
+        GameDimensions(
+            "g_slot", "赌场", {"派对游戏"}, set(), set(), {"老虎机"}, set(), set()
+        ),
     ]
     cands = enumerate_candidates(games)
-    borrow = next(c for c in cands
-                  if c.anchor_game_id == "g_party" and c.transformation.to_value == "老虎机")
+    borrow = next(
+        c
+        for c in cands
+        if c.anchor_game_id == "g_party" and c.transformation.to_value == "老虎机"
+    )
     assert borrow.synergy is not None
     assert borrow.synergy.predicted_experience == "欢乐混乱"
 
 
-def test_combine_candidate_without_complement_has_no_synergy() -> None:
+def test_combine_candidate_without_complement_has_no_synergy(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "1")
     # 借入「回合制」不构成任何规则的互补角色对 → synergy=None
     games = [
         GameDimensions("g1", "s1", {"解谜"}, set(), set(), {"分支叙事"}, set(), set()),
         GameDimensions("g2", "s2", {"解谜"}, set(), set(), {"回合制"}, set(), set()),
     ]
     cands = enumerate_candidates(games)
-    borrow = next(c for c in cands
-                  if c.anchor_game_id == "g1" and c.transformation.to_value == "回合制")
+    borrow = next(
+        c
+        for c in cands
+        if c.anchor_game_id == "g1" and c.transformation.to_value == "回合制"
+    )
     assert borrow.synergy is None
 
 
-def _synergy_cand(cid: str, existing: int, target_count: int, has_synergy: bool) -> CandidateOpportunityArea:
+def _synergy_cand(
+    cid: str, existing: int, target_count: int, has_synergy: bool
+) -> CandidateOpportunityArea:
     """构造带/不带 synergy 的 COMBINE 候选，用于 rank_candidates 排序测试。"""
     syn = (
         SynergyRationale(
@@ -331,7 +366,9 @@ def test_synergy_candidate_ranks_before_scarcity_candidate(monkeypatch) -> None:
     monkeypatch.setenv("SYNERGY_RANKING", "1")
     # 有 synergy 但 existing=1 的候选应排在无 synergy 且 existing=0 的候选前面
     with_synergy = _synergy_cand("syn", existing=1, target_count=2, has_synergy=True)
-    without_synergy = _synergy_cand("no_syn", existing=0, target_count=2, has_synergy=False)
+    without_synergy = _synergy_cand(
+        "no_syn", existing=0, target_count=2, has_synergy=False
+    )
     ranked = rank_candidates([with_synergy, without_synergy], max_existing=2, top_n=10)
     assert ranked[0].id == "syn"
 
@@ -340,6 +377,8 @@ def test_synergy_ranking_disabled_falls_back_to_scarcity_first(monkeypatch) -> N
     # SYNERGY_RANKING=0 → 回退到纯稀缺性排序：existing=0 的排在 existing=1 前
     monkeypatch.setenv("SYNERGY_RANKING", "0")
     with_synergy = _synergy_cand("syn", existing=1, target_count=2, has_synergy=True)
-    without_synergy = _synergy_cand("no_syn", existing=0, target_count=2, has_synergy=False)
+    without_synergy = _synergy_cand(
+        "no_syn", existing=0, target_count=2, has_synergy=False
+    )
     ranked = rank_candidates([with_synergy, without_synergy], max_existing=2, top_n=10)
     assert ranked[0].id == "no_syn"
