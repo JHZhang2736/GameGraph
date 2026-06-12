@@ -1,6 +1,8 @@
 from app.schemas.opportunity import (
     CandidateOpportunityArea,
+    FunctionalRole,
     OpportunityEvidence,
+    SynergyRationale,
     Transformation,
     TransformationType,
 )
@@ -259,3 +261,83 @@ def test_rank_diversity_is_deterministic() -> None:
     r1 = [c.id for c in rank_candidates(cands, max_existing=2, top_n=8)]
     r2 = [c.id for c in rank_candidates(list(reversed(cands)), max_existing=2, top_n=8)]
     assert r1 == r2
+
+
+# ---------------------------------------------------------------------------
+# Task 4: synergy annotation + synergy-first ranking tests
+# ---------------------------------------------------------------------------
+
+
+def test_combine_candidate_annotated_with_synergy() -> None:
+    # 锚点有「共享账户」(社交放大器)，借入「老虎机」(高方差失败源)
+    # → 命中规则 social_high_variance_comedy → predicted_experience="欢乐混乱"
+    games = [
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+        GameDimensions("g_slot", "赌场", {"派对游戏"}, set(), set(), {"老虎机"}, set(), set()),
+    ]
+    cands = enumerate_candidates(games)
+    borrow = next(c for c in cands
+                  if c.anchor_game_id == "g_party" and c.transformation.to_value == "老虎机")
+    assert borrow.synergy is not None
+    assert borrow.synergy.predicted_experience == "欢乐混乱"
+
+
+def test_combine_candidate_without_complement_has_no_synergy() -> None:
+    # 借入「回合制」不构成任何规则的互补角色对 → synergy=None
+    games = [
+        GameDimensions("g1", "s1", {"解谜"}, set(), set(), {"分支叙事"}, set(), set()),
+        GameDimensions("g2", "s2", {"解谜"}, set(), set(), {"回合制"}, set(), set()),
+    ]
+    cands = enumerate_candidates(games)
+    borrow = next(c for c in cands
+                  if c.anchor_game_id == "g1" and c.transformation.to_value == "回合制")
+    assert borrow.synergy is None
+
+
+def _synergy_cand(cid: str, existing: int, target_count: int, has_synergy: bool) -> CandidateOpportunityArea:
+    """构造带/不带 synergy 的 COMBINE 候选，用于 rank_candidates 排序测试。"""
+    syn = (
+        SynergyRationale(
+            rule_id="social_high_variance_comedy",
+            anchor_role=FunctionalRole.SOCIAL_AMPLIFIER,
+            borrowed_role=FunctionalRole.HIGH_VARIANCE_FAILURE,
+            predicted_experience="欢乐混乱",
+        )
+        if has_synergy
+        else None
+    )
+    return CandidateOpportunityArea(
+        id=cid,
+        anchor_game_id="a",
+        anchor_summary="s",
+        transformation=Transformation(
+            type=TransformationType.COMBINE,
+            dimension="Mechanic",
+            from_value=None,
+            to_value=cid,
+        ),
+        existing_combination_count=existing,
+        evidence=OpportunityEvidence(
+            anchor_game_id="a",
+            target_value_game_ids=[f"g{i}" for i in range(target_count)],
+            combination_game_ids=[f"c{i}" for i in range(existing)],
+        ),
+        synergy=syn,
+    )
+
+
+def test_synergy_candidate_ranks_before_scarcity_candidate() -> None:
+    # 有 synergy 但 existing=1 的候选应排在无 synergy 且 existing=0 的候选前面
+    with_synergy = _synergy_cand("syn", existing=1, target_count=2, has_synergy=True)
+    without_synergy = _synergy_cand("no_syn", existing=0, target_count=2, has_synergy=False)
+    ranked = rank_candidates([with_synergy, without_synergy], max_existing=2, top_n=10)
+    assert ranked[0].id == "syn"
+
+
+def test_synergy_ranking_disabled_falls_back_to_scarcity_first(monkeypatch) -> None:
+    # SYNERGY_RANKING=0 → 回退到纯稀缺性排序：existing=0 的排在 existing=1 前
+    monkeypatch.setenv("SYNERGY_RANKING", "0")
+    with_synergy = _synergy_cand("syn", existing=1, target_count=2, has_synergy=True)
+    without_synergy = _synergy_cand("no_syn", existing=0, target_count=2, has_synergy=False)
+    ranked = rank_candidates([with_synergy, without_synergy], max_existing=2, top_n=10)
+    assert ranked[0].id == "no_syn"

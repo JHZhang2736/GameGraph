@@ -18,8 +18,14 @@ from app.schemas.opportunity import (
     TransformationType,
 )
 from app.services.opportunity_llm import OpportunityJudgment, OpportunityJudgmentBatch
+from app.services import synergy
 
 logger = logging.getLogger(__name__)
+
+
+def _synergy_enabled() -> bool:
+    return os.environ.get("SYNERGY_RANKING", "1") != "0"
+
 
 MAX_EXISTING_COMBINATIONS = 2   # 已有相同组合的游戏数超过该阈值视为不够稀缺，丢弃
 # 送 LLM 判断的最大候选数。候选越多,单次 judge 的输入/输出越大、越慢——30 个会让
@@ -132,9 +138,15 @@ def _combine_candidates(
 ) -> list[CandidateOpportunityArea]:
     out: list[CandidateOpportunityArea] = []
     all_mechanics = {m for g in games for m in g.mechanics}
+    annotate = _synergy_enabled()
     for target in sorted(all_mechanics - anchor.mechanics):
         target_games = _games_with_value(games, "mechanics", target)
         combo = _combination_game_ids(games, anchor, "mechanics", target)
+        if annotate:
+            anchor_elements = anchor.mechanics | anchor.game_feel | anchor.theme | anchor.genres
+            rationale = synergy.rationale_for(anchor_elements, target)
+        else:
+            rationale = None
         out.append(
             CandidateOpportunityArea(
                 id=_candidate_id(anchor.game_id, "comb", "Mechanic", target),
@@ -152,6 +164,7 @@ def _combine_candidates(
                     target_value_game_ids=target_games,
                     combination_game_ids=combo,
                 ),
+                synergy=rationale,
             )
         )
     return out
@@ -167,6 +180,7 @@ def rank_candidates(
     viable = [c for c in candidates if c.existing_combination_count <= max_existing]
     viable.sort(
         key=lambda c: (
+            0 if (_synergy_enabled() and c.synergy is not None) else 1,
             c.existing_combination_count,
             -len(c.evidence.target_value_game_ids),
             c.id,
