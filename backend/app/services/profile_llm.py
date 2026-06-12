@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pydantic import ConfigDict, Field
 
-from app.schemas.common import ConfidenceLevel, ConstraintType, StrictBaseModel
+from app.schemas.common import ConstraintType, StrictBaseModel
 from app.schemas.developer_profile import ProfileParseInput
 from app.services.llm_client import LlmClient, get_llm_client as get_llm_client_base
 
@@ -30,7 +30,6 @@ class ExtractedSource(StrictBaseModel):
 
     field: str = Field(min_length=1)
     source_text: str = Field(min_length=1)
-    confidence: ConfidenceLevel
 
 
 class ProfileExtraction(StrictBaseModel):

@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_resident_evil_7_biohazard",
     "title": "Resident Evil 7 Biohazard",
-    "source_refs": [
-      {
-        "title": "Resident Evil 7: Biohazard（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Resident_Evil_7:_Biohazard",
-        "notes": "类型（生存恐怖）、Capcom 自研 RE Engine、系列首作改为第一人称视角、设定于路易斯安那州 Dulvey 贝克一家荒废庄园、主角平民 Ethan Winters 寻找失踪妻子、资源管理与有限背包（8 格可经背包扩展）、合成消耗品与弹药、安全屋磁带存档、道具门控的解谜探索、录像带回放叙事与解谜、支持 PSVR、强调探索与氛围而非战斗、2017 年发售等事实来源。"
-      },
-      {
-        "title": "Resident Evil 7（Steam，appid 418370）",
-        "url": "https://store.steampowered.com/app/418370/Resident_Evil_7_Biohazard/",
-        "notes": "第一人称生存恐怖、资源管理与合成、道具门控解谜、磁带存档、VR 支持等事实来源。"
-      }
-    ],
     "short_description": "一款生存恐怖游戏，Capcom 基于自研 RE Engine 打造、将系列首次改为第一人称视角：平民 Ethan Winters 为寻找失踪的妻子，闯入路易斯安那沼泽深处贝克一家的荒废庄园，在弹药与背包格极度有限的窘境中探索宅邸、合成补给、用录像带与道具破解门控谜题，躲避被生化菌株侵蚀、近乎不死的贝克家人，2017 年发售、并支持 PSVR。",
     "selection_reason": "作为「用第一人称把系列拉回生存恐怖本源」的代表：它放弃越肩动作、改以贴脸的第一人称视角，配合极度稀缺的资源、有限背包与道具门控解谜，把恐惧从火力压制重新压回「视野受限、资源不足」的求生本质，是研究第一人称恐怖、生存资源张力与封闭宅邸箱庭解谜的高价值参考。"
   },
@@ -25,71 +13,85 @@
     "progression_model": "靠搜刮与合成补充弹药补给、寻得钥匙与道具解开门控逐步打通封闭宅邸、解锁新武器推进；进度体现为已打通区域、武器与背包格强度与剧情阶段，难度与额外模式提供差异内容。",
     "failure_model": "被贝克家人、菌株怪物或 Boss 击杀即死亡，回到磁带存档点重来；高难度下存档需消耗有限磁带，资源误用或被近乎不死的敌人逼入绝境都可能让进程功亏一篑。",
     "content_structure": "以贝克庄园等连通封闭场景为骨架，靠资源稀缺、道具门控解谜、录像带叙事与近乎不死的敌人施压承载恐惧，VR 支持与额外模式提供差异体验，单人。",
-    "main_player_actions": ["射击", "道具运用", "物件操控"],
-    "main_player_decisions": ["资源取舍", "风险取舍", "探索路线"],
-    "main_player_experiences": ["氛围营造", "探索发现", "战斗精通"],
-    "main_mechanics": ["资源管理", "合成制作", "能力门控探索", "手动存档", "环境叙事"],
-    "replayability_sources": ["难度分级", "全收集", "速通"],
-    "production_constraints": ["RE Engine", "大团队协作"],
-    "innovation_patterns": ["第一人称恐怖", "资源管理"],
-    "reusable_reference_patterns": ["资源管理", "氛围营造", "能力门控探索"],
-    "non_replicable_risks": ["强美术风格", "品牌积淀", "技术复杂度"],
-    "genre": ["生存恐怖", "第一人称射击"],
-    "art_style": ["写实美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["生存恐怖", "人体实验"],
-    "narrative_style": ["过场驱动", "环境叙事", "碎片化叙事"],
-    "game_feel": ["紧张节奏", "沉浸代入"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "射击",
+      "道具运用",
+      "物件操控"
+    ],
+    "main_player_decisions": [
+      "资源取舍",
+      "风险取舍",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "探索发现",
+      "战斗精通"
+    ],
+    "main_mechanics": [
+      "资源管理",
+      "合成制作",
+      "能力门控探索",
+      "手动存档",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "难度分级",
+      "全收集",
+      "速通"
+    ],
+    "production_constraints": [
+      "RE Engine",
+      "大团队协作"
+    ],
+    "innovation_patterns": [
+      "第一人称恐怖",
+      "资源管理"
+    ],
+    "reusable_reference_patterns": [
+      "资源管理",
+      "氛围营造",
+      "能力门控探索"
+    ],
+    "non_replicable_risks": [
+      "强美术风格",
+      "品牌积淀",
+      "技术复杂度"
+    ],
+    "genre": [
+      "生存恐怖",
+      "第一人称射击"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "生存恐怖",
+      "人体实验"
+    ],
+    "narrative_style": [
+      "过场驱动",
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "第一人称恐怖",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "系列首改第一人称",
-            "quote_or_summary": "系列首作改用第一人称视角，限制玩家视野、强化贴脸压迫，把恐怖拉回视野受限的求生本质。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "资源管理",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "弹药与背包极度稀缺",
-            "quote_or_summary": "弹药与背包格极度有限，需合成补给与弹药、精算每发子弹，在战与逃之间权衡。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "能力门控探索",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "钥匙道具门控宅邸",
-            "quote_or_summary": "玩家需寻得钥匙与特定道具解开门控、逐步打通封闭宅邸并破解谜题。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Resident Evil 7 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Resident_Evil_7:_Biohazard",
-        "quote_or_summary": "第一人称生存恐怖、RE Engine、贝克庄园、资源稀缺与合成、道具门控解谜、磁带存档、录像带叙事、VR 支持，Capcom 开发，2017 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "第一人称恐怖",
+      "资源管理",
+      "能力门控探索"
+    ]
   },
   "claims": [
     {
@@ -97,16 +99,7 @@
       "subject": "第一人称恐怖",
       "relation": "creates",
       "object": "恐惧张力",
-      "explanation": "把视角从越肩改成第一人称，等于主动剥夺玩家的安全感：再也看不到角色背后与两侧，盲区永远贴着身体，敌人可能从任何看不见的方向逼近。这一改动配合极度稀缺的资源，让恐惧不再依赖火力对抗或固定惊吓，而源于「我看不全、也打不起」的结构性匮乏——每推开一扇门、每转一个弯都得承受未知。视角本身成了制造持续压迫的工具，可复用于希望用「受限视野 + 资源匮乏」把恐怖从一惊一乍提升为贯穿全程的生理性紧张的设计。",
-      "evidence": [
-        {
-          "title": "受限视野生恐惧解读",
-          "quote_or_summary": "第一人称剥夺身后与两侧视野，配合资源稀缺，使恐惧源于结构性的看不全与打不起、而非固定惊吓。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把视角从越肩改成第一人称，等于主动剥夺玩家的安全感：再也看不到角色背后与两侧，盲区永远贴着身体，敌人可能从任何看不见的方向逼近。这一改动配合极度稀缺的资源，让恐惧不再依赖火力对抗或固定惊吓，而源于「我看不全、也打不起」的结构性匮乏——每推开一扇门、每转一个弯都得承受未知。视角本身成了制造持续压迫的工具，可复用于希望用「受限视野 + 资源匮乏」把恐怖从一惊一乍提升为贯穿全程的生理性紧张的设计。"
     }
   ]
 }

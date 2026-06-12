@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 
 from app.schemas.artifacts import DeveloperConstraint, DeveloperProfile
-from app.schemas.common import ConfidenceLevel, ConstraintType
+from app.schemas.common import ConstraintType
 from app.schemas.developer_profile import (
     DeveloperProfileDraft,
     MissingProfileField,
@@ -30,14 +30,12 @@ BLOCKING_FIELDS = {
 def _source(
     field: str,
     source_text: str,
-    confidence: ConfidenceLevel = ConfidenceLevel.HIGH,
     source_kind: SourceKind = "raw_text",
 ) -> ProfileFieldSource:
     return ProfileFieldSource(
         field=field,
         source_text=source_text,
         source_kind=source_kind,
-        confidence=confidence,
     )
 
 
@@ -89,7 +87,7 @@ def _time_budget(
     if _contains_any(raw_text, ["周末", "业余", "part-time"]):
         return (
             "part-time prototype",
-            _source("time_budget", raw_text, ConfidenceLevel.MEDIUM),
+            _source("time_budget", raw_text),
             ["Interpreted time budget as part-time prototype."],
         )
     if _contains_any(raw_text, ["尽快", "短期"]):
@@ -287,7 +285,6 @@ def parse_developer_profile_input(input_data: ProfileParseInput) -> ProfileParse
             _source(
                 "audio_ability",
                 "defaulted to basic",
-                ConfidenceLevel.LOW,
             )
         )
 

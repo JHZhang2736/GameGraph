@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_dome_keeper",
     "title": "Dome Keeper",
-    "source_refs": [
-      {
-        "title": "Dome Keeper（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Dome_Keeper",
-        "notes": "类型（肉鸽生存，融合采矿与塔防）、敌对外星行星上守护一座玻璃穹顶、穹顶被毁则本局结束、两波进攻间下到地底挖掘逐层地形寻找铁/水/钴等资源、用资源升级守护者/穹顶/小工具、每局地图程序生成、源自 Ludum Dare 48 game jam 作品 Dome Romantik、Bippinbits（两人团队，德国德累斯顿）开发 Raw Fury 发行、2022 年 9 月 27 日发售等事实来源。"
-      },
-      {
-        "title": "Dome Keeper（Steam，appid 1637320）",
-        "url": "https://store.steampowered.com/app/1637320/Dome_Keeper/",
-        "notes": "采矿 + 塔防 + 资源管理的肉鸽循环、下矿挖资源、回防御穹顶抵御波次、升级穹顶与小工具、程序生成地图等事实来源。"
-      }
-    ],
     "short_description": "一款融合采矿与塔防的肉鸽生存游戏：玩家在一颗敌对外星行星上守护一座玻璃穹顶，两波进攻的间隙下到穹顶之下挖掘逐层地形、寻找铁、水、钴等资源，再用资源升级守护者、穹顶与各种小工具来加固防御；穹顶一旦被毁本局即结束，每局地图程序生成，Bippinbits 两人团队开发、2022 年发售。",
     "selection_reason": "作为「把采矿与塔防绑成一道时间取舍」的代表：玩家必须在「下矿挖更多资源 vs 及时回到穹顶抵御来袭波次」之间反复权衡，深挖收益越高、却越可能赶不回防御，用一个简单循环逼出持续的时间与风险博弈，再以程序生成与升级承载肉鸽重玩，是研究双线时间取舍、采集-防御循环与极小团队高完成度的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "靠采集资源升级守护者的挖掘/搬运效率、穹顶武器与各类小工具推进，单局内滚雪球式增强；进度体现为已升级装备、可抵御的波次强度与下潜深度，跨局靠解锁不同穹顶与守护者拓展玩法。",
     "failure_model": "穹顶被来袭波次攻破即本局结束，深挖未及时回防、或资源分配失衡导致防御不足都会让穹顶失守，核心压力即在「贪挖」与「守住」的失衡。",
     "content_structure": "以程序生成的地底矿层、地表玻璃穹顶与一波波来袭为骨架，靠下矿采集、回防塔防与资源升级承载循环，以不同穹顶/守护者与难度承载肉鸽重玩，单人。",
-    "main_player_actions": ["采集", "射击", "道具运用"],
-    "main_player_decisions": ["风险取舍", "优先级排序", "资源取舍"],
-    "main_player_experiences": ["运筹帷幄", "滚雪球快感", "系统掌控"],
-    "main_mechanics": ["采集", "塔防", "能力树", "程序生成", "资源管理"],
-    "replayability_sources": ["程序生成", "难度分级", "角色解锁"],
-    "production_constraints": ["双人团队", "像素美术"],
-    "innovation_patterns": ["类型缝合", "塔防"],
-    "reusable_reference_patterns": ["类型缝合", "资源管理"],
-    "non_replicable_risks": ["玩家留存", "平衡复杂度"],
-    "genre": ["类肉鸽", "塔防"],
-    "art_style": ["像素美术"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["科幻", "异星求生"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["策略权衡", "紧张节奏"],
-    "team_model": ["双人团队"],
+    "main_player_actions": [
+      "采集",
+      "射击",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "优先级排序",
+      "资源取舍"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "滚雪球快感",
+      "系统掌控"
+    ],
+    "main_mechanics": [
+      "采集",
+      "塔防",
+      "能力树",
+      "程序生成",
+      "资源管理"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "难度分级",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "双人团队",
+      "像素美术"
+    ],
+    "innovation_patterns": [
+      "类型缝合",
+      "塔防"
+    ],
+    "reusable_reference_patterns": [
+      "类型缝合",
+      "资源管理"
+    ],
+    "non_replicable_risks": [
+      "玩家留存",
+      "平衡复杂度"
+    ],
+    "genre": [
+      "类肉鸽",
+      "塔防"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "科幻",
+      "异星求生"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "双人团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "塔防",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "波次来袭防守穹顶",
-            "quote_or_summary": "玩家须在一波波来袭时回到穹顶操控武器抵御，穹顶被攻破则本局结束。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "采集",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "下矿挖掘寻资源",
-            "quote_or_summary": "两波进攻间隙下到地底挖掘逐层地形，寻找并搬运铁、水、钴等资源用于升级。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "类型缝合",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "采矿与塔防融合",
-            "quote_or_summary": "游戏把采矿、资源管理与塔防融进一个紧凑的肉鸽循环，下矿与回防交替进行。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Dome Keeper 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Dome_Keeper",
-        "quote_or_summary": "融合采矿与塔防的肉鸽生存，守护玻璃穹顶、两波间下矿挖铁/水/钴升级守护者与穹顶、穹顶被毁即结束、程序生成地图，Bippinbits 两人团队开发 Raw Fury 发行，2022 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "塔防",
+      "采集",
+      "类型缝合"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "塔防",
       "relation": "creates",
       "object": "时间压力",
-      "explanation": "把「采矿」与「塔防」用一条波次倒计时绑在一起：资源只能靠下矿深挖获取，而防御又要求玩家及时回到穹顶，两件事共享同一段时间预算，于是每一轮都要做同一个紧张判断——再往下挖一层换更多资源，还是现在就往回赶以免穹顶失守；深度与收益成正比、却与「来得及回防」成反比，一个简单循环因此被一根倒计时持续绷紧，可复用于希望用「两个争抢同一时间预算的对立活动（产出 vs 防守）」以极简结构制造持续时间压力与风险取舍的设计。",
-      "evidence": [
-        {
-          "title": "采矿与塔防共享时间预算解读",
-          "quote_or_summary": "下矿采资源与回防穹顶共享同一段波次倒计时，使「再挖一层 vs 现在回防」每轮都成紧张判断。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把「采矿」与「塔防」用一条波次倒计时绑在一起：资源只能靠下矿深挖获取，而防御又要求玩家及时回到穹顶，两件事共享同一段时间预算，于是每一轮都要做同一个紧张判断——再往下挖一层换更多资源，还是现在就往回赶以免穹顶失守；深度与收益成正比、却与「来得及回防」成反比，一个简单循环因此被一根倒计时持续绷紧，可复用于希望用「两个争抢同一时间预算的对立活动（产出 vs 防守）」以极简结构制造持续时间压力与风险取舍的设计。"
     }
   ]
 }

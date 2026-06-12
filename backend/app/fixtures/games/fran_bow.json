@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_fran_bow",
     "title": "Fran Bow",
-    "source_refs": [
-      {
-        "title": "Fran Bow（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Fran_Bow",
-        "notes": "类型（点击式恐怖解谜冒险）、瑞典双人工作室 Killmonday Games（Natalia 与 Isak Martinsson）开发、2015 年 8 月发售、经 Indiegogo 众筹（约 2.8 万美元）、手绘 2D 美术、设定 1944 年、10 岁女孩 Fran 目睹父母惨死后患精神疾病、点击探索与对话获取线索、收集组合道具解谜、核心机制为服用药物 Duotine 在正常世界与扭曲血腥世界间切换以寻找线索等事实来源。"
-      },
-      {
-        "title": "Fran Bow · Killmonday Games",
-        "url": "https://killmondaygames.com/fran-bow/",
-        "notes": "手绘点击解谜冒险、双世界切换、诡异童真交织的恐怖氛围等事实来源。"
-      }
-    ],
     "short_description": "一款手绘点击式恐怖冒险解谜游戏，瑞典双人工作室 Killmonday Games 经 Indiegogo 众筹开发、2015 年发售：故事设定在 1944 年，10 岁女孩 Fran 在目睹父母惨死后陷入精神疾病，玩家点击探索场景、与 NPC 对话、收集并组合道具破解谜题；核心机制是服用名为 Duotine 的药丸，在「正常世界」与「扭曲血腥的世界」之间来回切换，以找到推进所需的线索与道具。",
     "selection_reason": "作为「用现实切换把精神疾病做成解谜机制」的代表：嗑药在正常与扭曲两版世界间来回切换，既是揭示隐藏线索的核心解法，也把主角的精神状态外化成可玩的双重现实；配合诡异甜美的手绘美术，是研究点击解谜、双世界切换与心理恐怖叙事的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "靠线性章节推进 Fran 的逃亡与寻家之旅，靠解开层层谜题解锁新场景与剧情；无数值养成，进度体现为已通关章节与逐步揭示的真相。",
     "failure_model": "本作以解谜推进、几无失败死亡，卡关源于尚未找到正确的物品组合或未在恰当世界中发现线索，「失败」即一次解谜思路的搁浅。",
     "content_structure": "以五个手绘章节的点击解谜为骨架，靠物品组合谜题与正常/扭曲双世界切换承载玩法与叙事，以一次性剧情体验为主，单人。",
-    "main_player_actions": ["物件操控", "秘密解谜", "对话选择"],
-    "main_player_decisions": ["探索路线", "优先级排序"],
-    "main_player_experiences": ["氛围营造", "探索发现", "情感叙事"],
-    "main_mechanics": ["点击解谜", "现实切换", "物品组合", "环境叙事"],
-    "replayability_sources": ["彩蛋收集", "全收集"],
-    "production_constraints": ["双人团队", "手绘美术", "众筹资金"],
-    "innovation_patterns": ["现实切换", "隐晦设计"],
-    "reusable_reference_patterns": ["现实切换", "氛围营造"],
-    "non_replicable_risks": ["一次性体验", "强美术风格"],
-    "genre": ["叙事冒险", "解谜"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["横版2D"],
-    "theme": ["心理恐怖", "精神疾病", "黑暗童话"],
-    "narrative_style": ["对话叙事", "环境叙事"],
-    "game_feel": ["紧张节奏", "沉浸代入"],
-    "team_model": ["双人团队"],
+    "main_player_actions": [
+      "物件操控",
+      "秘密解谜",
+      "对话选择"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "优先级排序"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "探索发现",
+      "情感叙事"
+    ],
+    "main_mechanics": [
+      "点击解谜",
+      "现实切换",
+      "物品组合",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "彩蛋收集",
+      "全收集"
+    ],
+    "production_constraints": [
+      "双人团队",
+      "手绘美术",
+      "众筹资金"
+    ],
+    "innovation_patterns": [
+      "现实切换",
+      "隐晦设计"
+    ],
+    "reusable_reference_patterns": [
+      "现实切换",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "强美术风格"
+    ],
+    "genre": [
+      "叙事冒险",
+      "解谜"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "心理恐怖",
+      "精神疾病",
+      "黑暗童话"
+    ],
+    "narrative_style": [
+      "对话叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "双人团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "现实切换",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "药丸切换两版世界",
-            "quote_or_summary": "玩家服用 Duotine 药丸在正常世界与扭曲血腥世界之间切换，部分线索只存在于其中一侧。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "点击解谜",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "点击探索与道具解谜",
-            "quote_or_summary": "玩家点击检视物件、与 NPC 对话获取线索，并收集与组合道具来破解谜题推进。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "物品组合",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "收集组合道具",
-            "quote_or_summary": "玩家须收集并把道具相互组合，制成解开谜题所需的物件。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Fran Bow 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Fran_Bow",
-        "quote_or_summary": "手绘点击式恐怖解谜冒险，1944 年患精神疾病的女孩 Fran、点击探索与对话、道具组合解谜、Duotine 药丸在正常/扭曲世界间切换，Killmonday Games 双人开发、Indiegogo 众筹，2015 年发售。",
-        "notes": "事实取自维基百科与 Killmonday Games 官网。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "现实切换",
+      "点击解谜",
+      "物品组合"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "现实切换",
       "relation": "creates",
       "object": "恐惧张力",
-      "explanation": "让玩家一键把温馨场景翻成血腥版本、再翻回来，等于把主角的精神病症做成可亲手操作的双重现实：恐怖不是过场里被动观看，而是玩家为了找线索主动嗑药唤出的——你明知按下去会看到什么，却不得不去看。两个世界互相渗透、真假难辨，这份「我在哪一侧、哪一侧才是真的」的不确定本身就是张力之源，比单纯的惊吓更持久。可复用于希望用「可切换的双重现实」把心理状态外化为机制、以主动触发的不安替代被动惊吓的恐怖叙事设计。",
-      "evidence": [
-        {
-          "title": "双世界渗透生恐惧解读",
-          "quote_or_summary": "可切换的扭曲世界让恐怖由玩家主动唤出、真假难辨，不确定本身成为持续张力。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让玩家一键把温馨场景翻成血腥版本、再翻回来，等于把主角的精神病症做成可亲手操作的双重现实：恐怖不是过场里被动观看，而是玩家为了找线索主动嗑药唤出的——你明知按下去会看到什么，却不得不去看。两个世界互相渗透、真假难辨，这份「我在哪一侧、哪一侧才是真的」的不确定本身就是张力之源，比单纯的惊吓更持久。可复用于希望用「可切换的双重现实」把心理状态外化为机制、以主动触发的不安替代被动惊吓的恐怖叙事设计。"
     }
   ]
 }

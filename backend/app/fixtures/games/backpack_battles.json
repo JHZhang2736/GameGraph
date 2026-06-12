@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_backpack_battles",
     "title": "Backpack Battles",
-    "source_refs": [
-      {
-        "title": "Backpack Battles（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Backpack_Battles",
-        "notes": "类型（库存管理自走棋）、PvP 玩家购买与合成物品并在背包网格中摆放、相邻物品组合产生加成或合成更高阶武器/护甲/药水（如荆棘藤蔓贴着剑合成藤剑增伤）、战斗为自走式玩家旁观、对手半随机异步匹配亦可自定义房间同步对战、先 10 胜或先 5 败决定排名、10 胜后可进生存模式至 18 轮、PlayWithFurcifer 与 IndieArk 发行、2024 年 3 月抢先体验、2025 年 6 月 1.0 等事实来源。"
-      }
-    ],
     "short_description": "一款库存管理自走棋 PvP 游戏：玩家在商店阶段购买与合成物品、并把它们在有限的背包网格里精心摆放——相邻的物品会组合出加成或合成更高阶的武器、护甲、药水（如荆棘藤蔓贴着剑合成藤剑增伤）；摆好后进入自走式 PvP 战斗，玩家旁观自造装备厮杀，先 10 胜或先 5 败决定排名；PlayWithFurcifer 开发、2024 年抢先体验、2025 年 1.0。",
     "selection_reason": "作为「把空间库存摆放本身做成构筑核心」的代表：物品的强弱不只看数值，更看你在背包网格里如何摆放——相邻才触发组合与加成、才合成高阶物品，于是「整理背包」从琐事升级为策略博弈，再以自走战斗与异步 PvP 承载，是研究空间构筑、相邻加成与库存管理玩法化的高价值参考。"
   },
@@ -20,71 +13,77 @@
     "progression_model": "单局靠攒钱购买、合成与重排物品逐轮强化背包构筑，靠相邻加成与高阶合成提升战力；进度体现为背包物品阶位、构筑流派成型度与胜场数，先 10 胜达成最佳排名。",
     "failure_model": "每局战斗失败扣生命，累计先达 5 败即本局结束并按已有胜场结算排名，急于冲到 10 胜却先吃 5 败反而会得到更低排名。",
     "content_structure": "以商店—摆放—自走战斗的循环、有限背包网格与海量可合成物品为骨架，靠空间摆放、相邻加成与合成构筑承载对抗与重玩，异步 PvP 为主、可自定义房间同步对战。",
-    "main_player_actions": ["道具运用", "卡牌取舍", "走位"],
-    "main_player_decisions": ["装备搭配", "基地规划", "资源取舍"],
-    "main_player_experiences": ["构筑乐趣", "运筹帷幄", "系统掌控"],
-    "main_mechanics": ["空间背包", "相邻加成", "合成制作", "自动战斗", "装备分层"],
-    "replayability_sources": ["构筑多样", "难度分级"],
-    "production_constraints": ["小型团队"],
-    "innovation_patterns": ["空间背包", "相邻加成"],
-    "reusable_reference_patterns": ["相邻加成", "自动战斗"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["卡牌构筑"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["轻松配乐"],
-    "perspective": ["俯视"],
-    "theme": ["奇幻"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["策略权衡", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "道具运用",
+      "卡牌取舍",
+      "走位"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "基地规划",
+      "资源取舍"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "运筹帷幄",
+      "系统掌控"
+    ],
+    "main_mechanics": [
+      "空间背包",
+      "相邻加成",
+      "合成制作",
+      "自动战斗",
+      "装备分层"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "空间背包",
+      "相邻加成"
+    ],
+    "reusable_reference_patterns": [
+      "相邻加成",
+      "自动战斗"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "卡牌构筑"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "轻松配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "奇幻"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "空间背包",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "背包网格摆放即构筑",
-            "quote_or_summary": "玩家在有限背包网格中摆放物品，摆放位置与邻接关系直接决定组合、加成与合成结果，整理背包本身是核心策略。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "相邻加成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "相邻物品组合加成",
-            "quote_or_summary": "相邻的物品会互相组合或加成，如荆棘藤蔓贴着剑合成增伤的藤剑、磨刀石给相邻武器增伤。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "自动战斗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "自走式 PvP 旁观",
-            "quote_or_summary": "摆放完成后进入自走战斗，玩家不直接操作、只旁观自造装备与对手厮杀，对手半随机异步匹配。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Backpack Battles 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Backpack_Battles",
-        "quote_or_summary": "库存管理自走棋 PvP，购买合成物品并在背包网格摆放、相邻组合加成与合成高阶装备、自走战斗旁观、异步匹配、先 10 胜或先 5 败结算排名，PlayWithFurcifer 开发，2024 抢先体验/2025 年 1.0。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "空间背包",
+      "相邻加成",
+      "自动战斗"
+    ]
   },
   "claims": [
     {
@@ -92,16 +91,7 @@
       "subject": "空间背包",
       "relation": "creates",
       "object": "系统深度",
-      "explanation": "把构筑的强度从「拥有哪些物品」转移到「物品在网格里如何摆放」，因为只有相邻才触发组合、加成与高阶合成，于是有限格子、物品形状与邻接关系叠成一道空间优化拼图，同样一堆物品在不同摆位下战力天差地别，把原本只是整理负担的库存升级为核心策略层，可复用于希望用「空间摆放 + 邻接规则」在不堆数值的前提下为构筑注入额外深度与上手钻研空间的设计。",
-      "evidence": [
-        {
-          "title": "空间摆放制造深度解读",
-          "quote_or_summary": "相邻才触发组合与合成，使同一堆物品在不同摆位下战力悬殊，把库存整理升级为核心策略层。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把构筑的强度从「拥有哪些物品」转移到「物品在网格里如何摆放」，因为只有相邻才触发组合、加成与高阶合成，于是有限格子、物品形状与邻接关系叠成一道空间优化拼图，同样一堆物品在不同摆位下战力天差地别，把原本只是整理负担的库存升级为核心策略层，可复用于希望用「空间摆放 + 邻接规则」在不堆数值的前提下为构筑注入额外深度与上手钻研空间的设计。"
     }
   ]
 }

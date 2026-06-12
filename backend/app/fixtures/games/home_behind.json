@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_home_behind",
     "title": "Home Behind",
-    "source_refs": [
-      {
-        "title": "Home Behind（Steam，appid 467960）",
-        "url": "https://store.steampowered.com/app/467960/Home_Behind/",
-        "notes": "类型（横版卷轴肉鸽生存）、中国工作室 TPP 开发、2016 年发售、玩家扮演被叛军逐出家园、与家人失散的难民一路逃往欧洲、维持士气、搜刮食物与饮水、躲避疾病/病毒/流感、熬过昼夜与随机天气、收集数百种物品、合成武器与护甲、沿途战斗等事实来源。"
-      },
-      {
-        "title": "Home Behind · SteamDB（appid 467960）",
-        "url": "https://steamdb.info/app/467960/",
-        "notes": "开发商 TPP、横版肉鸽生存、难民逃亡题材等事实来源。"
-      }
-    ],
     "short_description": "一款横版卷轴的肉鸽生存游戏，中国工作室 TPP 开发，2016 年发售：玩家扮演被叛军逐出家园、与家人失散的难民，一路向西逃往欧洲；旅途中要维持士气、搜刮食物与饮水、躲避疾病与流感、熬过昼夜与随机天气，并收集数百种物品、合成自己的武器与护甲，在横版场景里应对沿途的战斗与变故求生。",
     "selection_reason": "作为「用难民逃亡承载肉鸽生存」的代表：把求生做成一边横版赶路、一边维持士气与健康、搜刮合成、应对随机事件的旅程，程序生成的路线与沿途抉择共同制造不确定，是研究横版肉鸽生存、难民题材叙事与随机事件旅途的高价值参考。"
   },
@@ -25,71 +13,83 @@
     "progression_model": "靠一路向西推进的旅程节点与程序生成路线推进，靠搜刮物资、合成装备与沿途抉择改变处境；无传统数值养成主线，进度体现为逃亡进度、装备与角色状态。",
     "failure_model": "角色因饥饿、缺水、疾病或战斗失利而死亡即一局结束、须重新逃亡，核心压力在于持续维持士气与健康、并在搜刮、战斗与施舍的资源抉择间求存。",
     "content_structure": "以横版卷轴的逃亡旅程与程序生成路线为骨架，靠搜刮合成、生存状态维持与随机事件抉择承载玩法，以程序生成与随机事件承载重玩，单人。",
-    "main_player_actions": ["近战攻击", "道具运用", "物件操控"],
-    "main_player_decisions": ["资源取舍", "风险取舍", "道德抉择"],
-    "main_player_experiences": ["氛围营造", "运筹帷幄", "情感叙事"],
-    "main_mechanics": ["横版战斗", "生存模拟", "合成制作", "随机事件", "程序生成"],
-    "replayability_sources": ["程序生成", "难度分级", "任务多样"],
-    "production_constraints": ["小型团队", "手绘美术"],
-    "innovation_patterns": ["平民视角", "程序生成"],
-    "reusable_reference_patterns": ["生存模拟", "程序生成", "平民视角"],
-    "non_replicable_risks": ["题材争议", "玩家留存"],
-    "genre": ["类肉鸽", "生存", "动作冒险"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["横版2D"],
-    "theme": ["战争"],
-    "narrative_style": ["碎片化叙事", "分支叙事"],
-    "game_feel": ["紧张节奏", "策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "道具运用",
+      "物件操控"
+    ],
+    "main_player_decisions": [
+      "资源取舍",
+      "风险取舍",
+      "道德抉择"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "运筹帷幄",
+      "情感叙事"
+    ],
+    "main_mechanics": [
+      "横版战斗",
+      "生存模拟",
+      "合成制作",
+      "随机事件",
+      "程序生成"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "难度分级",
+      "任务多样"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "手绘美术"
+    ],
+    "innovation_patterns": [
+      "平民视角",
+      "程序生成"
+    ],
+    "reusable_reference_patterns": [
+      "生存模拟",
+      "程序生成",
+      "平民视角"
+    ],
+    "non_replicable_risks": [
+      "题材争议",
+      "玩家留存"
+    ],
+    "genre": [
+      "类肉鸽",
+      "生存",
+      "动作冒险"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "战争"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "分支叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "平民视角",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "扮演逃亡难民",
-            "quote_or_summary": "玩家扮演被叛军逐出家园、与家人失散的普通难民一路逃往欧洲，而非战斗英雄。",
-            "notes": "Steam 商店页可观察设定。"
-          }
-        ]
-      },
-      {
-        "tag": "生存模拟",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "维持士气健康躲疾病",
-            "quote_or_summary": "玩家须搜刮食物饮水、维持士气与健康、躲避疾病与流感、熬过昼夜与随机天气。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "程序生成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "程序生成的逃亡路线",
-            "quote_or_summary": "逃亡路线程序生成，每次旅程的地点、遭遇与变故都不同。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Home Behind 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/467960/Home_Behind/",
-        "quote_or_summary": "横版卷轴肉鸽生存，扮演难民逃往欧洲、搜刮食水、合成武器护甲、维持士气与健康、躲避疾病、昼夜与随机天气、沿途战斗，TPP 开发，2016 年发售。",
-        "notes": "事实取自 Steam 商店页与 SteamDB。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "平民视角",
+      "生存模拟",
+      "程序生成"
+    ]
   },
   "claims": [
     {
@@ -97,16 +97,7 @@
       "subject": "平民视角",
       "relation": "creates",
       "object": "情感叙事",
-      "explanation": "把玩家放进一个被战火逐出家门、与亲人离散的普通难民身上，而非全副武装的英雄，等于让每一次「饿了、病了、被拦下了」都带着真实处境的重量：你不是在通关，而是在替一个走投无路的人做出停留、战斗或乞食的抉择。题材本身的脆弱与无力感，借肉鸽生存的持续匮乏被一遍遍强化，情感共鸣由「我就是那个普通人」自然生发。可复用于希望用「普通人/弱势视角 + 生存匮乏」承载严肃议题、以代入而非说教唤起情感的叙事生存设计。",
-      "evidence": [
-        {
-          "title": "弱势视角生共鸣解读",
-          "quote_or_summary": "扮演走投无路的普通难民使每次生存抉择都带处境重量，借持续匮乏强化无力感与情感共鸣。",
-          "notes": "基于可观察设定的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把玩家放进一个被战火逐出家门、与亲人离散的普通难民身上，而非全副武装的英雄，等于让每一次「饿了、病了、被拦下了」都带着真实处境的重量：你不是在通关，而是在替一个走投无路的人做出停留、战斗或乞食的抉择。题材本身的脆弱与无力感，借肉鸽生存的持续匮乏被一遍遍强化，情感共鸣由「我就是那个普通人」自然生发。可复用于希望用「普通人/弱势视角 + 生存匮乏」承载严肃议题、以代入而非说教唤起情感的叙事生存设计。"
     }
   ]
 }

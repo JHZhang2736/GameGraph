@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_titanfall_2",
     "title": "Titanfall 2",
-    "source_refs": [
-      {
-        "title": "Titanfall 2（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Titanfall_2",
-        "notes": "类型（第一人称射击）、Respawn Entertainment 开发、Electronic Arts 发行、2016 年 10 月 28 日发售、玩家可操控铁驭（pilot）与五到八米高的泰坦机甲、铁驭配备喷射背包可二段跳/贴墙跑/跑酷、单人战役讲述步枪兵 Jack Cooper 与导师泰坦 BT-7274 的羁绊、含解谜与平台跳跃关卡（如时间穿梭的 Effect and Cause）、多人对战等事实来源。"
-      },
-      {
-        "title": "Titanfall 2 速度设计（Medium）",
-        "url": "https://medium.com/@abhishekiyer_25378/titanfall-2-how-design-informs-speed-f14998d7f470",
-        "notes": "贴墙跑积累动量、跑酷移动、关卡为铁驭穿行设计等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称射击游戏，Respawn Entertainment 开发、Electronic Arts 发行，2016 年 10 月 28 日发售：玩家可在敏捷的「铁驭」与五到八米高的「泰坦」机甲间切换作战。铁驭配备喷射背包，能二段跳、贴墙跑、跑酷穿行，并可召唤从天而降的泰坦；单人战役讲述步枪兵 Jack Cooper 与导师泰坦 BT-7274 并肩作战、阻止超级武器的故事，其间穿插以时间穿梭为核心的解谜平台关卡，另含广受好评的多人对战。",
     "selection_reason": "作为「把高机动跑酷与机甲战斗融为一体」的代表：铁驭的贴墙跑、二段跳与跑酷穿行让移动本身成为乐趣，与召唤泰坦的厚重打击形成轻重切换；战役更以时间穿梭等关卡机制展示一镜到底的关卡设计，是研究第一人称跑酷、机甲召唤与关卡机制创新的高价值参考。"
   },
@@ -25,71 +13,80 @@
     "progression_model": "战役靠线性关卡与剧情推进、逐步解锁铁驭与泰坦的能力套件；多人对战靠等级与外观解锁延展；进度体现为关卡进度、可用的泰坦型号与铁驭装备。",
     "failure_model": "战役中铁驭被击杀或泰坦被摧毁致角色阵亡即退回检查点；对战中被击败则需重生，核心压力在于以高机动走位规避火力、并把握召唤与登入泰坦的时机攻防转换。",
     "content_structure": "以铁驭跑酷与泰坦机甲交替的关卡为骨架，靠贴墙跑移动、泰坦召唤与各关卡专属机制承载玩法，以剧情战役与多人对战双线承载内容，单人战役加多人对战。",
-    "main_player_actions": ["射击", "攀墙", "冲刺"],
-    "main_player_decisions": ["武器搭配", "装备搭配", "风险取舍"],
-    "main_player_experiences": ["战斗精通", "高难跑酷", "视觉享受"],
-    "main_mechanics": ["墙面奔跑", "召唤战斗", "技能切换"],
-    "replayability_sources": ["速通", "外观收集", "难度分级"],
-    "production_constraints": ["大团队协作", "Source引擎", "写实美术"],
-    "innovation_patterns": ["第一人称跑酷", "召唤战斗"],
-    "reusable_reference_patterns": ["召唤战斗", "时间操控"],
-    "non_replicable_risks": ["技术复杂度", "品牌积淀"],
-    "genre": ["第一人称射击"],
-    "art_style": ["写实美术"],
-    "audio_style": ["管弦乐", "电子配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["科幻"],
-    "narrative_style": ["过场驱动", "对话叙事"],
-    "game_feel": ["流畅跑酷", "爽快射击"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "射击",
+      "攀墙",
+      "冲刺"
+    ],
+    "main_player_decisions": [
+      "武器搭配",
+      "装备搭配",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "高难跑酷",
+      "视觉享受"
+    ],
+    "main_mechanics": [
+      "墙面奔跑",
+      "召唤战斗",
+      "技能切换"
+    ],
+    "replayability_sources": [
+      "速通",
+      "外观收集",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "大团队协作",
+      "Source引擎",
+      "写实美术"
+    ],
+    "innovation_patterns": [
+      "第一人称跑酷",
+      "召唤战斗"
+    ],
+    "reusable_reference_patterns": [
+      "召唤战斗",
+      "时间操控"
+    ],
+    "non_replicable_risks": [
+      "技术复杂度",
+      "品牌积淀"
+    ],
+    "genre": [
+      "第一人称射击"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "管弦乐",
+      "电子配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "科幻"
+    ],
+    "narrative_style": [
+      "过场驱动",
+      "对话叙事"
+    ],
+    "game_feel": [
+      "流畅跑酷",
+      "爽快射击"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "第一人称跑酷",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "贴墙跑与二段跳",
-            "quote_or_summary": "铁驭配喷射背包，可二段跳、贴墙跑并跑酷穿行，贴墙跑还能积累动量跳得更远。",
-            "notes": "维基百科与设计文章可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "召唤战斗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "召唤从天而降的泰坦",
-            "quote_or_summary": "玩家可呼叫一台五到八米高的泰坦机甲从天砸落并登入，切换为重火力作战。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "时间操控",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "时间穿梭关卡",
-            "quote_or_summary": "战役含以时间穿梭为核心机制的解谜平台关卡（Effect and Cause），可在过去与现在间切换。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Titanfall 2 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Titanfall_2",
-        "quote_or_summary": "第一人称射击，铁驭跑酷（贴墙跑/二段跳）与召唤泰坦机甲交替、Jack Cooper 与 BT-7274 战役、时间穿梭关卡、多人对战，Respawn 开发、EA 发行，2016 年发售。",
-        "notes": "事实取自维基百科与设计文章。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "第一人称跑酷",
+      "召唤战斗",
+      "时间操控"
+    ]
   },
   "claims": [
     {
@@ -97,16 +94,7 @@
       "subject": "第一人称跑酷",
       "relation": "creates",
       "object": "操作顺滑",
-      "explanation": "把贴墙跑、二段跳、滑铲串成可连续衔接、还能彼此积累动量的一套移动语汇，等于让玩家的位移本身变得连贯流畅、有韵律：每一次贴墙都能续上更远的跳跃，整段穿行像一气呵成的滑行而非一步步挪动。关卡又专门为这套移动而设计，给足了可跑可跳的表面，使顺滑感不只属于高手、也能被普通玩家自然体会。再与登入泰坦的厚重切换形成轻重对比，操作的爽感被进一步凸显。可复用于希望用「可衔接、可积累动量的移动套件 + 为之定制的关卡」打造顺滑操作手感的第一人称设计。",
-      "evidence": [
-        {
-          "title": "可衔接移动生顺滑解读",
-          "quote_or_summary": "贴墙跑/二段跳可连续衔接并积累动量、关卡为之定制，使位移连贯成一气呵成的顺滑手感。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把贴墙跑、二段跳、滑铲串成可连续衔接、还能彼此积累动量的一套移动语汇，等于让玩家的位移本身变得连贯流畅、有韵律：每一次贴墙都能续上更远的跳跃，整段穿行像一气呵成的滑行而非一步步挪动。关卡又专门为这套移动而设计，给足了可跑可跳的表面，使顺滑感不只属于高手、也能被普通玩家自然体会。再与登入泰坦的厚重切换形成轻重对比，操作的爽感被进一步凸显。可复用于希望用「可衔接、可积累动量的移动套件 + 为之定制的关卡」打造顺滑操作手感的第一人称设计。"
     }
   ]
 }

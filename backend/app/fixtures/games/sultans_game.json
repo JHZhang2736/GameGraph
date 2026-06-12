@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_sultans_game",
     "title": "Sultan's Game",
-    "source_refs": [
-      {
-        "title": "Sultan's Game（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Sultan's_Game",
-        "notes": "类型（叙事驱动卡牌 RPG 肉鸽）、扮演廷臣被迫参与苏丹的残酷试炼、每周从纵欲/挥霍/征服/杀戮四类卡中抽取道德可疑的任务、资源管理、多结局分支、死亡后给予后续增益的肉鸽推进、《一千零一夜》灵感的阿拉伯美学、Double Cross 开发、2P Games 发行、2025 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款叙事驱动的卡牌 RPG 肉鸽，玩家扮演被迫参与苏丹残酷游戏的廷臣，每周须从纵欲、挥霍、征服与杀戮四类卡中抽取并执行道德可疑的任务，在资源与人际博弈中走向效忠、弑君、乌托邦或召唤黑暗诸神等多种结局。",
     "selection_reason": "作为「用强制抽卡逼迫道德抉择」的代表：把每周必须执行的残酷任务做成无法回避的抽卡，让玩家在生存、欲望与底线之间不断权衡，把道德困境系统化为核心循环，是研究叙事卡牌与道德抉择设计的高价值参考。"
   },
@@ -20,71 +13,83 @@
     "progression_model": "单局靠积累资源、人脉与剧情进度推进；死亡不可避免，每次死亡给予后续局面各类增益与新选项，跨局扩展可选内容，属叙事肉鸽式推进。",
     "failure_model": "未能完成苏丹的任务或在资源、人际崩盘下角色身亡即本局结束；像肉鸽一样死亡是常态，并转化为下一局的增益。",
     "content_structure": "以每周抽取四类任务卡为节拍，含资源管理、人际关系、分支剧情与多结局，《一千零一夜》灵感的阿拉伯美学，单人。",
-    "main_player_actions": ["卡牌取舍", "对话选择", "社交互动"],
-    "main_player_decisions": ["道德抉择", "资源取舍", "任务取舍"],
-    "main_player_experiences": ["抉择沉浸", "运筹帷幄", "情感叙事"],
-    "main_mechanics": ["卡牌战斗", "强制抽卡", "资源管理", "分支叙事", "元进度"],
-    "replayability_sources": ["多结局", "分支叙事", "构筑多样"],
-    "production_constraints": ["手绘美术", "小型团队"],
-    "innovation_patterns": ["强制抽卡", "道德抉择"],
-    "reusable_reference_patterns": ["强制抽卡", "道德抉择", "分支叙事"],
-    "non_replicable_risks": ["题材争议", "强文化母题"],
-    "genre": ["角色扮演", "卡牌构筑"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["桌面背景"],
-    "theme": ["神话", "黑暗奇幻"],
-    "narrative_style": ["分支叙事", "对话叙事"],
-    "game_feel": ["策略权衡", "沉浸代入"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "卡牌取舍",
+      "对话选择",
+      "社交互动"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "资源取舍",
+      "任务取舍"
+    ],
+    "main_player_experiences": [
+      "抉择沉浸",
+      "运筹帷幄",
+      "情感叙事"
+    ],
+    "main_mechanics": [
+      "卡牌战斗",
+      "强制抽卡",
+      "资源管理",
+      "分支叙事",
+      "元进度"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "分支叙事",
+      "构筑多样"
+    ],
+    "production_constraints": [
+      "手绘美术",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "强制抽卡",
+      "道德抉择"
+    ],
+    "reusable_reference_patterns": [
+      "强制抽卡",
+      "道德抉择",
+      "分支叙事"
+    ],
+    "non_replicable_risks": [
+      "题材争议",
+      "强文化母题"
+    ],
+    "genre": [
+      "角色扮演",
+      "卡牌构筑"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "桌面背景"
+    ],
+    "theme": [
+      "神话",
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "分支叙事",
+      "对话叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "强制抽卡",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "每周四类任务卡",
-            "quote_or_summary": "每周玩家须从纵欲、挥霍、征服、杀戮四类卡中抽取并执行带道德代价的任务，无法回避。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "道德抉择",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "多结局抉择",
-            "quote_or_summary": "玩家的选择决定最终走向效忠、弑君、建乌托邦或召唤黑暗诸神毁灭王国等多种结局。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "分支叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "多结局分支",
-            "quote_or_summary": "受《一千零一夜》启发的叙事提供丰富分支与多个结局。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Sultan's Game 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Sultan's_Game",
-        "quote_or_summary": "叙事驱动卡牌 RPG 肉鸽，扮演廷臣被迫参与苏丹残酷试炼，每周从四类卡抽取道德可疑任务，资源管理，多结局分支，死亡转化为增益，阿拉伯美学，Double Cross 开发，2P Games 发行，2025 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "强制抽卡",
+      "道德抉择",
+      "分支叙事"
+    ]
   },
   "claims": [
     {
@@ -92,16 +97,7 @@
       "subject": "强制抽卡",
       "relation": "creates",
       "object": "道德抉择",
-      "explanation": "把每周必须执行的残酷任务做成无法拒绝的强制抽卡，剥夺玩家「干脆不做」的退路，逼其在生存压力下亲手在欲望与底线之间取舍，使道德困境从可回避的剧情点变成必须穿过的系统闸门，可复用于希望让伦理抉择无可逃避的叙事设计。",
-      "evidence": [
-        {
-          "title": "强制抉择解读",
-          "quote_or_summary": "无法回避的每周抽卡迫使玩家亲手做出带道德代价的选择。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把每周必须执行的残酷任务做成无法拒绝的强制抽卡，剥夺玩家「干脆不做」的退路，逼其在生存压力下亲手在欲望与底线之间取舍，使道德困境从可回避的剧情点变成必须穿过的系统闸门，可复用于希望让伦理抉择无可逃避的叙事设计。"
     }
   ]
 }

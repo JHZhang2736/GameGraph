@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_we_were_here_together",
     "title": "We Were Here Together",
-    "source_refs": [
-      {
-        "title": "We Were Here（系列，维基百科）",
-        "url": "https://en.wikipedia.org/wiki/We_Were_Here_(series)",
-        "notes": "类型（双人合作解谜冒险）、荷兰 Total Mayhem Games 开发、We Were Here Together 为系列第三作、2019 年发售、两名玩家各持一台对讲机、双方信息不对称、靠口头描述与协作破解环境谜题、从南极科考站到中世纪城堡 Castle Rock、关键在于把所见准确描述给看不到的同伴等事实来源。"
-      },
-      {
-        "title": "We Were Here Together（Steam，appid 865360）",
-        "url": "https://store.steampowered.com/app/865360/We_Were_Here_Together/",
-        "notes": "两人在线合作、对讲机语音、信息不对称解谜、环境谜题、城堡与南极场景等事实来源。"
-      }
-    ],
     "short_description": "一款双人在线合作解谜冒险游戏，荷兰 Total Mayhem Games 开发、系列第三作：两名玩家各持一台对讲机，被分隔在南极科考站与中世纪城堡 Castle Rock 的不同区域，各自只能看到一半线索，唯有通过对讲机口头描述自己的所见、彼此协作，才能破解环环相扣的环境谜题、一同逃出，2019 年发售。",
     "selection_reason": "作为「靠对讲机口头协作破解信息不对称谜题」的代表：两名玩家被刻意分隔、各掌握一半线索，谁也无法独自通关，把「能不能把自己看到的讲清楚」做成核心挑战，是研究非对称合作解谜、强制沟通设计与双人协作张力的高价值参考。"
   },
@@ -25,71 +13,76 @@
     "progression_model": "靠逐道破解的环境谜题线性推进剧情与场景，没有数值养成；进度体现为已通过的谜题与场景章节，双方的沟通默契随流程提升。",
     "failure_model": "本作以解谜推进为主，卡关即源于沟通不畅或配合失误——一方描述不清或操作错误会让谜题无法完成、流程停滞，部分桥段失误会被打回重来，真正的「失败」是协作的断裂。",
     "content_structure": "以南极站到 Castle Rock 城堡的线性场景与一道道信息不对称的环境谜题为骨架，靠对讲机口头协作与分区操作承载流程，强制双人在线，单人无法游玩。",
-    "main_player_actions": ["物件操控", "社交互动", "秘密解谜"],
-    "main_player_decisions": ["探索路线", "优先级排序"],
-    "main_player_experiences": ["协作默契", "探索发现", "氛围营造"],
-    "main_mechanics": ["合作解谜", "非对称协作", "环境叙事"],
-    "replayability_sources": ["分层秘密", "彩蛋收集"],
-    "production_constraints": ["Unreal 引擎", "小型团队"],
-    "innovation_patterns": ["非对称协作", "合作解谜"],
-    "reusable_reference_patterns": ["非对称协作", "合作解谜"],
-    "non_replicable_risks": ["一次性体验", "玩家留存"],
-    "genre": ["叙事冒险"],
-    "art_style": ["写实美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["灵异"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["沉浸代入", "紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "物件操控",
+      "社交互动",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "优先级排序"
+    ],
+    "main_player_experiences": [
+      "协作默契",
+      "探索发现",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "合作解谜",
+      "非对称协作",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "分层秘密",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "Unreal 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "非对称协作",
+      "合作解谜"
+    ],
+    "reusable_reference_patterns": [
+      "非对称协作",
+      "合作解谜"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "玩家留存"
+    ],
+    "genre": [
+      "叙事冒险"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "灵异"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "非对称协作",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "双方信息不对称",
-            "quote_or_summary": "两名玩家被分隔在不同区域，各自只掌握破解谜题所需一半信息，谁也无法独自推进。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作解谜",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "对讲机口头协作破解",
-            "quote_or_summary": "两名玩家各持对讲机，通过口头描述所见、协同操作机关，共同破解环环相扣的环境谜题。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "环境叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "城堡场景叙事",
-            "quote_or_summary": "从南极科考站到中世纪城堡 Castle Rock，谜题与背景故事嵌入可探查的环境之中。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "We Were Here Together 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/We_Were_Here_(series)",
-        "quote_or_summary": "双人在线合作解谜冒险、系列第三作，两人各持对讲机、信息不对称、靠口头描述协作破解环境谜题，南极站与 Castle Rock 城堡场景，Total Mayhem Games 开发，2019 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "非对称协作",
+      "合作解谜",
+      "环境叙事"
+    ]
   },
   "claims": [
     {
@@ -97,16 +90,7 @@
       "subject": "非对称协作",
       "relation": "creates",
       "object": "协作张力",
-      "explanation": "把破解一道谜题所需的信息刻意拆成两半、分给两个互相看不见的玩家，再只留一条对讲机作桥梁，等于强制双方必须把「描述与倾听」做对才能推进：任何一方表达含糊、用词不一或听错，谜题就卡死，紧张感不来自敌人或计时，而来自「我能不能让对方听懂我看到的东西」。这把沟通本身变成核心玩法，也让通关后的默契格外有成就感，可复用于希望用「信息对半分割 + 单一沟通通道」逼出强制协作与人际张力的双人设计。",
-      "evidence": [
-        {
-          "title": "信息分割逼出协作解读",
-          "quote_or_summary": "信息对半分给看不见彼此的两人、仅以对讲机相连，使表达与倾听的准确度直接决定能否通关，沟通成为核心张力来源。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把破解一道谜题所需的信息刻意拆成两半、分给两个互相看不见的玩家，再只留一条对讲机作桥梁，等于强制双方必须把「描述与倾听」做对才能推进：任何一方表达含糊、用词不一或听错，谜题就卡死，紧张感不来自敌人或计时，而来自「我能不能让对方听懂我看到的东西」。这把沟通本身变成核心玩法，也让通关后的默契格外有成就感，可复用于希望用「信息对半分割 + 单一沟通通道」逼出强制协作与人际张力的双人设计。"
     }
   ]
 }

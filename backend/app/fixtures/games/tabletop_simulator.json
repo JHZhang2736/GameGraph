@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_tabletop_simulator",
     "title": "Tabletop Simulator",
-    "source_refs": [
-      {
-        "title": "Tabletop Simulator（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Tabletop_Simulator",
-        "notes": "性质（多人物理沙盒平台）、无内置胜负条件、物理操控棋子与自动掷骰/藏牌、最多十人联机、Steam 创意工坊数千游戏与资产、可导入自制图片与 3D 模型、Berserk Games 用 Unity 开发、2015 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款多人物理沙盒平台，让玩家在虚拟桌面上自由生成与操控受物理模拟的棋子、卡牌与骰子来重现各种桌面游戏，本身不设胜负，规则由玩家或社区导入，支持最多十人联机与创意工坊。",
     "selection_reason": "作为「只模拟物理、不强制规则」的万能平台范本：本体仅渲染物件与物理、把规则留给玩家，使单一产品可承载几乎任何桌游，内容生产完全交给社区，是研究沙盒平台与 UGC 生态的高价值参考。（无内置胜负与失败状态。）"
   },
@@ -20,71 +13,77 @@
     "progression_model": "作为沙盒平台无角色或等级进度；玩家的「进度」体现为可游玩游戏库的扩充、自制内容的发布，以及随版本更新增强的物理、联机与创作能力。",
     "failure_model": "平台本身不内置胜负或失败状态；任何输赢均由玩家所选游戏的规则界定，由玩家自行裁定，平台只负责物理与呈现。",
     "content_structure": "由物理沙盒桌面、内置常见游戏（象棋、跳棋、扑克等）与 Steam 创意工坊（数千款游戏与资产）构成；玩家可自定义现有桌面与棋子或导入自制图片与 3D 模型创建全新游戏。",
-    "main_player_actions": ["物件操控", "掷骰", "自定义导入"],
-    "main_player_decisions": ["规则自定", "游戏选择"],
-    "main_player_experiences": ["社交互动", "创作乐趣", "涌现玩法"],
-    "main_mechanics": ["物理模拟", "创意工坊", "无规则约束", "多人联机"],
-    "replayability_sources": ["用户生成内容", "创意工坊"],
-    "production_constraints": ["Unity 引擎", "小型团队"],
-    "innovation_patterns": ["物理沙盒平台", "创意工坊生态"],
-    "reusable_reference_patterns": ["创意工坊生态", "用户生成内容", "物理沙盒"],
-    "non_replicable_risks": ["大规模玩家社区", "内容审核"],
-    "genre": ["物理沙盒", "沙盒"],
-    "art_style": ["多样风格"],
-    "audio_style": ["极简音效"],
-    "perspective": ["第三人称"],
-    "theme": ["桌游风"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["自由操控"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "物件操控",
+      "掷骰",
+      "自定义导入"
+    ],
+    "main_player_decisions": [
+      "规则自定",
+      "游戏选择"
+    ],
+    "main_player_experiences": [
+      "社交互动",
+      "创作乐趣",
+      "涌现玩法"
+    ],
+    "main_mechanics": [
+      "物理模拟",
+      "创意工坊",
+      "无规则约束",
+      "多人联机"
+    ],
+    "replayability_sources": [
+      "用户生成内容",
+      "创意工坊"
+    ],
+    "production_constraints": [
+      "Unity 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "物理沙盒平台",
+      "创意工坊生态"
+    ],
+    "reusable_reference_patterns": [
+      "创意工坊生态",
+      "用户生成内容",
+      "物理沙盒"
+    ],
+    "non_replicable_risks": [
+      "大规模玩家社区",
+      "内容审核"
+    ],
+    "genre": [
+      "物理沙盒",
+      "沙盒"
+    ],
+    "art_style": [
+      "多样风格"
+    ],
+    "audio_style": [
+      "极简音效"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "桌游风"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "自由操控"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "物理沙盒平台",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "多人物理沙盒",
-            "quote_or_summary": "本体是一个多人物理沙盒，玩家生成并操控受物理模拟的虚拟棋子来重现各类桌面游戏。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "无规则约束",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "无内置胜负",
-            "quote_or_summary": "游戏不设预置的胜负条件，仅提供自动掷骰、对其他玩家藏牌、存档与悔棋等通用机制。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "创意工坊生态",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "数千款工坊内容",
-            "quote_or_summary": "Steam 创意工坊有逾三千款游戏与资产，玩家可导入自制图片与 3D 模型创建全新游戏。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Tabletop Simulator 功能与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Tabletop_Simulator",
-        "quote_or_summary": "多人物理沙盒平台，无内置胜负，物理操控棋子与自动掷骰/藏牌，最多十人联机，创意工坊数千款游戏与资产，可导入自制图片与 3D 模型，Berserk Games 用 Unity 开发，2015 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "物理沙盒平台",
+      "无规则约束",
+      "创意工坊生态"
+    ]
   },
   "claims": [
     {
@@ -92,16 +91,7 @@
       "subject": "无规则约束",
       "relation": "enables",
       "object": "平台通用性",
-      "explanation": "平台只模拟物理与呈现物件、把规则完全留给玩家，使单一产品能承载几乎任何桌面游戏，把内容生产彻底转移给社区，以极小的一方成本换取近乎无限的可玩内容，可作为平台设计策略复用。",
-      "evidence": [
-        {
-          "title": "无规则平台解读",
-          "quote_or_summary": "不强制规则使任意桌游皆可在同一平台重现，内容由社区供给。",
-          "notes": "基于可观察事实的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "平台只模拟物理与呈现物件、把规则完全留给玩家，使单一产品能承载几乎任何桌面游戏，把内容生产彻底转移给社区，以极小的一方成本换取近乎无限的可玩内容，可作为平台设计策略复用。"
     }
   ]
 }

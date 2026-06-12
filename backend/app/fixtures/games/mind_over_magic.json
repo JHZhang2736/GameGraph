@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_mind_over_magic",
     "title": "Mind Over Magic",
-    "source_refs": [
-      {
-        "title": "Mind Over Magic（Steam）",
-        "url": "https://store.steampowered.com/app/1270580/Mind_Over_Magic/",
-        "notes": "类型（殖民地模拟）、在受诅咒的魔法学校旧址一砖一瓦建造与优化校舍、设计每个房间并解锁家具/壁纸/灯光、布局可触发隐藏效率加成、招募并培养法师（可多职兼修或专精解锁终极技）、暗系魔法可召唤名为 Quilted 的亡灵助手采集/种植/修缮/采矿、每夜迷雾推进吞噬土地需用资源与仪式抵御、深入地下「Underschool」地牢战斗、Sparkypants 开发 Klei 发行、2023 年 12 月抢先体验、2025 年 2 月 12 日 1.0 正式发售等事实来源。"
-      },
-      {
-        "title": "Mind Over Magic（Klei 官网）",
-        "url": "https://www.klei.com/games/mind-over-magic",
-        "notes": "魔法学校经营、法师培养、迷雾威胁、地下探险等事实来源。"
-      }
-    ],
     "short_description": "一款殖民地模拟游戏，玩家在受诅咒的魔法学校旧址一砖一瓦建造校舍、设计房间布局触发隐藏加成、招募并培养可兼修或专精的法师，还能用暗系魔法召唤亡灵助手 Quilted 采集修缮；每到夜晚迷雾便推进吞噬土地，须用资源与仪式抵御，并深入地下 Underschool 地牢战斗，Sparkypants 开发、Klei 发行、2025 年正式发售。",
     "selection_reason": "作为「昼建夜守的魔法学校经营模拟」代表：把建造布局的隐藏效率加成、法师多职培养与「每夜迷雾侵蚀须抵御」的压力循环结合，让白天的经营优化与夜晚的防守抉择交替施压，是研究殖民地模拟中昼夜节奏与迷雾侵蚀压力设计的高价值参考。"
   },
@@ -25,71 +13,79 @@
     "progression_model": "靠建造扩张校舍、培养法师解锁技能、研究新魔法与家具、深入地牢夺取稀有材料推进；进度体现为校舍规模、法师专精、已解锁内容与可抵御的迷雾强度。",
     "failure_model": "若资源与仪式不足以抵御夜晚推进的迷雾，校舍会被吞噬侵蚀、法师陷入危机，经营随之崩盘，迫使玩家重整或重来。",
     "content_structure": "以可自由建造的横切面校舍与地下 Underschool 地牢为骨架，靠建造布局、法师培养、昼夜迷雾防守与地牢战斗承载流程，单人。",
-    "main_player_actions": ["城市建设", "单位调度", "采集"],
-    "main_player_decisions": ["基地规划", "优先级排序", "资源取舍"],
-    "main_player_experiences": ["经营成就", "系统掌控", "运筹帷幄"],
-    "main_mechanics": ["建造", "殖民地管理", "昼夜循环", "职业分工", "迷雾侵蚀"],
-    "replayability_sources": ["程序生成", "任务多样"],
-    "production_constraints": ["小型团队", "手绘美术"],
-    "innovation_patterns": ["昼夜循环", "迷雾侵蚀"],
-    "reusable_reference_patterns": ["昼夜循环", "职业分工"],
-    "non_replicable_risks": ["系统复杂度", "平衡复杂度"],
-    "genre": ["模拟经营"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["横版2D"],
-    "theme": ["奇幻", "魔法学院"],
-    "narrative_style": ["环境叙事"],
-    "game_feel": ["规划满足", "策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "城市建设",
+      "单位调度",
+      "采集"
+    ],
+    "main_player_decisions": [
+      "基地规划",
+      "优先级排序",
+      "资源取舍"
+    ],
+    "main_player_experiences": [
+      "经营成就",
+      "系统掌控",
+      "运筹帷幄"
+    ],
+    "main_mechanics": [
+      "建造",
+      "殖民地管理",
+      "昼夜循环",
+      "职业分工",
+      "迷雾侵蚀"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "任务多样"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "手绘美术"
+    ],
+    "innovation_patterns": [
+      "昼夜循环",
+      "迷雾侵蚀"
+    ],
+    "reusable_reference_patterns": [
+      "昼夜循环",
+      "职业分工"
+    ],
+    "non_replicable_risks": [
+      "系统复杂度",
+      "平衡复杂度"
+    ],
+    "genre": [
+      "模拟经营"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "奇幻",
+      "魔法学院"
+    ],
+    "narrative_style": [
+      "环境叙事"
+    ],
+    "game_feel": [
+      "规划满足",
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "迷雾侵蚀",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "每夜迷雾推进",
-            "quote_or_summary": "每到夜晚，迷雾缓缓推向学校吞噬土地，玩家必须用资源与仪式阻止校舍被摧毁。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "殖民地管理",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "建造与法师培养",
-            "quote_or_summary": "玩家一砖一瓦建造校舍、设计房间布局触发隐藏加成，并招募培养可兼修或专精的法师。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "昼夜循环",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "昼建夜守节奏",
-            "quote_or_summary": "白天经营建造与培养，夜晚抵御推进的迷雾，形成昼夜交替的压力循环。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Mind Over Magic 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1270580/Mind_Over_Magic/",
-        "quote_or_summary": "殖民地模拟，建造魔法校舍、布局触发隐藏加成、法师兼修或专精、召唤 Quilted 亡灵助手、每夜迷雾推进须用资源与仪式抵御、深入 Underschool 地牢战斗，Sparkypants 开发 Klei 发行，2025 年 2 月正式发售。",
-        "notes": "事实取自 Steam 商店页与 Klei 官网。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "迷雾侵蚀",
+      "殖民地管理",
+      "昼夜循环"
+    ]
   },
   "claims": [
     {
@@ -97,16 +93,7 @@
       "subject": "迷雾侵蚀",
       "relation": "creates",
       "object": "节奏张力",
-      "explanation": "给开放无尽的经营模拟套上「每夜推进、不抵御就吞噬校舍」的迷雾，把原本可以慢慢优化的建造节奏切成「白天扩张—夜晚防守」的紧张循环，逼玩家在投入产出与生存防御间反复权衡，使经营从松弛的堆叠变成有外部时钟施压的攻防，可复用于希望用「周期性侵蚀威胁」为开放经营注入节奏与紧张感的设计。",
-      "evidence": [
-        {
-          "title": "迷雾施压节奏解读",
-          "quote_or_summary": "每夜推进的迷雾把经营切成昼扩张夜防守的循环，为开放经营注入外部时钟与紧张节奏。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "给开放无尽的经营模拟套上「每夜推进、不抵御就吞噬校舍」的迷雾，把原本可以慢慢优化的建造节奏切成「白天扩张—夜晚防守」的紧张循环，逼玩家在投入产出与生存防御间反复权衡，使经营从松弛的堆叠变成有外部时钟施压的攻防，可复用于希望用「周期性侵蚀威胁」为开放经营注入节奏与紧张感的设计。"
     }
   ]
 }

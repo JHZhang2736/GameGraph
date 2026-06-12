@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_firewatch",
     "title": "Firewatch",
-    "source_refs": [
-      {
-        "title": "Firewatch（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Firewatch",
-        "notes": "类型（第一人称叙事悬疑）、Campo Santo 开发、与 Panic 合作发行、2016 年 2 月 9 日发售、玩家扮演怀俄明州 Shoshone 国家森林的火警瞭望员 Henry、唯一情感纽带是对讲机另一端的上司 Delilah、玩家从对话选项中选择与 Delilah 交流、整个夏天二人被不明力量困扰并卷入一桩多年悬案、由 Olly Moss 等打造的标志性美术、Cissy Jones 凭 Delilah 获最佳演员等事实来源。"
-      },
-      {
-        "title": "Firewatch（Steam，appid 383870）",
-        "url": "https://store.steampowered.com/app/383870/Firewatch/",
-        "notes": "单人第一人称悬疑、荒野瞭望、对讲机对话选择、关系建立、唯美扁平插画美术等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称叙事悬疑游戏，Campo Santo 开发、与 Panic 合作发行，2016 年 2 月 9 日发售：玩家扮演躲进怀俄明州 Shoshone 国家森林当火警瞭望员的中年男子 Henry，他在荒野里唯一的情感纽带，是对讲机另一端、从不照面的上司 Delilah。玩家通过手持对讲机从对话选项里与 Delilah 交谈，在巡查森林、应对火情的日子里，两人渐渐被一股不明力量困扰，并被卷入一桩横跨多年的悬案。游戏以扁平唯美的插画美术与出色的配音演出著称。",
     "selection_reason": "作为「用一台对讲机和一个声音撑起整段情感」的代表：玩家几乎全程独自走在荒野，所有关系、悬疑与陪伴都由对讲机里 Delilah 的声音和你的对话选择承载，证明无战斗、近乎无演出冲突也能靠声音与抉择建立亲密与张力，是研究叙事冒险、远程陪伴与氛围营造的高价值参考。"
   },
@@ -25,71 +13,79 @@
     "progression_model": "靠以「天」推进的剧情与任务线性展开、靠对讲机对话选择塑造 Henry 与 Delilah 的关系走向、靠探索解锁新区域与线索；进度体现为剧情推进、关系状态与已发掘的悬疑碎片。",
     "failure_model": "本作无传统失败死亡，体验为线性叙事推进，「停滞」仅来自未触发下一段对话或未抵达目标地点；其情感「失落」由剧情与关系走向承载，核心张力在于在孤独与悬疑中维系与 Delilah 的联系。",
     "content_structure": "以一个夏天逐日推进的荒野巡查与悬疑为骨架，靠徒步探索与对讲机对话选择承载玩法，靠 Henry 与 Delilah 的关系承载情感叙事，单人。",
-    "main_player_actions": ["对话选择", "探索", "物件操控"],
-    "main_player_decisions": ["关系经营", "探索路线", "道德抉择"],
-    "main_player_experiences": ["情感叙事", "探索发现", "抉择沉浸"],
-    "main_mechanics": ["环境叙事", "分支叙事", "限时抉择"],
-    "replayability_sources": ["彩蛋收集", "全收集"],
-    "production_constraints": ["小型团队", "Unity 引擎"],
-    "innovation_patterns": ["无线电叙事", "环境叙事"],
-    "reusable_reference_patterns": ["分支叙事", "环境叙事"],
-    "non_replicable_risks": ["一次性体验", "玩家留存"],
-    "genre": ["叙事冒险"],
-    "art_style": ["极简风格", "唯美画风"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["自然", "家庭情感"],
-    "narrative_style": ["对话叙事", "分支叙事"],
-    "game_feel": ["沉浸代入", "流畅响应"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "对话选择",
+      "探索",
+      "物件操控"
+    ],
+    "main_player_decisions": [
+      "关系经营",
+      "探索路线",
+      "道德抉择"
+    ],
+    "main_player_experiences": [
+      "情感叙事",
+      "探索发现",
+      "抉择沉浸"
+    ],
+    "main_mechanics": [
+      "环境叙事",
+      "分支叙事",
+      "限时抉择"
+    ],
+    "replayability_sources": [
+      "彩蛋收集",
+      "全收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "Unity 引擎"
+    ],
+    "innovation_patterns": [
+      "无线电叙事",
+      "环境叙事"
+    ],
+    "reusable_reference_patterns": [
+      "分支叙事",
+      "环境叙事"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "玩家留存"
+    ],
+    "genre": [
+      "叙事冒险"
+    ],
+    "art_style": [
+      "极简风格",
+      "唯美画风"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "自然",
+      "家庭情感"
+    ],
+    "narrative_style": [
+      "对话叙事",
+      "分支叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "流畅响应"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "无线电叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "对讲机维系唯一关系",
-            "quote_or_summary": "玩家全程几乎独处荒野，唯一的情感纽带是对讲机另一端的 Delilah，关系靠通话与对话选择建立。",
-            "notes": "维基百科与 Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "分支叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "对话选择塑造关系",
-            "quote_or_summary": "玩家从对话选项中选择如何回应 Delilah，塑造二人关系走向与语气。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "环境叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "荒野线索拼凑悬疑",
-            "quote_or_summary": "森林中散落的物件与被布置的诡异迹象逐步拼出一桩横跨多年的悬案。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Firewatch 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Firewatch",
-        "quote_or_summary": "第一人称叙事悬疑，独自巡查怀俄明森林、靠对讲机对话选择与 Delilah 建立关系、卷入多年悬案、扁平唯美美术与出色配音，Campo Santo 开发，2016 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "无线电叙事",
+      "分支叙事",
+      "环境叙事"
+    ]
   },
   "claims": [
     {
@@ -97,16 +93,7 @@
       "subject": "无线电叙事",
       "relation": "creates",
       "object": "情感叙事",
-      "explanation": "把唯一的同伴放到对讲机另一端、永远不让她照面，再让玩家用「按键通话 + 选择回应」来维系这段关系，等于用稀缺与距离反向制造亲密：看不见对方，声音、语气和你每一次怎么接话就成了关系的全部，玩家不得不主动投入想象与情感去填补那张不存在的脸。孤独的荒野放大了这台对讲机的分量，悬疑又给陪伴加上张力，于是深厚的情感几乎不依赖任何演出冲突，只靠声音与抉择长出来。可复用于希望用「远程的、看不见的对话伙伴 + 玩家选择」以极低演出成本建立亲密关系与情感叙事的叙事冒险设计——但其单线体验偏一次性。",
-      "evidence": [
-        {
-          "title": "距离反生亲密解读",
-          "quote_or_summary": "唯一同伴只在对讲机另一端，看不见使声音与选择成为关系全部，孤独放大其分量，以极低演出成本生情感叙事。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把唯一的同伴放到对讲机另一端、永远不让她照面，再让玩家用「按键通话 + 选择回应」来维系这段关系，等于用稀缺与距离反向制造亲密：看不见对方，声音、语气和你每一次怎么接话就成了关系的全部，玩家不得不主动投入想象与情感去填补那张不存在的脸。孤独的荒野放大了这台对讲机的分量，悬疑又给陪伴加上张力，于是深厚的情感几乎不依赖任何演出冲突，只靠声音与抉择长出来。可复用于希望用「远程的、看不见的对话伙伴 + 玩家选择」以极低演出成本建立亲密关系与情感叙事的叙事冒险设计——但其单线体验偏一次性。"
     }
   ]
 }

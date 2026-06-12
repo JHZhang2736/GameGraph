@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_lost_castle_2",
     "title": "Lost Castle 2",
-    "source_refs": [
-      {
-        "title": "Lost Castle 2（Steam，appid 2445690）",
-        "url": "https://store.steampowered.com/app/2445690/Lost_Castle_2/",
-        "notes": "类型（2D 横版清版动作肉鸽）、Hunter Studio 开发与发行、2024 年 7 月 24 日抢先体验、计划 2026 年第二季度正式版、200+ 武器分 6 类各具技能、130+ 提供被动效果的宝物、84 件护甲、5 个主线关卡与 11 个 Boss、黑森林/废弃村庄/水晶山等场景、加入寻宝者公会探索黑暗城堡、支持 2–4 人在线/本地/分屏合作等事实来源。"
-      },
-      {
-        "title": "Lost Castle 2 抢先体验评测（Roundtable Co-Op）",
-        "url": "https://roundtablecoop.com/reviews/lost-castle-2-early-access-review-an-action-roguelite-gem/",
-        "notes": "Castle Crashers 式横版战斗叠加 Rogue Legacy/Dead Cells 式构筑与升级、武器与宝物随机滚雪球、合作混战等事实来源。"
-      }
-    ],
     "short_description": "一款 2D 横版清版动作肉鸽游戏，Hunter Studio 开发，2024 年 7 月 24 日上线抢先体验（计划 2026 年第二季度正式版）：作为寻宝者公会成员，你深入边境群山中的黑暗城堡，在程序生成的地牢里横版闯关、砍杀变异怪物。游戏含 200+ 件分 6 类、各具独特技能的武器与 84 件护甲、130+ 提供被动效果的宝物、5 个主线关卡与 11 个 Boss，可单人或 2–4 人在线、本地、分屏合作。",
     "selection_reason": "作为「横版清版战斗 + 随机构筑肉鸽」的代表：把 Castle Crashers 式的多人砍杀，叠上 200+ 武器与 130+ 宝物的随机搭配，让每局凭拾取到的武器与被动滚雪球式变强，再以 2–4 人合作放大混战乐趣，是研究清版肉鸽、武器随机构筑与合作动作的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "局内靠拾取武器、护甲与 130+ 被动宝物滚雪球式强化当前角色，局外靠肉鸽解锁推进；进度体现为武器宝物搭配、关卡深度与永久解锁内容。",
     "failure_model": "角色在闯关中被怪物或 Boss 击杀即一局结束、须从头重开新的肉鸽进程，核心压力在于既要靠当前随机到的武器宝物组合站稳，又要应对成群敌人与 Boss 的高压。",
     "content_structure": "以程序生成的横版关卡与逐场清版战斗为骨架，靠 200+ 武器、84 护甲与 130+ 宝物的随机搭配承载构筑深度，以程序生成与 2–4 人合作承载重玩，单人或多人合作。",
-    "main_player_actions": ["近战攻击", "翻滚闪避", "道具运用"],
-    "main_player_decisions": ["武器搭配", "道具取舍", "风险取舍"],
-    "main_player_experiences": ["战斗精通", "构筑乐趣", "欢乐混乱"],
-    "main_mechanics": ["清版肉鸽", "武器构筑", "道具叠加", "合作生存"],
-    "replayability_sources": ["程序生成", "构筑多样", "难度分级"],
-    "production_constraints": ["小型团队", "像素美术", "系列复用"],
-    "innovation_patterns": ["武器构筑", "清版肉鸽"],
-    "reusable_reference_patterns": ["武器构筑", "道具叠加", "合作生存"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["类肉鸽", "动作冒险"],
-    "art_style": ["像素美术"],
-    "audio_style": ["摇滚配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["黑暗奇幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["厚重打击", "紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "翻滚闪避",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "武器搭配",
+      "道具取舍",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "构筑乐趣",
+      "欢乐混乱"
+    ],
+    "main_mechanics": [
+      "清版肉鸽",
+      "武器构筑",
+      "道具叠加",
+      "合作生存"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "像素美术",
+      "系列复用"
+    ],
+    "innovation_patterns": [
+      "武器构筑",
+      "清版肉鸽"
+    ],
+    "reusable_reference_patterns": [
+      "武器构筑",
+      "道具叠加",
+      "合作生存"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "类肉鸽",
+      "动作冒险"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "摇滚配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "厚重打击",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "武器构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "200+ 武器各具技能",
-            "quote_or_summary": "游戏提供 200+ 件分 6 类、各具独特技能的武器，玩家凭每局随机拾取到的武器决定打法。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "道具叠加",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "130+ 宝物被动叠加",
-            "quote_or_summary": "130+ 件宝物提供各异的被动效果，收集越多越强，层层叠加出滚雪球强度。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作生存",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "2–4 人合作混战",
-            "quote_or_summary": "支持单人或 2–4 人在线、本地与分屏合作闯关砍杀。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Lost Castle 2 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/2445690/Lost_Castle_2/",
-        "quote_or_summary": "2D 横版清版动作肉鸽，200+ 武器、84 护甲、130+ 宝物、5 关 11 Boss、程序生成、2–4 人合作，Hunter Studio 开发，2024 年 7 月 24 日抢先体验。",
-        "notes": "事实取自 Steam 商店页与评测。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "武器构筑",
+      "道具叠加",
+      "合作生存"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "道具叠加",
       "relation": "creates",
       "object": "滚雪球快感",
-      "explanation": "把 130+ 件各具被动的宝物做成可层层堆叠的强度来源，等于让每一次拾取都成为「这局能滚多大」的赌注：单件宝物平平无奇，几件凑到一起却可能触发质变，玩家越打越强、越强越敢深入。配合 200+ 武器的随机投放，同一套地牢每局都能长出迥异的强度曲线，重玩动力与爽快感都从这种随机叠加里生长。可复用于希望用「大量可叠加的被动道具 + 随机投放」制造滚雪球快感与每局差异的动作肉鸽设计。",
-      "evidence": [
-        {
-          "title": "宝物叠加生滚雪球解读",
-          "quote_or_summary": "大量可叠加被动宝物配随机武器投放，使每局强度曲线各异、越打越强，生发滚雪球快感。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把 130+ 件各具被动的宝物做成可层层堆叠的强度来源，等于让每一次拾取都成为「这局能滚多大」的赌注：单件宝物平平无奇，几件凑到一起却可能触发质变，玩家越打越强、越强越敢深入。配合 200+ 武器的随机投放，同一套地牢每局都能长出迥异的强度曲线，重玩动力与爽快感都从这种随机叠加里生长。可复用于希望用「大量可叠加的被动道具 + 随机投放」制造滚雪球快感与每局差异的动作肉鸽设计。"
     }
   ]
 }

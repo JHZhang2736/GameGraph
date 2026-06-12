@@ -1,19 +1,12 @@
 from __future__ import annotations
 
-from app.schemas.common import (
-    ConfidenceLevel,
-    EvidenceRef,
-    QualityStatus,
-    StrictBaseModel,
-)
+from app.schemas.common import StrictBaseModel
 
 
 class GameSummary(StrictBaseModel):
     id: str
     title: str
     short_description: str
-    confidence: ConfidenceLevel
-    quality_status: QualityStatus
 
 
 class GraphNodeDTO(StrictBaseModel):
@@ -27,10 +20,7 @@ class GraphEdgeDTO(StrictBaseModel):
     source: str
     target: str
     relation: str
-    confidence: ConfidenceLevel | None = None
-    quality_status: QualityStatus | None = None
     claim_id: str | None = None
-    evidence: list[EvidenceRef] = []
 
 
 class NeighborhoodResult(StrictBaseModel):

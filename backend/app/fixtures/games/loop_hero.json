@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_loop_hero",
     "title": "Loop Hero",
-    "source_refs": [
-      {
-        "title": "Loop Hero（Steam）",
-        "url": "https://store.steampowered.com/app/1282730/Loop_Hero/",
-        "notes": "类型（肉鸽自动战斗牌组构筑管理）、英雄自动沿环形路径行走与自动战斗、用不断扩充的卡组沿环放置敌人/建筑/地形以改变战局、敌人掉落物品与卡牌、可主动撤退保留收益、跨局用资源在营地建造永久升级、Four Quarters 开发、Devolver 发行、2021 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款融合肉鸽、自动战斗、牌组构筑与经营的游戏，英雄自动沿环形路径行走并自动战斗，玩家用一副不断扩充的卡组沿路放置敌人、建筑与地形来塑造战局，并把每局所得带回营地建造永久升级。",
     "selection_reason": "作为「玩家不直接操作战斗、而是布置世界来间接影响自动战斗」的代表：把战斗交给自动行走的英雄，玩家的全部操作变成沿环放卡、平衡风险与决定何时撤退，是研究自动战斗、间接控制与布局型策略的高价值参考。"
   },
@@ -20,71 +13,80 @@
     "progression_model": "单局靠沿环放卡、捡装备与地形协同即时变强；跨局把成功带回的资源用于营地建造，解锁新卡、新职业与永久增益；进度兼有单局布局与长期营地建设。",
     "failure_model": "英雄在环上被击败即本局失败，且阵亡时只能带回部分资源（主动撤退则保留更多），需带营地永久升级重开新局。",
     "content_structure": "以一条条随机环形远征路径为骨架，玩家用卡组沿环构建世界、推进章节首领，跨局回到可持续建设的营地，单人。",
-    "main_player_actions": ["出牌", "卡牌取舍"],
-    "main_player_decisions": ["风险取舍", "装备搭配", "基地规划"],
-    "main_player_experiences": ["运筹帷幄", "滚雪球快感", "经营成就"],
-    "main_mechanics": ["自动战斗", "牌组构筑", "元进度", "建造", "程序生成"],
-    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
-    "production_constraints": ["像素美术", "小型团队"],
-    "innovation_patterns": ["自动战斗", "类型缝合"],
-    "reusable_reference_patterns": ["自动战斗", "牌组构筑", "元进度"],
-    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
-    "genre": ["类肉鸽", "卡牌构筑"],
-    "art_style": ["像素美术"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["俯视"],
-    "theme": ["黑暗奇幻"],
-    "narrative_style": ["碎片化叙事"],
-    "game_feel": ["策略权衡", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "出牌",
+      "卡牌取舍"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "装备搭配",
+      "基地规划"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "滚雪球快感",
+      "经营成就"
+    ],
+    "main_mechanics": [
+      "自动战斗",
+      "牌组构筑",
+      "元进度",
+      "建造",
+      "程序生成"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "像素美术",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "自动战斗",
+      "类型缝合"
+    ],
+    "reusable_reference_patterns": [
+      "自动战斗",
+      "牌组构筑",
+      "元进度"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "系统复杂度"
+    ],
+    "genre": [
+      "类肉鸽",
+      "卡牌构筑"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "自动战斗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "英雄自动行走作战",
-            "quote_or_summary": "英雄自行沿路行走，每个游戏日开始时与刷在路上的怪物自动战斗，玩家不直接操控战斗。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "牌组构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "沿环放卡塑造战局",
-            "quote_or_summary": "玩家用一副不断扩充的神秘卡组，沿远征环放置敌人、建筑与地形，为地图施加增益与减益并刷出新敌人与宝箱。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "元进度",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "营地永久建设",
-            "quote_or_summary": "每次远征都注定被抹除，但成功的远征会保留资源，用于发展一座永久的幸存者营地。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Loop Hero 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1282730/Loop_Hero/",
-        "quote_or_summary": "肉鸽自动战斗牌组构筑管理混合，英雄自动绕环行走自动战斗，玩家用卡组沿环放置敌人建筑地形改变战局，敌人掉落卡牌资源，跨局营地永久建设，Four Quarters 开发，2021 年发售。",
-        "notes": "事实取自 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "自动战斗",
+      "牌组构筑",
+      "元进度"
+    ]
   },
   "claims": [
     {
@@ -92,16 +94,7 @@
       "subject": "自动战斗",
       "relation": "creates",
       "object": "策略深度",
-      "explanation": "把战斗交给自动行走的英雄，使玩家的全部操作让位于「沿环放什么、放在哪、何时撤退」的布局与构筑决策，把动作执行彻底替换为风险编排，可复用于希望以间接控制和布置取代手动操作来制造策略深度的设计。",
-      "evidence": [
-        {
-          "title": "自动战斗换布局解读",
-          "quote_or_summary": "战斗自动化把玩家精力导向放卡布局与风险权衡，深化策略层。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把战斗交给自动行走的英雄，使玩家的全部操作让位于「沿环放什么、放在哪、何时撤退」的布局与构筑决策，把动作执行彻底替换为风险编排，可复用于希望以间接控制和布置取代手动操作来制造策略深度的设计。"
     }
   ]
 }

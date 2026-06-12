@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_outer_wilds",
     "title": "Outer Wilds",
-    "source_refs": [
-      {
-        "title": "Outer Wilds（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Outer_Wilds",
-        "notes": "类型（动作冒险探索）、被困于 22 分钟时间循环、太阳超新星爆发后系统重置、靠玩家自身知识而非升级推进、真实物理模拟的引力与星体、调查 Nomai 遗迹解谜、第一人称、驾驶飞船探索、Mobius Digital 开发、Annapurna 发行、2019 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称太空探索冒险，玩家被困在一个 22 分钟的时间循环里，反复探索一个真实物理模拟的星系，调查外星种族 Nomai 的遗迹，靠自己积累的知识而非任何能力升级来揭开循环之谜。",
     "selection_reason": "作为「以玩家知识本身作为进度」与「时间循环承载非线性解谜」的代表：游戏不给任何能力或数值升级，唯一成长是玩家脑中的认知，每次循环都用所学解开新谜，是研究知识驱动型探索与时间循环结构的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "没有能力、装备或数值成长，进度完全体现为玩家掌握的知识与线索；飞船日志记录已知信息，玩家靠认知的累积而非系统解锁逐步逼近真相。",
     "failure_model": "每个循环以太阳超新星爆发摧毁星系而结束并重置，玩家死亡或被各类危害（缺氧、坠落、海怪等）杀死也会重启循环，但已获知识不会丢失。",
     "content_structure": "以一个 22 分钟时间循环内的多颗可自由降落、物理互相影响的星球为骨架，靠遍布各处的 Nomai 遗迹与环境线索构成一张需要玩家自行拼合的知识谜网，单人。",
-    "main_player_actions": ["驾驶", "滑翔", "秘密解谜"],
-    "main_player_decisions": ["探索路线", "时间分配", "秘密取舍"],
-    "main_player_experiences": ["探索发现", "情感叙事", "氛围营造"],
-    "main_mechanics": ["时间循环", "非线性探索", "环境叙事", "物理模拟", "分层秘密"],
-    "replayability_sources": ["分层秘密", "彩蛋收集"],
-    "production_constraints": ["Unity 引擎", "小型团队"],
-    "innovation_patterns": ["时间循环", "知识门控"],
-    "reusable_reference_patterns": ["时间循环", "环境叙事", "非线性探索"],
-    "non_replicable_risks": ["一次性体验", "系统复杂度"],
-    "genre": ["动作冒险", "开放世界"],
-    "art_style": ["低多边形"],
-    "audio_style": ["民谣配乐", "氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["科幻"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["自由操控", "沉浸代入"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "驾驶",
+      "滑翔",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "时间分配",
+      "秘密取舍"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "情感叙事",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "时间循环",
+      "非线性探索",
+      "环境叙事",
+      "物理模拟",
+      "分层秘密"
+    ],
+    "replayability_sources": [
+      "分层秘密",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "Unity 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "时间循环",
+      "知识门控"
+    ],
+    "reusable_reference_patterns": [
+      "时间循环",
+      "环境叙事",
+      "非线性探索"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "系统复杂度"
+    ],
+    "genre": [
+      "动作冒险",
+      "开放世界"
+    ],
+    "art_style": [
+      "低多边形"
+    ],
+    "audio_style": [
+      "民谣配乐",
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "科幻"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "自由操控",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "时间循环",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "22 分钟循环",
-            "quote_or_summary": "星系被困在 22 分钟的时间循环中，太阳超新星爆发后重置，玩家保留记忆、宇宙重新开始。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "知识门控",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "以认知代替升级",
-            "quote_or_summary": "游戏没有进度系统或升级，鼓励通过观察与发现而非数值成长推进，能否前进取决于玩家掌握的知识。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "环境叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Nomai 遗迹拼图",
-            "quote_or_summary": "玩家通过调查遍布星系的 Nomai 外星遗迹，拼合其历史与循环成因。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Outer Wilds 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Outer_Wilds",
-        "quote_or_summary": "第一人称太空探索冒险，22 分钟时间循环，真实物理模拟星系，调查 Nomai 遗迹解谜，靠知识而非升级推进，Mobius Digital 用 Unity 开发，2019 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "时间循环",
+      "知识门控",
+      "环境叙事"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "知识门控",
       "relation": "creates",
       "object": "发现乐趣",
-      "explanation": "把进度完全寄托于玩家脑中的知识而非任何能力或数值解锁，使「门」其实是认知障碍、钥匙是一次顿悟，玩家每解开一个谜都源于自己真正理解了某事，从而把推进做成纯粹的发现乐趣；但这也意味着体验高度依赖初次未知、难以重复。",
-      "evidence": [
-        {
-          "title": "认知门控解读",
-          "quote_or_summary": "用知识而非系统解锁作为进度，使推进等同于发现，但只在初见时成立。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把进度完全寄托于玩家脑中的知识而非任何能力或数值解锁，使「门」其实是认知障碍、钥匙是一次顿悟，玩家每解开一个谜都源于自己真正理解了某事，从而把推进做成纯粹的发现乐趣；但这也意味着体验高度依赖初次未知、难以重复。"
     }
   ]
 }

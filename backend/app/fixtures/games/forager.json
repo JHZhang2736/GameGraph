@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_forager",
     "title": "Forager",
-    "source_refs": [
-      {
-        "title": "Forager（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Forager_(video_game)",
-        "notes": "类型（俯视开放世界放置/冒险）、资源高速再生供大量采集、采集制作与升级、购买地块扩张探索、技能树解锁能力与配方、可搭建自动化系统采集与生产、解谜、受塞尔达/泰拉瑞亚/星露谷启发、HopFrog 开发、Humble Bundle 发行、2019 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款俯视视角的开放世界放置冒险游戏，资源会高速再生供玩家大量采集，玩家以此制作物件、搭建基地、购买地块扩张探索、点亮技能树解锁能力，并逐步搭建自动化系统替自己收集与生产。",
     "selection_reason": "作为「把放置游戏的滚雪球快感做成可主动操作的采集冒险」的代表：用高速再生的资源与逐级解锁的技能、自动化，让采集—制作—扩张形成不断加速的正反馈循环，是研究放置式正反馈与自动化滚雪球的高价值参考。"
   },
@@ -20,71 +13,81 @@
     "progression_model": "靠采集资源、制作升级与点亮技能树解锁能力、配方与自动化推进，并购买地块扩张地图；进度体现为技能树、自动化规模与已开放岛屿，正反馈不断加速。",
     "failure_model": "战斗与危险较轻，生命耗尽只会短暂受挫而非永久失败，整体以采集扩张推进而非生死，主要「失败」是资源或布局规划不当导致的效率瓶颈。",
     "content_structure": "在由可逐块购买的岛屿拼成的开放世界中以采集、制作、技能树、自动化与解谜为骨架，含多种资源、配方与可解锁地块，单人。",
-    "main_player_actions": ["采集", "建造", "近战攻击"],
-    "main_player_decisions": ["优先级排序", "资源取舍", "基地规划"],
-    "main_player_experiences": ["滚雪球快感", "经营成就", "收集养成"],
-    "main_mechanics": ["采集", "合成制作", "自动化", "能力树", "建造"],
-    "replayability_sources": ["全收集", "彩蛋收集"],
-    "production_constraints": ["像素美术", "单人开发"],
-    "innovation_patterns": ["放置玩法", "自动化"],
-    "reusable_reference_patterns": ["放置玩法", "自动化", "采集"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["沙盒", "动作冒险"],
-    "art_style": ["像素美术"],
-    "audio_style": ["芯片音乐"],
-    "perspective": ["俯视"],
-    "theme": ["田园生活", "奇幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["轻松休闲", "规划满足"],
-    "team_model": ["单人开发"],
+    "main_player_actions": [
+      "采集",
+      "建造",
+      "近战攻击"
+    ],
+    "main_player_decisions": [
+      "优先级排序",
+      "资源取舍",
+      "基地规划"
+    ],
+    "main_player_experiences": [
+      "滚雪球快感",
+      "经营成就",
+      "收集养成"
+    ],
+    "main_mechanics": [
+      "采集",
+      "合成制作",
+      "自动化",
+      "能力树",
+      "建造"
+    ],
+    "replayability_sources": [
+      "全收集",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "像素美术",
+      "单人开发"
+    ],
+    "innovation_patterns": [
+      "放置玩法",
+      "自动化"
+    ],
+    "reusable_reference_patterns": [
+      "放置玩法",
+      "自动化",
+      "采集"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "沙盒",
+      "动作冒险"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "芯片音乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "田园生活",
+      "奇幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "轻松休闲",
+      "规划满足"
+    ],
+    "team_model": [
+      "单人开发"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "放置玩法",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "想主动玩的放置游戏",
-            "quote_or_summary": "游戏被形容为「一款你会想主动一直玩下去的放置游戏」，把放置机制与冒险探索结合，资源高速再生供大量采集与升级。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "自动化",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "自动化采集生产",
-            "quote_or_summary": "随着推进，玩家可搭建自动化系统来替自己采集资源并生产其他产品与物资。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "采集",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "高速再生资源",
-            "quote_or_summary": "资源以极高速率再生，让玩家可大量收集用于制作与升级。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Forager 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Forager_(video_game)",
-        "quote_or_summary": "俯视开放世界放置冒险，资源高速再生供大量采集，制作建造、购买地块扩张、技能树解锁、自动化采集生产、解谜，HopFrog 开发，2019 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "放置玩法",
+      "自动化",
+      "采集"
+    ]
   },
   "claims": [
     {
@@ -92,16 +95,7 @@
       "subject": "放置玩法",
       "relation": "creates",
       "object": "滚雪球快感",
-      "explanation": "用高速再生的资源、逐级解锁的技能与可接管劳作的自动化，让采集—制作—扩张形成不断自我加速的正反馈，使玩家持续体验到产出与实力越滚越快的快感，可复用于希望以放置式正反馈维持长期黏性的轻量经营设计。",
-      "evidence": [
-        {
-          "title": "正反馈滚雪球解读",
-          "quote_or_summary": "高速再生与自动化叠加形成自我加速循环，制造强烈滚雪球快感。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "用高速再生的资源、逐级解锁的技能与可接管劳作的自动化，让采集—制作—扩张形成不断自我加速的正反馈，使玩家持续体验到产出与实力越滚越快的快感，可复用于希望以放置式正反馈维持长期黏性的轻量经营设计。"
     }
   ]
 }

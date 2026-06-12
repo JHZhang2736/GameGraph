@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_heretics_fork",
     "title": "Heretic's Fork",
-    "source_refs": [
-      {
-        "title": "Heretic's Fork（Steam，appid 2181610）",
-        "url": "https://store.steampowered.com/app/2181610/Heretics_Fork/",
-        "notes": "类型（肉鸽牌组构筑 + 自动塔防）、9FingerGames 开发、Ravenage Games 发行、2023 年 9 月正式发售、用卡牌建造地狱塔防抵御源源不断的罪人、进攻分塔（自动喷射弹幕）与驻军（定时派出小兵）、伤害分地狱火/神圣/邪秽三系、高稀有度卡升级防御、局中合成系统（两张同稀有度卡配对换三选一升级卡）、为地狱各「部门」（地狱各圈）轮班并按惩罚罪人数领工资、用赚来的钱解锁新角色与卡牌等事实来源。"
-      }
-    ],
     "short_description": "一款融合肉鸽牌组构筑与自动塔防的游戏，9FingerGames 开发、Ravenage Games 发行：玩家化身地狱实习生，用卡牌搭建塔与驻军组成的防线，自动迎击源源不断逃窜的罪人——塔会自动喷射弹幕、驻军定时派出小兵，伤害分地狱火/神圣/邪秽三系，高稀有度卡可升级防御、局中还能将两张同稀有度卡合成升级；以「为地狱各部门轮班、按惩罚罪人数领工资」的黑色幽默框架，用工资解锁新角色与卡牌，2023 年发售。",
     "selection_reason": "作为「牌组构筑 × 自动塔防缝合」的代表：玩家只负责出牌布防与升级构筑，塔与驻军全自动开火，把执行交给系统、让玩家专注于卡牌组合与三系搭配；再套上「地狱打工」的黑色幽默元叙事，是研究类型缝合、自动战斗减负与构筑驱动塔防的高价值参考。"
   },
@@ -20,71 +13,83 @@
     "progression_model": "局内靠抽卡、升级与合成（两张同稀有度卡换三选一升级卡）滚出更强防线；跨局靠工资解锁新角色与卡牌拓展构筑空间，进度体现为构筑强度、已解锁角色卡池与可承受的罪人强度。",
     "failure_model": "防线被成群逃窜的罪人突破、未能撑过本班的进攻即本局结束，肉鸽式重来，布防失当、三系搭配失衡或构筑不成型都会让防线崩溃。",
     "content_structure": "以地狱各「部门」（各圈）的轮班关卡、塔与驻军组成的自动防线为骨架，靠抽卡-合成构筑与三系搭配承载局内成长，以工资解锁的角色与卡牌承载肉鸽重玩，单人。",
-    "main_player_actions": ["出牌", "卡牌取舍", "道具运用"],
-    "main_player_decisions": ["装备搭配", "增益选择", "风险取舍"],
-    "main_player_experiences": ["构筑乐趣", "滚雪球快感", "系统掌控"],
-    "main_mechanics": ["牌组构筑", "塔防", "自动战斗", "召唤战斗", "元进度"],
-    "replayability_sources": ["构筑多样", "角色解锁", "难度分级"],
-    "production_constraints": ["小型团队", "极简界面"],
-    "innovation_patterns": ["类型缝合", "自动战斗"],
-    "reusable_reference_patterns": ["牌组构筑", "自动战斗", "类型缝合"],
-    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
-    "genre": ["卡牌构筑", "塔防", "类肉鸽"],
-    "art_style": ["哥特卡通"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["俯视"],
-    "theme": ["宗教", "黑色幽默"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["策略权衡", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "出牌",
+      "卡牌取舍",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "增益选择",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "滚雪球快感",
+      "系统掌控"
+    ],
+    "main_mechanics": [
+      "牌组构筑",
+      "塔防",
+      "自动战斗",
+      "召唤战斗",
+      "元进度"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "角色解锁",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "极简界面"
+    ],
+    "innovation_patterns": [
+      "类型缝合",
+      "自动战斗"
+    ],
+    "reusable_reference_patterns": [
+      "牌组构筑",
+      "自动战斗",
+      "类型缝合"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "系统复杂度"
+    ],
+    "genre": [
+      "卡牌构筑",
+      "塔防",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "哥特卡通"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "宗教",
+      "黑色幽默"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "类型缝合",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "牌组构筑融合塔防",
-            "quote_or_summary": "用卡牌建造塔与驻军组成的塔防防线，把肉鸽牌组构筑与自动塔防缝进同一套循环。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "自动战斗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "塔与驻军自动开火",
-            "quote_or_summary": "塔自动喷射弹幕、驻军定时派出小兵，战斗执行全自动，玩家只负责出牌布防与升级构筑。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "塔防",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "迎击成批罪人",
-            "quote_or_summary": "玩家布下塔与驻军组成防线，抵御一波波源源不断逃窜的罪人，守不住即本局结束。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Heretic's Fork 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/2181610/Heretics_Fork/",
-        "quote_or_summary": "肉鸽牌组构筑 + 自动塔防，卡牌建塔与驻军自动迎击罪人、地狱火/神圣/邪秽三系、合成升级、地狱打工领工资解锁角色卡牌，9FingerGames 开发、Ravenage Games 发行，2023 年发售。",
-        "notes": "事实取自 Steam 商店页与多家媒体综述。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "类型缝合",
+      "自动战斗",
+      "塔防"
+    ]
   },
   "claims": [
     {
@@ -92,16 +97,7 @@
       "subject": "自动战斗",
       "relation": "reduces",
       "object": "操作摩擦",
-      "explanation": "把塔与驻军的开火全部交给系统自动执行，等于剥离了塔防里「手动放置与瞄准」的实时操作负担，让玩家的注意力完全落到「出什么牌、怎么搭三系、合成成什么」的构筑决策上：战斗成了对你这套牌的自动检验，而非手忙脚乱的操作考验。这降低了上手门槛、也放大了构筑的权重，使牌组构筑与塔防能顺畅缝合而不互相抢占操作带宽。可复用于希望用「自动化执行」剥离实时操作摩擦、把玩家心智集中到构筑与策略层的设计。",
-      "evidence": [
-        {
-          "title": "自动执行减负解读",
-          "quote_or_summary": "塔与驻军自动开火剥离了手动放置瞄准的操作负担，使玩家专注于出牌与三系构筑，构筑权重被放大。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把塔与驻军的开火全部交给系统自动执行，等于剥离了塔防里「手动放置与瞄准」的实时操作负担，让玩家的注意力完全落到「出什么牌、怎么搭三系、合成成什么」的构筑决策上：战斗成了对你这套牌的自动检验，而非手忙脚乱的操作考验。这降低了上手门槛、也放大了构筑的权重，使牌组构筑与塔防能顺畅缝合而不互相抢占操作带宽。可复用于希望用「自动化执行」剥离实时操作摩擦、把玩家心智集中到构筑与策略层的设计。"
     }
   ]
 }

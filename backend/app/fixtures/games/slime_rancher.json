@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_slime_rancher",
     "title": "Slime Rancher",
-    "source_refs": [
-      {
-        "title": "Slime Rancher（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Slime_Rancher",
-        "notes": "类型（第一人称农场生活模拟）、用「真空背包 Vacpack」吸取与发射史莱姆、饲养与繁育、史莱姆吃食产出「便便 plort」换钱、探索与牧场升级、Largo/Tarr 失控风险、星球 Far Far Range、彩色卡通美术、Monomi Park 用 Unity 开发、2017 年正式发售等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称农场生活模拟游戏，玩家用「真空背包」在异星牧场吸取、饲养与繁育名为史莱姆的胶状生物，喂食产出可卖钱的「便便」用于升级牧场，同时管理史莱姆失控变成危险 Tarr 的风险。",
     "selection_reason": "作为「把养殖循环包装成轻松探索」的代表：用一把多用途的真空背包统一吸取、投喂与发射操作，把饲养、繁育与卖钱做成顺滑的经济循环，又用 Largo/Tarr 失控机制注入风险，是研究轻量经营循环与友好探索手感的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "靠卖便便赚取 Newbucks 升级牧场设施与真空背包、解锁新工具与区域、收集更多史莱姆品种推进；进度体现为牧场规模、装备升级与图鉴收集，无失败即清零的硬性惩罚。",
     "failure_model": "本身没有传统胜负；主要风险是 Largo 史莱姆吃错便便会变成具攻击性、会扩散并伤害玩家的 Tarr，需用清水等手段应对，玩家生命耗尽会短暂退回牧场而非永久失败。",
     "content_structure": "在异星牧场 Far Far Range 的开放区域中以真空背包探索、史莱姆饲养繁育、便便经济与牧场升级为骨架，含多种史莱姆品种与可解锁区域，单人。",
-    "main_player_actions": ["采集", "社交互动", "探索"],
-    "main_player_decisions": ["关系经营", "资源取舍", "探索路线"],
-    "main_player_experiences": ["收集养成", "经营成就", "探索发现"],
-    "main_mechanics": ["多用途道具", "好感系统", "繁育", "采集", "牧场经营"],
-    "replayability_sources": ["全收集", "外观收集", "任务多样"],
-    "production_constraints": ["卡通渲染", "Unity 引擎", "小型团队"],
-    "innovation_patterns": ["多用途道具", "牧场经营"],
-    "reusable_reference_patterns": ["多用途道具", "牧场经营", "好感系统"],
-    "non_replicable_risks": ["强美术风格"],
-    "genre": ["模拟经营", "沙盒"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["轻松配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["科幻", "田园生活"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["轻松休闲", "自由操控"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "采集",
+      "社交互动",
+      "探索"
+    ],
+    "main_player_decisions": [
+      "关系经营",
+      "资源取舍",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "收集养成",
+      "经营成就",
+      "探索发现"
+    ],
+    "main_mechanics": [
+      "多用途道具",
+      "好感系统",
+      "繁育",
+      "采集",
+      "牧场经营"
+    ],
+    "replayability_sources": [
+      "全收集",
+      "外观收集",
+      "任务多样"
+    ],
+    "production_constraints": [
+      "卡通渲染",
+      "Unity 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "多用途道具",
+      "牧场经营"
+    ],
+    "reusable_reference_patterns": [
+      "多用途道具",
+      "牧场经营",
+      "好感系统"
+    ],
+    "non_replicable_risks": [
+      "强美术风格"
+    ],
+    "genre": [
+      "模拟经营",
+      "沙盒"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "轻松配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "科幻",
+      "田园生活"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "轻松休闲",
+      "自由操控"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "多用途道具",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "真空背包",
-            "quote_or_summary": "玩家用「真空背包」（Vacpack）吸取、储存、投喂与发射史莱姆、食物与便便，一具工具统揽核心操作。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "牧场经营",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "便便经济",
-            "quote_or_summary": "给史莱姆喂对食物会产出可卖钱的便便，收入用于升级牧场与装备，构成核心经济循环。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "失控风险",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Largo 与 Tarr",
-            "quote_or_summary": "Largo 混合史莱姆若吃下错误的便便会变成有攻击性、会扩散并伤害玩家的 Tarr，需用清水等手段应对。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Slime Rancher 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Slime_Rancher",
-        "quote_or_summary": "第一人称农场生活模拟，用真空背包吸取与发射史莱姆，饲养繁育，史莱姆产便便换钱，探索与牧场升级，Largo/Tarr 失控风险，星球 Far Far Range，彩色卡通美术，Monomi Park 用 Unity 开发，2017 年正式发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "多用途道具",
+      "牧场经营",
+      "失控风险"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "多用途道具",
       "relation": "creates",
       "object": "操作顺滑",
-      "explanation": "用一把「真空背包」把吸取、储存、投喂与发射等本可分散的操作统一到单一工具与单一交互动作上，让探索、采集与养殖循环无缝衔接、上手极低，把经营玩法包装成轻松友好的第一人称体验，可复用于追求低门槛与顺滑循环的休闲设计。",
-      "evidence": [
-        {
-          "title": "工具统一解读",
-          "quote_or_summary": "单一多用途工具统一核心操作，使经营循环顺滑、上手友好。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "用一把「真空背包」把吸取、储存、投喂与发射等本可分散的操作统一到单一工具与单一交互动作上，让探索、采集与养殖循环无缝衔接、上手极低，把经营玩法包装成轻松友好的第一人称体验，可复用于追求低门槛与顺滑循环的休闲设计。"
     }
   ]
 }

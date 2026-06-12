@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_wildermyth",
     "title": "Wildermyth",
-    "source_refs": [
-      {
-        "title": "Wildermyth（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Wildermyth",
-        "notes": "类型（队伍制程序化叙事战术 RPG）、Worldwalker Games 开发与发行、2019 年抢先体验、2021 年 6 月正式发售、追随英雄从青涩到壮年再到老去的一生、XCOM 式网格回合战斗（贴墙 Walling 与侧翼 Flanking）、神秘交融以魔法改造战场、三职业（战士/猎人/秘术师）、随机性格特质、遭遇与事件带来永久且定义角色的转变等事实来源。"
-      },
-      {
-        "title": "Wildermyth（Steam，appid 763890）",
-        "url": "https://store.steampowered.com/app/763890/Wildermyth/",
-        "notes": "程序化叙事生成独特角色经历与关系、纸艺立体书美术、角色跨世代成长与老去、战术网格战斗等事实来源。"
-      }
-    ],
     "short_description": "一款队伍制的程序化叙事战术 RPG，Worldwalker Games 开发，2019 年抢先体验、2021 年 6 月正式发售：玩家带领一队英雄，追随他们从拿着草叉的青涩岁月，走到能力鼎盛的壮年，再到衰老与被铭记。战斗是 XCOM 式的网格回合制，强调走位、贴墙与侧翼，并可用「神秘交融」以魔法改造战场。三种职业（战士、猎人、秘术师）配上随机性格特质，沿途的遭遇与事件会给角色带来永久且定义其一生的转变，每次战役因而都讲出一段不同的故事。",
     "selection_reason": "作为「用程序化叙事讲一代英雄的一生」的代表：把 XCOM 式战术战斗与一套生成角色经历、关系与永久转变的叙事引擎绑在一起，让英雄跨越数十年从青涩走向老去、每场战役都长出独一无二的故事，是研究程序化叙事、世代传承与战术 RPG 情感投入的高价值参考。"
   },
@@ -25,71 +13,80 @@
     "progression_model": "靠战役章节推进剧情，靠战斗与事件让角色升级、点出能力并积累永久的角色转变，靠世代更替让老去的英雄退场、新英雄接续传承；进度体现为角色成长、关系网络与战役进程。",
     "failure_model": "战斗中角色可被击倒甚至永久重伤或死亡，阵亡的英雄会真正离场、由他人接替，战役整体的「失败」是关键防线失守导致世界局势恶化，核心压力在于以走位与侧翼保全这些已与玩家产生羁绊的角色。",
     "content_structure": "以队伍的战术战斗与跨世代的角色叙事交织为骨架，靠网格回合战斗、程序生成事件与永久角色转变承载玩法，以程序化叙事与多结局承载重玩，单人或合作。",
-    "main_player_actions": ["回合战斗", "队伍管理", "对话选择"],
-    "main_player_decisions": ["道德抉择", "战略规划", "装备搭配"],
-    "main_player_experiences": ["运筹帷幄", "情感叙事", "收集养成"],
-    "main_mechanics": ["回合制网格战术", "站位战斗", "世代传承", "分支叙事"],
-    "replayability_sources": ["程序生成", "多结局", "难度分级"],
-    "production_constraints": ["小型团队", "纸艺美术"],
-    "innovation_patterns": ["程序化叙事", "世代传承"],
-    "reusable_reference_patterns": ["回合制网格战术", "分支叙事"],
-    "non_replicable_risks": ["高内容产量", "玩家留存"],
-    "genre": ["回合制策略", "角色扮演"],
-    "art_style": ["纸艺美术"],
-    "audio_style": ["民谣配乐"],
-    "perspective": ["俯视"],
-    "theme": ["奇幻"],
-    "narrative_style": ["程序化叙事", "分支叙事"],
-    "game_feel": ["策略权衡", "桌游质感"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "回合战斗",
+      "队伍管理",
+      "对话选择"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "战略规划",
+      "装备搭配"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "情感叙事",
+      "收集养成"
+    ],
+    "main_mechanics": [
+      "回合制网格战术",
+      "站位战斗",
+      "世代传承",
+      "分支叙事"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "多结局",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "纸艺美术"
+    ],
+    "innovation_patterns": [
+      "程序化叙事",
+      "世代传承"
+    ],
+    "reusable_reference_patterns": [
+      "回合制网格战术",
+      "分支叙事"
+    ],
+    "non_replicable_risks": [
+      "高内容产量",
+      "玩家留存"
+    ],
+    "genre": [
+      "回合制策略",
+      "角色扮演"
+    ],
+    "art_style": [
+      "纸艺美术"
+    ],
+    "audio_style": [
+      "民谣配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "奇幻"
+    ],
+    "narrative_style": [
+      "程序化叙事",
+      "分支叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "桌游质感"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "程序化叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "生成独特角色经历",
-            "quote_or_summary": "一套程序化叙事引擎生成独特的角色经历、关系与转变，使每次战役都讲出不同的故事。",
-            "notes": "维基百科与 Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "世代传承",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "英雄跨世代成长老去",
-            "quote_or_summary": "玩家追随英雄从青涩到壮年再到老去的一生，老去的角色退场、由新英雄接续传承。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "回合制网格战术",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "XCOM 式网格战斗",
-            "quote_or_summary": "战斗为 XCOM 式网格回合制，强调走位、贴墙与侧翼，并可用神秘交融以魔法改造战场。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Wildermyth 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Wildermyth",
-        "quote_or_summary": "队伍制程序化叙事战术 RPG，XCOM 式网格战斗（走位/贴墙/侧翼/神秘交融）、三职业与随机特质、角色跨世代成长老去、永久转变、纸艺立体书美术，Worldwalker Games 开发，2021 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "程序化叙事",
+      "世代传承",
+      "回合制网格战术"
+    ]
   },
   "claims": [
     {
@@ -97,16 +94,7 @@
       "subject": "世代传承",
       "relation": "creates",
       "object": "情感叙事",
-      "explanation": "让玩家陪一个角色走完从青涩到老去的一生——看他在事件里做选择、结下情谊、被野兽咬伤后永久兽化、最终衰老退场——等于把「时间」变成情感的黏合剂：投入得越久，离别就越重。程序化叙事再为这条人生线不断添上专属于你这队人的转折，使角色不是可替换的数值棋子，而是有来历、会落幕的人。于是战术上的每一次保全或失去都带着分量，叙事的情感由「养成 + 终将告别」自然生长。可复用于希望用「角色跨世代成长与永久转变」把时间投入转化为情感叙事与不可替换感的战术 RPG 设计——但其代价是巨大的叙事内容产量。",
-      "evidence": [
-        {
-          "title": "世代陪伴生情感解读",
-          "quote_or_summary": "陪角色走完一生使时间成为情感黏合剂，程序化转折让角色不可替换，养成与告别自然生发情感叙事。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让玩家陪一个角色走完从青涩到老去的一生——看他在事件里做选择、结下情谊、被野兽咬伤后永久兽化、最终衰老退场——等于把「时间」变成情感的黏合剂：投入得越久，离别就越重。程序化叙事再为这条人生线不断添上专属于你这队人的转折，使角色不是可替换的数值棋子，而是有来历、会落幕的人。于是战术上的每一次保全或失去都带着分量，叙事的情感由「养成 + 终将告别」自然生长。可复用于希望用「角色跨世代成长与永久转变」把时间投入转化为情感叙事与不可替换感的战术 RPG 设计——但其代价是巨大的叙事内容产量。"
     }
   ]
 }

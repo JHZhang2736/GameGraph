@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_salt_and_sanctuary",
     "title": "Salt and Sanctuary",
-    "source_refs": [
-      {
-        "title": "Salt and Sanctuary（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Salt_and_Sanctuary",
-        "notes": "类型（2D 类魂类银河城）、近战与耐力、盐（salt）死亡惩罚与回收、避难所与信条、技能树与职业、Ska Studios 双人团队等事实来源。"
-      }
-    ],
     "short_description": "一款将类魂战斗与类银河城探索搬上 2D 平面的手绘动作角色扮演游戏，玩家在一座阴森海岛上战斗、构筑角色，死亡会掉落货币「盐」并可回收。",
     "selection_reason": "作为把《黑暗之魂》的耐力战斗、死亡掉落回收与庞大技能树系统忠实移植进 2D 横版平台的早期范本：由 Ska Studios 夫妻二人团队完成，是研究「3D 类魂系统如何 2D 化」与小团队驾驭系统复杂度的高价值参考。"
   },
@@ -20,71 +13,92 @@
     "progression_model": "RPG 式的出身、职业与属性成长，配合一棵庞大的技能树；强化以盐为货币，能力解锁兼作类银河城探索门控，鼓励围绕武器流派做长期构筑规划。",
     "failure_model": "死亡掉落全部盐并回到避难所，需返回死亡处取回，途中再死则永久丢失；战斗中耐力耗尽会陷入被动甚至被处决。",
     "content_structure": "一座相互连通的阴森海岛，由多区域、Boss 与捷径组成，避难所作存档与信条据点；约 600 件物品与多类武器流派支撑构筑深度，并支持本地合作与对战。",
-    "main_player_actions": ["近战攻击", "远程攻击", "魔法释放", "翻滚闪避", "格挡", "平台跳跃"],
-    "main_player_decisions": ["能力树优先级", "风险取舍", "存档时机", "信条选择"],
-    "main_player_experiences": ["战斗精通", "探索发现", "氛围营造"],
-    "main_mechanics": ["死亡惩罚", "能力门控探索", "能力树", "耐力管理", "格挡"],
-    "replayability_sources": ["构筑多样", "难度分级", "全收集", "Boss 挑战"],
-    "production_constraints": ["手绘美术", "小型团队", "双人团队"],
-    "innovation_patterns": ["类魂2D化", "死亡惩罚", "能力树"],
-    "reusable_reference_patterns": ["死亡惩罚", "能力门控探索", "能力树"],
-    "non_replicable_risks": ["双人高产", "系统复杂度"],
-    "genre": ["类魂", "类银河城"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["横版2D"],
-    "theme": ["废墟王国", "黑暗奇幻"],
-    "narrative_style": ["碎片化叙事", "环境叙事"],
-    "game_feel": ["精准近战", "厚重打击", "动量"],
-    "team_model": ["小团队", "双人团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "远程攻击",
+      "魔法释放",
+      "翻滚闪避",
+      "格挡",
+      "平台跳跃"
+    ],
+    "main_player_decisions": [
+      "能力树优先级",
+      "风险取舍",
+      "存档时机",
+      "信条选择"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "探索发现",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "死亡惩罚",
+      "能力门控探索",
+      "能力树",
+      "耐力管理",
+      "格挡"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "难度分级",
+      "全收集",
+      "Boss 挑战"
+    ],
+    "production_constraints": [
+      "手绘美术",
+      "小型团队",
+      "双人团队"
+    ],
+    "innovation_patterns": [
+      "类魂2D化",
+      "死亡惩罚",
+      "能力树"
+    ],
+    "reusable_reference_patterns": [
+      "死亡惩罚",
+      "能力门控探索",
+      "能力树"
+    ],
+    "non_replicable_risks": [
+      "双人高产",
+      "系统复杂度"
+    ],
+    "genre": [
+      "类魂",
+      "类银河城"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "废墟王国",
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "精准近战",
+      "厚重打击",
+      "动量"
+    ],
+    "team_model": [
+      "小团队",
+      "双人团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "类魂2D化",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "类型融合",
-            "quote_or_summary": "游戏融合类银河城与类魂，将《黑暗之魂》的战斗系统与《恶魔城》式探索结合到 2D 平面。",
-            "notes": "维基百科类型描述。"
-          }
-        ]
-      },
-      {
-        "tag": "死亡惩罚",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "盐的掉落与回收",
-            "quote_or_summary": "死亡掉落货币盐，需返回死亡地点取回，机制对应《黑暗之魂》。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "能力树",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "技能树与职业",
-            "quote_or_summary": "游戏含出身、职业、属性成长与一棵庞大的技能树，约 600 件物品支撑构筑。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Salt and Sanctuary 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Salt_and_Sanctuary",
-        "quote_or_summary": "2D 类魂类银河城，耐力战斗，盐掉落回收，庞大技能树与职业，避难所与信条，Ska Studios 双人团队约两年半完成，2016 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "类魂2D化",
+      "死亡惩罚",
+      "能力树"
+    ]
   },
   "claims": [
     {
@@ -92,16 +106,7 @@
       "subject": "死亡惩罚",
       "relation": "creates",
       "object": "探索张力",
-      "explanation": "死亡掉落全部盐、且回收途中再死即永久丢失，使每次推进都背着一笔随身的沉没成本，把「继续冒险」与「先回收保本」变成持续的实时取舍，是类魂体验张力的核心来源，可跨题材复用。",
-      "evidence": [
-        {
-          "title": "盐回收解读",
-          "quote_or_summary": "掉落的盐必须冒险取回，否则永久损失。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "死亡掉落全部盐、且回收途中再死即永久丢失，使每次推进都背着一笔随身的沉没成本，把「继续冒险」与「先回收保本」变成持续的实时取舍，是类魂体验张力的核心来源，可跨题材复用。"
     }
   ]
 }

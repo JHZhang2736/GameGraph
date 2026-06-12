@@ -8,8 +8,6 @@ import {
   LoadingState,
   PageHeader,
 } from "@/components/shell/view-states";
-import { ConfidenceBadge } from "@/components/artifacts/confidence-badge";
-import { QualityBadge } from "@/components/artifacts/quality-badge";
 import {
   Table,
   TableBody,
@@ -44,8 +42,6 @@ export default function GamesPage() {
             <TableRow>
               <TableHead>标题</TableHead>
               <TableHead>简述</TableHead>
-              <TableHead>置信度</TableHead>
-              <TableHead>质量</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -58,12 +54,6 @@ export default function GamesPage() {
                 </TableCell>
                 <TableCell className="text-muted-foreground">
                   {game.short_description}
-                </TableCell>
-                <TableCell>
-                  <ConfidenceBadge level={game.confidence} />
-                </TableCell>
-                <TableCell>
-                  <QualityBadge status={game.quality_status} />
                 </TableCell>
               </TableRow>
             ))}

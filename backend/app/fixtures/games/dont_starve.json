@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_dont_starve",
     "title": "Don't Starve",
-    "source_refs": [
-      {
-        "title": "Don't Starve（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Don%27t_Starve",
-        "notes": "类型（生存，含动作冒险与肉鸽元素）、随机生成开放世界、采集与合成、饥饿/生命/理智三表、昼夜循环、永久死亡（肉块雕像等少数例外）、提姆·伯顿式纸片剪贴哥特美术、超自然世界「the Constant」、Klei 用 Lua 自研引擎、2013 年发售、饥饿归零致死等事实来源。"
-      }
-    ],
     "short_description": "一款黑暗奇幻生存游戏，玩家流落随机生成的超自然世界，靠采集与合成在饥饿、生命与理智三重压力下求生，应对昼夜循环与怪物，标准模式下一旦死亡即永久结束。",
     "selection_reason": "作为「把心理状态变成可管理资源」的代表：在饥饿与生命之外引入「理智」一表，理智过低会引发危险幻象，迫使玩家像管理食物一样管理精神状态，是研究生存资源维度与情绪机制化的高价值参考。"
   },
@@ -20,71 +13,84 @@
     "progression_model": "无固定等级；玩家靠解锁配方、积累装备与扩张据点变强，并以经验解锁更多可玩角色，进度主要体现为生存天数、配方解锁与据点规模，单局死亡基本不保留。",
     "failure_model": "饥饿归零会持续扣减生命直至死亡；怪物攻击、环境灾害，或理智过低（低于约 15%）引发的幻象也会致死，标准模式为永久死亡，仅肉块雕像等少数手段可复活。",
     "content_structure": "在随机生成、含多种生物群系的开放世界中求生，以采集合成、三表生存、昼夜循环与可解锁角色为骨架，含独特生物与超自然实体，本体为单人。",
-    "main_player_actions": ["采集", "合成", "走位"],
-    "main_player_decisions": ["资源取舍", "风险取舍", "探索路线"],
-    "main_player_experiences": ["探索发现", "氛围营造", "涌现玩法"],
-    "main_mechanics": ["采集", "合成制作", "理智系统", "昼夜循环", "永久死亡", "程序生成"],
-    "replayability_sources": ["程序生成", "永久死亡", "角色解锁"],
-    "production_constraints": ["手绘美术", "自研引擎", "小型团队"],
-    "innovation_patterns": ["理智系统", "昼夜循环"],
-    "reusable_reference_patterns": ["理智系统", "程序生成", "氛围营造"],
-    "non_replicable_risks": ["强美术风格"],
-    "genre": ["生存", "类肉鸽"],
-    "art_style": ["手绘美术", "哥特卡通"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["等距"],
-    "theme": ["黑暗童话", "超现实"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "采集",
+      "合成",
+      "走位"
+    ],
+    "main_player_decisions": [
+      "资源取舍",
+      "风险取舍",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "氛围营造",
+      "涌现玩法"
+    ],
+    "main_mechanics": [
+      "采集",
+      "合成制作",
+      "理智系统",
+      "昼夜循环",
+      "永久死亡",
+      "程序生成"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "永久死亡",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "手绘美术",
+      "自研引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "理智系统",
+      "昼夜循环"
+    ],
+    "reusable_reference_patterns": [
+      "理智系统",
+      "程序生成",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "强美术风格"
+    ],
+    "genre": [
+      "生存",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "手绘美术",
+      "哥特卡通"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "等距"
+    ],
+    "theme": [
+      "黑暗童话",
+      "超现实"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "理智系统",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "理智三表之一",
-            "quote_or_summary": "饥饿、生命、理智构成三重表盘，理智过低（约低于 15%）会引发可致命的幻象生物。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "昼夜循环",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "昼夜玩法切换",
-            "quote_or_summary": "昼夜循环显著改变玩法，黑暗本身即威胁，玩家须在天黑前准备光源与防御。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "永久死亡",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "标准模式永死",
-            "quote_or_summary": "标准玩法中死亡为永久，仅肉块雕像等少数手段可复活。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Don't Starve 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Don%27t_Starve",
-        "quote_or_summary": "生存游戏，随机生成开放世界，采集合成，饥饿/生命/理智三表，昼夜循环，永久死亡，伯顿式纸片剪贴哥特美术，超自然世界 the Constant，Klei 用 Lua 自研引擎，2013 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "理智系统",
+      "昼夜循环",
+      "永久死亡"
+    ]
   },
   "claims": [
     {
@@ -92,16 +98,7 @@
       "subject": "昼夜循环",
       "relation": "creates",
       "object": "节奏张力",
-      "explanation": "昼夜交替把相对安全的白天采集与危险的黑夜对抗强制错开，使玩家每天都在「趁亮备战、入夜防守」的可预期循环中行动，制造稳定而反复的紧张松弛节奏，可复用于任何生存或探索游戏的时间压力设计。",
-      "evidence": [
-        {
-          "title": "昼夜节奏解读",
-          "quote_or_summary": "白天采集与黑夜威胁交替，形成可预期的紧张与松弛节奏。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "昼夜交替把相对安全的白天采集与危险的黑夜对抗强制错开，使玩家每天都在「趁亮备战、入夜防守」的可预期循环中行动，制造稳定而反复的紧张松弛节奏，可复用于任何生存或探索游戏的时间压力设计。"
     }
   ]
 }

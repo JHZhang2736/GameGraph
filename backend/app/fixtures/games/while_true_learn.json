@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_while_true_learn",
     "title": "while True: learn()",
-    "source_refs": [
-      {
-        "title": "while True: learn()（Steam，appid 619150）",
-        "url": "https://store.steampowered.com/app/619150/while_True_learn/",
-        "notes": "类型（机器学习主题解谜模拟）、luden.io 开发、2018 年发售、玩家扮演机器学习工程师为「猫语翻译」搭建系统、用可视化编程连接黑箱函数把不同形状/颜色的数据分流到对应输出、各输出有数量与准确度阈值、节点数量与时间受限、无需写代码、内容松散取材自真实机器学习（专家系统到循环神经网络）、含赚钱升级的元进度、跨 PC/移动/主机平台等事实来源。"
-      },
-      {
-        "title": "while True: learn() · Thinky Games",
-        "url": "https://thinkygames.com/games/while-true-learn/",
-        "notes": "可视化节点编程、数据分流解谜、寓教于乐讲解机器学习概念等事实来源。"
-      }
-    ],
     "short_description": "一款以机器学习为主题的解谜模拟游戏，luden.io 开发：玩家扮演一名机器学习工程师，发现自家猫咪似乎比自己更懂建模，于是着手搭建「猫语—人话」翻译系统；玩法是用可视化编程把一连串黑箱函数连成数据流，将不同形状与颜色的数据准确分流到对应输出（每路有数量与准确度阈值），在有限节点与时间内达标，全程无需写一行代码；内容松散取材自真实机器学习技术（从专家系统到循环神经网络），并含赚钱升级的元进度，2018 年发售、跨多平台。",
     "selection_reason": "作为「用可视化连线把真实机器学习概念变成解谜」的代表：它把建模流程抽象成连接黑箱、调流量、拼准确度的节点谜题，让玩家不写代码也能在试错中体会专家系统、神经网络等概念，是研究可视化编程玩法、寓教于乐与抽象专业知识游戏化的高价值参考。"
   },
@@ -25,71 +13,74 @@
     "progression_model": "靠逐关引入更复杂的机器学习概念与更高的准确度/数量要求线性加深难度，靠赚钱升级设备的元进度提供长线增强；进度体现为已通过关卡、解锁的模型类型与设备等级。",
     "failure_model": "本作无角色死亡，关卡未在节点与时间限制内让各输出达到数量与准确度阈值即判定不通过，须重新调整连线方案再试，失败即一次方案的迭代。",
     "content_structure": "以一系列数据分类解谜关卡为骨架，靠可视化节点编程与逐步引入的机器学习概念承载难度曲线，以赚钱升级的元进度承载长线推进，单人。",
-    "main_player_actions": ["物件操控", "参数调整"],
-    "main_player_decisions": ["性能取舍", "优先级排序", "资源取舍"],
-    "main_player_experiences": ["系统掌控", "构筑乐趣", "创作乐趣"],
-    "main_mechanics": ["可视化编程", "难度递增", "元进度"],
-    "replayability_sources": ["难度分级", "全收集"],
-    "production_constraints": ["小型团队", "极简界面"],
-    "innovation_patterns": ["可视化编程"],
-    "reusable_reference_patterns": ["可视化编程", "难度递增"],
-    "non_replicable_risks": ["玩家留存", "技术复杂度"],
-    "genre": ["解谜"],
-    "art_style": ["极简风格"],
-    "audio_style": ["轻松配乐"],
-    "perspective": ["俯视"],
-    "theme": ["科幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["规划满足", "策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "物件操控",
+      "参数调整"
+    ],
+    "main_player_decisions": [
+      "性能取舍",
+      "优先级排序",
+      "资源取舍"
+    ],
+    "main_player_experiences": [
+      "系统掌控",
+      "构筑乐趣",
+      "创作乐趣"
+    ],
+    "main_mechanics": [
+      "可视化编程",
+      "难度递增",
+      "元进度"
+    ],
+    "replayability_sources": [
+      "难度分级",
+      "全收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "极简界面"
+    ],
+    "innovation_patterns": [
+      "可视化编程"
+    ],
+    "reusable_reference_patterns": [
+      "可视化编程",
+      "难度递增"
+    ],
+    "non_replicable_risks": [
+      "玩家留存",
+      "技术复杂度"
+    ],
+    "genre": [
+      "解谜"
+    ],
+    "art_style": [
+      "极简风格"
+    ],
+    "audio_style": [
+      "轻松配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "科幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "规划满足",
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "可视化编程",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "连接黑箱函数搭数据流",
-            "quote_or_summary": "玩家用可视化编程连接黑箱函数搭建数据流、把数据按阈值分流到对应输出，全程无需写代码。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "难度递增",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "逐步引入更复杂模型",
-            "quote_or_summary": "关卡逐步引入从专家系统到循环神经网络的更复杂概念与更高准确度要求，难度曲线递增。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "元进度",
-        "confidence": "medium",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "赚钱升级设备",
-            "quote_or_summary": "玩家通过关卡赚取报酬升级设备，构成跨关卡的长线增强。",
-            "notes": "Steam 商店页可观察机制，具体强度为解释性判断。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "while True: learn() 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/619150/while_True_learn/",
-        "quote_or_summary": "机器学习主题解谜模拟，可视化编程连接黑箱函数把数据按数量与准确度阈值分流、有限节点与时间、无需写代码、松散取材真实机器学习、赚钱升级元进度，luden.io 开发，2018 年发售。",
-        "notes": "事实取自 Steam 商店页与 Thinky Games。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "可视化编程",
+      "难度递增",
+      "元进度"
+    ]
   },
   "claims": [
     {
@@ -97,16 +88,7 @@
       "subject": "可视化编程",
       "relation": "creates",
       "object": "发现乐趣",
-      "explanation": "把建模流程抽象成「连接黑箱、调数据流、对准确度」的可视化连线，等于把原本需要写代码、读公式才能触达的机器学习，降维成谁都能上手摆弄的节点谜题：玩家不必理解底层数学，靠接线、观察数据怎么分流、再迭代调整，就能在试错中亲手感受专家系统、神经网络等概念为何这样运作。理解不是被讲授而是被「玩」出来的，专业知识因此变成可探索、可顿悟的乐趣。可复用于希望用「可视化连线 + 即时反馈」把抽象专业领域降维成可玩谜题、以试错带来发现乐趣的寓教于乐设计。",
-      "evidence": [
-        {
-          "title": "连线降维生发现解读",
-          "quote_or_summary": "可视化连线把需写代码的机器学习降维成可摆弄的节点谜题，玩家靠接线与迭代在试错中习得概念，理解被玩出来。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把建模流程抽象成「连接黑箱、调数据流、对准确度」的可视化连线，等于把原本需要写代码、读公式才能触达的机器学习，降维成谁都能上手摆弄的节点谜题：玩家不必理解底层数学，靠接线、观察数据怎么分流、再迭代调整，就能在试错中亲手感受专家系统、神经网络等概念为何这样运作。理解不是被讲授而是被「玩」出来的，专业知识因此变成可探索、可顿悟的乐趣。可复用于希望用「可视化连线 + 即时反馈」把抽象专业领域降维成可玩谜题、以试错带来发现乐趣的寓教于乐设计。"
     }
   ]
 }

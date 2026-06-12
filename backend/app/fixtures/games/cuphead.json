@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_cuphead",
     "title": "Cuphead",
-    "source_refs": [
-      {
-        "title": "Cuphead（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Cuphead",
-        "notes": "类型（横版清版射击）、以 Boss 连战为主体且分支推进、对粉色物体弹反攒超必杀、武器与护符可换装备、三种超必杀需满槽、本地双人可弹回队友魂魄复活、无限命且装备死亡间保留、按用时/剩血/弹反/超必杀评级、兄弟与魔鬼赌输需收魂契约、1930 年代橡皮管手绘赛璐珞动画与水彩背景、51 首爵士大乐队配乐、StudioMDHR（Moldenhauer 兄弟家庭团队）开发、2017 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款横版清版射击游戏，以 Boss 连战为主体：玩家操控 Cuphead 兄弟，对粉色物体弹反攒超必杀、用可换装的武器与护符作战、靠冲刺与跳跃躲弹幕，本地双人可弹回队友魂魄复活；美术为 1930 年代橡皮管手绘赛璐珞动画配水彩背景、51 首爵士大乐队配乐，StudioMDHR 的 Moldenhauer 兄弟家庭团队开发、2017 年发售。",
     "selection_reason": "作为「用 1930 年代手绘动画美术与爵士配乐承载高难 Boss 连战」的代表：把流程做成一场场多阶段 Boss 的纯粹考验，以弹反攒超必杀的攻防循环驱动操作精通，再用极致的橡皮管手绘动画建立强辨识度，是研究 Boss 连战结构、弹反节奏与强美术风格作为差异化的高价值参考。"
   },
@@ -20,71 +13,80 @@
     "progression_model": "靠攒金币购买并解锁更多武器与护符即时调整构筑、靠反复练习掌握每个 Boss 的多阶段弹幕推进；进度体现为已击败的 Boss、已解锁的武器护符与各关评级，无角色数值成长。",
     "failure_model": "生命耗尽即本关失败，但装备在死亡间全部保留、无限重试，本地双人时队友死亡可被弹回的魂魄救活，真正的代价是反复磨练而非资源损失。",
     "content_structure": "以四大区域、一连串多阶段 Boss 关与少量横版清版关为骨架，靠弹反攒超必杀、换装武器护符与高难弹幕躲避承载流程与挑战，含单人与本地双人。",
-    "main_player_actions": ["射击", "冲刺", "招架反击"],
-    "main_player_decisions": ["武器搭配", "风险取舍", "增益选择"],
-    "main_player_experiences": ["战斗精通", "高难跑酷", "视觉享受"],
-    "main_mechanics": ["招架反击", "多阶段Boss", "技能切换", "召唤战斗", "难度递增"],
-    "replayability_sources": ["Boss 挑战", "难度分级", "速通"],
-    "production_constraints": ["手绘美术", "双人团队"],
-    "innovation_patterns": ["多阶段Boss", "招架反击"],
-    "reusable_reference_patterns": ["难度递增", "氛围营造"],
-    "non_replicable_risks": ["高品质手绘量", "强美术风格"],
-    "genre": ["横版射击"],
-    "art_style": ["手绘美术", "橡皮管动画"],
-    "audio_style": ["爵士配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["黑暗童话"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["爽快射击", "精准平台"],
-    "team_model": ["双人团队"],
+    "main_player_actions": [
+      "射击",
+      "冲刺",
+      "招架反击"
+    ],
+    "main_player_decisions": [
+      "武器搭配",
+      "风险取舍",
+      "增益选择"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "高难跑酷",
+      "视觉享受"
+    ],
+    "main_mechanics": [
+      "招架反击",
+      "多阶段Boss",
+      "技能切换",
+      "召唤战斗",
+      "难度递增"
+    ],
+    "replayability_sources": [
+      "Boss 挑战",
+      "难度分级",
+      "速通"
+    ],
+    "production_constraints": [
+      "手绘美术",
+      "双人团队"
+    ],
+    "innovation_patterns": [
+      "多阶段Boss",
+      "招架反击"
+    ],
+    "reusable_reference_patterns": [
+      "难度递增",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "高品质手绘量",
+      "强美术风格"
+    ],
+    "genre": [
+      "横版射击"
+    ],
+    "art_style": [
+      "手绘美术",
+      "橡皮管动画"
+    ],
+    "audio_style": [
+      "爵士配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "黑暗童话"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "爽快射击",
+      "精准平台"
+    ],
+    "team_model": [
+      "双人团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "招架反击",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "弹反攒超必杀",
-            "quote_or_summary": "玩家对粉色标记物体弹反以充能超必杀槽，弹反既是躲招也是唯一的攒招途径。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "多阶段Boss",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Boss 连战与变形阶段",
-            "quote_or_summary": "流程以一连串 Boss 战为主体，每个 Boss 含多个不断变形的阶段，需逐阶段应对。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "橡皮管动画",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "1930 年代手绘赛璐珞",
-            "quote_or_summary": "全程采用 1930 年代橡皮管风格的手绘赛璐珞动画与水彩背景，逐帧手绘并保留人工瑕疵。",
-            "notes": "维基百科可观察的美术与制作事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Cuphead 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Cuphead",
-        "quote_or_summary": "横版清版射击，以多阶段 Boss 连战为主体、弹反粉色物体攒超必杀、换装武器护符、无限命保留装备、本地双人弹魂复活，1930 年代橡皮管手绘赛璐珞配水彩背景、51 首爵士大乐队配乐，StudioMDHR 兄弟团队开发，2017 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "招架反击",
+      "多阶段Boss",
+      "橡皮管动画"
+    ]
   },
   "claims": [
     {
@@ -92,16 +94,7 @@
       "subject": "招架反击",
       "relation": "creates",
       "object": "进攻性防御",
-      "explanation": "把「攒超必杀」唯一绑定在对粉色物体的弹反上，使弹反同时是躲避动作与资源生产手段，于是玩家不能一味逃避弹幕，而必须主动识别并迎着特定弹幕去拍，把防御行为转化为进攻收益，让躲弹与攒招合一、制造高风险高回报的操作张力，可复用于希望用「防御动作即资源来源」逼玩家主动迎敌、提升交战烈度的设计。",
-      "evidence": [
-        {
-          "title": "弹反即攒招解读",
-          "quote_or_summary": "弹反是攒超必杀的唯一途径，迫使玩家主动迎着粉色弹幕去拍，把防御转化为进攻收益。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把「攒超必杀」唯一绑定在对粉色物体的弹反上，使弹反同时是躲避动作与资源生产手段，于是玩家不能一味逃避弹幕，而必须主动识别并迎着特定弹幕去拍，把防御行为转化为进攻收益，让躲弹与攒招合一、制造高风险高回报的操作张力，可复用于希望用「防御动作即资源来源」逼玩家主动迎敌、提升交战烈度的设计。"
     }
   ]
 }

@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_icey",
     "title": "ICEY",
-    "source_refs": [
-      {
-        "title": "ICEY（Steam，appid 553640）",
-        "url": "https://store.steampowered.com/app/553640/ICEY/",
-        "notes": "类型（2D 横版动作 + 元叙事）、FantaBlade Network 开发、XD 发行、2016 年 11 月 17 日发售、赛博朋克背景、玩家扮演女性角色 ICEY、简单操作释放华丽连招、闪避与反击、对抗大型赛博格 Boss、旁白不断引导而玩家可服从或反抗、反抗会打破第四面墙引出对游戏开发的元评论等事实来源。"
-      },
-      {
-        "title": "ICEY（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Icey",
-        "notes": "2D 横版砍杀含类银河城探索元素、单一武器快速连招、冲刺无敌与特殊处决、元叙事旁白与打破第四面墙等事实来源。"
-      }
-    ],
     "short_description": "一款 2D 横版动作游戏，FantaBlade Network 开发、XD 发行，2016 年 11 月 17 日发售：在赛博朋克的世界里，玩家扮演女性角色 ICEY，用一把武器打出华丽连招、以冲刺闪避与反击对抗大型赛博格 Boss。它真正的内核是「伪装成动作游戏的元游戏」——一个无所不在的旁白不断催促你往某个方向走，而你可以选择服从，也可以偏离他的指引、打破第四面墙，让游戏转入对游戏开发本身的元评论。",
     "selection_reason": "作为「用元叙事旁白把动作游戏变成解构实验」的代表：表面是爽快的横版砍杀，骨子里却用一个会被你激怒的旁白，把「服从还是反抗指引」做成核心钩子——偏离指引就揭开隐藏内容与对游戏惯例的调侃，是研究元叙事、打破第四面墙与叙事钩子的高价值参考。"
   },
@@ -25,71 +13,76 @@
     "progression_model": "靠线性流程与岔路推进，靠击败敌人积累的点数强化连招与能力、靠「服从或反抗旁白」的选择解锁隐藏内容与不同结局；进度体现为流程推进、能力强化与已发掘的元叙事彩蛋。",
     "failure_model": "ICEY 在与敌人或 Boss 的战斗中血量耗尽倒下即失败、退回此前节点重来，核心压力在于以连招输出配合冲刺无敌与反击规避大型 Boss 的攻势。",
     "content_structure": "以赛博朋克的线性横版流程与多条岔路为骨架，靠连招战斗承载动作爽感、靠旁白与「服从或反抗」承载元叙事钩子，以多结局与隐藏彩蛋承载重玩，单人。",
-    "main_player_actions": ["近战攻击", "冲刺", "技能释放"],
-    "main_player_decisions": ["探索路线", "增益选择"],
-    "main_player_experiences": ["战斗精通", "探索发现", "抉择沉浸"],
-    "main_mechanics": ["连招", "处决演出", "分支叙事"],
-    "replayability_sources": ["多结局", "彩蛋收集"],
-    "production_constraints": ["小型团队", "手绘美术"],
-    "innovation_patterns": ["元叙事"],
-    "reusable_reference_patterns": ["元叙事", "连招"],
-    "non_replicable_risks": ["一次性体验", "玩家留存"],
-    "genre": ["动作冒险"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["科幻", "赛博朋克"],
-    "narrative_style": ["元叙事", "对话叙事"],
-    "game_feel": ["流畅操作", "精准近战"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "冲刺",
+      "技能释放"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "增益选择"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "探索发现",
+      "抉择沉浸"
+    ],
+    "main_mechanics": [
+      "连招",
+      "处决演出",
+      "分支叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "手绘美术"
+    ],
+    "innovation_patterns": [
+      "元叙事"
+    ],
+    "reusable_reference_patterns": [
+      "元叙事",
+      "连招"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "玩家留存"
+    ],
+    "genre": [
+      "动作冒险"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "科幻",
+      "赛博朋克"
+    ],
+    "narrative_style": [
+      "元叙事",
+      "对话叙事"
+    ],
+    "game_feel": [
+      "流畅操作",
+      "精准近战"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "元叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "服从或反抗旁白",
-            "quote_or_summary": "无所不在的旁白不断引导玩家，玩家可服从、也可偏离指引，反抗会打破第四面墙引出元评论。",
-            "notes": "Steam 商店页与维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "连招",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "简单操作华丽连招",
-            "quote_or_summary": "玩家用一把武器以简单操作打出快速华丽的连招，配合冲刺闪避与反击对抗 Boss。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "分支叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "偏离指引引出岔路",
-            "quote_or_summary": "偏离旁白的指引会引向隐藏房间、不同走向与结局，构成围绕「服从与否」的分支。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "ICEY 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/553640/ICEY/",
-        "quote_or_summary": "2D 横版动作 + 元叙事，赛博朋克背景、华丽连招与冲刺反击、旁白引导而玩家可反抗打破第四面墙、多结局，FantaBlade Network 开发、XD 发行，2016 年发售。",
-        "notes": "事实取自 Steam 商店页与维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "元叙事",
+      "连招",
+      "分支叙事"
+    ]
   },
   "claims": [
     {
@@ -97,16 +90,7 @@
       "subject": "元叙事",
       "relation": "creates",
       "object": "发现乐趣",
-      "explanation": "让一个旁白不停命令玩家「该往哪走」，再把最有趣的内容藏在「不听他的」那一侧，等于把玩家的逆反心理变成探索引擎：你越被催促，越想偏离去看看被禁止的方向有什么。而每一次反抗都得到回报——隐藏房间、对游戏套路的吐槽、开发者的现身——于是「不服从」本身成了发现的来源，叙事框架与玩家的好奇心被绑成一体。可复用于希望用「权威旁白 + 奖励反抗」把元叙事的逆反心理转化为探索驱动与发现乐趣的叙事设计——但其新鲜感偏一次性。",
-      "evidence": [
-        {
-          "title": "奖励反抗生发现乐趣解读",
-          "quote_or_summary": "把有趣内容藏在违抗旁白的一侧，使逆反心理成为探索引擎，每次反抗皆有回报而生发现乐趣。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让一个旁白不停命令玩家「该往哪走」，再把最有趣的内容藏在「不听他的」那一侧，等于把玩家的逆反心理变成探索引擎：你越被催促，越想偏离去看看被禁止的方向有什么。而每一次反抗都得到回报——隐藏房间、对游戏套路的吐槽、开发者的现身——于是「不服从」本身成了发现的来源，叙事框架与玩家的好奇心被绑成一体。可复用于希望用「权威旁白 + 奖励反抗」把元叙事的逆反心理转化为探索驱动与发现乐趣的叙事设计——但其新鲜感偏一次性。"
     }
   ]
 }

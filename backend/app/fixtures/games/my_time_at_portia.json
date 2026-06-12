@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_my_time_at_portia",
     "title": "My Time at Portia",
-    "source_refs": [
-      {
-        "title": "My Time at Portia（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/My_Time_at_Portia",
-        "notes": "类型（模拟经营 RPG）、采集合成与工坊建造、农场种植、NPC 好感与恋爱结婚、委托任务推动城镇发展、末世重建题材、Pathea 用 Unity 开发、2019 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款融合模拟经营与角色扮演的生活游戏，玩家继承一间工坊，在末世重建的城镇 Portia 采集、合成、建造、种田并经营人际关系，通过完成委托成长为镇上最好的建造师。",
     "selection_reason": "作为「工坊经营 + 生活模拟」的代表：把采集合成的产出绑定到可见的城镇建设与建造师排名，将琐碎制作转化为可视、有成就感的进度；其好感与委托系统亦是研究轻松向经营节奏的参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "升级工具提升采集效率、解锁更大型的建造项目；完成的委托直接改变城镇面貌并提升建造师排名，进度体现为工坊规模、城镇建设与人际关系的累积。",
     "failure_model": "失败惩罚极弱，设计偏向放松而非挫败；战斗副本中生命耗尽会被击败送回，但通常无严重的永久损失。",
     "content_structure": "一座可探索的城镇与周边区域，含资源点、战斗副本、可恋爱的多名 NPC 与按季节推进的活动，主线围绕工坊成长与对手 Higgins 的竞争展开。",
-    "main_player_actions": ["采集", "合成制作", "建造", "社交互动"],
-    "main_player_decisions": ["时间分配", "任务取舍", "关系经营"],
-    "main_player_experiences": ["经营成就", "情感叙事", "探索发现"],
-    "main_mechanics": ["合成制作", "工坊经营", "农场种植", "好感系统", "委托任务"],
-    "replayability_sources": ["恋爱线", "全收集"],
-    "production_constraints": ["Unity 引擎", "卡通渲染", "小型团队"],
-    "innovation_patterns": ["工坊经营", "建造模拟"],
-    "reusable_reference_patterns": ["工坊经营", "好感系统", "委托任务"],
-    "non_replicable_risks": ["高内容产量"],
-    "genre": ["模拟经营", "角色扮演"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["轻松配乐"],
-    "perspective": ["第三人称"],
-    "theme": ["末世重建", "田园生活"],
-    "narrative_style": ["对话叙事", "环境叙事"],
-    "game_feel": ["轻松休闲"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "采集",
+      "合成制作",
+      "建造",
+      "社交互动"
+    ],
+    "main_player_decisions": [
+      "时间分配",
+      "任务取舍",
+      "关系经营"
+    ],
+    "main_player_experiences": [
+      "经营成就",
+      "情感叙事",
+      "探索发现"
+    ],
+    "main_mechanics": [
+      "合成制作",
+      "工坊经营",
+      "农场种植",
+      "好感系统",
+      "委托任务"
+    ],
+    "replayability_sources": [
+      "恋爱线",
+      "全收集"
+    ],
+    "production_constraints": [
+      "Unity 引擎",
+      "卡通渲染",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "工坊经营",
+      "建造模拟"
+    ],
+    "reusable_reference_patterns": [
+      "工坊经营",
+      "好感系统",
+      "委托任务"
+    ],
+    "non_replicable_risks": [
+      "高内容产量"
+    ],
+    "genre": [
+      "模拟经营",
+      "角色扮演"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "轻松配乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "末世重建",
+      "田园生活"
+    ],
+    "narrative_style": [
+      "对话叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "轻松休闲"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "工坊经营",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "继承工坊成长",
-            "quote_or_summary": "玩家继承一间工坊，努力成为 Portia 最好的建造师，并与对手建造师 Higgins 竞争。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "好感系统",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "NPC 关系与恋爱",
-            "quote_or_summary": "玩家可与 NPC 发展关系、恋爱并结婚，可选择男女主角。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "委托任务",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "委托推动城镇发展",
-            "quote_or_summary": "完成的委托直接改变城镇发展，更大的项目带来更高回报与城镇变化。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "My Time at Portia 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/My_Time_at_Portia",
-        "quote_or_summary": "模拟经营与 RPG 融合，采集合成与工坊建造、农场种植、NPC 好感与恋爱结婚、委托推动城镇发展，末世重建题材，Pathea 用 Unity 开发，2019 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "工坊经营",
+      "好感系统",
+      "委托任务"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "委托任务",
       "relation": "creates",
       "object": "进度可视化",
-      "explanation": "把合成与建造的委托绑定到看得见的城镇建设与建造师排名上，使原本枯燥的刷材料、攒制作有了清晰、外显的成长反馈，让玩家持续获得方向感与成就感，可复用于模拟与制作类设计。",
-      "evidence": [
-        {
-          "title": "委托与城镇解读",
-          "quote_or_summary": "委托完成度直接体现在城镇面貌与排名上，使制作进度可见。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把合成与建造的委托绑定到看得见的城镇建设与建造师排名上，使原本枯燥的刷材料、攒制作有了清晰、外显的成长反馈，让玩家持续获得方向感与成就感，可复用于模拟与制作类设计。"
     }
   ]
 }

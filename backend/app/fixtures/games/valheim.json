@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_valheim",
     "title": "Valheim",
-    "source_refs": [
-      {
-        "title": "Valheim（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Valheim",
-        "notes": "类型（第三人称生存）、采集合成建造战斗、程序生成多生物群系、击败 Boss 解锁能力与推进层级、结构建造、最多十人合作、北欧神话题材、低多边形美术、Iron Gate 五人团队用 Unity 开发、2021 抢先体验等事实来源。"
-      }
-    ],
     "short_description": "一款北欧神话题材的第三人称生存建造游戏，玩家作为阵亡维京人在程序生成的多生物群系世界中采集、合成、建造与战斗，靠击败各群系 Boss 解锁能力、逐层推进，支持最多十人合作。",
     "selection_reason": "作为「生存世界里用 Boss 门控驱动推进」的代表：每个 Boss 掉落解锁下一群系的工具与材料，给开放生存世界以明确的方向与节奏；其物理结构建造与北欧美术亦是高价值参考。"
   },
@@ -20,71 +13,81 @@
     "progression_model": "靠装备阶梯与 Boss 掉落的永久增益逐群系推进；管理生命、耐力与魔力（Eitr），无固定等级，进度体现为解锁的工具材料、基地规模与可深入的群系层级。",
     "failure_model": "生命归零即死亡并掉落装备于原地，需返回尸体取回；环境（寒冷、坠落、强敌）与饥饿状态加剧风险，深入未备战的群系极易致死。",
     "content_structure": "一张程序生成、含草原/黑森林/沼泽/高山/平原/迷雾地等多群系的开放世界，以八个可召唤 Boss 串联进度层级，结构建造支持自由营建，最多十人合作并可选 PvP。",
-    "main_player_actions": ["采集", "建造", "近战攻击", "航行"],
-    "main_player_decisions": ["风险取舍", "探索路线", "建造规划"],
-    "main_player_experiences": ["探索发现", "建造创造", "协作默契"],
-    "main_mechanics": ["程序生成", "合成制作", "Boss 门控", "建造系统", "合作生存"],
-    "replayability_sources": ["程序生成", "构筑多样"],
-    "production_constraints": ["低多边形", "Unity 引擎", "小型团队"],
-    "innovation_patterns": ["物理建造", "Boss 门控"],
-    "reusable_reference_patterns": ["Boss 门控", "程序生成", "物理建造"],
-    "non_replicable_risks": ["长期更新运营"],
-    "genre": ["生存", "开放世界"],
-    "art_style": ["低多边形"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第三人称"],
-    "theme": ["北欧神话", "维京"],
-    "narrative_style": ["环境叙事"],
-    "game_feel": ["厚重打击"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "采集",
+      "建造",
+      "近战攻击",
+      "航行"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "探索路线",
+      "建造规划"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "建造创造",
+      "协作默契"
+    ],
+    "main_mechanics": [
+      "程序生成",
+      "合成制作",
+      "Boss 门控",
+      "建造系统",
+      "合作生存"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样"
+    ],
+    "production_constraints": [
+      "低多边形",
+      "Unity 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "物理建造",
+      "Boss 门控"
+    ],
+    "reusable_reference_patterns": [
+      "Boss 门控",
+      "程序生成",
+      "物理建造"
+    ],
+    "non_replicable_risks": [
+      "长期更新运营"
+    ],
+    "genre": [
+      "生存",
+      "开放世界"
+    ],
+    "art_style": [
+      "低多边形"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "北欧神话",
+      "维京"
+    ],
+    "narrative_style": [
+      "环境叙事"
+    ],
+    "game_feel": [
+      "厚重打击"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "Boss 门控",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Boss 解锁层级",
-            "quote_or_summary": "全世界八个主 Boss 构成层级推进，需在祭坛献祭召唤，击败后掉落可获永久增益的战利品。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "物理建造",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "结构建造",
-            "quote_or_summary": "玩家采集材料建造庇护所与建筑，营建为核心玩法之一。",
-            "notes": "维基百科可观察机制（结构完整性属其建造系统特征）。"
-          }
-        ]
-      },
-      {
-        "tag": "合作生存",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "多人合作",
-            "quote_or_summary": "支持最多十人合作游玩，并可选 PvP。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Valheim 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Valheim",
-        "quote_or_summary": "第三人称生存建造，采集合成战斗，程序生成多生物群系，八个 Boss 解锁能力与层级推进，结构建造，最多十人合作，北欧神话题材，低多边形美术，Iron Gate 五人团队用 Unity 开发，2021 抢先体验。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "Boss 门控",
+      "物理建造",
+      "合作生存"
+    ]
   },
   "claims": [
     {
@@ -92,16 +95,7 @@
       "subject": "Boss 门控",
       "relation": "creates",
       "object": "进度节奏",
-      "explanation": "把每一层级的工具与材料锁在一个可选召唤的群系 Boss 之后，使开放的生存世界获得清晰的方向与推进节奏，并给玩家一个深入下一个危险群系的明确理由，可复用于生存类的进度结构。",
-      "evidence": [
-        {
-          "title": "Boss 门控解读",
-          "quote_or_summary": "击败群系 Boss 解锁下一群系所需的工具与材料，提供推进方向。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把每一层级的工具与材料锁在一个可选召唤的群系 Boss 之后，使开放的生存世界获得清晰的方向与推进节奏，并给玩家一个深入下一个危险群系的明确理由，可复用于生存类的进度结构。"
     }
   ]
 }

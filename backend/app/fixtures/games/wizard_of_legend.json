@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_wizard_of_legend",
     "title": "Wizard of Legend",
-    "source_refs": [
-      {
-        "title": "Wizard of Legend（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Wizard_of_Legend",
-        "notes": "类型（俯视 2D 肉鸽地牢）、程序生成的 10 层「混沌试炼」、每个按键映射一招「奥术」（含基础攻击、冲刺闪避、招牌技与普通技）、强调流畅连招与自由组合、6 系元素与 100+ 奥术、遗物被动、长袍改变初始属性、每层三家商店、Contingent99 开发、Unity 引擎、2018 年 5 月发售、含本地双人合作等事实来源。"
-      },
-      {
-        "title": "Wizard of Legend（Steam）",
-        "url": "https://store.steampowered.com/app/445980/Wizard_of_Legend/",
-        "notes": "奥术连招、冲刺、遗物、本地合作、肉鸽 runs 等事实来源。"
-      }
-    ],
     "short_description": "一款俯视 2D 肉鸽地牢游戏，玩家扮演法师闯关程序生成的「混沌试炼」，把基础攻击、冲刺闪避、招牌技与普通技分别绑定到不同按键，在快节奏战斗中即时串联各系奥术、拾取遗物强化构筑，死亡后用积累的混沌宝石永久解锁更多奥术，Contingent99 开发、2018 年发售、支持本地双人。",
     "selection_reason": "作为「奥术连招驱动的快节奏肉鸽」代表：把法术做成可自由绑定、即时串联的连招，让战斗的爽快与深度都来自玩家临场的招式组合与走位，再用遗物与永久解锁延展构筑空间，是研究即时连招手感与构筑多样性的高价值参考。"
   },
@@ -25,71 +13,79 @@
     "progression_model": "单局靠拾取奥术与遗物即时变强，跨局靠混沌宝石永久解锁可携带的奥术池与外观推进；进度体现为已解锁奥术、遗物见识与通关深度，构筑随解锁愈发多样。",
     "failure_model": "生命归零即本局结束、失去本局获得的奥术与遗物，保留已解锁的奥术池，回到城镇重整再战。",
     "content_structure": "以程序生成的 10 层混沌试炼为骨架，靠即时连招战斗、商店抉择、遗物构筑与三系元素 Boss 承载流程与重玩，含本地双人合作。",
-    "main_player_actions": ["魔法释放", "冲刺", "技能释放"],
-    "main_player_decisions": ["装备搭配", "风险取舍", "增益选择"],
-    "main_player_experiences": ["战斗精通", "构筑乐趣", "滚雪球快感"],
-    "main_mechanics": ["连招", "技能切换", "遗物系统", "随机关卡", "元进度"],
-    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
-    "production_constraints": ["Unity 引擎", "小型团队"],
-    "innovation_patterns": ["连招", "技能切换"],
-    "reusable_reference_patterns": ["元进度", "程序生成"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["类肉鸽", "动作角色扮演"],
-    "art_style": ["像素美术"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["俯视"],
-    "theme": ["奇幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["流畅响应"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "魔法释放",
+      "冲刺",
+      "技能释放"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "风险取舍",
+      "增益选择"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "构筑乐趣",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "连招",
+      "技能切换",
+      "遗物系统",
+      "随机关卡",
+      "元进度"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "Unity 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "连招",
+      "技能切换"
+    ],
+    "reusable_reference_patterns": [
+      "元进度",
+      "程序生成"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "类肉鸽",
+      "动作角色扮演"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "奇幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "流畅响应"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "连招",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "奥术即时串联",
-            "quote_or_summary": "每个按键映射一招奥术（含基础攻击、冲刺、招牌技与普通技），玩家在战斗中即时串联组合，强调流畅与自由发挥。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "技能切换",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "自由绑定奥术",
-            "quote_or_summary": "玩家可从 6 系元素的上百个奥术中选择并绑定到不同槽位，塑造个人化的招式组合。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "遗物系统",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "遗物改写奥术",
-            "quote_or_summary": "遗物提供被动强化并改写奥术效果，叠加出多样构筑。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Wizard of Legend 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Wizard_of_Legend",
-        "quote_or_summary": "俯视 2D 肉鸽地牢，按键绑定奥术即时连招，6 系元素上百奥术，冲刺闪避、遗物被动、长袍改属性、每层三商店、混沌宝石永久解锁，Contingent99 用 Unity 开发，2018 年发售，含本地双人。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "连招",
+      "技能切换",
+      "遗物系统"
+    ]
   },
   "claims": [
     {
@@ -97,16 +93,7 @@
       "subject": "连招",
       "relation": "creates",
       "object": "战术深度",
-      "explanation": "把每招法术做成可自由绑定、即时串联的连招，让战斗的强弱主要取决于玩家临场如何编排「位移—控制—爆发」的招式顺序与时机，而非单纯数值，使同一套奥术在不同手法下表现迥异，把动作肉鸽的深度从构筑前移到操作，可复用于希望以「即时招式组合」承载战斗表达力与上手—精通曲线的动作设计。",
-      "evidence": [
-        {
-          "title": "连招承载深度解读",
-          "quote_or_summary": "可自由绑定与即时串联的奥术让战斗强弱取决于临场招式编排与时机，把深度前移到操作层。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把每招法术做成可自由绑定、即时串联的连招，让战斗的强弱主要取决于玩家临场如何编排「位移—控制—爆发」的招式顺序与时机，而非单纯数值，使同一套奥术在不同手法下表现迥异，把动作肉鸽的深度从构筑前移到操作，可复用于希望以「即时招式组合」承载战斗表达力与上手—精通曲线的动作设计。"
     }
   ]
 }

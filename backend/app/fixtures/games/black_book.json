@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_black_book",
     "title": "Black Book",
-    "source_refs": [
-      {
-        "title": "Black Book（Steam）",
-        "url": "https://store.steampowered.com/app/1138660/Black_Book/",
-        "notes": "类型（卡牌 RPG 冒险）、基于斯拉夫（俄罗斯彼尔姆地区）神话民俗、玩家扮演少女巫师 Vasilisa、卡牌战斗分黑牌（进攻）与白牌（防御）且同色组合更强、差遣恶魔办事否则会被骚扰、解谜与支线、含人类学家协助编写的民俗百科、Morteshka 开发、2021 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款扎根斯拉夫神话民俗的卡牌 RPG 冒险，玩家扮演少女巫师 Vasilisa，用分进攻（黑牌）与防御（白牌）、同色组合更强的卡牌战斗，差遣恶魔办事、解谜探索人与神怪共存的乡野，并随附民俗百科。",
     "selection_reason": "作为「以严谨民俗考据驱动卡牌 RPG」的代表：在黑白卡牌战斗与冒险之上，借人类学家协助把斯拉夫民俗细致还原成世界观与百科，用文化真实性换取强烈辨识度与沉浸，是研究民俗考据与文化差异化的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "靠推进剧情解锁卡牌、强化黑书与差遣的恶魔、提升角色能力推进；进度体现为卡组强度、恶魔数量与故事章节，并随抉择走向不同结局。",
     "failure_model": "卡牌战斗中生命归零即落败需重试；闲置的恶魔若无差事会反噬骚扰玩家，构成持续的管理压力，剧情亦受抉择影响。",
     "content_structure": "在斯拉夫乡野的节点地图上以黑白卡牌战斗、剧情与支线、谜题、恶魔差遣与民俗百科为骨架，含多结局与大量考据内容，单人。",
-    "main_player_actions": ["出牌", "卡牌取舍", "对话选择"],
-    "main_player_decisions": ["卡牌取舍", "道德抉择", "装备搭配"],
-    "main_player_experiences": ["氛围营造", "情感叙事", "构筑乐趣"],
-    "main_mechanics": ["卡牌战斗", "牌组构筑", "道具协同", "分支叙事"],
-    "replayability_sources": ["多结局", "难度分级", "彩蛋收集"],
-    "production_constraints": ["小型团队", "手绘美术"],
-    "innovation_patterns": ["民俗考据", "牌组构筑"],
-    "reusable_reference_patterns": ["民俗考据", "牌组构筑", "分支叙事"],
-    "non_replicable_risks": ["强文化母题", "强美术风格"],
-    "genre": ["卡牌构筑", "角色扮演"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["民谣配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["斯拉夫民俗", "黑暗奇幻"],
-    "narrative_style": ["分支叙事", "对话叙事"],
-    "game_feel": ["策略权衡", "沉浸代入"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "出牌",
+      "卡牌取舍",
+      "对话选择"
+    ],
+    "main_player_decisions": [
+      "卡牌取舍",
+      "道德抉择",
+      "装备搭配"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "情感叙事",
+      "构筑乐趣"
+    ],
+    "main_mechanics": [
+      "卡牌战斗",
+      "牌组构筑",
+      "道具协同",
+      "分支叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "难度分级",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "手绘美术"
+    ],
+    "innovation_patterns": [
+      "民俗考据",
+      "牌组构筑"
+    ],
+    "reusable_reference_patterns": [
+      "民俗考据",
+      "牌组构筑",
+      "分支叙事"
+    ],
+    "non_replicable_risks": [
+      "强文化母题",
+      "强美术风格"
+    ],
+    "genre": [
+      "卡牌构筑",
+      "角色扮演"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "民谣配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "斯拉夫民俗",
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "分支叙事",
+      "对话叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "民俗考据",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "人类学协助的民俗还原",
-            "quote_or_summary": "开发团队在人类学家协助下细致还原其家乡彼尔姆地区的斯拉夫文化与民俗，并配有可学习的游戏内百科。",
-            "notes": "Steam 商店页可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "牌组构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "黑白卡牌战斗",
-            "quote_or_summary": "战斗用两类卡牌：黑牌用于进攻、白牌用于防御，许多卡与同色卡组合时会更强。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "道具协同",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "同色组合增强",
-            "quote_or_summary": "许多卡牌在与同色卡牌组合时会变得更强，鼓励围绕颜色搭出协同。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Black Book 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1138660/Black_Book/",
-        "quote_or_summary": "斯拉夫民俗卡牌 RPG 冒险，扮演少女巫师 Vasilisa，黑牌进攻白牌防御且同色组合更强，差遣恶魔，解谜支线，人类学协助的民俗百科，Morteshka 开发，2021 年发售。",
-        "notes": "事实取自 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "民俗考据",
+      "牌组构筑",
+      "道具协同"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "民俗考据",
       "relation": "creates",
       "object": "市场差异化",
-      "explanation": "在人类学家协助下把少有人触及的斯拉夫民俗细致还原成世界观、剧情与可查百科，用文化真实性把一款体量不大的卡牌 RPG 做出强烈的题材辨识度与沉浸，从同质化市场中脱颖而出，可复用于以特定地域文化母题换取差异化的设计；但高度依赖该文化资源与考据投入。",
-      "evidence": [
-        {
-          "title": "文化差异化解读",
-          "quote_or_summary": "扎实的斯拉夫民俗考据为小体量作品换来强辨识度与市场差异化。",
-          "notes": "基于可观察事实的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "在人类学家协助下把少有人触及的斯拉夫民俗细致还原成世界观、剧情与可查百科，用文化真实性把一款体量不大的卡牌 RPG 做出强烈的题材辨识度与沉浸，从同质化市场中脱颖而出，可复用于以特定地域文化母题换取差异化的设计；但高度依赖该文化资源与考据投入。"
     }
   ]
 }

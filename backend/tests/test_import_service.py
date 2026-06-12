@@ -6,14 +6,6 @@ from app.services.fixture_pipeline import ContractViolation
 from app.services.import_service import build_graph_write_plan, summarize, validate_import_document
 
 
-def evidence() -> dict:
-    return {
-        "title": "Design summary",
-        "quote_or_summary": "Abstract card UI keeps art load low.",
-        "notes": "Curated design interpretation.",
-    }
-
-
 def profile_payload() -> dict:
     return {
         "game_id": "game_balatro",
@@ -40,17 +32,7 @@ def profile_payload() -> dict:
         "narrative_style": ["minimal framing"],
         "game_feel": ["snappy card play"],
         "team_model": ["solo developer"],
-        "reference_value_tags": [
-            {
-                "tag": "low art cost reference",
-                "confidence": "high",
-                "quality_status": "reviewed",
-                "evidence": [evidence()],
-            }
-        ],
-        "evidence": [evidence()],
-        "confidence": "high",
-        "quality_status": "reviewed",
+        "reference_value_tags": ["low art cost reference"],
     }
 
 
@@ -59,7 +41,6 @@ def document_payload() -> dict:
         "candidate": {
             "id": "game_balatro",
             "title": "Balatro",
-            "source_refs": [evidence()],
             "short_description": "Poker-inspired roguelike deckbuilder.",
             "selection_reason": "Strong sample for familiar rules into systemic depth.",
         },
@@ -99,8 +80,9 @@ def test_build_graph_write_plan_creates_game_node_with_document_json() -> None:
     assert game.key == {"id": "game_balatro"}
     assert game.properties["title"] == "Balatro"
     assert game.properties["core_loop"].startswith("Play poker hands")
-    assert game.properties["evidence_json"].startswith("[")
     assert game.properties["document_json"].startswith("{")
+    assert "confidence" not in game.properties
+    assert "evidence_json" not in game.properties
 
 
 def test_build_graph_write_plan_creates_mechanic_and_tag_edges() -> None:
@@ -116,8 +98,7 @@ def test_build_graph_write_plan_creates_mechanic_and_tag_edges() -> None:
     tag_edges = [edge for edge in plan.edges if edge.rel_type == "TAGGED"]
     assert len(tag_edges) == 1
     assert tag_edges[0].to_key["name"] == "low art cost reference"
-    assert tag_edges[0].properties["confidence"] == "high"
-    assert tag_edges[0].properties["evidence_json"].startswith("[")
+    assert tag_edges[0].properties == {}
 
 
 def test_build_graph_write_plan_with_zero_claims_has_no_claim_edges() -> None:
@@ -135,9 +116,6 @@ def test_build_graph_write_plan_creates_claim_edges() -> None:
             "relation": "reduces",
             "object": "new player learning cost",
             "explanation": "Players already know poker hands.",
-            "evidence": [evidence()],
-            "confidence": "high",
-            "quality_status": "reviewed",
         }
     ]
     document = validate_import_document(payload)
@@ -151,7 +129,7 @@ def test_build_graph_write_plan_creates_claim_edges() -> None:
     assert edge.to_key == {"name": "new player learning cost"}
     assert edge.properties["claim_id"] == "claim_balatro_familiar_rules"
     assert edge.properties["relation"] == "reduces"
-    assert edge.properties["confidence"] == "high"
+    assert "confidence" not in edge.properties
 
 
 def test_summarize_counts_written_elements() -> None:

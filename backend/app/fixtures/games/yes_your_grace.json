@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_yes_your_grace",
     "title": "Yes, Your Grace",
-    "source_refs": [
-      {
-        "title": "Yes, Your Grace（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Yes,_Your_Grace",
-        "notes": "类型（治国管理游戏）、Brave At Night 开发、2020 年 3 月 6 日 Steam/GOG 发售、玩家扮演 Davern 国王 Eryk、玩法以每周为一轮、事件以前来王座厅的请愿者形式呈现、玩家须管理金钱与补给、并管理军队与有限的将军/女巫/猎人、斯拉夫民俗背景、照料家人等事实来源。"
-      },
-      {
-        "title": "Yes, Your Grace（Steam，appid 1115690）",
-        "url": "https://store.steampowered.com/app/1115690/Yes_Your_Grace/",
-        "notes": "像素风治国模拟、每周接见请愿者并抉择是否相助、资源稀缺下的取舍、家庭与王国剧情、多结局等事实来源。"
-      }
-    ],
     "short_description": "一款治国管理游戏，Brave At Night 开发，2020 年 3 月 6 日发售：玩家扮演斯拉夫民俗风格王国 Davern 的国王 Eryk，以「一周」为一轮处理国事——形形色色的请愿者排队走进你的王座厅，有人求金币、有人求士兵、有人求你主持公道，而你的金钱、补给与可派遣的将军、女巫、猎人都极其有限。你必须在远远不够分配的资源里抉择帮谁、不帮谁，同时照料逐渐卷入危机的家人，一步步把王国引向存续或崩塌。",
     "selection_reason": "作为「用请愿抉择把资源稀缺写成道德重量」的代表：它把治国简化成每周接见请愿者、在永远不够分的资源里决定满足谁，再把这些冰冷取舍接到家人与王国的命运上，让每个「是」与「否」都带着情感后果，是研究抉择叙事、资源稀缺设计与斯拉夫民俗题材的高价值参考。"
   },
@@ -25,71 +13,80 @@
     "progression_model": "靠以周为单位推进剧情与战局、靠请愿抉择积累或消耗金钱补给与人望、靠派遣有限人手解决威胁；进度体现为王国局势、家庭剧情线与已触发的事件分支，最终导向多个结局。",
     "failure_model": "本作的「失败」是资源管理与抉择失当导致王国崩塌——国库枯竭、民心尽失或关键威胁未被化解使局势恶化乃至覆灭，家人也可能在剧情中遭遇不幸；核心压力在于在永远不足的资源里权衡每一次请愿。",
     "content_structure": "以每周接见请愿者的治国循环为骨架，靠资源取舍与派遣有限人手承载玩法，靠请愿与家庭剧情承载抉择叙事，以多结局与分支承载重玩，单人。",
-    "main_player_actions": ["对话选择", "单位调度", "资源取舍"],
-    "main_player_decisions": ["道德抉择", "资源取舍", "优先级排序"],
-    "main_player_experiences": ["抉择沉浸", "情感叙事", "运筹帷幄"],
-    "main_mechanics": ["请愿抉择", "资源管理", "随机事件", "分支叙事"],
-    "replayability_sources": ["多结局", "难度分级"],
-    "production_constraints": ["小型团队", "像素美术"],
-    "innovation_patterns": ["请愿抉择", "民俗考据"],
-    "reusable_reference_patterns": ["资源管理", "分支叙事"],
-    "non_replicable_risks": ["玩家留存", "强文化母题"],
-    "genre": ["模拟经营", "叙事冒险"],
-    "art_style": ["像素美术"],
-    "audio_style": ["民谣配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["斯拉夫民俗", "家庭情感"],
-    "narrative_style": ["分支叙事", "情感叙事"],
-    "game_feel": ["策略权衡", "沉浸代入"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "对话选择",
+      "单位调度",
+      "资源取舍"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "资源取舍",
+      "优先级排序"
+    ],
+    "main_player_experiences": [
+      "抉择沉浸",
+      "情感叙事",
+      "运筹帷幄"
+    ],
+    "main_mechanics": [
+      "请愿抉择",
+      "资源管理",
+      "随机事件",
+      "分支叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "像素美术"
+    ],
+    "innovation_patterns": [
+      "请愿抉择",
+      "民俗考据"
+    ],
+    "reusable_reference_patterns": [
+      "资源管理",
+      "分支叙事"
+    ],
+    "non_replicable_risks": [
+      "玩家留存",
+      "强文化母题"
+    ],
+    "genre": [
+      "模拟经营",
+      "叙事冒险"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "民谣配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "斯拉夫民俗",
+      "家庭情感"
+    ],
+    "narrative_style": [
+      "分支叙事",
+      "情感叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "请愿抉择",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "每周接见请愿者抉择",
-            "quote_or_summary": "事件以前来王座厅的请愿者形式呈现，玩家须在有限资源下抉择是否满足各自诉求。",
-            "notes": "维基百科与 Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "资源管理",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "管理稀缺金钱补给与人手",
-            "quote_or_summary": "玩家须管理金钱、补给与有限的将军、女巫、猎人，资源永远不够分配。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "斯拉夫民俗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "斯拉夫民俗背景",
-            "quote_or_summary": "游戏设定于斯拉夫民俗启发的中世纪王国，女巫、猎人等元素取材于此。",
-            "notes": "维基百科可观察设定。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Yes, Your Grace 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Yes,_Your_Grace",
-        "quote_or_summary": "治国管理游戏，每周接见请愿者、在稀缺金钱补给与有限人手间抉择、派遣将军女巫猎人、照料家人、斯拉夫民俗背景与多结局，Brave At Night 开发，2020 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "请愿抉择",
+      "资源管理",
+      "斯拉夫民俗"
+    ]
   },
   "claims": [
     {
@@ -97,16 +94,7 @@
       "subject": "请愿抉择",
       "relation": "creates",
       "object": "情感叙事",
-      "explanation": "把治国压缩成「每周只够满足一部分请愿者」，再给每个请愿安上一张面孔、一段处境，最后把这些取舍接到女儿婚事、家人安危与王国存亡上，等于让行政数字长出情感后果：你拒绝的不是一行预算，而是一个具体的人，而这次拒绝可能在几周后回头反噬你的家庭。资源稀缺由此从难度调节变成叙事引擎——玩家的内疚、权衡与无力感都由「想帮却帮不起」自然生发。可复用于希望用「稀缺资源 + 具名请愿 + 后果回响」把管理玩法转化为情感叙事与道德重量的治理类设计。",
-      "evidence": [
-        {
-          "title": "稀缺生情感解读",
-          "quote_or_summary": "稀缺资源加具名请愿与后果回响，使行政取舍长出情感后果，把管理玩法转化为情感叙事与道德重量。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把治国压缩成「每周只够满足一部分请愿者」，再给每个请愿安上一张面孔、一段处境，最后把这些取舍接到女儿婚事、家人安危与王国存亡上，等于让行政数字长出情感后果：你拒绝的不是一行预算，而是一个具体的人，而这次拒绝可能在几周后回头反噬你的家庭。资源稀缺由此从难度调节变成叙事引擎——玩家的内疚、权衡与无力感都由「想帮却帮不起」自然生发。可复用于希望用「稀缺资源 + 具名请愿 + 后果回响」把管理玩法转化为情感叙事与道德重量的治理类设计。"
     }
   ]
 }

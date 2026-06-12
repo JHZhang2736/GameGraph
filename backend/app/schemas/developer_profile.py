@@ -5,7 +5,7 @@ from typing import Literal, Self
 from pydantic import Field, model_validator
 
 from app.schemas.artifacts import DeveloperConstraint
-from app.schemas.common import ConfidenceLevel, NonEmptyStr, StrictBaseModel
+from app.schemas.common import NonEmptyStr, StrictBaseModel
 
 
 SourceKind = Literal["raw_text", "explicit_field"]
@@ -22,7 +22,6 @@ class ProfileFieldSource(StrictBaseModel):
     field: str = Field(min_length=1)
     source_text: str = Field(min_length=1)
     source_kind: SourceKind
-    confidence: ConfidenceLevel
 
 
 class MissingProfileField(StrictBaseModel):

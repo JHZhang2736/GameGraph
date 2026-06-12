@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_beneath_oresa",
     "title": "Beneath Oresa",
-    "source_refs": [
-      {
-        "title": "Beneath Oresa（Steam）",
-        "url": "https://store.steampowered.com/app/1803400/Beneath_Oresa/",
-        "notes": "类型（3D 战斗肉鸽牌组构筑）、战斗围绕角色在战场上的站位与分区、可把敌人击退到远区或撞向彼此、排成一线发动强力攻击、挑选卡牌/升级/神器、每次下潜可带一名各有 8 种能力的同伴英雄、Broken Spear 开发、2023 年 10 月 12 日抢先体验等事实来源。"
-      },
-      {
-        "title": "Beneath Oresa 评测（Turn Based Lovers）",
-        "url": "https://turnbasedlovers.com/review/beneath-oresa-impressions/",
-        "notes": "站位与击退的战术核心、分区躲避、神器与构筑、同伴系统等评测来源。"
-      }
-    ],
     "short_description": "一款 3D 战斗肉鸽牌组构筑游戏，玩家深入城市迎敌，战斗围绕在战场分区中的站位展开：可把敌人击退到远区、撞向彼此或排成一线集火，并挑选卡牌、升级与神器构筑流派；每次下潜还能带上一名各有 8 种能力的同伴英雄，Broken Spear 开发、2023 年抢先体验。",
     "selection_reason": "作为「把站位与击退做成核心的牌组构筑肉鸽」代表：在抽牌出牌之上叠加角色与敌人的分区站位，让「移动到哪一区、把谁击退到哪里」成为与卡牌同等重要的战术维度，是研究牌组构筑中空间站位价值与同伴协同的高价值参考。"
   },
@@ -25,71 +13,79 @@
     "progression_model": "单局靠拾取卡牌、神器与升级即时构筑，跨局靠解锁新英雄、卡牌与同伴推进；进度体现为已解锁卡池、神器见识、同伴阵容与下潜深度。",
     "failure_model": "生命归零即本局结束、失去本局构筑，保留已解锁内容，回到起点重整再次下潜。",
     "content_structure": "以分层下潜的战斗节点与分支路线为骨架，靠站位战斗、牌组构筑、神器与同伴系统承载流程与重玩，单人。",
-    "main_player_actions": ["出牌", "走位", "卡牌取舍"],
-    "main_player_decisions": ["装备搭配", "风险取舍", "道具取舍"],
-    "main_player_experiences": ["运筹帷幄", "构筑乐趣", "战斗精通"],
-    "main_mechanics": ["牌组构筑", "站位战斗", "击退", "遗物系统", "随机关卡"],
-    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
-    "production_constraints": ["小型团队"],
-    "innovation_patterns": ["站位战斗", "击退"],
-    "reusable_reference_patterns": ["牌组构筑", "站位战斗"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["类肉鸽", "卡牌构筑"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第三人称"],
-    "theme": ["黑暗奇幻"],
-    "narrative_style": ["碎片化叙事"],
-    "game_feel": ["策略权衡", "厚重打击"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "出牌",
+      "走位",
+      "卡牌取舍"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "风险取舍",
+      "道具取舍"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "构筑乐趣",
+      "战斗精通"
+    ],
+    "main_mechanics": [
+      "牌组构筑",
+      "站位战斗",
+      "击退",
+      "遗物系统",
+      "随机关卡"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "站位战斗",
+      "击退"
+    ],
+    "reusable_reference_patterns": [
+      "牌组构筑",
+      "站位战斗"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "类肉鸽",
+      "卡牌构筑"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "厚重打击"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "站位战斗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "分区站位为核心",
-            "quote_or_summary": "战斗围绕角色在战场分区中的站位展开，移动到不同区可躲避或调整集火角度。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "击退",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "击退与撞击布敌",
-            "quote_or_summary": "可把敌人击退到远区、撞向彼此或排成一线集火，把站位变成进攻手段。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "牌组构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "卡牌神器构筑",
-            "quote_or_summary": "玩家挑选卡牌、升级与神器构筑流派，并带上各有 8 种能力的同伴英雄。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Beneath Oresa 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1803400/Beneath_Oresa/",
-        "quote_or_summary": "3D 战斗肉鸽牌组构筑，战斗围绕分区站位，可击退敌人到远区/撞击/排线集火，挑选卡牌升级神器，带 8 能力同伴下潜，Broken Spear 开发，2023 年抢先体验。",
-        "notes": "事实取自 Steam 商店页与评测。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "站位战斗",
+      "击退",
+      "牌组构筑"
+    ]
   },
   "claims": [
     {
@@ -97,16 +93,7 @@
       "subject": "击退",
       "relation": "creates",
       "object": "空间决策",
-      "explanation": "把「击退到远区、撞向彼此、排成一线」做成卡牌效果，使每张牌的价值不再只看数值，而要结合敌人当前所处分区与彼此位置来评估，于是「先把谁推到哪、再如何集火」成为与构筑同等重要的空间决策，把牌组构筑从纯数值博弈拓展为带位置博弈的战术，可复用于希望以「位置/击退」为卡牌战斗注入空间维度的设计。",
-      "evidence": [
-        {
-          "title": "击退带来空间博弈解读",
-          "quote_or_summary": "击退与分区让卡牌价值随敌人位置而变，把牌组构筑拓展为带位置博弈的空间决策。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把「击退到远区、撞向彼此、排成一线」做成卡牌效果，使每张牌的价值不再只看数值，而要结合敌人当前所处分区与彼此位置来评估，于是「先把谁推到哪、再如何集火」成为与构筑同等重要的空间决策，把牌组构筑从纯数值博弈拓展为带位置博弈的战术，可复用于希望以「位置/击退」为卡牌战斗注入空间维度的设计。"
     }
   ]
 }

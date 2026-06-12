@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_supraland_six_inches_under",
     "title": "Supraland Six Inches Under",
-    "source_refs": [
-      {
-        "title": "Supraland（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Supraland",
-        "notes": "Supraland Six Inches Under 为 2019 年 Supraland 的独立资料片/伪续作（自称 Supraland 1.5），最初是引入新成员熟悉工具流程的小项目后逐渐扩大、David Münnich 在本作参与较少，第一人称类银河城、能力门控探索、物理解谜、玩具沙盒设定等事实来源。"
-      },
-      {
-        "title": "Supraland Six Inches Under（Steam，appid 1522870）",
-        "url": "https://store.steampowered.com/app/1522870/Supraland_Six_Inches_Under/",
-        "notes": "第一人称类银河城、玩法约 55% 探索/40% 解谜/5% 战斗、无需玩过前作、约 8-20 小时、半数能力沿用半数全新、主线谜题更简单而难题多为可选、战斗更少且敌人全为新类型、可选内容更多、2022 年 1 月 14 日发售等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称类银河城游戏，是 2019 年 Supraland 的独立资料片（自称 Supraland 1.5）：玩家在橡皮泥玩具世界的地下探索，靠解锁工具能力打开此前去不了的区域、以物理特性破解谜题并与全新敌人战斗，玩法约 55% 探索、40% 解谜、5% 战斗，无需玩过前作；Supra Games 开发、David Münnich 参与较少、2022 年发售。",
     "selection_reason": "作为「把成功原型扩成独立资料片」的代表：沿用前作第一人称物理解谜 + 能力门控探索的内核，半数能力复用、半数全新，刻意把主线谜题做简单、把高难题设为可选，并大幅增加可选内容，是研究系列复用、难度分层（主线易+可选难）与资料片如何扩展原型的高价值参考。"
   },
@@ -25,71 +13,83 @@
     "progression_model": "靠解锁新工具能力与能力门控开启新区域、收集升级推进，半数能力沿用前作、半数全新；进度体现为已解锁能力、可抵达区域与可选内容收集度，主线推进平缓而可选挑战提供深度。",
     "failure_model": "战斗或坠落致生命归零即死亡、于附近重生并保留进度，失败惩罚轻微，整体以解谜推进与探索发现为主而非惩罚。",
     "content_structure": "以一座连通的地下橡皮泥沙盒世界为骨架，靠物理解谜、能力门控探索、与全新敌人的少量战斗及大量可选秘密承载流程，主线易、可选难，无地图靠地标导航，单人。",
-    "main_player_actions": ["平台跳跃", "道具运用", "秘密解谜"],
-    "main_player_decisions": ["探索路线", "秘密取舍", "道具选择"],
-    "main_player_experiences": ["探索发现", "系统掌控", "发现乐趣"],
-    "main_mechanics": ["能力门控探索", "物理模拟", "多用途道具", "分层秘密", "环境叙事"],
-    "replayability_sources": ["分层秘密", "全收集", "速通"],
-    "production_constraints": ["Unreal 引擎", "小型团队", "系列复用"],
-    "innovation_patterns": ["物理模拟", "分层秘密"],
-    "reusable_reference_patterns": ["能力门控探索", "物理模拟", "分层秘密"],
-    "non_replicable_risks": ["技术复杂度", "玩家留存"],
-    "genre": ["类银河城", "解谜平台"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["轻松配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["玩具沙盒", "奇幻"],
-    "narrative_style": ["环境叙事"],
-    "game_feel": ["流畅响应", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "平台跳跃",
+      "道具运用",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "秘密取舍",
+      "道具选择"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "系统掌控",
+      "发现乐趣"
+    ],
+    "main_mechanics": [
+      "能力门控探索",
+      "物理模拟",
+      "多用途道具",
+      "分层秘密",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "分层秘密",
+      "全收集",
+      "速通"
+    ],
+    "production_constraints": [
+      "Unreal 引擎",
+      "小型团队",
+      "系列复用"
+    ],
+    "innovation_patterns": [
+      "物理模拟",
+      "分层秘密"
+    ],
+    "reusable_reference_patterns": [
+      "能力门控探索",
+      "物理模拟",
+      "分层秘密"
+    ],
+    "non_replicable_risks": [
+      "技术复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "类银河城",
+      "解谜平台"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "轻松配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "玩具沙盒",
+      "奇幻"
+    ],
+    "narrative_style": [
+      "环境叙事"
+    ],
+    "game_feel": [
+      "流畅响应",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "能力门控探索",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "能力解锁开路",
-            "quote_or_summary": "解锁工具能力能开启此前无法抵达的区域，半数能力沿用前作、半数全新，是典型能力门控探索结构。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "物理模拟",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "物理解谜为核心",
-            "quote_or_summary": "玩法约 40% 为物理解谜，主线谜题更简单、硬核物理谜题多设为可选。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "系列复用",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "前作原型扩成资料片",
-            "quote_or_summary": "本作沿用 Supraland 的内核与半数能力，最初是引入新成员熟悉流程的小项目，后扩成独立资料片（Supraland 1.5）。",
-            "notes": "维基百科与 Steam 商店页可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Supraland Six Inches Under 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1522870/Supraland_Six_Inches_Under/",
-        "quote_or_summary": "第一人称类银河城独立资料片（Supraland 1.5），能力门控探索、物理解谜为核心、约 55% 探索/40% 解谜/5% 战斗、半数能力沿用半数全新、主线易可选难、敌人全新、可选内容更多，Supra Games 开发，2022 年发售。",
-        "notes": "事实取自 Steam 商店页与维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "能力门控探索",
+      "物理模拟",
+      "系列复用"
+    ]
   },
   "claims": [
     {
@@ -97,16 +97,7 @@
       "subject": "分层秘密",
       "relation": "creates",
       "object": "进度节奏",
-      "explanation": "把高难物理谜题大多从主线挪进可选内容、让主线谜题刻意做简单，于是不同水平的玩家走的是同一张地图却体验到不同难度曲线：求通关者顺畅推进主线，求挑战者主动钻进可选硬谜题与隐藏，使一份内容同时服务休闲与硬核而不互相拖累，可复用于希望用「主线易+可选难的分层设计」拓宽受众、又不稀释核心玩家深度的设计。",
-      "evidence": [
-        {
-          "title": "难度分层制造节奏解读",
-          "quote_or_summary": "主线谜题做易、硬核谜题设为可选，使同一地图对休闲与硬核玩家给出不同难度曲线、各取所需。",
-          "notes": "基于可观察设计的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把高难物理谜题大多从主线挪进可选内容、让主线谜题刻意做简单，于是不同水平的玩家走的是同一张地图却体验到不同难度曲线：求通关者顺畅推进主线，求挑战者主动钻进可选硬谜题与隐藏，使一份内容同时服务休闲与硬核而不互相拖累，可复用于希望用「主线易+可选难的分层设计」拓宽受众、又不稀释核心玩家深度的设计。"
     }
   ]
 }

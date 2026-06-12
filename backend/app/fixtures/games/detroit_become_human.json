@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_detroit_become_human",
     "title": "Detroit: Become Human",
-    "source_refs": [
-      {
-        "title": "Detroit: Become Human（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Detroit:_Become_Human",
-        "notes": "类型（互动剧情冒险）、玩家选择决定三名仿生人的剧情走向、快速反应事件（QTE）、对话树、角色死亡后无「Game Over」剧情继续推进、可视流程图供回看与回溯到决策点、Connor 用增强视觉重建线索、第三人称、2038 年底特律、Quantic Dream 自研引擎与动捕、约 3000 万欧元投入、2018 年发售等事实来源。"
-      },
-      {
-        "title": "Detroit: Become Human（Steam）",
-        "url": "https://store.steampowered.com/app/1222140/Detroit_Become_Human/",
-        "notes": "分支叙事、QTE、多结局、流程图、三名可操作仿生人等事实来源。"
-      }
-    ],
     "short_description": "一款互动剧情冒险游戏，玩家轮流操控三名仿生人（警探 Connor、家政 Kara、解放领袖 Markus），通过对话选择、快速反应事件与调查重建推动剧情；每个选择都改变走向，角色死亡也不会出现「Game Over」而是让故事在缺人的情况下继续，可视流程图供回看分支，Quantic Dream 自研引擎、2018 年发售。",
     "selection_reason": "作为「无 Game Over 的分支叙事互动剧情」代表：让角色可永久死亡而剧情照常推进，把每个抉择的代价做成不可逆的剧情后果而非读档重来，再用可视流程图把错过的分支摊给玩家看，是研究高分支叙事、抉择重量与重玩驱动的高价值参考。"
   },
@@ -25,71 +13,80 @@
     "progression_model": "靠章节推进三名仿生人的命运、靠抉择与 QTE 表现塑造关系、存亡与世界走向；进度体现为故事章节、角色生死、关系状态与已触发分支，选择长线影响多结局。",
     "failure_model": "本作没有传统失败：QTE 失误或错误抉择不会 Game Over，而是导致角色受伤、关系恶化乃至永久死亡，剧情据此改写继续，真正的代价是不可逆的剧情后果。",
     "content_structure": "以三名仿生人交织的章节式剧情为骨架，靠对话抉择、快速反应事件、调查与可视流程图承载分支与情感，含大量关键选择与多结局，单人。",
-    "main_player_actions": ["对话选择", "社交互动", "物件操控"],
-    "main_player_decisions": ["道德抉择", "风险取舍", "关系经营"],
-    "main_player_experiences": ["情感叙事", "抉择沉浸", "氛围营造"],
-    "main_mechanics": ["分支叙事", "快速反应", "流程图回看", "线索调查", "环境叙事"],
-    "replayability_sources": ["多结局", "彩蛋收集"],
-    "production_constraints": ["自研引擎", "大团队协作"],
-    "innovation_patterns": ["分支叙事", "流程图回看"],
-    "reusable_reference_patterns": ["分支叙事", "情感叙事"],
-    "non_replicable_risks": ["一次性体验", "大团队协作"],
-    "genre": ["叙事冒险"],
-    "art_style": ["写实美术"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["第三人称"],
-    "theme": ["科幻", "反乌托邦"],
-    "narrative_style": ["分支叙事", "情感叙事", "过场驱动"],
-    "game_feel": ["沉浸代入"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "对话选择",
+      "社交互动",
+      "物件操控"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "风险取舍",
+      "关系经营"
+    ],
+    "main_player_experiences": [
+      "情感叙事",
+      "抉择沉浸",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "分支叙事",
+      "快速反应",
+      "流程图回看",
+      "线索调查",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "大团队协作"
+    ],
+    "innovation_patterns": [
+      "分支叙事",
+      "流程图回看"
+    ],
+    "reusable_reference_patterns": [
+      "分支叙事",
+      "情感叙事"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "大团队协作"
+    ],
+    "genre": [
+      "叙事冒险"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "科幻",
+      "反乌托邦"
+    ],
+    "narrative_style": [
+      "分支叙事",
+      "情感叙事",
+      "过场驱动"
+    ],
+    "game_feel": [
+      "沉浸代入"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "分支叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "选择改写走向",
-            "quote_or_summary": "玩家选择决定三名仿生人的剧情走向，角色死亡后无 Game Over，故事在缺人情况下继续。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "流程图回看",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "可视流程图",
-            "quote_or_summary": "章节结束提供可视流程图，让玩家回看自己的选择并看到错过的分支节点。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "多结局",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "选择通向多结局",
-            "quote_or_summary": "大量关键选择与角色存亡长线影响走向，通向差异巨大的多种结局。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Detroit: Become Human 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Detroit:_Become_Human",
-        "quote_or_summary": "互动剧情冒险，三名仿生人、对话选择、QTE、调查重建、角色永久死亡无 Game Over 剧情续行、可视流程图回看分支、多结局，Quantic Dream 自研引擎与动捕，2018 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "分支叙事",
+      "流程图回看",
+      "多结局"
+    ]
   },
   "claims": [
     {
@@ -97,16 +94,7 @@
       "subject": "流程图回看",
       "relation": "increases",
       "object": "重玩动力",
-      "explanation": "章节结束用可视流程图把玩家走过与错过的分支并排摊开，让「原来还能这样」的未走路径变得可见可量化，配合角色永久死亡带来的不可逆后果，强烈撩动玩家重玩以探索另一种命运的欲望，把分支叙事的隐性深度显性化为重玩驱动，可复用于希望用「可视化分支地图」把高分支叙事的探索价值转化为重玩动力的设计。",
-      "evidence": [
-        {
-          "title": "流程图驱动重玩解读",
-          "quote_or_summary": "可视流程图把错过的分支显性化，配合不可逆后果，强烈撩动玩家重玩探索另一种命运。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "章节结束用可视流程图把玩家走过与错过的分支并排摊开，让「原来还能这样」的未走路径变得可见可量化，配合角色永久死亡带来的不可逆后果，强烈撩动玩家重玩以探索另一种命运的欲望，把分支叙事的隐性深度显性化为重玩驱动，可复用于希望用「可视化分支地图」把高分支叙事的探索价值转化为重玩动力的设计。"
     }
   ]
 }

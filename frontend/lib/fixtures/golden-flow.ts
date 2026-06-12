@@ -5,13 +5,6 @@ export const goldenFlow: GoldenFlow = {
     {
       id: "game_balatro",
       title: "Balatro",
-      source_refs: [
-        {
-          title: "Balatro store page",
-          url: "https://store.steampowered.com/app/2379780/Balatro/",
-          notes: "Primary reference for the game candidate.",
-        },
-      ],
       short_description:
         "Poker-inspired roguelike deckbuilder built around familiar card semantics.",
       selection_reason:
@@ -20,13 +13,6 @@ export const goldenFlow: GoldenFlow = {
     {
       id: "game_into_the_breach",
       title: "Into the Breach",
-      source_refs: [
-        {
-          title: "Into the Breach store page",
-          url: "https://store.steampowered.com/app/590380/Into_the_Breach/",
-          notes: "Primary reference for the game candidate.",
-        },
-      ],
       short_description:
         "Compact tactical game using small boards, complete information, and readable enemy intent.",
       selection_reason:
@@ -35,13 +21,6 @@ export const goldenFlow: GoldenFlow = {
     {
       id: "game_baba_is_you",
       title: "Baba Is You",
-      source_refs: [
-        {
-          title: "Baba Is You store page",
-          url: "https://store.steampowered.com/app/736260/Baba_Is_You/",
-          notes: "Primary reference for the game candidate.",
-        },
-      ],
       short_description:
         "Puzzle game where players manipulate explicit rules as objects.",
       selection_reason:
@@ -56,16 +35,6 @@ export const goldenFlow: GoldenFlow = {
       object: "familiar card rules to reduce learning cost",
       explanation:
         "Poker-like hands give players an immediate rules vocabulary before modifiers add depth.",
-      evidence: [
-        {
-          title: "Balatro design summary",
-          quote_or_summary:
-            "The game starts from recognizable poker hand logic and layers score modifiers over it.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
     {
       id: "claim_breach_compact_tactics",
@@ -74,16 +43,6 @@ export const goldenFlow: GoldenFlow = {
       object: "high tactical depth through compact boards and visible enemy intent",
       explanation:
         "Small boards and readable future actions let players reason about consequences without large production scope.",
-      evidence: [
-        {
-          title: "Into the Breach design summary",
-          quote_or_summary:
-            "Encounters emphasize small grids, visible threats, and consequence planning.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
     {
       id: "claim_baba_rule_manipulation",
@@ -91,16 +50,6 @@ export const goldenFlow: GoldenFlow = {
       relation: "demonstrates",
       object: "rule manipulation as player-facing interaction",
       explanation: "Rules become explicit objects that players can inspect and alter.",
-      evidence: [
-        {
-          title: "Baba Is You design summary",
-          quote_or_summary:
-            "Puzzle rules are represented as manipulable language-like objects.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
     {
       id: "claim_symbolic_ui_low_art_cost",
@@ -109,16 +58,6 @@ export const goldenFlow: GoldenFlow = {
       object: "animation and asset production burden",
       explanation:
         "Abstract symbolic feedback can reduce art load, but this depends on clarity and feedback design.",
-      evidence: [
-        {
-          title: "Curator hypothesis",
-          quote_or_summary:
-            "Symbolic UI is expected to be cheaper than animation-heavy combat for a solo prototype.",
-          notes: "Weak evidence included to prove downstream confidence handling.",
-        },
-      ],
-      confidence: "low",
-      quality_status: "weak_evidence",
     },
   ],
   graph_relations: [
@@ -128,16 +67,6 @@ export const goldenFlow: GoldenFlow = {
       relation: "uses",
       target_node: "familiar card rules to reduce learning cost",
       claim_id: "claim_balatro_familiar_rules",
-      evidence: [
-        {
-          title: "Balatro design summary",
-          quote_or_summary:
-            "The game starts from recognizable poker hand logic and layers score modifiers over it.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
     {
       id: "rel_claim_breach_compact_tactics",
@@ -145,16 +74,6 @@ export const goldenFlow: GoldenFlow = {
       relation: "creates",
       target_node: "high tactical depth through compact boards and visible enemy intent",
       claim_id: "claim_breach_compact_tactics",
-      evidence: [
-        {
-          title: "Into the Breach design summary",
-          quote_or_summary:
-            "Encounters emphasize small grids, visible threats, and consequence planning.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
     {
       id: "rel_claim_baba_rule_manipulation",
@@ -162,16 +81,6 @@ export const goldenFlow: GoldenFlow = {
       relation: "demonstrates",
       target_node: "rule manipulation as player-facing interaction",
       claim_id: "claim_baba_rule_manipulation",
-      evidence: [
-        {
-          title: "Baba Is You design summary",
-          quote_or_summary:
-            "Puzzle rules are represented as manipulable language-like objects.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
     {
       id: "rel_claim_symbolic_ui_low_art_cost",
@@ -179,16 +88,6 @@ export const goldenFlow: GoldenFlow = {
       relation: "may_reduce",
       target_node: "animation and asset production burden",
       claim_id: "claim_symbolic_ui_low_art_cost",
-      evidence: [
-        {
-          title: "Curator hypothesis",
-          quote_or_summary:
-            "Symbolic UI is expected to be cheaper than animation-heavy combat for a solo prototype.",
-          notes: "Weak evidence included to prove downstream confidence handling.",
-        },
-      ],
-      confidence: "low",
-      quality_status: "weak_evidence",
     },
   ],
   developer_profile: {
@@ -310,15 +209,6 @@ export const goldenFlow: GoldenFlow = {
       main_mechanics: ["poker hands", "score modifiers", "shop drafting"],
       reference_value_tags: ["mechanic-distinct", "low-art reference", "high systemic depth"],
       hard_to_copy_risks: ["balance of exponential scoring is hard to tune"],
-      evidence: [
-        {
-          title: "Balatro design summary",
-          quote_or_summary: "Recognizable poker logic with score modifiers layered on top.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
     {
       id: "profile_into_the_breach",
@@ -332,15 +222,6 @@ export const goldenFlow: GoldenFlow = {
       main_mechanics: ["small grid", "visible enemy intent", "positional pushing"],
       reference_value_tags: ["high systemic depth", "low-art reference", "solo-friendly reference"],
       hard_to_copy_risks: ["perfect-information design needs careful encounter authoring"],
-      evidence: [
-        {
-          title: "Into the Breach design summary",
-          quote_or_summary: "Small grids, visible threats, and consequence planning.",
-          notes: "Curated design interpretation for the fixture.",
-        },
-      ],
-      confidence: "high",
-      quality_status: "reviewed",
     },
   ],
   concept_evaluations: [
@@ -351,7 +232,6 @@ export const goldenFlow: GoldenFlow = {
       feasibility_score: 3,
       novelty_score: 4,
       risk_score: 3,
-      evidence_quality_score: 3,
       category: "balanced",
       notes:
         "Strong fit for a systems-first solo developer; main uncertainty is whether rule feedback reads clearly enough.",

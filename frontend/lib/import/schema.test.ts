@@ -1,14 +1,11 @@
 import { describe, it, expect } from "vitest";
 import { parseImportDocument } from "@/lib/import/schema";
 
-const evidence = { title: "GDC", notes: "n", url: "http://x" };
-
 function validDoc() {
   return {
     candidate: {
       id: "game_hk",
       title: "Hollow Knight",
-      source_refs: [evidence],
       short_description: "metroidvania",
       selection_reason: "reference",
     },
@@ -37,12 +34,7 @@ function validDoc() {
       narrative_style: ["environmental"],
       game_feel: ["tight"],
       team_model: ["small"],
-      reference_value_tags: [
-        { tag: "atmosphere", confidence: "high", quality_status: "reviewed", evidence: [evidence] },
-      ],
-      evidence: [evidence],
-      confidence: "high",
-      quality_status: "reviewed",
+      reference_value_tags: ["atmosphere"],
     },
     claims: [
       {
@@ -51,9 +43,6 @@ function validDoc() {
         relation: "reinforces",
         object: "exploration flow",
         explanation: "e",
-        evidence: [evidence],
-        confidence: "high",
-        quality_status: "reviewed",
       },
     ],
   };
@@ -75,9 +64,21 @@ describe("parseImportDocument", () => {
     }
   });
 
-  it("rejects evidence with neither url nor quote_or_summary", () => {
+  it("rejects empty reference_value_tags with a field path", () => {
     const doc = validDoc();
-    doc.profile.evidence = [{ title: "t", notes: "n" } as never];
+    doc.profile.reference_value_tags = [];
+    const result = parseImportDocument(doc);
+    expect(result.ok).toBe(false);
+    if (!result.ok) {
+      expect(
+        result.errors.some((e) => e.path.includes("reference_value_tags")),
+      ).toBe(true);
+    }
+  });
+
+  it("rejects unknown extra fields on the profile", () => {
+    const doc = validDoc();
+    (doc.profile as Record<string, unknown>).confidence = "high";
     const result = parseImportDocument(doc);
     expect(result.ok).toBe(false);
   });

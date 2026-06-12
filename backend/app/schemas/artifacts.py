@@ -2,14 +2,7 @@ from __future__ import annotations
 
 from pydantic import Field
 
-from app.schemas.common import (
-    ConfidenceLevel,
-    ConstraintType,
-    EvidenceRef,
-    NonEmptyStr,
-    QualityStatus,
-    StrictBaseModel,
-)
+from app.schemas.common import ConstraintType, NonEmptyStr, StrictBaseModel
 
 
 class DeveloperConstraint(StrictBaseModel):
@@ -21,7 +14,6 @@ class DeveloperConstraint(StrictBaseModel):
 class SeedGame(StrictBaseModel):
     id: str = Field(min_length=1)
     title: str = Field(min_length=1)
-    source_refs: list[EvidenceRef] = Field(min_length=1)
     short_description: str = Field(min_length=1)
     selection_reason: str = Field(min_length=1)
 
@@ -32,9 +24,6 @@ class DesignClaim(StrictBaseModel):
     relation: str = Field(min_length=1)
     object: str = Field(min_length=1)
     explanation: str = Field(min_length=1)
-    evidence: list[EvidenceRef] = Field(min_length=1)
-    confidence: ConfidenceLevel
-    quality_status: QualityStatus
 
 
 class GraphRelation(StrictBaseModel):
@@ -43,9 +32,6 @@ class GraphRelation(StrictBaseModel):
     relation: str = Field(min_length=1)
     target_node: str = Field(min_length=1)
     claim_id: str = Field(min_length=1)
-    evidence: list[EvidenceRef] = Field(min_length=1)
-    confidence: ConfidenceLevel
-    quality_status: QualityStatus
 
 
 class DeveloperProfile(StrictBaseModel):
@@ -110,13 +96,6 @@ class PrototypeBrief(StrictBaseModel):
     do_not_build_yet: list[NonEmptyStr] = Field(min_length=1)
 
 
-class ReferenceValueTag(StrictBaseModel):
-    tag: str = Field(min_length=1)
-    confidence: ConfidenceLevel
-    quality_status: QualityStatus
-    evidence: list[EvidenceRef] = Field(default_factory=list)
-
-
 class GameDesignProfile(StrictBaseModel):
     game_id: str = Field(min_length=1)
     one_sentence_summary: str = Field(min_length=1)
@@ -142,7 +121,4 @@ class GameDesignProfile(StrictBaseModel):
     narrative_style: list[NonEmptyStr] = Field(min_length=1)
     game_feel: list[NonEmptyStr] = Field(min_length=1)
     team_model: list[NonEmptyStr] = Field(min_length=1)
-    reference_value_tags: list[ReferenceValueTag] = Field(min_length=1)
-    evidence: list[EvidenceRef] = Field(min_length=1)
-    confidence: ConfidenceLevel
-    quality_status: QualityStatus
+    reference_value_tags: list[NonEmptyStr] = Field(min_length=1)

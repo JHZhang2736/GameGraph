@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_before_we_leave",
     "title": "Before We Leave",
-    "source_refs": [
-      {
-        "title": "Before We Leave（Steam）",
-        "url": "https://store.steampowered.com/app/1073910/Before_We_Leave/",
-        "notes": "类型（温和无战斗城建）、玩家带领劫后余生的「Peeps」重建家园并向太阳系扩张、基于六边形地块且建筑与相邻地块产生加成、彻底去除战斗只保留探索/扩张/开发、低多边形可爱画风、Balancing Monkey Games（新西兰）开发、2020 年 Epic 首发 2021 年登陆 Steam 等事实来源。"
-      }
-    ],
     "short_description": "一款温和、无战斗的城市建造游戏，玩家带领劫后余生的「Peeps」在六边形地块上重建家园、采集资源、扩张到邻近星球，靠建筑彼此相邻的加成规划布局，全程没有战斗与敌人，只专注探索、扩张与开发。",
     "selection_reason": "作为「彻底去掉战斗的舒缓城建」代表：在经典 4X 框架上砍掉战争维度只留「探索/扩张/开发」，以六边形相邻加成驱动布局优化，用零冲突的舒缓基调换取差异化定位，是研究无战斗经营与相邻加成式布局的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "靠研究新技术、解锁建筑与运输、跨岛屿与跨星球扩张推进；进度体现为聚落规模、技术解锁与已殖民星球数，资源链与污染管理决定扩张节奏。",
     "failure_model": "本作没有战败与死亡的硬失败：Peeps 缺食或资源链断裂会导致聚落停滞与不满、扩张受阻，玩家须重新理顺生产链才能继续，失败表现为发展陷入停滞而非被消灭。",
     "content_structure": "以六边形星球地图与跨星系扩张为骨架，靠相邻加成布局、资源生产链、技术研究与污染治理承载流程，无战斗，含多颗可殖民星球，单人。",
-    "main_player_actions": ["城市建设", "采集", "科技研发"],
-    "main_player_decisions": ["基地规划", "资源取舍", "探索路线"],
-    "main_player_experiences": ["经营成就", "探索发现", "系统掌控"],
-    "main_mechanics": ["建造", "采集", "非战斗", "相邻加成", "资源管理"],
-    "replayability_sources": ["程序生成", "难度分级", "任务多样"],
-    "production_constraints": ["低多边形", "小型团队"],
-    "innovation_patterns": ["非战斗", "相邻加成"],
-    "reusable_reference_patterns": ["非战斗", "建造", "相邻加成"],
-    "non_replicable_risks": ["玩家留存", "平衡复杂度"],
-    "genre": ["模拟经营", "4X策略"],
-    "art_style": ["低多边形"],
-    "audio_style": ["轻松配乐"],
-    "perspective": ["等距"],
-    "theme": ["末世重建", "自然"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["轻松休闲", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "城市建设",
+      "采集",
+      "科技研发"
+    ],
+    "main_player_decisions": [
+      "基地规划",
+      "资源取舍",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "经营成就",
+      "探索发现",
+      "系统掌控"
+    ],
+    "main_mechanics": [
+      "建造",
+      "采集",
+      "非战斗",
+      "相邻加成",
+      "资源管理"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "难度分级",
+      "任务多样"
+    ],
+    "production_constraints": [
+      "低多边形",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "非战斗",
+      "相邻加成"
+    ],
+    "reusable_reference_patterns": [
+      "非战斗",
+      "建造",
+      "相邻加成"
+    ],
+    "non_replicable_risks": [
+      "玩家留存",
+      "平衡复杂度"
+    ],
+    "genre": [
+      "模拟经营",
+      "4X策略"
+    ],
+    "art_style": [
+      "低多边形"
+    ],
+    "audio_style": [
+      "轻松配乐"
+    ],
+    "perspective": [
+      "等距"
+    ],
+    "theme": [
+      "末世重建",
+      "自然"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "轻松休闲",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "非战斗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "彻底去除战斗",
-            "quote_or_summary": "游戏舍弃了战斗与暴力，只保留 4X 中的探索、扩张与开发三个维度，没有武器与邻邦争夺。",
-            "notes": "Steam 商店页与评测可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "相邻加成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "六边形相邻加成",
-            "quote_or_summary": "游戏基于六边形地块，几乎每种可放置的东西都会因与某物相邻而获得加成。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "建造",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "重建与扩张聚落",
-            "quote_or_summary": "Peeps 在六边形地块上建造建筑采集资源、维持温饱并不断扩建聚落，乃至殖民其他星球。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Before We Leave 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1073910/Before_We_Leave/",
-        "quote_or_summary": "温和无战斗城建，带领 Peeps 重建家园并殖民太阳系，六边形地块相邻加成，去除战斗只留探索扩张开发，低多边形画风，Balancing Monkey Games 开发，2020 年 Epic 首发、2021 年登陆 Steam。",
-        "notes": "事实取自 Steam 商店页与评测。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "非战斗",
+      "相邻加成",
+      "建造"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "非战斗",
       "relation": "creates",
       "object": "市场差异化",
-      "explanation": "在以战争为核心张力的 4X／城建品类里反其道而行、彻底移除战斗，把玩家注意力全部导向布局优化与资源链经营，用「零冲突的舒缓体验」精准切中偏好无压力经营的受众，从扎堆比拼战争系统的同类中做出差异化定位，可复用于以删减而非堆叠核心冲突来换取细分市场辨识度的设计。",
-      "evidence": [
-        {
-          "title": "无战斗差异化解读",
-          "quote_or_summary": "主动删去战斗维度，让舒缓无冲突的经营成为卖点，从战争向的同类中差异化。",
-          "notes": "基于可观察事实的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "在以战争为核心张力的 4X／城建品类里反其道而行、彻底移除战斗，把玩家注意力全部导向布局优化与资源链经营，用「零冲突的舒缓体验」精准切中偏好无压力经营的受众，从扎堆比拼战争系统的同类中做出差异化定位，可复用于以删减而非堆叠核心冲突来换取细分市场辨识度的设计。"
     }
   ]
 }

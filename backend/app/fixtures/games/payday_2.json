@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_payday_2",
     "title": "PAYDAY 2",
-    "source_refs": [
-      {
-        "title": "PAYDAY 2（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/PAYDAY_2",
-        "notes": "类型（四人合作抢劫第一人称射击）、Overkill Software 开发、505 Games 发行、2013 年发售、自研 Diesel 引擎 2.0、第一人称、Crime.net 任务网、潜行完成有奖励、强攻触发不断升级的警力波次、最多四人合作含 AI 队友、面具为纯外观、五系技能树（策划/打手/技术/幽灵/逃犯）含基础与进阶两档、Infamy 满级重置长线加成、华盛顿特区背景、70+ DLC 长线更新等事实来源。"
-      },
-      {
-        "title": "PAYDAY 2（Steam，appid 218620）",
-        "url": "https://store.steampowered.com/app/218620/PAYDAY_2/",
-        "notes": "四人合作抢劫、潜行或强攻、Crime.net、技能树、面具、持续 DLC 更新等事实来源。"
-      }
-    ],
     "short_description": "一款四人合作的抢劫题材第一人称射击游戏，Overkill Software 开发、505 Games 发行、2013 年基于自研 Diesel 引擎推出：最多四名玩家在「Crime.net」网络上挑选抢劫任务，潜行无声完成可得额外奖励，一旦闹大则要顶住一波波越来越凶的警力增援；玩家戴面具、按「策划/打手/技术/幽灵/逃犯」五系技能树成长，并以 Infamy 等长线进阶与海量 DLC 持续扩展。",
     "selection_reason": "作为「把抢劫做成可潜可强攻的四人合作」的代表：同一张劫案地图既能无声潜行偷天换日、也能开火硬抢顶住警力波次，配合五系技能分工、面具养成与超长 DLC 运营，是研究合作射击、潜行/强攻双路线与长线内容更新的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "靠完成劫案累积经验解锁「策划/打手/技术/幽灵/逃犯」五系技能与基础/进阶两档加点、靠收益购置与改装武器、靠 Infamy 系统在满级后重置换取长线加成；进度体现为等级、技能构筑、武器库与声望。",
     "failure_model": "一局在全队被击倒或逮捕、或关键劫案目标失败时告终；强攻下警力会持续增援、压力不断升级，潜行暴露则可能瞬间陷入死战，失败源于配合失误或火力不支。",
     "content_structure": "以 Crime.net 上大量可潜可强攻的多日劫案为骨架，靠四人合作分工、五系技能构筑与海量武器面具承载玩法，以程序化的警察增援、难度分级与超长 DLC 更新承载重玩，多人合作（含 AI 队友）。",
-    "main_player_actions": ["射击", "潜行", "道具运用"],
-    "main_player_decisions": ["风险取舍", "职业搭配", "战略规划"],
-    "main_player_experiences": ["协作默契", "竞技紧张", "战斗精通"],
-    "main_mechanics": ["抢劫", "潜行强攻", "能力树", "合作生存"],
-    "replayability_sources": ["任务多样", "难度分级", "外观收集"],
-    "production_constraints": ["自研引擎", "系列复用"],
-    "innovation_patterns": ["抢劫", "潜行强攻"],
-    "reusable_reference_patterns": ["潜行强攻", "合作生存", "职业分工"],
-    "non_replicable_risks": ["长期更新运营", "平衡复杂度", "品牌积淀"],
-    "genre": ["合作射击", "第一人称射击"],
-    "art_style": ["写实美术"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["犯罪悬疑"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["紧张节奏", "爽快射击"],
-    "team_model": ["中型团队"],
+    "main_player_actions": [
+      "射击",
+      "潜行",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "职业搭配",
+      "战略规划"
+    ],
+    "main_player_experiences": [
+      "协作默契",
+      "竞技紧张",
+      "战斗精通"
+    ],
+    "main_mechanics": [
+      "抢劫",
+      "潜行强攻",
+      "能力树",
+      "合作生存"
+    ],
+    "replayability_sources": [
+      "任务多样",
+      "难度分级",
+      "外观收集"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "系列复用"
+    ],
+    "innovation_patterns": [
+      "抢劫",
+      "潜行强攻"
+    ],
+    "reusable_reference_patterns": [
+      "潜行强攻",
+      "合作生存",
+      "职业分工"
+    ],
+    "non_replicable_risks": [
+      "长期更新运营",
+      "平衡复杂度",
+      "品牌积淀"
+    ],
+    "genre": [
+      "合作射击",
+      "第一人称射击"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "犯罪悬疑"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "爽快射击"
+    ],
+    "team_model": [
+      "中型团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "潜行强攻",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "同案可潜可强攻",
-            "quote_or_summary": "同一场劫案既可全程潜行无声完成，也可在暴露后转为顶住警力波次的强攻，两种路线随时切换。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "抢劫",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Crime.net 多日劫案",
-            "quote_or_summary": "玩家在 Crime.net 挑选银行抢劫、运毒、盗窃等多日劫案，完成撬锁、搬运赃物、控制人质等目标。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作生存",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "四人协作顶住警力",
-            "quote_or_summary": "最多四名玩家协作分工，强攻时须共同顶住一波波越来越凶的警力增援直至撤离。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "PAYDAY 2 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/PAYDAY_2",
-        "quote_or_summary": "四人合作抢劫 FPS，Crime.net 任务、潜行或强攻双路线、升级的警力波次、五系技能树、面具养成、Infamy 长线、70+ DLC，Overkill Software 开发、505 Games 发行，Diesel 引擎，2013 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "潜行强攻",
+      "抢劫",
+      "合作生存"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "潜行强攻",
       "relation": "creates",
       "object": "重玩动力",
-      "explanation": "让每张劫案地图同时支持「悄无声息地偷」与「火力全开地抢」两条完全不同的玩法，且二者会在暴露的瞬间临场切换，等于把一关变成多种体验：这次拼隐蔽路线与配合，下次比火力与抗压，失败的潜行还会无缝滑向混战。玩法路径的分叉与不可预测的临场转折，让同一内容反复可玩、并催生大量应变与默契。可复用于希望用「单关多解 + 失败即转入另一套玩法」延长内容寿命、以路径分叉驱动重玩的合作关卡设计。",
-      "evidence": [
-        {
-          "title": "双路线驱动重玩解读",
-          "quote_or_summary": "同案可潜可强攻且会临场切换，使一关产生多种体验并催生应变与默契，显著延长重玩价值。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让每张劫案地图同时支持「悄无声息地偷」与「火力全开地抢」两条完全不同的玩法，且二者会在暴露的瞬间临场切换，等于把一关变成多种体验：这次拼隐蔽路线与配合，下次比火力与抗压，失败的潜行还会无缝滑向混战。玩法路径的分叉与不可预测的临场转折，让同一内容反复可玩、并催生大量应变与默契。可复用于希望用「单关多解 + 失败即转入另一套玩法」延长内容寿命、以路径分叉驱动重玩的合作关卡设计。"
     }
   ]
 }

@@ -206,9 +206,6 @@ def build_graph_relations_from_claims(claims: list[DesignClaim]) -> list[GraphRe
             relation=claim.relation,
             target_node=claim.object,
             claim_id=claim.id,
-            evidence=claim.evidence,
-            confidence=claim.confidence,
-            quality_status=claim.quality_status,
         )
         for claim in claims
     ]

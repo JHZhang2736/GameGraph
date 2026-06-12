@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_noita",
     "title": "Noita",
-    "source_refs": [
-      {
-        "title": "Noita（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Noita_(video_game)",
-        "notes": "类型（平台肉鸽）、每个像素均被物理模拟、法杖与法术自定义编排、程序生成 2D 环境、永久死亡（含少量永久解锁）、横版像素、芬兰神话题材（卡勒瓦拉）、Nolla Games 用自研 Falling Everything 引擎、2020 年正式发售、被一击即死的高难度等事实来源。"
-      }
-    ],
     "short_description": "一款每个像素都被物理模拟的横版像素肉鸽，玩家操控女巫向地下深处下潜，自由编排法杖与法术，利用可燃烧、流动、蒸发的材料与炼金反应作战，被击中即永久死亡。",
     "selection_reason": "作为「全像素物理模拟驱动涌现」的极致代表：让屏幕上每个像素都遵循物理与材料规则（燃烧、流动、爆炸、炼金），叠加可自由编排的法杖系统，造出几乎无法预演的涌现玩法，是研究物理沙盒与涌现系统的高价值参考。"
   },
@@ -20,71 +13,86 @@
     "progression_model": "单局靠拾取与编排法杖、法术与天赋临时变强，无传统等级；跨局以少量永久解锁推进，进度主要体现为单局下潜深度与对系统的掌握，绝大部分死亡不保留。",
     "failure_model": "采用永久死亡，敌人与环境（尤其早期）常可一击致命，玩家被击杀即本局结束，仅保留少量永久解锁。",
     "content_structure": "在程序生成、全像素物理模拟的地下世界中逐层下潜，以法杖编排、材料炼金、永久死亡与隐藏内容为骨架，含大量秘密与可选挑战，单人。",
-    "main_player_actions": ["射击", "技能释放", "走位", "采集"],
-    "main_player_decisions": ["法杖搭配", "风险取舍", "探索路线"],
-    "main_player_experiences": ["涌现玩法", "探索发现", "系统掌控"],
-    "main_mechanics": ["物理模拟", "法杖编排", "程序生成", "永久死亡", "炼金反应"],
-    "replayability_sources": ["程序生成", "构筑多样", "分层秘密"],
-    "production_constraints": ["自研引擎", "像素美术", "小型团队"],
-    "innovation_patterns": ["物理模拟", "法杖编排"],
-    "reusable_reference_patterns": ["物理模拟", "法杖编排", "程序生成"],
-    "non_replicable_risks": ["技术复杂度", "平衡复杂度"],
-    "genre": ["类肉鸽", "平台跳跃"],
-    "art_style": ["像素美术"],
-    "audio_style": ["氛围音乐", "环境音"],
-    "perspective": ["横版2D"],
-    "theme": ["神话", "地下探险"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["紧张节奏", "厚重打击"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "射击",
+      "技能释放",
+      "走位",
+      "采集"
+    ],
+    "main_player_decisions": [
+      "法杖搭配",
+      "风险取舍",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "涌现玩法",
+      "探索发现",
+      "系统掌控"
+    ],
+    "main_mechanics": [
+      "物理模拟",
+      "法杖编排",
+      "程序生成",
+      "永久死亡",
+      "炼金反应"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "分层秘密"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "像素美术",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "物理模拟",
+      "法杖编排"
+    ],
+    "reusable_reference_patterns": [
+      "物理模拟",
+      "法杖编排",
+      "程序生成"
+    ],
+    "non_replicable_risks": [
+      "技术复杂度",
+      "平衡复杂度"
+    ],
+    "genre": [
+      "类肉鸽",
+      "平台跳跃"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "氛围音乐",
+      "环境音"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "神话",
+      "地下探险"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "厚重打击"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "物理模拟",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "每像素模拟",
-            "quote_or_summary": "Noita 中每个像素都被物理模拟，材料可燃烧、流动、蒸发并发生炼金反应（如熔岩遇水成岩）。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "法杖编排",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "法杖与法术自定义",
-            "quote_or_summary": "玩家可自由组合与编排法杖的法术及其属性，打造自定义的施法效果。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "永久死亡",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "一击致命永死",
-            "quote_or_summary": "游戏采用永久死亡，早期敌人与环境常可一击秒杀，催生社区用语「Noita'd」形容离奇暴毙。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Noita 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Noita_(video_game)",
-        "quote_or_summary": "平台肉鸽，每像素物理模拟，法杖与法术自定义编排，程序生成 2D 环境，永久死亡，横版像素，芬兰神话题材，Nolla Games 用自研 Falling Everything 引擎，2020 年正式发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "物理模拟",
+      "法杖编排",
+      "永久死亡"
+    ]
   },
   "claims": [
     {
@@ -92,16 +100,7 @@
       "subject": "物理模拟",
       "relation": "creates",
       "object": "涌现玩法",
-      "explanation": "让世界中每个像素都遵循统一的材料与物理规则，使火、液体、气体、爆炸与炼金反应能彼此连锁，再叠加可自由编排的法杖系统，造出设计者也无法完全预演的连锁后果，把不可预测性本身做成核心乐趣，可复用于追求高涌现度的系统设计。",
-      "evidence": [
-        {
-          "title": "物理涌现解读",
-          "quote_or_summary": "统一的全像素物理使材料连锁反应不可预演，叠加法杖编排放大涌现。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让世界中每个像素都遵循统一的材料与物理规则，使火、液体、气体、爆炸与炼金反应能彼此连锁，再叠加可自由编排的法杖系统，造出设计者也无法完全预演的连锁后果，把不可预测性本身做成核心乐趣，可复用于追求高涌现度的系统设计。"
     }
   ]
 }

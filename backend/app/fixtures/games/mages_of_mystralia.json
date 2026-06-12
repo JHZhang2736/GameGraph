@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_mages_of_mystralia",
     "title": "Mages of Mystralia",
-    "source_refs": [
-      {
-        "title": "Mages of Mystralia（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Mages_of_Mystralia",
-        "notes": "类型（动作冒险）、俯视/等距视角、核心为基于符文的自定义法术编排、战斗与解谜与探索、奇幻作家 Ed Greenwood 编剧、主角 Zia 觉醒法力调停巨魔与反魔法王国之争、Borealys Games 开发、Antoine Vachon 配乐、2017 年 5 月发售等事实来源。"
-      },
-      {
-        "title": "Runes — Mages of Mystralia Wiki（Fandom）",
-        "url": "https://magesofmystralia.fandom.com/wiki/Runes",
-        "notes": "符文分行为（Behavior）、增幅（Augment）、触发（Trigger）三类；行为像动词使法术做事（移动/分裂/弹跳，可叠加成多重弹跳火球），增幅像副词只影响直接相连的符文且摆放位置不同效果不同，触发用条件（如撞击）把多个法术串接；多数符文须直接相连才发生关系，否则作用于基础法术，符文越多耗蓝越高等机制来源。"
-      }
-    ],
     "short_description": "一款俯视/等距视角的动作冒险游戏，核心是基于符文的自定义法术编排：玩家把行为、增幅、触发三类符文像搭积木一样组合，设计出会移动、分裂、弹跳乃至条件触发的专属法术，再用它们战斗与解谜；奇幻作家 Ed Greenwood 编剧、主角 Zia 觉醒法力调停巨魔与反魔法王国之争，Borealys Games 开发、2017 年发售。",
     "selection_reason": "作为「把法术做成可编排的积木而非固定技能」的代表：用行为/增幅/触发三类符文让玩家像编程一样组合出移动、分裂、弹跳、条件触发的专属法术，把法术从「选哪个」变成「造哪个」，再用同一套自定义法术贯通战斗与解谜，是研究自定义法术编排与系统化创造性表达的高价值参考。"
   },
@@ -25,71 +13,78 @@
     "progression_model": "靠收集新符文与解锁四系元素拓展可编排的法术空间、靠材料升级法术槽推进；进度体现为已掌握的符文种类、可同时携带的法术数与能应对的谜题/战斗复杂度，成长更多是「编排可能性」的扩张。",
     "failure_model": "Zia 生命归零即战斗失败、回到检查点重来，无永久死亡惩罚，失败更多促使玩家回到编排界面重造更合适的法术。",
     "content_structure": "以分区的奇幻世界、战斗遭遇与环境谜题为骨架，靠符文法术编排、自定义法术战斗与解谜、能力门控探索承载流程，单人剧情驱动。",
-    "main_player_actions": ["魔法释放", "技能释放", "秘密解谜"],
-    "main_player_decisions": ["武器搭配", "探索路线", "优先级排序"],
-    "main_player_experiences": ["构筑乐趣", "个性化表达", "探索发现"],
-    "main_mechanics": ["法术编程", "法术合成", "能力门控探索", "魔法资源", "区域系统"],
-    "replayability_sources": ["构筑多样", "全收集"],
-    "production_constraints": ["小型团队"],
-    "innovation_patterns": ["法术编程", "法术合成"],
-    "reusable_reference_patterns": ["法术合成", "能力门控探索"],
-    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
-    "genre": ["动作冒险"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["等距"],
-    "theme": ["奇幻", "魔法学院"],
-    "narrative_style": ["对话叙事"],
-    "game_feel": ["策略权衡", "流畅操作"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "魔法释放",
+      "技能释放",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "武器搭配",
+      "探索路线",
+      "优先级排序"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "个性化表达",
+      "探索发现"
+    ],
+    "main_mechanics": [
+      "法术编程",
+      "法术合成",
+      "能力门控探索",
+      "魔法资源",
+      "区域系统"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "全收集"
+    ],
+    "production_constraints": [
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "法术编程",
+      "法术合成"
+    ],
+    "reusable_reference_patterns": [
+      "法术合成",
+      "能力门控探索"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "系统复杂度"
+    ],
+    "genre": [
+      "动作冒险"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "等距"
+    ],
+    "theme": [
+      "奇幻",
+      "魔法学院"
+    ],
+    "narrative_style": [
+      "对话叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "流畅操作"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "法术编程",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "行为/增幅/触发三类符文编排",
-            "quote_or_summary": "符文分行为、增幅、触发三类：行为使法术移动分裂弹跳并可叠加，增幅只影响直接相连的符文，触发用条件把多个法术串接，玩家像编程一样设计专属法术。",
-            "notes": "Fandom 维基与维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "法术合成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "符文组合成更强法术",
-            "quote_or_summary": "多枚符文按相连关系组合，能让简单法术叠出多重弹跳火球等远超单符文的复合效果。",
-            "notes": "Fandom 维基可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "能力门控探索",
-        "confidence": "medium",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "自定义法术解谜通行",
-            "quote_or_summary": "环境谜题需玩家用合适的自定义法术破解，掌握新符文后能进入此前无法通过的区域。",
-            "notes": "基于玩法描述的解释性判断。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Mages of Mystralia 玩法与符文系统综述",
-        "url": "https://magesofmystralia.fandom.com/wiki/Runes",
-        "quote_or_summary": "俯视动作冒险，核心为符文法术编排：行为/增幅/触发三类符文组合出移动分裂弹跳与条件触发的自定义法术、贯通战斗与解谜，Ed Greenwood 编剧，Borealys Games 开发，2017 年发售。",
-        "notes": "事实取自 Fandom 维基与维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "法术编程",
+      "法术合成",
+      "能力门控探索"
+    ]
   },
   "claims": [
     {
@@ -97,16 +92,7 @@
       "subject": "法术编程",
       "relation": "creates",
       "object": "系统深度",
-      "explanation": "把法术拆成行为、增幅、触发三类可自由拼接的符文，并规定增幅只作用于直接相连的符文、触发以条件串接多个法术，于是法术的强度与功能从「设计师预设」转移到「玩家如何摆放符文」上，少量符文经不同组合就能涌现出大量迥异效果，把技能选择升级为系统化的创造与解题，可复用于希望用「可组合的原子部件 + 邻接/触发规则」让玩家自造能力、以低成本部件撑起高上限系统深度的设计。",
-      "evidence": [
-        {
-          "title": "符文编排涌现深度解读",
-          "quote_or_summary": "行为/增幅/触发符文按相连与条件规则组合，使少量部件涌现大量效果，把选技能升级为造技能。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把法术拆成行为、增幅、触发三类可自由拼接的符文，并规定增幅只作用于直接相连的符文、触发以条件串接多个法术，于是法术的强度与功能从「设计师预设」转移到「玩家如何摆放符文」上，少量符文经不同组合就能涌现出大量迥异效果，把技能选择升级为系统化的创造与解题，可复用于希望用「可组合的原子部件 + 邻接/触发规则」让玩家自造能力、以低成本部件撑起高上限系统深度的设计。"
     }
   ]
 }

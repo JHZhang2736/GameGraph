@@ -1,4 +1,4 @@
-from app.schemas.common import ConfidenceLevel, ConstraintType
+from app.schemas.common import ConstraintType
 from app.schemas.developer_profile import ProfileParseInput
 from app.services.developer_profile_parser import (
     parse_developer_profile_input,
@@ -182,7 +182,6 @@ def test_parse_explicit_audio_basic_aliases_with_inferred_source() -> None:
             item for item in result.draft.field_sources if item.field == "audio_ability"
         )
         assert source.source_text != "defaulted to basic"
-        assert source.confidence != ConfidenceLevel.LOW
 
 
 def test_finalize_completeness_flags_only_empty_blocking_fields() -> None:

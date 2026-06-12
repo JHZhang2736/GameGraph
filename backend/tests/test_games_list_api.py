@@ -13,8 +13,6 @@ class FakeRepo:
                 id="game_hk",
                 title="Hollow Knight",
                 short_description="metroidvania",
-                confidence="high",
-                quality_status="reviewed",
             )
         ]
 
@@ -33,4 +31,4 @@ def test_list_games_returns_summaries(client: TestClient) -> None:
     body = response.json()
     assert body[0]["id"] == "game_hk"
     assert body[0]["title"] == "Hollow Knight"
-    assert body[0]["confidence"] == "high"
+    assert body[0]["short_description"] == "metroidvania"

@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_the_outlast_trials",
     "title": "The Outlast Trials",
-    "source_refs": [
-      {
-        "title": "The Outlast Trials（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/The_Outlast_Trials",
-        "notes": "类型（第一人称心理生存恐怖）、单人或 1-4 人合作、潜行为主且不可正面战斗、夜视目镜需管理电量、投掷物分散注意、六种科技「装备（rigs）」提供治疗/烟雾/路障等特殊能力、完成试炼按评级给经验并解锁升级、设定于 1959 年冷战 Sinyala 设施对被试（Reagents）进行人体实验、五种随机结局、Red Barrels 用虚幻4开发、Tom Salta 配乐、2023 年 5 月抢先体验、2024 年 3 月正式发售等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称心理生存恐怖游戏，单人或 1-4 人合作：玩家是冷战人体实验的被试，在试炼中完成目标、靠潜行躲避追杀（不可正面战斗），用需管理电量的夜视目镜、投掷物分散注意、并从治疗/烟雾/路障等六种科技装备中选择特殊能力求生；Red Barrels 用虚幻4开发、2023 年抢先体验、2024 年正式发售。",
     "selection_reason": "作为「把无武器潜行恐怖做成可重复、可合作、可成长的关卡化体验」的代表：去掉正面战斗、只留躲藏与逃跑，再用科技装备给每名玩家差异化的求生能力、用试炼评级与解锁提供长线成长，把一次性恐怖叙事改造成可刷的合作关卡，是研究合作恐怖、无武器潜逃与恐怖玩法长线化的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "靠完成试炼的评级获得经验并解锁升级与能力、用货币购买外观，跨局靠强化科技装备与解锁永久能力推进；进度体现为账户等级、已解锁装备能力与可挑战试炼难度。",
     "failure_model": "玩家无法正面战斗，被追杀者抓住会受伤乃至倒地，需队友救援，全员倒下或被处决即试炼失败、须重来，真正的代价是被迫的躲藏与逃跑而非反击。",
     "content_structure": "以多场可重复的试炼关卡、不可对抗的追杀者与科技装备为骨架，靠潜行躲藏、目标完成、装备求生与合作分工承载流程与重玩，支持单人与 1-4 人合作。",
-    "main_player_actions": ["潜行", "道具运用", "技能释放"],
-    "main_player_decisions": ["风险取舍", "探索路线", "职业搭配"],
-    "main_player_experiences": ["氛围营造", "协作默契", "竞技紧张"],
-    "main_mechanics": ["躲藏潜逃", "逃跑序列", "技能切换", "合作生存", "智能敌人"],
-    "replayability_sources": ["难度分级", "外观收集", "赛季更新"],
-    "production_constraints": ["Unreal 引擎", "无武器战斗", "小型团队"],
-    "innovation_patterns": ["躲藏潜逃", "非对称协作"],
-    "reusable_reference_patterns": ["合作生存", "氛围营造"],
-    "non_replicable_risks": ["题材争议", "玩家留存"],
-    "genre": ["生存恐怖"],
-    "art_style": ["写实美术"],
-    "audio_style": ["环境音"],
-    "perspective": ["第一人称"],
-    "theme": ["生存恐怖", "人体实验"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["紧张节奏", "沉浸代入"],
-    "team_model": ["中型团队"],
+    "main_player_actions": [
+      "潜行",
+      "道具运用",
+      "技能释放"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "探索路线",
+      "职业搭配"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "协作默契",
+      "竞技紧张"
+    ],
+    "main_mechanics": [
+      "躲藏潜逃",
+      "逃跑序列",
+      "技能切换",
+      "合作生存",
+      "智能敌人"
+    ],
+    "replayability_sources": [
+      "难度分级",
+      "外观收集",
+      "赛季更新"
+    ],
+    "production_constraints": [
+      "Unreal 引擎",
+      "无武器战斗",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "躲藏潜逃",
+      "非对称协作"
+    ],
+    "reusable_reference_patterns": [
+      "合作生存",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "题材争议",
+      "玩家留存"
+    ],
+    "genre": [
+      "生存恐怖"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "环境音"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "生存恐怖",
+      "人体实验"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "中型团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "躲藏潜逃",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "不可战斗只能潜逃",
-            "quote_or_summary": "玩家无法正面战斗，潜行躲藏与逃跑是唯一推进方式，被追杀者发现只能躲进掩体或甩脱。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "技能切换",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "六种科技装备",
-            "quote_or_summary": "玩家可从治疗、烟雾、路障等六种科技装备（rigs）中选择，获得差异化的特殊求生能力。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作生存",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "1-4 人合作试炼",
-            "quote_or_summary": "支持单人或最多四人合作，队友可互相救援，差异化装备鼓励分工协作求生。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "The Outlast Trials 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/The_Outlast_Trials",
-        "quote_or_summary": "第一人称心理生存恐怖，1-4 人合作、不可战斗只能潜行躲藏逃跑、夜视目镜管理电量、投掷物分散、六种科技装备提供特殊能力、试炼评级解锁升级，设定于 1959 年冷战人体实验，Red Barrels 用虚幻4开发，2023 抢先体验/2024 正式发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "躲藏潜逃",
+      "技能切换",
+      "合作生存"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "技能切换",
       "relation": "creates",
       "object": "协作张力",
-      "explanation": "在「不可战斗、只能潜逃」的恐怖框架里给每名玩家一套差异化的科技装备（治疗、烟雾、路障等），使队伍的求生能力被拆散到不同人身上，于是合作不再是各自躲命，而是要靠装备互补来掩护、解围与完成目标，把单人恐怖的孤立无援转成「彼此是唯一依靠」的协作压力，可复用于希望在无战斗的高压情境中用「能力分工」制造合作依赖与张力的设计。",
-      "evidence": [
-        {
-          "title": "装备分工制造协作解读",
-          "quote_or_summary": "差异化科技装备把求生能力拆到不同玩家身上，使无战斗的潜逃变成靠互补掩护的协作求生。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "在「不可战斗、只能潜逃」的恐怖框架里给每名玩家一套差异化的科技装备（治疗、烟雾、路障等），使队伍的求生能力被拆散到不同人身上，于是合作不再是各自躲命，而是要靠装备互补来掩护、解围与完成目标，把单人恐怖的孤立无援转成「彼此是唯一依靠」的协作压力，可复用于希望在无战斗的高压情境中用「能力分工」制造合作依赖与张力的设计。"
     }
   ]
 }

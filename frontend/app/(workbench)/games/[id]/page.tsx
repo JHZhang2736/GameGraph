@@ -9,8 +9,6 @@ import {
   PageHeader,
 } from "@/components/shell/view-states";
 import { ClaimRow } from "@/components/artifacts/claim-row";
-import { ConfidenceBadge } from "@/components/artifacts/confidence-badge";
-import { QualityBadge } from "@/components/artifacts/quality-badge";
 
 export default function GameProfilePage({
   params,
@@ -40,10 +38,6 @@ export default function GameProfilePage({
                 {tag}
               </span>
             ))}
-            <span className="ml-2 flex items-center gap-2">
-              <ConfidenceBadge level={profile.confidence} />
-              <QualityBadge status={profile.quality_status} />
-            </span>
           </div>
         ) : null}
       </div>

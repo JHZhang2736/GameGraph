@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_transistor",
     "title": "Transistor",
-    "source_refs": [
-      {
-        "title": "Transistor（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Transistor_(video_game)",
-        "notes": "类型（动作角色扮演）、Supergiant Games 开发与发行、2014 年 5 月 PC/PS4 发售、等距视角、兼具实时战斗与冻结时间的回合规划模式 Turn()、玩家操控歌手 Red 穿越科幻城市 Cloudbank 对抗机械敌人 Process、武器 Transistor 提供各种称为 Function 的能力、每个 Function 可作为主动技/升级槽/被动技三种方式使用、由 Transistor 之声旁白叙事等事实来源。"
-      },
-      {
-        "title": "Transistor FAQ（Supergiant Games 官方）",
-        "url": "https://www.supergiantgames.com/blog/transistor-faq/",
-        "notes": "Function 系统的三种装配方式、Turn() 规划战斗、Red 与 Transistor 的故事、手绘美术与 Darren Korb 配乐等事实来源。"
-      }
-    ],
     "short_description": "一款动作角色扮演游戏，Supergiant Games 开发与发行，2014 年 5 月发售：等距视角下，玩家操控失声的歌手 Red，握着会说话的巨剑 Transistor，穿越科幻都市 Cloudbank，对抗名为 Process 的机械敌群。战斗既可实时进行，也能随时冻结时间进入名为 Turn() 的规划模式，预排一连串动作后一次性释放。其核心是 Function 能力系统——每一个 Function 都能以「主动技、升级其他技能的插槽、常驻被动」三种不同方式装配，组合出大量构筑。全程由 Transistor 之声旁白讲述这段故事。",
     "selection_reason": "作为「用一套能力的三种装配方式撑起构筑深度」的代表：它让每个 Function 既能当招式、又能当别的招式的强化插槽、还能当被动，三选一的排列组合让玩家在有限能力里不断试出新流派，再叠上实时与 Turn() 规划的双层战斗，是研究技能系统设计、构筑深度与动作 RPG 战斗结构的高价值参考。"
   },
@@ -25,71 +13,80 @@
     "progression_model": "靠击败敌人与推进剧情解锁新的 Function 与能力槽位、靠在主动/升级/被动三种装配间反复重组构筑成长；进度体现为已解锁的 Function、可用槽位与玩家试出的流派，并以 Limiter 与 Recursion 提供更高难度。",
     "failure_model": "战斗中 Red 生命耗尽时会先损失（过载）一个 Function 而非立即死亡，需推进重启该能力，若再被打空才真正失败、退回此前节点；核心压力在于以走位、Turn() 规划与构筑搭配在损失能力的风险下击退 Process。",
     "content_structure": "以等距都市的线性推进与战斗遭遇为骨架，靠实时与 Turn() 规划的双层战斗承载操作、靠 Function 三态装配承载构筑深度，以多难度与构筑试验承载重玩，单人。",
-    "main_player_actions": ["技能释放", "走位", "近战攻击"],
-    "main_player_decisions": ["装备搭配", "增益选择", "风险取舍"],
-    "main_player_experiences": ["战斗精通", "构筑乐趣", "情感叙事"],
-    "main_mechanics": ["时间操控", "技能多态", "增益构筑"],
-    "replayability_sources": ["构筑多样", "难度分级"],
-    "production_constraints": ["小型团队", "手绘美术"],
-    "innovation_patterns": ["技能多态", "时间操控"],
-    "reusable_reference_patterns": ["时间操控", "增益构筑"],
-    "non_replicable_risks": ["强美术风格", "玩家留存"],
-    "genre": ["动作角色扮演"],
-    "art_style": ["手绘美术", "超现实美术"],
-    "audio_style": ["电子配乐", "动态配乐"],
-    "perspective": ["等距"],
-    "theme": ["科幻", "赛博朋克"],
-    "narrative_style": ["碎片化叙事", "环境叙事"],
-    "game_feel": ["流畅操作", "策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "技能释放",
+      "走位",
+      "近战攻击"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "增益选择",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "构筑乐趣",
+      "情感叙事"
+    ],
+    "main_mechanics": [
+      "时间操控",
+      "技能多态",
+      "增益构筑"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "手绘美术"
+    ],
+    "innovation_patterns": [
+      "技能多态",
+      "时间操控"
+    ],
+    "reusable_reference_patterns": [
+      "时间操控",
+      "增益构筑"
+    ],
+    "non_replicable_risks": [
+      "强美术风格",
+      "玩家留存"
+    ],
+    "genre": [
+      "动作角色扮演"
+    ],
+    "art_style": [
+      "手绘美术",
+      "超现实美术"
+    ],
+    "audio_style": [
+      "电子配乐",
+      "动态配乐"
+    ],
+    "perspective": [
+      "等距"
+    ],
+    "theme": [
+      "科幻",
+      "赛博朋克"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "流畅操作",
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "技能多态",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Function 三种装配方式",
-            "quote_or_summary": "每个 Function 都能作为主动技、升级其他技能的插槽、或常驻被动三种方式之一装配，组合出大量构筑。",
-            "notes": "维基百科与官方 FAQ 可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "时间操控",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Turn() 冻结时间规划",
-            "quote_or_summary": "玩家可随时冻结时间进入 Turn() 模式，预排一连串动作后一次性释放，与实时战斗交替。",
-            "notes": "维基百科与官方 FAQ 可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "增益构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "重组 Function 构建流派",
-            "quote_or_summary": "玩家在有限的 Function 间反复重组装配位置，构建截然不同的战斗流派。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Transistor 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Transistor_(video_game)",
-        "quote_or_summary": "动作角色扮演，等距视角、实时与 Turn() 冻结规划双层战斗、Function 可作主动/升级/被动三态装配、手绘美术与旁白叙事，Supergiant Games 开发，2014 年发售。",
-        "notes": "事实取自维基百科与官方 FAQ。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "技能多态",
+      "时间操控",
+      "增益构筑"
+    ]
   },
   "claims": [
     {
@@ -97,16 +94,7 @@
       "subject": "技能多态",
       "relation": "creates",
       "object": "系统深度",
-      "explanation": "让每一个能力都能以主动技、升级插槽、被动三种身份装配，等于用很少的能力数量撬动巨大的组合空间：同一个 Function 放在不同位置就是完全不同的工具，而能力之间又会因装配关系互相强化，玩家不是在「解锁更多技能」，而是在「重新排列已有技能」里持续发现新流派。深度因此来自排列组合而非数量堆叠，开发成本低、可玩空间却大。可复用于希望用「单个能力多种装配身份」在有限技能池里制造高构筑深度与重玩动力的动作 RPG 设计。",
-      "evidence": [
-        {
-          "title": "多态装配生深度解读",
-          "quote_or_summary": "每个能力可三种身份装配，少量能力撬动巨大组合空间，深度来自排列而非数量，开发成本低而可玩空间大。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让每一个能力都能以主动技、升级插槽、被动三种身份装配，等于用很少的能力数量撬动巨大的组合空间：同一个 Function 放在不同位置就是完全不同的工具，而能力之间又会因装配关系互相强化，玩家不是在「解锁更多技能」，而是在「重新排列已有技能」里持续发现新流派。深度因此来自排列组合而非数量堆叠，开发成本低、可玩空间却大。可复用于希望用「单个能力多种装配身份」在有限技能池里制造高构筑深度与重玩动力的动作 RPG 设计。"
     }
   ]
 }
