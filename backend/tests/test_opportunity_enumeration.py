@@ -64,11 +64,11 @@ def test_no_candidate_for_value_anchor_already_has() -> None:
 
 
 def test_existing_combination_count_for_wildcard_candidate() -> None:
-    # existing_combination_count uses genre-sharing intersection;
-    # g2 and g3 both have 类肉鸽 (shared with g1) and 第一人称 →
-    # wildcard borrow of 第一人称(Mechanic) from g1 perspective would be 0 (no mechanic overlap),
-    # but for a mechanic borrow the combo is games that share g1's genre AND have the mechanic.
-    # Use a fixture where g2 and g3 both share anchor's genre and carry the target mechanic.
+    # existing_combination_count for a Mechanic-dimension wildcard borrow uses
+    # genre-sharing intersection: combination_game_ids are games that share the
+    # anchor's genre AND carry the target mechanic.
+    # g2 and g3 both share 类肉鸽 with g1 and have 连击系统 →
+    # existing_combination_count should be 2.
     games = [
         GameDimensions("g1", "s1", {"类肉鸽"}, set(), set(), {"独门技能"}, set(), set()),
         GameDimensions("g2", "s2", {"类肉鸽"}, set(), set(), {"连击系统"}, set(), set()),
@@ -397,7 +397,7 @@ def test_pure_scarcity_combine_still_present() -> None:
 
 
 # ---------------------------------------------------------------------------
-# H-Task 3: profile-aware synergy weighting tests
+# Profile-aware synergy weighting tests
 # ---------------------------------------------------------------------------
 
 
