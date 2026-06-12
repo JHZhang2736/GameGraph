@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_rotwood",
     "title": "Rotwood",
-    "source_refs": [
-      {
-        "title": "Rotwood（Steam）",
-        "url": "https://store.steampowered.com/app/2015270/Rotwood/",
-        "notes": "类型（合作清版动作肉鸽）、可单人或最多三人合作、轻击/重击/闪避为核心招式、可选长矛或锤等不同武器各具节奏、穿越多个生物群落据点逐场战斗、Klei Entertainment 开发、2024 年抢先体验、2026 年 3 月 3 日正式发售等事实来源。"
-      }
-    ],
     "short_description": "一款合作清版动作肉鸽，玩家可单人或最多三人合作，在 2.5D 的腐化森林据点间逐场清怪推进，用轻击、重击与闪避配合长矛、锤、弓等多种武器迎战逐步变强的敌群与首领。",
     "selection_reason": "作为「把肉鸽循环嵌入合作清版动作」的代表：在横版清怪战斗上叠加分据点推进、武器构筑与跨局解锁，并以最多三人合作为核心，让动作爽快感与肉鸽重玩性结合，是研究动作肉鸽与合作战斗节奏的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "单局靠拣选强化与武器升级即时变强，跨局解锁新武器、能力与内容；进度兼有单局构筑与长期解锁，含多种武器与逐步开放的生物群落。",
     "failure_model": "队伍在据点战斗中被怪物击败即本局失败，需带跨局解锁重新从头出击。",
     "content_structure": "以腐化森林的多个生物群落为骨架，每个群落由一串随机据点（战斗、商店、事件）组成，逐场清怪后挑战首领，支持单人与最多三人合作。",
-    "main_player_actions": ["近战攻击", "翻滚闪避", "走位"],
-    "main_player_decisions": ["武器搭配", "风险取舍", "装备搭配"],
-    "main_player_experiences": ["战斗精通", "协作默契", "滚雪球快感"],
-    "main_mechanics": ["清版肉鸽", "多人合作", "武器构筑", "元进度", "怪物狩猎"],
-    "replayability_sources": ["武器构筑", "Boss 挑战", "难度分级"],
-    "production_constraints": ["卡通渲染", "中型团队"],
-    "innovation_patterns": ["清版肉鸽", "类型缝合"],
-    "reusable_reference_patterns": ["清版肉鸽", "合作生存", "难度递增"],
-    "non_replicable_risks": ["平衡复杂度", "强美术风格"],
-    "genre": ["类肉鸽", "动作冒险"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第三人称"],
-    "theme": ["怪物题材", "奇幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["厚重打击", "紧张节奏"],
-    "team_model": ["中型团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "翻滚闪避",
+      "走位"
+    ],
+    "main_player_decisions": [
+      "武器搭配",
+      "风险取舍",
+      "装备搭配"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "协作默契",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "清版肉鸽",
+      "多人合作",
+      "武器构筑",
+      "元进度",
+      "怪物狩猎"
+    ],
+    "replayability_sources": [
+      "武器构筑",
+      "Boss 挑战",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "卡通渲染",
+      "中型团队"
+    ],
+    "innovation_patterns": [
+      "清版肉鸽",
+      "类型缝合"
+    ],
+    "reusable_reference_patterns": [
+      "清版肉鸽",
+      "合作生存",
+      "难度递增"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "强美术风格"
+    ],
+    "genre": [
+      "类肉鸽",
+      "动作冒险"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "怪物题材",
+      "奇幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "厚重打击",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "中型团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "清版肉鸽",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "据点清怪推进",
-            "quote_or_summary": "玩家在森林据点间跳转，逐个清掉每处的敌人再前进，下一处可能是更多敌人、商店或惊喜，呈典型肉鸽结构。",
-            "notes": "Steam 商店页与评测可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "多人合作",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "至多三人合作",
-            "quote_or_summary": "支持单人或最多三名好友合作，迎战逐步加难的战斗，穿越多个独特地点。",
-            "notes": "Steam 商店页可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "武器构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "多武器各具节奏",
-            "quote_or_summary": "初期可在长矛或锤等之间选择，各有节奏与攻击范围；继续游玩会解锁更多武器（如弓），彻底改变作战方式。",
-            "notes": "评测可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Rotwood 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/2015270/Rotwood/",
-        "quote_or_summary": "合作清版动作肉鸽，单人或最多三人合作，轻击/重击/闪避为核心，多种武器各具节奏，分据点穿越生物群落逐场战斗，Klei 开发，2024 年抢先体验、2026 年正式发售。",
-        "notes": "事实取自 Steam 商店页与评测。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "清版肉鸽",
+      "多人合作",
+      "武器构筑"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "清版肉鸽",
       "relation": "creates",
       "object": "重玩动力",
-      "explanation": "把肉鸽的随机据点、武器构筑与跨局解锁注入横版清版动作战斗，使原本一次性的清怪流程因每局随机布置、不同武器与逐步解锁而值得反复挑战，并与合作叠加出配合空间，可复用于希望提升动作游戏重玩性的设计。",
-      "evidence": [
-        {
-          "title": "动作肉鸽化解读",
-          "quote_or_summary": "随机据点与武器构筑让清版战斗具备肉鸽式重玩动力。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把肉鸽的随机据点、武器构筑与跨局解锁注入横版清版动作战斗，使原本一次性的清怪流程因每局随机布置、不同武器与逐步解锁而值得反复挑战，并与合作叠加出配合空间，可复用于希望提升动作游戏重玩性的设计。"
     }
   ]
 }

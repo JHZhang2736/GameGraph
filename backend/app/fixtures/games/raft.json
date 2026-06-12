@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_raft",
     "title": "Raft",
-    "source_refs": [
-      {
-        "title": "Raft（Steam）",
-        "url": "https://store.steampowered.com/app/648800/Raft/",
-        "notes": "类型（海洋生存建造）、从一小块木筏起步、用钩子打捞漂来的废料、扩建木筏、潜入礁石与登岛搜刮、提防食人鲨、建造装备武器作物、种植烹饪养殖、探索剧情岛屿、可单人或在线合作、Redbeet Interactive 开发、Axolot 发行、2022 年正式发售等事实来源。"
-      }
-    ],
     "short_description": "一款海洋生存建造游戏，玩家从一小块木筏起步，用钩子打捞海上漂来的废料、潜入礁石与登岛搜刮资源，不断扩建木筏、制作装备并提防食人鲨，可单人或在线合作横渡危险大海。",
     "selection_reason": "作为「在漂流木筏上做资源紧缺生存建造」的代表：把生存舞台搬到资源稀缺的开阔海面，让玩家必须钩取每一块漂来的废料、在鲨鱼威胁下一点点把木筏扩成移动家园，是研究资源张力与漂流求生建造的高价值参考。"
   },
@@ -20,71 +13,83 @@
     "progression_model": "靠搜集资源解锁配方、制作更高级工具与设施、把木筏从残骸扩成大型浮屋，并随剧情岛屿推进；进度体现为木筏规模、装备等级与已探索岛屿。",
     "failure_model": "饥饿、口渴或被食人鲨等威胁致死即死亡，标准模式在木筏上重生并可能损失物资，硬核模式下死亡代价更重。",
     "content_structure": "在开阔海面与散布其间的礁石、剧情岛屿上以打捞、建造、生存与探索为骨架，含可逐步解锁的配方、设施与故事线，支持单人与在线合作。",
-    "main_player_actions": ["采集", "建造", "近战攻击"],
-    "main_player_decisions": ["资源取舍", "基地规划", "风险取舍"],
-    "main_player_experiences": ["经营成就", "探索发现", "协作默契"],
-    "main_mechanics": ["建造", "采集", "合成制作", "合作生存", "水下生存"],
-    "replayability_sources": ["全收集", "任务多样"],
-    "production_constraints": ["Unity 引擎", "小型团队"],
-    "innovation_patterns": ["漂流求生", "建造"],
-    "reusable_reference_patterns": ["漂流求生", "合作生存", "建造"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["生存", "沙盒"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["轻松配乐", "环境音"],
-    "perspective": ["第一人称"],
-    "theme": ["海洋", "末世重建"],
-    "narrative_style": ["碎片化叙事", "环境叙事"],
-    "game_feel": ["轻松休闲", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "采集",
+      "建造",
+      "近战攻击"
+    ],
+    "main_player_decisions": [
+      "资源取舍",
+      "基地规划",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "经营成就",
+      "探索发现",
+      "协作默契"
+    ],
+    "main_mechanics": [
+      "建造",
+      "采集",
+      "合成制作",
+      "合作生存",
+      "水下生存"
+    ],
+    "replayability_sources": [
+      "全收集",
+      "任务多样"
+    ],
+    "production_constraints": [
+      "Unity 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "漂流求生",
+      "建造"
+    ],
+    "reusable_reference_patterns": [
+      "漂流求生",
+      "合作生存",
+      "建造"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "生存",
+      "沙盒"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "轻松配乐",
+      "环境音"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "海洋",
+      "末世重建"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "轻松休闲",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "漂流求生",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "木筏起步打捞求生",
-            "quote_or_summary": "玩家从一小块木筏开始，在大海上用钩子打捞漂来的废料、扩建木筏并驶向危险岛屿求生。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作生存",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "单人或在线合作",
-            "quote_or_summary": "玩家可独自或与好友在线合作求生。",
-            "notes": "Steam 商店页可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "建造",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "木筏从残骸到大宅",
-            "quote_or_summary": "玩家可把木筏从简陋残骸扩建成漂浮的大宅，并搭建生存装备、武器与作物等设施。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Raft 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/648800/Raft/",
-        "quote_or_summary": "海洋生存建造，从一小块木筏起步用钩子打捞废料扩建木筏，潜礁登岛搜刮，提防食人鲨，建造制作种植养殖，探索剧情岛屿，单人或在线合作，Redbeet 开发，2022 年正式发售。",
-        "notes": "事实取自 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "漂流求生",
+      "合作生存",
+      "建造"
+    ]
   },
   "claims": [
     {
@@ -92,16 +97,7 @@
       "subject": "漂流求生",
       "relation": "creates",
       "object": "探索张力",
-      "explanation": "把生存舞台设在资源稀缺的开阔海面，使每一块漂来的废料都珍贵、每次潜水或登岛都伴随鲨鱼与离筏风险，从而把平淡的采集变成处处权衡的探索张力，可复用于希望以资源稀缺与环境威胁强化生存紧张感的设计。",
-      "evidence": [
-        {
-          "title": "海上稀缺张力解读",
-          "quote_or_summary": "开阔海面的资源稀缺与鲨鱼威胁让采集探索充满张力。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把生存舞台设在资源稀缺的开阔海面，使每一块漂来的废料都珍贵、每次潜水或登岛都伴随鲨鱼与离筏风险，从而把平淡的采集变成处处权衡的探索张力，可复用于希望以资源稀缺与环境威胁强化生存紧张感的设计。"
     }
   ]
 }

@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_prey",
     "title": "Prey",
-    "source_refs": [
-      {
-        "title": "Prey（2017）（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Prey_(2017_video_game)",
-        "notes": "类型（第一人称沉浸式模拟）、玩家扮演 Morgan Yu 在太空站 Talos I 对抗外星生命「Typhon」、GLOO 胶枪可冻结敌人并搭出临时阶梯、拟态体 Mimic 可伪装成日常物件、整座空间站互联可任意顺序探索、Neuromod 技能树含人类与 Typhon 两系能力、可回收物合成、Arkane Austin 用 CryEngine 开发、Bethesda 发行、2017 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称沉浸式模拟，玩家扮演 Morgan Yu 在被外星生命「Typhon」占据的太空站 Talos I 上求生，用扳手、GLOO 胶枪与可由技能树自定义的人类/外星能力，在一座互联可自由探索的空间站里寻找对抗与逃脱之路。",
     "selection_reason": "作为「以多用途工具与互联空间支撑涌现解法」的沉浸式模拟代表：GLOO 胶枪既能冻敌又能搭梯改变地形，拟态敌人逼迫玩家时刻警惕，整站互联让同一障碍有多种破法，是研究多用途道具、立体探索与涌现式系统设计的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "靠 Neuromod 在人类与 Typhon 两套技能树间分配点数、用回收资源合成装备弹药推进；进度体现为能力组合、装备与空间站的解锁区域，点 Typhon 能力会触发站内防御系统的额外应对。",
     "failure_model": "在战斗或环境危机中生命归零即死亡、需读取存档重来；资源稀缺与拟态伏击使探索时刻面临补给耗尽与突袭致死的风险。",
     "content_structure": "以一座可自由探索的互联太空站为骨架，靠技能树构筑、多用途道具、合成与拟态敌人承载涌现式解法与非线性推进，含多种结局，单人。",
-    "main_player_actions": ["射击", "黑客入侵", "道具运用"],
-    "main_player_decisions": ["探索路线", "能力树优先级", "道具取舍"],
-    "main_player_experiences": ["探索发现", "涌现玩法", "系统掌控"],
-    "main_mechanics": ["多用途道具", "能力树", "开放世界探索", "合成制作", "拟态敌人"],
-    "replayability_sources": ["构筑多样", "多结局", "难度分级"],
-    "production_constraints": ["CryEngine", "大团队协作"],
-    "innovation_patterns": ["多用途道具", "拟态敌人"],
-    "reusable_reference_patterns": ["多用途道具", "开放世界探索", "环境叙事"],
-    "non_replicable_risks": ["系统复杂度", "大团队协作"],
-    "genre": ["沉浸模拟", "第一人称射击"],
-    "art_style": ["写实美术"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["科幻"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["沉浸代入", "策略权衡"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "射击",
+      "黑客入侵",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "能力树优先级",
+      "道具取舍"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "涌现玩法",
+      "系统掌控"
+    ],
+    "main_mechanics": [
+      "多用途道具",
+      "能力树",
+      "开放世界探索",
+      "合成制作",
+      "拟态敌人"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "多结局",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "CryEngine",
+      "大团队协作"
+    ],
+    "innovation_patterns": [
+      "多用途道具",
+      "拟态敌人"
+    ],
+    "reusable_reference_patterns": [
+      "多用途道具",
+      "开放世界探索",
+      "环境叙事"
+    ],
+    "non_replicable_risks": [
+      "系统复杂度",
+      "大团队协作"
+    ],
+    "genre": [
+      "沉浸模拟",
+      "第一人称射击"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "科幻"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "策略权衡"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "多用途道具",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "GLOO 胶枪一物多用",
-            "quote_or_summary": "GLOO 胶枪喷出的泡沫既能冻结敌人，也能附着在墙面与平台上搭出临时阶梯，抵达原本够不到的地方。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "拟态敌人",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Mimic 伪装成物件",
-            "quote_or_summary": "拟态体 Typhon 能伪装成马克杯、椅子等日常物件，潜伏伏击玩家，迫使玩家时刻警惕环境。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "开放世界探索",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "互联空间站自由探索",
-            "quote_or_summary": "整座 Talos I 是一个互联的开放世界，玩家可任意顺序探索，对每处障碍有多种解法。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Prey 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Prey_(2017_video_game)",
-        "quote_or_summary": "第一人称沉浸式模拟，扮演 Morgan Yu 在 Talos I 对抗 Typhon，GLOO 胶枪冻敌并搭梯，拟态敌人伪装成物件，互联空间站可任意顺序探索，Neuromod 双系技能树，合成回收，Arkane Austin 用 CryEngine 开发，2017 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "多用途道具",
+      "拟态敌人",
+      "开放世界探索"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "多用途道具",
       "relation": "creates",
       "object": "立体探索",
-      "explanation": "把同一件工具（GLOO 胶枪）既当武器又当可向墙面喷涂、凝固成阶梯的攀爬手段，玩家便能自行向上开辟路径、抵达设计师未明确铺设的高处与缝隙，使探索从平面延展为立体并催生大量涌现解法，可复用于希望用单件多功能道具同时承载战斗与垂直空间探索的设计。",
-      "evidence": [
-        {
-          "title": "胶枪搭梯解读",
-          "quote_or_summary": "可凝固搭梯的多用途胶枪让玩家自行开辟垂直路径，把探索从平面拓展为立体。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把同一件工具（GLOO 胶枪）既当武器又当可向墙面喷涂、凝固成阶梯的攀爬手段，玩家便能自行向上开辟路径、抵达设计师未明确铺设的高处与缝隙，使探索从平面延展为立体并催生大量涌现解法，可复用于希望用单件多功能道具同时承载战斗与垂直空间探索的设计。"
     }
   ]
 }

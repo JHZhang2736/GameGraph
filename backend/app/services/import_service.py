@@ -2,14 +2,10 @@ from __future__ import annotations
 
 from typing import Any
 
-from pydantic import TypeAdapter
-
-from app.schemas.common import EvidenceRef, StrictBaseModel
+from app.schemas.common import StrictBaseModel
 from app.schemas.import_document import GameImportDocument
 from app.services.fixture_pipeline import ContractViolation
 
-
-_EVIDENCE_LIST_ADAPTER = TypeAdapter(list[EvidenceRef])
 
 # profile 列表字段 -> (边类型, 目标节点 label)
 PROFILE_LIST_EDGES: dict[str, tuple[str, str]] = {
@@ -74,10 +70,6 @@ def validate_import_document(raw: dict[str, Any]) -> GameImportDocument:
     return document
 
 
-def _evidence_json(evidence: list[EvidenceRef]) -> str:
-    return _EVIDENCE_LIST_ADAPTER.dump_json(evidence).decode("utf-8")
-
-
 def _game_node(document: GameImportDocument) -> NodeMerge:
     candidate = document.candidate
     profile = document.profile
@@ -91,10 +83,6 @@ def _game_node(document: GameImportDocument) -> NodeMerge:
         "progression_model": profile.progression_model,
         "failure_model": profile.failure_model,
         "content_structure": profile.content_structure,
-        "confidence": profile.confidence.value,
-        "quality_status": profile.quality_status.value,
-        "source_refs_json": _evidence_json(candidate.source_refs),
-        "evidence_json": _evidence_json(profile.evidence),
         "document_json": document.model_dump_json(),
     }
     return NodeMerge(label="Game", key={"id": candidate.id}, properties=properties)
@@ -128,12 +116,8 @@ def _tag_edges(document: GameImportDocument) -> list[EdgeMerge]:
                 from_label="Game",
                 from_key=game_key,
                 to_label="ReferenceTag",
-                to_key={"name": tag.tag},
-                properties={
-                    "confidence": tag.confidence.value,
-                    "quality_status": tag.quality_status.value,
-                    "evidence_json": _evidence_json(tag.evidence),
-                },
+                to_key={"name": tag},
+                properties={},
             )
         )
     return edges
@@ -154,9 +138,6 @@ def _claim_edges(document: GameImportDocument) -> list[EdgeMerge]:
                     "claim_id": claim.id,
                     "relation": claim.relation,
                     "explanation": claim.explanation,
-                    "evidence_json": _evidence_json(claim.evidence),
-                    "confidence": claim.confidence.value,
-                    "quality_status": claim.quality_status.value,
                 },
             )
         )

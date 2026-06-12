@@ -3,7 +3,7 @@ import json
 import httpx
 import pytest
 
-from app.schemas.common import ConfidenceLevel, ConstraintType
+from app.schemas.common import ConstraintType
 from app.schemas.developer_profile import ProfileParseInput
 from app.services.llm_client import LlmClient, LlmRequestError, LlmResponseError, LlmSettings
 from app.services.profile_llm import (
@@ -38,7 +38,7 @@ def _extraction_arguments() -> str:
                 {"type": "hard", "statement": "Do not require online multiplayer."}
             ],
             "field_sources": [
-                {"field": "team_size", "source_text": "我一个人做", "confidence": "high"}
+                {"field": "team_size", "source_text": "我一个人做"}
             ],
             "warnings": [],
         }
@@ -82,7 +82,7 @@ def test_extract_posts_tool_call_request_and_parses_arguments() -> None:
     assert extraction.team_size == "solo"
     assert extraction.audio_ability is None
     assert extraction.constraints[0].type == ConstraintType.HARD
-    assert extraction.field_sources[0].confidence == ConfidenceLevel.HIGH
+    assert extraction.field_sources[0].source_text == "我一个人做"
     assert seen["url"] == "https://example.test/v1/chat/completions"
     assert seen["auth"] == "Bearer secret"
     assert seen["body"]["model"] == "test-model"

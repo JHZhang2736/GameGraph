@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_beyond_two_souls",
     "title": "Beyond: Two Souls",
-    "source_refs": [
-      {
-        "title": "Beyond: Two Souls（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Beyond:_Two_Souls",
-        "notes": "类型（互动剧情/动作冒险）、玩家轮流操控女主 Jodie 与一个名为 Aiden 的无形灵体（自出生起与 Jodie 相连、可穿墙/移物/附身/攻击）、大量快速反应事件（QTE）与情境选择、选择影响剧情、Jodie 由 Elliot Page 出演、Willem Dafoe 饰演研究员 Nathan、章节以非线性时序跳跃呈现、Quantic Dream 开发 Sony 发行、2013 年 PS3 发售（2019 年 PC）、David Cage 编导等事实来源。"
-      }
-    ],
     "short_description": "一款互动剧情动作冒险游戏，玩家轮流操控女主 Jodie（由 Elliot Page 出演）与一个自她出生起便与之相连的无形灵体 Aiden：Jodie 端走剧情、做对话与情境选择并应对快速反应事件，切换到 Aiden 后则能穿墙、移物、附身或攻击来改变局面；选择影响剧情走向，章节以非线性时序跳跃讲述她从少女到成人的人生，Quantic Dream 开发、David Cage 编导、2013 年发售。",
     "selection_reason": "作为「双实体操控的互动剧情」代表：让玩家在血肉之躯 Jodie 与无形灵体 Aiden 之间切换，用一个能穿墙移物的「第二自我」改写场景，把单人叙事做出近似双人协作的解法空间，再以 QTE 与情境选择承载电影化演出，是研究双实体操控、情感羁绊叙事与互动剧情演出的高价值参考。"
   },
@@ -20,71 +13,80 @@
     "progression_model": "靠章节推进 Jodie 的人生阶段与 Aiden 能力的运用情境、靠情境选择与 QTE 表现塑造关系与走向；进度体现为故事章节、关键抉择与触发的分支，选择长线影响不同结局。",
     "failure_model": "本作几乎没有传统失败：QTE 失误或抉择不会 Game Over，而是改写情节走向、人物关系乃至生死，剧情据此继续，真正的代价是不可逆的剧情后果而非重来。",
     "content_structure": "以 Jodie 与 Aiden 交织、非线性时序跳跃的章节式剧情为骨架，靠双实体操控、情境选择、QTE 与电影化演出承载分支与情感，含多结局，单人（亦支持双人各控其一）。",
-    "main_player_actions": ["对话选择", "物件操控", "社交互动"],
-    "main_player_decisions": ["道德抉择", "风险取舍", "关系经营"],
-    "main_player_experiences": ["情感叙事", "抉择沉浸", "氛围营造"],
-    "main_mechanics": ["灵体操控", "快速反应", "分支叙事", "物件操控", "环境叙事"],
-    "replayability_sources": ["多结局", "彩蛋收集"],
-    "production_constraints": ["自研引擎", "大团队协作"],
-    "innovation_patterns": ["灵体操控", "分支叙事"],
-    "reusable_reference_patterns": ["情感叙事", "分支叙事"],
-    "non_replicable_risks": ["一次性体验", "大团队协作"],
-    "genre": ["叙事冒险"],
-    "art_style": ["写实美术"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["第三人称"],
-    "theme": ["家庭情感", "灵异"],
-    "narrative_style": ["过场驱动", "情感叙事", "分支叙事"],
-    "game_feel": ["沉浸代入"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "对话选择",
+      "物件操控",
+      "社交互动"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "风险取舍",
+      "关系经营"
+    ],
+    "main_player_experiences": [
+      "情感叙事",
+      "抉择沉浸",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "灵体操控",
+      "快速反应",
+      "分支叙事",
+      "物件操控",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "大团队协作"
+    ],
+    "innovation_patterns": [
+      "灵体操控",
+      "分支叙事"
+    ],
+    "reusable_reference_patterns": [
+      "情感叙事",
+      "分支叙事"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "大团队协作"
+    ],
+    "genre": [
+      "叙事冒险"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "家庭情感",
+      "灵异"
+    ],
+    "narrative_style": [
+      "过场驱动",
+      "情感叙事",
+      "分支叙事"
+    ],
+    "game_feel": [
+      "沉浸代入"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "灵体操控",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "切换操控无形灵体 Aiden",
-            "quote_or_summary": "玩家可切换到与 Jodie 相连的无形灵体 Aiden，穿墙、移物、附身或攻击，为同一场景提供第二套解法。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "快速反应",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "QTE 与情境选择",
-            "quote_or_summary": "玩家通过大量快速反应事件与情境选择推动剧情，失误不致 Game Over 而是改写走向。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "分支叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "选择影响剧情与结局",
-            "quote_or_summary": "玩家的选择影响剧情走向、人物关系乃至生死，通向不同结局。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Beyond: Two Souls 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Beyond:_Two_Souls",
-        "quote_or_summary": "互动剧情动作冒险，轮流操控 Jodie 与无形灵体 Aiden（穿墙/移物/附身/攻击）、QTE 与情境选择、非线性时序、选择影响剧情与结局，Quantic Dream 开发 David Cage 编导，2013 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "灵体操控",
+      "快速反应",
+      "分支叙事"
+    ]
   },
   "claims": [
     {
@@ -92,16 +94,7 @@
       "subject": "灵体操控",
       "relation": "creates",
       "object": "情感叙事",
-      "explanation": "把主角拆成「受规则约束的 Jodie + 能穿墙移物的无形灵体 Aiden」两个可切换实体后，二者的羁绊不再只靠剧情台词交代，而是被做进了玩法：玩家亲手在两者间切换、用 Aiden 替 Jodie 侦察、护她、为她出手，于是「这个灵体始终与她相依」这件事是被操作出来、而非被讲述出来的，情感羁绊获得了玩法层面的实感；可复用于希望把「角色间的羁绊/共生关系」从叙事陈述转化为可亲手操作的双实体玩法、让情感被玩出来的设计。",
-      "evidence": [
-        {
-          "title": "双实体操出羁绊解读",
-          "quote_or_summary": "玩家亲手在 Jodie 与 Aiden 间切换配合，使二者相依的羁绊被操作出来而非仅靠台词陈述。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把主角拆成「受规则约束的 Jodie + 能穿墙移物的无形灵体 Aiden」两个可切换实体后，二者的羁绊不再只靠剧情台词交代，而是被做进了玩法：玩家亲手在两者间切换、用 Aiden 替 Jodie 侦察、护她、为她出手，于是「这个灵体始终与她相依」这件事是被操作出来、而非被讲述出来的，情感羁绊获得了玩法层面的实感；可复用于希望把「角色间的羁绊/共生关系」从叙事陈述转化为可亲手操作的双实体玩法、让情感被玩出来的设计。"
     }
   ]
 }

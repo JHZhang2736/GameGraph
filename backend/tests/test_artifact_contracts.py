@@ -14,83 +14,21 @@ from app.schemas.artifacts import (
     PrototypeBrief,
     SeedGame,
 )
-from app.schemas.common import (
-    ConfidenceLevel,
-    ConstraintType,
-    EvidenceRef,
-    QualityStatus,
-)
-
-
-def evidence() -> EvidenceRef:
-    return EvidenceRef(
-        title="Steam page",
-        url="https://store.steampowered.com/app/example",
-        notes="Primary store reference.",
-    )
+from app.schemas.common import ConstraintType
 
 
 def test_shared_enums_expose_expected_values() -> None:
-    assert ConfidenceLevel.LOW == "low"
-    assert ConfidenceLevel.MEDIUM == "medium"
-    assert ConfidenceLevel.HIGH == "high"
-    assert QualityStatus.REVIEWED == "reviewed"
     assert ConstraintType.HARD == "hard"
 
 
-def test_evidence_ref_accepts_url_or_summary() -> None:
-    with_url = EvidenceRef(
-        title="Steam page",
-        url="https://store.steampowered.com/app/example",
-        notes="Primary store reference.",
-    )
-    with_summary = EvidenceRef(
-        title="Design note",
-        quote_or_summary="The game uses a compact tactical board.",
-        notes="Manual curation note.",
-    )
-
-    assert with_url.url == "https://store.steampowered.com/app/example"
-    assert with_summary.quote_or_summary == "The game uses a compact tactical board."
-
-
-def test_evidence_ref_rejects_missing_reference_payload() -> None:
-    with pytest.raises(ValidationError, match="EvidenceRef requires url or quote_or_summary"):
-        EvidenceRef(title="Empty source", notes="No reference payload.")
-
-
-def test_evidence_ref_rejects_unknown_fields() -> None:
-    with pytest.raises(ValidationError):
-        EvidenceRef(
-            title="Unexpected source",
-            url="https://example.com",
-            notes="Unknown fields should not be accepted.",
-            confidence="high",
-        )
-
-
-def test_seed_game_requires_source_refs() -> None:
+def test_seed_game_rejects_unknown_fields() -> None:
     with pytest.raises(ValidationError):
         SeedGame(
             id="seed-1",
             title="Into the Breach",
-            source_refs=[],
             short_description="Compact turn-based tactics about preventing kaiju attacks.",
             selection_reason="Useful reference for readable tactical consequences.",
-        )
-
-
-def test_design_claim_requires_evidence() -> None:
-    with pytest.raises(ValidationError):
-        DesignClaim(
-            id="claim-1",
-            subject="Into the Breach",
-            relation="uses",
-            object="previewed enemy intent",
-            explanation="Enemy plans are visible before commitment.",
-            evidence=[],
-            confidence=ConfidenceLevel.HIGH,
-            quality_status=QualityStatus.REVIEWED,
+            source_refs=[],
         )
 
 
@@ -103,7 +41,6 @@ def test_core_artifacts_accept_minimal_valid_payloads() -> None:
     seed_game = SeedGame(
         id="seed-1",
         title="Into the Breach",
-        source_refs=[evidence()],
         short_description="Compact turn-based tactics about preventing kaiju attacks.",
         selection_reason="Readable consequences are a useful design reference.",
     )
@@ -113,9 +50,6 @@ def test_core_artifacts_accept_minimal_valid_payloads() -> None:
         relation="demonstrates",
         object="previewed consequences",
         explanation="Enemy intent is visible before the player acts.",
-        evidence=[evidence()],
-        confidence=ConfidenceLevel.HIGH,
-        quality_status=QualityStatus.REVIEWED,
     )
     relation = GraphRelation(
         id="relation-1",
@@ -123,9 +57,6 @@ def test_core_artifacts_accept_minimal_valid_payloads() -> None:
         relation="supports",
         target_node="pattern-previewed-consequences",
         claim_id=claim.id,
-        evidence=[evidence()],
-        confidence=ConfidenceLevel.MEDIUM,
-        quality_status=QualityStatus.DRAFT,
     )
     profile = DeveloperProfile(
         id="profile-1",
@@ -271,10 +202,7 @@ def test_golden_fixture_core_payloads_match_artifact_schemas() -> None:
         "game_into_the_breach",
         "game_baba_is_you",
     }
-    assert {claim.confidence for claim in design_claims} >= {
-        ConfidenceLevel.HIGH,
-        ConfidenceLevel.LOW,
-    }
+    assert {claim.id for claim in design_claims}
     assert developer_profile.id == "profile_solo_systems"
     assert opportunity_frame.id == "frame_rule_tactics"
     assert concept_cards[0].opportunity_frame_id == opportunity_frame.id

@@ -4,17 +4,8 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from app.schemas.artifacts import DesignClaim, GameDesignProfile, ReferenceValueTag
-from app.schemas.common import ConfidenceLevel, EvidenceRef, QualityStatus
+from app.schemas.artifacts import DesignClaim, GameDesignProfile
 from app.schemas.import_document import GameImportDocument
-
-
-def evidence() -> EvidenceRef:
-    return EvidenceRef(
-        title="Design summary",
-        quote_or_summary="Abstract card UI keeps art load low.",
-        notes="Curated design interpretation.",
-    )
 
 
 def valid_profile_kwargs() -> dict:
@@ -43,34 +34,22 @@ def valid_profile_kwargs() -> dict:
         "narrative_style": ["minimal framing"],
         "game_feel": ["snappy card play"],
         "team_model": ["solo developer"],
-        "reference_value_tags": [
-            ReferenceValueTag(
-                tag="low art cost reference",
-                confidence=ConfidenceLevel.HIGH,
-                quality_status=QualityStatus.REVIEWED,
-                evidence=[evidence()],
-            )
-        ],
-        "evidence": [evidence()],
-        "confidence": ConfidenceLevel.HIGH,
-        "quality_status": QualityStatus.REVIEWED,
+        "reference_value_tags": ["low art cost reference"],
     }
-
-
-def test_reference_value_tag_allows_empty_evidence() -> None:
-    tag = ReferenceValueTag(
-        tag="high systemic depth reference",
-        confidence=ConfidenceLevel.MEDIUM,
-        quality_status=QualityStatus.DRAFT,
-    )
-    assert tag.evidence == []
 
 
 def test_game_design_profile_accepts_valid_payload() -> None:
     profile = GameDesignProfile(**valid_profile_kwargs())
     assert profile.game_id == "game_balatro"
-    assert profile.confidence == ConfidenceLevel.HIGH
+    assert profile.reference_value_tags == ["low art cost reference"]
     assert len(profile.main_mechanics) == 2
+
+
+def test_game_design_profile_rejects_blank_reference_value_tag() -> None:
+    kwargs = valid_profile_kwargs()
+    kwargs["reference_value_tags"] = ["  "]
+    with pytest.raises(ValidationError):
+        GameDesignProfile(**kwargs)
 
 
 def test_game_design_profile_rejects_empty_list_field() -> None:
@@ -91,7 +70,6 @@ def valid_candidate_kwargs() -> dict:
     return {
         "id": "game_balatro",
         "title": "Balatro",
-        "source_refs": [evidence()],
         "short_description": "Poker-inspired roguelike deckbuilder.",
         "selection_reason": "Strong sample for familiar rules into systemic depth.",
     }
@@ -128,9 +106,6 @@ def test_import_document_accepts_claims() -> None:
             relation="reduces",
             object="new player learning cost",
             explanation="Players already know poker hands.",
-            evidence=[evidence()],
-            confidence=ConfidenceLevel.HIGH,
-            quality_status=QualityStatus.REVIEWED,
         ).model_dump()
     ]
     document = GameImportDocument(**kwargs)

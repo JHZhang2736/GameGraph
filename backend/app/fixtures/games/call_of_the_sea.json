@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_call_of_the_sea",
     "title": "Call of the Sea",
-    "source_refs": [
-      {
-        "title": "Call of the Sea（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Call_of_the_Sea",
-        "notes": "类型（第一人称冒险解谜）、Out of the Blue Games（马德里）开发、Raw Fury 发行、2020 年 12 月 8 日 Windows/Xbox 发售、设定于 1930 年代南太平洋、玩家扮演 Norah Everhart 寻找失踪丈夫的探险队、在郁郁葱葱的孤岛上探索解谜揭开秘密、深受 H.P. Lovecraft 超现实/梦境式作品影响、谜题与剧情深度整合、双结局等事实来源。"
-      },
-      {
-        "title": "Call of the Sea（Steam，appid 1042490）",
-        "url": "https://store.steampowered.com/app/1042490/Call_of_the_Sea/",
-        "notes": "第一人称叙事解谜、热带孤岛探索、依据现场线索与笔记破解机关、洛夫克拉夫特式神秘氛围、唯美色彩等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称冒险解谜游戏，西班牙马德里工作室 Out of the Blue Games 开发、Raw Fury 发行，2020 年 12 月 8 日发售：故事设定在 1930 年代的南太平洋，玩家扮演 Norah Everhart，循着丈夫失踪探险队留下的踪迹，踏上一座郁郁葱葱的神秘孤岛。玩家在岛上探索、依据现场遗物、笔记与符号破解一道道机关谜题，逐步揭开探险队的遭遇与岛屿的秘密。作品深受 H.P. Lovecraft 超现实、梦境般的笔触影响，谜题与剧情高度交织，并以双结局收尾。",
     "selection_reason": "作为「把解谜完全焊进叙事推进」的代表：它不在故事旁挂谜题，而是让每一道机关都由现场的笔记、符号与遗物给出线索、解开就揭开剧情下一层，再裹上洛夫克拉夫特式的唯美与不安氛围，是研究叙事解谜一体化、环境线索设计与氛围营造的高价值参考。"
   },
@@ -25,71 +13,79 @@
     "progression_model": "靠破解一道道与剧情绑定的机关谜题逐区推进、解锁新区域与故事篇章；进度体现为已揭开的剧情层、走过的岛屿区域与逼近真相的程度，最终导向双结局之一。",
     "failure_model": "本作几乎无失败死亡，「卡关」表现为线索未读全或机关逻辑未参透而无法推进，核心压力在于把环境中分散的笔记、符号与遗物拼成正确解法以解开下一道门。",
     "content_structure": "以孤岛分区的探索与叙事解谜为骨架，靠环境线索与机关谜题承载玩法、靠笔记符号与遗物承载叙事，以双结局承载抉择重玩，单人。",
-    "main_player_actions": ["物件操控", "秘密解谜", "对话选择"],
-    "main_player_decisions": ["探索路线", "秘密取舍", "道德抉择"],
-    "main_player_experiences": ["探索发现", "情感叙事", "抉择沉浸"],
-    "main_mechanics": ["环境叙事", "线索调查", "物品组合"],
-    "replayability_sources": ["多结局", "彩蛋收集"],
-    "production_constraints": ["小型团队", "Unreal 引擎"],
-    "innovation_patterns": ["环境叙事", "线索调查"],
-    "reusable_reference_patterns": ["环境叙事", "分支叙事"],
-    "non_replicable_risks": ["一次性体验", "玩家留存"],
-    "genre": ["叙事冒险", "解谜"],
-    "art_style": ["唯美画风"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["第一人称"],
-    "theme": ["海洋", "考古探险"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["沉浸代入", "流畅响应"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "物件操控",
+      "秘密解谜",
+      "对话选择"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "秘密取舍",
+      "道德抉择"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "情感叙事",
+      "抉择沉浸"
+    ],
+    "main_mechanics": [
+      "环境叙事",
+      "线索调查",
+      "物品组合"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "Unreal 引擎"
+    ],
+    "innovation_patterns": [
+      "环境叙事",
+      "线索调查"
+    ],
+    "reusable_reference_patterns": [
+      "环境叙事",
+      "分支叙事"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "玩家留存"
+    ],
+    "genre": [
+      "叙事冒险",
+      "解谜"
+    ],
+    "art_style": [
+      "唯美画风"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "海洋",
+      "考古探险"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "流畅响应"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "线索调查",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "据现场线索破解机关",
-            "quote_or_summary": "玩家依据现场的笔记、符号与遗物收集线索来破解机关谜题，谜题与剧情高度交织。",
-            "notes": "维基百科与 Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "环境叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "遗物与笔记承载剧情",
-            "quote_or_summary": "探险队留下的笔记、符号与遗物既是解谜线索，也逐层揭开探险队遭遇与岛屿秘密。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "唯美画风",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "梦境般的唯美孤岛",
-            "quote_or_summary": "孤岛色彩斑斓近乎梦境，与洛夫克拉夫特式的不安并存，营造美与诡异并存的氛围。",
-            "notes": "维基百科与 Steam 商店页可观察。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Call of the Sea 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Call_of_the_Sea",
-        "quote_or_summary": "第一人称冒险解谜，1930 年代南太平洋孤岛、据笔记符号遗物破解机关、谜题与剧情交织、洛夫克拉夫特式氛围与双结局，Out of the Blue 开发，2020 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "线索调查",
+      "环境叙事",
+      "唯美画风"
+    ]
   },
   "claims": [
     {
@@ -97,16 +93,7 @@
       "subject": "线索调查",
       "relation": "creates",
       "object": "世界沉浸",
-      "explanation": "把谜题的解法藏进剧情本身的笔记、符号与遗物里，等于让「解谜」和「读懂故事」变成同一个动作：你不是为了过关去算一道与世界无关的机关，而是因为读懂了丈夫探险队留下的记录、才得以推开下一道门，每一次破解都同时是剧情的一次推进。玩家的注意力因此被牢牢绑在世界的细节上——你必须真的去观察、去理解这个岛，沉浸由「不读懂就走不下去」自然长出。可复用于希望用「环境线索即解谜钥匙」把解谜与叙事焊成一体、靠观察驱动世界沉浸的第一人称冒险设计——但其线性体验偏一次性。",
-      "evidence": [
-        {
-          "title": "谜题叙事一体生沉浸解读",
-          "quote_or_summary": "把解法藏进剧情线索使解谜即读懂故事，玩家须观察理解世界方能推进，沉浸由此自然生发。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把谜题的解法藏进剧情本身的笔记、符号与遗物里，等于让「解谜」和「读懂故事」变成同一个动作：你不是为了过关去算一道与世界无关的机关，而是因为读懂了丈夫探险队留下的记录、才得以推开下一道门，每一次破解都同时是剧情的一次推进。玩家的注意力因此被牢牢绑在世界的细节上——你必须真的去观察、去理解这个岛，沉浸由「不读懂就走不下去」自然长出。可复用于希望用「环境线索即解谜钥匙」把解谜与叙事焊成一体、靠观察驱动世界沉浸的第一人称冒险设计——但其线性体验偏一次性。"
     }
   ]
 }

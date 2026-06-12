@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_red_dead_redemption_2",
     "title": "Red Dead Redemption 2",
-    "source_refs": [
-      {
-        "title": "Red Dead Redemption 2（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2",
-        "notes": "类型（开放世界西部动作冒险）、Rockstar Games 开发发行、2018 年发售（PC 2019）、自研 RAGE 引擎、第一/第三人称、主角 Van der Linde 帮派成员 Arthur Morgan、1899 年西部黄昏、荣誉系统（善恶行为改变名声/对话/外观/玩法）、死眼（Dead Eye 减速标记后快速射击）、狩猎（武器与命中决定皮肉品质、尸体会腐烂招引捕食者）、营地与帮派羁绊、横跨五州的开放世界、约 2000 人历时八年开发、史上最昂贵游戏之一等事实来源。"
-      },
-      {
-        "title": "Red Dead Redemption 2（Steam，appid 1174180）",
-        "url": "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
-        "notes": "开放世界西部、荣誉系统、死眼、狩猎、营地经营、第一/第三人称等事实来源。"
-      }
-    ],
     "short_description": "一款开放世界西部动作冒险游戏，Rockstar Games 基于自研 RAGE 引擎打造：玩家扮演 Van der Linde 帮派成员 Arthur Morgan，在 1899 年西部秩序崩解的黄昏，随帮派东奔西逃、抢劫与求生；游戏横跨五州的开放世界，配以善恶皆有后果的荣誉系统、可减速精准射击的「死眼」、讲究皮肉品质的狩猎与营地羁绊，以及大量贴近现实的系统化细节，约 2000 人历时八年打造，2018 年发售、是史上开发成本最高的游戏之一。",
     "selection_reason": "作为「用海量系统化细节堆出活生生世界」的极致代表：荣誉系统、营地羁绊、可腐烂的猎物、随境而变的 NPC 反应共同织出一张对玩家行为高度响应的世界，配合死眼与精心打磨的西部叙事，是研究开放世界拟真系统、荣誉/反应式世界与高成本叙事制作的高价值参考（亦警示其不可复制的规模）。"
   },
@@ -25,71 +13,89 @@
     "progression_model": "靠剧情章节推进 Arthur 与帮派的故事，靠荣誉、武器、装备与营地升级塑造处事方式与能力；进度体现为剧情阶段、荣誉走向、武器装备强度与已探索区域，荣誉长线影响部分剧情与结局基调。",
     "failure_model": "Arthur 被击杀、坠亡或在任务中失败即回到检查点重来，无永久死亡；高通缉下赏金猎人与执法者会持续追捕，荣誉低落与鲁莽行事会招致更重的名声与世界反噬。",
     "content_structure": "以横跨五州的开放世界、线性主线章节与海量支线/随机遭遇为骨架，靠拟真系统（荣誉、狩猎、营地、生理需求）、骑乘探索与西部战斗承载流程与沉浸，单人（另有线上模式），体量与制作规模极大。",
-    "main_player_actions": ["射击", "潜行", "道具运用"],
-    "main_player_decisions": ["道德抉择", "探索路线", "风险取舍"],
-    "main_player_experiences": ["探索发现", "情感叙事", "氛围营造"],
-    "main_mechanics": ["开放世界探索", "骑乘移动", "时间操控", "好感系统", "合成制作"],
-    "replayability_sources": ["全收集", "任务多样", "多结局"],
-    "production_constraints": ["自研引擎", "大团队协作", "全管弦乐配乐"],
-    "innovation_patterns": ["开放世界探索", "高质量支线"],
-    "reusable_reference_patterns": ["开放世界探索", "高质量支线", "好感系统"],
-    "non_replicable_risks": ["超长开发周期", "大团队协作", "高内容产量"],
-    "genre": ["开放世界", "动作冒险", "第三人称射击"],
-    "art_style": ["写实美术"],
-    "audio_style": ["管弦乐", "民谣配乐"],
-    "perspective": ["第三人称", "第一人称"],
-    "theme": ["西部", "历史"],
-    "narrative_style": ["过场驱动", "情感叙事", "环境叙事"],
-    "game_feel": ["沉浸代入", "厚重打击"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "射击",
+      "潜行",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "探索路线",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "情感叙事",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "开放世界探索",
+      "骑乘移动",
+      "时间操控",
+      "好感系统",
+      "合成制作"
+    ],
+    "replayability_sources": [
+      "全收集",
+      "任务多样",
+      "多结局"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "大团队协作",
+      "全管弦乐配乐"
+    ],
+    "innovation_patterns": [
+      "开放世界探索",
+      "高质量支线"
+    ],
+    "reusable_reference_patterns": [
+      "开放世界探索",
+      "高质量支线",
+      "好感系统"
+    ],
+    "non_replicable_risks": [
+      "超长开发周期",
+      "大团队协作",
+      "高内容产量"
+    ],
+    "genre": [
+      "开放世界",
+      "动作冒险",
+      "第三人称射击"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "管弦乐",
+      "民谣配乐"
+    ],
+    "perspective": [
+      "第三人称",
+      "第一人称"
+    ],
+    "theme": [
+      "西部",
+      "历史"
+    ],
+    "narrative_style": [
+      "过场驱动",
+      "情感叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "厚重打击"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "好感系统",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "荣誉与营地羁绊",
-            "quote_or_summary": "荣誉系统记录善恶并改变 NPC 态度、对话、外观与剧情，营地伙伴会记得玩家举动并建立羁绊。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "时间操控",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "死眼减速射击",
-            "quote_or_summary": "死眼（Dead Eye）可减速时间、标记多个目标后快速逐一击发，是招牌战斗机制。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "开放世界探索",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "横跨五州的拟真世界",
-            "quote_or_summary": "横跨五个虚构州的开放世界，含狩猎、随机遭遇与大量系统化拟真细节，对玩家行为高度响应。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Red Dead Redemption 2 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2",
-        "quote_or_summary": "开放世界西部动作冒险，RAGE 引擎、荣誉系统、死眼、讲究皮肉品质的狩猎、营地羁绊、横跨五州拟真世界、第一/第三人称，约 2000 人历时八年，Rockstar 开发，2018 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "好感系统",
+      "时间操控",
+      "开放世界探索"
+    ]
   },
   "claims": [
     {
@@ -97,16 +103,7 @@
       "subject": "好感系统",
       "relation": "creates",
       "object": "世界沉浸",
-      "explanation": "把玩家的善恶行为接进一张会响应的反馈网——荣誉改变 NPC 的态度、对话、外观与可走剧情，营地伙伴记得你的举动并因此亲疏有别，世界于是不再是静止背景，而像在「认得你、记得你」。当行为持续产生可见的社会后果，玩家会自发地揣摩举止、克制或放纵，沉浸感不来自画面而来自「世界会因我而变」的因果回响。这一效果需海量系统化细节支撑、成本极高，可作为「用荣誉/反应式系统让开放世界对玩家行为持续响应、从而制造世界沉浸」的参考与规模警示。",
-      "evidence": [
-        {
-          "title": "反应式世界生沉浸解读",
-          "quote_or_summary": "荣誉与羁绊让 NPC 与世界对玩家行为持续响应、产生可见社会后果，沉浸来自世界会因我而变的因果回响。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把玩家的善恶行为接进一张会响应的反馈网——荣誉改变 NPC 的态度、对话、外观与可走剧情，营地伙伴记得你的举动并因此亲疏有别，世界于是不再是静止背景，而像在「认得你、记得你」。当行为持续产生可见的社会后果，玩家会自发地揣摩举止、克制或放纵，沉浸感不来自画面而来自「世界会因我而变」的因果回响。这一效果需海量系统化细节支撑、成本极高，可作为「用荣誉/反应式系统让开放世界对玩家行为持续响应、从而制造世界沉浸」的参考与规模警示。"
     }
   ]
 }

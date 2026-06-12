@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_portal_2",
     "title": "Portal 2",
-    "source_refs": [
-      {
-        "title": "Portal 2（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Portal_2",
-        "notes": "类型（第一人称解谜平台）、用传送门枪在两点间开门穿梭解谜、新增推进/弹跳/转化三种凝胶及光桥、激光、引力漏斗等元素、含完全独立、有专属剧情与双机器人角色的双人合作战役、黑色幽默叙事（GLaDOS/Wheatley）、Valve 用 Source 引擎开发、2011 年发售等事实来源。"
-      },
-      {
-        "title": "Portal 2（Steam）",
-        "url": "https://store.steampowered.com/app/620/Portal_2/",
-        "notes": "单人与合作战役、创意工坊与永恒测试计划（关卡编辑器）等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称解谜平台游戏，玩家用能在任意可用平面开出一对传送门的传送枪在两点间穿梭解谜，并借助推进、弹跳、转化三种凝胶与光桥、激光、引力漏斗等元素破关；含一段完全独立、有专属剧情与两名机器人角色的双人合作战役，Valve 开发。",
     "selection_reason": "作为「以传送门 + 动量物理构筑空间解谜」的标杆：传送门把进出两点的相对位置变成谜题核心，配合凝胶与漏斗的动量物理，让玩家用空间思维破解机关；再以一整套专属的双人合作解谜战役与创意工坊延展寿命，是研究传送门机制、空间决策与合作解谜的高价值参考。"
   },
@@ -25,71 +13,83 @@
     "progression_model": "靠逐间测试室渐次引入新元素（凝胶、光桥、激光、漏斗）并叠加组合推进；进度体现为已掌握的机关词汇与已通关的章节，合作战役另有独立的双人关卡进度。",
     "failure_model": "本作以解谜为核心，失败多为坠落、被激光/炮塔击中或机关失误导致角色死亡并立即重生于该谜题起点，反复试错直至解开，不构成永久损失。",
     "content_structure": "以单人剧情战役与一段完全独立的双人合作战役为骨架，按测试室渐次引入传送门、凝胶、光桥、激光与漏斗等机关词汇，另有创意工坊与关卡编辑器，含黑色幽默叙事。",
-    "main_player_actions": ["道具运用", "平台跳跃", "走位"],
-    "main_player_decisions": ["探索路线", "道具选择", "风险取舍"],
-    "main_player_experiences": ["探索发现", "系统掌控", "协作默契"],
-    "main_mechanics": ["传送门", "物理模拟", "合作解谜", "物理碰撞", "环境叙事"],
-    "replayability_sources": ["用户生成内容", "创意工坊", "速通"],
-    "production_constraints": ["Source引擎", "大团队协作"],
-    "innovation_patterns": ["传送门", "合作解谜"],
-    "reusable_reference_patterns": ["传送门", "物理模拟", "合作解谜"],
-    "non_replicable_risks": ["品牌积淀", "技术复杂度"],
-    "genre": ["解谜平台"],
-    "art_style": ["写实美术"],
-    "audio_style": ["电子配乐", "氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["科幻", "黑色幽默"],
-    "narrative_style": ["环境叙事", "对话叙事"],
-    "game_feel": ["流畅响应", "规划满足"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "道具运用",
+      "平台跳跃",
+      "走位"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "道具选择",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "系统掌控",
+      "协作默契"
+    ],
+    "main_mechanics": [
+      "传送门",
+      "物理模拟",
+      "合作解谜",
+      "物理碰撞",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "用户生成内容",
+      "创意工坊",
+      "速通"
+    ],
+    "production_constraints": [
+      "Source引擎",
+      "大团队协作"
+    ],
+    "innovation_patterns": [
+      "传送门",
+      "合作解谜"
+    ],
+    "reusable_reference_patterns": [
+      "传送门",
+      "物理模拟",
+      "合作解谜"
+    ],
+    "non_replicable_risks": [
+      "品牌积淀",
+      "技术复杂度"
+    ],
+    "genre": [
+      "解谜平台"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "电子配乐",
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "科幻",
+      "黑色幽默"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "对话叙事"
+    ],
+    "game_feel": [
+      "流畅响应",
+      "规划满足"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "传送门",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "传送门解谜",
-            "quote_or_summary": "玩家放置一对相连的传送门并在其间穿梭解谜，与初代一脉相承。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "物理模拟",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "凝胶与漏斗动量",
-            "quote_or_summary": "新增推进、弹跳、转化三种凝胶与引力漏斗、光桥、激光等元素，改变玩家运动与可放置传送门的表面。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作解谜",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "独立双人合作战役",
-            "quote_or_summary": "游戏含一段完全独立的双人合作模式，有专属剧情、测试室与两名新机器人角色。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Portal 2 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Portal_2",
-        "quote_or_summary": "第一人称解谜平台，传送门枪两点穿梭解谜，新增推进/弹跳/转化凝胶与光桥、激光、引力漏斗，含专属剧情的独立双人合作战役，黑色幽默叙事，创意工坊编辑器，Valve 用 Source 引擎开发，2011 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "传送门",
+      "物理模拟",
+      "合作解谜"
+    ]
   },
   "claims": [
     {
@@ -97,16 +97,7 @@
       "subject": "传送门",
       "relation": "creates",
       "object": "空间决策",
-      "explanation": "传送门把「从哪进、从哪出」的相对位置与穿越时携带的动量变成谜题的核心变量，玩家必须在三维空间里反复想象两点连通后的运动结果，使解谜从背公式变成训练空间想象与动量直觉，可复用于希望以「连通两点的空间关系」作为核心谜题语言、训练玩家空间推理的解谜设计。",
-      "evidence": [
-        {
-          "title": "传送门空间决策解读",
-          "quote_or_summary": "连通两点与携带动量的传送门把谜题核心变成空间关系推理，训练空间想象。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "传送门把「从哪进、从哪出」的相对位置与穿越时携带的动量变成谜题的核心变量，玩家必须在三维空间里反复想象两点连通后的运动结果，使解谜从背公式变成训练空间想象与动量直觉，可复用于希望以「连通两点的空间关系」作为核心谜题语言、训练玩家空间推理的解谜设计。"
     }
   ]
 }

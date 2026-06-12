@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_life_is_strange",
     "title": "Life is Strange",
-    "source_refs": [
-      {
-        "title": "Life Is Strange（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Life_Is_Strange_(video_game)",
-        "notes": "类型（分章节叙事冒险）、主角 Max Caulfield 发现自己能随时倒流时间、可回溯重选对话与行动并引发蝴蝶效应、围绕 Max 与挚友 Chloe 及小镇 Arcadia Bay、结局需在牺牲 Chloe 与牺牲小镇间抉择、Dontnod 开发、Square Enix 发行、2015 年分五章发售等事实来源。"
-      },
-      {
-        "title": "Life is Strange（Steam）",
-        "url": "https://store.steampowered.com/app/319630/",
-        "notes": "时间倒流机制、抉择与后果、独立民谣配乐、五章结构等事实来源。"
-      }
-    ],
     "short_description": "一款分章节的叙事冒险游戏，18 岁摄影学生 Max Caulfield 发现自己能随时倒流时间、回溯重选对话与行动，每个选择都牵动蝴蝶效应；故事围绕她与挚友 Chloe 及小镇 Arcadia Bay 展开，最终需在牺牲挚友与牺牲整座小镇之间抉择，Dontnod 开发、2015 年分五章发售。",
     "selection_reason": "作为「以时间倒流重塑抉择叙事」的代表：让玩家能回溯并改选，先看到后果再决定，把传统一次性的叙事抉择变成可反复权衡的体验，再用蝴蝶效应让选择长线发酵，是研究时间回溯机制与抉择驱动叙事的高价值参考。"
   },
@@ -25,71 +13,78 @@
     "progression_model": "靠章节推进剧情、靠抉择与回溯塑造人物关系与支线走向；进度体现为故事章节、关系状态与已触发的后果，选择长线影响结局分支。",
     "failure_model": "本作几乎没有传统失败：少数即时危机若应对失误会触发死亡或坏结局并回退重试，整体以「选择—后果」推进而非惩罚求存，真正的代价体现为不可两全的道德抉择。",
     "content_structure": "以五个章节的线性叙事为骨架，靠时间回溯、对话抉择与蝴蝶效应承载分支与情感，含影响走向的关键选择与多结局，单人。",
-    "main_player_actions": ["对话选择", "社交互动", "道具运用"],
-    "main_player_decisions": ["道德抉择", "风险取舍", "关系经营"],
-    "main_player_experiences": ["情感叙事", "抉择沉浸", "氛围营造"],
-    "main_mechanics": ["时间回溯", "分支叙事", "环境叙事"],
-    "replayability_sources": ["多结局", "彩蛋收集"],
-    "production_constraints": ["Unreal 引擎", "中型团队"],
-    "innovation_patterns": ["时间回溯", "分支叙事"],
-    "reusable_reference_patterns": ["时间回溯", "分支叙事", "情感叙事"],
-    "non_replicable_risks": ["一次性体验", "授权配乐成本"],
-    "genre": ["叙事冒险"],
-    "art_style": ["写实美术"],
-    "audio_style": ["民谣配乐"],
-    "perspective": ["第三人称"],
-    "theme": ["青春成长", "超现实"],
-    "narrative_style": ["分支叙事", "情感叙事"],
-    "game_feel": ["沉浸代入"],
-    "team_model": ["中型团队"],
+    "main_player_actions": [
+      "对话选择",
+      "社交互动",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "风险取舍",
+      "关系经营"
+    ],
+    "main_player_experiences": [
+      "情感叙事",
+      "抉择沉浸",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "时间回溯",
+      "分支叙事",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "Unreal 引擎",
+      "中型团队"
+    ],
+    "innovation_patterns": [
+      "时间回溯",
+      "分支叙事"
+    ],
+    "reusable_reference_patterns": [
+      "时间回溯",
+      "分支叙事",
+      "情感叙事"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "授权配乐成本"
+    ],
+    "genre": [
+      "叙事冒险"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "民谣配乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "青春成长",
+      "超现实"
+    ],
+    "narrative_style": [
+      "分支叙事",
+      "情感叙事"
+    ],
+    "game_feel": [
+      "沉浸代入"
+    ],
+    "team_model": [
+      "中型团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "时间回溯",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "随时倒流时间重选",
-            "quote_or_summary": "Max 能随时倒流时间，玩家可在许多情形下回溯、重选另一个选项，从而重塑故事走向。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "分支叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "蝴蝶效应抉择",
-            "quote_or_summary": "玩家的行动会以蝴蝶效应改变叙事走向，选择长线发酵并通向不同结局。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "情感叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Max 与 Chloe 的故事",
-            "quote_or_summary": "故事围绕 Max 与挚友 Chloe 及小镇 Arcadia Bay 展开，终局需在牺牲 Chloe 与牺牲小镇之间抉择。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Life is Strange 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Life_Is_Strange_(video_game)",
-        "quote_or_summary": "分章节叙事冒险，主角 Max 能倒流时间回溯重选并引发蝴蝶效应，围绕 Max 与 Chloe 及 Arcadia Bay，终局在牺牲挚友与牺牲小镇间抉择，独立民谣配乐，Dontnod 开发，Square Enix 发行，2015 年分五章发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "时间回溯",
+      "分支叙事",
+      "情感叙事"
+    ]
   },
   "claims": [
     {
@@ -97,16 +92,7 @@
       "subject": "时间回溯",
       "relation": "creates",
       "object": "抉择沉浸",
-      "explanation": "让玩家能回溯、先看见某个选择的即时后果再决定是否改选，把传统叙事里「一选定生死、靠存档读档作弊」的体验，正大光明地做成机制：玩家被鼓励反复试探、对比两难选项的代价，从而更深地咀嚼每个抉择的分量，再以蝴蝶效应让看似可逆的选择留下不可逆的长尾，可复用于希望用「可回溯试探」加深玩家对叙事抉择投入的设计。",
-      "evidence": [
-        {
-          "title": "回溯加深抉择解读",
-          "quote_or_summary": "可回溯试探让玩家先看后果再决定，更深咀嚼抉择分量，蝴蝶效应再留下不可逆长尾。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让玩家能回溯、先看见某个选择的即时后果再决定是否改选，把传统叙事里「一选定生死、靠存档读档作弊」的体验，正大光明地做成机制：玩家被鼓励反复试探、对比两难选项的代价，从而更深地咀嚼每个抉择的分量，再以蝴蝶效应让看似可逆的选择留下不可逆的长尾，可复用于希望用「可回溯试探」加深玩家对叙事抉择投入的设计。"
     }
   ]
 }

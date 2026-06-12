@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_outlast",
     "title": "Outlast",
-    "source_refs": [
-      {
-        "title": "Outlast（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Outlast",
-        "notes": "类型（第一人称心理生存恐怖）、Red Barrels 开发与发行、2013 年发售、主角自由记者 Miles Upshur 调查科罗拉多 Mount Massive 精神病院、玩家无血条、不能攻击敌人、只能躲进储物柜/藏身/潜行求生、黑暗中靠摄影机夜视观察、夜视耗电须四处搜刮电池、录下事件会写下笔记、受 Amnesia 影响的无战斗叙事等事实来源。"
-      },
-      {
-        "title": "Outlast 评测（Game Informer）",
-        "url": "https://gameinformer.com/games/outlast/b/pc/archive/2013/09/06/red-barrels-delivers-an-endurance-test-in-terror.aspx",
-        "notes": "无战斗的躲藏潜逃、摄影机夜视与电池资源、精神病院恐怖氛围等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称心理生存恐怖游戏，Red Barrels 开发，2013 年发售：玩家扮演自由记者 Miles Upshur，深入科罗拉多群山中的 Mount Massive 精神病院调查。游戏没有血条、玩家也无法攻击敌人，只能靠潜行、躲进储物柜、藏身暗处、贴着掩体溜过追猎者来求生；病院大多漆黑一片，唯一的视野来自一台带夜视的手持摄影机，而夜视会持续耗电，逼你不断搜刮电池。录下关键事件，主角还会写下笔记，补全他对真相的揣测。",
     "selection_reason": "作为「以无力感驱动的无战斗恐怖」的代表：剥夺玩家的攻击手段，只留躲藏与潜逃，再用耗电的摄影机夜视把视野变成需要管理的稀缺资源，让黑暗与追猎者的压迫感持续累积，是研究第一人称恐怖、躲藏潜逃与资源化恐惧的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "靠线性推进的病院场景与剧情节点前进，靠搜刮电池维持夜视、录制事件解锁主角笔记补全叙事；无数值养成，进度体现为已探明的区域与逐步揭示的真相。",
     "failure_model": "玩家被追猎者抓住攻击致死即失败、退回上一个检查点，核心压力在于无法反击、只能靠躲藏与逃跑甩脱威胁，同时管控电池这一维持视野的稀缺资源。",
     "content_structure": "以漆黑病院的线性探索与逃生段落为骨架，靠摄影机夜视、电池资源与追猎者追逐承载恐怖张力，以剧情驱动的一次性体验为主，单人。",
-    "main_player_actions": ["潜行", "物件操控", "翻越"],
-    "main_player_decisions": ["探索路线", "风险取舍", "资源取舍"],
-    "main_player_experiences": ["氛围营造", "探索发现", "情感叙事"],
-    "main_mechanics": ["躲藏潜逃", "追猎者", "夜视摄影", "资源管理"],
-    "replayability_sources": ["难度分级", "全收集"],
-    "production_constraints": ["小型团队", "无武器战斗", "写实美术"],
-    "innovation_patterns": ["第一人称恐怖", "躲藏潜逃"],
-    "reusable_reference_patterns": ["躲藏潜逃", "氛围营造"],
-    "non_replicable_risks": ["一次性体验", "玩家留存"],
-    "genre": ["生存恐怖"],
-    "art_style": ["写实美术"],
-    "audio_style": ["环境音", "氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["心理恐怖", "人体实验"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["紧张节奏", "沉浸代入"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "潜行",
+      "物件操控",
+      "翻越"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "风险取舍",
+      "资源取舍"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "探索发现",
+      "情感叙事"
+    ],
+    "main_mechanics": [
+      "躲藏潜逃",
+      "追猎者",
+      "夜视摄影",
+      "资源管理"
+    ],
+    "replayability_sources": [
+      "难度分级",
+      "全收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "无武器战斗",
+      "写实美术"
+    ],
+    "innovation_patterns": [
+      "第一人称恐怖",
+      "躲藏潜逃"
+    ],
+    "reusable_reference_patterns": [
+      "躲藏潜逃",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "玩家留存"
+    ],
+    "genre": [
+      "生存恐怖"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "环境音",
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "心理恐怖",
+      "人体实验"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "躲藏潜逃",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "无法战斗只能躲逃",
-            "quote_or_summary": "玩家无血条、不能攻击敌人，只能靠潜行、躲进储物柜、藏身暗处与逃跑来求生。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "夜视摄影",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "摄影机夜视耗电",
-            "quote_or_summary": "黑暗中唯一的视野来自手持摄影机的夜视，夜视持续耗电，逼玩家四处搜刮电池。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "追猎者",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "病院追猎威胁",
-            "quote_or_summary": "病院中的敌人会主动追逐玩家，玩家只能甩脱躲藏而无法正面对抗。",
-            "notes": "维基百科与 Game Informer 可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Outlast 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Outlast",
-        "quote_or_summary": "第一人称心理生存恐怖，记者潜入精神病院、无血条不能攻击、靠潜行躲藏逃生、摄影机夜视耗电搜刮电池、碎片化笔记叙事，Red Barrels 开发，2013 年发售。",
-        "notes": "事实取自维基百科与 Game Informer。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "躲藏潜逃",
+      "夜视摄影",
+      "追猎者"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "躲藏潜逃",
       "relation": "creates",
       "object": "恐惧张力",
-      "explanation": "把玩家的反击手段彻底拿掉、只留躲与逃，等于让每一次遭遇都没有「打赢」的出口：你无法清除威胁，只能祈祷柜门别被拉开、脚步声快点远去。这种结构性的无力感，是恐惧持续累积的根源——因为危险永远无法被消解，只能被暂时躲过。再叠上耗电的夜视把「看清」也变成稀缺资源，玩家连安全感最基本的来源都被定量配给，张力由此被拧到极限。可复用于希望用「剥夺反击 + 资源化视野」把无力感转化为持续恐惧张力的生存恐怖设计。",
-      "evidence": [
-        {
-          "title": "无力感生恐惧解读",
-          "quote_or_summary": "剥夺反击只留躲逃使威胁无法被消解、只能暂时躲过，配合资源化夜视把无力感拧成持续恐惧张力。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把玩家的反击手段彻底拿掉、只留躲与逃，等于让每一次遭遇都没有「打赢」的出口：你无法清除威胁，只能祈祷柜门别被拉开、脚步声快点远去。这种结构性的无力感，是恐惧持续累积的根源——因为危险永远无法被消解，只能被暂时躲过。再叠上耗电的夜视把「看清」也变成稀缺资源，玩家连安全感最基本的来源都被定量配给，张力由此被拧到极限。可复用于希望用「剥夺反击 + 资源化视野」把无力感转化为持续恐惧张力的生存恐怖设计。"
     }
   ]
 }

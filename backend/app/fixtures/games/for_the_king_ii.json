@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_for_the_king_ii",
     "title": "For The King II",
-    "source_refs": [
-      {
-        "title": "For The King II（Steam）",
-        "url": "https://store.steampowered.com/app/1676840/For_The_King_II/",
-        "notes": "类型（回合制策略肉鸽桌游 RPG）、《For the King》续作、新增「战斗网格」使移动与站位带来增益与惩罚、骰子驱动的移动/遭遇/战斗、最多四人合作或单人、7 段叙事相连的冒险共逾 30 小时、程序生成地图、含带每月种子排行的肉鸽模式、IronOak 开发、Curve 发行、2023 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款回合制策略肉鸽桌游 RPG，作为《For the King》续作新增「战斗网格」，让移动与站位带来增益或惩罚，沿用骰子驱动的移动与战斗，支持单人或最多四人合作，提供 7 段相连冒险与程序生成地图。",
     "selection_reason": "作为「为骰子桌游战斗加入网格站位」的代表：在前作骰子驱动的桌游式战斗上叠加战斗网格，让走位与阵型带来增益与惩罚，把运气玩法补上一层战术维度，是研究骰子战斗战术化与桌游 RPG 深化的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "靠探索获取装备、金币与技能强化队伍、推进 7 段相连冒险；进度体现为队伍装备、能力与章节进度，肉鸽模式则以种子局与排行提供长期挑战。",
     "failure_model": "队伍全灭或关键事件失败即本局/本段冒险失败，肉鸽模式下需带种子规则重开，骰子的高低起伏使局势随时可能逆转。",
     "content_structure": "以 7 段叙事相连、共逾 30 小时的冒险与程序生成地图为骨架，叠加战斗网格、骰子判定与队伍养成，支持单人与最多四人合作及带排行的肉鸽模式。",
-    "main_player_actions": ["回合战斗", "棋盘移动", "掷骰"],
-    "main_player_decisions": ["战略规划", "风险取舍", "装备搭配"],
-    "main_player_experiences": ["运筹帷幄", "协作默契", "构筑乐趣"],
-    "main_mechanics": ["回合制网格战术", "骰子判定", "站位战斗", "程序生成", "多人合作"],
-    "replayability_sources": ["程序生成", "难度分级", "角色解锁"],
-    "production_constraints": ["低多边形", "系列复用"],
-    "innovation_patterns": ["站位战斗", "骰子判定"],
-    "reusable_reference_patterns": ["站位战斗", "骰子判定", "多人合作"],
-    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
-    "genre": ["回合制策略", "类肉鸽"],
-    "art_style": ["低多边形"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["等距"],
-    "theme": ["奇幻", "桌游风"],
-    "narrative_style": ["对话叙事"],
-    "game_feel": ["桌游质感", "策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "回合战斗",
+      "棋盘移动",
+      "掷骰"
+    ],
+    "main_player_decisions": [
+      "战略规划",
+      "风险取舍",
+      "装备搭配"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "协作默契",
+      "构筑乐趣"
+    ],
+    "main_mechanics": [
+      "回合制网格战术",
+      "骰子判定",
+      "站位战斗",
+      "程序生成",
+      "多人合作"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "难度分级",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "低多边形",
+      "系列复用"
+    ],
+    "innovation_patterns": [
+      "站位战斗",
+      "骰子判定"
+    ],
+    "reusable_reference_patterns": [
+      "站位战斗",
+      "骰子判定",
+      "多人合作"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "系统复杂度"
+    ],
+    "genre": [
+      "回合制策略",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "低多边形"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "等距"
+    ],
+    "theme": [
+      "奇幻",
+      "桌游风"
+    ],
+    "narrative_style": [
+      "对话叙事"
+    ],
+    "game_feel": [
+      "桌游质感",
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "站位战斗",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "新增战斗网格",
-            "quote_or_summary": "本作新增「战斗网格」，移动与站位会为玩家与敌人带来战术性的增益与惩罚。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "骰子判定",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "骰子驱动",
-            "quote_or_summary": "受骰子启发的移动、遭遇与战斗机制带来随机与变数，命运随骰子点数起落。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "多人合作",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "至多四人合作",
-            "quote_or_summary": "玩家可四人合作组队，或单人独闯 Fahrul。",
-            "notes": "Steam 商店页可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "For The King II 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1676840/For_The_King_II/",
-        "quote_or_summary": "回合制策略肉鸽桌游 RPG，For the King 续作，新增战斗网格让移动站位带来增益惩罚，骰子驱动移动与战斗，单人或最多四人合作，7 段相连冒险逾 30 小时，程序生成地图与肉鸽模式，IronOak 开发，2023 年发售。",
-        "notes": "事实取自 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "站位战斗",
+      "骰子判定",
+      "多人合作"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "站位战斗",
       "relation": "creates",
       "object": "战术深度",
-      "explanation": "在前作纯骰子驱动的桌游式战斗上叠加战斗网格，让走位与站位本身带来增益与惩罚，使玩家在听天由命的骰子之外多出一层可主动经营的阵型决策，把运气玩法补成运气与战术并存，可复用于希望为随机战斗增添可控战术维度的桌游式设计。",
-      "evidence": [
-        {
-          "title": "网格战术化解读",
-          "quote_or_summary": "战斗网格为骰子驱动的战斗补上一层站位战术，深化策略维度。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "在前作纯骰子驱动的桌游式战斗上叠加战斗网格，让走位与站位本身带来增益与惩罚，使玩家在听天由命的骰子之外多出一层可主动经营的阵型决策，把运气玩法补成运气与战术并存，可复用于希望为随机战斗增添可控战术维度的桌游式设计。"
     }
   ]
 }

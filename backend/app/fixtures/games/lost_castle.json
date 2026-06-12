@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_lost_castle",
     "title": "Lost Castle",
-    "source_refs": [
-      {
-        "title": "Lost Castle / 失落城堡（Steam）",
-        "url": "https://store.steampowered.com/app/434650/Lost_Castle/",
-        "notes": "类型（横版清版肉鸽动作 RPG）、随机生成地牢/道具/敌人与 Boss、100+ 道具与 60+ 效果各异（有益/危险/搞笑）的药水、最多四人在线与本地合作、阵亡重来、由三人组成的国产独立团队 Hunter Studio 开发等事实来源。"
-      }
-    ],
     "short_description": "一款融合横版清版动作与肉鸽元素的动作 RPG，玩家操控英雄闯入随机生成的城堡地牢，近战清场、拾取随机武器装备与效果各异的药水，阵亡即从头再来，支持最多四人在线或本地合作。",
     "selection_reason": "作为「硬核横版清版 + 肉鸽随机 + 赌博式药水」的代表：用大量效果可好可坏可搞笑的随机药水，把战斗变成充满意外的赌博，再叠加随机掉落与多人合作的混乱感，是研究动作肉鸽节奏与风险趣味的高价值参考。"
   },
@@ -20,71 +13,80 @@
     "progression_model": "单局内靠拾取武器、装备与药水临时变强；跨局以积累的灵魂解锁永久强化与新英雄，单局战力不保留。",
     "failure_model": "生命耗尽即角色阵亡、本局结束，需从城堡入口重新开始，仅保留跨局的灵魂与解锁内容。",
     "content_structure": "由随机生成的多层城堡地牢构成，含 100+ 道具、60+ 药水与随机敌人和 Boss；单人或最多四人在线/本地合作闯关。",
-    "main_player_actions": ["近战攻击", "翻滚闪避", "道具运用"],
-    "main_player_decisions": ["装备搭配", "道具取舍", "风险取舍"],
-    "main_player_experiences": ["战斗精通", "欢乐混乱", "滚雪球快感"],
-    "main_mechanics": ["程序生成", "永久死亡", "随机道具", "元进度", "多人合作"],
-    "replayability_sources": ["程序生成", "构筑多样", "难度分级"],
-    "production_constraints": ["像素美术", "小型团队"],
-    "innovation_patterns": ["随机道具", "清版肉鸽"],
-    "reusable_reference_patterns": ["随机道具", "程序生成", "多人合作"],
-    "non_replicable_risks": ["平衡复杂度"],
-    "genre": ["类肉鸽", "动作冒险"],
-    "art_style": ["像素美术"],
-    "audio_style": ["摇滚配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["奇幻", "黑暗奇幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["厚重打击"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "翻滚闪避",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "道具取舍",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "欢乐混乱",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "程序生成",
+      "永久死亡",
+      "随机道具",
+      "元进度",
+      "多人合作"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "像素美术",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "随机道具",
+      "清版肉鸽"
+    ],
+    "reusable_reference_patterns": [
+      "随机道具",
+      "程序生成",
+      "多人合作"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度"
+    ],
+    "genre": [
+      "类肉鸽",
+      "动作冒险"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "摇滚配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "奇幻",
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "厚重打击"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "随机道具",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "效果各异的药水",
-            "quote_or_summary": "游戏含 100+ 道具与 60+ 药水，药水效果可能有益、危险或搞笑，玩家饮用前未必知晓结果。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "程序生成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "随机地牢",
-            "quote_or_summary": "地牢、道具、敌人与 Boss 均随机生成，每局布局不同。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "多人合作",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "四人合作",
-            "quote_or_summary": "支持最多四名玩家在线或本地合作闯关。",
-            "notes": "Steam 商店页可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Lost Castle 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/434650/Lost_Castle/",
-        "quote_or_summary": "横版清版肉鸽动作 RPG，随机生成地牢/道具/敌人与 Boss，100+ 道具与 60+ 效果各异的药水，最多四人在线/本地合作，阵亡重来，国产独立团队 Hunter Studio 开发。",
-        "notes": "事实取自 Steam 商店页与公开报道。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "随机道具",
+      "程序生成",
+      "多人合作"
+    ]
   },
   "claims": [
     {
@@ -92,16 +94,7 @@
       "subject": "随机道具",
       "relation": "creates",
       "object": "风险趣味",
-      "explanation": "用大量效果可好可坏可搞笑、饮用前未知的随机药水，把简单的「补给」变成一次次主动赌博，让玩家在贪婪与谨慎间反复权衡，把不确定性转化为乐趣而非纯挫败，可复用于任何含消耗品的肉鸽设计。",
-      "evidence": [
-        {
-          "title": "药水赌博解读",
-          "quote_or_summary": "效果未知的随机药水使每次饮用都成为风险决策，制造意外与笑料。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "用大量效果可好可坏可搞笑、饮用前未知的随机药水，把简单的「补给」变成一次次主动赌博，让玩家在贪婪与谨慎间反复权衡，把不确定性转化为乐趣而非纯挫败，可复用于任何含消耗品的肉鸽设计。"
     }
   ]
 }

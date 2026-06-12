@@ -3,7 +3,6 @@ from pathlib import Path
 
 import pytest
 
-from app.schemas.common import ConfidenceLevel, QualityStatus
 from app.services.fixture_pipeline import (
     ContractViolation,
     build_graph_relations_from_claims,
@@ -22,16 +21,19 @@ def golden_raw() -> dict:
     return deepcopy(load_fixture(FIXTURE_PATH))
 
 
-def test_build_graph_relations_preserves_claim_evidence_and_quality() -> None:
+def test_build_graph_relations_maps_each_claim_to_a_relation() -> None:
     result = run_fixture_pipeline(FIXTURE_PATH)
     relations = build_graph_relations_from_claims(result.design_claims)
 
     relation_by_claim = {relation.claim_id: relation for relation in relations}
-    weak_relation = relation_by_claim["claim_symbolic_ui_low_art_cost"]
+    assert {claim.id for claim in result.design_claims} == set(relation_by_claim)
 
-    assert weak_relation.confidence == ConfidenceLevel.LOW
-    assert weak_relation.quality_status == QualityStatus.WEAK_EVIDENCE
-    assert weak_relation.evidence[0].notes == "Weak evidence included to prove downstream confidence handling."
+    sample_claim = result.design_claims[0]
+    relation = relation_by_claim[sample_claim.id]
+    assert relation.id == f"rel_{sample_claim.id}"
+    assert relation.source_node == sample_claim.subject
+    assert relation.relation == sample_claim.relation
+    assert relation.target_node == sample_claim.object
 
 
 def test_golden_flow_runs_end_to_end() -> None:

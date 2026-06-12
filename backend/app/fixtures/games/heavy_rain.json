@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_heavy_rain",
     "title": "Heavy Rain",
-    "source_refs": [
-      {
-        "title": "Heavy Rain（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Heavy_Rain",
-        "notes": "类型（互动剧情/动作冒险）、Quantic Dream 开发、David Cage 编导、Sony 发行（PC 版 Quantic Dream 自行发行）、自研引擎、第三人称、四名可操作主角（Ethan Mars、Norman Jayden、Madison Paige、Scott Shelby）轮流调查折纸杀手案、以 QTE 与情境操作推进、分支叙事、任一主角都可能因玩家操作而死亡且剧情继续、结局由最终章发生的事决定、2010 年发售等事实来源。"
-      },
-      {
-        "title": "Heavy Rain（Steam 商店页）",
-        "url": "https://store.steampowered.com/app/960910/Heavy_Rain/",
-        "notes": "四主角互动剧情、QTE 情境操作、关键抉择改变剧情与结局、角色可永久死亡等事实来源。"
-      }
-    ],
     "short_description": "一款互动剧情动作冒险游戏，Quantic Dream 开发、David Cage 编导：玩家轮流操作 Ethan、Norman、Madison、Scott 四名主角，从各自视角追查专挑雨季作案、用折纸留印的「折纸杀手」连环绑架案；玩法以情境化的 QTE 与物件操作为主，关键抉择会改变剧情走向，任何一名主角都可能因玩家的操作失误而永久死亡、而故事会带着幸存者继续推进，多种结局由最终章的结果决定，2010 年发售。",
     "selection_reason": "作为「让玩家角色真的会死、且死了剧情照常往下走」的互动剧情代表：它用四线交替的主角、情境化 QTE 与角色永久死亡，把每个抉择的代价钉成不可挽回的叙事后果，是研究多主角交替叙事、QTE 情境操作与「死亡纳入剧情而非读档」的高价值参考。"
   },
@@ -25,71 +13,83 @@
     "progression_model": "靠章节推进案情与四名主角的处境、靠抉择与 QTE 结果分叉剧情与人物存亡；没有数值养成，进度体现为故事章节、已揭开的线索、各主角的生死与关系状态，长线决定最终落在哪一种结局。",
     "failure_model": "本作无传统 Game Over：QTE 失误或选择失当不会弹出失败重来，而是改写剧情、恶化处境，严重时直接让该主角永久死亡并被写入故事，真正的代价是不可重选、不可挽回的死亡与分支后果。",
     "content_structure": "以四名主角交替推进的折纸杀手主线为骨架，靠情境化 QTE、物件探查与限时抉择承载分支与演出，角色生死与关键选择长线汇聚成多种结局，单人。",
-    "main_player_actions": ["对话选择", "物件操控", "社交互动"],
-    "main_player_decisions": ["道德抉择", "风险取舍", "关系经营"],
-    "main_player_experiences": ["情感叙事", "抉择沉浸", "氛围营造"],
-    "main_mechanics": ["分支叙事", "快速反应", "死亡叙事", "交替章节", "环境叙事"],
-    "replayability_sources": ["多结局", "彩蛋收集"],
-    "production_constraints": ["自研引擎", "大团队协作", "动作捕捉"],
-    "innovation_patterns": ["死亡叙事", "交替章节"],
-    "reusable_reference_patterns": ["分支叙事", "死亡叙事"],
-    "non_replicable_risks": ["一次性体验", "大团队协作", "影视制作成本"],
-    "genre": ["叙事冒险"],
-    "art_style": ["写实美术"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["第三人称"],
-    "theme": ["家庭情感", "犯罪悬疑"],
-    "narrative_style": ["分支叙事", "过场驱动", "情感叙事"],
-    "game_feel": ["沉浸代入", "紧张节奏"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "对话选择",
+      "物件操控",
+      "社交互动"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "风险取舍",
+      "关系经营"
+    ],
+    "main_player_experiences": [
+      "情感叙事",
+      "抉择沉浸",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "分支叙事",
+      "快速反应",
+      "死亡叙事",
+      "交替章节",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "大团队协作",
+      "动作捕捉"
+    ],
+    "innovation_patterns": [
+      "死亡叙事",
+      "交替章节"
+    ],
+    "reusable_reference_patterns": [
+      "分支叙事",
+      "死亡叙事"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "大团队协作",
+      "影视制作成本"
+    ],
+    "genre": [
+      "叙事冒险"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "家庭情感",
+      "犯罪悬疑"
+    ],
+    "narrative_style": [
+      "分支叙事",
+      "过场驱动",
+      "情感叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "死亡叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "主角可永久死亡且剧情继续",
-            "quote_or_summary": "任一可操作主角都可能因玩家操作而死亡，死亡不触发读档，而是被写进剧情、故事带着幸存者继续。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "交替章节",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "四主角分章交替推进",
-            "quote_or_summary": "玩家轮流操作 Ethan、Norman、Madison、Scott 四名主角，从各自视角分章推进同一桩案件。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "快速反应",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "情境化 QTE 操作",
-            "quote_or_summary": "大量行动以情境化 QTE 呈现，紧张关头的按键失误可能直接导致主角丧命。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Heavy Rain 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Heavy_Rain",
-        "quote_or_summary": "互动剧情动作冒险，四主角交替调查折纸杀手案、情境化 QTE 与物件操作、分支叙事、角色可永久死亡且剧情继续、多结局由最终章决定，Quantic Dream 开发、David Cage 编导，2010 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "死亡叙事",
+      "交替章节",
+      "快速反应"
+    ]
   },
   "claims": [
     {
@@ -97,16 +97,7 @@
       "subject": "死亡叙事",
       "relation": "creates",
       "object": "失败叙事化",
-      "explanation": "把玩家角色的死亡从「失败-读档-重来」改写成「写进剧情、故事继续」，从根本上改变了抉择的分量：因为按错或选错不会被一次重载抹掉，而是让某个主角真的退场、剩下的人带着缺口往下走，玩家会把每个 QTE 与抉择当成不可挽回的真实后果来对待，失败不再是惩罚而成了叙事的一部分；可复用于希望用「死亡即剧情分支、而非重来」提升抉择代价感、让失误转化为独特故事走向的设计。",
-      "evidence": [
-        {
-          "title": "死亡写入剧情解读",
-          "quote_or_summary": "角色死亡不读档、被写进故事并带着幸存者继续，使每个抉择与 QTE 都承载不可挽回的真实后果。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把玩家角色的死亡从「失败-读档-重来」改写成「写进剧情、故事继续」，从根本上改变了抉择的分量：因为按错或选错不会被一次重载抹掉，而是让某个主角真的退场、剩下的人带着缺口往下走，玩家会把每个 QTE 与抉择当成不可挽回的真实后果来对待，失败不再是惩罚而成了叙事的一部分；可复用于希望用「死亡即剧情分支、而非重来」提升抉择代价感、让失误转化为独特故事走向的设计。"
     }
   ]
 }

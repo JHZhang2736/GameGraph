@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_cloverpit",
     "title": "CloverPit",
-    "source_refs": [
-      {
-        "title": "CloverPit（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/CloverPit",
-        "notes": "类型（第一人称肉鸽，含策略与心理恐怖）、灵感来自 Balatro 与 Buckshot Roulette、玩家被困小隔间里靠一台扭曲的老虎机偿还不断上涨的债务、可遇到 150+ 种道具以各种方式「作弊」操纵老虎机牟利、强调并非赌博模拟而是纯肉鸽玩法、意大利工作室 Panik Arcade 开发、Future Friends Games 发行、2025 年 9 月 26 日发售、销量破百万等事实来源。"
-      },
-      {
-        "title": "CloverPit（Steam）",
-        "url": "https://store.steampowered.com/app/3314790/CloverPit/",
-        "notes": "老虎机肉鸽、还债截止、150+ 道具协同操纵、第一人称隔间心理恐怖等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称肉鸽游戏，融合策略与心理恐怖，灵感取自 Balatro 与 Buckshot Roulette：玩家被困在一间小隔间里，靠一台扭曲的老虎机偿还不断上涨的债务，途中可获得 150+ 种道具以各种方式「作弊」操纵老虎机牟利；它并非赌博模拟，而是纯粹的肉鸽构筑，意大利工作室 Panik Arcade 开发、2025 年发售、销量破百万。",
     "selection_reason": "作为「把老虎机改造成肉鸽构筑 + 还债截止施压」的代表：用 150+ 可叠加的道具让玩家系统化地「操纵」老虎机的随机产出，把赌博的间歇奖励转译为可构筑的策略，再以不断上涨的还债截止逼出冒险，配心理恐怖氛围，是研究随机产出构筑化与债务截止时间压力的高价值参考。"
   },
@@ -25,71 +13,80 @@
     "progression_model": "靠每轮偿债解锁更高难度、靠收集与叠加 150+ 道具增强对老虎机的操控推进；进度体现为已偿还的债务轮次、道具构筑强度与可应对的债务额度。",
     "failure_model": "若在截止前未能凑够偿还不断上涨的债务，即告破产、本局结束，须带着解锁内容重新开局。",
     "content_structure": "以一轮轮还债截止与一台可被道具操纵的老虎机为骨架，靠道具协同构筑、随机产出与心理恐怖氛围承载流程与重玩，单人。",
-    "main_player_actions": ["拉杆", "道具运用"],
-    "main_player_decisions": ["增益选择", "风险取舍", "资源取舍"],
-    "main_player_experiences": ["滚雪球快感", "构筑乐趣", "氛围营造"],
-    "main_mechanics": ["老虎机", "债务清算", "道具协同", "增益构筑", "强制抽卡"],
-    "replayability_sources": ["程序生成", "构筑多样", "难度分级"],
-    "production_constraints": ["小型团队", "低多边形"],
-    "innovation_patterns": ["老虎机", "债务清算"],
-    "reusable_reference_patterns": ["增益构筑", "强制抽卡"],
-    "non_replicable_risks": ["题材争议", "玩家留存"],
-    "genre": ["类肉鸽"],
-    "art_style": ["低多边形"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["心理恐怖", "黑色幽默"],
-    "narrative_style": ["极简叙事", "环境叙事"],
-    "game_feel": ["紧张节奏", "滚雪球快感"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "拉杆",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "增益选择",
+      "风险取舍",
+      "资源取舍"
+    ],
+    "main_player_experiences": [
+      "滚雪球快感",
+      "构筑乐趣",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "老虎机",
+      "债务清算",
+      "道具协同",
+      "增益构筑",
+      "强制抽卡"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "低多边形"
+    ],
+    "innovation_patterns": [
+      "老虎机",
+      "债务清算"
+    ],
+    "reusable_reference_patterns": [
+      "增益构筑",
+      "强制抽卡"
+    ],
+    "non_replicable_risks": [
+      "题材争议",
+      "玩家留存"
+    ],
+    "genre": [
+      "类肉鸽"
+    ],
+    "art_style": [
+      "低多边形"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "心理恐怖",
+      "黑色幽默"
+    ],
+    "narrative_style": [
+      "极简叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "滚雪球快感"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "老虎机",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "可操纵的老虎机",
-            "quote_or_summary": "玩家靠一台扭曲的老虎机牟利，并可用 150+ 道具以各种方式「作弊」操纵其产出。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "债务清算",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "偿还上涨的债务",
-            "quote_or_summary": "玩家须在不断逼近的截止前，用老虎机收益偿还不断上涨的债务，否则破产。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "增益构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "150+ 道具叠加",
-            "quote_or_summary": "途中可获得超过 150 种道具，叠加出系统化操纵老虎机产出的构筑。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "CloverPit 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/CloverPit",
-        "quote_or_summary": "第一人称肉鸽含心理恐怖，灵感取自 Balatro 与 Buckshot Roulette，被困隔间靠老虎机偿还上涨债务，150+ 道具操纵转轮产出，非赌博模拟而是纯肉鸽，Panik Arcade 开发 Future Friends 发行，2025 年 9 月发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "老虎机",
+      "债务清算",
+      "增益构筑"
+    ]
   },
   "claims": [
     {
@@ -97,16 +94,7 @@
       "subject": "债务清算",
       "relation": "creates",
       "object": "时间压力",
-      "explanation": "用「不断上涨、按期必还」的债务给肉鸽套上一个外部时钟，使玩家不能稳健地慢慢叠构筑，而必须在每轮截止前冒险博取足够收益，把构筑节奏与风险偏好牢牢绑在债务曲线上，逼出愈发激进的搏一把决策，可复用于希望用「周期性递增的硬性指标」为构筑类肉鸽注入持续时间压力与风险张力的设计。",
-      "evidence": [
-        {
-          "title": "债务截止施压解读",
-          "quote_or_summary": "按期必还且不断上涨的债务给肉鸽套上外部时钟，逼玩家在截止前冒险博取收益。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "用「不断上涨、按期必还」的债务给肉鸽套上一个外部时钟，使玩家不能稳健地慢慢叠构筑，而必须在每轮截止前冒险博取足够收益，把构筑节奏与风险偏好牢牢绑在债务曲线上，逼出愈发激进的搏一把决策，可复用于希望用「周期性递增的硬性指标」为构筑类肉鸽注入持续时间压力与风险张力的设计。"
     }
   ]
 }

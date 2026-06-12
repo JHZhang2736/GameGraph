@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 
 from app.schemas.artifacts import DeveloperProfile
-from app.schemas.common import ConfidenceLevel, ConstraintType
+from app.schemas.common import ConstraintType
 from app.schemas.developer_profile import (
     DeveloperProfileDraft,
     MissingProfileField,
@@ -37,7 +37,6 @@ def complete_draft() -> DeveloperProfileDraft:
                 field="team_size",
                 source_text="我是 solo 开发者",
                 source_kind="raw_text",
-                confidence=ConfidenceLevel.HIGH,
             )
         ],
         raw_text="我是 solo 开发者，程序能力强，美术能力弱，三个月原型。",

@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_balatro",
     "title": "Balatro",
-    "source_refs": [
-      {
-        "title": "Balatro（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Balatro",
-        "notes": "类型（扑克主题肉鸽牌组构筑）、用 52 张标准扑克牌组打出牌型计分对抗盲注、每轮限定出牌与弃牌次数、在商店购买改变规则的小丑牌等卡牌、小丑牌可叠加倍率、解锁多套牌组与难度、独立开发者 LocalThunk 单人开发、Playstack 发行、2024 年 2 月发售、获年度游戏等事实来源。"
-      }
-    ],
     "short_description": "一款扑克主题的肉鸽牌组构筑游戏，玩家用 52 张标准扑克牌打出诗牌型计分以击败盲注，每轮出牌与弃牌次数有限，并在商店购买改变规则、可叠加倍率的小丑牌等卡牌来滚雪球式拉高分数。",
     "selection_reason": "作为「把扑克牌型与肉鸽构筑缝合并以倍率叠加制造滚雪球」的代表：用人人熟悉的扑克牌型作底层，靠小丑牌的乘法倍率叠加把分数推向指数级爆发，是研究规则改写型构筑与滚雪球快感的高价值参考。"
   },
@@ -20,71 +13,80 @@
     "progression_model": "单局靠购入与叠加小丑牌、塔罗与卡包改写规则、滚雪球式拉高得分倍率；跨局解锁新牌组与更高难度注码；进度兼有单局构筑与长期解锁。",
     "failure_model": "在限定出牌次数内未达到盲注要求的分数即本局失败，需重开新局；构筑越靠后崩盘代价越大。",
     "content_structure": "以一轮轮递增的盲注为骨架，间插商店与卡包构筑环节，靠大量小丑牌、卡牌与多套可解锁牌组、多档难度注码承载构筑深度，单人。",
-    "main_player_actions": ["出牌", "卡牌取舍"],
-    "main_player_decisions": ["卡牌取舍", "装备搭配", "风险取舍"],
-    "main_player_experiences": ["构筑乐趣", "滚雪球快感", "运筹帷幄"],
-    "main_mechanics": ["牌组构筑", "遗物系统", "道具叠加", "难度递增"],
-    "replayability_sources": ["构筑多样", "难度分级", "角色解锁"],
-    "production_constraints": ["单人开发", "极简界面"],
-    "innovation_patterns": ["类型缝合", "道具叠加"],
-    "reusable_reference_patterns": ["牌组构筑", "道具叠加", "难度递增"],
-    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
-    "genre": ["卡牌构筑", "类肉鸽"],
-    "art_style": ["像素美术"],
-    "audio_style": ["动态配乐"],
-    "perspective": ["俯视"],
-    "theme": ["桌游风", "超现实"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["策略权衡", "流畅操作"],
-    "team_model": ["单人开发"],
+    "main_player_actions": [
+      "出牌",
+      "卡牌取舍"
+    ],
+    "main_player_decisions": [
+      "卡牌取舍",
+      "装备搭配",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "滚雪球快感",
+      "运筹帷幄"
+    ],
+    "main_mechanics": [
+      "牌组构筑",
+      "遗物系统",
+      "道具叠加",
+      "难度递增"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "难度分级",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "单人开发",
+      "极简界面"
+    ],
+    "innovation_patterns": [
+      "类型缝合",
+      "道具叠加"
+    ],
+    "reusable_reference_patterns": [
+      "牌组构筑",
+      "道具叠加",
+      "难度递增"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "系统复杂度"
+    ],
+    "genre": [
+      "卡牌构筑",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "动态配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "桌游风",
+      "超现实"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "流畅操作"
+    ],
+    "team_model": [
+      "单人开发"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "牌组构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "扑克牌型计分",
-            "quote_or_summary": "玩家用起始 52 张扑克牌组打出牌型计分，每轮限定出牌与弃牌次数以达到盲注要求。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "道具叠加",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "小丑牌叠加倍率",
-            "quote_or_summary": "玩家在商店购买改变规则或提供优势的卡牌（如小丑牌），其效果可叠加放大计分，构成滚雪球核心。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "难度递增",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "递增盲注",
-            "quote_or_summary": "盲注要求的分数逐轮递增，迫使构筑持续走强才能跟上。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Balatro 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Balatro",
-        "quote_or_summary": "扑克主题肉鸽牌组构筑，52 张扑克打牌型对抗盲注，限定出牌弃牌，商店购入可叠加倍率的小丑牌，解锁牌组与难度，LocalThunk 单人开发，2024 年发售，获年度游戏。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "牌组构筑",
+      "道具叠加",
+      "难度递增"
+    ]
   },
   "claims": [
     {
@@ -92,16 +94,7 @@
       "subject": "道具叠加",
       "relation": "creates",
       "object": "滚雪球快感",
-      "explanation": "用可乘法叠加的小丑牌让多张卡牌的倍率相乘而非相加，使一手普通扑克牌经层层放大后打出指数级高分，把构筑的回报做成爆炸式增长，可复用于希望以倍率叠加制造滚雪球快感的卡牌或肉鸽设计。",
-      "evidence": [
-        {
-          "title": "乘法叠加解读",
-          "quote_or_summary": "倍率相乘的卡牌设计把构筑回报推向指数级，制造强烈滚雪球快感。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "用可乘法叠加的小丑牌让多张卡牌的倍率相乘而非相加，使一手普通扑克牌经层层放大后打出指数级高分，把构筑的回报做成爆炸式增长，可复用于希望以倍率叠加制造滚雪球快感的卡牌或肉鸽设计。"
     }
   ]
 }

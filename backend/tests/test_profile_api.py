@@ -22,7 +22,7 @@ class FakeClient:
                 ExtractedConstraint(type=ConstraintType.HARD, statement="Do not require online multiplayer.")
             ],
             field_sources=[
-                ExtractedSource(field="team_size", source_text="我一个人做", confidence="high")
+                ExtractedSource(field="team_size", source_text="我一个人做")
             ],
             warnings=[],
         )

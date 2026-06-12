@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_bioshock_infinite",
     "title": "BioShock Infinite",
-    "source_refs": [
-      {
-        "title": "BioShock Infinite（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/BioShock_Infinite",
-        "notes": "类型（第一人称射击）、1912 年空中之城 Columbia、侦探 Booker DeWitt 受雇前往营救少女 Elizabeth、Vigors 异能与枪械各限携两件可随时切换、Sky-Line 天钩轨道既用于运输也成为战斗机动手段、Elizabeth 能撕开时空裂隙（Tears）召入武器/炮塔/掩体且同时只能开一处、Gear 装备提供被动增益、Irrational Games 开发 2K 发行、2013 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称射击游戏，设定于 1912 年的空中之城 Columbia：玩家扮演侦探 Booker DeWitt，受雇潜入这座漂浮都市营救能撕开时空裂隙的少女 Elizabeth；战斗中玩家一手用枪、一手用名为 Vigors 的异能，挂上天钩沿 Sky-Line 轨道高速穿梭兼作战，而 Elizabeth 会在战斗中撕开裂隙召入武器、炮塔与掩体相助，Irrational Games 开发、2013 年发售。",
     "selection_reason": "作为「把空中轨道机动 + 异能 + 自给型同伴缝进线性 FPS」的代表：用 Sky-Line 天钩把战场拉成三维立体空间、用 Vigors 与枪械的双手搭配制造战术组合，再用一个永不需要保护、还会主动递补给的同伴 Elizabeth 解决护送负担，是研究立体战斗空间、异能枪械搭配与高沉浸同伴设计的高价值参考。"
   },
@@ -20,71 +13,80 @@
     "progression_model": "靠拾取/购买升级 Vigors 与武器、装配提供被动增益的 Gear 装备、用 Elizabeth 解锁的资源补给推进；进度体现为已掌握的异能与武器强度、Gear 搭配与剧情章节，成长服务于更复杂的立体战斗。",
     "failure_model": "Booker 生命归零即倒下，Elizabeth 会施救让其以少量代价复活继续，整体失败惩罚轻微，真正的压力来自战斗中对轨道机动与异能搭配的临场处理。",
     "content_structure": "以线性推进的剧情章节、Columbia 各主题区域与穿插的立体战斗场为骨架，靠枪械异能搭配、天钩轨道机动、Elizabeth 的裂隙支援与碎片化世界观叙事承载流程，单人。",
-    "main_player_actions": ["射击", "魔法释放", "走位"],
-    "main_player_decisions": ["武器搭配", "增益选择", "风险取舍"],
-    "main_player_experiences": ["战斗精通", "情感叙事", "氛围营造"],
-    "main_mechanics": ["技能切换", "轨道移动", "传送门", "同伴协助", "增益构筑"],
-    "replayability_sources": ["难度分级", "彩蛋收集"],
-    "production_constraints": ["大团队协作", "Unreal 引擎"],
-    "innovation_patterns": ["轨道移动", "同伴协助"],
-    "reusable_reference_patterns": ["轨道移动", "情感叙事"],
-    "non_replicable_risks": ["大团队协作", "强美术风格"],
-    "genre": ["第一人称射击"],
-    "art_style": ["写实美术"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["第一人称"],
-    "theme": ["反乌托邦", "蒸汽朋克"],
-    "narrative_style": ["过场驱动", "碎片化叙事"],
-    "game_feel": ["爽快射击", "紧张节奏"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "射击",
+      "魔法释放",
+      "走位"
+    ],
+    "main_player_decisions": [
+      "武器搭配",
+      "增益选择",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "情感叙事",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "技能切换",
+      "轨道移动",
+      "传送门",
+      "同伴协助",
+      "增益构筑"
+    ],
+    "replayability_sources": [
+      "难度分级",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "大团队协作",
+      "Unreal 引擎"
+    ],
+    "innovation_patterns": [
+      "轨道移动",
+      "同伴协助"
+    ],
+    "reusable_reference_patterns": [
+      "轨道移动",
+      "情感叙事"
+    ],
+    "non_replicable_risks": [
+      "大团队协作",
+      "强美术风格"
+    ],
+    "genre": [
+      "第一人称射击"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "反乌托邦",
+      "蒸汽朋克"
+    ],
+    "narrative_style": [
+      "过场驱动",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "爽快射击",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "轨道移动",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "天钩沿 Sky-Line 立体作战",
-            "quote_or_summary": "玩家挂天钩沿原为货运而建的 Sky-Line 轨道高速穿梭、俯冲突袭，把战斗拉到三维立体空间。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "技能切换",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "枪械与 Vigors 各限两件可随时切换",
-            "quote_or_summary": "玩家枪械与 Vigors 异能各限同时携带两件，可随时从菜单换装其他已获异能，鼓励双手搭配。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "同伴协助",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Elizabeth 撕裂隙并递补给",
-            "quote_or_summary": "Elizabeth 不需保护，会在战斗中撕开时空裂隙召入武器、炮塔与掩体，并随手抛给玩家弹药与医疗。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "BioShock Infinite 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/BioShock_Infinite",
-        "quote_or_summary": "第一人称射击，1912 年空中之城 Columbia，枪械与 Vigors 各限两件可切换、天钩沿 Sky-Line 立体机动作战、Elizabeth 撕时空裂隙召入支援并递补给、Gear 被动增益，Irrational Games 开发，2013 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "轨道移动",
+      "技能切换",
+      "同伴协助"
+    ]
   },
   "claims": [
     {
@@ -92,16 +94,7 @@
       "subject": "轨道移动",
       "relation": "creates",
       "object": "立体探索",
-      "explanation": "把原本贴地推进的 FPS 战场用一套天钩轨道网拉到空中：玩家能随时挂上 Sky-Line 高速绕场、俯冲到敌人头顶再跳下突袭，于是交火不再是平面对枪，而要在「在轨道上机动 vs 落地射击」之间不断切换、利用高度差与速度制造突袭与脱离，把战斗空间从二维拓成三维，可复用于希望用「贯穿场景的高速轨道」为射击/动作战斗注入纵向维度与机动博弈的设计。",
-      "evidence": [
-        {
-          "title": "天钩拉出立体战斗解读",
-          "quote_or_summary": "天钩轨道让玩家在空中高速机动与俯冲突袭，把平面对枪的战斗拓成利用高度与速度的三维博弈。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把原本贴地推进的 FPS 战场用一套天钩轨道网拉到空中：玩家能随时挂上 Sky-Line 高速绕场、俯冲到敌人头顶再跳下突袭，于是交火不再是平面对枪，而要在「在轨道上机动 vs 落地射击」之间不断切换、利用高度差与速度制造突袭与脱离，把战斗空间从二维拓成三维，可复用于希望用「贯穿场景的高速轨道」为射击/动作战斗注入纵向维度与机动博弈的设计。"
     }
   ]
 }

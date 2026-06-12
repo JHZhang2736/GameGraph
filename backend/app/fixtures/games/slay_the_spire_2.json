@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_slay_the_spire_2",
     "title": "Slay the Spire 2",
-    "source_refs": [
-      {
-        "title": "Slay the Spire 2（Mega Crit 新闻与媒体报道）",
-        "url": "https://megacrit.com/news/2026-03-05-early-access-launch/",
-        "notes": "类型（卡牌构筑肉鸽续作）、回归角色铁甲战士/静默猎手/故障机器人与新角色 Necrobinder、Regent（含「星辰」机制）、新增附魔/折磨/远古者/可替换的「交替章节」、静默猎手新关键词 Sly、最多四人合作（敌人血条更长、共同承伤）、用 Godot 引擎开发、2026 年抢先体验等事实来源。"
-      }
-    ],
     "short_description": "经典卡牌构筑肉鸽《Slay the Spire》的续作，玩家从多名角色中择一，逐层攀塔、在战斗与事件中拣选卡牌构筑牌组、用遗物滚雪球，新增附魔、折磨、可随机替换的「交替章节」与最多四人合作。",
     "selection_reason": "作为标杆卡牌肉鸽的续作迭代：在原作牌组构筑、意图预告与遗物滚雪球的成熟框架上，引入交替章节带来的结构性随机、Regent 的「星辰」资源机制与四人合作，是研究卡牌肉鸽如何在不破坏核心的前提下扩展深度的高价值参考。"
   },
@@ -20,71 +13,81 @@
     "progression_model": "单局靠拣选卡牌、遗物与药水即时构筑牌组；跨局解锁新卡、事件与内容，进度兼有单局构筑与长期解锁，抢先体验期间内容与平衡持续扩充。",
     "failure_model": "生命归零即本局失败，需从塔底重新攀爬，仅保留跨局的解锁内容。",
     "content_structure": "以逐层攀塔的分支路线为骨架，含多角色、卡牌、遗物、事件与 Boss，新增附魔/折磨/远古者与可随机替换的交替章节，并支持最多四人合作，单人或合作。",
-    "main_player_actions": ["出牌", "卡牌取舍", "技能释放"],
-    "main_player_decisions": ["卡牌取舍", "探索路线", "风险取舍"],
-    "main_player_experiences": ["构筑乐趣", "运筹帷幄", "滚雪球快感"],
-    "main_mechanics": ["牌组构筑", "遗物系统", "意图预告", "程序生成", "交替章节"],
-    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
-    "production_constraints": ["小型团队", "Godot 引擎"],
-    "innovation_patterns": ["交替章节", "牌组构筑"],
-    "reusable_reference_patterns": ["牌组构筑", "意图预告", "交替章节"],
-    "non_replicable_risks": ["平衡复杂度", "品牌积淀"],
-    "genre": ["卡牌构筑", "类肉鸽"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐", "动态配乐"],
-    "perspective": ["第三人称"],
-    "theme": ["黑暗奇幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "出牌",
+      "卡牌取舍",
+      "技能释放"
+    ],
+    "main_player_decisions": [
+      "卡牌取舍",
+      "探索路线",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "运筹帷幄",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "牌组构筑",
+      "遗物系统",
+      "意图预告",
+      "程序生成",
+      "交替章节"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "Godot 引擎"
+    ],
+    "innovation_patterns": [
+      "交替章节",
+      "牌组构筑"
+    ],
+    "reusable_reference_patterns": [
+      "牌组构筑",
+      "意图预告",
+      "交替章节"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "品牌积淀"
+    ],
+    "genre": [
+      "卡牌构筑",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐",
+      "动态配乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "黑暗奇幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "牌组构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "逐局构筑牌组",
-            "quote_or_summary": "玩家在攀塔过程中通过拣选卡牌与遗物逐步构筑牌组，延续原作核心。",
-            "notes": "Mega Crit 公告与媒体报道，可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "交替章节",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "可替换章节",
-            "quote_or_summary": "解锁后，进入新章节时会随机遇到两套环境、敌人、事件与 Boss 截然不同的章节之一。",
-            "notes": "媒体报道，可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "意图预告",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "敌人意图",
-            "quote_or_summary": "敌人会预告下回合的行动意图，延续原作让玩家据此决策的设计。",
-            "notes": "基于系列既有机制的可观察判断。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Slay the Spire 2 玩法与更新综述",
-        "url": "https://megacrit.com/news/2026-03-05-early-access-launch/",
-        "quote_or_summary": "卡牌构筑肉鸽续作，回归与新角色，Regent 的星辰机制，新增附魔/折磨/远古者与可随机替换的交替章节，静默猎手新关键词 Sly，最多四人合作，用 Godot 引擎开发，2026 年抢先体验。",
-        "notes": "事实取自 Mega Crit 公告与公开报道。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "牌组构筑",
+      "交替章节",
+      "意图预告"
+    ]
   },
   "claims": [
     {
@@ -92,16 +95,7 @@
       "subject": "交替章节",
       "relation": "increases",
       "object": "重玩动力",
-      "explanation": "让进入每个新章节时随机替换为两套环境、敌人与 Boss 截然不同的版本，把卡牌肉鸽的随机性从「关卡内的卡与遗物」延伸到「关卡本身的结构」，在不破坏意图预告与构筑核心的前提下显著降低路线重复感、延长内容寿命，可复用于成熟肉鸽的续作式扩展。",
-      "evidence": [
-        {
-          "title": "交替章节解读",
-          "quote_or_summary": "章节级随机替换把随机性提升到结构层，降低重复感、延长寿命。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让进入每个新章节时随机替换为两套环境、敌人与 Boss 截然不同的版本，把卡牌肉鸽的随机性从「关卡内的卡与遗物」延伸到「关卡本身的结构」，在不破坏意图预告与构筑核心的前提下显著降低路线重复感、延长内容寿命，可复用于成熟肉鸽的续作式扩展。"
     }
   ]
 }

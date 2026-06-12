@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_wallpaper_engine",
     "title": "Wallpaper Engine",
-    "source_refs": [
-      {
-        "title": "Wallpaper Engine（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Wallpaper_Engine",
-        "notes": "性质（动态/交互桌面壁纸软件）、自研渲染引擎与内置编辑器、2D/3D 与视频/网页/音频响应壁纸、Steam 创意工坊分享、Kristjan Skutta 与 Tim Eulitz 开发、C++/JavaScript、2016 抢先体验 2018 正式版等事实来源。"
-      }
-    ],
     "short_description": "一款 Windows 桌面动态壁纸软件，让用户把动画、交互、视频、网页与 3D 场景设为桌面壁纸，内置编辑器创作壁纸并通过 Steam 创意工坊分享，是已停用的 Windows DreamScene 的现代替代品。",
     "selection_reason": "作为「编辑器 + 创意工坊」UGC 生态的范本：本体提供渲染引擎与创作工具，绝大多数内容由社区生产，以极低的一方成本获得近乎无限的内容供给并长期存续，是研究 UGC 平台与社区长尾的高价值参考。（非传统游戏，无胜负与失败状态。）"
   },
@@ -20,71 +13,74 @@
     "progression_model": "作为实用软件无角色或等级进度；用户的「进度」体现为壁纸库的积累、订阅收藏的增长，以及随版本更新扩展的创作能力与平台特性。",
     "failure_model": "作为持续运行的桌面实用软件，没有内置的胜负或失败状态；唯一需权衡的是动态壁纸对系统性能与资源的占用。",
     "content_structure": "由本体渲染引擎、内置壁纸编辑器（含粒子系统与 SceneScript 脚本）与 Steam 创意工坊构成，绝大多数壁纸为社区上传，类型涵盖 2D、3D、视频、网页与音频响应等。",
-    "main_player_actions": ["壁纸浏览", "壁纸创作", "参数调整"],
-    "main_player_decisions": ["壁纸选择", "性能取舍"],
-    "main_player_experiences": ["个性化表达", "视觉享受"],
-    "main_mechanics": ["动态壁纸", "创意工坊", "壁纸编辑器", "音频响应"],
-    "replayability_sources": ["用户生成内容", "创意工坊"],
-    "production_constraints": ["自研引擎"],
-    "innovation_patterns": ["创意工坊生态", "动态壁纸"],
-    "reusable_reference_patterns": ["创意工坊生态", "用户生成内容"],
-    "non_replicable_risks": ["大规模玩家社区", "内容审核"],
-    "genre": ["实用软件", "创作工具"],
-    "art_style": ["多样风格"],
-    "audio_style": ["音频响应"],
-    "perspective": ["桌面背景"],
-    "theme": ["个性化"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["流畅响应"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "壁纸浏览",
+      "壁纸创作",
+      "参数调整"
+    ],
+    "main_player_decisions": [
+      "壁纸选择",
+      "性能取舍"
+    ],
+    "main_player_experiences": [
+      "个性化表达",
+      "视觉享受"
+    ],
+    "main_mechanics": [
+      "动态壁纸",
+      "创意工坊",
+      "壁纸编辑器",
+      "音频响应"
+    ],
+    "replayability_sources": [
+      "用户生成内容",
+      "创意工坊"
+    ],
+    "production_constraints": [
+      "自研引擎"
+    ],
+    "innovation_patterns": [
+      "创意工坊生态",
+      "动态壁纸"
+    ],
+    "reusable_reference_patterns": [
+      "创意工坊生态",
+      "用户生成内容"
+    ],
+    "non_replicable_risks": [
+      "大规模玩家社区",
+      "内容审核"
+    ],
+    "genre": [
+      "实用软件",
+      "创作工具"
+    ],
+    "art_style": [
+      "多样风格"
+    ],
+    "audio_style": [
+      "音频响应"
+    ],
+    "perspective": [
+      "桌面背景"
+    ],
+    "theme": [
+      "个性化"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "流畅响应"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "创意工坊生态",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Steam 创意工坊分享",
-            "quote_or_summary": "壁纸通过 Steam 创意工坊分享，社区可下载海量用户创作内容。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "壁纸编辑器",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "内置编辑器与脚本",
-            "quote_or_summary": "内置壁纸编辑器支持 2D/3D 创作、粒子系统与 SceneScript（JavaScript 分支）实现高级逻辑。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      },
-      {
-        "tag": "动态壁纸",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "动态交互壁纸",
-            "quote_or_summary": "支持把动画、交互、视频、网页与部分 3D 应用设为桌面壁纸。",
-            "notes": "维基百科可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Wallpaper Engine 功能与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Wallpaper_Engine",
-        "quote_or_summary": "Windows 动态/交互桌面壁纸软件，自研渲染引擎与内置编辑器，支持 2D/3D、视频、网页与音频响应壁纸，经 Steam 创意工坊分享，Kristjan Skutta 与 Tim Eulitz 用 C++ 等开发，2016 抢先体验、2018 正式发布。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "创意工坊生态",
+      "壁纸编辑器",
+      "动态壁纸"
+    ]
   },
   "claims": [
     {
@@ -92,16 +88,7 @@
       "subject": "创意工坊生态",
       "relation": "creates",
       "object": "社区长尾参与",
-      "explanation": "通过随产品附带编辑器并接入创意工坊，把绝大多数内容生产转移给社区，使一方仅需维护引擎即可获得近乎无限的内容供给，并靠持续的用户创作维系产品多年的活跃与价值，可复用于任何平台或工具类产品。",
-      "evidence": [
-        {
-          "title": "UGC 生态解读",
-          "quote_or_summary": "编辑器加创意工坊使内容由社区持续生产，一方成本极低。",
-          "notes": "基于可观察事实的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "通过随产品附带编辑器并接入创意工坊，把绝大多数内容生产转移给社区，使一方仅需维护引擎即可获得近乎无限的内容供给，并靠持续的用户创作维系产品多年的活跃与价值，可复用于任何平台或工具类产品。"
     }
   ]
 }

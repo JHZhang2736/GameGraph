@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_magicraft",
     "title": "Magicraft",
-    "source_refs": [
-      {
-        "title": "Magicraft（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Magicraft",
-        "notes": "类型（动作肉鸽）、双摇杆射击战斗、模块化法杖系统：收集法术与修饰符插入容量与回蓝各异的法杖、槽位顺序至关重要（从左到右处理形成逻辑链，如一发弹丸触发二次爆炸再召出小兵群）、超过 100 种基础法术含弹丸/激光/召唤、80+ 被动道具、程序生成关卡、常被与 Noita/Hades/以撒比较、Wave Game 开发 Bilibili 发行、2024 年 11 月 1.0、峰值在线超 1.8 万等事实来源。"
-      },
-      {
-        "title": "Magicraft（Steam，appid 2103140）",
-        "url": "https://store.steampowered.com/app/2103140/Magicraft/",
-        "notes": "模块化法杖与法术编排、逻辑链组合、大量法术与被动道具、程序生成肉鸽等事实来源。"
-      }
-    ],
     "short_description": "一款动作肉鸽游戏，采用双摇杆射击战斗，核心是模块化的法杖编排：玩家收集法术与修饰符，把它们按顺序插进容量与回蓝各异的法杖——而槽位的「左到右顺序」至关重要，法杖会依次处理，于是一发弹丸可以触发二次爆炸、再召出一群小兵，玩家像搭逻辑链一样拼出专属法术；含 100 多种法术与 80 多种被动道具、程序生成关卡，Wave Game 开发、2024 年发售。",
     "selection_reason": "作为「Noita 式模块法杖编排的明快化」代表：用「法杖槽位从左到右依次处理」的规则，让少量法术与修饰符经不同排序涌现出海量组合与逻辑链，把「选法术」变成「编法术」，再以双摇杆肉鸽的明快战斗与程序生成承载，是研究模块化法术编排、顺序涌现与构筑深度的高价值参考。"
   },
@@ -25,71 +13,79 @@
     "progression_model": "单局靠拾取法术、修饰符与被动道具、在法杖里调整顺序滚出更强逻辑链推进，跨局靠解锁更多法术与起始选项扩展构筑空间；进度体现为法杖组合强度、已解锁内容与可抵达的关卡深度。",
     "failure_model": "角色生命归零即本局结束、需从头开始新一轮肉鸽，失败促使玩家换一套法术编排与道具流派重试。",
     "content_structure": "以程序生成的分层关卡、双摇杆战斗房间与 Boss 为骨架，靠模块化法杖编排、海量法术修饰符与被动道具承载构筑深度与重玩，单人。",
-    "main_player_actions": ["魔法释放", "射击", "技能释放"],
-    "main_player_decisions": ["武器搭配", "增益选择", "风险取舍"],
-    "main_player_experiences": ["构筑乐趣", "系统掌控", "滚雪球快感"],
-    "main_mechanics": ["法杖编排", "法术合成", "法术编程", "增益构筑", "程序生成"],
-    "replayability_sources": ["程序生成", "构筑多样", "难度分级"],
-    "production_constraints": ["小型团队", "像素美术"],
-    "innovation_patterns": ["法杖编排", "法术编程"],
-    "reusable_reference_patterns": ["法杖编排", "法术合成"],
-    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
-    "genre": ["类肉鸽"],
-    "art_style": ["像素美术"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["俯视"],
-    "theme": ["奇幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["策略权衡", "爽快射击"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "魔法释放",
+      "射击",
+      "技能释放"
+    ],
+    "main_player_decisions": [
+      "武器搭配",
+      "增益选择",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "系统掌控",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "法杖编排",
+      "法术合成",
+      "法术编程",
+      "增益构筑",
+      "程序生成"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "像素美术"
+    ],
+    "innovation_patterns": [
+      "法杖编排",
+      "法术编程"
+    ],
+    "reusable_reference_patterns": [
+      "法杖编排",
+      "法术合成"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "系统复杂度"
+    ],
+    "genre": [
+      "类肉鸽"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "奇幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "爽快射击"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "法杖编排",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "法杖槽位顺序处理",
-            "quote_or_summary": "法杖从左到右依次处理插入的法术与修饰符，槽位顺序决定连锁效果，玩家像编程一样拼装专属法术。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "法术合成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "逻辑链连锁组合",
-            "quote_or_summary": "一发弹丸可触发二次爆炸再召出小兵群，少量法术按顺序组合出远超单法术的复合效果。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "增益构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "百余法术与 80+ 被动",
-            "quote_or_summary": "含 100 多种基础法术与 80 多种被动道具，配合法杖编排滚出多样构筑流派。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Magicraft 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Magicraft",
-        "quote_or_summary": "动作肉鸽双摇杆射击，模块化法杖系统按左到右顺序处理法术与修饰符形成逻辑链、100+ 法术与 80+ 被动、程序生成，Wave Game 开发 Bilibili 发行，2024 年 1.0。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "法杖编排",
+      "法术合成",
+      "增益构筑"
+    ]
   },
   "claims": [
     {
@@ -97,16 +93,7 @@
       "subject": "法杖编排",
       "relation": "creates",
       "object": "系统深度",
-      "explanation": "把法术的威力从「拥有哪枚法术」转移到「在法杖里如何排序」：法杖从左到右依次处理插槽，于是同样几枚法术与修饰符，换个顺序就从单发变成层层触发的连锁逻辑链，少量部件经排列组合涌现出海量迥异效果，把「选法术」升级为「编法术」的系统化创造与钻研，可复用于希望用「可排序的原子部件 + 顺序处理规则」让玩家以少量素材自造能力、撑起高上限构筑深度的设计。",
-      "evidence": [
-        {
-          "title": "顺序涌现深度解读",
-          "quote_or_summary": "法杖按左到右顺序处理，使同一批法术换序就连锁出不同效果，把选法术升级为编法术的系统钻研。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把法术的威力从「拥有哪枚法术」转移到「在法杖里如何排序」：法杖从左到右依次处理插槽，于是同样几枚法术与修饰符，换个顺序就从单发变成层层触发的连锁逻辑链，少量部件经排列组合涌现出海量迥异效果，把「选法术」升级为「编法术」的系统化创造与钻研，可复用于希望用「可排序的原子部件 + 顺序处理规则」让玩家以少量素材自造能力、撑起高上限构筑深度的设计。"
     }
   ]
 }

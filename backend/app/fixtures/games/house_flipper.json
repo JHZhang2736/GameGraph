@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_house_flipper",
     "title": "House Flipper",
-    "source_refs": [
-      {
-        "title": "House Flipper（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/House_Flipper",
-        "notes": "类型（第一人称模拟）、Empyrean 开发、Frozen District 与 PlayWay 发行、2018 年 5 月发售、玩法为修缮房产牟利、可执行刷漆/铺砖/清洁/安装/拆除等任务、内置家具与墙纸门窗目录、买下破败房屋维修改造再高价卖出、含职业委托与自由翻新等事实来源。"
-      },
-      {
-        "title": "House Flipper（Steam，appid 613100）",
-        "url": "https://store.steampowered.com/app/613100/House_Flipper/",
-        "notes": "一人装修队、清洁刷漆铺砖布置家具、买旧房翻新卖出获利、家具目录等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称房屋翻新模拟游戏，Empyrean 开发、Frozen District 与 PlayWay 发行、2018 年发售：玩家化身一人装修队，承接清洁、刷漆、铺砖、安装与拆除等委托，或买下破败房屋亲手清理、维修、改造与布置家具，再以更高价卖出获利；游戏内置可浏览选购家具、墙纸与门窗的目录，含按订单完成的职业任务与自由翻新两类玩法。",
     "selection_reason": "作为「把装修琐事做成解压模拟」的代表：清洁、刷漆、铺砖、布置被拆成一项项即时可见成效的操作，配合低买高卖的翻新增值循环与海量家具目录，让玩家在化腐朽为整洁的反馈中获得满足，是研究房屋翻新模拟、即时正反馈与解压玩法的高价值参考。"
   },
@@ -25,71 +13,76 @@
     "progression_model": "靠完成委托与翻新卖房赚取金钱与经验、解锁更多工具能力、家具目录与更贵的房产推进；进度体现为资金、解锁的技能与可承接的房屋规模。",
     "failure_model": "本作无失败死亡，几乎不会「输」——做得潦草只是房屋评分与售价偏低、利润缩水，玩家可继续打磨；约束来自资金与订单要求而非惩罚。",
     "content_structure": "以一系列装修委托与可买卖翻新的房屋为骨架，靠清洁/刷漆/铺砖/拆装等即时操作与家具布置承载玩法，以沙盒自由翻新与持续更新的房产承载长线，单人。",
-    "main_player_actions": ["物件操控", "参数调整", "道具运用"],
-    "main_player_decisions": ["优先级排序", "资源取舍", "基地规划"],
-    "main_player_experiences": ["经营成就", "创作乐趣", "系统掌控"],
-    "main_mechanics": ["房屋翻新", "委托任务", "商店经济"],
-    "replayability_sources": ["任务多样", "全收集"],
-    "production_constraints": ["小型团队"],
-    "innovation_patterns": ["房屋翻新"],
-    "reusable_reference_patterns": ["房屋翻新", "委托任务", "商店经济"],
-    "non_replicable_risks": ["高内容产量", "玩家留存"],
-    "genre": ["模拟经营"],
-    "art_style": ["写实美术"],
-    "audio_style": ["轻松配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["家装", "个性化"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["轻松休闲", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "物件操控",
+      "参数调整",
+      "道具运用"
+    ],
+    "main_player_decisions": [
+      "优先级排序",
+      "资源取舍",
+      "基地规划"
+    ],
+    "main_player_experiences": [
+      "经营成就",
+      "创作乐趣",
+      "系统掌控"
+    ],
+    "main_mechanics": [
+      "房屋翻新",
+      "委托任务",
+      "商店经济"
+    ],
+    "replayability_sources": [
+      "任务多样",
+      "全收集"
+    ],
+    "production_constraints": [
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "房屋翻新"
+    ],
+    "reusable_reference_patterns": [
+      "房屋翻新",
+      "委托任务",
+      "商店经济"
+    ],
+    "non_replicable_risks": [
+      "高内容产量",
+      "玩家留存"
+    ],
+    "genre": [
+      "模拟经营"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "轻松配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "家装",
+      "个性化"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "轻松休闲",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "房屋翻新",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "清理维修改造卖房",
-            "quote_or_summary": "玩家清洁、刷漆、铺砖、拆除与安装、布置家具，把破败房屋翻新后以更高价卖出。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "委托任务",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "按订单完成装修",
-            "quote_or_summary": "职业模式中玩家承接清洁、刷漆、安装等装修委托并按要求完成获取报酬。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "商店经济",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "低买高卖翻新增值",
-            "quote_or_summary": "玩家买下破败房屋、投入翻新后以更高价卖出赚取差价，并从目录选购家具与材料。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "House Flipper 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/House_Flipper",
-        "quote_or_summary": "第一人称房屋翻新模拟，清洁/刷漆/铺砖/拆装/布置家具、买旧房维修改造高价卖出、家具目录、职业委托与自由翻新，Empyrean 开发、Frozen District 与 PlayWay 发行，2018 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "房屋翻新",
+      "委托任务",
+      "商店经济"
+    ]
   },
   "claims": [
     {
@@ -97,16 +90,7 @@
       "subject": "房屋翻新",
       "relation": "creates",
       "object": "进度可视化",
-      "explanation": "把抽象的「完成度」直接画在房间上：每刷一面墙、扫净一处污渍、摆好一件家具，肉眼可见的脏乱就少一分、整洁就多一分，进度不靠数字播报而靠空间本身的前后对比来呈现。这种即时、具象的正反馈让琐碎劳动持续给予成就感，玩家会因为「就差这个角落了」而停不下来。可复用于希望把任务进度做成可见空间变化、用化腐朽为整洁的即时反馈驱动解压与沉浸的模拟玩法设计。",
-      "evidence": [
-        {
-          "title": "空间焕新即进度解读",
-          "quote_or_summary": "每个清洁与装修动作都让房间肉眼可见地变好，把完成度具象成空间前后对比，持续给予成就反馈。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把抽象的「完成度」直接画在房间上：每刷一面墙、扫净一处污渍、摆好一件家具，肉眼可见的脏乱就少一分、整洁就多一分，进度不靠数字播报而靠空间本身的前后对比来呈现。这种即时、具象的正反馈让琐碎劳动持续给予成就感，玩家会因为「就差这个角落了」而停不下来。可复用于希望把任务进度做成可见空间变化、用化腐朽为整洁的即时反馈驱动解压与沉浸的模拟玩法设计。"
     }
   ]
 }

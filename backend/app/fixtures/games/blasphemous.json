@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_blasphemous",
     "title": "Blasphemous",
-    "source_refs": [
-      {
-        "title": "Blasphemous（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Blasphemous_(video_game)",
-        "notes": "类型、近战与招架、Fervor 法术、Guilt 死亡惩罚、西班牙天主教美术母题、The Game Kitchen 团队与众筹、Unity 引擎等事实来源。"
-      }
-    ],
     "short_description": "一款融合类银河城与类魂的像素动作冒险游戏，玩家操控「忏悔者」手持长剑 Mea Culpa，在受罪罚之地 Cvstodia 中探索、招架与战斗。",
     "selection_reason": "作为把强烈而具体的西班牙天主教宗教恐怖美学贯穿始终的像素类魂参考：其招架反击、Fervor 法术、死亡留下 Guilt 碎片的惩罚机制，以及由众筹小团队实现的高密度像素表现，都具复用价值。"
   },
@@ -20,71 +13,92 @@
     "progression_model": "通过可升级属性、可装备的念珠（rosary beads）、圣物与新能力推进，部分能力兼作探索门控；强化来源分散在世界各处，鼓励彻底探索而非线性升级。",
     "failure_model": "死亡后在存档点重生，并在死亡处留下 Guilt 碎片：未取回前最大 Fervor 降低、且从敌人获得的 Fervor 与赎罪之泪减少，取回碎片即解除惩罚。",
     "content_structure": "一张围绕 Cvstodia 展开的连通地图，串联多个充满宗教意象的区域与 Boss，辅以圣物、念珠、祈祷与可选支线收集，并有后续更新扩充的新模式与内容。",
-    "main_player_actions": ["近战攻击", "招架", "魔法释放", "平台跳跃", "攀墙"],
-    "main_player_decisions": ["护符搭配", "风险取舍", "Boss 时机", "探索路线"],
-    "main_player_experiences": ["战斗精通", "氛围营造", "探索发现"],
-    "main_mechanics": ["招架反击", "死亡惩罚", "能力门控探索", "魔法释放", "处决演出"],
-    "replayability_sources": ["全收集", "Boss 挑战", "难度分级", "速通"],
-    "production_constraints": ["像素美术", "Unity 引擎", "众筹资金", "小型团队"],
-    "innovation_patterns": ["宗教恐怖美学", "死亡惩罚", "处决演出"],
-    "reusable_reference_patterns": ["氛围营造", "死亡惩罚", "能力门控探索"],
-    "non_replicable_risks": ["高密度像素美术", "强文化母题"],
-    "genre": ["类银河城", "类魂"],
-    "art_style": ["像素美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["横版2D"],
-    "theme": ["宗教", "宗教恐怖", "苦修"],
-    "narrative_style": ["碎片化叙事", "环境叙事"],
-    "game_feel": ["精准近战", "厚重打击"],
-    "team_model": ["小团队", "众筹"],
+    "main_player_actions": [
+      "近战攻击",
+      "招架",
+      "魔法释放",
+      "平台跳跃",
+      "攀墙"
+    ],
+    "main_player_decisions": [
+      "护符搭配",
+      "风险取舍",
+      "Boss 时机",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "氛围营造",
+      "探索发现"
+    ],
+    "main_mechanics": [
+      "招架反击",
+      "死亡惩罚",
+      "能力门控探索",
+      "魔法释放",
+      "处决演出"
+    ],
+    "replayability_sources": [
+      "全收集",
+      "Boss 挑战",
+      "难度分级",
+      "速通"
+    ],
+    "production_constraints": [
+      "像素美术",
+      "Unity 引擎",
+      "众筹资金",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "宗教恐怖美学",
+      "死亡惩罚",
+      "处决演出"
+    ],
+    "reusable_reference_patterns": [
+      "氛围营造",
+      "死亡惩罚",
+      "能力门控探索"
+    ],
+    "non_replicable_risks": [
+      "高密度像素美术",
+      "强文化母题"
+    ],
+    "genre": [
+      "类银河城",
+      "类魂"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "宗教",
+      "宗教恐怖",
+      "苦修"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "精准近战",
+      "厚重打击"
+    ],
+    "team_model": [
+      "小团队",
+      "众筹"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "招架反击",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "招架机制",
-            "quote_or_summary": "部分敌人攻击可在正确时机格挡招架，使其露出破绽并允许反击造成额外伤害。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "死亡惩罚",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Guilt 碎片",
-            "quote_or_summary": "死亡在原地留下 Guilt 碎片，未取回前削减最大 Fervor 与资源获取。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "宗教恐怖美学",
-        "confidence": "medium",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "美术母题",
-            "quote_or_summary": "创意总监援引塞维利亚的宗教艺术与 Goya 的《苦修者列队》作为主要灵感。",
-            "notes": "可观察来源，但「恐怖美学」属解释性判断。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Blasphemous 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Blasphemous_(video_game)",
-        "quote_or_summary": "类银河城动作冒险，近战与招架反击，Fervor 法术，死亡留 Guilt 碎片，西班牙天主教美术母题，The Game Kitchen 用 Unity 开发，2019 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "招架反击",
+      "死亡惩罚",
+      "宗教恐怖美学"
+    ]
   },
   "claims": [
     {
@@ -92,16 +106,7 @@
       "subject": "强文化母题",
       "relation": "creates",
       "object": "美术辨识度",
-      "explanation": "把一套高度具体、少被取用的地域文化意象（塞维利亚天主教苦修）贯穿美术、命名与叙事，使作品在拥挤的类魂类银河城赛道里获得难以混淆的视觉与气质辨识度，是小团队以风格而非体量取胜的范式。",
-      "evidence": [
-        {
-          "title": "母题贯穿解读",
-          "quote_or_summary": "宗教意象不仅是皮肤，而是贯穿机制命名与世界观的统一母题。",
-          "notes": "基于可观察素材的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把一套高度具体、少被取用的地域文化意象（塞维利亚天主教苦修）贯穿美术、命名与叙事，使作品在拥挤的类魂类银河城赛道里获得难以混淆的视觉与气质辨识度，是小团队以风格而非体量取胜的范式。"
     }
   ]
 }

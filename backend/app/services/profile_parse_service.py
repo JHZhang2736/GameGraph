@@ -3,7 +3,6 @@ from __future__ import annotations
 import logging
 
 from app.schemas.artifacts import DeveloperConstraint
-from app.schemas.common import ConfidenceLevel
 from app.schemas.developer_profile import (
     DeveloperProfileDraft,
     ProfileFieldSource,
@@ -64,7 +63,6 @@ def _result_from_extraction(
             field=source.field,
             source_text=source.source_text,
             source_kind="raw_text",
-            confidence=source.confidence,
         )
         for source in extraction.field_sources
     ]
@@ -76,7 +74,6 @@ def _result_from_extraction(
                 field="liked_references",
                 source_text=", ".join(liked),
                 source_kind="explicit_field",
-                confidence=ConfidenceLevel.HIGH,
             )
         )
     if input_data.disliked_references_or_mechanics:
@@ -86,7 +83,6 @@ def _result_from_extraction(
                 field="disliked_references_or_mechanics",
                 source_text=", ".join(disliked),
                 source_kind="explicit_field",
-                confidence=ConfidenceLevel.HIGH,
             )
         )
     if input_data.expected_project_scale:
@@ -96,7 +92,6 @@ def _result_from_extraction(
                 field="time_budget",
                 source_text=time_budget,
                 source_kind="explicit_field",
-                confidence=ConfidenceLevel.HIGH,
             )
         )
 

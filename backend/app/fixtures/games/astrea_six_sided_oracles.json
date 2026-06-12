@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_astrea_six_sided_oracles",
     "title": "Astrea: Six-Sided Oracles",
-    "source_refs": [
-      {
-        "title": "Astrea: Six-Sided Oracles（Steam，appid 1755830）",
-        "url": "https://store.steampowered.com/app/1755830/Astrea_SixSided_Oracles/",
-        "notes": "类型（骰子构筑肉鸽）、Little Leo Games 开发、Akupara Games 发行、用骰子取代卡牌、净化/腐化双面伤害（净化伤敌或自愈、腐化自伤或治敌）、主动承受腐化以激活血条技能但过量会被吞噬、350+ 骰子与安全/均衡/高风险三种骰型、可编辑骰面调整概率、6 名神谕者各具骰组、170+ 星辰/黑洞祝福（黑洞强但带缺陷）等事实来源。"
-      },
-      {
-        "title": "Astrea: Six-Sided Oracles · Akupara Games",
-        "url": "https://www.akuparagames.com/game/astrea-six-sided-oracles/",
-        "notes": "骰子构筑肉鸽、净化与腐化机制、可定制骰组、净化女神之心主题等事实来源。"
-      }
-    ],
     "short_description": "一款骰子构筑肉鸽游戏，Little Leo Games 开发、Akupara Games 发行、2023 年发售：它用骰子取代卡牌，并以「净化」与「腐化」的双面伤害系统颠覆传统构筑——净化既能伤敌也能自愈，腐化既能自伤也能治敌；玩家可主动承受腐化来激活挂在血条上的强力技能，但腐化过量便会被吞噬。游戏含 350+ 骰子与安全/均衡/高风险三种骰型，可编辑骰面来调整概率，提供 6 名各具骰组与玩法的神谕者与 170+ 改变战术的祝福。",
     "selection_reason": "作为「用骰子替代卡牌、并把伤害做成双面资源」的代表：净化与腐化既能伤敌也能反噬，主动吞腐化换强技的取舍把运气、风险与构筑拧成一体；配合可编辑骰面与三种骰型，是研究骰子构筑、双向伤害资源与高风险高回报构筑的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "局内靠拾取与编辑骰子、挑选星辰/黑洞祝福滚雪球式强化骰组，局外靠肉鸽式解锁推进；进度体现为骰组构成、祝福搭配、神谕者解锁与肉鸽路线深度。",
     "failure_model": "角色血量归零或被累积的腐化吞噬即一局失败、须从头开始新的一轮，核心压力在于既要靠腐化换取强力技能、又不能让腐化越线反噬自身。",
     "content_structure": "以肉鸽式分支路线与逐场骰战为骨架，靠净化/腐化双面系统、可编辑骰组与海量祝福承载构筑深度，以 6 名神谕者、程序化路线与构筑多样承载重玩，单人。",
-    "main_player_actions": ["掷骰", "技能释放", "参数调整"],
-    "main_player_decisions": ["风险取舍", "增益选择", "装备搭配"],
-    "main_player_experiences": ["构筑乐趣", "滚雪球快感", "运筹帷幄"],
-    "main_mechanics": ["骰子构筑", "净化腐化", "骰面编辑", "遗物系统"],
-    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
-    "production_constraints": ["小型团队", "手绘美术"],
-    "innovation_patterns": ["骰子构筑", "净化腐化"],
-    "reusable_reference_patterns": ["骰子构筑", "净化腐化", "遗物系统"],
-    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
-    "genre": ["卡牌构筑", "类肉鸽"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第三人称"],
-    "theme": ["科幻", "神话"],
-    "narrative_style": ["碎片化叙事"],
-    "game_feel": ["策略权衡", "规划满足"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "掷骰",
+      "技能释放",
+      "参数调整"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "增益选择",
+      "装备搭配"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "滚雪球快感",
+      "运筹帷幄"
+    ],
+    "main_mechanics": [
+      "骰子构筑",
+      "净化腐化",
+      "骰面编辑",
+      "遗物系统"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "手绘美术"
+    ],
+    "innovation_patterns": [
+      "骰子构筑",
+      "净化腐化"
+    ],
+    "reusable_reference_patterns": [
+      "骰子构筑",
+      "净化腐化",
+      "遗物系统"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "系统复杂度"
+    ],
+    "genre": [
+      "卡牌构筑",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "科幻",
+      "神话"
+    ],
+    "narrative_style": [
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "规划满足"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "骰子构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "骰子取代卡牌构筑",
-            "quote_or_summary": "游戏用骰子取代卡牌，玩家从 350+ 骰子中构筑并扩充骰组，逐场掷骰打出效果。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "净化腐化",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "双面伤害系统",
-            "quote_or_summary": "净化伤敌或自愈、腐化自伤或治敌，玩家主动承受腐化激活血条技能但过量会被吞噬。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "骰面编辑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "编辑骰面调概率",
-            "quote_or_summary": "玩家可为骰面替换新的动作、调整出强力结果的概率，并选择安全/均衡/高风险三种骰型。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Astrea: Six-Sided Oracles 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1755830/Astrea_SixSided_Oracles/",
-        "quote_or_summary": "骰子构筑肉鸽，净化/腐化双面伤害、吞腐化激活血条技能、350+ 骰子三种骰型、可编辑骰面、6 名神谕者、170+ 祝福，Little Leo Games 开发、Akupara Games 发行，2023 年发售。",
-        "notes": "事实取自 Steam 商店页与 Akupara Games 官网。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "骰子构筑",
+      "净化腐化",
+      "骰面编辑"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "净化腐化",
       "relation": "creates",
       "object": "策略深度",
-      "explanation": "把伤害做成双刃——净化能伤敌也能自愈、腐化能自伤也能治敌，且最强的技能要靠主动吞腐化来点亮——等于让每个动作都不再有「纯好」的选项：用错方向就在帮敌人，吞太多腐化又会反噬自身。于是玩家每回合都要在「现在搏一次爆发」与「保住安全线」之间精算，运气的方差还能靠编辑骰面与选骰型来调。决策因此从「打哪个」升级为「冒多大风险换多少收益」，构筑深度由这套自伤换强的张力撑起。可复用于希望用「双面/自伤型资源」逼出风险权衡、为构筑玩法增加决策深度的设计。",
-      "evidence": [
-        {
-          "title": "双刃伤害生深度解读",
-          "quote_or_summary": "净化/腐化双向且吞腐化才能激活强技，使每个动作都需权衡收益与自我反噬，深化构筑决策。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把伤害做成双刃——净化能伤敌也能自愈、腐化能自伤也能治敌，且最强的技能要靠主动吞腐化来点亮——等于让每个动作都不再有「纯好」的选项：用错方向就在帮敌人，吞太多腐化又会反噬自身。于是玩家每回合都要在「现在搏一次爆发」与「保住安全线」之间精算，运气的方差还能靠编辑骰面与选骰型来调。决策因此从「打哪个」升级为「冒多大风险换多少收益」，构筑深度由这套自伤换强的张力撑起。可复用于希望用「双面/自伤型资源」逼出风险权衡、为构筑玩法增加决策深度的设计。"
     }
   ]
 }

@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_the_binding_of_isaac_rebirth",
     "title": "The Binding of Isaac: Rebirth",
-    "source_refs": [
-      {
-        "title": "The Binding of Isaac: Rebirth（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/The_Binding_of_Isaac:_Rebirth",
-        "notes": "类型（俯视射击肉鸽）、程序生成房间、被动道具叠加协同、永久死亡、资源（心/炸弹/钥匙/币）管理、多角色与多结局解锁、宗教寓言题材、Edmund McMillen 与 Nicalis 用 C++ 重制等事实来源。"
-      }
-    ],
     "short_description": "一款俯视视角的肉鸽地牢射击游戏，玩家操控男孩 Isaac 在程序生成的房间中以泪水为子弹清怪，沿途拾取可无限叠加的道具，逐层深入挑战 Boss。",
     "selection_reason": "作为「被动道具无限叠加产生涌现构筑」的标杆肉鸽：海量道具的相互协同造就近乎无穷的单局变化，配合永久死亡与跨局解锁，是研究随机性、构筑深度与重玩驱动的高价值参考。"
   },
@@ -20,71 +13,85 @@
     "progression_model": "单局内靠拾取被动道具叠加效果与一个主动道具成长；跨局靠达成条件解锁新角色、道具、Boss 与结局，逐步扩大道具池与内容广度，本身不保留单局战力。",
     "failure_model": "生命（红心等）耗尽即角色死亡，本局永久结束、当前所有道具与进度清零，需从头开始新的一局。",
     "content_structure": "由程序生成的多层自包含房间构成单局，每层以 Boss 收束并通向分支楼层；33 个以上可解锁角色、海量道具与多结局支撑长期内容，种子可分享复现。",
-    "main_player_actions": ["射击", "道具运用", "翻屏移动"],
-    "main_player_decisions": ["道具选择", "风险取舍", "探索路线"],
-    "main_player_experiences": ["涌现玩法", "战斗精通", "探索发现"],
-    "main_mechanics": ["程序生成", "永久死亡", "道具协同", "元进度", "资源管理"],
-    "replayability_sources": ["程序生成", "构筑多样", "角色解锁", "全收集"],
-    "production_constraints": ["像素美术", "小型团队", "自研引擎"],
-    "innovation_patterns": ["道具协同", "程序生成", "元进度"],
-    "reusable_reference_patterns": ["道具协同", "程序生成", "元进度"],
-    "non_replicable_risks": ["高内容产量", "长期更新运营"],
-    "genre": ["类肉鸽", "俯视射击"],
-    "art_style": ["像素美术"],
-    "audio_style": ["摇滚配乐"],
-    "perspective": ["俯视"],
-    "theme": ["宗教", "超现实"],
-    "narrative_style": ["碎片化叙事", "环境叙事"],
-    "game_feel": ["精准射击"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "射击",
+      "道具运用",
+      "翻屏移动"
+    ],
+    "main_player_decisions": [
+      "道具选择",
+      "风险取舍",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "涌现玩法",
+      "战斗精通",
+      "探索发现"
+    ],
+    "main_mechanics": [
+      "程序生成",
+      "永久死亡",
+      "道具协同",
+      "元进度",
+      "资源管理"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "角色解锁",
+      "全收集"
+    ],
+    "production_constraints": [
+      "像素美术",
+      "小型团队",
+      "自研引擎"
+    ],
+    "innovation_patterns": [
+      "道具协同",
+      "程序生成",
+      "元进度"
+    ],
+    "reusable_reference_patterns": [
+      "道具协同",
+      "程序生成",
+      "元进度"
+    ],
+    "non_replicable_risks": [
+      "高内容产量",
+      "长期更新运营"
+    ],
+    "genre": [
+      "类肉鸽",
+      "俯视射击"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "摇滚配乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "宗教",
+      "超现实"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "精准射击"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "道具协同",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "被动道具叠加",
-            "quote_or_summary": "玩家可拾取任意数量的被动道具，其效果相互叠加，有潜力组合出非常强力的组合。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "程序生成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "随机种子生成关卡",
-            "quote_or_summary": "关卡由随机种子程序生成为若干自包含房间，种子可分享复现。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "元进度",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "跨局解锁",
-            "quote_or_summary": "通过游玩持续解锁 33 个以上角色、新道具、Boss 与结局，扩充后续单局的内容池。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "The Binding of Isaac: Rebirth 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/The_Binding_of_Isaac:_Rebirth",
-        "quote_or_summary": "俯视射击肉鸽，程序生成房间，被动道具无限叠加协同，永久死亡，资源管理，多角色多结局解锁，宗教寓言题材，由 Edmund McMillen 与 Nicalis 用 C++ 重制，2014 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "道具协同",
+      "程序生成",
+      "元进度"
+    ]
   },
   "claims": [
     {
@@ -92,16 +99,7 @@
       "subject": "道具协同",
       "relation": "creates",
       "object": "涌现玩法",
-      "explanation": "让被动道具不设上限地叠加、且效果彼此相乘，使有限的道具池组合出近乎无穷的单局变体，把「随机掉落」升级为玩家无法预演的涌现构筑，是肉鸽以低内容量换高重玩的核心范式，可跨题材复用。",
-      "evidence": [
-        {
-          "title": "道具组合解读",
-          "quote_or_summary": "无限叠加的被动道具相互作用，单局结果难以预测。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让被动道具不设上限地叠加、且效果彼此相乘，使有限的道具池组合出近乎无穷的单局变体，把「随机掉落」升级为玩家无法预演的涌现构筑，是肉鸽以低内容量换高重玩的核心范式，可跨题材复用。"
     }
   ]
 }

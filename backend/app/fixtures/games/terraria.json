@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_terraria",
     "title": "Terraria",
-    "source_refs": [
-      {
-        "title": "Terraria（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Terraria",
-        "notes": "类型（2D 沙盒动作冒险）、采矿建造合成战斗、程序生成多生物群系、Boss 解锁进度（如血肉之墙开启困难模式）、多难度模式、多人模式、像素美术、Re-Logic 小团队用 XNA 框架、2011 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款 2D 沙盒动作冒险游戏，玩家在程序生成的横版世界中采矿、建造、合成装备并战斗，靠击败 Boss 推进难度层级，几乎不设固定目标地自由探索与发展。",
     "selection_reason": "作为「2D 沙盒建造 + Boss 门控进度」的标杆：在无固定目标的开放沙盒里，靠玩家自选时机召唤的 Boss 作为门槛逐级解锁更高层级的敌人与资源，给自由世界以节奏与方向，是研究沙盒进度结构的高价值参考。"
   },
@@ -20,71 +13,84 @@
     "progression_model": "无强制主线，进度靠装备阶梯与 Boss 门控驱动；击败血肉之墙开启「困难模式」引入更强敌人、NPC 与资源，最终 Boss 为月亮领主，鼓励自定节奏地长期发展。",
     "failure_model": "玩家生命与魔力起步很低，死亡会损失部分金钱并在重生点复活；高难度模式下死亡惩罚更重，但通常可继续推进。",
     "content_structure": "一张程序生成、含多生物群系的连通世界，地表与地下各具敌人与资源；以一系列可召唤 Boss 串联进度节点，叠加经典/专家/大师/旅程等多难度模式与多人模式。",
-    "main_player_actions": ["采矿", "建造", "近战攻击", "探索"],
-    "main_player_decisions": ["装备搭配", "探索路线", "Boss 时机"],
-    "main_player_experiences": ["涌现玩法", "探索发现", "建造创造"],
-    "main_mechanics": ["程序生成", "合成制作", "Boss 门控", "采集", "装备分层"],
-    "replayability_sources": ["程序生成", "难度分级", "构筑多样", "全收集"],
-    "production_constraints": ["像素美术", "小型团队", "XNA 框架"],
-    "innovation_patterns": ["2D沙盒建造", "Boss 门控"],
-    "reusable_reference_patterns": ["程序生成", "采集", "Boss 门控"],
-    "non_replicable_risks": ["长期更新运营", "高内容产量"],
-    "genre": ["沙盒", "动作冒险"],
-    "art_style": ["像素美术"],
-    "audio_style": ["动态配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["奇幻", "地下探险"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["流畅操作"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "采矿",
+      "建造",
+      "近战攻击",
+      "探索"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "探索路线",
+      "Boss 时机"
+    ],
+    "main_player_experiences": [
+      "涌现玩法",
+      "探索发现",
+      "建造创造"
+    ],
+    "main_mechanics": [
+      "程序生成",
+      "合成制作",
+      "Boss 门控",
+      "采集",
+      "装备分层"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "难度分级",
+      "构筑多样",
+      "全收集"
+    ],
+    "production_constraints": [
+      "像素美术",
+      "小型团队",
+      "XNA 框架"
+    ],
+    "innovation_patterns": [
+      "2D沙盒建造",
+      "Boss 门控"
+    ],
+    "reusable_reference_patterns": [
+      "程序生成",
+      "采集",
+      "Boss 门控"
+    ],
+    "non_replicable_risks": [
+      "长期更新运营",
+      "高内容产量"
+    ],
+    "genre": [
+      "沙盒",
+      "动作冒险"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "动态配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "奇幻",
+      "地下探险"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "流畅操作"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "2D沙盒建造",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "采矿建造合成",
-            "quote_or_summary": "玩家在 2D 沙盒世界用获取的资源在工作台合成武器、护甲与药水等装备，并自由建造，几乎不设固定目标。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "Boss 门控",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "击败 Boss 推进难度",
-            "quote_or_summary": "击败 Boss 触发进度，尤其血肉之墙将游戏推进至引入更强敌人、NPC 与资源的困难模式。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "程序生成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "程序生成世界",
-            "quote_or_summary": "世界程序生成并划分为各具敌人与资源的生物群系。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Terraria 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Terraria",
-        "quote_or_summary": "2D 沙盒动作冒险，采矿建造合成战斗，程序生成多生物群系，Boss 解锁难度层级（血肉之墙开启困难模式），多难度与多人模式，像素美术，Re-Logic 小团队用 XNA 框架开发，2011 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "2D沙盒建造",
+      "Boss 门控",
+      "程序生成"
+    ]
   },
   "claims": [
     {
@@ -92,16 +98,7 @@
       "subject": "Boss 门控",
       "relation": "creates",
       "object": "进度节奏",
-      "explanation": "在没有固定目标的开放沙盒里，用玩家自选时机召唤的 Boss 作为门槛逐级解锁更高层级的敌人与资源，使自由世界获得清晰的方向与长期目标，却不依赖线性关卡，可复用于沙盒类进度结构。",
-      "evidence": [
-        {
-          "title": "Boss 门控解读",
-          "quote_or_summary": "Boss 充当自定节奏的进度门，解锁后续内容层级。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "在没有固定目标的开放沙盒里，用玩家自选时机召唤的 Boss 作为门槛逐级解锁更高层级的敌人与资源，使自由世界获得清晰的方向与长期目标，却不依赖线性关卡，可复用于沙盒类进度结构。"
     }
   ]
 }

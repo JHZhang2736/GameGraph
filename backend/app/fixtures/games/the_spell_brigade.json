@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_the_spell_brigade",
     "title": "The Spell Brigade",
-    "source_refs": [
-      {
-        "title": "The Spell Brigade（Steam）",
-        "url": "https://store.steampowered.com/app/2904000/The_Spell_Brigade/",
-        "notes": "类型（1-4 人在线合作 Survivors-like 弹幕生存）、组队对抗成群黑暗生物、可融合升级法术造出过强协同、受《Magicka》启发的友伤设定（法术既伤敌也伤友）、完成随机团队目标、Bolt Blaster Games（比利时 6 人小团队）开发、2024 年 9 月抢先体验、2026 年 4 月 29 日 1.0 并登陆 PS5、跨平台联机等事实来源。"
-      }
-    ],
     "short_description": "一款 1-4 人在线合作的 Survivors-like 弹幕生存游戏，玩家组队扮演法师对抗成群黑暗生物，不断融合升级法术造出过强协同；其标志是受《Magicka》启发的友伤设定——法术既伤敌也会误伤队友，让合作既混乱搞笑又考验默契。",
     "selection_reason": "作为「给 Survivors-like 加入友伤与法术融合的合作化」代表：把单人滚雪球的弹幕生存改成多人合作，再用「法术会误伤队友」的友伤设定把无脑刷怪变成需要走位与沟通的协作博弈，是研究合作弹幕生存与友伤张力的高价值参考。"
   },
@@ -20,71 +13,80 @@
     "progression_model": "单局靠拾取并融合升级法术、堆叠协同滚雪球变强；跨局解锁新角色、法术与永久升级；进度兼有单局构筑成长与跨局元解锁。",
     "failure_model": "全队生命耗尽、被怪潮淹没即本局失败，需带已解锁内容重开；友伤使队友的误炸成为额外的减员风险来源。",
     "content_structure": "以一局局合作怪潮生存为骨架，靠法术融合构筑、随机团队目标与元解锁承载重玩，主打 1-4 人在线合作，含跨平台联机。",
-    "main_player_actions": ["走位", "技能释放", "射击"],
-    "main_player_decisions": ["增益选择", "武器搭配", "风险取舍"],
-    "main_player_experiences": ["滚雪球快感", "协作默契", "欢乐混乱"],
-    "main_mechanics": ["弹幕生存", "增益构筑", "法术合成", "友伤", "合作生存"],
-    "replayability_sources": ["构筑多样", "角色解锁", "难度分级"],
-    "production_constraints": ["小型团队"],
-    "innovation_patterns": ["友伤", "法术合成"],
-    "reusable_reference_patterns": ["弹幕生存", "法术合成", "合作生存"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["类肉鸽", "合作射击"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["俯视"],
-    "theme": ["奇幻"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["爽快射击", "紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "走位",
+      "技能释放",
+      "射击"
+    ],
+    "main_player_decisions": [
+      "增益选择",
+      "武器搭配",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "滚雪球快感",
+      "协作默契",
+      "欢乐混乱"
+    ],
+    "main_mechanics": [
+      "弹幕生存",
+      "增益构筑",
+      "法术合成",
+      "友伤",
+      "合作生存"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "角色解锁",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "友伤",
+      "法术合成"
+    ],
+    "reusable_reference_patterns": [
+      "弹幕生存",
+      "法术合成",
+      "合作生存"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "类肉鸽",
+      "合作射击"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "奇幻"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "爽快射击",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "友伤",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "法术误伤队友",
-            "quote_or_summary": "受《Magicka》启发，法术既能伤敌也会误伤队友，制造混乱、搞笑而又深具策略性的合作场面。",
-            "notes": "Steam 商店页与媒体报道可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "法术合成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "融合升级法术",
-            "quote_or_summary": "玩家可用不同元素与升级改造、增强并融合法术，造出过强的协同组合。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作生存",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "1-4 人在线合作",
-            "quote_or_summary": "游戏是面向 1-4 人的在线合作 Survivors-like，组队斩杀怪潮并完成团队目标。",
-            "notes": "Steam 商店页可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "The Spell Brigade 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/2904000/The_Spell_Brigade/",
-        "quote_or_summary": "1-4 人在线合作 Survivors-like 弹幕生存，组队对抗怪潮，融合升级法术造协同，《Magicka》式友伤误伤队友，随机团队目标，Bolt Blaster Games 比利时 6 人团队开发，2024 年抢先体验、2026 年 4 月 1.0 并登 PS5，跨平台联机。",
-        "notes": "事实取自 Steam 商店页与媒体报道。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "友伤",
+      "法术合成",
+      "合作生存"
+    ]
   },
   "claims": [
     {
@@ -92,16 +94,7 @@
       "subject": "友伤",
       "relation": "creates",
       "object": "协作张力",
-      "explanation": "在通常可以无脑全屏输出的合作弹幕生存里引入友伤，使每次施放都要顾及队友站位，把原本各刷各的并行体验变成必须互相看顾弹道、沟通走位的协作博弈，既制造笑料也提升默契门槛，可复用于希望用「误伤风险」把松散的多人同屏拉成真正需要配合的设计。",
-      "evidence": [
-        {
-          "title": "友伤协作张力解读",
-          "quote_or_summary": "友伤迫使队友互相顾及弹道与站位，把并行刷怪变成需沟通配合的协作博弈。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "在通常可以无脑全屏输出的合作弹幕生存里引入友伤，使每次施放都要顾及队友站位，把原本各刷各的并行体验变成必须互相看顾弹道、沟通走位的协作博弈，既制造笑料也提升默契门槛，可复用于希望用「误伤风险」把松散的多人同屏拉成真正需要配合的设计。"
     }
   ]
 }

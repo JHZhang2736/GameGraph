@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_void_bastards",
     "title": "Void Bastards",
-    "source_refs": [
-      {
-        "title": "Void Bastards（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Void_Bastards",
-        "notes": "类型（科幻第一人称射击 + 肉鸽，含沉浸模拟元素）、在星图上挑选并登上程序生成的废弃飞船、潜入搜刮材料/弹药/食物以维修和补给自己的船、强调战术决策与资源（弹药、氧气）管理而非莽撞战斗、可合成工具与武器、灵感取自 BioShock 与 System Shock 2、单个囚犯永久死亡但进度延续、每个新囚犯带不同特性影响玩法、漫画书美术与黑色幽默、Blue Manchu 开发 Humble Bundle 发行、2019 年 5 月 28 日发售等事实来源。"
-      },
-      {
-        "title": "Void Bastards（Steam，appid 857980）",
-        "url": "https://store.steampowered.com/app/857980/Void_Bastards/",
-        "notes": "登船搜刮、资源与氧气管理、合成工具、囚犯特性与永久死亡、星图导航等事实来源。"
-      }
-    ],
     "short_description": "一款科幻第一人称射击肉鸽（带沉浸模拟元素）：玩家在星图上挑选并登上一艘艘程序生成的废弃飞船，潜入其中搜刮材料、弹药与食物，用以维修和补给自己的飞船；游戏强调战术决策与弹药、氧气的资源管理而非莽撞开火，可合成工具与武器，单个囚犯阵亡即永久死亡、但进度延续到下一个带着不同特性的新囚犯身上，Blue Manchu 开发、2019 年发售。",
     "selection_reason": "作为「把沉浸模拟登船搜刮缝进肉鸽与策略射击」的代表：用弹药与氧气的双重稀缺逼玩家在登船前规划、权衡风险与撤离，再用「囚犯永久死亡 + 特性各异的新囚犯接力」承载肉鸽变奏，是研究资源稀缺驱动的战术决策、登船搜刮循环与角色特性多样性的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "靠搜刮材料合成与解锁新工具武器、维修升级母船推进，进度跨囚犯延续；每个新囚犯带不同特性带来变奏，进度体现为已解锁装备、母船状态与星图推进度。",
     "failure_model": "当前囚犯生命归零即永久死亡、就此出局，由下一个特性各异的新囚犯接替继续，已积累的解锁与进度延续，惩罚是损失当前角色与其携带物资而非从头再来。",
     "content_structure": "以星图航线、程序生成的废弃飞船与登船搜刮为骨架，靠资源与氧气管理、战术潜入与合成承载玩法，以囚犯永久死亡接力与特性多样承载肉鸽重玩，单人。",
-    "main_player_actions": ["射击", "道具运用", "合成制作"],
-    "main_player_decisions": ["风险取舍", "资源取舍", "探索路线"],
-    "main_player_experiences": ["运筹帷幄", "探索发现", "氛围营造"],
-    "main_mechanics": ["撤离机制", "资源管理", "氧气管理", "永久死亡", "合成制作"],
-    "replayability_sources": ["程序生成", "角色解锁", "难度分级"],
-    "production_constraints": ["小型团队", "卡通渲染"],
-    "innovation_patterns": ["撤离机制", "类型缝合"],
-    "reusable_reference_patterns": ["撤离机制", "资源管理"],
-    "non_replicable_risks": ["玩家留存", "系统复杂度"],
-    "genre": ["第一人称射击", "类肉鸽"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["科幻", "黑色幽默"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["策略权衡", "紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "射击",
+      "道具运用",
+      "合成制作"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "资源取舍",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "探索发现",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "撤离机制",
+      "资源管理",
+      "氧气管理",
+      "永久死亡",
+      "合成制作"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "角色解锁",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "卡通渲染"
+    ],
+    "innovation_patterns": [
+      "撤离机制",
+      "类型缝合"
+    ],
+    "reusable_reference_patterns": [
+      "撤离机制",
+      "资源管理"
+    ],
+    "non_replicable_risks": [
+      "玩家留存",
+      "系统复杂度"
+    ],
+    "genre": [
+      "第一人称射击",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "科幻",
+      "黑色幽默"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "撤离机制",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "登船搜刮与适时撤离",
-            "quote_or_summary": "玩家登上废弃飞船潜入搜刮材料弹药食物补给母船，需在资源耗尽或威胁过大前权衡撤离。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "氧气管理",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "弹药与氧气双重稀缺",
-            "quote_or_summary": "游戏强调弹药与氧气的资源管理而非莽撞战斗，氧气见底逼迫玩家权衡继续搜刮还是撤离。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "永久死亡",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "囚犯永久死亡进度延续",
-            "quote_or_summary": "单个囚犯阵亡即永久死亡，由带不同特性的新囚犯接替，已积累进度延续。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Void Bastards 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Void_Bastards",
-        "quote_or_summary": "科幻 FPS 肉鸽含沉浸模拟元素，星图挑选并登上程序生成废弃飞船搜刮、弹药与氧气资源管理、合成工具武器、囚犯永久死亡进度延续且特性各异，Blue Manchu 开发，2019 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "撤离机制",
+      "氧气管理",
+      "永久死亡"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "资源管理",
       "relation": "creates",
       "object": "战术深度",
-      "explanation": "把弹药与氧气同时压到稀缺，使每次登船都从「开火过关」变成「带多少资源、先搜哪间房、何时撤离」的预算问题：氧气是一道硬性倒计时、弹药每发都珍贵，于是玩家被迫在登船前规划、登船中权衡风险与收益、用合成工具替代硬刚，把战斗的重心从反应与枪法挪到登船前后的谋划上，可复用于希望用「双重硬性资源约束（消耗品 + 倒计时）」把莽撞动作转化为登场前规划与临场取舍、注入战术深度的设计。",
-      "evidence": [
-        {
-          "title": "双重稀缺逼出战术解读",
-          "quote_or_summary": "弹药稀缺加氧气倒计时把登船变成预算与路线规划问题，把战斗重心从枪法挪到谋划。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把弹药与氧气同时压到稀缺，使每次登船都从「开火过关」变成「带多少资源、先搜哪间房、何时撤离」的预算问题：氧气是一道硬性倒计时、弹药每发都珍贵，于是玩家被迫在登船前规划、登船中权衡风险与收益、用合成工具替代硬刚，把战斗的重心从反应与枪法挪到登船前后的谋划上，可复用于希望用「双重硬性资源约束（消耗品 + 倒计时）」把莽撞动作转化为登场前规划与临场取舍、注入战术深度的设计。"
     }
   ]
 }

@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_enshrouded",
     "title": "Enshrouded",
-    "source_refs": [
-      {
-        "title": "Enshrouded（Steam）",
-        "url": "https://store.steampowered.com/app/1203620/Enshrouded/",
-        "notes": "类型（生存动作角色扮演）、体素建造工具可改造地形与搭建结构、手工大世界、危险的迷雾区域 the Shroud、战斗含闪避/招架/法术、可作为法师/游侠/战士塑造战斗风格、最多 16 人合作、Keen Games 开发、2024 年抢先体验、计划 2026 年正式发售等事实来源。"
-      }
-    ],
     "short_description": "一款生存动作角色扮演游戏，玩家在手工打造的大世界中用体素工具改造地形、搭建结构，以闪避、招架与法术战斗并塑造法师、游侠或战士风格，闯入危险的迷雾区域探宝，最多 16 人合作。",
     "selection_reason": "作为「把体素建造与动作 RPG 战斗、限时迷雾禁区缝合」的代表：用自由的体素改造承载基地与探索，再用会持续侵蚀的迷雾区域施加时间压力，把建造、战斗与冒险编织在一起，是研究体素建造与环境威胁张力的高价值参考。"
   },
@@ -20,71 +13,84 @@
     "progression_model": "靠采集制作、技能点塑造法师/游侠/战士构筑、升级装备与基地、解锁 NPC 工坊推进；进度体现为技能构筑、装备强度与可深入的迷雾范围，死亡在据点复活。",
     "failure_model": "战斗死亡或在迷雾中超时被侵蚀致死即死亡，会在最近据点复活并可能掉落部分物资，需重整装备再探。",
     "content_structure": "在手工大世界中以体素建造改造、动作战斗、技能构筑与限时迷雾禁区探索为骨架，含多职业风格、首领与可解锁工坊，支持单人与最多 16 人合作。",
-    "main_player_actions": ["近战攻击", "魔法释放", "翻滚闪避"],
-    "main_player_decisions": ["装备搭配", "探索路线", "基地规划"],
-    "main_player_experiences": ["探索发现", "经营成就", "战斗精通"],
-    "main_mechanics": ["建造", "可破坏地形", "采集", "能力树", "合作生存"],
-    "replayability_sources": ["构筑多样", "难度分级", "全收集"],
-    "production_constraints": ["自研引擎", "中型团队"],
-    "innovation_patterns": ["可破坏地形", "迷雾禁区"],
-    "reusable_reference_patterns": ["可破坏地形", "合作生存", "能力树"],
-    "non_replicable_risks": ["自研引擎", "系统复杂度"],
-    "genre": ["生存", "动作角色扮演"],
-    "art_style": ["写实美术"],
-    "audio_style": ["氛围音乐", "管弦乐"],
-    "perspective": ["第三人称"],
-    "theme": ["奇幻", "末世重建"],
-    "narrative_style": ["碎片化叙事", "环境叙事"],
-    "game_feel": ["自由操控", "厚重打击"],
-    "team_model": ["中型团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "魔法释放",
+      "翻滚闪避"
+    ],
+    "main_player_decisions": [
+      "装备搭配",
+      "探索路线",
+      "基地规划"
+    ],
+    "main_player_experiences": [
+      "探索发现",
+      "经营成就",
+      "战斗精通"
+    ],
+    "main_mechanics": [
+      "建造",
+      "可破坏地形",
+      "采集",
+      "能力树",
+      "合作生存"
+    ],
+    "replayability_sources": [
+      "构筑多样",
+      "难度分级",
+      "全收集"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "中型团队"
+    ],
+    "innovation_patterns": [
+      "可破坏地形",
+      "迷雾禁区"
+    ],
+    "reusable_reference_patterns": [
+      "可破坏地形",
+      "合作生存",
+      "能力树"
+    ],
+    "non_replicable_risks": [
+      "自研引擎",
+      "系统复杂度"
+    ],
+    "genre": [
+      "生存",
+      "动作角色扮演"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "氛围音乐",
+      "管弦乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "奇幻",
+      "末世重建"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "自由操控",
+      "厚重打击"
+    ],
+    "team_model": [
+      "中型团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "可破坏地形",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "体素地形改造",
-            "quote_or_summary": "强大的体素建造工具让玩家改造地形、搭建宏伟结构并细致自定义每个细节。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "迷雾禁区",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "危险迷雾 the Shroud",
-            "quote_or_summary": "世界中遍布危险的迷雾区域 the Shroud，玩家需冒险进入探索，但停留受限。",
-            "notes": "Steam 商店页与预览可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作生存",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "至多 16 人合作",
-            "quote_or_summary": "游戏支持最多 16 名玩家同时进行合作。",
-            "notes": "Steam 商店页可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Enshrouded 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1203620/Enshrouded/",
-        "quote_or_summary": "生存动作 RPG，体素建造改造地形搭建结构，手工大世界，危险迷雾区域 the Shroud，闪避/招架/法术战斗，法师/游侠/战士构筑，最多 16 人合作，Keen Games 开发，2024 年抢先体验。",
-        "notes": "事实取自 Steam 商店页与预览。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "可破坏地形",
+      "迷雾禁区",
+      "合作生存"
+    ]
   },
   "claims": [
     {
@@ -92,16 +98,7 @@
       "subject": "迷雾禁区",
       "relation": "creates",
       "object": "时间压力",
-      "explanation": "用一片会持续侵蚀生命、只能限时停留的迷雾区域承载最丰厚的资源与首领，使玩家每次深入都在倒计时下权衡夺取多少、何时撤离，把探索变成高风险高回报的限时博弈，可复用于希望用环境侵蚀机制制造时间压力的开放世界设计。",
-      "evidence": [
-        {
-          "title": "限时迷雾张力解读",
-          "quote_or_summary": "迷雾的侵蚀与停留上限把深入探索变成限时高风险博弈。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "用一片会持续侵蚀生命、只能限时停留的迷雾区域承载最丰厚的资源与首领，使玩家每次深入都在倒计时下权衡夺取多少、何时撤离，把探索变成高风险高回报的限时博弈，可复用于希望用环境侵蚀机制制造时间压力的开放世界设计。"
     }
   ]
 }

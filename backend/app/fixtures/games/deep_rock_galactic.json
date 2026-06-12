@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_deep_rock_galactic",
     "title": "Deep Rock Galactic",
-    "source_refs": [
-      {
-        "title": "Deep Rock Galactic（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Deep_Rock_Galactic",
-        "notes": "类型（合作第一人称射击）、最多四人、四种矮人职业分工、程序生成全破坏洞穴、采矿与多种任务目标、撤离机制、低多边形美术、Ghost Ship Games 用虚幻 4 开发、2020 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款最多四人合作的第一人称射击游戏，玩家扮演矮人矿工，在程序生成且可完全破坏的外星洞穴中分工采矿、完成目标、迎战虫群，最后赶到撤离舱逃生。",
     "selection_reason": "作为「职业分工驱动深度合作」与「全程序破坏地形」的范本：四个职业的移动与工具互不重叠、迫使彼此依赖，配合可任意挖掘的立体洞穴，是研究合作设计与可破坏环境的高价值参考。"
   },
@@ -20,71 +13,84 @@
     "progression_model": "携资源返回基地解锁与升级各职业的武器、装备与被动，进度跨任务累积；任务本身按目标与难度变化，不在单局内保留洞穴成长。",
     "failure_model": "需在敌人、资源消耗与环境危险中依次抵达撤离点，全队倒下或未能在撤离倒计时内逃生即任务失败。",
     "content_structure": "十类任务目标、六档难度与十个生物群系，叠加随机修正词条与赛季内容；每张洞穴均程序生成、地形可完全破坏，含矿脉、危险与隐藏区域。",
-    "main_player_actions": ["采矿", "射击", "地形破坏", "合作配合"],
-    "main_player_decisions": ["职业搭配", "路线规划", "风险取舍"],
-    "main_player_experiences": ["协作默契", "探索发现", "战斗精通"],
-    "main_mechanics": ["程序生成", "可破坏地形", "职业分工", "资源采集", "合作生存"],
-    "replayability_sources": ["程序生成", "难度分级", "任务多样", "赛季更新"],
-    "production_constraints": ["低多边形", "Unreal 引擎", "小型团队"],
-    "innovation_patterns": ["可破坏地形", "职业分工"],
-    "reusable_reference_patterns": ["可破坏地形", "职业分工", "程序生成"],
-    "non_replicable_risks": ["长期更新运营", "技术复杂度"],
-    "genre": ["合作射击", "第一人称射击"],
-    "art_style": ["低多边形"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["太空采矿", "科幻"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["爽快射击"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "采矿",
+      "射击",
+      "地形破坏",
+      "合作配合"
+    ],
+    "main_player_decisions": [
+      "职业搭配",
+      "路线规划",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "协作默契",
+      "探索发现",
+      "战斗精通"
+    ],
+    "main_mechanics": [
+      "程序生成",
+      "可破坏地形",
+      "职业分工",
+      "资源采集",
+      "合作生存"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "难度分级",
+      "任务多样",
+      "赛季更新"
+    ],
+    "production_constraints": [
+      "低多边形",
+      "Unreal 引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "可破坏地形",
+      "职业分工"
+    ],
+    "reusable_reference_patterns": [
+      "可破坏地形",
+      "职业分工",
+      "程序生成"
+    ],
+    "non_replicable_risks": [
+      "长期更新运营",
+      "技术复杂度"
+    ],
+    "genre": [
+      "合作射击",
+      "第一人称射击"
+    ],
+    "art_style": [
+      "低多边形"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "太空采矿",
+      "科幻"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "爽快射击"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "可破坏地形",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "全破坏程序洞穴",
-            "quote_or_summary": "洞穴含可破坏地形并程序生成，地形、目标、危险与敌人随生物群系与任务类型变化。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "职业分工",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "四职业互补",
-            "quote_or_summary": "玩家从侦察、工程、枪手、钻机四个矮人职业中选择，靠互补能力更高效地穿行洞穴、完成目标并作战。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "程序生成",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "程序生成洞穴",
-            "quote_or_summary": "每张洞穴程序生成，复杂度修正可扩大地图规模与精细度。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Deep Rock Galactic 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Deep_Rock_Galactic",
-        "quote_or_summary": "合作第一人称射击，最多四人，四职业互补分工，程序生成且可完全破坏的洞穴，采矿与多种任务目标，撤离逃生，低多边形美术，Ghost Ship Games 用虚幻 4 开发，2020 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "可破坏地形",
+      "职业分工",
+      "程序生成"
+    ]
   },
   "claims": [
     {
@@ -92,16 +98,7 @@
       "subject": "职业分工",
       "relation": "creates",
       "object": "团队依赖",
-      "explanation": "让每个职业的移动与工具互不重叠——只有工程能架平台、只有钻机能开隧道，在可垂直挖掘的立体洞穴中迫使彼此依赖，使合作协调成为内在必需而非可有可无的加成，可复用于合作向设计。",
-      "evidence": [
-        {
-          "title": "职业互补解读",
-          "quote_or_summary": "互不重叠的移动与工具使队伍必须协作才能高效穿行与作战。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "让每个职业的移动与工具互不重叠——只有工程能架平台、只有钻机能开隧道，在可垂直挖掘的立体洞穴中迫使彼此依赖，使合作协调成为内在必需而非可有可无的加成，可复用于合作向设计。"
     }
   ]
 }

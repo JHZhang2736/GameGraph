@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-import json
 from dataclasses import dataclass, field
 
-from app.schemas.common import EvidenceRef
 from app.schemas.graph import GraphEdgeDTO, GraphNodeDTO, NeighborhoodResult
 
 
@@ -19,13 +17,6 @@ class NeighborRow:
     target_key: str = ""
 
 
-def _evidence(rel_props: dict) -> list[EvidenceRef]:
-    raw = rel_props.get("evidence_json")
-    if not raw:
-        return []
-    return [EvidenceRef.model_validate(item) for item in json.loads(raw)]
-
-
 def _edge(row: NeighborRow) -> GraphEdgeDTO:
     props = row.rel_props
     claim_id = props.get("claim_id")
@@ -35,10 +26,7 @@ def _edge(row: NeighborRow) -> GraphEdgeDTO:
         source=row.source_key,
         target=row.target_key,
         relation=props.get("relation") or row.rel_type,
-        confidence=props.get("confidence"),
-        quality_status=props.get("quality_status"),
         claim_id=claim_id,
-        evidence=_evidence(props),
     )
 
 

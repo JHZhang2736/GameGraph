@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_gamble_with_your_friends",
     "title": "Gamble With Your Friends",
-    "source_refs": [
-      {
-        "title": "Gamble With Your Friends（Steam，appid 3892270）",
-        "url": "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/",
-        "notes": "类型（在线 1–6 人合作「赌场爬塔」派对游戏）、TEAM GWYF 开发、TENSTACK 发行、2026 年 5 月 1 日发售、全队共享一个银行账户与一笔债务、每「天」有 5 分钟进赌场尽量赚钱、4 层各具主题、17 种博彩游戏、每次进入随机布局、靠达标与挑战赚取 Tickets 购买歪门道具改写赔率与外观、近距语音、约 2–3 小时含三种结局等事实来源。"
-      },
-      {
-        "title": "Gamble With Your Friends（Steam 社区）",
-        "url": "https://steamcommunity.com/app/3892270",
-        "notes": "1–6 人合作、共享账户与债务、每日 5 分钟限时、4 层主题赌场、Tickets 道具、近距语音等事实来源。"
-      }
-    ],
     "short_description": "一款在线 1–6 人合作的「赌场爬塔」派对游戏，TEAM GWYF 开发、TENSTACK 发行，2026 年 5 月 1 日发售：你和朋友共享同一个银行账户和同一笔债务，每「天」有 5 分钟时间冲进赌场尽量赚钱——一次冲动的全押就可能毁掉整局。赌场塔有 4 层各具主题、共 17 种博彩游戏、每次进入随机布局；靠达成配额、完成挑战、甚至卖掉身上几个器官来换取 Tickets，购买改写赔率的歪门道具。全程靠近距语音协调，约 2–3 小时含三种结局。",
     "selection_reason": "作为「把博彩 RNG 装进共享资源合作框架」的代表：全队共用一个账户与一笔债务，让任何人的一次全押都关乎所有人，把单纯的运气游戏变成「既要赌、又要管住队友」的社交博弈，配合每日 5 分钟限时与歪门道具，是研究共享资源合作、债务驱动与博彩派对设计的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "局内靠达成每日配额与挑战累积共享资金、用 Tickets 购买歪门道具滚动改善赔率，整体靠还清债务推进至三种结局之一；进度体现为共享账户余额、债务进度与道具搭配。",
     "failure_model": "全队共享的账户被输光、或在限定天数内未能还清债务即整局失败，核心压力在于既要靠博彩赚够配额、又要管控每个队友的冲动下注，一次全押就可能拖垮所有人。",
     "content_structure": "以每日 5 分钟限时与逐层主题赌场为骨架，靠 17 种博彩游戏、共享账户与歪门道具承载社交博弈，以随机布局、任务挑战与 1–6 人合作承载重玩，单人或多人合作。",
-    "main_player_actions": ["拉杆", "掷骰", "社交互动"],
-    "main_player_decisions": ["风险取舍", "资源取舍", "优先级排序"],
-    "main_player_experiences": ["欢乐混乱", "协作默契", "滚雪球快感"],
-    "main_mechanics": ["老虎机", "实时计时", "债务清算", "共享账户", "近距语音"],
-    "replayability_sources": ["程序生成", "任务多样", "外观收集"],
-    "production_constraints": ["小型团队", "卡通渲染"],
-    "innovation_patterns": ["共享账户", "债务清算"],
-    "reusable_reference_patterns": ["共享账户", "合作生存", "近距语音"],
-    "non_replicable_risks": ["题材争议", "一次性体验"],
-    "genre": ["派对游戏", "微策略"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["第一人称"],
-    "theme": ["黑色幽默"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["欢乐混乱", "紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "拉杆",
+      "掷骰",
+      "社交互动"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "资源取舍",
+      "优先级排序"
+    ],
+    "main_player_experiences": [
+      "欢乐混乱",
+      "协作默契",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "老虎机",
+      "实时计时",
+      "债务清算",
+      "共享账户",
+      "近距语音"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "任务多样",
+      "外观收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "卡通渲染"
+    ],
+    "innovation_patterns": [
+      "共享账户",
+      "债务清算"
+    ],
+    "reusable_reference_patterns": [
+      "共享账户",
+      "合作生存",
+      "近距语音"
+    ],
+    "non_replicable_risks": [
+      "题材争议",
+      "一次性体验"
+    ],
+    "genre": [
+      "派对游戏",
+      "微策略"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "黑色幽默"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "欢乐混乱",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "共享账户",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "全队共用一个账户",
-            "quote_or_summary": "1–6 名玩家共享同一个银行账户与同一笔债务，任何人的一次全押都关乎所有人。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "实时计时",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "每天 5 分钟限时",
-            "quote_or_summary": "每「天」玩家只有 5 分钟时间进赌场尽量赚钱，时间压力贯穿每一局。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "债务清算",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "赌钱还清债务",
-            "quote_or_summary": "全队背负一笔债务，须靠赌场赚钱在限定进程内还清，构成核心目标与压力。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Gamble With Your Friends 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/",
-        "quote_or_summary": "在线 1–6 人合作赌场爬塔，共享账户与债务、每日 5 分钟、4 层 17 种博彩、Tickets 歪门道具、近距语音、约 2–3 小时三结局，TEAM GWYF 开发、TENSTACK 发行，2026 年 5 月 1 日发售。",
-        "notes": "事实取自 Steam 商店页与社区。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "共享账户",
+      "实时计时",
+      "债务清算"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "共享账户",
       "relation": "creates",
       "object": "团队依赖",
-      "explanation": "把全队的钱并进一个账户、再压上一笔共同债务，等于把每个人的下注后果绑到所有人身上：你赢的进公共池，你输的也由大家一起扛。于是「赌」之外多出一层「管人」的玩法——队友该不该再加注、谁需要被劝住、要不要为翻盘冒险，都成了实时的人际博弈。互相依赖与互相牵制由这套共享资源天然长出，单人运气游戏被改造成强社交的合作张力体验。可复用于希望用「共享资源池 + 共同失败条件」制造强制互赖、把个人决策变成集体后果的合作派对设计——也提示其博彩题材争议。",
-      "evidence": [
-        {
-          "title": "共享资源生团队依赖解读",
-          "quote_or_summary": "共用账户与共同债务把个人下注后果绑到全队，催生互赖与牵制的社交博弈，生发团队依赖。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把全队的钱并进一个账户、再压上一笔共同债务，等于把每个人的下注后果绑到所有人身上：你赢的进公共池，你输的也由大家一起扛。于是「赌」之外多出一层「管人」的玩法——队友该不该再加注、谁需要被劝住、要不要为翻盘冒险，都成了实时的人际博弈。互相依赖与互相牵制由这套共享资源天然长出，单人运气游戏被改造成强社交的合作张力体验。可复用于希望用「共享资源池 + 共同失败条件」制造强制互赖、把个人决策变成集体后果的合作派对设计——也提示其博彩题材争议。"
     }
   ]
 }

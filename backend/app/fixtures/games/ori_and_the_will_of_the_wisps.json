@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_ori_and_the_will_of_the_wisps",
     "title": "Ori and the Will of the Wisps",
-    "source_refs": [
-      {
-        "title": "Ori and the Will of the Wisps（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Ori_and_the_Will_of_the_Wisps",
-        "notes": "类型、移动与战斗机制、护符（shards）系统、自动存档、Spirit Trials、团队与引擎等事实来源。"
-      }
-    ],
     "short_description": "一款手绘风的类银河城平台动作游戏，玩家操控精灵 Ori 在 Niwen 大陆跳跃、攀爬、滑翔、游泳与战斗，是 2015 年《奥日与黑暗森林》的续作。",
     "selection_reason": "作为高品质手绘平台跳跃与类银河城探索的标杆参考，尤其是其护符式（shards）可换装战斗定制、电影化逃跑序列，以及从手动「灵魂链接」存档转向自动存档的设计取舍。"
   },
@@ -20,71 +13,96 @@
     "progression_model": "通过解锁跳跃、冲刺、抓取、滑翔等移动能力进行类银河城式门控；战斗与属性成长则借助可自由换装的护符（shards，灵感来自《最终幻想》魔石），而非线性强制升级。",
     "failure_model": "被敌人或环境危险耗尽生命即死亡，回到自动存档点重来；部分桥段是高强度的限时逃跑序列，失误会被追击者击杀。",
     "content_structure": "一张围绕 Niwen 大陆展开的连通地图，由多个生物群系、Boss 战与标志性的逃跑序列串联，外加可选的精灵试炼（Spirit Trials）竞速与收集内容。",
-    "main_player_actions": ["平台跳跃", "攀墙", "冲刺", "滑翔", "近战攻击", "远程攻击", "秘密解谜"],
-    "main_player_decisions": ["探索路线", "护符搭配", "风险取舍", "能力树优先级"],
-    "main_player_experiences": ["情感叙事", "高难跑酷", "探索发现", "战斗精通"],
-    "main_mechanics": ["能力门控探索", "护符定制", "逃跑序列", "自动存档", "近战攻击"],
-    "replayability_sources": ["速通", "全收集", "Boss 挑战"],
-    "production_constraints": ["Unity 引擎", "全管弦乐配乐", "手绘美术", "分布式团队"],
-    "innovation_patterns": ["护符定制", "逃跑序列", "自动存档"],
-    "reusable_reference_patterns": ["能力门控探索", "护符定制", "氛围营造"],
-    "non_replicable_risks": ["高品质手绘量", "全管弦乐制作成本", "大团队协作"],
-    "genre": ["类银河城", "平台跳跃"],
-    "art_style": ["手绘美术", "唯美画风"],
-    "audio_style": ["管弦乐", "动态配乐"],
-    "perspective": ["横版2D"],
-    "theme": ["自然", "森林童话"],
-    "narrative_style": ["情感叙事", "过场驱动"],
-    "game_feel": ["精准平台", "流畅跑酷"],
-    "team_model": ["小团队", "分布式团队"],
+    "main_player_actions": [
+      "平台跳跃",
+      "攀墙",
+      "冲刺",
+      "滑翔",
+      "近战攻击",
+      "远程攻击",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "护符搭配",
+      "风险取舍",
+      "能力树优先级"
+    ],
+    "main_player_experiences": [
+      "情感叙事",
+      "高难跑酷",
+      "探索发现",
+      "战斗精通"
+    ],
+    "main_mechanics": [
+      "能力门控探索",
+      "护符定制",
+      "逃跑序列",
+      "自动存档",
+      "近战攻击"
+    ],
+    "replayability_sources": [
+      "速通",
+      "全收集",
+      "Boss 挑战"
+    ],
+    "production_constraints": [
+      "Unity 引擎",
+      "全管弦乐配乐",
+      "手绘美术",
+      "分布式团队"
+    ],
+    "innovation_patterns": [
+      "护符定制",
+      "逃跑序列",
+      "自动存档"
+    ],
+    "reusable_reference_patterns": [
+      "能力门控探索",
+      "护符定制",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "高品质手绘量",
+      "全管弦乐制作成本",
+      "大团队协作"
+    ],
+    "genre": [
+      "类银河城",
+      "平台跳跃"
+    ],
+    "art_style": [
+      "手绘美术",
+      "唯美画风"
+    ],
+    "audio_style": [
+      "管弦乐",
+      "动态配乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "自然",
+      "森林童话"
+    ],
+    "narrative_style": [
+      "情感叙事",
+      "过场驱动"
+    ],
+    "game_feel": [
+      "精准平台",
+      "流畅跑酷"
+    ],
+    "team_model": [
+      "小团队",
+      "分布式团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "护符定制",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "护符（shards）系统",
-            "quote_or_summary": "续作以可自由换装的护符系统替代线性升级，灵感来自《最终幻想》魔石，用于定制属性与攻击。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "逃跑序列",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "电影化逃跑桥段",
-            "quote_or_summary": "游戏包含被追击者追逐的高强度限时逃跑序列，是系列的标志性演出。",
-            "notes": "可观察的关卡设计。"
-          }
-        ]
-      },
-      {
-        "tag": "自动存档",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "存档方式变更",
-            "quote_or_summary": "续作以自动存档取代前作玩家手动放置的「灵魂链接」存档点。",
-            "notes": "维基百科记录的设计取舍。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Ori and the Will of the Wisps 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Ori_and_the_Will_of_the_Wisps",
-        "quote_or_summary": "类银河城平台动作游戏，移动能力门控探索，护符换装战斗，自动存档，标志性逃跑序列，Moon Studios 用 Unity 开发，2020 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "护符定制",
+      "逃跑序列",
+      "自动存档"
+    ]
   },
   "claims": [
     {
@@ -92,32 +110,14 @@
       "subject": "护符定制",
       "relation": "increases",
       "object": "横向成长感",
-      "explanation": "把战斗与属性成长拆成可随时换装的护符，玩家不必沿固定升级曲线变强，而是按场景与喜好重组构筑，在不堆叠线性数值的前提下获得自定义的成长与重玩动机。",
-      "evidence": [
-        {
-          "title": "护符系统解读",
-          "quote_or_summary": "护符可自由穿脱组合，类似魔石式的横向定制。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把战斗与属性成长拆成可随时换装的护符，玩家不必沿固定升级曲线变强，而是按场景与喜好重组构筑，在不堆叠线性数值的前提下获得自定义的成长与重玩动机。"
     },
     {
       "id": "claim_ori_wotw_escape_sequences",
       "subject": "逃跑序列",
       "relation": "creates",
       "object": "情感叙事",
-      "explanation": "把高强度限时追逐穿插进探索节奏，用紧张的跑酷压力制造记忆点与情绪高潮，使叙事张力通过玩法而非过场被玩家亲身体验，是低对白叙事的有效放大器。",
-      "evidence": [
-        {
-          "title": "逃跑桥段解读",
-          "quote_or_summary": "标志性逃跑序列承担了游戏的情绪高潮。",
-          "notes": "基于可观察设计的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把高强度限时追逐穿插进探索节奏，用紧张的跑酷压力制造记忆点与情绪高潮，使叙事张力通过玩法而非过场被玩家亲身体验，是低对白叙事的有效放大器。"
     }
   ]
 }

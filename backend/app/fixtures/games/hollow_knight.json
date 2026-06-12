@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_hollow_knight",
     "title": "Hollow Knight",
-    "source_refs": [
-      {
-        "title": "Hollow Knight（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Hollow_Knight",
-        "notes": "核心机制、开发团队、发行事实与设计理念的主要参考来源。"
-      },
-      {
-        "title": "Hollow Knight Steam 商店页面",
-        "url": "https://store.steampowered.com/app/367520/Hollow_Knight/",
-        "notes": "类型标签、功能列表与玩家特性描述的补充来源。"
-      }
-    ],
     "short_description": "一款手绘风格的 2D 类银河城动作冒险游戏，Team Cherry 开发，玩家探索广阔的互联地下王国，战斗与叙事均依赖氛围营造。",
     "selection_reason": "作为能力门控探索、护符定制系统与以死亡作为资源管理机制（Shade 系统）的参考；手绘美术风格在独立团队规模下实现了高度氛围营造。"
   },
@@ -25,71 +13,90 @@
     "progression_model": "能力门控推进：双跳、攀墙、冲刺等移动技能依次解锁新区域；护符系统提供横向能力定制；打败最终 Boss 后解锁钢铁灵魂（全流程死亡即结束）模式，形成纵向挑战层。",
     "failure_model": "死亡后角色失去持有的地理货币（地理 Geo），并在死亡点生成 Shade 敌人；玩家须返回击败 Shade 方可取回损失，否则货币永久消失。钢铁灵魂模式下死亡直接结束存档。",
     "content_structure": "单张大型互联地图划分为多个有主题的地下区域；散布大量隐藏房间、收藏品与支线 Boss；四个免费 DLC 追加了新 Boss 组、新区域与终局内容，形成分层的进入深度。",
-    "main_player_actions": ["平台跳跃", "近战攻击", "冲刺", "魔法释放", "秘密解谜"],
-    "main_player_decisions": ["探索路线", "护符搭配", "风险取舍", "Boss 时机"],
-    "main_player_experiences": ["氛围营造", "探索发现", "战斗精通", "孤独"],
-    "main_mechanics": ["能力门控探索", "非线性探索", "死亡惩罚", "护符定制", "环境叙事"],
-    "replayability_sources": ["速通", "钢铁灵魂", "Boss 挑战", "全收集"],
-    "production_constraints": ["Unity 引擎", "众筹资金"],
-    "innovation_patterns": ["死亡惩罚", "护符定制", "环境叙事"],
-    "reusable_reference_patterns": ["能力门控探索", "死亡惩罚", "氛围营造"],
-    "non_replicable_risks": ["超长开发周期", "大规模玩家社区", "高品质手绘量"],
-    "genre": ["类银河城", "类魂"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["管弦乐", "氛围音乐"],
-    "perspective": ["横版2D"],
-    "theme": ["虫族", "废墟王国"],
-    "narrative_style": ["碎片化叙事", "环境叙事"],
-    "game_feel": ["精准近战"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "平台跳跃",
+      "近战攻击",
+      "冲刺",
+      "魔法释放",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "护符搭配",
+      "风险取舍",
+      "Boss 时机"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "探索发现",
+      "战斗精通",
+      "孤独"
+    ],
+    "main_mechanics": [
+      "能力门控探索",
+      "非线性探索",
+      "死亡惩罚",
+      "护符定制",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "速通",
+      "钢铁灵魂",
+      "Boss 挑战",
+      "全收集"
+    ],
+    "production_constraints": [
+      "Unity 引擎",
+      "众筹资金"
+    ],
+    "innovation_patterns": [
+      "死亡惩罚",
+      "护符定制",
+      "环境叙事"
+    ],
+    "reusable_reference_patterns": [
+      "能力门控探索",
+      "死亡惩罚",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "超长开发周期",
+      "大规模玩家社区",
+      "高品质手绘量"
+    ],
+    "genre": [
+      "类银河城",
+      "类魂"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "管弦乐",
+      "氛围音乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "虫族",
+      "废墟王国"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "精准近战"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "能力门控探索",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "移动能力解锁",
-            "quote_or_summary": "双跳、攀墙、冲刺等技能依序解锁，直接打开此前无法进入的地图区域。",
-            "notes": "维基百科可观察机制，类银河城核心结构。"
-          }
-        ]
-      },
-      {
-        "tag": "氛围营造",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "手绘哥特美术与配乐",
-            "quote_or_summary": "手绘草图直接扫描入引擎，配合 Christopher Larkin 配乐，评论普遍称赞其氛围营造。",
-            "notes": "维基百科与 Steam 评价均指出氛围为核心卖点。"
-          }
-        ]
-      },
-      {
-        "tag": "死亡惩罚",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "Shade 系统",
-            "quote_or_summary": "死亡在原地生成持有损失货币的 Shade 敌人，须击败方能取回；钢铁灵魂模式死亡即结束存档。",
-            "notes": "维基百科机制描述，可观察事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Hollow Knight 机制与开发综述",
-        "url": "https://en.wikipedia.org/wiki/Hollow_Knight",
-        "quote_or_summary": "Team Cherry 四人核心团队，Unity 引擎，众筹开发；能力门控非线性探索，Shade 死亡惩罚系统，护符横向定制，手绘哥特美术配乐驱动氛围。",
-        "notes": "机制与生产事实主要来自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "能力门控探索",
+      "氛围营造",
+      "死亡惩罚"
+    ]
   },
   "claims": [
     {
@@ -97,32 +104,14 @@
       "subject": "死亡惩罚",
       "relation": "increases",
       "object": "探索张力",
-      "explanation": "Shade 系统将每次死亡都转化为必须完成的子目标：返回并击败 Shade 以取回资源。这使探索本身带有持续的风险-奖励权衡，让每次决策（冒险推进 vs 谨慎回撤）都有实质代价，而不仅是重试惩罚。",
-      "evidence": [
-        {
-          "title": "Shade 系统设计分析",
-          "quote_or_summary": "死亡生成 Shade，玩家必须击败它才能取回损失的货币；这把死亡从单纯的挫败感转化为带有驱动力的目标。",
-          "notes": "基于可观察机制的解释性判断，无需额外引用。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "Shade 系统将每次死亡都转化为必须完成的子目标：返回并击败 Shade 以取回资源。这使探索本身带有持续的风险-奖励权衡，让每次决策（冒险推进 vs 谨慎回撤）都有实质代价，而不仅是重试惩罚。"
     },
     {
       "id": "claim_hollow_knight_charm_expression",
       "subject": "护符定制",
       "relation": "creates",
       "object": "横向成长感",
-      "explanation": "护符系统提供多种彼此不冲突的能力组合，允许玩家在不解锁强制进程的情况下感受到个性化成长。小型团队以此在有限内容量下延伸了可玩深度。",
-      "evidence": [
-        {
-          "title": "护符系统描述",
-          "quote_or_summary": "护符不强制右/错选择，鼓励实验与游玩风格多样性。",
-          "notes": "维基百科描述，中等解读性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "护符系统提供多种彼此不冲突的能力组合，允许玩家在不解锁强制进程的情况下感受到个性化成长。小型团队以此在有限内容量下延伸了可玩深度。"
     }
   ]
 }

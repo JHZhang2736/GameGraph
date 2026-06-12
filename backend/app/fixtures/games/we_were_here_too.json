@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_we_were_here_too",
     "title": "We Were Here Too",
-    "source_refs": [
-      {
-        "title": "We Were Here Too（Steam，appid 677160）",
-        "url": "https://store.steampowered.com/app/677160/We_Were_Here_Too/",
-        "notes": "类型（仅限双人在线第一人称合作解谜）、Total Mayhem Games 开发、2018 年发售、两名玩家被困于古堡不同区域、各自看到不同场景与线索、仅靠对讲机语音沟通、信息不对称的非对称谜题、须互相描述所见才能逃脱、需可用麦克风等事实来源。"
-      },
-      {
-        "title": "We Were Here Too（Total Mayhem Games 官网）",
-        "url": "https://totalmayhemgames.com/games/we-were-here-too",
-        "notes": "双人非对称合作、各处城堡不同地点、对讲机沟通解谜逃脱等事实来源。"
-      }
-    ],
     "short_description": "一款仅限双人的在线第一人称合作解谜游戏，Total Mayhem Games 开发，2018 年发售：两名玩家被困在一座中世纪古堡的不同区域，各自看到的房间、线索与谜题彼此不同、也互相看不到，只能靠对讲机不断描述自己的所见、互通信息，合力解开一道道非对称谜题、逃出城堡。游戏要求双方都有可用的麦克风。",
     "selection_reason": "作为「用信息不对称把解谜变成强制沟通」的代表：两名玩家各处城堡一隅、各握一半线索却互不可见，唯有靠对讲机口头描述、对照纠错才能推进，把解谜从单人推理变成两人的沟通博弈，是研究非对称协作、合作解谜与语音沟通设计的高价值参考。"
   },
@@ -25,71 +13,78 @@
     "progression_model": "靠线性谜题章节推进剧情，靠双方互通线索解开层层机关解锁后续区域；无数值养成，进度体现为已解开的谜题与逐步逃离城堡的进程。",
     "failure_model": "本作以协作解谜推进，卡关源于双方沟通不畅或尚未对上彼此的线索；部分谜题失误会导致一方陷阱身亡而需重来，「失败」核心即一次信息没能成功互通。",
     "content_structure": "以一座古堡内信息不对称的协作谜题为骨架，靠双方各处不同房间、各握半套线索承载玩法，以一次性合作体验为主，仅限双人合作。",
-    "main_player_actions": ["物件操控", "秘密解谜", "社交互动"],
-    "main_player_decisions": ["探索路线", "优先级排序"],
-    "main_player_experiences": ["协作默契", "探索发现", "氛围营造"],
-    "main_mechanics": ["合作解谜", "非对称协作", "环境叙事"],
-    "replayability_sources": ["角色互换", "彩蛋收集"],
-    "production_constraints": ["小型团队", "写实美术"],
-    "innovation_patterns": ["非对称协作", "合作解谜"],
-    "reusable_reference_patterns": ["非对称协作", "合作解谜"],
-    "non_replicable_risks": ["一次性体验", "玩家留存"],
-    "genre": ["解谜", "叙事冒险"],
-    "art_style": ["写实美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第一人称"],
-    "theme": ["灵异", "奇幻"],
-    "narrative_style": ["环境叙事", "碎片化叙事"],
-    "game_feel": ["沉浸代入", "紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "物件操控",
+      "秘密解谜",
+      "社交互动"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "优先级排序"
+    ],
+    "main_player_experiences": [
+      "协作默契",
+      "探索发现",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "合作解谜",
+      "非对称协作",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "角色互换",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "写实美术"
+    ],
+    "innovation_patterns": [
+      "非对称协作",
+      "合作解谜"
+    ],
+    "reusable_reference_patterns": [
+      "非对称协作",
+      "合作解谜"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "玩家留存"
+    ],
+    "genre": [
+      "解谜",
+      "叙事冒险"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "灵异",
+      "奇幻"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "非对称协作",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "各处一隅互不可见",
-            "quote_or_summary": "两名玩家被困城堡不同区域，各自看到的房间、线索与谜题彼此不同且互不可见。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "合作解谜",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "对讲机互通解谜",
-            "quote_or_summary": "双方仅靠对讲机语音描述各自所见、互通线索，合力解开非对称谜题才能逃脱。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "环境叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "古堡场景叙事",
-            "quote_or_summary": "玩家在古堡各房间观察壁画、机关与陈设等细节，于探索中拼出环境线索与氛围。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "We Were Here Too 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/677160/We_Were_Here_Too/",
-        "quote_or_summary": "仅限双人在线第一人称合作解谜，两玩家分处古堡不同区域、互不可见、仅靠对讲机语音互通线索合力解谜逃脱，Total Mayhem Games 开发，2018 年发售。",
-        "notes": "事实取自 Steam 商店页与开发商官网。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "非对称协作",
+      "合作解谜",
+      "环境叙事"
+    ]
   },
   "claims": [
     {
@@ -97,16 +92,7 @@
       "subject": "非对称协作",
       "relation": "creates",
       "object": "协作张力",
-      "explanation": "把解谜所需的信息一分为二、分给互不可见的两个人，等于让「沟通」成为唯一的通关手段：任何一方都无法独自推进，必须把自己看到的符号、颜色、顺序准确描述给对方，再共同对照纠错。描述含糊或听岔就卡死，对上了则豁然开朗——张力与默契都从这种被迫的口头协作中生长，体验的核心不在谜题本身，而在两人能否把各自的半张拼图说清楚。可复用于希望用「信息不对称 + 强制语音沟通」把解谜转化为协作张力、制造双人专属默契的合作设计。",
-      "evidence": [
-        {
-          "title": "信息不对称生协作张力解读",
-          "quote_or_summary": "信息一分为二且互不可见，使语音沟通成为唯一解法，描述纠错的过程生发协作张力与默契。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把解谜所需的信息一分为二、分给互不可见的两个人，等于让「沟通」成为唯一的通关手段：任何一方都无法独自推进，必须把自己看到的符号、颜色、顺序准确描述给对方，再共同对照纠错。描述含糊或听岔就卡死，对上了则豁然开朗——张力与默契都从这种被迫的口头协作中生长，体验的核心不在谜题本身，而在两人能否把各自的半张拼图说清楚。可复用于希望用「信息不对称 + 强制语音沟通」把解谜转化为协作张力、制造双人专属默契的合作设计。"
     }
   ]
 }

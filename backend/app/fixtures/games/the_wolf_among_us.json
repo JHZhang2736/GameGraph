@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_the_wolf_among_us",
     "title": "The Wolf Among Us",
-    "source_refs": [
-      {
-        "title": "The Wolf Among Us（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/The_Wolf_Among_Us",
-        "notes": "类型（章节式叙事冒险）、改编自 Bill Willingham 的《Fables》漫画并作为前传、共五章于 2013-2014 年发售、设定在 1980 年代纽约的童话角色秘密社群 Fabletown、玩家扮演警长 Bigby Wolf（大灰狼）调查连环凶案、Telltale 招牌的选择驱动叙事与限时对话、QTE 动作序列、关键选择会被记录并在章末告知玩家及对比其他玩家比例、霓虹黑色（neo-noir）美术与赛璐珞渲染、Telltale Games 开发发行等事实来源。"
-      },
-      {
-        "title": "The Wolf Among Us（Steam，appid 250320）",
-        "url": "https://store.steampowered.com/app/250320/The_Wolf_Among_Us/",
-        "notes": "五章叙事冒险、限时对话选择、QTE、角色会记住选择、霓虹黑色美术、侦探调查等事实来源。"
-      }
-    ],
     "short_description": "一款章节式叙事冒险游戏，改编自 Bill Willingham 的漫画《Fables》并作为前传，共五章：设定在 1980 年代纽约一个隐居着童话角色的秘密社群 Fabletown，玩家扮演警长 Bigby Wolf（即「大灰狼」）调查一连串凶案；采用 Telltale 招牌的选择驱动叙事与限时对话——角色会记住你的选择，关键抉择在章末汇报并对比其他玩家的比例，配以 QTE 动作序列与霓虹黑色美术，Telltale Games 开发、2013-2014 年发售。",
     "selection_reason": "作为「Telltale 式选择驱动叙事冒险」的代表：用「限时对话 + 角色会记住选择 + 章末公布抉择分布」把每个回应都逼成凭直觉的即时决断，配合霓虹黑色侦探调查与 QTE 演出，是研究限时抉择、选择反馈呈现与氛围化叙事冒险的高价值参考。"
   },
@@ -25,71 +13,81 @@
     "progression_model": "靠章节推进案件与人物关系、靠限时抉择与对话塑造 Bigby 的处事风格与他人态度；进度体现为故事章节、关键选择记录与角色关系状态，选择长线影响结局走向。",
     "failure_model": "本作无传统失败：QTE 失误或对话选择不会 Game Over（极少数动作失误可重试），而是改写人物关系与剧情细节，真正的代价是被记住的、不可重选的抉择后果。",
     "content_structure": "以五章交织的凶案剧情为骨架，靠限时对话抉择、现场调查、QTE 与霓虹黑色演出承载分支与氛围，关键选择被记录并在章末反馈，单人。",
-    "main_player_actions": ["对话选择", "社交互动", "物件操控"],
-    "main_player_decisions": ["道德抉择", "风险取舍", "关系经营"],
-    "main_player_experiences": ["情感叙事", "抉择沉浸", "氛围营造"],
-    "main_mechanics": ["分支叙事", "快速反应", "限时抉择", "线索调查", "环境叙事"],
-    "replayability_sources": ["多结局", "彩蛋收集"],
-    "production_constraints": ["大团队协作", "卡通渲染"],
-    "innovation_patterns": ["分支叙事", "限时抉择"],
-    "reusable_reference_patterns": ["分支叙事", "情感叙事"],
-    "non_replicable_risks": ["一次性体验", "大团队协作"],
-    "genre": ["叙事冒险"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["电子配乐"],
-    "perspective": ["第三人称"],
-    "theme": ["黑暗童话", "黑色电影"],
-    "narrative_style": ["分支叙事", "过场驱动", "碎片化叙事"],
-    "game_feel": ["沉浸代入", "紧张节奏"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "对话选择",
+      "社交互动",
+      "物件操控"
+    ],
+    "main_player_decisions": [
+      "道德抉择",
+      "风险取舍",
+      "关系经营"
+    ],
+    "main_player_experiences": [
+      "情感叙事",
+      "抉择沉浸",
+      "氛围营造"
+    ],
+    "main_mechanics": [
+      "分支叙事",
+      "快速反应",
+      "限时抉择",
+      "线索调查",
+      "环境叙事"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "大团队协作",
+      "卡通渲染"
+    ],
+    "innovation_patterns": [
+      "分支叙事",
+      "限时抉择"
+    ],
+    "reusable_reference_patterns": [
+      "分支叙事",
+      "情感叙事"
+    ],
+    "non_replicable_risks": [
+      "一次性体验",
+      "大团队协作"
+    ],
+    "genre": [
+      "叙事冒险"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "电子配乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "黑暗童话",
+      "黑色电影"
+    ],
+    "narrative_style": [
+      "分支叙事",
+      "过场驱动",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "沉浸代入",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "限时抉择",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "对话选项带倒计时",
-            "quote_or_summary": "大量对话选项带倒计时，几秒内不选即错过，逼玩家凭直觉与人设即时回应而非反复算计。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "分支叙事",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "角色记住选择并章末汇报",
-            "quote_or_summary": "角色会记住玩家的选择，关键抉择在章末汇报并对比其他玩家的选择比例。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "线索调查",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "霓虹黑色侦探调查",
-            "quote_or_summary": "玩家以警长 Bigby 身份在犯罪现场调查、查验线索，推进一桩童话世界的连环凶案。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "The Wolf Among Us 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/The_Wolf_Among_Us",
-        "quote_or_summary": "章节式叙事冒险，改编自《Fables》前传，限时对话与情境选择、角色记住选择并章末汇报对比、QTE、现场调查、霓虹黑色美术，Telltale 开发，2013-2014 年发售。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "限时抉择",
+      "分支叙事",
+      "线索调查"
+    ]
   },
   "claims": [
     {
@@ -97,16 +95,7 @@
       "subject": "限时抉择",
       "relation": "creates",
       "object": "抉择沉浸",
-      "explanation": "给对话选项套上倒计时、并让角色记住你的回应，从根本上改变了玩家做选择的方式：没有时间翻遍所有选项算计最优解，几秒内必须回应，于是玩家只能凭当下的情绪与对自己所演角色的理解脱口而出，选择因此更像「我这个人会怎么做」而非「怎么选收益最大」；再用章末的抉择汇报把这份即时反应钉成不可重来的记录，强化了「这是我的选择」的代入与沉浸，可复用于希望用「倒计时 + 不可回退记录」抑制玩家的最优解算计、把抉择推向角色扮演式即时反应与情感沉浸的设计。",
-      "evidence": [
-        {
-          "title": "倒计时逼出沉浸抉择解读",
-          "quote_or_summary": "倒计时不给算计时间，玩家凭情绪与人设即时回应，章末记录强化「这是我的选择」的代入沉浸。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "给对话选项套上倒计时、并让角色记住你的回应，从根本上改变了玩家做选择的方式：没有时间翻遍所有选项算计最优解，几秒内必须回应，于是玩家只能凭当下的情绪与对自己所演角色的理解脱口而出，选择因此更像「我这个人会怎么做」而非「怎么选收益最大」；再用章末的抉择汇报把这份即时反应钉成不可重来的记录，强化了「这是我的选择」的代入与沉浸，可复用于希望用「倒计时 + 不可回退记录」抑制玩家的最优解算计、把抉择推向角色扮演式即时反应与情感沉浸的设计。"
     }
   ]
 }

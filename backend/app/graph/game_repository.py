@@ -47,8 +47,7 @@ class GameRepository:
     def _read_games(tx) -> list[dict]:
         result = tx.run(
             "MATCH (g:Game) RETURN g.id AS id, g.title AS title, "
-            "g.short_description AS short_description, g.confidence AS confidence, "
-            "g.quality_status AS quality_status ORDER BY g.title"
+            "g.short_description AS short_description ORDER BY g.title"
         )
         return [dict(record) for record in result]
 

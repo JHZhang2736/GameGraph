@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_phasmophobia",
     "title": "Phasmophobia",
-    "source_refs": [
-      {
-        "title": "Phasmophobia（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Phasmophobia_(video_game)",
-        "notes": "类型（第一人称生存恐怖调查）、单人或最多四人合作、靠搜集证据辨别鬼魂类型、27 种鬼各有独特行为、用三项（或更少）证据演绎鬼型、理智随时间与遭遇下降、理智过低时鬼会猎杀玩家须躲藏逃离、语音识别让特定设备与鬼理解关键词、近距与对讲两套语音、从货车基地购买升级 EMF/温度计/相机/十字架等装备、在货车记录线索、Kinetic Games 用 Unity 开发、2020 年 9 月抢先体验、2024 年 10 月上主机等事实来源。"
-      }
-    ],
     "short_description": "一款第一人称生存恐怖调查游戏，单人或最多四人合作进入闹鬼场所：用 EMF、温度计、相机、十字架等装备搜集三项证据、从 27 种鬼魂中演绎出当前鬼型，理智随时间与遭遇下降、过低时鬼会发动猎杀逼玩家躲藏逃离，并支持语音识别（对鬼喊话）与近距/对讲语音；Kinetic Games 用 Unity 开发、2020 年抢先体验。",
     "selection_reason": "作为「把证据搜集演绎与理智压力做成合作恐怖核心」的代表：用有限证据从多种鬼型中反推答案，把恐怖从被动受惊转成主动调查；再以理智系统制造「越深入越危险」的张力、用语音识别让玩家的真实喊话被鬼听见，是研究合作恐怖、证据演绎与语音交互的高价值参考。"
   },
@@ -20,71 +13,82 @@
     "progression_model": "靠完成目标、拍摄证据与生还赚取金钱与经验，解锁更多场所与更高级装备；进度体现为账户等级、已解锁装备与可挑战难度，玩家技巧（辨鬼与躲猎杀）才是真正成长。",
     "failure_model": "理智过低时鬼发动猎杀，被抓住的玩家即死亡、失去本局携带装备，存活的队友须撤回货车才算成功撤离，全员阵亡则任务失败。",
     "content_structure": "以多张闹鬼地图、27 种行为各异的鬼型与多项证据为骨架，靠装备取证、理智压力、躲藏逃生与合作分工承载流程与重玩，支持单人与最多四人合作。",
-    "main_player_actions": ["道具运用", "秘密解谜", "潜行"],
-    "main_player_decisions": ["风险取舍", "时间分配", "探索路线"],
-    "main_player_experiences": ["氛围营造", "竞技紧张", "协作默契"],
-    "main_mechanics": ["证据推理", "理智系统", "语音识别", "合作生存", "近距语音"],
-    "replayability_sources": ["程序生成", "难度分级", "赛季更新"],
-    "production_constraints": ["小型团队", "Unity 引擎"],
-    "innovation_patterns": ["证据推理", "压力系统"],
-    "reusable_reference_patterns": ["合作生存", "压力系统"],
-    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
-    "genre": ["生存恐怖", "合作射击"],
-    "art_style": ["写实美术"],
-    "audio_style": ["环境音"],
-    "perspective": ["第一人称"],
-    "theme": ["生存恐怖", "灵异"],
-    "narrative_style": ["环境叙事", "无叙事"],
-    "game_feel": ["紧张节奏", "沉浸代入"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "道具运用",
+      "秘密解谜",
+      "潜行"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "时间分配",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "竞技紧张",
+      "协作默契"
+    ],
+    "main_mechanics": [
+      "证据推理",
+      "理智系统",
+      "语音识别",
+      "合作生存",
+      "近距语音"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "难度分级",
+      "赛季更新"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "Unity 引擎"
+    ],
+    "innovation_patterns": [
+      "证据推理",
+      "压力系统"
+    ],
+    "reusable_reference_patterns": [
+      "合作生存",
+      "压力系统"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "玩家留存"
+    ],
+    "genre": [
+      "生存恐怖",
+      "合作射击"
+    ],
+    "art_style": [
+      "写实美术"
+    ],
+    "audio_style": [
+      "环境音"
+    ],
+    "perspective": [
+      "第一人称"
+    ],
+    "theme": [
+      "生存恐怖",
+      "灵异"
+    ],
+    "narrative_style": [
+      "环境叙事",
+      "无叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "沉浸代入"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "证据推理",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "三项证据演绎鬼型",
-            "quote_or_summary": "玩家用装备搜集三项（或更少）证据，从 27 种行为各异的鬼魂中演绎出当前鬼型。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "理智系统",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "理智下降触发猎杀",
-            "quote_or_summary": "理智随时间与遭遇被动下降并在遭遇时加速，过低时不同鬼会在各自阈值发动猎杀，逼玩家躲藏逃离。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "语音识别",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "对鬼喊话被听见",
-            "quote_or_summary": "语音识别让特定装备、诅咒物与鬼魂能理解玩家说出的关键词，玩家的真实喊话会触发反应。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Phasmophobia 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Phasmophobia_(video_game)",
-        "quote_or_summary": "第一人称合作生存恐怖调查，搜集三项证据从 27 种鬼演绎鬼型、理智下降触发猎杀逼躲藏、语音识别对鬼喊话、近距与对讲语音、货车基地购买升级装备，Kinetic Games 用 Unity 开发，2020 年抢先体验。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "证据推理",
+      "理智系统",
+      "语音识别"
+    ]
   },
   "claims": [
     {
@@ -92,16 +96,7 @@
       "subject": "理智系统",
       "relation": "creates",
       "object": "节奏张力",
-      "explanation": "把「搜证」与「危险」用理智值反向耦合：玩家越深入靠近鬼魂搜集证据，理智掉得越快，而理智见底就会触发致命猎杀，于是取证进度与生存安全成为此消彼长的两端，逼玩家在「再多查一项证据」与「赶紧撤退回血」之间反复权衡，把调查过程天然切成紧张与喘息交替的节奏，可复用于希望用「一个随深入而流失的资源」为探索/调查类玩法注入进退张力的设计。",
-      "evidence": [
-        {
-          "title": "理智耦合搜证解读",
-          "quote_or_summary": "理智随深入搜证而流失、见底触发猎杀，使取证与生存此消彼长，逼玩家在多查与撤退间权衡。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把「搜证」与「危险」用理智值反向耦合：玩家越深入靠近鬼魂搜集证据，理智掉得越快，而理智见底就会触发致命猎杀，于是取证进度与生存安全成为此消彼长的两端，逼玩家在「再多查一项证据」与「赶紧撤退回血」之间反复权衡，把调查过程天然切成紧张与喘息交替的节奏，可复用于希望用「一个随深入而流失的资源」为探索/调查类玩法注入进退张力的设计。"
     }
   ]
 }

@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_black_jacket",
     "title": "Black Jacket",
-    "source_refs": [
-      {
-        "title": "Black Jacket（Steam，appid 3100370）",
-        "url": "https://store.steampowered.com/app/3100370/Black_Jacket/",
-        "notes": "类型（以二十一点为底的肉鸽牌组构筑）、Mi'pu'mi Games 开发、Skystone Games 发行、2026 年发售、设定为困在死后世界靠扭曲版 21 点赢钱贿赂摆渡人求自由、玩家与对手各持自定义牌组（非共用 52 张）、卡牌带特殊效果（逼对手加注、偷看下一张、削减点数）、分支路线、商店、提供永久增益的被动道具、烧废牌精简牌组、被比作 Balatro 等事实来源。"
-      },
-      {
-        "title": "Black Jacket: blackjack roguelike deckbuilder（PCGamesN）",
-        "url": "https://www.pcgamesn.com/black-jacket/blackjack-roguelike-deckbuilder",
-        "notes": "二十一点规则改造的肉鸽构筑、自定义牌组与特殊牌效、与 Balatro 的异同等事实来源。"
-      }
-    ],
     "short_description": "一款以二十一点为底的肉鸽牌组构筑游戏，Mi'pu'mi Games 开发、Skystone Games 发行、2026 年发售：玩家被困死后世界，须在一场扭曲版「21 点」里斗赢其他亡魂、赚够贿赂摆渡人的钱币以求自由。与共用一副 52 张牌不同，你和对手各持一套完全自定义、带特殊效果的牌组——有的逼对手加注、有的偷看下一张、有的削减牌面点数；路上还有分支路线、商店、提供永久增益的被动道具，并可烧掉废牌精简牌组。",
     "selection_reason": "作为「把二十一点改造成构筑肉鸽」的代表：把人人会玩的 21 点规则，叠上自定义牌组与逼加注、偷看、改点数等特殊牌效，再套进商店、被动道具与烧牌精简的肉鸽框架，是研究二十一点构筑、赌博玩法肉鸽化与特殊牌效协同的高价值参考。"
   },
@@ -25,71 +13,78 @@
     "progression_model": "局内靠商店购卡、被动道具与烧牌精简滚雪球式强化牌组，局外靠肉鸽解锁推进；进度体现为牌组构成、被动道具搭配与肉鸽路线深度。",
     "failure_model": "在 21 点对局中输光筹码即一局失败、须重启新的肉鸽路线，核心压力在于既要靠特效与点数博取胜利、又要管控爆牌与对手的干扰风险。",
     "content_structure": "以肉鸽分支路线与逐场 21 点对局为骨架，靠自定义牌组、特殊牌效与永久增益道具承载构筑深度，以程序化路线与构筑多样承载重玩，单人。",
-    "main_player_actions": ["出牌", "卡牌取舍"],
-    "main_player_decisions": ["风险取舍", "道具选择", "装备搭配"],
-    "main_player_experiences": ["构筑乐趣", "滚雪球快感", "竞技紧张"],
-    "main_mechanics": ["二十一点", "牌组构筑", "卡牌交互", "商店经济"],
-    "replayability_sources": ["程序生成", "构筑多样"],
-    "production_constraints": ["小型团队"],
-    "innovation_patterns": ["二十一点", "牌组构筑"],
-    "reusable_reference_patterns": ["二十一点", "牌组构筑", "卡牌交互"],
-    "non_replicable_risks": ["平衡复杂度", "题材争议"],
-    "genre": ["卡牌构筑", "类肉鸽"],
-    "art_style": ["哥特卡通"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["第三人称"],
-    "theme": ["宗教", "黑色幽默"],
-    "narrative_style": ["极简叙事"],
-    "game_feel": ["策略权衡", "紧张节奏"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "出牌",
+      "卡牌取舍"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "道具选择",
+      "装备搭配"
+    ],
+    "main_player_experiences": [
+      "构筑乐趣",
+      "滚雪球快感",
+      "竞技紧张"
+    ],
+    "main_mechanics": [
+      "二十一点",
+      "牌组构筑",
+      "卡牌交互",
+      "商店经济"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样"
+    ],
+    "production_constraints": [
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "二十一点",
+      "牌组构筑"
+    ],
+    "reusable_reference_patterns": [
+      "二十一点",
+      "牌组构筑",
+      "卡牌交互"
+    ],
+    "non_replicable_risks": [
+      "平衡复杂度",
+      "题材争议"
+    ],
+    "genre": [
+      "卡牌构筑",
+      "类肉鸽"
+    ],
+    "art_style": [
+      "哥特卡通"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "第三人称"
+    ],
+    "theme": [
+      "宗教",
+      "黑色幽默"
+    ],
+    "narrative_style": [
+      "极简叙事"
+    ],
+    "game_feel": [
+      "策略权衡",
+      "紧张节奏"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "二十一点",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "扭曲版 21 点对局",
-            "quote_or_summary": "核心是一场扭曲版二十一点：凑点数不爆牌赢过对手，但双方各持自定义牌组而非共用 52 张牌。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "牌组构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "自定义牌组与精简",
-            "quote_or_summary": "玩家组建完全自定义的牌组、在商店购卡、烧掉废牌精简牌组以追求强力组合。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "卡牌交互",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "特殊牌效干扰对手",
-            "quote_or_summary": "卡牌带特殊效果，如逼对手加注、偷看下一张、削减牌面点数，可临场干扰对局。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Black Jacket 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/3100370/Black_Jacket/",
-        "quote_or_summary": "以二十一点为底的肉鸽牌组构筑，双方各持自定义带特效牌组、逼加注/偷看/改点数、分支路线、商店、永久增益道具、烧牌精简，Mi'pu'mi Games 开发、Skystone Games 发行，2026 年发售。",
-        "notes": "事实取自 Steam 商店页与 PCGamesN。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "二十一点",
+      "牌组构筑",
+      "卡牌交互"
+    ]
   },
   "claims": [
     {
@@ -97,16 +92,7 @@
       "subject": "二十一点",
       "relation": "reduces",
       "object": "操作摩擦",
-      "explanation": "拿一套几乎人人都会的赌桌规则（21 点：凑点数、别爆牌）当底座，玩家无需学习全新的战斗系统就能立刻上手，认知负担几乎为零；而构筑深度则从「往这副熟悉的牌里塞什么特效卡」长出来，复杂度被推迟到玩家已经玩得顺手之后。熟悉的规则降低了入门门槛与上手摩擦，自定义牌组与歪招特效再把天花板抬高。可复用于希望借「大众熟知的既有玩法」作底座、以降低上手摩擦换取构筑深度的肉鸽设计——也提示其题材争议与平衡风险。",
-      "evidence": [
-        {
-          "title": "熟知规则降摩擦解读",
-          "quote_or_summary": "以人人会玩的 21 点为底座免去重新学习成本，构筑深度从熟悉规则上叠加，显著降低上手摩擦。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "拿一套几乎人人都会的赌桌规则（21 点：凑点数、别爆牌）当底座，玩家无需学习全新的战斗系统就能立刻上手，认知负担几乎为零；而构筑深度则从「往这副熟悉的牌里塞什么特效卡」长出来，复杂度被推迟到玩家已经玩得顺手之后。熟悉的规则降低了入门门槛与上手摩擦，自定义牌组与歪招特效再把天花板抬高。可复用于希望借「大众熟知的既有玩法」作底座、以降低上手摩擦换取构筑深度的肉鸽设计——也提示其题材争议与平衡风险。"
     }
   ]
 }

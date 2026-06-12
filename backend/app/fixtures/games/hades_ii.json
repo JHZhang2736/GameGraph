@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_hades_ii",
     "title": "Hades II",
-    "source_refs": [
-      {
-        "title": "Hades II（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Hades_II",
-        "notes": "类型（肉鸽动作角色扮演）、主角 Melinoë、逐局闯关失败回十字路口枢纽、奥林匹斯恩赐构筑、新增「魔法条」资源、多种武器、跨局元进度、地面与冥界两条生物群系路线、巫术题材、对抗时间泰坦 Chronos、等距视角、Jen Zee 美术、Supergiant 开发、2025 年正式发售等事实来源。"
-      }
-    ],
     "short_description": "《Hades》的续作，一款希腊神话题材的肉鸽动作角色扮演游戏，玩家扮演冥界公主 Melinoë，凭奥林匹斯诸神恩赐与新增的「魔法」资源构筑能力，沿冥界与地面两条路线闯关，目标击败时间泰坦 Chronos。",
     "selection_reason": "作为成功续作的范本：在前作神恩构筑与死亡叙事的基础上，引入「魔法条」资源与巫术系统、并提供冥界与地面两条截然不同的生物群系路线，在保留核心爽感的同时扩展构筑与结构维度，是研究肉鸽续作迭代的高价值参考。"
   },
@@ -20,71 +13,87 @@
     "progression_model": "单局靠诸神恩赐与魔法资源临时构筑；跨局以巫术解锁、材料采集与枢纽升级稳步变强，并通过对话推进剧情，进度兼有战力成长与叙事两条线。",
     "failure_model": "生命归零即被击败，送回十字路口枢纽，需从头开始新一轮，但保留永久升级、解锁与剧情进度。",
     "content_structure": "提供冥界（厄瑞玻斯、俄刻阿诺斯等）与地面（厄菲拉、忒萨利亚、奥林匹斯山等）两条路线，以神恩构筑、魔法资源、多武器、巫术元进度与分支对话为骨架，单人。",
-    "main_player_actions": ["近战攻击", "远程攻击", "翻滚闪避", "技能释放"],
-    "main_player_decisions": ["增益选择", "武器搭配", "探索路线"],
-    "main_player_experiences": ["战斗精通", "构筑乐趣", "情感叙事", "滚雪球快感"],
-    "main_mechanics": ["程序生成", "永久死亡", "增益构筑", "魔法资源", "元进度", "死亡叙事"],
-    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
-    "production_constraints": ["手绘美术", "自研引擎", "小型团队"],
-    "innovation_patterns": ["魔法资源", "增益构筑"],
-    "reusable_reference_patterns": ["增益构筑", "死亡叙事", "元进度"],
-    "non_replicable_risks": ["高品质手绘量", "品牌积淀"],
-    "genre": ["类肉鸽", "动作角色扮演"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["摇滚配乐", "动态配乐"],
-    "perspective": ["等距"],
-    "theme": ["神话"],
-    "narrative_style": ["对话叙事", "碎片化叙事"],
-    "game_feel": ["精准近战", "流畅响应"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "近战攻击",
+      "远程攻击",
+      "翻滚闪避",
+      "技能释放"
+    ],
+    "main_player_decisions": [
+      "增益选择",
+      "武器搭配",
+      "探索路线"
+    ],
+    "main_player_experiences": [
+      "战斗精通",
+      "构筑乐趣",
+      "情感叙事",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "程序生成",
+      "永久死亡",
+      "增益构筑",
+      "魔法资源",
+      "元进度",
+      "死亡叙事"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "构筑多样",
+      "角色解锁"
+    ],
+    "production_constraints": [
+      "手绘美术",
+      "自研引擎",
+      "小型团队"
+    ],
+    "innovation_patterns": [
+      "魔法资源",
+      "增益构筑"
+    ],
+    "reusable_reference_patterns": [
+      "增益构筑",
+      "死亡叙事",
+      "元进度"
+    ],
+    "non_replicable_risks": [
+      "高品质手绘量",
+      "品牌积淀"
+    ],
+    "genre": [
+      "类肉鸽",
+      "动作角色扮演"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "摇滚配乐",
+      "动态配乐"
+    ],
+    "perspective": [
+      "等距"
+    ],
+    "theme": [
+      "神话"
+    ],
+    "narrative_style": [
+      "对话叙事",
+      "碎片化叙事"
+    ],
+    "game_feel": [
+      "精准近战",
+      "流畅响应"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "增益构筑",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "诸神恩赐",
-            "quote_or_summary": "每局沿途从奥林匹斯诸神处选取恩赐（boon）构筑能力，持续强化本轮战斗。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "魔法资源",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "新增魔法条",
-            "quote_or_summary": "续作新增可在战斗中回充的「魔法条」资源，用于释放法术等能力。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "探索路线",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "两条生物群系路线",
-            "quote_or_summary": "提供冥界与地面两条截然不同的生物群系路线，每局可选不同方向。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Hades II 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Hades_II",
-        "quote_or_summary": "肉鸽动作角色扮演，主角 Melinoë，失败回十字路口，诸神恩赐构筑，新增魔法条资源，多武器，跨局元进度，冥界与地面两条路线，巫术题材，对抗 Chronos，Supergiant 开发，2025 年正式发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "增益构筑",
+      "魔法资源",
+      "探索路线"
+    ]
   },
   "claims": [
     {
@@ -92,16 +101,7 @@
       "subject": "探索路线",
       "relation": "increases",
       "object": "重玩动力",
-      "explanation": "为肉鸽提供冥界与地面两条环境、敌人与 Boss 都截然不同的可选路线，使每局开局即面临结构性分叉，把重玩从「同一条路换构筑」拓展为「换一整套内容」，显著提升长期重玩动力，可复用于希望延长肉鸽内容寿命的结构设计。",
-      "evidence": [
-        {
-          "title": "分支路线解读",
-          "quote_or_summary": "两条截然不同的路线让每局面临结构性选择，提升内容多样与重玩动力。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "为肉鸽提供冥界与地面两条环境、敌人与 Boss 都截然不同的可选路线，使每局开局即面临结构性分叉，把重玩从「同一条路换构筑」拓展为「换一整套内容」，显著提升长期重玩动力，可复用于希望延长肉鸽内容寿命的结构设计。"
     }
   ]
 }

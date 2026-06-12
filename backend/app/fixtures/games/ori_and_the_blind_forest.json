@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_ori_and_the_blind_forest",
     "title": "Ori and the Blind Forest",
-    "source_refs": [
-      {
-        "title": "Ori and the Blind Forest（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Ori_and_the_Blind_Forest",
-        "notes": "核心机制、开发背景、灵魂链接检查点系统与能力树的主要参考来源。"
-      },
-      {
-        "title": "Ori and the Blind Forest: Definitive Edition Steam 商店页面",
-        "url": "https://store.steampowered.com/app/387290/Ori_and_the_Blind_Forest_Definitive_Edition/",
-        "notes": "类型标签、功能描述与玩家评价的补充来源。"
-      }
-    ],
     "short_description": "一款手绘风格的 2D 类银河城平台冒险游戏，Moon Studios 开发，以精湛的美术与情感叙事著称，玩家控制 Ori 在垂死森林中通过能力解锁探索并拯救世界。",
     "selection_reason": "作为手动检查点资源管理（灵魂链接）、高密度情感氛围营造与逃跑序列紧张感设计的参考；以小型分散团队实现了高品质手绘美术与全管弦乐配乐。"
   },
@@ -25,71 +13,88 @@
     "progression_model": "三条平行能力树（效率、力量、机动），每条树内须按顺序解锁；新移动能力（墙跳、二段跳、冲刺）直接解锁新区域；精确版（Definitive Edition）追加折跃点快速传送，降低回溯成本。",
     "failure_model": "角色生命值耗尽后送回最近的灵魂链接存档点；灵魂链接需消耗能量主动放置，能量资源有限，迫使玩家在安全存档与节约能量之间做权衡；逃跑序列死亡后重置至该序列起点。",
     "content_structure": "单张无缝连通大地图划分为主题森林区域；游戏以情感叙事驱动线性主线，夹杂逃跑序列作为高强度节点；精确版追加新区域与隐藏地点，扩充探索宽度。",
-    "main_player_actions": ["平台跳跃", "攀墙", "冲刺", "远程攻击", "秘密解谜"],
-    "main_player_decisions": ["探索路线", "存档时机", "能力树优先级", "风险取舍"],
-    "main_player_experiences": ["氛围营造", "探索发现", "情感叙事", "高难跑酷"],
-    "main_mechanics": ["能力门控探索", "非线性探索", "手动存档", "能力树", "逃跑序列"],
-    "replayability_sources": ["速通", "全收集", "难度分级"],
-    "production_constraints": ["Unity 引擎"],
-    "innovation_patterns": ["手动存档", "逃跑序列", "氛围营造"],
-    "reusable_reference_patterns": ["能力门控探索", "手动存档", "氛围营造"],
-    "non_replicable_risks": ["超长开发周期", "高品质手绘量", "全管弦乐制作成本"],
-    "genre": ["类银河城", "平台跳跃"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["管弦乐"],
-    "perspective": ["横版2D"],
-    "theme": ["自然", "森林童话"],
-    "narrative_style": ["过场驱动", "情感叙事"],
-    "game_feel": ["流畅跑酷", "动量"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "平台跳跃",
+      "攀墙",
+      "冲刺",
+      "远程攻击",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "探索路线",
+      "存档时机",
+      "能力树优先级",
+      "风险取舍"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "探索发现",
+      "情感叙事",
+      "高难跑酷"
+    ],
+    "main_mechanics": [
+      "能力门控探索",
+      "非线性探索",
+      "手动存档",
+      "能力树",
+      "逃跑序列"
+    ],
+    "replayability_sources": [
+      "速通",
+      "全收集",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "Unity 引擎"
+    ],
+    "innovation_patterns": [
+      "手动存档",
+      "逃跑序列",
+      "氛围营造"
+    ],
+    "reusable_reference_patterns": [
+      "能力门控探索",
+      "手动存档",
+      "氛围营造"
+    ],
+    "non_replicable_risks": [
+      "超长开发周期",
+      "高品质手绘量",
+      "全管弦乐制作成本"
+    ],
+    "genre": [
+      "类银河城",
+      "平台跳跃"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "管弦乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "自然",
+      "森林童话"
+    ],
+    "narrative_style": [
+      "过场驱动",
+      "情感叙事"
+    ],
+    "game_feel": [
+      "流畅跑酷",
+      "动量"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "能力门控探索",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "能力树与区域解锁",
-            "quote_or_summary": "墙跳、二段跳、冲刺等技能沿能力树依序解锁，每项新技能直接开放此前无法进入的地图区域。",
-            "notes": "维基百科可观察机制，类银河城核心结构。"
-          }
-        ]
-      },
-      {
-        "tag": "氛围营造",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "手绘美术与全管弦乐",
-            "quote_or_summary": "游戏因手绘美术风格、Gareth Coker 全管弦乐配乐与情感叙事而广受好评，氛围营造被评论广泛称为其核心卖点。",
-            "notes": "维基百科与 Steam 评价均将氛围作为首要优点。"
-          }
-        ]
-      },
-      {
-        "tag": "手动存档",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "灵魂链接系统",
-            "quote_or_summary": "玩家消耗有限能量手动放置存档点（灵魂链接），而非使用固定自动存档，这迫使玩家在推进节奏与安全保障之间做主动决策。",
-            "notes": "维基百科机制描述，可观察且独特的设计选择。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Ori and the Blind Forest 机制与开发综述",
-        "url": "https://en.wikipedia.org/wiki/Ori_and_the_Blind_Forest",
-        "quote_or_summary": "Moon Studios 分散团队，Unity 引擎；能力门控非线性探索，手动存档消耗资源，三条能力树顺序解锁，手绘美术与全管弦乐配乐驱动高强度氛围。",
-        "notes": "机制与生产事实主要来自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "能力门控探索",
+      "氛围营造",
+      "手动存档"
+    ]
   },
   "claims": [
     {
@@ -97,32 +102,14 @@
       "subject": "手动存档",
       "relation": "increases",
       "object": "探索张力",
-      "explanation": "将存档本身设计为需要消耗有限资源的主动行为，使每段无存档的探索都产生自发的紧张感。玩家不得不实时权衡：继续冒险推进还是停下来消耗能量存档，让探索本身带有持续的风险-奖励博弈。",
-      "evidence": [
-        {
-          "title": "灵魂链接设计分析",
-          "quote_or_summary": "强制消耗能量存档将「保存进度」本身变成了一个游戏决策，而非默认行为。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "将存档本身设计为需要消耗有限资源的主动行为，使每段无存档的探索都产生自发的紧张感。玩家不得不实时权衡：继续冒险推进还是停下来消耗能量存档，让探索本身带有持续的风险-奖励博弈。"
     },
     {
       "id": "claim_ori_atmosphere_narrative",
       "subject": "氛围营造",
       "relation": "enables",
       "object": "情感叙事",
-      "explanation": "Ori 的手绘美术与全管弦乐配乐并非独立于叙事之外的装饰——它们直接充当情感传递的媒介，使简单的「小角色救世界」主线在情感共鸣上远超叙事文本量所能实现的深度。",
-      "evidence": [
-        {
-          "title": "美术叙事分析",
-          "quote_or_summary": "评论普遍指出其视听体验与情感叙事高度融合，氛围是叙事传递的主要载体。",
-          "notes": "基于多条评价的解读性判断，中等置信度。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "Ori 的手绘美术与全管弦乐配乐并非独立于叙事之外的装饰——它们直接充当情感传递的媒介，使简单的「小角色救世界」主线在情感共鸣上远超叙事文本量所能实现的深度。"
     }
   ]
 }

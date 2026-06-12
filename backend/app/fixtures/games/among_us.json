@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_among_us",
     "title": "Among Us",
-    "source_refs": [
-      {
-        "title": "Among Us（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Among_Us",
-        "notes": "类型（社交推理派对游戏）、InnerSloth 开发、2018 年发售（iOS/Android 6 月、Windows 11 月）、每局 4–15 人、多数为完成任务的船员、少数随机为暗杀船员的内鬼、船员靠完成全部任务或票出全部内鬼获胜、内鬼靠击杀或破坏关键系统获胜、任务为小游戏、内鬼可破坏（断电/缺氧）与钻通风管、紧急会议讨论投票放逐、彩色无臂卡通宇航员、跨平台、2020 年因主播走红等事实来源。"
-      },
-      {
-        "title": "Among Us（Steam，appid 945360）",
-        "url": "https://store.steampowered.com/app/945360/Among_Us/",
-        "notes": "多人社交推理、船员对内鬼、任务与破坏、紧急会议投票放逐、跨平台等事实来源。"
-      }
-    ],
     "short_description": "一款多人社交推理派对游戏，InnerSloth 开发：每局 4–15 名玩家登上太空飞船，多数是埋头完成任务的「船员」，少数被随机指定为暗中破坏与暗杀的「内鬼」；船员靠完成全部任务或在会议上票出所有内鬼取胜，内鬼则靠击杀、破坏关键系统并在讨论中蒙混过关获胜，发现尸体或按下紧急按钮即召开会议、全员讨论与投票放逐嫌疑人，以极简的卡通宇航员美术呈现，2018 年发售、2020 年爆红。",
     "selection_reason": "作为「社交推理派对化、极低成本却引爆社交」的代表：它用任务、破坏、击杀与会议投票几条简单规则，制造出「谁是内鬼」的信息不对称与说谎博弈，把核心乐趣完全放到玩家之间的怀疑、辩解与试探上，是研究社交推理玩法、最小规则撬动社交张力与低成本爆款的高价值参考。"
   },
@@ -25,71 +13,78 @@
     "progression_model": "本作无角色养成，单局即终局；玩家的「成长」体现为对推理、伪装与说服技巧的熟练，长线进度只有外观解锁与自定义房规带来的玩法变化。",
     "failure_model": "船员一方若被内鬼击杀至人数劣势、或关键破坏（如缺氧、反应堆）未及时修复，即告失败；内鬼若被会议票出或船员做完全部任务则落败，胜负完全取决于击杀、破坏与投票的博弈结果。",
     "content_structure": "以飞船/基地地图、任务-破坏-击杀与会议投票的单局循环为骨架，靠多人社交推理承载核心乐趣，以外观收集与可自定义的房间规则承载变化与重玩，多人。",
-    "main_player_actions": ["社交互动", "物件操控", "走位"],
-    "main_player_decisions": ["风险取舍", "优先级排序", "道德抉择"],
-    "main_player_experiences": ["欢乐混乱", "竞技紧张", "协作默契"],
-    "main_mechanics": ["社交推理", "非对称协作", "互动干扰", "淘汰赛制"],
-    "replayability_sources": ["外观收集", "难度分级"],
-    "production_constraints": ["小型团队", "极简界面"],
-    "innovation_patterns": ["社交推理", "非对称协作"],
-    "reusable_reference_patterns": ["社交推理", "非对称协作", "互动干扰"],
-    "non_replicable_risks": ["大规模玩家社区", "玩家留存"],
-    "genre": ["派对游戏"],
-    "art_style": ["极简风格"],
-    "audio_style": ["极简音效"],
-    "perspective": ["俯视"],
-    "theme": ["科幻"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["紧张节奏", "策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "社交互动",
+      "物件操控",
+      "走位"
+    ],
+    "main_player_decisions": [
+      "风险取舍",
+      "优先级排序",
+      "道德抉择"
+    ],
+    "main_player_experiences": [
+      "欢乐混乱",
+      "竞技紧张",
+      "协作默契"
+    ],
+    "main_mechanics": [
+      "社交推理",
+      "非对称协作",
+      "互动干扰",
+      "淘汰赛制"
+    ],
+    "replayability_sources": [
+      "外观收集",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "极简界面"
+    ],
+    "innovation_patterns": [
+      "社交推理",
+      "非对称协作"
+    ],
+    "reusable_reference_patterns": [
+      "社交推理",
+      "非对称协作",
+      "互动干扰"
+    ],
+    "non_replicable_risks": [
+      "大规模玩家社区",
+      "玩家留存"
+    ],
+    "genre": [
+      "派对游戏"
+    ],
+    "art_style": [
+      "极简风格"
+    ],
+    "audio_style": [
+      "极简音效"
+    ],
+    "perspective": [
+      "俯视"
+    ],
+    "theme": [
+      "科幻"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "社交推理",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "找出隐藏内鬼",
-            "quote_or_summary": "玩家分为船员与隐藏的内鬼，靠目击、行踪与会议辩词推断身份，核心乐趣在玩家间的怀疑与说服。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "淘汰赛制",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "紧急会议投票放逐",
-            "quote_or_summary": "发现尸体或按紧急按钮即召开会议，全员讨论后投票放逐一名嫌疑人。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "互动干扰",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "内鬼破坏系统",
-            "quote_or_summary": "内鬼可破坏断电、缺氧、反应堆等关键系统制造混乱，逼船员分头抢修。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Among Us 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Among_Us",
-        "quote_or_summary": "多人社交推理派对游戏，4–15 人分船员与内鬼、任务/破坏/击杀、紧急会议讨论投票放逐、极简卡通美术、跨平台，InnerSloth 开发，2018 年发售、2020 年爆红。",
-        "notes": "事实取自维基百科与 Steam 商店页。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "社交推理",
+      "淘汰赛制",
+      "互动干扰"
+    ]
   },
   "claims": [
     {
@@ -97,16 +92,7 @@
       "subject": "社交推理",
       "relation": "creates",
       "object": "对抗张力",
-      "explanation": "把胜负判定从「操作技巧」搬到「谁在说谎」上：游戏只给极简的任务与击杀规则，却刻意隐藏身份、制造信息不对称，于是张力不再产生于角色之间的数值对抗，而产生于玩家之间——内鬼必须当面伪装与嫁祸，船员必须靠零碎线索质询与说服，每场会议都是一轮真实的人际博弈。规则越简单，留给说谎与试探的空间越大，社交本身成了引擎。可复用于希望用「隐藏身份 + 信息不对称 + 集体投票」以极少规则点燃玩家间对抗张力与口才博弈的多人设计。",
-      "evidence": [
-        {
-          "title": "隐藏身份生张力解读",
-          "quote_or_summary": "隐藏身份与信息不对称把对抗从角色数值移到玩家之间，极简规则反而放大说谎、质询与说服的社交博弈。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把胜负判定从「操作技巧」搬到「谁在说谎」上：游戏只给极简的任务与击杀规则，却刻意隐藏身份、制造信息不对称，于是张力不再产生于角色之间的数值对抗，而产生于玩家之间——内鬼必须当面伪装与嫁祸，船员必须靠零碎线索质询与说服，每场会议都是一轮真实的人际博弈。规则越简单，留给说谎与试探的空间越大，社交本身成了引擎。可复用于希望用「隐藏身份 + 信息不对称 + 集体投票」以极少规则点燃玩家间对抗张力与口才博弈的多人设计。"
     }
   ]
 }

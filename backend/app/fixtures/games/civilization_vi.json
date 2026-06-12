@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_civilization_vi",
     "title": "Sid Meier's Civilization VI",
-    "source_refs": [
-      {
-        "title": "Civilization VI（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Civilization_VI",
-        "notes": "类型（回合制 4X 策略）、城市区域需放在城市范围的地块且受相邻地形加成、科技树与市政树、灵感/尤里卡加速研究、多种胜利方式、AI 隐藏议程、程序生成地图、卡通化美术、Firaxis、2016 年发售等事实来源。"
-      }
-    ],
     "short_description": "一款回合制 4X 策略游戏，玩家从远古带领一个文明跨越各历史时代，探索、扩张、建城、研发科技与市政、外交或战争，通过军事、科技、文化、宗教或外交等多条路径争取胜利。",
     "selection_reason": "作为「区域系统把城市建设展开为空间规划」的代表：要求改良设施放到城市范围内的相邻地块并吃地形加成，将建城从堆叠数值变成依地形布局的空间谜题；其多元胜利与灵感机制亦是高价值参考。"
   },
@@ -20,71 +13,85 @@
     "progression_model": "经科技树与市政树双线推进、靠灵感与尤里卡完成特定任务加速研究；城市靠区域、奇观与人口成长，进度体现为版图、科技市政与朝某条胜利路径的累积。",
     "failure_model": "被征服、城市因忠诚度流失而脱离，或在胜利竞赛中被对手抢先达成条件，都会使玩家出局或落败。",
     "content_structure": "在程序生成地图上与带隐藏议程的 AI 文明竞争，以城市区域、科技树、市政树、宗教与外交为系统骨架，提供军事、科技、文化、宗教、外交等多种胜利方式，并由资料片扩充。",
-    "main_player_actions": ["城市建设", "单位调度", "科技研发", "外交博弈"],
-    "main_player_decisions": ["战略规划", "区域规划", "胜利路线", "外交取舍"],
-    "main_player_experiences": ["运筹帷幄", "系统掌控", "滚雪球快感"],
-    "main_mechanics": ["区域系统", "科技树", "多元胜利", "程序生成"],
-    "replayability_sources": ["程序生成", "多元胜利", "文明多样", "难度分级"],
-    "production_constraints": ["自研引擎", "卡通渲染", "大团队协作"],
-    "innovation_patterns": ["区域系统", "灵感激励"],
-    "reusable_reference_patterns": ["区域系统", "多元胜利", "灵感激励"],
-    "non_replicable_risks": ["系统复杂度", "品牌积淀"],
-    "genre": ["回合制策略", "4X策略"],
-    "art_style": ["卡通渲染"],
-    "audio_style": ["管弦乐", "动态配乐"],
-    "perspective": ["等距"],
-    "theme": ["历史", "文明发展"],
-    "narrative_style": ["无叙事"],
-    "game_feel": ["策略权衡"],
-    "team_model": ["大团队"],
+    "main_player_actions": [
+      "城市建设",
+      "单位调度",
+      "科技研发",
+      "外交博弈"
+    ],
+    "main_player_decisions": [
+      "战略规划",
+      "区域规划",
+      "胜利路线",
+      "外交取舍"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "系统掌控",
+      "滚雪球快感"
+    ],
+    "main_mechanics": [
+      "区域系统",
+      "科技树",
+      "多元胜利",
+      "程序生成"
+    ],
+    "replayability_sources": [
+      "程序生成",
+      "多元胜利",
+      "文明多样",
+      "难度分级"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "卡通渲染",
+      "大团队协作"
+    ],
+    "innovation_patterns": [
+      "区域系统",
+      "灵感激励"
+    ],
+    "reusable_reference_patterns": [
+      "区域系统",
+      "多元胜利",
+      "灵感激励"
+    ],
+    "non_replicable_risks": [
+      "系统复杂度",
+      "品牌积淀"
+    ],
+    "genre": [
+      "回合制策略",
+      "4X策略"
+    ],
+    "art_style": [
+      "卡通渲染"
+    ],
+    "audio_style": [
+      "管弦乐",
+      "动态配乐"
+    ],
+    "perspective": [
+      "等距"
+    ],
+    "theme": [
+      "历史",
+      "文明发展"
+    ],
+    "narrative_style": [
+      "无叙事"
+    ],
+    "game_feel": [
+      "策略权衡"
+    ],
+    "team_model": [
+      "大团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "区域系统",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "区域分散布局",
-            "quote_or_summary": "部分城市改良设施须放在城市范围内、城市中心之外的地块上，区域依相邻地形（如学院吃山脉与雨林）获得加成。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "灵感激励",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "尤里卡时刻",
-            "quote_or_summary": "科技树含尤里卡时刻，完成特定任务即加速对应研究；市政树有对应的灵感机制。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "多元胜利",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "多种胜利方式",
-            "quote_or_summary": "提供军事、科技、文化、宗教与外交（风云变幻资料片重新引入）等多条胜利路径。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Civilization VI 玩法与制作综述",
-        "url": "https://en.wikipedia.org/wiki/Civilization_VI",
-        "quote_or_summary": "回合制 4X 策略，区域须铺到吃地形加成的相邻地块，科技树与市政树，灵感/尤里卡加速研究，多种胜利方式，AI 隐藏议程，程序生成地图，卡通化美术，Firaxis 开发，2016 年发售。",
-        "notes": "事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "区域系统",
+      "灵感激励",
+      "多元胜利"
+    ]
   },
   "claims": [
     {
@@ -92,16 +99,7 @@
       "subject": "区域系统",
       "relation": "creates",
       "object": "空间决策",
-      "explanation": "要求改良设施铺到城市范围内的相邻地块、并依周边地形获得加成，把城市发展从单格堆叠数值变成与地形绑定的空间布局谜题，新增一层在前作中因「一切都堆在一格」而缺失的规划维度，可复用于 4X 与城建设计。",
-      "evidence": [
-        {
-          "title": "区域空间解读",
-          "quote_or_summary": "区域上图并吃相邻加成，使建城成为依地形的空间规划。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "要求改良设施铺到城市范围内的相邻地块、并依周边地形获得加成，把城市发展从单格堆叠数值变成与地形绑定的空间布局谜题，新增一层在前作中因「一切都堆在一格」而缺失的规划维度，可复用于 4X 与城建设计。"
     }
   ]
 }

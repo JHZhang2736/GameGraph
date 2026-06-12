@@ -2,13 +2,6 @@
   "candidate": {
     "id": "game_animal_well",
     "title": "Animal Well",
-    "source_refs": [
-      {
-        "title": "Animal Well（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/Animal_Well",
-        "notes": "机制、分层秘密、单人开发与自研引擎的参考来源。"
-      }
-    ],
     "short_description": "一款低分辨率像素风的类银河城解谜平台游戏，围绕多用途道具与层层嵌套的秘密构建，由单人开发者打造。",
     "selection_reason": "作为秘密密度高、道具多用途设计与社区协作式元谜题的参考；由一人在自研 C++ 引擎上、带着刻意的技术限制完成。"
   },
@@ -20,71 +13,94 @@
     "progression_model": "通过获得的道具（弹簧、飞盘、泡泡棒等）进行类银河城式门控，这些道具兼作移动与解谜工具；后期进展来自秘密、彩蛋与未公开的交互，而非数值成长。",
     "failure_model": "危险与某些生物会杀死角色并送回存档点；生存依赖道具（鞭炮吓退生物、火柴驱散幽灵）而非正面战斗。",
     "content_structure": "一个 16×16 的翻屏房间网格，组织成四个递进层级，从第一层的曼提柯尔 Boss，到隐藏彩蛋、ARG 式社区谜题与速通及未公开解锁。",
-    "main_player_actions": ["平台跳跃", "翻屏移动", "道具运用", "生物驱避", "秘密解谜"],
-    "main_player_decisions": ["道具选择", "探索路线", "秘密取舍", "社区协作"],
-    "main_player_experiences": ["氛围营造", "诡异", "探索发现", "涌现玩法"],
-    "main_mechanics": ["多用途道具", "非线性探索", "翻屏房间", "分层秘密", "社区协作解谜", "非战斗", "生物应对"],
-    "replayability_sources": ["分层秘密", "社区协作解谜", "速通", "彩蛋收集"],
-    "production_constraints": ["自研引擎", "低分辨率", "无武器战斗", "无过场动画"],
-    "innovation_patterns": ["多用途道具", "分层秘密", "社区协作解谜"],
-    "reusable_reference_patterns": ["多用途道具", "分层秘密", "自我限制设计"],
-    "non_replicable_risks": ["超长开发周期", "自研引擎", "大规模玩家社区"],
-    "genre": ["类银河城", "解谜平台"],
-    "art_style": ["像素美术"],
-    "audio_style": ["极简音效", "环境音"],
-    "perspective": ["横版2D"],
-    "theme": ["动物", "超现实"],
-    "narrative_style": ["无文字", "环境叙事"],
-    "game_feel": ["精准平台"],
-    "team_model": ["单人开发"],
+    "main_player_actions": [
+      "平台跳跃",
+      "翻屏移动",
+      "道具运用",
+      "生物驱避",
+      "秘密解谜"
+    ],
+    "main_player_decisions": [
+      "道具选择",
+      "探索路线",
+      "秘密取舍",
+      "社区协作"
+    ],
+    "main_player_experiences": [
+      "氛围营造",
+      "诡异",
+      "探索发现",
+      "涌现玩法"
+    ],
+    "main_mechanics": [
+      "多用途道具",
+      "非线性探索",
+      "翻屏房间",
+      "分层秘密",
+      "社区协作解谜",
+      "非战斗",
+      "生物应对"
+    ],
+    "replayability_sources": [
+      "分层秘密",
+      "社区协作解谜",
+      "速通",
+      "彩蛋收集"
+    ],
+    "production_constraints": [
+      "自研引擎",
+      "低分辨率",
+      "无武器战斗",
+      "无过场动画"
+    ],
+    "innovation_patterns": [
+      "多用途道具",
+      "分层秘密",
+      "社区协作解谜"
+    ],
+    "reusable_reference_patterns": [
+      "多用途道具",
+      "分层秘密",
+      "自我限制设计"
+    ],
+    "non_replicable_risks": [
+      "超长开发周期",
+      "自研引擎",
+      "大规模玩家社区"
+    ],
+    "genre": [
+      "类银河城",
+      "解谜平台"
+    ],
+    "art_style": [
+      "像素美术"
+    ],
+    "audio_style": [
+      "极简音效",
+      "环境音"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "动物",
+      "超现实"
+    ],
+    "narrative_style": [
+      "无文字",
+      "环境叙事"
+    ],
+    "game_feel": [
+      "精准平台"
+    ],
+    "team_model": [
+      "单人开发"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "多用途道具",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "道具机制",
-            "quote_or_summary": "弹簧、飞盘、泡泡棒等道具各自服务于移动与解谜的多种用途。",
-            "notes": "维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "分层秘密",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "分层秘密",
-            "quote_or_summary": "后期层级包含 ARG 元素，需要综合大量玩家的部分解法，另有速通与未公开解锁。",
-            "notes": "维基百科可观察结构。"
-          }
-        ]
-      },
-      {
-        "tag": "独立开发",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "开发",
-            "quote_or_summary": "Billy Basso 以单人开发者身份用 C++ 从零自研引擎，历时约七年。",
-            "notes": "维基百科生产事实。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "Animal Well 玩法与开发综述",
-        "url": "https://en.wikipedia.org/wiki/Animal_Well",
-        "quote_or_summary": "非线性类银河城解谜平台游戏，多用途道具，四层递进秘密含 ARG 谜题，单人在自研 C++ 引擎上完成。",
-        "notes": "机制与生产事实取自维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "多用途道具",
+      "分层秘密",
+      "独立开发"
+    ]
   },
   "claims": [
     {
@@ -92,32 +108,14 @@
       "subject": "多用途道具",
       "relation": "increases",
       "object": "谜题深度",
-      "explanation": "为每件道具设计多种涌现用途，使一小组道具就能生成大量不同谜题，在不依赖庞大内容产线的情况下获得深度与惊喜，适合单人开发者。",
-      "evidence": [
-        {
-          "title": "道具设计解读",
-          "quote_or_summary": "每件道具服务于多种用途，而非一次性钥匙。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "为每件道具设计多种涌现用途，使一小组道具就能生成大量不同谜题，在不依赖庞大内容产线的情况下获得深度与惊喜，适合单人开发者。"
     },
     {
       "id": "claim_animal_well_layered_secrets",
       "subject": "分层秘密",
       "relation": "creates",
       "object": "社区长尾参与",
-      "explanation": "把最深层秘密设计成需要综合大量玩家的部分解法，使发售后的探索变成协作式社区事件，把参与度延伸到单次通关之外。",
-      "evidence": [
-        {
-          "title": "秘密结构解读",
-          "quote_or_summary": "最深层谜题需要至少数十名玩家综合解法。",
-          "notes": "基于可观察结构的解释性判断，未经外部引用。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把最深层秘密设计成需要综合大量玩家的部分解法，使发售后的探索变成协作式社区事件，把参与度延伸到单次通关之外。"
     }
   ]
 }

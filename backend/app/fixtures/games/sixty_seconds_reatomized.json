@@ -2,18 +2,6 @@
   "candidate": {
     "id": "game_sixty_seconds_reatomized",
     "title": "60 Seconds! Reatomized",
-    "source_refs": [
-      {
-        "title": "60 Seconds! Reatomized（Steam，appid 1012880）",
-        "url": "https://store.steampowered.com/app/1012880/60_Seconds_Reatomized/",
-        "notes": "类型（黑色幽默核战末世生存）、Robot Gentleman 开发发行、2019 年作为《60 Seconds!》重制版发售、两阶段玩法（核弹落下前 60 秒限时搜刮物资与家人冲进地堡，随后地堡生存）、按初始物资量配给食物与水、家庭成员身心状态会恶化、每天随机事件、外出探险风险等事实来源。"
-      },
-      {
-        "title": "60 Seconds!（维基百科）",
-        "url": "https://en.wikipedia.org/wiki/60_Seconds!",
-        "notes": "Robot Gentleman 开发、限时搜刮 + 地堡生存两阶段、配给消耗品、家庭成员精神状态因隔绝恶化并影响玩法、随机事件、Reatomized 重制内容等事实来源。"
-      }
-    ],
     "short_description": "一款黑色幽默的核战末世生存游戏，波兰工作室 Robot Gentleman 开发，2019 年作为《60 Seconds!》的重制版发售：游戏分两阶段——核弹将在 60 秒后落下，玩家先在自家屋里限时疯狂搜刮物资、并把家人一并拽进地堡；随后在地堡里靠搜回来的有限补给配给食物与水、照看一家四口的身心状态、应对每天的随机事件，设法撑到救援或外出探险求生。",
     "selection_reason": "作为「把限时搜刮与资源配给生存拼成两段式」的代表：前 60 秒拿了什么、救了谁，原封不动地决定地堡阶段能不能活下去；配给、随机事件与家人身心崩溃共同制造黑色幽默包裹下的残酷抉择，是研究限时决策、物资配给生存与叙事化随机事件的高价值参考。"
   },
@@ -25,71 +13,84 @@
     "progression_model": "靠逐日推进的生存天数与随机事件链推进境遇，靠外出探险带回的物资与偶遇的角色改变处境；无传统数值养成，进度体现为存活天数、家庭成员状态与最终能否触发逃离或获救结局。",
     "failure_model": "家庭成员因饥饿、缺水、疾病或精神崩溃相继死亡，全员死亡即一局结束；前 60 秒漏带关键物资往往在地堡阶段慢慢致命，失败是一连串配给与取舍失误的累积。",
     "content_structure": "以「60 秒限时搜刮 + 地堡资源配给生存」两阶段为骨架，靠随机事件链、家庭成员身心状态与外出探险抉择承载流程，以随机性与多结局承载重玩，单人。",
-    "main_player_actions": ["物件操控", "道具运用", "对话选择"],
-    "main_player_decisions": ["资源取舍", "风险取舍", "优先级排序"],
-    "main_player_experiences": ["运筹帷幄", "氛围营造", "欢乐混乱"],
-    "main_mechanics": ["限时搜刮", "物资配给", "生存模拟", "随机事件", "实时计时"],
-    "replayability_sources": ["多结局", "难度分级", "任务多样"],
-    "production_constraints": ["小型团队", "手绘美术", "系列复用"],
-    "innovation_patterns": ["限时搜刮", "实时计时"],
-    "reusable_reference_patterns": ["生存模拟", "实时计时"],
-    "non_replicable_risks": ["玩家留存", "系统复杂度"],
-    "genre": ["生存", "模拟经营"],
-    "art_style": ["手绘美术"],
-    "audio_style": ["氛围音乐"],
-    "perspective": ["横版2D"],
-    "theme": ["核战末世", "黑色幽默", "家庭情感"],
-    "narrative_style": ["碎片化叙事", "分支叙事"],
-    "game_feel": ["紧张节奏", "策略权衡"],
-    "team_model": ["小团队"],
+    "main_player_actions": [
+      "物件操控",
+      "道具运用",
+      "对话选择"
+    ],
+    "main_player_decisions": [
+      "资源取舍",
+      "风险取舍",
+      "优先级排序"
+    ],
+    "main_player_experiences": [
+      "运筹帷幄",
+      "氛围营造",
+      "欢乐混乱"
+    ],
+    "main_mechanics": [
+      "限时搜刮",
+      "物资配给",
+      "生存模拟",
+      "随机事件",
+      "实时计时"
+    ],
+    "replayability_sources": [
+      "多结局",
+      "难度分级",
+      "任务多样"
+    ],
+    "production_constraints": [
+      "小型团队",
+      "手绘美术",
+      "系列复用"
+    ],
+    "innovation_patterns": [
+      "限时搜刮",
+      "实时计时"
+    ],
+    "reusable_reference_patterns": [
+      "生存模拟",
+      "实时计时"
+    ],
+    "non_replicable_risks": [
+      "玩家留存",
+      "系统复杂度"
+    ],
+    "genre": [
+      "生存",
+      "模拟经营"
+    ],
+    "art_style": [
+      "手绘美术"
+    ],
+    "audio_style": [
+      "氛围音乐"
+    ],
+    "perspective": [
+      "横版2D"
+    ],
+    "theme": [
+      "核战末世",
+      "黑色幽默",
+      "家庭情感"
+    ],
+    "narrative_style": [
+      "碎片化叙事",
+      "分支叙事"
+    ],
+    "game_feel": [
+      "紧张节奏",
+      "策略权衡"
+    ],
+    "team_model": [
+      "小团队"
+    ],
     "reference_value_tags": [
-      {
-        "tag": "限时搜刮",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "60 秒倒计时抢救物资",
-            "quote_or_summary": "核弹落下前玩家只有 60 秒在屋中疯狂搜刮物资与家人冲进地堡，所带之物决定后续生存。",
-            "notes": "Steam 商店页与维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "物资配给",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "地堡按需配给食水",
-            "quote_or_summary": "地堡阶段须依初始物资量、成员健康与需求配给食物与水，分配不当将致死。",
-            "notes": "Steam 商店页与维基百科可观察机制。"
-          }
-        ]
-      },
-      {
-        "tag": "随机事件",
-        "confidence": "high",
-        "quality_status": "draft",
-        "evidence": [
-          {
-            "title": "每日意外事件",
-            "quote_or_summary": "地堡每天都会以意外事件给玩家出难题，每局生存故事都不同。",
-            "notes": "Steam 商店页可观察机制。"
-          }
-        ]
-      }
-    ],
-    "evidence": [
-      {
-        "title": "60 Seconds! Reatomized 玩法与制作综述",
-        "url": "https://store.steampowered.com/app/1012880/60_Seconds_Reatomized/",
-        "quote_or_summary": "黑色幽默核战末世生存，60 秒限时搜刮 + 地堡配给生存两阶段、家庭成员身心状态、每日随机事件、外出探险，Robot Gentleman 开发，2019 年重制发售。",
-        "notes": "事实取自 Steam 商店页与维基百科。"
-      }
-    ],
-    "confidence": "high",
-    "quality_status": "draft"
+      "限时搜刮",
+      "物资配给",
+      "随机事件"
+    ]
   },
   "claims": [
     {
@@ -97,16 +98,7 @@
       "subject": "物资配给",
       "relation": "creates",
       "object": "情绪资源化",
-      "explanation": "把食物、水与家人的身心状态做成必须逐日分配的有限账目，等于把「情感」也变成一种要精算的资源：少给一份口粮，某个家人就更接近饿死或精神崩溃，于是玩家不得不冷静地在「谁多撑一天」之间权衡。匮乏越深，这种把亲人折算成配给单位的抉择越令人不适，黑色幽默之下是真实的取舍重量。可复用于希望用「有限配给 + 会恶化的身心状态」把角色福祉转化为可管理资源、从而制造道德张力的生存设计。",
-      "evidence": [
-        {
-          "title": "配给折算情感解读",
-          "quote_or_summary": "有限食水配给叠加会恶化的家人身心，使分配本身成为把亲人折算为资源单位的道德抉择。",
-          "notes": "基于可观察机制的解释性判断。"
-        }
-      ],
-      "confidence": "medium",
-      "quality_status": "draft"
+      "explanation": "把食物、水与家人的身心状态做成必须逐日分配的有限账目，等于把「情感」也变成一种要精算的资源：少给一份口粮，某个家人就更接近饿死或精神崩溃，于是玩家不得不冷静地在「谁多撑一天」之间权衡。匮乏越深，这种把亲人折算成配给单位的抉择越令人不适，黑色幽默之下是真实的取舍重量。可复用于希望用「有限配给 + 会恶化的身心状态」把角色福祉转化为可管理资源、从而制造道德张力的生存设计。"
     }
   ]
 }
