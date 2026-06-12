@@ -382,3 +382,57 @@ def test_synergy_ranking_disabled_falls_back_to_scarcity_first(monkeypatch) -> N
     )
     ranked = rank_candidates([with_synergy, without_synergy], max_existing=2, top_n=10)
     assert ranked[0].id == "no_syn"
+
+
+# ---------------------------------------------------------------------------
+# H-Task 2: rule-driven cross-dimension candidate generator + union dedup
+# ---------------------------------------------------------------------------
+
+
+def test_rule_driven_generates_cross_dimension_candidate(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "1")
+    # g_survival 有「资源管理」(资源张力)；g_horror 在 Theme 有「生存恐怖」(恐惧张力)。
+    # 规则 dread_scarcity_atmosphere: 恐惧张力 × 资源张力 → 应生成跨维度 Theme 候选。
+    games = [
+        GameDimensions("g_survival", "生存策略", {"生存"}, set(), set(), {"资源管理"}, set(), set()),
+        GameDimensions("g_horror", "生存恐怖游戏", {"生存恐怖"}, set(), set(), {"追猎者"}, {"生存恐怖"}, set()),
+    ]
+    cands = enumerate_candidates(games)
+    borrow_theme = [c for c in cands if c.anchor_game_id == "g_survival"
+                    and c.transformation.dimension == "Theme"
+                    and c.transformation.to_value == "生存恐怖"]
+    assert borrow_theme and borrow_theme[0].synergy is not None
+
+
+def test_rule_driven_absent_when_flag_off(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "0")
+    games = [
+        GameDimensions("g_survival", "生存策略", {"生存"}, set(), set(), {"资源管理"}, set(), set()),
+        GameDimensions("g_horror", "生存恐怖游戏", {"生存恐怖"}, set(), set(), {"追猎者"}, {"生存恐怖"}, set()),
+    ]
+    cands = enumerate_candidates(games)
+    assert not any(c.transformation.dimension in ("Theme", "GameFeel") for c in cands)
+
+
+def test_mechanic_rule_driven_dedups_with_attribute_combine(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "1")
+    games = [
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+        GameDimensions("g_slot", "赌场", {"派对游戏"}, set(), set(), {"老虎机"}, set(), set()),
+    ]
+    cands = enumerate_candidates(games)
+    ids = [c.id for c in cands]
+    assert len(ids) == len(set(ids))   # 无重复 id
+    borrow = [c for c in cands if c.anchor_game_id == "g_party" and c.transformation.to_value == "老虎机"]
+    assert len(borrow) == 1 and borrow[0].synergy is not None
+
+
+def test_pure_scarcity_combine_still_present(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "1")
+    games = [
+        GameDimensions("g1", "s1", {"解谜"}, set(), set(), {"分支叙事"}, set(), set()),
+        GameDimensions("g2", "s2", {"解谜"}, set(), set(), {"回合制"}, set(), set()),
+    ]
+    cands = enumerate_candidates(games)
+    borrow = next(c for c in cands if c.anchor_game_id == "g1" and c.transformation.to_value == "回合制")
+    assert borrow.synergy is None
