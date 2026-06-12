@@ -368,26 +368,15 @@ def _synergy_cand(
     )
 
 
-def test_synergy_candidate_ranks_before_scarcity_candidate(monkeypatch) -> None:
-    monkeypatch.setenv("SYNERGY_RANKING", "1")
+def test_synergy_candidate_ranks_before_scarcity_candidate() -> None:
     # 有 synergy 但 existing=1 的候选应排在无 synergy 且 existing=0 的候选前面
+    # （规则驱动始终启用，三档优先级：profile-match > synergy > wildcard）
     with_synergy = _synergy_cand("syn", existing=1, target_count=2, has_synergy=True)
     without_synergy = _synergy_cand(
         "no_syn", existing=0, target_count=2, has_synergy=False
     )
     ranked = rank_candidates([with_synergy, without_synergy], max_existing=2, top_n=10)
     assert ranked[0].id == "syn"
-
-
-def test_synergy_ranking_disabled_falls_back_to_scarcity_first(monkeypatch) -> None:
-    # SYNERGY_RANKING=0 → 回退到纯稀缺性排序：existing=0 的排在 existing=1 前
-    monkeypatch.setenv("SYNERGY_RANKING", "0")
-    with_synergy = _synergy_cand("syn", existing=1, target_count=2, has_synergy=True)
-    without_synergy = _synergy_cand(
-        "no_syn", existing=0, target_count=2, has_synergy=False
-    )
-    ranked = rank_candidates([with_synergy, without_synergy], max_existing=2, top_n=10)
-    assert ranked[0].id == "no_syn"
 
 
 # ---------------------------------------------------------------------------
@@ -450,29 +439,20 @@ def test_pure_scarcity_combine_still_present(monkeypatch) -> None:
 # ---------------------------------------------------------------------------
 
 
-def test_rank_profile_match_outranks_non_desired_synergy(monkeypatch) -> None:
-    monkeypatch.setenv("SYNERGY_RANKING", "1")
+def test_rank_profile_match_outranks_non_desired_synergy() -> None:
+    # profile-match tier (0) 胜出：命中期望体验但更不稀缺的候选排在前面
     a = _synergy_cand("A", existing=1, target_count=1, predicted="欢乐混乱")   # 命中开发者期望，但更不稀缺
     b = _synergy_cand("B", existing=0, target_count=1, predicted="战斗精通")   # 命中协同但非开发者期望
     ranked = rank_candidates([a, b], desired_experiences={"欢乐混乱"})
     assert ranked[0].id == "A"
 
 
-def test_rank_without_desired_preserves_synergy_first_order(monkeypatch) -> None:
-    monkeypatch.setenv("SYNERGY_RANKING", "1")
+def test_rank_without_desired_preserves_synergy_first_order() -> None:
     # desired=None：协同候选优先于非协同，相对序与现状一致（按稀缺）
     syn = _synergy_cand("S", existing=2, target_count=1, predicted="欢乐混乱")
     plain = _cand("P", existing=0, target_count=1)   # 无 synergy 但更稀缺
     ranked = rank_candidates([syn, plain], desired_experiences=None)
     assert ranked[0].id == "S"   # 协同仍优先于纯稀缺
-
-
-def test_rank_flag_off_ignores_desired(monkeypatch) -> None:
-    monkeypatch.setenv("SYNERGY_RANKING", "0")
-    syn = _synergy_cand("S", existing=2, target_count=1, predicted="欢乐混乱")
-    plain = _cand("P", existing=0, target_count=1)
-    ranked = rank_candidates([syn, plain], desired_experiences={"欢乐混乱"})
-    assert ranked[0].id == "P"   # flag 关：回退稀缺优先，synergy/画像被忽略
 
 
 # ---------------------------------------------------------------------------

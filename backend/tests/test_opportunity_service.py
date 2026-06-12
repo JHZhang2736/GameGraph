@@ -28,23 +28,27 @@ def _profile() -> DeveloperProfile:
         id="profile_1", team_size="solo", time_budget="三个月",
         programming_ability="强", art_ability="弱", audio_ability="弱",
         content_production_ability="有限", liked_references=["Hades"],
-        disliked_references_or_mechanics=["联网多人"], desired_player_experiences=["短局"],
+        disliked_references_or_mechanics=["联网多人"], desired_player_experiences=["欢乐混乱"],
         constraints=[DeveloperConstraint(id="c1", type=ConstraintType.HARD, statement="不做联网多人")],
     )
 
 
 def _games() -> list[GameDimensions]:
+    # 使用能触发协同规则的真实词汇，确保 enumerate_opportunities 产生 recipe 候选：
+    # game_perma 有「永久死亡」(高方差失败源)；game_party 有「共享账户」(社交放大器)。
+    # 规则 social_high_variance_comedy (高方差失败源 × 社交放大器 → 欢乐混乱) 被命中。
     return [
-        GameDimensions("game_vs", "横版割草", {"类肉鸽"}, {"横版2D"}, {"像素美术"}, {"护符定制"}),
-        GameDimensions("game_fps", "第一人称射击", {"射击"}, {"第一人称"}, {"低多边形"}, {"能力树"}),
+        GameDimensions("game_perma", "肉鸽幸存者", {"类肉鸽"}, {"横版2D"}, {"像素美术"}, {"永久死亡"}),
+        GameDimensions("game_party", "派对合作", {"派对游戏"}, {"第三人称"}, {"低多边形"}, {"共享账户"}),
     ]
 
 
 def test_match_keeps_and_rejects_per_judgment() -> None:
     repo = StubRepo(_games())
     # 对全部候选给判断：第一个 reject，其余 keep（避免未判定候选混入断言）
-    from app.services.opportunity_service import enumerate_candidates, rank_candidates
-    ranked = rank_candidates(enumerate_candidates(_games()))
+    from app.services.opportunity_service import enumerate_opportunities, rank_candidates
+    desired = set(_profile().desired_player_experiences)
+    ranked = rank_candidates(enumerate_opportunities(_games(), desired), desired_experiences=desired)
     reject_id = ranked[0].id
     judgments = [
         OpportunityJudgment(candidate_id=reject_id, decision="reject",
@@ -70,9 +74,10 @@ def test_match_normalizes_wrapped_candidate_ids() -> None:
     # 复现并防回归：LLM 把 prompt 里 [id] 的方括号/空白一起回显（实测 qwen），
     # 旧逻辑 exact-match 全部对不上 → 全判未判定 + 未知 id。应规范化后正确匹配。
     repo = StubRepo(_games())
-    from app.services.opportunity_service import enumerate_candidates, rank_candidates
+    from app.services.opportunity_service import enumerate_opportunities, rank_candidates
 
-    ranked = rank_candidates(enumerate_candidates(_games()))
+    desired = set(_profile().desired_player_experiences)
+    ranked = rank_candidates(enumerate_opportunities(_games(), desired), desired_experiences=desired)
     judgments = [
         OpportunityJudgment(
             candidate_id=f"  [{c.id}]  ",  # 方括号 + 前后空白
@@ -127,8 +132,9 @@ def test_match_falls_back_with_warning_when_llm_raises() -> None:
 
 
 def test_match_excludes_seen_candidates() -> None:
-    from app.services.opportunity_service import enumerate_candidates, rank_candidates
-    ranked = rank_candidates(enumerate_candidates(_games()))
+    from app.services.opportunity_service import enumerate_opportunities, rank_candidates
+    desired = set(_profile().desired_player_experiences)
+    ranked = rank_candidates(enumerate_opportunities(_games(), desired), desired_experiences=desired)
     assert len(ranked) >= 2  # 夹具应产出多个候选,便于排除其一
     seen = ranked[0].id
     batch = OpportunityJudgmentBatch(judgments=[], warnings=[])
@@ -138,8 +144,9 @@ def test_match_excludes_seen_candidates() -> None:
 
 
 def test_match_warns_when_all_candidates_seen() -> None:
-    from app.services.opportunity_service import enumerate_candidates
-    every_id = [c.id for c in enumerate_candidates(_games())]
+    from app.services.opportunity_service import enumerate_opportunities
+    desired = set(_profile().desired_player_experiences)
+    every_id = [c.id for c in enumerate_opportunities(_games(), desired)]
     batch = OpportunityJudgmentBatch(judgments=[], warnings=[])
     result = match_opportunities(_profile(), StubRepo(_games()), StubLlm(batch), seen_ids=every_id)
     assert result.areas == []

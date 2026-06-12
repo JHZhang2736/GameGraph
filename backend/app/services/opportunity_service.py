@@ -412,10 +412,14 @@ def enumerate_opportunities(
 
 def _profile_tier(
     c: CandidateOpportunityArea,
-    synergy_on: bool,
     desired: set[str] | None,
 ) -> int:
-    if not synergy_on or c.synergy is None:
+    """体验驱动的三档优先级：
+    0 = 候选命中开发者期望体验（profile-match synergy）
+    1 = 候选有协同规则注解（synergy，但非期望体验）
+    2 = 纯稀缺性候选（无协同，wildcard）
+    """
+    if c.synergy is None:
         return 2
     if desired and c.synergy.predicted_experience in desired:
         return 0
@@ -431,8 +435,7 @@ def rank_candidates(
     desired_experiences: set[str] | None = None,
 ) -> list[CandidateOpportunityArea]:
     viable = [c for c in candidates if c.existing_combination_count <= max_existing]
-    synergy_on = _synergy_enabled()
-    tiers = {c.id: _profile_tier(c, synergy_on, desired_experiences) for c in viable}
+    tiers = {c.id: _profile_tier(c, desired_experiences) for c in viable}
     viable.sort(
         key=lambda c: (
             tiers[c.id],
@@ -547,11 +550,12 @@ def match_opportunities(
 ) -> OpportunityMatchResult:
     games = repository.fetch_game_dimensions()
     seen = set(seen_ids)
-    enumerated = enumerate_candidates(games)
+    desired = set(profile.desired_player_experiences)
+    enumerated = enumerate_opportunities(games, desired)
     fresh = [c for c in enumerated if c.id not in seen]
     candidates = rank_candidates(
         fresh,
-        desired_experiences=set(profile.desired_player_experiences),
+        desired_experiences=desired,
     )
     exhausted = [_EXHAUSTED_WARNING] if (enumerated and not fresh) else []
 
