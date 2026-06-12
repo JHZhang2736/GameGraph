@@ -25,6 +25,13 @@ dev = [
 [tool.setuptools.packages.find]
 include = ["app*"]
 
+# Non-Python data the app reads at runtime / via the seed script. Without this,
+# `pip install .` (Dockerfile) builds a wheel with only .py files, so synergy.py's
+# runtime read of app/fixtures/*.json fails in site-packages with FileNotFoundError.
+# Keep in sync with anything that loads from app/fixtures/.
+[tool.setuptools.package-data]
+app = ["fixtures/*.json", "fixtures/games/*.json"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
