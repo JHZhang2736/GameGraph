@@ -56,9 +56,15 @@ const CONSTRAINT_STYLE: Record<ConstraintType, string> = {
 interface ProfileDraftPreviewProps {
   draft: DeveloperProfileDraft;
   onChange: (draft: DeveloperProfileDraft) => void;
+  // 库内机制名，作为「讨厌方向」的可选项；未加载时为空数组（仅自由输入）。
+  mechanicOptions?: string[];
 }
 
-export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProps) {
+export function ProfileDraftPreview({
+  draft,
+  onChange,
+  mechanicOptions,
+}: ProfileDraftPreviewProps) {
   const missing = new Set(draft.missing_fields.map((field) => field.field));
 
   function setConstraints(constraints: DeveloperConstraint[]) {
@@ -114,7 +120,9 @@ export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProp
               options={
                 field.key === "desired_player_experiences"
                   ? DESIRED_EXPERIENCE_OPTIONS
-                  : undefined
+                  : field.key === "disliked_references_or_mechanics"
+                    ? mechanicOptions
+                    : undefined
               }
               invalid={missing.has(field.key)}
               onChange={(next) => onChange({ ...draft, [field.key]: next })}

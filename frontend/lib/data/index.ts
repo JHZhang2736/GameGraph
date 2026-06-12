@@ -232,6 +232,13 @@ export async function searchGraphNodes(q: string): Promise<NodeSearchHit[]> {
   return (await res.json()) as NodeSearchHit[];
 }
 
+// 库内全部机制名（distinct，字典序），供画像「讨厌方向」多选取值。
+export async function listMechanics(): Promise<string[]> {
+  const res = await fetch(`${apiBase()}/graph/mechanics`);
+  if (!res.ok) throw new Error(`GET /graph/mechanics responded ${res.status}`);
+  return (await res.json()) as string[];
+}
+
 export async function importGame(doc: ImportDocument): Promise<ImportSummary> {
   const res = await fetch(`${apiBase()}/import/game`, {
     method: "POST",

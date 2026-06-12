@@ -9,6 +9,13 @@ from app.schemas.graph import NeighborhoodResult, NodeSearchHit
 router = APIRouter()
 
 
+@router.get("/graph/mechanics", response_model=list[str])
+def list_mechanics(
+    repository: GameRepository = Depends(get_repository),
+) -> list[str]:
+    return repository.list_mechanics()
+
+
 @router.get("/graph/search", response_model=list[NodeSearchHit])
 def search_graph(
     q: str = Query(min_length=1),

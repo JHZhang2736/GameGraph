@@ -10,6 +10,7 @@ import {
   getSeedGames,
   importGame,
   listGames,
+  listMechanics,
   buildOpportunityFrame,
   generateConcepts,
   matchOpportunities,
@@ -55,6 +56,15 @@ export function usePrototypeBrief() {
 
 export function useGames() {
   return useQuery({ queryKey: ["games"], queryFn: listGames });
+}
+
+// 库内机制名，供画像「讨厌方向」多选取值。staleTime 拉长：词表很少变。
+export function useMechanics() {
+  return useQuery({
+    queryKey: ["graph-mechanics"],
+    queryFn: listMechanics,
+    staleTime: 5 * 60 * 1000,
+  });
 }
 
 export function useNeighbors(params: NeighborsParams | null) {

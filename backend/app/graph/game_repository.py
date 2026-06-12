@@ -51,6 +51,19 @@ class GameRepository:
         )
         return [dict(record) for record in result]
 
+    def list_mechanics(self) -> list[str]:
+        """库内全部机制名（distinct，字典序）。供前端「讨厌方向」多选取值。"""
+        with self._driver.session() as session:
+            return session.execute_read(self._read_mechanics)
+
+    @staticmethod
+    def _read_mechanics(tx) -> list[str]:
+        result = tx.run(
+            "MATCH (m:Mechanic) WHERE m.name IS NOT NULL "
+            "RETURN DISTINCT m.name AS name ORDER BY name"
+        )
+        return [record["name"] for record in result]
+
     def get_game(self, game_id: str) -> GameImportDocument | None:
         with self._driver.session() as session:
             record = session.execute_read(self._read_game, game_id)

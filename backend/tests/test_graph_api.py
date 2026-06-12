@@ -7,6 +7,9 @@ from app.schemas.graph import NeighborhoodResult, NodeSearchHit
 
 
 class FakeGraphRepo:
+    def list_mechanics(self) -> list[str]:
+        return ["共享账户", "永久死亡", "老虎机"]
+
     def search_nodes(self, q: str, limit: int) -> list[NodeSearchHit]:
         return [NodeSearchHit(id="game_hk", label="Hollow Knight", node_type="Game")]
 
@@ -25,6 +28,12 @@ def client() -> TestClient:
     c = TestClient(app)
     yield c
     app.dependency_overrides.clear()
+
+
+def test_list_mechanics_returns_names(client: TestClient) -> None:
+    response = client.get("/graph/mechanics")
+    assert response.status_code == 200
+    assert response.json() == ["共享账户", "永久死亡", "老虎机"]
 
 
 def test_search_returns_hits(client: TestClient) -> None:
