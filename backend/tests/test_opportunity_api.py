@@ -10,9 +10,12 @@ from app.services.opportunity_service import GameDimensions
 
 class StubRepo:
     def fetch_game_dimensions(self) -> list[GameDimensions]:
+        # 使用能触发协同规则的真实词汇，确保 enumerate_opportunities 产生 recipe 候选：
+        # game_perma 有「永久死亡」(高方差失败源)；game_party 有「共享账户」(社交放大器)。
+        # 规则 social_high_variance_comedy (高方差失败源 × 社交放大器 → 欢乐混乱) 被命中。
         return [
-            GameDimensions("game_vs", "横版割草", {"类肉鸽"}, {"横版2D"}, {"像素美术"}, {"护符定制"}),
-            GameDimensions("game_fps", "第一人称射击", {"射击"}, {"第一人称"}, {"低多边形"}, {"能力树"}),
+            GameDimensions("game_perma", "肉鸽幸存者", {"类肉鸽"}, {"横版2D"}, {"像素美术"}, {"永久死亡"}),
+            GameDimensions("game_party", "派对合作", {"派对游戏"}, {"第三人称"}, {"低多边形"}, {"共享账户"}),
         ]
 
 
@@ -34,7 +37,7 @@ def _profile_payload() -> dict:
         "id": "profile_1", "team_size": "solo", "time_budget": "三个月",
         "programming_ability": "强", "art_ability": "弱", "audio_ability": "弱",
         "content_production_ability": "有限", "liked_references": ["Hades"],
-        "disliked_references_or_mechanics": ["联网多人"], "desired_player_experiences": ["短局"],
+        "disliked_references_or_mechanics": ["联网多人"], "desired_player_experiences": ["欢乐混乱"],
         "constraints": [{"id": "c1", "type": "hard", "statement": "不做联网多人"}],
     }
 

@@ -131,6 +131,7 @@ def test_forbidden_base_never_empty_without_constraints() -> None:
 
 def test_secondary_pool_excludes_selected_and_is_same_anchor() -> None:
     pool = svc._secondary_pool(_StubRepo(_games(), _facts()), _area())
+    assert pool, "Expected a non-empty secondary pool for game_vs anchor"
     assert all(c.anchor_game_id == "game_vs" for c in pool)
     assert all(c.id != _area().id for c in pool)
 

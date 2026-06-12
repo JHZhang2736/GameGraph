@@ -11,7 +11,7 @@ from app.services.opportunity_service import (
     CandidateOpportunityArea,
     GameDesignFacts,
     GameDimensions,
-    enumerate_candidates,
+    enumerate_opportunities,
     rank_candidates,
 )
 
@@ -71,13 +71,17 @@ def _evidence_path(area: OpportunityArea) -> list[str]:
     path.append(
         f"目标值「{area.transformation.to_value}」在 {', '.join(ev.target_value_game_ids)} 上有据"
     )
-    path.append(
-        f"该组合在策展库中的现存游戏数 = {area.existing_combination_count}（越小越新颖）"
-    )
     if area.synergy is not None:
+        path.append(
+            f"已有该角色配方的游戏数 = {area.existing_combination_count}（越小越新颖）"
+        )
         r = area.synergy
         path.append(
             f"协同：锚点提供「{r.anchor_role}」，借入补「{r.borrowed_role}」，模式预测「{r.predicted_experience}」"
+        )
+    else:
+        path.append(
+            f"该组合在策展库中的现存游戏数 = {area.existing_combination_count}（越小越新颖）"
         )
     return path
 
@@ -100,7 +104,7 @@ def _secondary_pool(
     games = repository.fetch_game_dimensions()
     pool = [
         c
-        for c in enumerate_candidates(games)
+        for c in enumerate_opportunities(games, set())
         if c.anchor_game_id == area.anchor_game_id and c.id != area.id
     ]
     return rank_candidates(pool)
