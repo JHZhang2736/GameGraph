@@ -9,6 +9,7 @@ from typing import Protocol
 from app.schemas.artifacts import DeveloperProfile
 from app.schemas.opportunity import (
     CandidateOpportunityArea,
+    FunctionalRole,
     OpportunityArea,
     OpportunityEvidence,
     OpportunityMatchResult,
@@ -249,6 +250,148 @@ def _combine_candidates(
             )
         )
     return out
+
+
+# ---------------------------------------------------------------------------
+# E-Task 1: experience/role-recipe opportunity generator (additive)
+# ---------------------------------------------------------------------------
+
+MAX_WILDCARD = int(os.environ.get("OPP_MAX_WILDCARD", "3"))
+
+
+def _source_elements(g: GameDimensions) -> set[str]:
+    """返回游戏四个角色来源维度的元素并集（供功能角色推导用）。"""
+    return g.mechanics | g.game_feel | g.theme | g.genres
+
+
+def role_combination_count(
+    games: list[GameDimensions],
+    role_a: FunctionalRole,
+    role_b: FunctionalRole,
+) -> int:
+    """库内同时覆盖 role_a 和 role_b 的游戏数量；值越小表示该组合越新颖。"""
+    required = {role_a, role_b}
+    count = 0
+    for g in games:
+        if required <= synergy.roles_for_elements(_source_elements(g)):
+            count += 1
+    return count
+
+
+def enumerate_opportunities(
+    games: list[GameDimensions],
+    desired: set[str],
+) -> list[CandidateOpportunityArea]:
+    """体验/角色配方驱动的机会枚举（E-Task 1）。
+
+    - Primary 通道：按协同规则推导「锚点角色 × 借入角色」的 COMBINE 候选（带 synergy）。
+    - Wildcard 通道：收集不命中任何规则的 COMBINE-Mechanic 借入，按新颖度截断至 MAX_WILDCARD。
+    """
+    target_rules = [
+        r for r in synergy.load_synergy_rules()
+        if (not desired) or r.experience in desired
+    ]
+    elements_by_role = synergy.load_elements_by_role()
+
+    # ── Primary channel ────────────────────────────────────────────────────
+    primary: dict[str, CandidateOpportunityArea] = {}
+
+    for rule in target_rules:
+        for anchor_role, borrow_role in (
+            (rule.role_a, rule.role_b),
+            (rule.role_b, rule.role_a),
+        ):
+            novelty = role_combination_count(games, anchor_role, borrow_role)
+            for anchor in games:
+                if anchor_role not in synergy.roles_for_elements(_source_elements(anchor)):
+                    continue
+                for element, dim in elements_by_role.get(borrow_role, frozenset()):
+                    attr = _DIMENSION_ATTRS.get(dim)
+                    if attr is None:
+                        continue
+                    if element in getattr(anchor, attr):
+                        continue  # 锚点已有该元素，无需借入
+                    target_games = _games_with_value(games, attr, element)
+                    if not target_games:
+                        continue  # 库内无游戏持有该元素，evidence 不满足
+                    cid = _candidate_id(anchor.game_id, "comb", dim, element)
+                    if cid in primary:
+                        continue  # 保留首个（first-rule-first）
+                    combo = _combination_game_ids(games, anchor, attr, element)
+                    primary[cid] = CandidateOpportunityArea(
+                        id=cid,
+                        anchor_game_id=anchor.game_id,
+                        anchor_summary=anchor.summary,
+                        transformation=Transformation(
+                            type=TransformationType.COMBINE,
+                            dimension=dim,
+                            from_value=None,
+                            to_value=element,
+                        ),
+                        existing_combination_count=novelty,
+                        evidence=OpportunityEvidence(
+                            anchor_game_id=anchor.game_id,
+                            target_value_game_ids=target_games,
+                            combination_game_ids=combo,
+                        ),
+                        synergy=SynergyRationale(
+                            rule_id=rule.id,
+                            anchor_role=anchor_role,
+                            borrowed_role=borrow_role,
+                            predicted_experience=rule.experience,
+                        ),
+                    )
+
+    # ── Wildcard channel ───────────────────────────────────────────────────
+    all_mechanics = {m for g in games for m in g.mechanics}
+    wildcard_candidates: list[CandidateOpportunityArea] = []
+
+    for anchor in games:
+        anchor_elements = _source_elements(anchor)
+        for m in all_mechanics - anchor.mechanics:
+            # 仅收录不命中任何规则的借入（rationale_for 返回 None）
+            if synergy.rationale_for(anchor_elements, m) is not None:
+                continue
+            cid = _candidate_id(anchor.game_id, "comb", "Mechanic", m)
+            if cid in primary:
+                continue  # 防御性去重：primary 优先
+            target_games = _games_with_value(games, "mechanics", m)
+            if not target_games:
+                continue
+            combo = _combination_game_ids(games, anchor, "mechanics", m)
+            wildcard_candidates.append(
+                CandidateOpportunityArea(
+                    id=cid,
+                    anchor_game_id=anchor.game_id,
+                    anchor_summary=anchor.summary,
+                    transformation=Transformation(
+                        type=TransformationType.COMBINE,
+                        dimension="Mechanic",
+                        from_value=None,
+                        to_value=m,
+                    ),
+                    existing_combination_count=len(combo),
+                    evidence=OpportunityEvidence(
+                        anchor_game_id=anchor.game_id,
+                        target_value_game_ids=target_games,
+                        combination_game_ids=combo,
+                    ),
+                    synergy=None,
+                )
+            )
+
+    # 按 (existing_combination_count, id) 升序排，截断至 MAX_WILDCARD
+    wildcard_candidates.sort(key=lambda c: (c.existing_combination_count, c.id))
+    max_wc = int(os.environ.get("OPP_MAX_WILDCARD", str(MAX_WILDCARD)))
+    capped_wildcards = wildcard_candidates[:max_wc]
+
+    # ── Merge (primary wins on collision) ─────────────────────────────────
+    merged: dict[str, CandidateOpportunityArea] = dict(primary)
+    for c in capped_wildcards:
+        if c.id not in merged:
+            merged[c.id] = c
+
+    return list(merged.values())
 
 
 def _profile_tier(

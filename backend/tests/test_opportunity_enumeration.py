@@ -9,7 +9,9 @@ from app.schemas.opportunity import (
 from app.services.opportunity_service import (
     GameDimensions,
     enumerate_candidates,
+    enumerate_opportunities,
     rank_candidates,
+    role_combination_count,
 )
 
 
@@ -471,3 +473,70 @@ def test_rank_flag_off_ignores_desired(monkeypatch) -> None:
     plain = _cand("P", existing=0, target_count=1)
     ranked = rank_candidates([syn, plain], desired_experiences={"欢乐混乱"})
     assert ranked[0].id == "P"   # flag 关：回退稀缺优先，synergy/画像被忽略
+
+
+# ---------------------------------------------------------------------------
+# E-Task 1: role_combination_count + enumerate_opportunities
+# ---------------------------------------------------------------------------
+
+
+def test_role_combination_count() -> None:
+    games = [
+        # g_both 同时持有「老虎机」(高方差失败源) 和「共享账户」(社交放大器)
+        GameDimensions("g_both", "s", {"派对游戏"}, set(), set(), {"老虎机", "共享账户"}, set(), set()),
+        # g_one 只有「老虎机」(高方差失败源; 兼 认知降负载)
+        GameDimensions("g_one", "s", set(), set(), set(), {"老虎机"}, set(), set()),
+    ]
+    assert role_combination_count(games, FunctionalRole.HIGH_VARIANCE_FAILURE, FunctionalRole.SOCIAL_AMPLIFIER) == 1
+    assert role_combination_count(games, FunctionalRole.HIGH_VARIANCE_FAILURE, FunctionalRole.COMPETITION) == 0
+
+
+def test_enumerate_opportunities_recipe(monkeypatch) -> None:
+    monkeypatch.setenv("SYNERGY_RANKING", "1")
+    games = [
+        # g_perma 有「永久死亡」(高方差失败源)
+        GameDimensions("g_perma", "肉鸽", {"类肉鸽"}, set(), set(), {"永久死亡"}, set(), set()),
+        # g_party 有「共享账户」(社交放大器)
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+    ]
+    opps = enumerate_opportunities(games, {"欢乐混乱"})
+    c = next(o for o in opps if o.synergy and o.synergy.predicted_experience == "欢乐混乱")
+    assert c.transformation.type == TransformationType.COMBINE
+    assert c.existing_combination_count == role_combination_count(
+        games, c.synergy.anchor_role, c.synergy.borrowed_role
+    )
+
+
+def test_enumerate_opportunities_default_all_rules() -> None:
+    games = [
+        GameDimensions("g_perma", "肉鸽", {"类肉鸽"}, set(), set(), {"永久死亡"}, set(), set()),
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+    ]
+    assert enumerate_opportunities(games, set())  # desired 空 → 全规则 → 非空
+
+
+def test_enumerate_opportunities_no_substitute() -> None:
+    games = [
+        GameDimensions("g_perma", "肉鸽", {"类肉鸽"}, set(), set(), {"永久死亡"}, set(), set()),
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+    ]
+    assert all(
+        o.transformation.type == TransformationType.COMBINE
+        for o in enumerate_opportunities(games, set())
+    )
+
+
+def test_enumerate_opportunities_wildcard_capped(monkeypatch) -> None:
+    monkeypatch.setenv("OPP_MAX_WILDCARD", "1")
+    # 锚点 g_anchor 有「老虎机」(高方差失败源 + 认知降负载)。
+    # 借入「物理模拟」(涌现源) 和「非线性探索」(探索驱动) 均不与 高方差失败源/认知降负载 构成任何规则。
+    # g_source1 和 g_source2 分别提供这两个可借入机制，确保 target_games 非空。
+    # wildcard 通道应被上限截断至 1。
+    games = [
+        GameDimensions("g_anchor", "测试", {"解谜"}, set(), set(), {"老虎机"}, set(), set()),
+        GameDimensions("g_source1", "物理", {"物理沙盒"}, set(), set(), {"物理模拟"}, set(), set()),
+        GameDimensions("g_source2", "探索", {"开放世界"}, set(), set(), {"非线性探索"}, set(), set()),
+    ]
+    opps = enumerate_opportunities(games, set())
+    wildcard_count = sum(1 for o in opps if o.synergy is None)
+    assert wildcard_count <= 1
