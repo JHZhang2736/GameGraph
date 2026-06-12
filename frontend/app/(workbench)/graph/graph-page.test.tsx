@@ -9,7 +9,7 @@ vi.mock("@/lib/queries", async (orig) => {
   return {
     ...actual,
     useGames: () => ({
-      data: [{ id: "game_hk", title: "Hollow Knight", short_description: "mv", confidence: "high", quality_status: "reviewed" }],
+      data: [{ id: "game_hk", title: "Hollow Knight", short_description: "mv" }],
       isLoading: false,
       isError: false,
       refetch: vi.fn(),
@@ -39,7 +39,7 @@ beforeEach(() => {
   neighborsMock.mockResolvedValue({
     focus: { id: "game_hk", label: "Hollow Knight", node_type: "Game" },
     nodes: [{ id: "platforming", label: "platforming", node_type: "Mechanic" }],
-    edges: [{ id: "e1", source: "game_hk", target: "platforming", relation: "HAS_MECHANIC", evidence: [] }],
+    edges: [{ id: "e1", source: "game_hk", target: "platforming", relation: "HAS_MECHANIC" }],
     truncated: false,
   });
 });

@@ -19,9 +19,6 @@ const GraphCanvas = dynamic(
 );
 import { EmptyState, ErrorState, LoadingState } from "@/components/shell/view-states";
 import { GraphLegend } from "@/components/graph/graph-legend";
-import { ConfidenceBadge } from "@/components/artifacts/confidence-badge";
-import { QualityBadge } from "@/components/artifacts/quality-badge";
-import { EvidenceList } from "@/components/artifacts/evidence-list";
 
 function mergeNeighborhood(prev: GraphData, next: NeighborhoodResult): GraphData {
   const nodeMap = new Map<string, GraphNode>(prev.nodes.map((n) => [n.id, n]));
@@ -99,7 +96,7 @@ export default function GraphPage() {
         <button type="button" onClick={reroll} className="rounded-md border px-3 py-1.5 text-sm hover:bg-accent">
           {"🎲 换一个"}
         </button>
-        <span className="text-sm text-muted-foreground">{"点节点展开邻居,点边查看证据;低置信度关系以琥珀色降级。"}</span>
+        <span className="text-sm text-muted-foreground">{"点节点展开邻居,点边查看关系详情。"}</span>
       </div>
       {truncated ? (
         <p className="mb-2 rounded-md bg-amber-50 p-2 text-sm text-amber-700">
@@ -126,22 +123,17 @@ export default function GraphPage() {
         <aside className="min-h-0 space-y-3 overflow-auto">
           {selected ? (
             <div className="rounded-lg border p-3">
-              <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">{"证据路径"}</h2>
+              <h2 className="mb-2 text-xs uppercase tracking-wide text-muted-foreground/70">{"关系"}</h2>
               <div className="mb-1 text-sm font-medium">
                 {selected.source} {"·"} {selected.relation} {"·"} {selected.target}
               </div>
-              <div className="mb-2 flex items-center gap-2">
-                {selected.confidence ? <ConfidenceBadge level={selected.confidence} /> : null}
-                {selected.quality_status ? <QualityBadge status={selected.quality_status} /> : null}
-              </div>
               {selected.claim_id ? (
-                <div className="mb-2 text-xs text-muted-foreground">{"来源论断:"}{selected.claim_id}</div>
+                <div className="text-xs text-muted-foreground">{"来源论断:"}{selected.claim_id}</div>
               ) : null}
-              <EvidenceList evidence={selected.evidence} />
             </div>
           ) : (
             <p className="rounded-lg border border-dashed p-3 text-xs text-muted-foreground">
-              {"点击一条关系查看证据路径;点击节点展开其邻居。"}
+              {"点击一条关系查看详情;点击节点展开其邻居。"}
             </p>
           )}
         </aside>

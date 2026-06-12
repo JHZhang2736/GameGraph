@@ -1,15 +1,4 @@
 // Shared enums (mirror backend app/schemas/common.py).
-export const CONFIDENCE_LEVELS = ["low", "medium", "high"] as const;
-export type ConfidenceLevel = (typeof CONFIDENCE_LEVELS)[number];
-
-export const QUALITY_STATUSES = [
-  "draft",
-  "reviewed",
-  "weak_evidence",
-  "conflicting",
-] as const;
-export type QualityStatus = (typeof QUALITY_STATUSES)[number];
-
 export const CONSTRAINT_TYPES = [
   "hard",
   "strong_preference",
@@ -17,18 +6,10 @@ export const CONSTRAINT_TYPES = [
 ] as const;
 export type ConstraintType = (typeof CONSTRAINT_TYPES)[number];
 
-export interface EvidenceRef {
-  title: string;
-  url?: string;
-  quote_or_summary?: string;
-  notes: string;
-}
-
 // Core artifacts (mirror backend app/schemas/artifacts.py).
 export interface SeedGame {
   id: string;
   title: string;
-  source_refs: EvidenceRef[];
   short_description: string;
   selection_reason: string;
 }
@@ -39,9 +20,6 @@ export interface DesignClaim {
   relation: string;
   object: string;
   explanation: string;
-  evidence: EvidenceRef[];
-  confidence: ConfidenceLevel;
-  quality_status: QualityStatus;
 }
 
 export interface GraphRelation {
@@ -50,9 +28,6 @@ export interface GraphRelation {
   relation: string;
   target_node: string;
   claim_id: string;
-  evidence: EvidenceRef[];
-  confidence: ConfidenceLevel;
-  quality_status: QualityStatus;
 }
 
 export interface DeveloperConstraint {
@@ -90,7 +65,6 @@ export interface ProfileFieldSource {
   field: string;
   source_text: string;
   source_kind: ProfileFieldSourceKind;
-  confidence: ConfidenceLevel;
 }
 
 export interface MissingProfileField {
@@ -182,9 +156,6 @@ export interface GameDesignProfile {
   main_mechanics: string[];
   reference_value_tags: string[];
   hard_to_copy_risks: string[];
-  evidence: EvidenceRef[];
-  confidence: ConfidenceLevel;
-  quality_status: QualityStatus;
 }
 
 export const EVALUATION_CATEGORIES = [
@@ -201,7 +172,6 @@ export interface ConceptEvaluation {
   feasibility_score: number;
   novelty_score: number;
   risk_score: number;
-  evidence_quality_score: number;
   category: EvaluationCategory;
   notes: string;
 }
@@ -246,8 +216,6 @@ export interface GameSummary {
   id: string;
   title: string;
   short_description: string;
-  confidence: ConfidenceLevel;
-  quality_status: QualityStatus;
 }
 
 export interface NodeSearchHit {

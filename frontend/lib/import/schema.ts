@@ -3,36 +3,10 @@ import { z } from "zod";
 const nonEmpty = z.string().trim().min(1);
 const nonEmptyList = z.array(nonEmpty).min(1);
 
-const evidenceRef = z
-  .object({
-    title: nonEmpty,
-    url: nonEmpty.optional(),
-    quote_or_summary: nonEmpty.optional(),
-    notes: nonEmpty,
-  })
-  .strict()
-  .refine((e) => Boolean(e.url) || Boolean(e.quote_or_summary), {
-    message: "EvidenceRef requires url or quote_or_summary",
-  });
-
-const evidenceList = z.array(evidenceRef).min(1);
-const confidence = z.enum(["low", "medium", "high"]);
-const quality = z.enum(["draft", "reviewed", "weak_evidence", "conflicting"]);
-
-const referenceValueTag = z
-  .object({
-    tag: nonEmpty,
-    confidence,
-    quality_status: quality,
-    evidence: z.array(evidenceRef),
-  })
-  .strict();
-
 const seedGame = z
   .object({
     id: nonEmpty,
     title: nonEmpty,
-    source_refs: evidenceList,
     short_description: nonEmpty,
     selection_reason: nonEmpty,
   })
@@ -64,10 +38,7 @@ const profile = z
     narrative_style: nonEmptyList,
     game_feel: nonEmptyList,
     team_model: nonEmptyList,
-    reference_value_tags: z.array(referenceValueTag).min(1),
-    evidence: evidenceList,
-    confidence,
-    quality_status: quality,
+    reference_value_tags: nonEmptyList,
   })
   .strict();
 
@@ -78,9 +49,6 @@ const claim = z
     relation: nonEmpty,
     object: nonEmpty,
     explanation: nonEmpty,
-    evidence: evidenceList,
-    confidence,
-    quality_status: quality,
   })
   .strict();
 

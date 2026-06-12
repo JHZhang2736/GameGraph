@@ -15,7 +15,7 @@ import { EdgeCurvedArrowProgram } from "@sigma/edge-curve";
 import "@react-sigma/core/lib/style.css";
 import type { GraphData } from "@/lib/data";
 import { nodeColor, nodeSize } from "@/components/graph/node-style";
-import { edgeColor, isDowngraded } from "@/components/graph/edge-style";
+import { edgeColor } from "@/components/graph/edge-style";
 import { relationLabel } from "@/components/graph/relation-labels";
 
 const DIMMED_NODE = "#e2e8f0";
@@ -101,7 +101,7 @@ function GraphController({
         label: relationLabel(e.relation),
         type: "curved",
         color: edgeColor(e),
-        size: isDowngraded(e) ? refSize * 0.12 : refSize * 0.22,
+        size: refSize * 0.22,
       });
     });
     // 先轻量预计算把拓扑摆开(避免节点挤成一团后被 worker 剧烈甩开导致抖动),

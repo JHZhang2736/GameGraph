@@ -1,7 +1,5 @@
 import { describe, it, expect } from "vitest";
 import {
-  CONFIDENCE_LEVELS,
-  QUALITY_STATUSES,
   CONSTRAINT_TYPES,
   EVALUATION_CATEGORIES,
   TRANSFORMATION_TYPES,
@@ -9,19 +7,6 @@ import {
 } from "@/lib/types";
 
 describe("shared type constants", () => {
-  it("exposes confidence levels", () => {
-    expect(CONFIDENCE_LEVELS).toEqual(["low", "medium", "high"]);
-  });
-
-  it("exposes quality statuses", () => {
-    expect(QUALITY_STATUSES).toEqual([
-      "draft",
-      "reviewed",
-      "weak_evidence",
-      "conflicting",
-    ]);
-  });
-
   it("exposes constraint types", () => {
     expect(CONSTRAINT_TYPES).toEqual([
       "hard",

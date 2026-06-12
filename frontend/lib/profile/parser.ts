@@ -5,7 +5,6 @@
 // page only talks to lib/data, so swapping this for a real `fetch` later must
 // not change the ProfileParseResult shape or behavior.
 import type {
-  ConfidenceLevel,
   ConstraintType,
   DeveloperConstraint,
   MissingProfileField,
@@ -45,14 +44,12 @@ function containsAny(value: string, needles: string[]): boolean {
 function source(
   field: string,
   sourceText: string,
-  confidence: ConfidenceLevel = "high",
   sourceKind: ProfileFieldSourceKind = "raw_text",
 ): ProfileFieldSource {
   return {
     field,
     source_text: sourceText,
     source_kind: sourceKind,
-    confidence,
   };
 }
 
@@ -114,13 +111,13 @@ export function parseDeveloperProfileInput(
   const explicitScale = input.expected_project_scale?.trim();
   if (explicitScale) {
     timeBudget = explicitScale;
-    fieldSources.push(source("time_budget", explicitScale, "high", "explicit_field"));
+    fieldSources.push(source("time_budget", explicitScale, "explicit_field"));
   } else if (containsAny(rawText, ["三个月", "3个月", "three month"])) {
     timeBudget = "three month prototype";
     fieldSources.push(source("time_budget", rawText));
   } else if (containsAny(rawText, ["周末", "业余", "part-time"])) {
     timeBudget = "part-time prototype";
-    fieldSources.push(source("time_budget", rawText, "medium"));
+    fieldSources.push(source("time_budget", rawText));
     warnings.push("Interpreted time budget as part-time prototype.");
   } else if (containsAny(rawText, ["尽快", "短期"])) {
     warnings.push("Time budget is vague and needs clarification.");
@@ -152,14 +149,14 @@ export function parseDeveloperProfileInput(
     ["音频能力弱", "音频弱", "weak audio"],
     ["音频基础", "音频一般", "基础音效", "basic audio"],
   );
-  // Audio is non-blocking: when unstated, default to basic with a low-confidence
+  // Audio is non-blocking: when unstated, default to basic with an inferred
   // source so the preview shows the value is inferred, not user-provided.
   let audioAbility = parsedAudioAbility;
   if (audioSource) {
     fieldSources.push(audioSource);
   } else {
     audioAbility = "basic";
-    fieldSources.push(source("audio_ability", "defaulted to basic", "low"));
+    fieldSources.push(source("audio_ability", "defaulted to basic"));
   }
 
   const contentProductionAbility = containsAny(rawText, [
@@ -178,7 +175,7 @@ export function parseDeveloperProfileInput(
   if (input.liked_references?.length) {
     likedReferences = unique(input.liked_references);
     fieldSources.push(
-      source("liked_references", likedReferences.join(", "), "high", "explicit_field"),
+      source("liked_references", likedReferences.join(", "), "explicit_field"),
     );
   } else {
     likedReferences = unique(
@@ -198,7 +195,6 @@ export function parseDeveloperProfileInput(
       source(
         "disliked_references_or_mechanics",
         dislikedReferences.join(", "),
-        "high",
         "explicit_field",
       ),
     );

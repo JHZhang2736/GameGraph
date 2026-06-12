@@ -9,7 +9,7 @@ vi.mock("@/lib/queries", async (orig) => {
     ...actual,
     useGames: () => ({
       data: [
-        { id: "game_hk", title: "Hollow Knight", short_description: "metroidvania", confidence: "high", quality_status: "reviewed" },
+        { id: "game_hk", title: "Hollow Knight", short_description: "metroidvania" },
       ],
       isLoading: false,
       isError: false,

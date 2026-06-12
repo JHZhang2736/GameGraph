@@ -8,7 +8,6 @@ import type {
   DeveloperProfile,
   DeveloperProfileDraft,
   DesignClaim,
-  EvidenceRef,
   GameDesignProfile,
   GameSummary,
   GoldenFlow,
@@ -65,10 +64,7 @@ export interface GraphEdge {
   source: string;
   target: string;
   relation: string;
-  confidence?: GoldenFlow["graph_relations"][number]["confidence"];
-  quality_status?: GoldenFlow["graph_relations"][number]["quality_status"];
   claim_id?: string;
-  evidence: EvidenceRef[];
 }
 
 export interface GraphData {
