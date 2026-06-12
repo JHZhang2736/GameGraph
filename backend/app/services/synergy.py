@@ -38,13 +38,25 @@ def load_element_dimensions() -> dict[str, frozenset[str]]:
 
 @lru_cache(maxsize=1)
 def load_elements_by_role() -> dict[FunctionalRole, frozenset[tuple[str, str]]]:
-    """功能角色 -> {(元素, 维度)} 全量映射；调用方用 load_elements_by_role()[role] 取单角色。"""
+    """功能角色 -> {(元素, 维度)} 全量映射；调用方用 load_elements_by_role()[role] 取单角色。
+
+    加载时守卫：同一角色内每个词只允许归属一个维度桶；若有违反则以 ValueError 响亮失败，
+    错误信息包含角色名和重复词，防止重新引入跨维度双归属。
+    """
     raw = json.loads((_FIXTURES / "element_roles.json").read_text(encoding="utf-8"))
     out: dict[FunctionalRole, set[tuple[str, str]]] = defaultdict(set)
     for role_value, buckets in raw["roles"].items():
         role = FunctionalRole(role_value)
+        seen_dims: dict[str, str] = {}  # term -> first dim seen within this role
         for dim, terms in buckets.items():
             for term in terms:
+                if term in seen_dims:
+                    raise ValueError(
+                        f"element_roles.json: 角色 '{role_value}' 中词 '{term}' "
+                        f"同时出现在维度 '{seen_dims[term]}' 和 '{dim}'——"
+                        f"每个词在同一角色内只能归属一个维度桶。"
+                    )
+                seen_dims[term] = dim
                 out[role].add((term, dim))
     return {role: frozenset(pairs) for role, pairs in out.items()}
 
