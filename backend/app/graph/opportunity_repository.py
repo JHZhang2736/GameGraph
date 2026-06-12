@@ -11,7 +11,9 @@ RETURN g.id AS game_id,
        [(g)-[:HAS_GENRE]->(x) | x.name] AS genres,
        [(g)-[:HAS_PERSPECTIVE]->(x) | x.name] AS perspectives,
        [(g)-[:HAS_ART_STYLE]->(x) | x.name] AS art_styles,
-       [(g)-[:HAS_MECHANIC]->(x) | x.name] AS mechanics
+       [(g)-[:HAS_MECHANIC]->(x) | x.name] AS mechanics,
+       [(g)-[:HAS_THEME]->(x) | x.name] AS theme,
+       [(g)-[:HAS_GAME_FEEL]->(x) | x.name] AS game_feel
 """
 
 _FACTS_QUERY = """
@@ -43,6 +45,8 @@ class OpportunityRepository:
                 perspectives=set(record["perspectives"]),
                 art_styles=set(record["art_styles"]),
                 mechanics=set(record["mechanics"]),
+                theme=set(record["theme"]),
+                game_feel=set(record["game_feel"]),
             )
             for record in result
             if record["game_id"] is not None

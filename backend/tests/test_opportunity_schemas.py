@@ -4,11 +4,14 @@ from pydantic import ValidationError
 
 from app.schemas.opportunity import (
     CandidateOpportunityArea,
+    FunctionalRole,
     OpportunityArea,
     OpportunityEvidence,
     OpportunityMatchResult,
     RejectedOpportunity,
     RiskPosture,
+    SynergyRationale,
+    SynergyRule,
     Transformation,
     TransformationType,
 )
@@ -103,3 +106,42 @@ def test_substitute_requires_from_value() -> None:
             from_value=None,
             to_value="第一人称",
         )
+
+
+# ---------------------------------------------------------------------------
+# FunctionalRole / SynergyRule / SynergyRationale tests
+# ---------------------------------------------------------------------------
+
+def test_functional_role_has_twenty_members() -> None:
+    assert len(list(FunctionalRole)) == 20
+    assert FunctionalRole.HIGH_VARIANCE_FAILURE == "高方差失败源"
+    assert FunctionalRole.EMOTIONAL_BOND == "情感羁绊"
+
+
+def test_synergy_rule_round_trips() -> None:
+    rule = SynergyRule(
+        id="r1",
+        role_a=FunctionalRole.HIGH_VARIANCE_FAILURE,
+        role_b=FunctionalRole.SOCIAL_AMPLIFIER,
+        experience="欢乐混乱",
+        evidence_games=["game_gamble_with_your_friends"],
+    )
+    assert SynergyRule.model_validate_json(rule.model_dump_json()) == rule
+
+
+def test_candidate_synergy_defaults_none_and_accepts() -> None:
+    # Default: synergy is None
+    candidate = _candidate()
+    assert candidate.synergy is None
+
+    # Explicit SynergyRationale round-trips
+    rationale = SynergyRationale(
+        rule_id="r1",
+        anchor_role=FunctionalRole.SOCIAL_AMPLIFIER,
+        borrowed_role=FunctionalRole.HIGH_VARIANCE_FAILURE,
+        predicted_experience="欢乐混乱",
+    )
+    with_synergy = _candidate(synergy=rationale)
+    restored = CandidateOpportunityArea.model_validate_json(with_synergy.model_dump_json())
+    assert restored.synergy is not None
+    assert restored.synergy.rule_id == "r1"

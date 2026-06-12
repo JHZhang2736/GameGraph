@@ -18,16 +18,22 @@ from app.schemas.opportunity import (
     TransformationType,
 )
 from app.services.opportunity_llm import OpportunityJudgment, OpportunityJudgmentBatch
+from app.services import synergy
 
 logger = logging.getLogger(__name__)
 
-MAX_EXISTING_COMBINATIONS = 2   # 已有相同组合的游戏数超过该阈值视为不够稀缺，丢弃
+
+def _synergy_enabled() -> bool:
+    return os.environ.get("SYNERGY_RANKING", "1") != "0"
+
+
+MAX_EXISTING_COMBINATIONS = 2  # 已有相同组合的游戏数超过该阈值视为不够稀缺，丢弃
 # 送 LLM 判断的最大候选数。候选越多,单次 judge 的输入/输出越大、越慢——30 个会让
 # 同步请求耗时远超前端代理容忍度(socket hang up)。默认 10 兼顾覆盖与延迟,可用
 # LLM_MAX_CANDIDATES 环境变量按需调整。
 TOP_N = int(os.environ.get("LLM_MAX_CANDIDATES", "10"))
-MAX_PER_ANCHOR = 2      # 多样性主轴:同一锚点游戏最多 2 条变体
-MAX_PER_DIMENSION = 5   # 多样性次轴软护栏:防止一种变形维度极端霸屏
+MAX_PER_ANCHOR = 2  # 多样性主轴:同一锚点游戏最多 2 条变体
+MAX_PER_DIMENSION = 5  # 多样性次轴软护栏:防止一种变形维度极端霸屏
 
 # 替代作用的维度 label -> GameDimensions 属性名
 _SUBSTITUTE_DIMENSIONS: dict[str, str] = {
@@ -45,6 +51,8 @@ class GameDimensions:
     perspectives: set[str] = field(default_factory=set)
     art_styles: set[str] = field(default_factory=set)
     mechanics: set[str] = field(default_factory=set)
+    theme: set[str] = field(default_factory=set)
+    game_feel: set[str] = field(default_factory=set)
 
 
 @dataclass
@@ -99,7 +107,9 @@ def _substitute_candidates(
         if not anchor_values:
             continue  # 锚点在该维度无值则无「原值」可替代（schema 要求 substitute 必带 from_value）
         all_values = {v for g in games for v in getattr(g, attr)}
-        from_value = sorted(anchor_values)[0]  # 多值时取词典序最小者作为代表原值（保证确定性）
+        from_value = sorted(anchor_values)[
+            0
+        ]  # 多值时取词典序最小者作为代表原值（保证确定性）
         for target in sorted(all_values - anchor_values):
             target_games = _games_with_value(games, attr, target)
             combo = _combination_game_ids(games, anchor, attr, target)
@@ -130,9 +140,16 @@ def _combine_candidates(
 ) -> list[CandidateOpportunityArea]:
     out: list[CandidateOpportunityArea] = []
     all_mechanics = {m for g in games for m in g.mechanics}
+    annotate = _synergy_enabled()
+    anchor_elements = (
+        anchor.mechanics | anchor.game_feel | anchor.theme | anchor.genres
+        if annotate
+        else frozenset()
+    )
     for target in sorted(all_mechanics - anchor.mechanics):
         target_games = _games_with_value(games, "mechanics", target)
         combo = _combination_game_ids(games, anchor, "mechanics", target)
+        rationale = synergy.rationale_for(anchor_elements, target) if annotate else None
         out.append(
             CandidateOpportunityArea(
                 id=_candidate_id(anchor.game_id, "comb", "Mechanic", target),
@@ -150,6 +167,7 @@ def _combine_candidates(
                     target_value_game_ids=target_games,
                     combination_game_ids=combo,
                 ),
+                synergy=rationale,
             )
         )
     return out
@@ -163,8 +181,10 @@ def rank_candidates(
     max_per_dimension: int = MAX_PER_DIMENSION,
 ) -> list[CandidateOpportunityArea]:
     viable = [c for c in candidates if c.existing_combination_count <= max_existing]
+    synergy_on = _synergy_enabled()
     viable.sort(
         key=lambda c: (
+            0 if (synergy_on and c.synergy is not None) else 1,
             c.existing_combination_count,
             -len(c.evidence.target_value_game_ids),
             c.id,
@@ -206,7 +226,9 @@ def rank_candidates(
 SPARSE_AREA_THRESHOLD = 3
 _NO_LLM_WARNING = "未配置 LLM，未做约束过滤与可行性判定。"
 _LLM_FAILED_WARNING = "LLM 判断失败，已降级为全量保留。"
-_EXHAUSTED_WARNING = "已无更多新机会：当前图谱中可探索的候选已全部呈现，可入库更多游戏以拓宽。"
+_EXHAUSTED_WARNING = (
+    "已无更多新机会：当前图谱中可探索的候选已全部呈现，可入库更多游戏以拓宽。"
+)
 _FALLBACK_FIT_REASON = "未做适配判断（降级保留）。"
 _FALLBACK_RISK_REASON = "未做风险判断（降级保留）。"
 
@@ -308,7 +330,10 @@ def match_opportunities(
             unjudged.append(candidate.id)
             areas.append(
                 _area_from_candidate(
-                    candidate, RiskPosture.BALANCED, "LLM 未判定，默认保留。", "未判定。"
+                    candidate,
+                    RiskPosture.BALANCED,
+                    "LLM 未判定，默认保留。",
+                    "未判定。",
                 )
             )
         elif judgment.decision == "reject":
