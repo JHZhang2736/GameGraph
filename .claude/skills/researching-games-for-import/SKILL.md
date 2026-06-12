@@ -9,7 +9,7 @@ description: Use when given one or more game names/titles and asked to produce i
 
 Turn a game name into an importable `GameImportDocument` JSON by researching the game online, then mapping findings into the schema. One JSON file per game.
 
-Core principle: the value is honest, well-researched design analysis. The project now trusts LLM output directly; `confidence`, `evidence`, and `quality_status` fields have been removed from the schema.
+Core principle: the value is honest, well-researched design analysis. The project has removed the `confidence`, `evidence`, and `quality_status` fields from the schema and now trusts the LLM's structured output directly.
 
 ## When to use
 
