@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "description": "协同规则：role_a × role_b → 预测涌现体验。对称（角色顺序无关）。evidence_games 为库内印证该配方的代表作（文档用，不强制校验存在）。手工策展的设计假说。",
+  "rules": [
+    {"id": "social_high_variance_comedy", "role_a": "高方差失败源", "role_b": "社交放大器", "experience": "欢乐混乱", "evidence_games": ["game_gamble_with_your_friends", "game_lethal_company", "game_among_us", "game_repo", "game_rounds"]},
+    {"id": "mastery_under_permadeath", "role_a": "掌握曲线", "role_b": "高方差失败源", "experience": "战斗精通", "evidence_games": ["game_hades", "game_dead_cells", "game_risk_of_rain_2", "game_slay_the_spire"]},
+    {"id": "familiar_rules_deep_build", "role_a": "认知降负载", "role_b": "掌握曲线", "experience": "构筑乐趣", "evidence_games": ["game_balatro", "game_dicey_dungeons"]},
+    {"id": "emergent_systems_exploration", "role_a": "涌现源", "role_b": "探索驱动", "experience": "涌现玩法", "evidence_games": ["game_noita", "game_outer_wilds", "game_animal_well"]},
+    {"id": "scarcity_time_pressure", "role_a": "资源张力", "role_b": "节奏压缩器", "experience": "运筹帷幄", "evidence_games": ["game_frostpunk", "game_this_war_of_mine", "game_escape_from_duckov"]},
+    {"id": "short_run_rng_snowball", "role_a": "节奏压缩器", "role_b": "高方差失败源", "experience": "滚雪球快感", "evidence_games": ["game_vampire_survivors", "game_deep_rock_galactic_survivor", "game_the_spell_brigade"]},
+    {"id": "coop_exploration_coordination", "role_a": "社交放大器", "role_b": "探索驱动", "experience": "协作默契", "evidence_games": ["game_we_were_here_together", "game_we_were_here_too", "game_deep_rock_galactic"]},
+    {"id": "collection_mastery_growth", "role_a": "收集驱动", "role_b": "掌握曲线", "experience": "收集养成", "evidence_games": ["game_slay_the_spire", "game_hades", "game_dead_cells"]},
+    {"id": "dread_scarcity_atmosphere", "role_a": "恐惧张力", "role_b": "资源张力", "experience": "氛围营造", "evidence_games": ["game_resident_evil_2", "game_resident_evil_7_biohazard", "game_outlast"]},
+    {"id": "dread_chase_pacing", "role_a": "恐惧张力", "role_b": "节奏压缩器", "experience": "氛围营造", "evidence_games": ["game_outlast", "game_the_outlast_trials", "game_the_evil_within"]},
+    {"id": "visceral_mastery_flow", "role_a": "操作快感", "role_b": "掌握曲线", "experience": "战斗精通", "evidence_games": ["game_cuphead", "game_hollow_knight", "game_titanfall_2"]},
+    {"id": "optimization_scarcity", "role_a": "系统优化", "role_b": "资源张力", "experience": "经营成就", "evidence_games": ["game_oxygen_not_included", "game_frostpunk", "game_civilization_vi"]},
+    {"id": "competition_social_tension", "role_a": "竞技对抗", "role_b": "社交放大器", "experience": "竞技紧张", "evidence_games": ["game_fall_guys", "game_rounds", "game_among_us"]},
+    {"id": "bond_loss_under_permadeath", "role_a": "情感羁绊", "role_b": "高方差失败源", "experience": "情感叙事", "evidence_games": ["game_wildermyth", "game_darkest_dungeon", "game_xcom_2"]},
+    {"id": "puzzle_exploration_discovery", "role_a": "解题洞察", "role_b": "探索驱动", "experience": "探索发现", "evidence_games": ["game_outer_wilds", "game_animal_well", "game_rise_of_the_tomb_raider"]},
+    {"id": "power_collection_snowball", "role_a": "成长权力", "role_b": "收集驱动", "experience": "滚雪球快感", "evidence_games": ["game_borderlands_2", "game_vampire_survivors", "game_risk_of_rain_2"]},
+    {"id": "cozy_collection_growth", "role_a": "放松抚慰", "role_b": "收集驱动", "experience": "收集养成", "evidence_games": ["game_slime_rancher", "game_my_time_at_portia", "game_travellers_rest"]},
+    {"id": "shared_economy_coordination", "role_a": "资源张力", "role_b": "社交放大器", "experience": "协作默契", "evidence_games": ["game_gamble_with_your_friends", "game_deep_rock_galactic"]},
+    {"id": "creative_emergence_expression", "role_a": "创造表达", "role_b": "涌现源", "experience": "个性化表达", "evidence_games": ["game_terraria", "game_tabletop_simulator"]},
+    {"id": "atmosphere_narrative_immersion", "role_a": "沉浸氛围", "role_b": "叙事钩子", "experience": "情感叙事", "evidence_games": ["game_firewatch", "game_outer_wilds", "game_finding_paradise"]}
+  ]
+}
