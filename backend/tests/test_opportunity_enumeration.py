@@ -487,3 +487,17 @@ def test_enumerate_opportunities_wildcard_capped(monkeypatch) -> None:
         "请检查 _source_elements/规则是否将所有借入都分配了协同规则。"
     )
     assert wildcard_count <= 1
+
+
+def test_enumerate_opportunities_nonmatching_desired_falls_back_to_all_rules() -> None:
+    # 草稿/占位画像（如 desired_player_experiences=["none"]）或解析出的自由文本体验
+    # 对不上任何规则 experience 时，应退化为全量规则空间，而不是产出空。
+    games = [
+        GameDimensions("g_perma", "肉鸽", {"类肉鸽"}, set(), set(), {"永久死亡"}, set(), set()),
+        GameDimensions("g_party", "派对", {"派对游戏"}, set(), set(), {"共享账户"}, set(), set()),
+    ]
+    all_space = {o.id for o in enumerate_opportunities(games, set()) if o.synergy}
+    nonmatch = {o.id for o in enumerate_opportunities(games, {"none"}) if o.synergy}
+    assert all_space, "fixture 应能产出 recipe 候选"
+    # 对不上任何规则的 desired 等价于「无偏好」→ 全量规则空间
+    assert nonmatch == all_space

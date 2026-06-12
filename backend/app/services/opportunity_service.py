@@ -135,10 +135,12 @@ def enumerate_opportunities(
     - Primary 通道：按协同规则推导「锚点角色 × 借入角色」的 COMBINE 候选（带 synergy）。
     - Wildcard 通道：收集不命中任何规则的 COMBINE-Mechanic 借入，按新颖度截断至 MAX_WILDCARD。
     """
-    target_rules = [
-        r for r in synergy.load_synergy_rules()
-        if (not desired) or r.experience in desired
-    ]
+    all_rules = synergy.load_synergy_rules()
+    target_rules = [r for r in all_rules if r.experience in desired] if desired else list(all_rules)
+    if not target_rules:
+        # desired 非空但对不上任何规则体验（草稿占位如 ["none"]，或画像解析出的自由文本
+        # 不在受控体验词表）→ 退化为全量规则空间，避免主通道产出空结果。
+        target_rules = list(all_rules)
     elements_by_role = synergy.load_elements_by_role()
     max_wc = _max_wildcard()
 
@@ -244,6 +246,15 @@ def enumerate_opportunities(
         if c.id not in merged:
             merged[c.id] = c
 
+    logger.info(
+        "enumerate_opportunities: desired=%d target_rules=%d/%d primary=%d wildcard=%d total=%d",
+        len(desired),
+        len(target_rules),
+        len(all_rules),
+        len(primary),
+        len(capped_wildcards),
+        len(merged),
+    )
     return list(merged.values())
 
 
@@ -395,6 +406,16 @@ def match_opportunities(
         desired_experiences=desired,
     )
     exhausted = [_EXHAUSTED_WARNING] if (enumerated and not fresh) else []
+    logger.info(
+        "match_opportunities: profile=%s desired=%s games=%d enumerated=%d seen=%d fresh=%d ranked=%d",
+        profile.id,
+        sorted(desired) or "∅",
+        len(games),
+        len(enumerated),
+        len(seen),
+        len(fresh),
+        len(candidates),
+    )
 
     if llm_client is None:
         return _fallback_result(profile.id, candidates, _NO_LLM_WARNING, exhausted)
@@ -459,4 +480,11 @@ def match_opportunities(
     unknown_ids = sorted(set(by_id) - {c.id for c in candidates})
     if unknown_ids:
         warnings.append(f"LLM 返回了未知候选 id，已忽略：{', '.join(unknown_ids)}")
+    logger.info(
+        "match_opportunities: profile=%s judged areas=%d rejected=%d unjudged=%d",
+        profile.id,
+        len(areas),
+        len(rejected),
+        len(unjudged),
+    )
     return _finalize(profile.id, areas, rejected, [*exhausted, *warnings])
