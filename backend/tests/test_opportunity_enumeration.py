@@ -412,6 +412,7 @@ def test_rule_driven_absent_when_flag_off(monkeypatch) -> None:
     ]
     cands = enumerate_candidates(games)
     assert not any(c.transformation.dimension in ("Theme", "GameFeel") for c in cands)
+    assert all(c.synergy is None for c in cands)  # flag off → 无任何候选携带 synergy
 
 
 def test_mechanic_rule_driven_dedups_with_attribute_combine(monkeypatch) -> None:

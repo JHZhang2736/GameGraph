@@ -108,7 +108,7 @@ def _rule_driven_candidates(
     anchor_elements = anchor.mechanics | anchor.game_feel | anchor.theme | anchor.genres
     anchor_roles = synergy.roles_for_elements(anchor_elements)
     elements_by_role = synergy.load_elements_by_role()
-    by_id: dict[str, CandidateOpportunityArea] = {}
+    seen: dict[str, CandidateOpportunityArea] = {}
     for rule in synergy.load_synergy_rules():
         for anchor_role, borrow_role in (
             (rule.role_a, rule.role_b),
@@ -117,17 +117,19 @@ def _rule_driven_candidates(
             if anchor_role not in anchor_roles:
                 continue
             for element, dim in elements_by_role.get(borrow_role, frozenset()):
-                attr = _DIMENSION_ATTRS[dim]
+                attr = _DIMENSION_ATTRS.get(dim)
+                if attr is None:
+                    continue
                 if element in getattr(anchor, attr):
                     continue
                 cid = _candidate_id(anchor.game_id, "comb", dim, element)
-                if cid in by_id:
+                if cid in seen:
                     continue
                 target_games = _games_with_value(games, attr, element)
                 if not target_games:
                     continue  # 借入值须在库内某游戏出现过（evidence 非空约束）
                 combo = _combination_game_ids(games, anchor, attr, element)
-                by_id[cid] = CandidateOpportunityArea(
+                seen[cid] = CandidateOpportunityArea(
                     id=cid,
                     anchor_game_id=anchor.game_id,
                     anchor_summary=anchor.summary,
@@ -150,7 +152,7 @@ def _rule_driven_candidates(
                         predicted_experience=rule.experience,
                     ),
                 )
-    return list(by_id.values())
+    return list(seen.values())
 
 
 def enumerate_candidates(games: list[GameDimensions]) -> list[CandidateOpportunityArea]:
@@ -223,6 +225,9 @@ def _combine_candidates(
         target_games = _games_with_value(games, "mechanics", target)
         combo = _combination_game_ids(games, anchor, "mechanics", target)
         rationale = synergy.rationale_for(anchor_elements, target) if annotate else None
+        # Mechanic 候选与规则驱动候选共享同一 id 格式，enumerate_candidates 的 add()
+        # 按插入顺序保留首个；_combine_candidates 先于 _rule_driven_candidates 调用，
+        # 故此处已含 synergy 标注的候选会胜出，规则驱动的同名候选被静默丢弃（防御性分支）。
         out.append(
             CandidateOpportunityArea(
                 id=_candidate_id(anchor.game_id, "comb", "Mechanic", target),
