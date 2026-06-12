@@ -251,18 +251,31 @@ def _combine_candidates(
     return out
 
 
+def _profile_tier(
+    c: CandidateOpportunityArea,
+    synergy_on: bool,
+    desired: set[str] | None,
+) -> int:
+    if not synergy_on or c.synergy is None:
+        return 2
+    if desired and c.synergy.predicted_experience in desired:
+        return 0
+    return 1
+
+
 def rank_candidates(
     candidates: list[CandidateOpportunityArea],
     max_existing: int = MAX_EXISTING_COMBINATIONS,
     top_n: int = TOP_N,
     max_per_anchor: int = MAX_PER_ANCHOR,
     max_per_dimension: int = MAX_PER_DIMENSION,
+    desired_experiences: set[str] | None = None,
 ) -> list[CandidateOpportunityArea]:
     viable = [c for c in candidates if c.existing_combination_count <= max_existing]
     synergy_on = _synergy_enabled()
     viable.sort(
         key=lambda c: (
-            0 if (synergy_on and c.synergy is not None) else 1,
+            _profile_tier(c, synergy_on, desired_experiences),
             c.existing_combination_count,
             -len(c.evidence.target_value_game_ids),
             c.id,
@@ -376,7 +389,10 @@ def match_opportunities(
     seen = set(seen_ids)
     enumerated = enumerate_candidates(games)
     fresh = [c for c in enumerated if c.id not in seen]
-    candidates = rank_candidates(fresh)
+    candidates = rank_candidates(
+        fresh,
+        desired_experiences=set(profile.desired_player_experiences),
+    )
     exhausted = [_EXHAUSTED_WARNING] if (enumerated and not fresh) else []
 
     if llm_client is None:
