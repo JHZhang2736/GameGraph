@@ -273,9 +273,10 @@ def rank_candidates(
 ) -> list[CandidateOpportunityArea]:
     viable = [c for c in candidates if c.existing_combination_count <= max_existing]
     synergy_on = _synergy_enabled()
+    tiers = {c.id: _profile_tier(c, synergy_on, desired_experiences) for c in viable}
     viable.sort(
         key=lambda c: (
-            _profile_tier(c, synergy_on, desired_experiences),
+            tiers[c.id],
             c.existing_combination_count,
             -len(c.evidence.target_value_game_ids),
             c.id,

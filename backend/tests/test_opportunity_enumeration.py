@@ -329,7 +329,11 @@ def test_combine_candidate_without_complement_has_no_synergy(monkeypatch) -> Non
 
 
 def _synergy_cand(
-    cid: str, existing: int, target_count: int, has_synergy: bool
+    cid: str,
+    existing: int,
+    target_count: int,
+    has_synergy: bool = True,
+    predicted: str = "欢乐混乱",
 ) -> CandidateOpportunityArea:
     """构造带/不带 synergy 的 COMBINE 候选，用于 rank_candidates 排序测试。"""
     syn = (
@@ -337,7 +341,7 @@ def _synergy_cand(
             rule_id="social_high_variance_comedy",
             anchor_role=FunctionalRole.SOCIAL_AMPLIFIER,
             borrowed_role=FunctionalRole.HIGH_VARIANCE_FAILURE,
-            predicted_experience="欢乐混乱",
+            predicted_experience=predicted,
         )
         if has_synergy
         else None
@@ -444,58 +448,10 @@ def test_pure_scarcity_combine_still_present(monkeypatch) -> None:
 # ---------------------------------------------------------------------------
 
 
-def _syn_cand(cid: str, predicted: str, existing: int) -> CandidateOpportunityArea:
-    """构造带指定 predicted_experience 的协同候选。"""
-    return CandidateOpportunityArea(
-        id=cid,
-        anchor_game_id="a",
-        anchor_summary="s",
-        transformation=Transformation(
-            type=TransformationType.COMBINE,
-            dimension="Mechanic",
-            from_value=None,
-            to_value=cid,
-        ),
-        existing_combination_count=existing,
-        evidence=OpportunityEvidence(
-            anchor_game_id="a",
-            target_value_game_ids=["g0"],
-            combination_game_ids=[f"c{i}" for i in range(existing)],
-        ),
-        synergy=SynergyRationale(
-            rule_id="social_high_variance_comedy",
-            anchor_role=FunctionalRole.SOCIAL_AMPLIFIER,
-            borrowed_role=FunctionalRole.HIGH_VARIANCE_FAILURE,
-            predicted_experience=predicted,
-        ),
-    )
-
-
-def _plain_cand(cid: str, existing: int) -> CandidateOpportunityArea:
-    """构造无 synergy 的普通候选。"""
-    return CandidateOpportunityArea(
-        id=cid,
-        anchor_game_id="a",
-        anchor_summary="s",
-        transformation=Transformation(
-            type=TransformationType.COMBINE,
-            dimension="Mechanic",
-            from_value=None,
-            to_value=cid,
-        ),
-        existing_combination_count=existing,
-        evidence=OpportunityEvidence(
-            anchor_game_id="a",
-            target_value_game_ids=["g0"],
-            combination_game_ids=[f"c{i}" for i in range(existing)],
-        ),
-    )
-
-
-def test_rank_profile_match_outranks_plain_synergy(monkeypatch) -> None:
+def test_rank_profile_match_outranks_non_desired_synergy(monkeypatch) -> None:
     monkeypatch.setenv("SYNERGY_RANKING", "1")
-    a = _syn_cand("A", predicted="欢乐混乱", existing=1)   # 命中开发者期望，但更不稀缺
-    b = _syn_cand("B", predicted="战斗精通", existing=0)   # 命中协同但非开发者期望
+    a = _synergy_cand("A", existing=1, target_count=1, predicted="欢乐混乱")   # 命中开发者期望，但更不稀缺
+    b = _synergy_cand("B", existing=0, target_count=1, predicted="战斗精通")   # 命中协同但非开发者期望
     ranked = rank_candidates([a, b], desired_experiences={"欢乐混乱"})
     assert ranked[0].id == "A"
 
@@ -503,15 +459,15 @@ def test_rank_profile_match_outranks_plain_synergy(monkeypatch) -> None:
 def test_rank_without_desired_preserves_synergy_first_order(monkeypatch) -> None:
     monkeypatch.setenv("SYNERGY_RANKING", "1")
     # desired=None：协同候选优先于非协同，相对序与现状一致（按稀缺）
-    syn = _syn_cand("S", predicted="欢乐混乱", existing=2)
-    plain = _plain_cand("P", existing=0)   # 无 synergy 但更稀缺
+    syn = _synergy_cand("S", existing=2, target_count=1, predicted="欢乐混乱")
+    plain = _cand("P", existing=0, target_count=1)   # 无 synergy 但更稀缺
     ranked = rank_candidates([syn, plain], desired_experiences=None)
     assert ranked[0].id == "S"   # 协同仍优先于纯稀缺
 
 
 def test_rank_flag_off_ignores_desired(monkeypatch) -> None:
     monkeypatch.setenv("SYNERGY_RANKING", "0")
-    syn = _syn_cand("S", predicted="欢乐混乱", existing=2)
-    plain = _plain_cand("P", existing=0)
+    syn = _synergy_cand("S", existing=2, target_count=1, predicted="欢乐混乱")
+    plain = _cand("P", existing=0, target_count=1)
     ranked = rank_candidates([syn, plain], desired_experiences={"欢乐混乱"})
     assert ranked[0].id == "P"   # flag 关：回退稀缺优先，synergy/画像被忽略
