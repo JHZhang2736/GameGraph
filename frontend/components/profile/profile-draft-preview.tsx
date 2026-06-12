@@ -3,7 +3,12 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { EditableSelect } from "@/components/profile/editable-select";
-import { SCALAR_FIELD_OPTIONS, type ScalarFieldKey } from "@/lib/profile/field-options";
+import { MultiSelectChips } from "@/components/profile/multi-select-chips";
+import {
+  DESIRED_EXPERIENCE_OPTIONS,
+  SCALAR_FIELD_OPTIONS,
+  type ScalarFieldKey,
+} from "@/lib/profile/field-options";
 import { cn } from "@/lib/utils";
 import type {
   ConstraintType,
@@ -47,13 +52,6 @@ const CONSTRAINT_STYLE: Record<ConstraintType, string> = {
   strong_preference: "border-amber-200 bg-amber-50",
   soft_preference: "border-zinc-200 bg-zinc-50",
 };
-
-function splitList(value: string): string[] {
-  return value
-    .split(/[,，、]/)
-    .map((item) => item.trim())
-    .filter(Boolean);
-}
 
 interface ProfileDraftPreviewProps {
   draft: DeveloperProfileDraft;
@@ -110,17 +108,16 @@ export function ProfileDraftPreview({ draft, onChange }: ProfileDraftPreviewProp
             >
               {field.label}
             </label>
-            <input
+            <MultiSelectChips
               id={`field-${field.key}`}
-              className={cn(
-                "h-9 w-full rounded-md border bg-background px-3 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring",
-                missing.has(field.key) && "border-red-300",
-              )}
-              placeholder="用逗号分隔"
-              value={draft[field.key].join(", ")}
-              onChange={(event) =>
-                onChange({ ...draft, [field.key]: splitList(event.target.value) })
+              value={draft[field.key]}
+              options={
+                field.key === "desired_player_experiences"
+                  ? DESIRED_EXPERIENCE_OPTIONS
+                  : undefined
               }
+              invalid={missing.has(field.key)}
+              onChange={(next) => onChange({ ...draft, [field.key]: next })}
             />
           </div>
         ))}
