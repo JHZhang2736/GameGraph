@@ -11,9 +11,6 @@ from app.schemas.opportunity import FunctionalRole, SynergyRationale, SynergyRul
 _FIXTURES = Path(__file__).resolve().parents[1] / "fixtures"
 
 
-_DIMENSIONS = ("Mechanic", "GameFeel", "Theme", "Genre")
-
-
 @lru_cache(maxsize=1)
 def load_element_roles() -> dict[str, frozenset[FunctionalRole]]:
     """核心四段元素名 -> 它扮演的功能角色集合（去重并集）。非法角色键响亮失败。"""
@@ -40,8 +37,8 @@ def load_element_dimensions() -> dict[str, frozenset[str]]:
 
 
 @lru_cache(maxsize=1)
-def elements_for_role() -> dict[FunctionalRole, frozenset[tuple[str, str]]]:
-    """功能角色 -> {(元素, 维度)} 全量映射；调用方用 elements_for_role()[role] 取单角色。"""
+def load_elements_by_role() -> dict[FunctionalRole, frozenset[tuple[str, str]]]:
+    """功能角色 -> {(元素, 维度)} 全量映射；调用方用 load_elements_by_role()[role] 取单角色。"""
     raw = json.loads((_FIXTURES / "element_roles.json").read_text(encoding="utf-8"))
     out: dict[FunctionalRole, set[tuple[str, str]]] = defaultdict(set)
     for role_value, buckets in raw["roles"].items():

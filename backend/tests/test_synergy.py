@@ -59,8 +59,8 @@ def test_element_dimensions_lookup() -> None:
     assert dims.get("不存在的词") in (None, frozenset(), set())
 
 
-def test_elements_for_role_returns_element_dim_pairs() -> None:
-    pairs = synergy.elements_for_role()[FunctionalRole.DREAD_SOURCE]
+def test_load_elements_by_role_returns_element_dim_pairs() -> None:
+    pairs = synergy.load_elements_by_role()[FunctionalRole.DREAD_SOURCE]
     assert ("生存恐怖", "Theme") in pairs
     assert ("紧张节奏", "GameFeel") in pairs
     assert ("理智系统", "Mechanic") in pairs
