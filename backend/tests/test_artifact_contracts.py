@@ -202,7 +202,7 @@ def test_golden_fixture_core_payloads_match_artifact_schemas() -> None:
         "game_into_the_breach",
         "game_baba_is_you",
     }
-    assert {claim.id for claim in design_claims}
+    assert len(design_claims) == 4  # golden fixture has exactly 4 design claims
     assert developer_profile.id == "profile_solo_systems"
     assert opportunity_frame.id == "frame_rule_tactics"
     assert concept_cards[0].opportunity_frame_id == opportunity_frame.id
