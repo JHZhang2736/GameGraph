@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_tomb_raider",
+    "title": "Tomb Raider",
+    "source_refs": [
+      {
+        "title": "Tomb Raider（2013 video game，维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Tomb_Raider_(2013_video_game)",
+        "notes": "类型（第三人称动作冒险）、系列重启与「幸存者」三部曲首作、重构 Lara Croft 起源、流落邪马台岛在邪教追猎下求生与营救同伴、玩法聚焦生存、岛上互联的枢纽-辐射式地图、弓箭与枪械作战及潜行、攀爬与绳索移动、经验解锁技能、搜集材料升级武器装备、可选墓室含物理谜题、营地快速旅行、Crystal Dynamics 开发 Square Enix 发行、2013 年发售等事实来源。"
+      },
+      {
+        "title": "Tomb Raider（Steam，appid 203160）",
+        "url": "https://store.steampowered.com/app/203160/Tomb_Raider/",
+        "notes": "起源重启、生存动作冒险、互联枢纽地图、弓箭与潜行、技能升级、可选墓室解谜等事实来源。"
+      }
+    ],
+    "short_description": "一款第三人称动作冒险游戏，是 Tomb Raider 系列的重启之作与「幸存者」三部曲首作，重构了 Lara Croft 的起源：年轻的考古学者 Lara 随沉船流落邪马台孤岛，在邪教的追猎下挣扎求生、营救同伴并设法逃离；玩法聚焦生存，玩家在岛上互联的枢纽地图中攀爬、用绳索穿行、以弓箭潜行与枪械作战，用经验解锁技能、搜集材料升级装备，并可深入含物理谜题的可选墓室，Crystal Dynamics 开发、2013 年发售。",
+    "selection_reason": "作为「用生存起源重塑经典 IP」的代表：把 Lara 从无所不能的冒险家退回到脆弱的幸存者，用岛上互联枢纽 + 工具门控的折返探索、弓箭潜行与可选墓室物理谜题承载成长，让「变强」与「劫后余生」的叙事同步推进，是研究 IP 重启、生存化动作冒险与互联枢纽探索的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_tomb_raider",
+    "one_sentence_summary": "年轻考古学者 Lara 随沉船流落邪马台孤岛，在邪教追猎下攀爬穿行、以弓箭潜行与枪械作战求生，用经验解锁技能、搜集材料升级装备、靠新工具打开互联枢纽中此前去不了的区域并深入可选墓室解谜，重构她从少女到硬核幸存者的起源。",
+    "core_hook": "把一向无所不能的 Lara 退回成一个脆弱的幸存者：流落孤岛、缺乏装备，玩家要从一张弓、一次次狼狈求生开始，靠经验解锁技能、搜集材料升级武器，逐步从猎物变成猎手；岛屿是一张互联的枢纽地图，绳箭、攀爬镐等新工具会逐步门控开放此前去不了的区域，鼓励折返探索，再叠加考验物理谜题的可选墓室，让能力成长与「劫后余生」的起源叙事一同向前。",
+    "core_loop": "在互联枢纽地图探索与攀爬、用弓箭潜行或枪战清场、搜集材料与经验、在营地升级武器与解锁技能、用新工具打开此前无法到达的区域、深入可选墓室解物理谜题取奖励，循着剧情推进。",
+    "progression_model": "靠经验解锁攀爬/狩猎/生存等技能、靠搜集材料升级弓与枪械、靠新工具门控开放更多区域推进；进度体现为技能与装备等级、已探索枢纽与已通墓室、剧情章节。",
+    "failure_model": "Lara 被敌人击杀或在攀爬、跳跃、激流等场景失误丧命即回到最近检查点重来，无永久死亡惩罚，部分高难序列以即时 QTE 演出生死一线。",
+    "content_structure": "以邪马台岛互联的枢纽-辐射地图、线性主线与大量可选墓室、收集与支线为骨架，靠潜行/枪战、攀爬探索、技能升级与物理解谜承载流程与重玩，单人。",
+    "main_player_actions": ["射击", "潜行", "攀墙", "道具运用"],
+    "main_player_decisions": ["探索路线", "能力树优先级", "风险取舍"],
+    "main_player_experiences": ["探索发现", "战斗精通", "收集养成"],
+    "main_mechanics": ["潜行暗杀", "能力门控探索", "能力树", "非线性探索", "物理模拟"],
+    "replayability_sources": ["全收集", "难度分级", "任务多样"],
+    "production_constraints": ["自研引擎", "大团队协作"],
+    "innovation_patterns": ["类型缝合", "能力门控探索"],
+    "reusable_reference_patterns": ["能力门控探索", "高质量支线"],
+    "non_replicable_risks": ["自研引擎", "大团队协作", "品牌积淀"],
+    "genre": ["动作冒险", "第三人称射击"],
+    "art_style": ["写实美术"],
+    "audio_style": ["管弦乐"],
+    "perspective": ["第三人称"],
+    "theme": ["考古探险", "自然"],
+    "narrative_style": ["过场驱动", "情感叙事"],
+    "game_feel": ["流畅操作", "紧张节奏"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "能力门控探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "新工具门控开放区域",
+            "quote_or_summary": "绳箭、攀爬镐等新工具会逐步打开互联枢纽中此前无法到达的区域，鼓励折返探索。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "能力树",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "经验解锁技能与升级装备",
+            "quote_or_summary": "玩家用经验解锁攀爬/狩猎/生存等技能、用搜集的材料在营地升级弓与枪械，从猎物成长为猎手。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "可选墓室物理谜题",
+            "quote_or_summary": "岛上散布可选墓室，内含需操纵机关与物理的谜题，破解后给予奖励。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Tomb Raider（2013）玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Tomb_Raider_(2013_video_game)",
+        "quote_or_summary": "第三人称动作冒险，系列重启与起源重构，聚焦生存、互联枢纽地图、弓箭潜行与枪战、绳索攀爬、经验解锁技能与材料升级、工具门控折返、可选墓室物理谜题，Crystal Dynamics 开发，2013 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_tomb_raider_gated_backtrack",
+      "subject": "能力门控探索",
+      "relation": "creates",
+      "object": "立体探索",
+      "explanation": "把孤岛做成一张互联的枢纽地图、并把绳箭、攀爬镐等工具设为开门的钥匙，于是玩家初次路过一片区域时会被明显挡在某些去不了的角落外，待后续获得对应工具再回头打通——探索因此变成「记下死路、带着新能力折返」的纵向循环，让一张地图随能力成长不断长出新的可达层，把线性流程拓成可反复回访的立体空间，可复用于希望用「工具即钥匙 + 互联枢纽」鼓励折返、让有限场景随能力增长持续释放探索价值的设计。",
+      "evidence": [
+        {
+          "title": "工具门控折返解读",
+          "quote_or_summary": "新工具打开此前去不了的角落，使探索成为带着新能力折返打通的纵向循环，一张地图随成长长出新可达层。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

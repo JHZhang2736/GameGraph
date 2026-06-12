@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_apokerlypse",
+    "title": "Apokerlypse",
+    "source_refs": [
+      {
+        "title": "Apokerlypse（Steam，appid 3481020）",
+        "url": "https://store.steampowered.com/app/3481020/Apokerlypse/",
+        "notes": "类型（受多种扑克启发的卡牌策略肉鸽）、2026 年 4 月 29 日发售、以扑克「出光手牌」为核心目标、组合恶魔筹码改写出牌规则、打出对子/顺子/葫芦等牌型引爆连锁、5 名各具玩法英雄、70+ 技能与词缀、400 枚恶魔筹码、异步多人对战迎战真实玩家卡组（当前 2–3 人在线对抗、4 人模式开发中）、世界尽头酒馆背景、含免费序章等事实来源。"
+      },
+      {
+        "title": "Apokerlypse Launches April 29 on Steam（Invision Game Community）",
+        "url": "https://invisioncommunity.co.uk/apokerlypse-launches-april-29-on-steam-with-free-prologue-available-now/",
+        "notes": "发售日期、扑克牌型 + 肉鸽构筑、恶魔筹码、异步对战、免费序章等事实来源。"
+      }
+    ],
+    "short_description": "一款受多种扑克玩法启发的卡牌策略肉鸽游戏，2026 年 4 月 29 日在 Steam 发售：以扑克「尽快出光手牌」为核心目标，叠加深度的牌组构筑肉鸽机制——玩家扮演「世界尽头酒馆」里的老千，组合各式「恶魔筹码」改写出牌规则，打出对子、顺子、葫芦等扑克牌型并引爆连锁反应。含 5 名各具玩法的英雄、70+ 技能与词缀、400 枚大幅改变策略的恶魔筹码，并以异步多人对战让你迎战真实玩家搭建的卡组（当前支持 2–3 人在线对抗，4 人模式开发中）。",
+    "selection_reason": "作为「把出光手牌的扑克玩法肉鸽化」的代表：以扑克牌型与「清空手牌」为骨，叠上 400 枚改写规则的恶魔筹码与英雄构筑，再用异步对战让你挑战真实玩家的卡组，是研究牌型组合、扑克玩法肉鸽化与异步 PvP 构筑的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_apokerlypse",
+    "one_sentence_summary": "玩家扮演「世界尽头酒馆」的老千，用 5 名英雄与 400 枚恶魔筹码构筑卡组、打出对子顺子葫芦等扑克牌型引爆连锁、尽快出光手牌，并在异步多人对战中迎战真实玩家搭建的卡组。",
+    "core_hook": "把扑克「谁先出光手牌谁赢」的经典目标，改造成可堆叠连锁的构筑肉鸽：你组合各式「恶魔筹码」去改写出牌规则，凑出对子、顺子、葫芦等牌型时触发夸张的连锁反应，一套打下来手牌哗哗清空。400 枚筹码与 70+ 技能词缀让每局都能搭出迥异的套路；更关键的是对手不是 AI，而是真实玩家留下的卡组，异步对战逼你不断琢磨怎么搭得更狠。",
+    "core_loop": "选择英雄、逐局组合恶魔筹码与技能改写规则、打出扑克牌型触发连锁尽快出光手牌取胜、用收益扩充与强化卡组、在异步多人对战中迎战真实玩家的卡组，循环推进肉鸽并冲击排名。",
+    "progression_model": "局内靠拾取与组合 400 枚恶魔筹码、70+ 技能词缀滚雪球式强化套路，局外靠英雄与内容解锁推进；进度体现为卡组构成、筹码搭配、英雄解锁与对战排名。",
+    "failure_model": "一局中未能先于对手出光手牌、被对手卡组击败即告负、须重启新的肉鸽对局，核心压力在于既要凑牌型连锁清牌、又要算准对手卡组的干扰与节奏。",
+    "content_structure": "以肉鸽对局与异步多人对战为骨架，靠扑克牌型、恶魔筹码组合与英雄技能承载构筑深度，以 5 名英雄、400 筹码与真实玩家卡组承载重玩，单人对局含异步 PvP。",
+    "main_player_actions": ["出牌", "卡牌取舍"],
+    "main_player_decisions": ["风险取舍", "道具选择", "装备搭配"],
+    "main_player_experiences": ["构筑乐趣", "滚雪球快感", "竞技紧张"],
+    "main_mechanics": ["牌型组合", "牌组构筑", "卡牌连锁", "异步对战"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["小型团队"],
+    "innovation_patterns": ["牌型组合", "异步对战"],
+    "reusable_reference_patterns": ["牌型组合", "牌组构筑", "卡牌连锁"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["卡牌构筑", "类肉鸽"],
+    "art_style": ["哥特卡通"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["宗教", "黑色幽默"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["策略权衡", "规划满足"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "牌型组合",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "扑克牌型触发连锁",
+            "quote_or_summary": "玩家打出对子、顺子、葫芦等扑克牌型并引爆连锁反应，以尽快出光手牌取胜。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "异步对战",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "迎战真实玩家卡组",
+            "quote_or_summary": "每局对手是真实玩家搭建的卡组，以异步多人对战形式呈现，当前支持 2–3 人在线对抗。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "恶魔筹码构筑套路",
+            "quote_or_summary": "玩家用 400 枚恶魔筹码与 70+ 技能词缀构筑并强化卡组，搭出迥异的出牌套路。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Apokerlypse 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/3481020/Apokerlypse/",
+        "quote_or_summary": "受扑克启发的卡牌策略肉鸽，出光手牌为目标、恶魔筹码改写规则、牌型连锁、5 英雄、400 筹码、70+ 技能词缀、异步多人对战迎战真实玩家卡组，2026 年 4 月 29 日发售。",
+        "notes": "事实取自 Steam 商店页与发行资讯。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_apokerlypse_async_pvp_replay",
+      "subject": "异步对战",
+      "relation": "creates",
+      "object": "重玩动力",
+      "explanation": "让每局对手都是真实玩家留下的卡组、而非固定 AI，等于把「对手」变成一份会持续更新、由社区共同供给的内容池：玩家不必凑齐时间联机，却总能碰到新颖、刁钻、不断进化的卡组配置，逼自己回头打磨构筑去破解。内容寿命因此不再受制于官方关卡产量，而由玩家彼此的构筑创意源源不断地续上。可复用于希望用「异步迎战真实玩家构筑」以低门槛 PvP 持续供给新鲜对手、从而延长重玩寿命的构筑对战设计。",
+      "evidence": [
+        {
+          "title": "异步对手即内容解读",
+          "quote_or_summary": "以真实玩家卡组作异步对手，使对局对手成为社区持续供给、不断进化的内容池，延长重玩寿命。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

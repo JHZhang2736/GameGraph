@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_battleblock_theater",
+    "title": "BattleBlock Theater",
+    "source_refs": [
+      {
+        "title": "BattleBlock Theater（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/BattleBlock_Theater",
+        "notes": "类型（横版解谜平台）、The Behemoth 开发、Microsoft Studios 发行、2013 年 4 月 3 日 Xbox 360 首发、2014 年 5 月 15 日登陆 Windows/Linux、玩家扮演被迫闯关的囚犯、操作以跑/跳/出拳为主、关卡由坍塌块/黏墙/弹跳火山岩/尖刺等各类方块与水和致命生物构成、含可单人或合作的冒险模式与对战竞技场 Arena、搞笑旁白、关卡编辑等事实来源。"
+      },
+      {
+        "title": "BattleBlock Theater（RAWG）",
+        "url": "https://rawg.io/games/battleblock-theater",
+        "notes": "The Behemoth 第三作、合作平台跳跃与对战、宝石与猫咪收集、幽默旁白叙事等事实来源。"
+      }
+    ],
+    "short_description": "一款横版解谜平台游戏，The Behemoth 开发、Microsoft Studios 发行，2013 年 4 月 3 日 Xbox 360 首发、2014 年登陆 PC：玩家扮演一群被困在诡异剧院、被迫闯关表演的囚犯，操作以跑、跳、出拳为主，穿越由坍塌块、黏墙、弹跳火山岩、尖刺以及水和致命生物组成的关卡。游戏含可单人或双人合作的冒险模式与多人对战的竞技场，并配有 The Behemoth 标志性的荒诞搞笑旁白；还内置关卡编辑器供玩家自制与分享关卡。",
+    "selection_reason": "作为「用搞笑旁白和合作捣乱把硬核平台跳跃变成欢乐派对」的代表：它把精心设计的方块关卡、能互相帮忙也能互相坑害的双人合作、以及一个不停吐槽你的旁白拧在一起，再用关卡编辑器把内容产量交给社区，是研究合作平台、喜剧叙事氛围与 UGC 长尾的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_battleblock_theater",
+    "one_sentence_summary": "玩家扮演被迫在诡异剧院闯关的囚犯，以跑跳出拳穿越布满坍塌块、尖刺与致命生物的方块关卡，可单人或双人合作（互助亦能互坑），配搞笑旁白与对战竞技场，并能用关卡编辑器自制分享关卡。",
+    "core_hook": "BattleBlock Theater 的魅力是「精密关卡 + 胡闹合作 + 毒舌旁白」三件事一起发酵：关卡本身是扎实的平台解谜，但一旦拉上朋友，合作就变味——你可以托举队友越过深渊，也可以在关键一跳前把他踹下尖刺，笑声往往来自互坑。而全程那个荒诞旁白不停给你讲一个语无伦次的猫咪与囚犯的故事、顺便吐槽你的每次失手，把失败也变成段子。再加上关卡编辑器，玩家自制的鬼畜关卡让欢乐没有尽头。",
+    "core_loop": "在剧院章节中跑跳出拳穿越方块关卡、利用与躲避坍塌块尖刺与致命生物、收集宝石与猫咪解锁内容、单人或与队友合作（互助或互坑）通关、或进入竞技场对战、在关卡编辑器里自制与游玩社区关卡，循环闯关与创作。",
+    "progression_model": "靠逐章通关推进剧情，靠收集宝石、猫咪与解锁武器/外观成长，靠竞技场与玩家自制关卡延展内容；进度体现为章节推进、收集度与已解锁的装扮和道具。",
+    "failure_model": "角色在关卡中触碰尖刺、被致命生物杀死、坠入水/深渊或超时即死亡，从检查点重来；合作模式下队友的坑害也会导致死亡，核心压力在于精准的平台操作与协调（或提防）队友。",
+    "content_structure": "以剧院主题的方块平台关卡为骨架，靠跑跳出拳与机关解谜承载玩法、靠搞笑旁白承载喜剧氛围，以竞技场对战与关卡编辑器的玩家自制内容承载长尾重玩，单人或合作。",
+    "main_player_actions": ["平台跳跃", "近战攻击", "抓取"],
+    "main_player_decisions": ["探索路线", "道具选择", "风险取舍"],
+    "main_player_experiences": ["欢乐混乱", "协作默契", "战斗精通"],
+    "main_mechanics": ["合作解谜", "物理碰撞", "关卡编辑", "淘汰赛制"],
+    "replayability_sources": ["用户生成内容", "全收集", "难度分级"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["物理喜剧", "关卡编辑"],
+    "reusable_reference_patterns": ["合作解谜", "用户生成内容"],
+    "non_replicable_risks": ["玩家留存", "强美术风格"],
+    "genre": ["解谜平台", "平台跳跃", "派对游戏"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["横版2D"],
+    "theme": ["黑色幽默"],
+    "narrative_style": ["过场驱动", "对话叙事"],
+    "game_feel": ["软弹物理", "流畅操作"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "合作解谜",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "可互助亦可互坑的双人合作",
+            "quote_or_summary": "冒险模式可单人或双人合作通关，队友既能托举互助、也能彼此坑害，制造欢乐混乱。",
+            "notes": "维基百科与 RAWG 可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "关卡编辑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "内置关卡编辑器",
+            "quote_or_summary": "游戏内置关卡编辑器，玩家可自制并分享关卡，延展游戏内容。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理喜剧",
+        "confidence": "medium",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "搞笑旁白与荒诞氛围",
+            "quote_or_summary": "全程由荒诞搞笑的旁白讲述语无伦次的故事并吐槽玩家，把失败也变成笑料。",
+            "notes": "基于可观察叙事呈现的解释性判断。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "BattleBlock Theater 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/BattleBlock_Theater",
+        "quote_or_summary": "横版解谜平台，跑跳出拳穿越方块机关关卡、可单人或双人合作（可互坑）、竞技场对战、关卡编辑器、搞笑旁白，The Behemoth 开发，2013 年发售。",
+        "notes": "事实取自维基百科与 RAWG。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_battleblock_comedy_failure",
+      "subject": "物理喜剧",
+      "relation": "creates",
+      "object": "失败趣味化",
+      "explanation": "在硬核平台跳跃里，失手坠亡本是挫败来源；但 BattleBlock 用一个不停吐槽的荒诞旁白与可互相坑害的合作，把每一次死亡重新包装成段子——你不是「又死了」，而是「又给朋友（或旁白）贡献了一个笑点」。喜剧氛围因此成了挫败的缓冲垫：玩家更愿意一次次重试，因为失败的情绪成本被笑声抵消。可复用于希望用喜剧旁白、夸张物理与社交互坑把高难度关卡的挫败转化为欢乐、提升留存的合作平台设计。",
+      "evidence": [
+        {
+          "title": "喜剧缓冲挫败解读",
+          "quote_or_summary": "旁白吐槽与互坑合作把死亡包装成段子，喜剧氛围成为挫败缓冲，使失败趣味化、玩家更愿重试。",
+          "notes": "基于可观察机制与叙事呈现的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

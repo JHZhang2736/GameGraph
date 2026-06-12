@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_finding_paradise",
+    "title": "Finding Paradise",
+    "source_refs": [
+      {
+        "title": "Finding Paradise（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Finding_Paradise",
+        "notes": "类型（剧情向冒险解谜）、Freebird Games 开发、2017 年 12 月 14 日 Windows/macOS/Linux 发售、To the Moon 与 A Bird Story 的续作、医生 Eva Rosalene 与 Neil Watts 为卧床老人 Colin Reeds 实现临终愿望、进入并重构病人记忆、玩法以少量解谜为主、靠寻找重要物件与「记忆链接」在记忆间穿梭、用 RPG Maker 制作、Kan Gao 配乐等事实来源。"
+      },
+      {
+        "title": "Finding Paradise（Steam，appid 337340）",
+        "url": "https://store.steampowered.com/app/337340/Finding_Paradise/",
+        "notes": "剧情驱动、两位医生进入临终者记忆实现愿望、像素 RPG Maker 呈现、钢琴配乐、低交互高叙事等事实来源。"
+      }
+    ],
+    "short_description": "一款剧情向冒险解谜游戏，Freebird Games 开发，2017 年 12 月 14 日发售：作为 To the Moon 与 A Bird Story 的续作，故事仍由 Eva Rosalene 与 Neil Watts 两位医生主导，这次他们要为卧床的老人 Colin Reeds 实现临终愿望。玩家操控两位医生进入并回溯 Colin 的记忆，靠寻找重要物件与「记忆链接」在他一生的片段间穿梭，拼凑出一个看似自相矛盾的心愿，并设法在他的记忆里把它实现。玩法交互极少，几乎全部分量都压在叙事与情感上，用 RPG Maker 与 Kan Gao 的钢琴配乐呈现。",
+    "selection_reason": "作为「用近乎零玩法把全部分量押在叙事」的代表：它几乎不靠机制，只让玩家穿梭、收集物件、连起记忆，把交互压到最低，换取一段以情感为唯一卖点的故事，证明强叙事与配乐本身就能撑起一款游戏，是研究记忆穿梭结构、情感叙事与极简交互设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_finding_paradise",
+    "one_sentence_summary": "玩家操控两位医生进入卧床老人 Colin 的记忆，靠寻找重要物件与记忆链接在他一生片段间穿梭、拼出一个自相矛盾的临终愿望并设法实现，以近乎零玩法把全部分量押在情感叙事上。",
+    "core_hook": "Finding Paradise 几乎不像一款「游戏」：它不考验你的操作或策略，而是请你做一回闯入他人一生的旁观者。两位医生受雇为临终的 Colin 实现愿望，可这愿望本身自相矛盾——他想要一段不一样的人生，却又说不清要改什么。于是你操控医生在他的记忆间一段段倒退、寻找承载情感的物件、连起记忆链接，慢慢读懂这个普通人一生的遗憾与温柔。交互被压到最低，正因如此，所有注意力都落在故事与 Kan Gao 钢琴配乐编织的情绪上，让人一路被牵着走向落泪。",
+    "core_loop": "操控两位医生在病人记忆场景中走动探索、寻找承载情感的关键物件、激活并跳跃「记忆链接」回溯到更早的人生片段、穿插少量解谜与对话、逐步拼出并实现临终愿望，循环穿梭记忆直至故事收束。",
+    "progression_model": "靠沿记忆链接一段段回溯病人的一生线性推进剧情、靠寻得关键物件解锁更早的记忆；进度体现为已穿越的人生片段与逐渐拼全的愿望真相，几乎无数值成长。",
+    "failure_model": "本作几乎无失败死亡，体验为线性叙事推进，「停滞」仅来自未找到推进所需的关键物件或记忆链接；其情感张力由病人一生的遗憾与愿望承载，而非失败惩罚。",
+    "content_structure": "以沿记忆链接回溯病人一生的线性叙事为骨架，靠物件收集与记忆穿梭承载极少量玩法，靠剧情与钢琴配乐承载情感，单人。",
+    "main_player_actions": ["物件操控", "对话选择", "秘密解谜"],
+    "main_player_decisions": ["探索路线", "秘密取舍"],
+    "main_player_experiences": ["情感叙事", "探索发现", "抉择沉浸"],
+    "main_mechanics": ["环境叙事", "记忆穿梭", "物品组合"],
+    "replayability_sources": ["彩蛋收集", "全收集"],
+    "production_constraints": ["小型团队", "RPG Maker"],
+    "innovation_patterns": ["记忆穿梭", "情感叙事"],
+    "reusable_reference_patterns": ["环境叙事", "分支叙事"],
+    "non_replicable_risks": ["一次性体验", "玩家留存"],
+    "genre": ["叙事冒险", "解谜"],
+    "art_style": ["像素美术"],
+    "audio_style": ["钢琴配乐"],
+    "perspective": ["俯视"],
+    "theme": ["家庭情感", "超现实"],
+    "narrative_style": ["情感叙事", "过场驱动"],
+    "game_feel": ["沉浸代入", "轻松休闲"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "记忆穿梭",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "靠记忆链接回溯一生",
+            "quote_or_summary": "玩家靠寻找重要物件与记忆链接，在病人一生的片段间穿梭回溯，拼凑并实现其临终愿望。",
+            "notes": "维基百科与 Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "情感叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "近乎零玩法的剧情驱动",
+            "quote_or_summary": "玩法交互极少，几乎全部分量压在叙事与情感上，靠剧情与钢琴配乐打动玩家。",
+            "notes": "维基百科与 Steam 商店页可观察。"
+          }
+        ]
+      },
+      {
+        "tag": "钢琴配乐",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "Kan Gao 钢琴配乐",
+            "quote_or_summary": "游戏由 Kan Gao 创作的钢琴配乐承托情绪，是其情感冲击的重要来源。",
+            "notes": "维基百科可观察。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Finding Paradise 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Finding_Paradise",
+        "quote_or_summary": "剧情向冒险解谜，两位医生进入临终者记忆、靠物件与记忆链接回溯一生并实现愿望、极少交互高叙事、RPG Maker 与钢琴配乐，Freebird Games 开发，2017 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_finding_paradise_minimal_emotion",
+      "subject": "记忆穿梭",
+      "relation": "creates",
+      "object": "情感叙事",
+      "explanation": "把玩法削到只剩「走动、捡物件、沿记忆链接往回跳」，等于让机制彻底退位、把玩家的全部注意力交给故事本身：你做的每一个动作都不是为了赢，而是为了再往这个陌生人的一生里深入一层。记忆回溯的结构又天然制造悬念——越往早处走，越接近那个自相矛盾的愿望的根源——于是情感不是被玩法打断，而是被极简交互稳稳托着层层累积，最终在配乐里爆发。可复用于希望用「记忆/人生回溯结构 + 极低交互」把叙事与配乐做成唯一卖点、以小团队成本打造情感冲击的剧情向设计——但其体验高度线性、近乎一次性。",
+      "evidence": [
+        {
+          "title": "极简交互托情感解读",
+          "quote_or_summary": "削到只剩穿梭与拾物使机制退位、注意力全交故事，记忆回溯结构制造悬念，情感被极简交互层层托起。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

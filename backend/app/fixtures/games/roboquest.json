@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_roboquest",
+    "title": "Roboquest",
+    "source_refs": [
+      {
+        "title": "Roboquest（Steam，appid 692890）",
+        "url": "https://store.steampowered.com/app/692890/Roboquest/",
+        "notes": "类型（快节奏第一人称射击肉鸽）、RyseUp Studios 开发、2020 年 8 月抢先体验、2023 年正式发售、扮演重启的守护者机器人、单人或双人合作、流畅快速移动与枪战、多样武器、关卡由预置与随机区块拼合每局不同、收集扳手升级营地解锁新内容、卡通渲染画风等事实来源。"
+      },
+      {
+        "title": "Roboquest（Steam 社区）",
+        "url": "https://steamcommunity.com/app/692890",
+        "notes": "快节奏 FPS 肉鸽、双人合作、流畅移动与枪战、随机关卡、营地元进度升级等事实来源。"
+      }
+    ],
+    "short_description": "一款快节奏的第一人称射击肉鸽游戏，RyseUp Studios 开发，2020 年 8 月上线抢先体验、2023 年正式发售：玩家扮演一台重启的守护者机器人，在焦土未来世界里以流畅迅捷的移动与枪战，单人或双人合作清剿成群机器人。武器种类繁多，关卡由预置与随机区块拼合、每局各不相同；玩家在跑图中收集扳手，用以升级营地、解锁新内容，让每次出击都更进一步。",
+    "selection_reason": "作为「把流畅移动与肉鸽 FPS 结合」的代表：用迅捷的跑酷式移动配合多样武器与职业，让枪战手感成为核心，再以随机拼合的关卡和扳手营地的元进度延展重玩，是研究第一人称跑酷、肉鸽元进度与快节奏枪战的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_roboquest",
+    "one_sentence_summary": "玩家扮演重启的守护者机器人，在焦土未来世界以流畅迅捷的移动与枪战单人或双人合作清剿机器人，跑过随机拼合的关卡、收集扳手升级营地，循环出击逐步变强。",
+    "core_hook": "Roboquest 的内核是「快」：玩家像跑酷一样在关卡里冲刺、二段跳、贴墙移动，同时几乎不停火地清扫成群机器人，移动与射击拧成一股流畅的爽快感。每局武器、增益与随机拼合的关卡都不同，逼你即兴搭配出击。死了也不白跑——攒下的扳手用来升级营地、解锁新武器与职业，让下一趟出击的底子更厚。",
+    "core_loop": "选择职业出击、在随机拼合的关卡里高速移动并枪战清场、拾取武器与增益即时构筑、击败 Boss 推进、收集扳手；阵亡后回营地用扳手升级解锁，循环出击逐步深入。",
+    "progression_model": "局内靠拾取武器与增益滚雪球式强化当前出击，局外靠扳手升级营地、解锁武器职业与永久增益推进；进度体现为当前构筑、营地解锁深度与可达关卡。",
+    "failure_model": "角色在出击中血量耗尽阵亡即一局结束、须从头重开新一趟跑图，核心压力在于既要靠流畅走位规避弹幕、又要凑出足以应对后期机器人潮与 Boss 的武器增益组合。",
+    "content_structure": "以随机拼合的关卡与逐趟肉鸽出击为骨架，靠多样武器、增益与职业承载构筑深度，以随机关卡、营地元进度与双人合作承载重玩，单人或双人合作。",
+    "main_player_actions": ["射击", "冲刺", "平台跳跃"],
+    "main_player_decisions": ["增益选择", "武器搭配", "风险取舍"],
+    "main_player_experiences": ["战斗精通", "高难跑酷", "滚雪球快感"],
+    "main_mechanics": ["元进度", "程序生成", "增益构筑", "合作生存"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["小型团队", "Unreal 引擎", "卡通渲染"],
+    "innovation_patterns": ["第一人称跑酷", "增益构筑"],
+    "reusable_reference_patterns": ["元进度", "增益构筑", "合作生存"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["第一人称射击", "类肉鸽"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["科幻"],
+    "narrative_style": ["极简叙事"],
+    "game_feel": ["爽快射击", "流畅跑酷"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "第一人称跑酷",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "流畅迅捷的移动",
+            "quote_or_summary": "游戏以流畅快速的移动（冲刺、跳跃、贴墙）配合枪战著称，被玩家称道其顺滑的移动手感。",
+            "notes": "Steam 商店页与社区可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "元进度",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "扳手升级营地",
+            "quote_or_summary": "玩家跑图收集扳手，用以升级营地、解锁新武器与职业等内容，让每趟出击更进一步。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "程序生成",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "随机拼合的关卡",
+            "quote_or_summary": "每个关卡由预置区块与随机区块精心拼合而成，每局提供不同的挑战。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Roboquest 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/692890/Roboquest/",
+        "quote_or_summary": "快节奏 FPS 肉鸽，扮演守护者机器人、流畅移动与枪战、单人或双人合作、随机拼合关卡、扳手升级营地元进度，RyseUp Studios 开发，2020 年抢先体验、2023 年正式发售。",
+        "notes": "事实取自 Steam 商店页与社区。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_roboquest_movement_rhythm",
+      "subject": "第一人称跑酷",
+      "relation": "creates",
+      "object": "节奏张力",
+      "explanation": "把跑酷式的高速移动与不停火的枪战绑在同一套操作里，等于让「走位」本身成为输出与生存的一部分：玩家必须一边冲刺、贴墙、跳跃规避弹幕，一边精准点射，节奏被持续推到高位，停下就是挨打。这种「移动即战斗」的张力让每场遭遇都像一段高速即兴，把 FPS 的爽快从瞄准延伸到全身的位移。可复用于希望用「高机动移动 + 持续枪战」制造高强度节奏张力、让走位成为核心技巧的快节奏射击设计。",
+      "evidence": [
+        {
+          "title": "移动即战斗生节奏张力解读",
+          "quote_or_summary": "高速移动与持续枪战合一，使走位成为输出与生存的一部分，把战斗节奏持续推高生发张力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

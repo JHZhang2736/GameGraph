@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_portal",
+    "title": "Portal",
+    "source_refs": [
+      {
+        "title": "Portal（2007，维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Portal_(video_game)",
+        "notes": "类型（第一人称解谜平台）、Valve 开发发行、Source 引擎、2007 年发售（含于 Orange Box）、传送枪 Aperture Science Handheld Portal Device 在两处表面打出蓝橙互联的传送门、动量守恒（speedy thing in, speedy thing out）可实现「fling」远距弹射、AI GLaDOS 以黑色幽默引导并逐渐转为反派、测试室渐进式教学结构、团队源自 DigiPen 的 Narbacular Drop、约十人开发两年余等事实来源。"
+      },
+      {
+        "title": "Portal（Steam，appid 400）",
+        "url": "https://store.steampowered.com/app/400/Portal/",
+        "notes": "第一人称传送门解谜、动量物理、GLaDOS、渐进测试室等事实来源。"
+      }
+    ],
+    "short_description": "一款第一人称解谜平台游戏，Valve 基于 Source 引擎开发：玩家手持「传送枪」，在墙面地面打出一对蓝橙互联的传送门，借由穿门时守恒的动量在一间间测试室中位移、弹射、运送方块来破解空间谜题，全程被人工智能 GLaDOS 以黑色幽默「引导」、最终转为对抗，源自 DigiPen 学生作品 Narbacular Drop、约十人小团队打造，2007 年随 Orange Box 发售。",
+    "selection_reason": "作为「用一个机制撑起整套谜题」的典范：一把传送枪 + 守恒动量，几乎不靠文字讲解就把空间推理、关卡渐进与黑色幽默叙事全部串起来，是研究单一核心机制的深度挖掘、渐进式无声教学与环境化叙事的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_portal",
+    "one_sentence_summary": "玩家手持传送枪在表面打出一对互联的蓝橙传送门，利用穿门时守恒的动量在测试室中位移、弹射与运送方块破解空间谜题，全程被 AI GLaDOS 以黑色幽默引导并逐步转为对抗。",
+    "core_hook": "把整款游戏压在「一对互联的门 + 守恒的动量」这一个机制上：玩家随处打出蓝橙两扇传送门，穿过去时速度与方向被完整保留——于是「快速的东西进去，快速的东西出来」，从高处坠落的动能可以被一对门转化为水平的远距弹射。一把枪、一条物理规则，却能繁衍出层层加深、几乎无需文字教学的空间谜题，再叠上 GLaDOS 阴恻恻的旁白，让纯粹的解谜也透出叙事张力。",
+    "core_loop": "观察测试室布局与可打门表面、用传送枪布置蓝橙门、借动量守恒位移自身或运送方块、解开本室机关抵达出口、进入下一间难度递增的测试室，循着 GLaDOS 的引导推进直至反转。",
+    "progression_model": "靠测试室逐间引入并叠加传送门的新用法（动量弹射、运送方块、躲避炮塔等）线性加深难度，以无声渐进教学取代说明；进度体现为已通过的测试室与剧情阶段，无数值养成。",
+    "failure_model": "被酸池、炮塔、能量球或坠落等危险击杀即回到本室检查点重来，没有永久惩罚，失败只是同一谜题的再尝试。",
+    "content_structure": "以一连串难度递增的测试室为骨架，靠传送门机制的渐进式新用法承载谜题，以 GLaDOS 旁白与可探查环境承载叙事与反转，单人。",
+    "main_player_actions": ["射击", "物件操控", "平台跳跃"],
+    "main_player_decisions": ["探索路线", "优先级排序"],
+    "main_player_experiences": ["系统掌控", "探索发现", "氛围营造"],
+    "main_mechanics": ["传送门", "物理模拟", "物理碰撞"],
+    "replayability_sources": ["速通", "彩蛋收集"],
+    "production_constraints": ["Source引擎", "小型团队"],
+    "innovation_patterns": ["传送门", "物理模拟"],
+    "reusable_reference_patterns": ["传送门", "物理模拟"],
+    "non_replicable_risks": ["一次性体验", "技术复杂度"],
+    "genre": ["解谜平台"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第一人称"],
+    "theme": ["科幻", "黑色幽默"],
+    "narrative_style": ["环境叙事", "碎片化叙事"],
+    "game_feel": ["流畅操作", "规划满足"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "传送门",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "蓝橙互联传送门",
+            "quote_or_summary": "传送枪在两处表面打出蓝橙互联的传送门，建立两地的视觉与物理连接，是全部谜题的核心机制。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "动量守恒弹射",
+            "quote_or_summary": "穿门时速度方向守恒，坠落动能可经一对门转化为远距水平弹射（fling），是进阶谜题的关键。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "环境叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "GLaDOS 引导与测试室叙事",
+            "quote_or_summary": "AI GLaDOS 以黑色幽默旁白引导玩家穿越测试室、并逐渐转为反派，叙事多嵌于环境与语音。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Portal 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Portal_(video_game)",
+        "quote_or_summary": "第一人称解谜平台，传送枪打出蓝橙互联门、动量守恒弹射、渐进测试室、GLaDOS 旁白引导与反转，源自 Narbacular Drop、约十人小团队，Valve 基于 Source 引擎开发，2007 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_portal_single_mechanic",
+      "subject": "传送门",
+      "relation": "creates",
+      "object": "空间决策",
+      "explanation": "把「一对互联且保留动量的门」作为唯一核心动词，等于让玩家的每一步都变成空间推理：要到达某处，先得想清楚「在哪两面墙打门、以什么角度进入、利用多少坠落动能」，移动本身被改造成对几何与物理的规划。机制极简却语义极深——同一把枪在不同布局下能解出截然不同的路径，关卡因此只需逐步揭示其新用法就能自然加深，无需堆叠更多系统。可复用于希望用「单一但语义丰富的核心机制」承载整套渐进谜题、并将操作转化为持续空间决策的设计。",
+      "evidence": [
+        {
+          "title": "单机制深挖解读",
+          "quote_or_summary": "互联且守恒动量的门把移动变成对几何与物理的规划，单一机制即可承载逐步加深的整套空间谜题。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

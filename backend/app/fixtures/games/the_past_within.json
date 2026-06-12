@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_the_past_within",
+    "title": "The Past Within",
+    "source_refs": [
+      {
+        "title": "The Past Within（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/The_Past_Within",
+        "notes": "类型（仅限双人合作解谜）、Rusty Lake 开发、2022 年发售、两名玩家分处过去（1926，可九十度转动的 2D 场景）与未来（1984，围绕桌上机械盒的实时 3D），双方看不到也碰不到对方的谜题、须靠沟通互通线索合力解谜、揭开 Albert Vanderboom 的计划、含两章约两小时、可跨 PC/Mac/iOS/Android/Switch 平台同玩等事实来源。"
+      },
+      {
+        "title": "The Past Within（Steam，appid 1515210）",
+        "url": "https://store.steampowered.com/app/1515210/The_Past_Within/",
+        "notes": "双人合作专属、过去与未来双视角、信息不对称解谜、跨平台联机等事实来源。"
+      }
+    ],
+    "short_description": "一款仅限双人合作的解谜游戏，Rusty Lake 开发、2022 年发售，是该工作室宇宙首次双人体验：两名玩家分处「过去」与「未来」——一人身处 1926 年、以可九十度转动的 2D 场景观察，一人身处 1984 年、围绕桌上一只神秘机械盒进行实时 3D 操作；双方看不到也碰不到对方的谜题，必须靠语音不断描述各自所见、互通线索，才能合力解开谜题、揭开 Albert Vanderboom 的计划。含两章、平均约两小时，双方可各用 PC/Mac/iOS/Android/Switch 跨平台同玩。",
+    "selection_reason": "作为「用信息不对称把解谜变成两人对话」的代表：两名玩家分处过去与未来、各看一半线索却互不可见，唯有靠口头描述与互通才能推进，把解谜从单人推理变成强制协作的沟通游戏；配合 Rusty Lake 标志性的诡谲氛围，是研究非对称协作、合作解谜与跨时空叙事的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_the_past_within",
+    "one_sentence_summary": "两名玩家分处 1926 年与 1984 年、各以 2D 转屏与 3D 机械盒观察各自看不到对方的谜题，必须靠语音描述所见、互通线索才能合力解开两章谜题，揭开 Albert Vanderboom 的计划。",
+    "core_hook": "把解谜的关键信息一拆为二，分给身处不同时空的两个人：一人在 1926 年的 2D 场景里转着看，一人在 1984 年围着一只 3D 机械盒转着看，两边的线索互为答案，却谁也看不见对方那一半。于是游戏强制你们开口——「我这有三个符号，红绿蓝」「我这要输一串颜色」——解谜变成一场必须不停描述、对照、纠错的对话。没有沟通就寸步难行，这份强制协作正是它区别于单人解谜的内核。",
+    "core_loop": "两名玩家分处过去与未来场景、各自观察并转动视角发现线索、用语音描述并互通彼此所见、把一方的信息用于另一方的谜题、合力解开机关推进章节，循着剧情逐步揭开真相。",
+    "progression_model": "靠两章线性谜题推进剧情，靠双方互通线索解开层层机关解锁后续场景；无数值养成，进度体现为已解开的谜题与逐步揭示的故事。",
+    "failure_model": "本作以协作解谜推进、无失败死亡，卡关源于双方沟通不畅或尚未对上彼此的线索，「失败」即一次信息没能成功互通。",
+    "content_structure": "以两章信息不对称的协作谜题为骨架，靠过去/未来双视角与 2D/3D 不同呈现承载玩法，以一次性合作体验为主，双人合作。",
+    "main_player_actions": ["物件操控", "秘密解谜", "社交互动"],
+    "main_player_decisions": ["探索路线", "优先级排序"],
+    "main_player_experiences": ["协作默契", "探索发现", "氛围营造"],
+    "main_mechanics": ["合作解谜", "非对称协作", "环境叙事"],
+    "replayability_sources": ["彩蛋收集", "全收集"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["非对称协作", "合作解谜"],
+    "reusable_reference_patterns": ["非对称协作", "合作解谜"],
+    "non_replicable_risks": ["一次性体验", "强美术风格"],
+    "genre": ["解谜", "叙事冒险"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["横版2D", "第一人称"],
+    "theme": ["灵异", "超现实"],
+    "narrative_style": ["环境叙事", "碎片化叙事"],
+    "game_feel": ["沉浸代入", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "非对称协作",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "各看一半互不可见",
+            "quote_or_summary": "两名玩家分处过去与未来，各自的谜题与线索对方看不到也碰不到，须互通才能解开。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "合作解谜",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "互通线索合力解谜",
+            "quote_or_summary": "一方的线索是另一方谜题的答案，双方靠语音描述彼此所见、合力解开机关推进。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "环境叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "双时空场景叙事",
+            "quote_or_summary": "玩家在 1926 与 1984 两个时空的场景中观察细节，逐步揭开 Albert Vanderboom 的计划。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "The Past Within 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/The_Past_Within",
+        "quote_or_summary": "仅限双人合作解谜，两玩家分处 1926（2D 转屏）与 1984（3D 机械盒）、互不可见、靠沟通互通线索合力解谜、两章约两小时、跨平台同玩，Rusty Lake 开发，2022 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_past_within_asymmetry_bonding",
+      "subject": "非对称协作",
+      "relation": "creates",
+      "object": "协作张力",
+      "explanation": "把解谜所需的信息一分为二、分给互不可见的两个人，等于让「沟通」成为唯一的通关手段：任何一方都无法独自推进，必须把自己看到的符号、颜色、顺序准确地描述给对方，再共同对照纠错。描述不清或听岔就会卡住，对上了则豁然开朗——张力与默契都从这种被迫的口头协作中长出来，体验的核心不在谜题本身，而在两人如何把各自的半张拼图说清楚。可复用于希望用「信息不对称 + 强制语音沟通」把解谜转化为协作张力、制造双人专属默契的合作设计。",
+      "evidence": [
+        {
+          "title": "信息不对称生协作解读",
+          "quote_or_summary": "信息一分为二且互不可见，使语音沟通成为唯一解法，描述纠错的过程生发协作张力与默契。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

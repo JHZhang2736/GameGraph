@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_resident_evil_2",
+    "title": "Resident Evil 2",
+    "source_refs": [
+      {
+        "title": "Resident Evil 2（2019 video game，维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Resident_Evil_2_(2019_video_game)",
+        "notes": "类型（生存恐怖，2019 重制）、Capcom 自研 RE Engine、越肩第三人称取代原作坦克操作、可自由移动转视角并移动射击、菜鸟警官 Leon 与大学生 Claire 两条剧情各自影响武器/区域/道具/支线/最终 Boss、浣熊市丧尸爆发、可合成火药与组合道具、钥匙/道具门控的箱庭探索与解谜、暗处需用手电、追踪者「暴君（Mr. X）」全程游荡施压、稀缺弹药与资源管理、2019 年 1 月发售等事实来源。"
+      },
+      {
+        "title": "Resident Evil 2（Steam，appid 883710）",
+        "url": "https://store.steampowered.com/app/883710/Resident_Evil_2/",
+        "notes": "越肩生存恐怖、资源管理、箱庭解谜、暴君追踪、Leon/Claire 双线等事实来源。"
+      }
+    ],
+    "short_description": "一款 2019 年的生存恐怖重制游戏，基于 Capcom 自研 RE Engine：以越肩第三人称取代原作的坦克操作，玩家分别扮演菜鸟警官 Leon 与大学生 Claire 在丧尸爆发的浣熊市求生——在弹药与资源极度稀缺中探索警察局等箱庭场景、用钥匙与道具门控破解谜题、合成火药与药草、用手电照亮暗处，还要躲避一路游荡施压、杀不死的追踪者「暴君 Mr. X」，两条剧情各自影响武器、区域与最终 Boss，2019 年发售。",
+    "selection_reason": "作为「经典生存恐怖的现代化重制」代表：用越肩操作与写实渲染重做箱庭探索、资源稀缺与钥匙门控解谜，再用一个杀不死、会全程游荡逼近的追踪者「暴君」把恐惧从场景吓人升级为持续的空间压迫，是研究生存恐怖资源张力、箱庭解谜与追踪者施压设计的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_resident_evil_2",
+    "one_sentence_summary": "玩家分别扮演 Leon 与 Claire 在丧尸爆发的浣熊市求生，在弹药资源极度稀缺中探索箱庭场景、用钥匙与道具门控解谜、合成火药药草，并躲避一路游荡逼近、杀不死的追踪者「暴君 Mr. X」，两条剧情各自影响武器、区域与最终 Boss。",
+    "core_hook": "把生存恐怖压在「资源永远不够 + 杀不死的追踪者」两根弦上：弹药与道具栏极其有限，每一发子弹、每一次合成火药都要精算，是开枪还是绕开全凭权衡；而当追踪者「暴君 Mr. X」出现后，他会全程在箱庭里游荡、循声逼近、可被击退却杀不死，于是玩家既要解谜推进、又要时刻提防这个移动的威胁打断一切，把恐惧从一惊一乍升级成持续的空间压迫。",
+    "core_loop": "在警察局等箱庭场景探索、用手电照亮暗处、捡拾稀缺弹药与道具、合成火药与药草、寻找钥匙与道具破解门控解谜、躲避或击退丧尸与追踪者暴君、对峙 Boss 推进剧情，循环深入更危险的区域。",
+    "progression_model": "靠拾取与合成补充弹药药草、寻得钥匙卡与道具解开门控逐步打通箱庭、解锁新武器推进；进度体现为已打通区域、武器与道具栏强度、剧情章节，第二轮（Leon/Claire 互为表里）提供差异内容。",
+    "failure_model": "被丧尸、追踪者或 Boss 击杀即死亡，回到最近的打字机存档点重来；高难度下存档需消耗有限的色带，资源误用与遭遇暴君都可能让进程功亏一篑。",
+    "content_structure": "以警察局等连通箱庭为骨架，靠资源稀缺战斗、钥匙门控解谜、追踪者施压与 Boss 战承载紧张与恐惧，Leon 与 Claire 双线及二周目提供差异与重玩，单人。",
+    "main_player_actions": ["射击", "道具运用", "合成制作"],
+    "main_player_decisions": ["资源取舍", "风险取舍", "探索路线"],
+    "main_player_experiences": ["氛围营造", "战斗精通", "探索发现"],
+    "main_mechanics": ["资源管理", "合成制作", "能力门控探索", "追猎者", "手动存档"],
+    "replayability_sources": ["难度分级", "多结局", "全收集"],
+    "production_constraints": ["RE Engine", "大团队协作"],
+    "innovation_patterns": ["追猎者", "资源管理"],
+    "reusable_reference_patterns": ["资源管理", "氛围营造"],
+    "non_replicable_risks": ["强美术风格", "品牌积淀"],
+    "genre": ["生存", "第三人称射击"],
+    "art_style": ["写实美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["丧尸末世", "生存恐怖"],
+    "narrative_style": ["过场驱动", "碎片化叙事"],
+    "game_feel": ["紧张节奏", "厚重打击"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "追猎者",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "杀不死的暴君全程游荡",
+            "quote_or_summary": "追踪者暴君（Mr. X）出现后会在箱庭里全程游荡、循声逼近，可被击退却杀不死，持续施压。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "资源管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "弹药与道具栏稀缺",
+            "quote_or_summary": "弹药与道具栏极度有限，需合成火药与药草、精算每发子弹，在开枪与绕开之间权衡。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "能力门控探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "钥匙道具门控箱庭",
+            "quote_or_summary": "玩家需寻得钥匙卡与特定道具解开门控、逐步打通连通的箱庭场景并破解谜题。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Resident Evil 2（2019）玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Resident_Evil_2_(2019_video_game)",
+        "quote_or_summary": "2019 生存恐怖重制，RE Engine 越肩操作、Leon/Claire 双线、资源稀缺与合成、钥匙门控箱庭解谜、杀不死的追踪者暴君游荡施压、打字机存档，Capcom 开发，2019 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_re2_pursuer_pressure",
+      "subject": "追猎者",
+      "relation": "creates",
+      "object": "恐惧张力",
+      "explanation": "在一座需要反复折返解谜的箱庭里放进一个杀不死、会循声游荡逼近的追踪者，使恐惧不再依赖固定的惊吓点：暴君随时可能从任意方向出现、打断玩家的搜刮与解谜，于是玩家每走一步都得听脚步、规划逃跑路线、权衡「现在解这道谜 vs 先甩掉他」，把原本可控的探索节奏持续地搅乱，制造出比一惊一乍更绵长的空间压迫，可复用于希望用「不可消灭、动态游荡的追踪者」把场景恐惧升级为贯穿全程的持续张力与路线博弈的设计。",
+      "evidence": [
+        {
+          "title": "游荡追踪者制造压迫解读",
+          "quote_or_summary": "杀不死的追踪者随时游荡逼近、打断解谜与搜刮，使探索每步都需听声辨位与规划逃路，形成持续空间压迫。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_islanders",
+    "title": "ISLANDERS",
+    "source_refs": [
+      {
+        "title": "Islanders（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Islanders_(video_game)",
+        "notes": "类型（极简策略城建）、Grizzly Games 开发、2019 年 4 月 4 日 Steam 发售、在程序生成的彩色岛屿上从库存放置建筑得分、相邻建筑的搭配影响得分、得分补充建筑库存并解锁新建筑与前往新岛、由 HTW Berlin 学生小团队七个月开发、低多边形美术与放松基调等事实来源。"
+      },
+      {
+        "title": "ISLANDERS（Steam，appid 1046030）",
+        "url": "https://store.steampowered.com/app/1046030/ISLANDERS/",
+        "notes": "极简城建、放置建筑赚分解锁、相邻加成、程序生成岛屿、放松无压力体验等事实来源。"
+      }
+    ],
+    "short_description": "一款极简策略城建游戏，Grizzly Games 开发，2019 年 4 月 4 日发售：玩家在一座座程序生成的彩色岛屿上，从手里的建筑库存中挑选并放置建筑来赚分——每栋建筑的得分取决于它周围放了什么，伐木场挨着森林、房屋挨着市集会加分，挤在错误的邻居旁则减分。攒够分数就补充新的建筑库存、解锁更高级的建筑，分数足够时便能前往下一座岛继续，直到无处可放。它以低多边形美术、舒缓音乐和「没有失败也没有催促」的放松基调著称。",
+    "selection_reason": "作为「用相邻加成把城建浓缩成纯粹空间谜题」的代表：它剥掉资源链、人口与战争，只留下「在哪放、挨着谁」这一个决定，靠相邻得分规则与程序生成岛屿做出极简却耐玩的高分追逐，证明小团队也能用一条核心规则撑起一款放松向策略，是研究极简设计、空间决策与低成本可玩性的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_islanders",
+    "one_sentence_summary": "玩家在程序生成的彩色岛屿上从库存挑放建筑赚分，每栋的得分取决于相邻放了什么，攒分补充库存并解锁新建筑、分够便前往下一岛，以低多边形与舒缓基调做成无失败无催促的极简城建。",
+    "core_hook": "ISLANDERS 把城建削到只剩一个决定：「这栋楼放哪、挨着谁」。没有资源采集、没有人口、没有敌人，只有一条优雅的相邻得分规则——伐木场要贴森林、房屋要近市集、工厂别挨住宅。于是每放一栋都是一道空间小谜题：在拥挤的岛上找出那个能引爆连锁加分的位置。攒够分就解锁新建筑、跳去下一座更复杂的岛，分数像滚雪球，而舒缓的音乐与低多边形美景让这一切毫无压力，越摆越上头。",
+    "core_loop": "从库存挑选建筑、在岛上寻找能触发相邻加分的位置放置、赚取分数补充建筑库存并解锁新类型、攒够阈值后前往下一座程序生成的岛屿继续布局，循环追逐高分直至无处可放。",
+    "progression_model": "靠放置建筑赚分补充库存、解锁更高级建筑、达到阈值解锁前往新岛；进度体现为连续岛屿的累计高分与解锁的建筑种类，强调单局内的滚雪球而非永久成长。",
+    "failure_model": "当库存耗尽且分数不足以补充、或岛上再无合法放置空间时本局结束，未达过岛阈值即「失败」清算本局得分；核心压力在于每一次放置都要尽量榨取相邻加分，以免提前耗尽库存。",
+    "content_structure": "以连续岛屿的放置赚分为骨架，靠相邻加成的得分规则承载策略，靠程序生成岛屿承载变化与重玩，单人放松向。",
+    "main_player_actions": ["城市建设", "单位调度", "优先级排序"],
+    "main_player_decisions": ["基地规划", "空间决策", "优先级排序"],
+    "main_player_experiences": ["系统掌控", "视觉享受", "经营成就"],
+    "main_mechanics": ["相邻加成", "建造", "程序生成"],
+    "replayability_sources": ["程序生成", "速通"],
+    "production_constraints": ["小型团队", "低多边形"],
+    "innovation_patterns": ["相邻加成"],
+    "reusable_reference_patterns": ["相邻加成", "程序生成"],
+    "non_replicable_risks": ["玩家留存"],
+    "genre": ["模拟经营", "微策略"],
+    "art_style": ["低多边形", "极简风格"],
+    "audio_style": ["氛围音乐", "轻松配乐"],
+    "perspective": ["等距"],
+    "theme": ["自然", "个性化"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["轻松休闲", "规划满足"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "相邻加成",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "相邻搭配决定得分",
+            "quote_or_summary": "每栋建筑的得分取决于其相邻放置了什么，合理的邻接搭配加分、错误搭配减分。",
+            "notes": "维基百科与 Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "程序生成",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "程序生成岛屿",
+            "quote_or_summary": "每座岛屿由程序生成，使简单机制下仍有足够变化支撑反复游玩。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "极简风格",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "极简城建无失败无催促",
+            "quote_or_summary": "游戏剥离资源链与战争，仅保留放置得分，以低多边形美术与放松基调呈现极简体验。",
+            "notes": "维基百科与 Steam 商店页可观察。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "ISLANDERS 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Islanders_(video_game)",
+        "quote_or_summary": "极简策略城建，程序生成岛屿上放置建筑赚分、相邻搭配决定得分、攒分解锁建筑与过岛、低多边形放松基调，Grizzly Games 学生小团队开发，2019 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_islanders_adjacency_spatial",
+      "subject": "相邻加成",
+      "relation": "creates",
+      "object": "空间决策",
+      "explanation": "用「得分只看相邻搭配」这一条规则替换掉整套资源链与人口系统，等于把城建的全部决策压缩到一个纯粹的空间问题上：在有限且不规则的岛屿地形里，为每栋建筑找到那个能与邻居连锁加分、又不踩到减分关系的位置。规则极简，组合却随地形与库存千变万化，于是「放在哪」本身就是耐嚼的谜题，深度来自空间而非系统堆叠。可复用于希望用单一邻接规则、以极低开发成本撑起空间决策深度与放松向重玩的极简策略设计。",
+      "evidence": [
+        {
+          "title": "单规则生空间深度解读",
+          "quote_or_summary": "以相邻得分单规则替代资源系统，把决策压缩为空间谜题，规则极简而组合随地形多变，深度来自空间。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

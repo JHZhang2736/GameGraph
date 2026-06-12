@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_as_far_as_the_eye",
+    "title": "As Far As The Eye",
+    "source_refs": [
+      {
+        "title": "As Far As The Eye（Steam，appid 1119700）",
+        "url": "https://store.steampowered.com/app/1119700/As_Far_As_The_Eye/",
+        "notes": "类型（肉鸽回合制策略/资源管理村庄经营）、2020 年 9 月 10 日发售、设定在一系列六边形地图上、玩家化身「风」引导名为 Pupils 的变形者部落前往世界中心、须管理其资源/建筑/生命、每个 Pupil 会变成最适合当前任务的动物形态（采集变红熊猫、建造变鸟等）、身后世界被洪水淹没须不断前进、含程序生成情境/自然事件/技能树/艰难抉择、无战斗等事实来源。"
+      },
+      {
+        "title": "As Far As The Eye 发售与玩法预览（Steam News）",
+        "url": "https://store.steampowered.com/news/app/1119700/view/2733075625029368676",
+        "notes": "六边形地图、随机程序生成、技能树、资源管理、洪水追逼下的迁徙、无敌对动物与战斗等事实来源。"
+      }
+    ],
+    "short_description": "一款肉鸽式回合制策略与资源管理游戏，2020 年 9 月 10 日发售：玩家化身一阵「风」，引导名为 Pupils 的变形者部落，穿过一张张六边形地图、迁向世界中心「眼」。你要管理他们的资源、建筑与生命——每个 Pupil 会按当前任务变成最合适的动物：采集时化作红熊猫、建造时化作飞鸟。整个旅程没有战斗，没有敌对生物，真正的威胁是身后不断逼近、吞没世界的洪水：你必须在水追上来之前收拾营地、继续前进。游戏由程序生成的情境、自然事件、技能树与艰难抉择构成。",
+    "selection_reason": "作为「把村庄经营装进一场被洪水追赶的迁徙」的代表：它去掉战斗，用身后逼近的洪水给本来悠闲的资源管理装上一个永不停歇的倒计时，再让部落成员按任务变形分工，逼玩家在「再多采一轮还是赶紧搬家」之间反复权衡，是研究游牧式建造、时间压力设计与无战斗策略的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_as_far_as_the_eye",
+    "one_sentence_summary": "玩家化身一阵风，引导会按任务变形分工的 Pupils 部落穿过六边形地图迁向世界中心，一边管理资源建筑与生命、一边在身后逼近的洪水追上之前不断收营前进，全程无战斗。",
+    "core_hook": "As Far As The Eye 给悠闲的村庄经营装了一台倒计时炸弹：你本可以慢慢采集、慢慢建造，但身后的洪水正一格格吞没世界，逼你永远在「再多停一回合多攒点资源」和「赶紧拆营搬到下一张地图」之间纠结。部落成员是变形者——同一个 Pupil 采集时变红熊猫、建造时变飞鸟，你得按任务把人手「变」到最高效的形态上。没有敌人、没有战斗，张力全部来自这场你永远跑不赢却必须一直跑的迁徙，每一次取舍都带着不舍与代价。",
+    "core_loop": "在当前六边形地图上指派 Pupils 变形采集与建造、积累资源与技能、应对程序生成的自然事件、在洪水逼近前收拾营地迁往下一张地图、循环迁徙与经营直至抵达世界中心或被洪水吞没。",
+    "progression_model": "靠在每张地图上采集资源、研习技能树、积累迁徙所需补给逐图推进；进度体现为已穿越的地图、解锁的技能与部落存续状态，强调一路向前的迁徙节奏而非定居扩张。",
+    "failure_model": "若资源耗尽、部落成员死亡、或迟迟未能在洪水追上前完成迁徙，旅程便会失败终止；核心压力在于在洪水的时间限制下平衡采集、建造与适时拔营前进。",
+    "content_structure": "以一张张六边形地图的迁徙与经营为骨架，靠资源管理、变形分工与技能树承载玩法、靠洪水追逼承载时间压力，以程序生成情境与随机事件承载重玩，单人。",
+    "main_player_actions": ["单位调度", "采集", "建造"],
+    "main_player_decisions": ["资源取舍", "优先级排序", "探索路线"],
+    "main_player_experiences": ["运筹帷幄", "经营成就", "系统掌控"],
+    "main_mechanics": ["资源管理", "程序生成", "迷雾侵蚀", "形态分工"],
+    "replayability_sources": ["程序生成", "难度分级"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["形态分工", "游牧建造"],
+    "reusable_reference_patterns": ["资源管理", "程序生成"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["回合制策略", "模拟经营"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["等距"],
+    "theme": ["自然", "神话"],
+    "narrative_style": ["极简叙事", "环境叙事"],
+    "game_feel": ["策略权衡", "轻松休闲"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "形态分工",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "Pupils 按任务变形",
+            "quote_or_summary": "每个 Pupil 会变成最适合当前任务的动物形态——采集变红熊猫、建造变飞鸟，以此分工。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "迷雾侵蚀",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "洪水追逼迫使迁徙",
+            "quote_or_summary": "身后世界被洪水不断淹没，玩家必须在水追上前收营前进，构成持续的推进压力。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "资源管理",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "管理资源建筑与生命",
+            "quote_or_summary": "玩家须在六边形地图上管理部落的资源、建筑与成员生命，并研习技能树。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "As Far As The Eye 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/1119700/As_Far_As_The_Eye/",
+        "quote_or_summary": "肉鸽回合制策略资源管理，六边形地图、Pupils 按任务变形分工、洪水追逼下不断迁徙、程序生成情境与技能树、无战斗，2020 年发售。",
+        "notes": "事实取自 Steam 商店页与发售预览。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_afate_flood_pressure",
+      "subject": "迷雾侵蚀",
+      "relation": "creates",
+      "object": "时间压力",
+      "explanation": "在一个本可以慢慢经营的资源管理游戏里，放进一片身后不断逼近、吞没地图的洪水，等于给每一个「停下来多采一轮」的舒适决定都标上代价：你攒得越久越富，但水也越近，迟一步整支部落就被淹没。这股永不停歇的推进压力把悠闲的村庄经营变成一场必须一直向前的迁徙，玩家的每一次取舍都被时间逼出张力，而非靠敌人或战斗。可复用于希望用「持续逼近的环境威胁」给无战斗的经营/建造玩法注入时间压力与紧迫节奏的策略设计。",
+      "evidence": [
+        {
+          "title": "逼近威胁生时间压力解读",
+          "quote_or_summary": "身后逼近的洪水给每个停留决定标上代价，把悠闲经营变成必须前进的迁徙，以环境威胁而非战斗制造时间压力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

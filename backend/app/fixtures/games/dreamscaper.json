@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_dreamscaper",
+    "title": "Dreamscaper",
+    "source_refs": [
+      {
+        "title": "Dreamscaper（Afterburner Studios 官方资料）",
+        "url": "https://dreamscapergame.com/press/sheet.php?p=dreamscaper",
+        "notes": "类型（动作 RPG 肉鸽）、三人团队 Afterburner Studios 开发、2021 年正式发售、主角年轻女性 Cassidy、夜里在梦境/潜意识中战斗、敌人与 Boss 各象征一种负面情绪（孤立/恐惧/否定/失去）、白天在现实中结交朋友、白天的人际关系反哺夜间梦境能力、梦境永久死亡而白天友谊保留、战斗融合近战/远程/梦力技能并以格挡闪避招架为防御框架等事实来源。"
+      },
+      {
+        "title": "Dreamscaper 评测（RPGamer）",
+        "url": "https://rpgamer.com/review/dreamscaper-review/",
+        "notes": "梦境肉鸽永久死亡、白天关系养成反哺夜间、动作战斗与情绪化 Boss 等事实来源。"
+      }
+    ],
+    "short_description": "一款动作 RPG 肉鸽游戏，三人团队 Afterburner Studios 开发，2021 年正式发售：玩家扮演年轻女性 Cassidy，夜里潜入自己的梦境，战斗融合近战、远程与梦力技能，并以格挡、闪避、招架为防御框架；每个敌人与 Boss 都象征她的一种负面情绪（孤立、恐惧、否定、失去）。梦境是永久死亡的，但白天她在现实中结交的友谊会保留下来——这些人际关系会反哺夜间的梦境能力，让她带着更强的状态面对下一场梦。",
+    "selection_reason": "作为「把现实人际关系反哺肉鸽战力」的代表：以昼/夜交替把白天的关系养成与夜里的梦境战斗绑在一起，让结交朋友直接转化为下一趟梦的能力，再用象征负面情绪的 Boss 把心理疗愈写进玩法，是研究交替章节、关系反哺与情感化肉鸽的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_dreamscaper",
+    "one_sentence_summary": "玩家扮演 Cassidy，夜里在永久死亡的梦境里以近战、远程与梦力技能对抗象征孤立、恐惧、失去等负面情绪的敌人与 Boss，白天在现实结交的友谊则保留并反哺夜间能力，让她一夜更强一夜地面对内心。",
+    "core_hook": "Dreamscaper 把「白天交朋友」和「夜里打梦魇」拧成一个循环：夜里你潜入 Cassidy 的梦境，象征孤立、恐惧、失去的 Boss 轮番来袭，一旦倒下，这趟梦的成长就清零。但白天不一样——她在现实里认识的人、建立的关系会留下来，并直接转化为夜间梦境里的能力与底气。于是「疗愈孤独」不只是剧情，而是机制本身：你越在白天与人联结，夜里就越有力量直面那些情绪化身。",
+    "core_loop": "白天在现实中走动、与人交谈结交朋友、积累反哺梦境的能力，夜里潜入永久死亡的梦境、以近战远程与梦力技能配合格挡闪避招架战斗、击败象征负面情绪的 Boss、收集神器强化本趟；梦中阵亡则保留白天的友谊重启新梦，循环交替。",
+    "progression_model": "局内靠拾取神器与技能滚雪球式强化本趟梦境，局外靠白天人际关系的养成永久反哺夜间能力推进；进度体现为已结交的关系、解锁的能力与可深入的梦境层。",
+    "failure_model": "Cassidy 在梦境中血量耗尽即本趟梦永久死亡、本局成长清零须重入新梦，但白天积累的友谊与永久能力保留，核心压力在于以格挡闪避招架的防御框架熬过情绪化 Boss 的攻势。",
+    "content_structure": "以白天现实养成与夜间梦境肉鸽交替的双段为骨架，靠近战远程梦力技能、神器与情绪化 Boss 承载玩法，以程序生成梦境与关系反哺承载重玩，单人。",
+    "main_player_actions": ["近战攻击", "远程攻击", "翻滚闪避"],
+    "main_player_decisions": ["增益选择", "关系经营", "风险取舍"],
+    "main_player_experiences": ["战斗精通", "情感叙事", "构筑乐趣"],
+    "main_mechanics": ["招架反击", "增益构筑", "元进度", "好感系统", "交替章节"],
+    "replayability_sources": ["程序生成", "构筑多样"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["交替章节", "好感系统"],
+    "reusable_reference_patterns": ["好感系统", "元进度"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["类肉鸽", "动作角色扮演"],
+    "art_style": ["超现实美术", "手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["俯视"],
+    "theme": ["超现实", "精神疾病"],
+    "narrative_style": ["情感叙事", "环境叙事"],
+    "game_feel": ["流畅操作", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "交替章节",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "昼夜交替的双段玩法",
+            "quote_or_summary": "白天在现实养成、夜里进入梦境肉鸽战斗，两段交替构成核心循环。",
+            "notes": "官方资料可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "好感系统",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "关系反哺梦境能力",
+            "quote_or_summary": "白天结交的友谊会保留并反哺夜间梦境的能力，让玩家带着更强状态面对下一场梦。",
+            "notes": "官方资料可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "招架反击",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "格挡闪避招架防御框架",
+            "quote_or_summary": "战斗融合近战、远程与梦力技能，并建立在格挡、闪避、招架的防御框架之上。",
+            "notes": "官方资料可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Dreamscaper 玩法与制作综述",
+        "url": "https://dreamscapergame.com/press/sheet.php?p=dreamscaper",
+        "quote_or_summary": "动作 RPG 肉鸽，夜间梦境永久死亡战斗、情绪化 Boss、白天现实关系养成反哺夜间能力、近战远程梦力技能与格挡闪避招架，三人团队 Afterburner Studios 开发，2021 年发售。",
+        "notes": "事实取自官方资料与 RPGamer 评测。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_dreamscaper_bonds_fuel_combat",
+      "subject": "好感系统",
+      "relation": "creates",
+      "object": "情感叙事",
+      "explanation": "把「白天与人建立关系」直接做成「夜里梦境变强」的进度来源，等于让叙事主题与玩法机制说同一句话：游戏讲的是 Cassidy 走出孤独、与世界重新联结，而玩家恰恰要靠不断结交朋友，才有力量在梦里击败象征孤立与恐惧的 Boss。情感不再只是过场里的台词，而是你必须投入、并能换来实打实战力的系统，于是疗愈的主题借机制被亲身体会而非旁观。可复用于希望用「现实关系养成反哺战斗进度」让叙事主题与肉鸽机制互相印证、把情感写进玩法的动作设计。",
+      "evidence": [
+        {
+          "title": "关系反哺生情感叙事解读",
+          "quote_or_summary": "白天关系养成直接转化为夜间战力，使疗愈孤独的主题与机制同构，让情感被亲身体会而非旁观。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

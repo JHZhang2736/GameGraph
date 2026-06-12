@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_tiny_tinas_wonderlands",
+    "title": "Tiny Tina's Wonderlands",
+    "source_refs": [
+      {
+        "title": "Tiny Tina's Wonderlands（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Tiny_Tina's_Wonderlands",
+        "notes": "类型（第一人称射击动作 RPG / 刷宝射击）、Gearbox Software 开发、2K 发行、2022 年 3 月 25 日发售、Borderlands 衍生作、是 Borderlands 2 DLC《小蒂娜的龙堡攻坚战》的续作、设定在一款奇幻桌面角色扮演游戏的世界里、由 Tiny Tina 担任地下城主即兴改写世界、玩家为可自定义多职业混搭的 Fatemaker、用施法替代手雷、敌人含哥布林巨魔翼龙、含俯视棋盘式大地图、海量随机枪械掉落、可单人或最多四人在线/分屏合作等事实来源。"
+      },
+      {
+        "title": "Tiny Tina's Wonderlands 玩法预览（Windows Central）",
+        "url": "https://www.windowscentral.com/tiny-tinas-wonderlands",
+        "notes": "奇幻刷宝射击、施法系统、自定义角色与多职业、桌游地下城框架、棋盘式大地图、随机掉落与合作等事实来源。"
+      }
+    ],
+    "short_description": "一款第一人称刷宝射击动作 RPG，Gearbox Software 开发、2K 发行，2022 年 3 月 25 日发售：作为 Borderlands 的奇幻衍生作、也是《小蒂娜的龙堡攻坚战》的续作，整个游戏被框定在一场由 Tiny Tina 担任地下城主、即兴瞎编规则的桌面角色扮演游戏里。玩家扮演可自定义外貌、并能混搭多个职业的「Fatemaker」，一边用海量随机掉落的枪械扫射哥布林、巨魔与翼龙，一边用施法替代手雷，还要在一张俯视的棋盘式大地图上移动；可单人或最多四人在线/分屏合作。",
+    "selection_reason": "作为「把刷宝射击套进桌游地下城框架」的代表：它保留 Borderlands 的随机枪械与刷宝循环，却用 Tiny Tina 现编现改的桌游主持把枪战重新包装成一场荒诞的奇幻跑团，再加施法、多职业混搭与棋盘大地图，是研究类型缝合、元叙事框架与刷宝 RPG 构筑的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_tiny_tinas_wonderlands",
+    "one_sentence_summary": "玩家扮演可自定义、多职业混搭的 Fatemaker，在 Tiny Tina 即兴瞎编的桌游地下城世界里用海量随机枪械与施法扫射哥布林巨魔翼龙、在棋盘式大地图上移动，可单人或最多四人合作。",
+    "core_hook": "Tiny Tina's Wonderlands 把 Borderlands 那套「打怪掉枪、掉枪再打」的刷宝循环，整个塞进一场闹哄哄的桌面跑团里：Tiny Tina 当地下城主，一边讲故事一边现编现改规则，于是你打的不是「真实世界」，而是她嘴里那个随时会被她任性改写的奇幻战役。玩法上，你既能用随机掉落的枪械突突突，又能像法师一样甩出法术替代手雷，还能把多个职业的天赋混搭成自己的流派；地图也变成一张俯视的棋盘，跑团味十足。熟悉的刷宝爽快加上桌游主持的荒诞元叙事，是它最对味的地方。",
+    "core_loop": "在 Tiny Tina 主持的桌游战役中推进任务、用随机掉落的枪械与施法扫射各类奇幻敌人、刷取并替换更强的装备、点出并混搭多职业天赋、在俯视棋盘大地图上移动遭遇随机事件、循环刷宝与构筑（可合作）直至通关并进入终局刷取。",
+    "progression_model": "靠击败敌人与完成任务升级、点出并混搭多个职业的天赋树、不断刷取替换更高品质的随机枪械与装备成长；进度体现为角色等级、多职业构筑与装备品质，通关后以混沌等级（Chaos Chamber 等）提供终局刷取。",
+    "failure_model": "战斗中角色被击倒后进入濒死可争取「救赎」反杀，若未能自救或被队友拉起则死亡、损失部分金钱并退回检查点重来；核心压力在于以枪械、施法与多职业构筑应对成群且高血量的奇幻敌人。",
+    "content_structure": "以 Tiny Tina 主持的奇幻桌游战役为骨架，靠随机枪械刷宝、施法与多职业构筑承载战斗、靠俯视棋盘大地图串联区域，以随机掉落与终局刷取承载重玩，单人或最多四人合作。",
+    "main_player_actions": ["射击", "魔法释放", "近战攻击"],
+    "main_player_decisions": ["装备搭配", "职业搭配", "增益选择"],
+    "main_player_experiences": ["战斗精通", "构筑乐趣", "收集养成"],
+    "main_mechanics": ["随机道具", "魔法资源", "能力树", "棋盘探索", "合作生存"],
+    "replayability_sources": ["构筑多样", "难度分级"],
+    "production_constraints": ["大团队协作", "Unreal 引擎", "系列复用"],
+    "innovation_patterns": ["类型缝合", "棋盘探索"],
+    "reusable_reference_patterns": ["随机道具", "类型缝合"],
+    "non_replicable_risks": ["品牌积淀", "大团队协作", "高内容产量"],
+    "genre": ["第一人称射击", "刷宝射击", "角色扮演"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["摇滚配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["奇幻", "黑色幽默"],
+    "narrative_style": ["元叙事", "对话叙事"],
+    "game_feel": ["爽快射击", "厚重打击"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "类型缝合",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "刷宝射击套进桌游奇幻",
+            "quote_or_summary": "游戏把 Borderlands 的随机枪械刷宝循环装进奇幻桌面角色扮演的框架，并加入施法与棋盘大地图。",
+            "notes": "维基百科与 Windows Central 可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "元叙事",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "地下城主即兴改写世界",
+            "quote_or_summary": "由 Tiny Tina 担任地下城主，一边讲述一边即兴瞎编、改写战役世界，构成桌游主持式的元叙事框架。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "随机道具",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "海量随机枪械掉落",
+            "quote_or_summary": "敌人掉落海量随机生成的枪械与装备，玩家不断刷取替换以变强，是核心刷宝循环。",
+            "notes": "维基百科与 Windows Central 可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Tiny Tina's Wonderlands 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Tiny_Tina's_Wonderlands",
+        "quote_or_summary": "第一人称刷宝射击动作 RPG，奇幻桌游地下城框架、Tiny Tina 即兴主持、随机枪械掉落、施法替代手雷、多职业混搭、俯视棋盘大地图、最多四人合作，Gearbox 开发、2K 发行，2022 年发售。",
+        "notes": "事实取自维基百科与 Windows Central。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_ttw_ttrpg_framing",
+      "subject": "元叙事",
+      "relation": "creates",
+      "object": "世界沉浸",
+      "explanation": "把整场游戏框定为「Tiny Tina 当地下城主、现编现改的一局桌游跑团」，等于给一切荒诞与不一致都发了一张通行证：地图忽然变样、敌人莫名出现、规则临时翻新，都不再是穿帮，而是「主持人又来劲了」的桌游趣味。这层元叙事既消化了 Borderlands 式的胡闹基调、又让玩家像真的坐在一场跑团里，沉浸来自「我们在一起编这个故事」而非严肃世界观的自洽。可复用于希望用「桌游主持 / 戏中戏的元叙事框架」吸收玩法上的荒诞与跳跃、把不一致转化为风格与沉浸的设计——但其依赖强 IP 与角色魅力。",
+      "evidence": [
+        {
+          "title": "桌游主持生沉浸解读",
+          "quote_or_summary": "地下城主即兴改写的元叙事把荒诞与不一致变成桌游趣味，沉浸来自共同编故事而非世界观自洽。",
+          "notes": "基于可观察机制与叙事框架的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_rounds",
+    "title": "ROUNDS",
+    "source_refs": [
+      {
+        "title": "ROUNDS（Landfall 官方介绍页）",
+        "url": "https://landfall.se/rounds",
+        "notes": "类型（1v1 肉鸽射击）、Landfall Games 开发与发行、2021 年 4 月 1 日 Steam 发售、每回合双方互相击杀、败者从 5 张升级卡中选 1 张强化、卡牌彼此联动产生海量构筑、可射击/格挡/跳跃等事实来源。"
+      },
+      {
+        "title": "ROUNDS（Rounds Wiki / Fandom）",
+        "url": "https://rounds.fandom.com/wiki/Rounds",
+        "notes": "1v1 肉鸽射击、每回合后败方选升级卡、卡牌协同系统、超过千万种增强组合、横版竞技对战等事实来源。"
+      }
+    ],
+    "short_description": "一款 1v1 肉鸽对战射击游戏，Landfall Games 开发与发行，2021 年 4 月 1 日发售：两名玩家在横版竞技场里互相射击、格挡、跳跃，每分出一回合胜负，落败的一方便能从 5 张随机升级卡中挑 1 张强化自己——更大的弹匣、弹跳的子弹、二段跳、护盾等等。卡牌之间彼此联动，组合出数以百万计的构筑，让每一局都长成不同的对抗，落后者也总有机会靠新卡翻盘。",
+    "selection_reason": "作为「用落败补强 + 卡牌协同让 1v1 始终焦灼」的代表：它把肉鸽式的逐回合叠卡塞进对战射击，刻意只让输的一方拿强化，配合会互相组合放大的卡牌系统，使弱势方不断获得翻盘工具、强势方也得应对新变量，是研究橡皮筋平衡、构筑协同与短局对抗张力的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_rounds",
+    "one_sentence_summary": "两名玩家在横版竞技场逐回合互相射击格挡跳跃，每输一回合就从 5 张随机升级卡中选 1 张强化，卡牌彼此联动组合出海量构筑，让落后方不断获得翻盘工具、每局都焦灼到最后。",
+    "core_hook": "ROUNDS 的精妙在于「只奖励输家」：你赢了一回合很爽，但对手随即获得一张升级卡，下一回合就更难缠。于是局势永远在拉锯——你领先就得面对对方越堆越厚的强化，你落后就靠一张张新卡寻找翻盘点。而卡牌不是孤立数值，弹跳子弹叠上多重射击、护盾叠上反伤，会组合出意想不到的连锁，每一次选卡都是在赌一套构筑能不能克制对面。短平快的回合加上不断变化的卡池，让对抗紧张又上头。",
+    "core_loop": "选定起始卡、在横版竞技场与对手互相射击格挡跳跃决出本回合、败者从 5 张随机升级卡中选 1 张强化构筑、带着叠加的卡牌进入下一回合、循环对抗直至一方先拿满胜点。",
+    "progression_model": "进度只存在于单局之内：靠每回合落败方选取升级卡不断叠加强化、让卡牌彼此协同滚雪球；一局结束即清零，没有跨局的永久成长，强调每局重新构筑。",
+    "failure_model": "回合中血量被对手打空即输掉该回合，先被对手拿满胜点则输掉整局；机制上「输回合」反而换来升级卡，真正的失败是没能用新卡组合出克制对手的构筑，最终被先一步拿满胜点。",
+    "content_structure": "以 1v1 逐回合对战为骨架，靠射击格挡跳跃的横版操作承载对抗、靠落败补强的卡牌叠加承载构筑，以海量卡牌协同组合承载重玩，双人对战。",
+    "main_player_actions": ["射击", "走位", "卡牌取舍"],
+    "main_player_decisions": ["增益选择", "装备搭配", "风险取舍"],
+    "main_player_experiences": ["竞技紧张", "构筑乐趣", "欢乐混乱"],
+    "main_mechanics": ["增益构筑", "卡牌交互", "落败补强", "淘汰赛制"],
+    "replayability_sources": ["构筑多样", "程序生成"],
+    "production_constraints": ["小型团队", "Unity 引擎"],
+    "innovation_patterns": ["落败补强", "卡牌交互"],
+    "reusable_reference_patterns": ["增益构筑", "卡牌交互"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["派对游戏", "横版射击"],
+    "art_style": ["极简风格"],
+    "audio_style": ["电子配乐"],
+    "perspective": ["横版2D"],
+    "theme": ["黑色幽默"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["软弹物理", "爽快射击"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "落败补强",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "败方选升级卡",
+            "quote_or_summary": "每回合落败的一方从 5 张随机升级卡中选 1 张强化，使弱势方不断获得翻盘工具。",
+            "notes": "Landfall 官方页与 Wiki 可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "卡牌交互",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "卡牌协同组合海量构筑",
+            "quote_or_summary": "卡牌彼此联动产生连锁效果，组合出数以百万计的增强构筑。",
+            "notes": "Landfall 官方页与 Wiki 可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "增益构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "逐回合叠加升级",
+            "quote_or_summary": "玩家在单局内逐回合叠加升级卡，滚雪球式构建越来越强的角色。",
+            "notes": "Landfall 官方页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "ROUNDS 玩法与制作综述",
+        "url": "https://landfall.se/rounds",
+        "quote_or_summary": "1v1 肉鸽对战射击，逐回合互射、败方选升级卡强化、卡牌协同组合海量构筑、短局对抗，Landfall Games 开发，2021 年发售。",
+        "notes": "事实取自 Landfall 官方页与 Rounds Wiki。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_rounds_comeback_tension",
+      "subject": "落败补强",
+      "relation": "creates",
+      "object": "对抗张力",
+      "explanation": "把升级只发给输的一方，等于给对抗装了一根橡皮筋：领先者每赢一回合，就要面对对手更强的下一套构筑，分差越大、对面的强化越多，于是没有「躺赢」，只有持续被追赶的压力；落后者则永远握着翻盘的工具，不会因一两回合落后就放弃。胜负因此被压到最后一刻，每一回合都要紧。可复用于希望用「只奖励落败方 + 可叠加协同的强化」制造橡皮筋平衡、把短局对抗的张力维持到终局的 PvP 设计——但其代价是巨大的卡牌平衡复杂度。",
+      "evidence": [
+        {
+          "title": "橡皮筋平衡生张力解读",
+          "quote_or_summary": "升级只发败方形成橡皮筋平衡，领先方持续被追赶、落后方始终有翻盘工具，胜负压到终局而生对抗张力。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

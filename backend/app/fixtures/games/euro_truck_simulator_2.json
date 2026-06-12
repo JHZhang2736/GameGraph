@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_euro_truck_simulator_2",
+    "title": "Euro Truck Simulator 2",
+    "source_refs": [
+      {
+        "title": "Euro Truck Simulator 2（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Euro_Truck_Simulator_2",
+        "notes": "类型（卡车驾驶模拟）、SCS Software 开发与发行、2012 年 10 月 18 日发售、在 1:19 比例的开放欧洲地图上驾驶挂车运货、按时与货损影响报酬与经验、需支付油费/过路费/维修费、可建立运输公司（购车、买车库、雇佣司机、管理车队）、海量 DLC 地图扩展、庞大 Mod 社区等事实来源。"
+      },
+      {
+        "title": "Euro Truck Simulator 2（Steam，appid 227300）",
+        "url": "https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/",
+        "notes": "开放欧洲驾驶运货、公司经营、创意工坊 Mod、真实道路与地标等事实来源。"
+      }
+    ],
+    "short_description": "一款卡车驾驶模拟游戏，SCS Software 开发，2012 年 10 月 18 日发售：玩家在 1:19 比例还原的开放欧洲地图上驾驶挂车，从各地装货、按时低损地送到目的地以换取金钱与经验。途中需支付油费、过路费与维修费；随着进程，玩家可建立并扩张自己的运输公司——购买卡车与车库、雇佣司机、管理车队牟利。游戏含海量 DLC 地图扩展与庞大的 Mod 社区。",
+    "selection_reason": "作为「以拟真驾驶承载经营与放松体验」的代表：把跑长途货运做成一边享受拟真驾驶与欧洲风光、一边按时低损博取报酬、再用赚来的钱扩张车队的循环，配合长达十余年的 DLC 地图与庞大 Mod 生态，是研究驾驶模拟、车队经营与创意工坊长尾的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_euro_truck_simulator_2",
+    "one_sentence_summary": "玩家在 1:19 比例的开放欧洲地图上驾驶挂车，从各地装货、按时低损送达赚取金钱与经验，支付油费过路费维修费，并逐步购车买库、雇佣司机扩张自己的运输公司。",
+    "core_hook": "Euro Truck Simulator 2 的魅力在于「把开长途货车做成一件让人放松又上瘾的事」：你握着方向盘，在还原的欧洲公路上穿过城市与原野，按时把货低损送到，赚一笔钱、长一点经验。慢慢地，你不只是个司机——你开始买第二辆车、租下车库、雇人替你跑线，把一趟趟运输攒成一家越来越大的运输公司。拟真的驾驶手感、辽阔的地图与十余年不断扩张的 DLC 与 Mod，让这条公路几乎没有尽头。",
+    "core_loop": "接下运货合同、驾驶卡车在开放欧洲地图上长途行驶、遵守路况按时低损抵达、结算金钱与经验、支付油费过路费维修费、用收益购车买库雇司机扩张车队，循环跑线与经营成长。",
+    "progression_model": "靠完成运货赚取金钱与经验、解锁技能与新区域，靠购车、买车库、雇佣司机把单人跑线扩张为车队公司；进度体现为司机等级、车队规模与已开拓的欧洲版图（含 DLC 地图）。",
+    "failure_model": "本作无传统失败死亡，「失利」表现为超时、货损或事故导致报酬缩水甚至亏损、负担不起油费维修费，核心压力在于平衡按时、低损与运营成本以维持公司盈利。",
+    "content_structure": "以开放欧洲地图的跑线运货与公司经营为骨架，靠拟真驾驶、合同任务与车队管理承载玩法，以海量 DLC 地图与庞大 Mod 社区承载长尾重玩，单人为主。",
+    "main_player_actions": ["驾驶", "单位调度"],
+    "main_player_decisions": ["探索路线", "资源取舍", "战略规划"],
+    "main_player_experiences": ["经营成就", "视觉享受", "系统掌控"],
+    "main_mechanics": ["驾驶模拟", "委托任务", "车队经营", "资源管理", "能力树"],
+    "replayability_sources": ["用户生成内容", "创意工坊", "任务多样"],
+    "production_constraints": ["中型团队", "写实美术", "系列复用"],
+    "innovation_patterns": ["创意工坊生态", "驾驶模拟"],
+    "reusable_reference_patterns": ["创意工坊生态", "委托任务"],
+    "non_replicable_risks": ["长期更新运营", "高内容产量"],
+    "genre": ["模拟经营", "驾驶模拟"],
+    "art_style": ["写实美术"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["第一人称", "第三人称"],
+    "theme": ["公路旅行", "个性化"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["轻松休闲", "沉浸代入"],
+    "team_model": ["中型团队"],
+    "reference_value_tags": [
+      {
+        "tag": "驾驶模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "拟真长途货运驾驶",
+            "quote_or_summary": "玩家在 1:19 比例的开放欧洲地图上以拟真手感驾驶挂车长途运货，是核心体验。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "车队经营",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "建立扩张运输公司",
+            "quote_or_summary": "玩家可购买卡车与车库、雇佣司机、管理车队，把单人跑线扩张为运输公司牟利。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "创意工坊生态",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "海量 DLC 与 Mod",
+            "quote_or_summary": "游戏含大量 DLC 地图扩展与庞大的玩家 Mod 社区，持续扩充地图与车辆内容。",
+            "notes": "维基百科与 Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Euro Truck Simulator 2 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Euro_Truck_Simulator_2",
+        "quote_or_summary": "卡车驾驶模拟，1:19 欧洲开放地图运货、按时低损换报酬、油费过路费维修费、建立运输公司（购车买库雇司机）、海量 DLC 与 Mod 社区，SCS Software 开发，2012 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_ets2_workshop_longtail",
+      "subject": "创意工坊生态",
+      "relation": "creates",
+      "object": "社区长尾参与",
+      "explanation": "把一张可被 Mod 自由扩充的欧洲地图交到玩家社区手里，等于让游戏的内容产量不再只由官方决定：除了官方一张接一张的 DLC 地图，玩家自制的地图、卡车、涂装、物理调校源源不断地涌入，彼此叠加，使同一个底座在十余年里持续生长。运输这种本就开放、无强剧情的玩法，又天然适合无限扩展的内容，社区因此长期保有创作与游玩的理由。可复用于希望用「开放可扩展底座 + 官方持续更新 + Mod 生态」把内容产量交给社区、换取超长生命周期的模拟类设计——但也意味着长期运营的承诺。",
+      "evidence": [
+        {
+          "title": "工坊生态生长尾解读",
+          "quote_or_summary": "可 Mod 扩充的开放地图叠加官方 DLC 与玩家创作，使内容产量由社区续供，换取超长生命周期。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

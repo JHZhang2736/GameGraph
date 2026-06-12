@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_borderlands_2",
+    "title": "Borderlands 2",
+    "source_refs": [
+      {
+        "title": "Borderlands 2（维基百科：Borderlands 系列）",
+        "url": "https://en.wikipedia.org/wiki/Borderlands_(series)",
+        "notes": "类型（第一人称刷宝射击 + 角色扮演）、Gearbox Software 开发、2K Games 发行、2012 年发售、设定于潘多拉星、海量程序生成枪械、四名职业（突击兵 Axton/塞壬 Maya/枪炮狂 Salvador/刺客 Zer0）各具三条技能树、四人合作、反派 Handsome Jack 等事实来源。"
+      },
+      {
+        "title": "Borderlands 2 技能树（PCGamesN）",
+        "url": "https://www.pcgamesn.com/gearbox-release-interactive-borderlands-2-skill-trees",
+        "notes": "每职业三条技能树、每投 5 点解锁下一层级的层级系统、职业间技能协同等事实来源。"
+      }
+    ],
+    "short_description": "一款融合第一人称射击与角色扮演的「刷宝射击」游戏，Gearbox Software 开发、2K Games 发行，2012 年发售：在荒凉的潘多拉星上，玩家从四名各具特色的职业（突击兵、塞壬、枪炮狂、刺客）中选其一，对抗反派 Handsome Jack，刷取海量程序生成的枪械与装备。每个职业有三条技能树、采用每投 5 点解锁下一层级的层级系统，支持最多四人合作，并以卡通渲染的漫画画风著称。",
+    "selection_reason": "作为「把 FPS 与 RPG 刷宝缝合」的代表：用程序生成的海量枪械制造「下一把可能更强」的拾取驱动，叠上四职业三技能树的构筑分化与四人合作的职业协同，把射击的爽快与角色养成、装备收集绑在一起，是研究刷宝射击、随机装备与职业构筑的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_borderlands_2",
+    "one_sentence_summary": "在潘多拉星上，玩家从四名各具三条技能树的职业中选其一，对抗 Handsome Jack，单人或四人合作刷取海量程序生成的枪械装备，靠射击、技能与构筑层层变强。",
+    "core_hook": "「下一把枪可能更强」——Borderlands 2 把刷宝的钩子做到极致：海量程序生成的枪械各有词缀与手感，让你不停开箱、捡枪、比对、丢弃，停不下来。射击的爽快之外，四个职业各有三条技能树与招牌技能，配上四人合作时塞壬奶人、枪炮狂扛伤的职业协同，让「怎么搭、怎么打」也成了乐趣的一部分。再裹上一层标志性的卡通渲染漫画画风与黑色幽默，刷与打都自成风格。",
+    "core_loop": "选择职业、接任务推进剧情、射杀敌人与 Boss 刷取程序生成的枪械装备、比对替换更强的武器、投点点出技能树构筑、单人或四人合作清理潘多拉的威胁，循环刷装与变强。",
+    "progression_model": "靠等级提升投点三条技能树、靠刷取与替换程序生成的枪械装备横向变强，靠主线与海量支线推进剧情；进度体现为角色等级、技能树构筑与装备品质，并有「真实万恶之王」等高难周目延续养成。",
+    "failure_model": "角色被击倒后进入「濒死求生」状态、未能击杀敌人回血即倒下，全队倒下则任务失败、退回上一个存档点，核心压力在于刷出足以应对高强度敌人与 Boss 的武器构筑。",
+    "content_structure": "以潘多拉星的主线与海量支线任务为骨架，靠程序生成枪械、四职业三技能树承载刷宝与构筑深度，以随机装备、难度周目与四人合作承载重玩，单人或多人合作。",
+    "main_player_actions": ["射击", "技能释放", "驾驶"],
+    "main_player_decisions": ["能力树优先级", "武器搭配", "装备搭配"],
+    "main_player_experiences": ["收集养成", "战斗精通", "欢乐混乱"],
+    "main_mechanics": ["随机道具", "能力树", "装备分层", "合作生存"],
+    "replayability_sources": ["程序生成", "构筑多样", "难度分级"],
+    "production_constraints": ["大团队协作", "Unreal 引擎", "卡通渲染"],
+    "innovation_patterns": ["类型缝合", "随机道具"],
+    "reusable_reference_patterns": ["类型缝合", "随机道具", "合作生存"],
+    "non_replicable_risks": ["高内容产量", "品牌积淀"],
+    "genre": ["第一人称射击", "刷宝射击", "角色扮演"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["摇滚配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["科幻", "黑色幽默"],
+    "narrative_style": ["对话叙事", "过场驱动"],
+    "game_feel": ["爽快射击", "厚重打击"],
+    "team_model": ["大团队"],
+    "reference_value_tags": [
+      {
+        "tag": "随机道具",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "海量程序生成枪械",
+            "quote_or_summary": "游戏以程序生成产出海量带不同词缀与品质的枪械装备，构成刷宝核心驱动。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "能力树",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "每职业三条技能树",
+            "quote_or_summary": "四名职业各有三条技能树，采用每投 5 点解锁下一层级的层级系统，分化出不同构筑。",
+            "notes": "PCGamesN 可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "合作生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "四人职业协同",
+            "quote_or_summary": "支持最多四人合作，塞壬治疗、枪炮狂扛伤等职业间技能可互相协同。",
+            "notes": "维基百科与 NBC 攻略可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Borderlands 2 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Borderlands_(series)",
+        "quote_or_summary": "第一人称刷宝射击 + RPG，潘多拉星、海量程序生成枪械、四职业各三条技能树、四人合作、反派 Handsome Jack、卡通渲染画风，Gearbox 开发、2K 发行，2012 年发售。",
+        "notes": "事实取自维基百科与 PCGamesN。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_borderlands_2_loot_replay",
+      "subject": "随机道具",
+      "relation": "creates",
+      "object": "重玩动力",
+      "explanation": "把核心奖励做成「程序生成、每把都可能不同」的枪械，等于让拾取本身成为永不枯竭的内容源：玩家明知下一个掉落可能就是更强的那把，于是不断开箱、比对、替换，战斗的动机从「打通关」延伸到「刷到神装」。再叠上职业技能树带来的构筑分化，同一把枪在不同 build 下价值迥异，刷与搭互相喂养，内容寿命因此远超固定掉落的设计。可复用于希望用「程序生成装备 + 构筑分化」让拾取驱动战斗、延长重玩寿命的刷宝射击设计——也提示其需要的海量内容产量与平衡成本。",
+      "evidence": [
+        {
+          "title": "随机枪械生重玩解读",
+          "quote_or_summary": "程序生成枪械使拾取成为永不枯竭的内容源，配合构筑分化让刷与搭互相喂养、延长重玩寿命。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

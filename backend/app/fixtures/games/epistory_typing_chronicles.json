@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_epistory_typing_chronicles",
+    "title": "Epistory - Typing Chronicles",
+    "source_refs": [
+      {
+        "title": "Epistory - Typing Chronicles（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Epistory_-_Typing_Chronicles",
+        "notes": "类型（以打字为核心的动作冒险）、Fishing Cactus 开发、2015 年 9 月抢先体验、2016 年 3 月 30 日正式发售、从移动到开箱到战斗的每个动作都通过键盘打字完成、敌人头顶浮现单词玩家打字攻击、词长随敌人强度变化、少女骑三尾狐、故事如作家笔下的纸张般铺展并由作家内心独白旁白、纸艺美术等事实来源。"
+      },
+      {
+        "title": "Epistory - Typing Chronicles（Steam，appid 398850）",
+        "url": "https://store.steampowered.com/app/398850/Epistory__Typing_Chronicles/",
+        "notes": "等距视角、纸艺折纸世界、键盘打字驱动探索与战斗、解锁不同元素魔法、轻度 RPG 成长等事实来源。"
+      }
+    ],
+    "short_description": "一款以打字为核心操作的动作冒险游戏，Fishing Cactus 开发，2016 年 3 月 30 日正式发售：在一个如折纸般徐徐展开的纸艺世界里，玩家操控骑着三尾狐的少女，从移动、开箱到战斗的每一个动作都只靠键盘打字完成——敌人逼近时头顶会浮现单词，越强的敌人词越长，玩家必须准确快速地敲出它们来攻击与防御。整段旅程由一位作家的内心独白旁白，故事像他正在书写的稿纸一样逐页铺展。",
+    "selection_reason": "作为「把打字本身做成全部操作」的代表：它不是在动作游戏外挂一个打字小游戏，而是让移动、探索、攻击、防御统统由敲键盘驱动，再用纸艺美术与作家独白把打字的节奏感裹进叙事氛围里，是研究单一输入方式承载完整动作冒险、以及把工具性技能游戏化的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_epistory_typing_chronicles",
+    "one_sentence_summary": "玩家操控骑三尾狐的少女，在纸艺折纸世界里只用键盘打字完成移动、探索与战斗——敌人头顶浮现的单词越长越强，敲准敲快即攻防，全程由作家的内心独白旁白铺展故事。",
+    "core_hook": "Epistory 把「打字」从枯燥练习变成心流引擎：你不按方向键，而是敲出地块上的词来移动；你不点鼠标，而是打出箱子上的字来开启；战斗时敌人从四面八方涌来，每个头顶都顶着一个单词，弱敌一两个字母、强敌一长串，你得一边判断威胁优先级一边盲打输出，打错一个字母节奏就断。于是「打字快不快、准不准」直接等于「强不强」，纸艺世界与作家旁白又把这份紧张包进温柔的氛围里，让人越打越上瘾。",
+    "core_loop": "在纸艺世界中打字移动探索、敲出单词开箱解谜、遭遇时快速盲打敌人头顶的词进行攻防、解锁火/冰等不同元素魔法应对不同敌人、推进地图揭开作家书写的故事，循环探索与打字战斗直至通关。",
+    "progression_model": "靠推进地图与剧情解锁火、冰、风等不同元素的打字魔法、提升打字相关能力，靠探索发现隐藏区域与收集；进度体现为已解锁的元素、强化的能力与揭开的故事篇章。",
+    "failure_model": "战斗中若被敌人突破防线、玩家血量耗尽即失败，退回检查点重来；核心压力在于在多个敌人同时逼近时，准确快速地盲打出正确单词以维持攻防节奏，一旦频繁打错就会被淹没。",
+    "content_structure": "以纸艺世界的探索与打字战斗交织为骨架，靠键盘驱动的移动/解谜/战斗承载玩法，以元素魔法解锁与作家独白叙事推进，单人。",
+    "main_player_actions": ["打字", "探索", "魔法释放"],
+    "main_player_decisions": ["探索路线", "增益选择", "优先级排序"],
+    "main_player_experiences": ["战斗精通", "探索发现", "视觉享受"],
+    "main_mechanics": ["打字战斗", "非线性探索", "能力门控探索", "环境叙事"],
+    "replayability_sources": ["难度分级", "全收集"],
+    "production_constraints": ["小型团队", "纸艺美术"],
+    "innovation_patterns": ["打字战斗"],
+    "reusable_reference_patterns": ["打字战斗", "环境叙事"],
+    "non_replicable_risks": ["玩家留存", "一次性体验"],
+    "genre": ["动作冒险", "解谜"],
+    "art_style": ["纸艺美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["等距"],
+    "theme": ["奇幻", "森林童话"],
+    "narrative_style": ["碎片化叙事", "环境叙事"],
+    "game_feel": ["流畅操作", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "打字战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "敌人头顶单词打字攻防",
+            "quote_or_summary": "战斗中敌人头顶浮现单词，词长随敌人强度变化，玩家须准确快速打出单词进行攻击与防御。",
+            "notes": "维基百科与 Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "能力门控探索",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "元素魔法解锁推进",
+            "quote_or_summary": "玩家随进程解锁火、冰等不同元素的打字魔法，用以应对不同敌人并打通此前无法通行的区域。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "纸艺美术",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "折纸般展开的世界",
+            "quote_or_summary": "游戏采用纸艺折纸美术，世界如作家书写的纸张般逐页铺展。",
+            "notes": "维基百科与 Steam 商店页可观察。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Epistory 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Epistory_-_Typing_Chronicles",
+        "quote_or_summary": "以打字为核心的动作冒险，移动/开箱/战斗皆靠键盘打字、敌人头顶单词打字攻防、元素魔法解锁、纸艺美术与作家独白叙事，Fishing Cactus 开发，2016 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_epistory_typing_flow",
+      "subject": "打字战斗",
+      "relation": "creates",
+      "object": "世界沉浸",
+      "explanation": "把移动、探索、攻击、防御全部绑到键盘打字上，等于让玩家的手指节奏直接成为角色的行动节奏：敲得顺，人物就动得顺、打得猛；敲错一个字母，世界就卡顿一下。这种「输入即在场」的设计把打字从抽象技能变成身体记忆，配合纸艺世界与作家独白，玩家不是在「玩一个打字游戏」，而是在用打字本身住进这个故事里。可复用于希望用单一、强节奏的输入方式（打字、节拍、语音）承载完整动作体验、把工具性技能转化为心流与沉浸的设计——但其受众偏窄、新鲜感也偏一次性。",
+      "evidence": [
+        {
+          "title": "输入即在场生沉浸解读",
+          "quote_or_summary": "全操作绑定打字使手指节奏等同角色节奏，输入即在场，把工具性技能转化为心流与世界沉浸。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

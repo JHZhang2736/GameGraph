@@ -1,0 +1,95 @@
+{
+  "candidate": {
+    "id": "game_pumpkin_jack",
+    "title": "Pumpkin Jack",
+    "source_refs": [
+      {
+        "title": "Pumpkin Jack（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Pumpkin_Jack",
+        "notes": "类型（融合动作冒险/3D 平台/砍杀）、Nicolas Meyssonnier 几乎独力开发、Headup Games 发行、2020 年 10 月 23 日 Windows/Xbox One/Switch 发售、致敬 PS2 时代经典 3D 平台、玩家操控南瓜头 Jack 与猫头鹰和乌鸦同伴穿越谜题与平台、含矿车关卡与 Boss 战、由 Meyssonnier 用 Unreal Engine 4 制作、约 5–8 小时流程等事实来源。"
+      },
+      {
+        "title": "Pumpkin Jack 上市预告报道（TheGamer）",
+        "url": "https://www.thegamer.com/pumpkin-jack-3d-platformer-halloween-october-23/",
+        "notes": "万圣节主题 3D 平台、砍杀战斗、矿车段落、Boss 战、致敬 MediEvil 等 PS2 经典等事实来源。"
+      }
+    ],
+    "short_description": "一款融合 3D 平台、动作冒险与砍杀的游戏，由法国 3D 美术 Nicolas Meyssonnier 几乎独力开发、Headup Games 发行，2020 年 10 月 23 日发售：玩家操控被恶魔附身的南瓜头骑士 Jack，带着猫头鹰与乌鸦同伴，穿越万圣节风味的关卡——跳跃平台、挥砍敌人、解开谜题、冲过 Donkey Kong Country 式的矿车段落、击败形态各异的 Boss。它刻意致敬 MediEvil 等 PS2 时代的 3D 平台经典，用 Unreal Engine 4 重现那种约 5–8 小时、爽快而紧凑的单机平台冒险。",
+    "selection_reason": "作为「一人之力复刻 PS2 黄金期 3D 平台砍杀」的代表：它把跳跃平台、近战砍杀、矿车冲刺与多形态 Boss 缝成一段紧凑流程，几乎由单人用 Unreal 引擎完成，证明小成本也能稳稳还原一个被市场冷落已久的品类，是研究类型复刻、单人制作可行性与紧凑关卡编排的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_pumpkin_jack",
+    "one_sentence_summary": "玩家操控被恶魔附身的南瓜头骑士 Jack，带着猫头鹰与乌鸦同伴，在万圣节风味关卡里跳跃平台、近战砍杀、解谜并冲过矿车段落、击败多形态 Boss，几乎由单人用 Unreal 引擎复刻 PS2 时代的紧凑 3D 平台冒险。",
+    "core_hook": "Pumpkin Jack 卖的是一份「久违的 PS2 味」：它不追求开放世界或系统深度，而是稳稳地把跳跃、砍杀、解谜、矿车冲刺和形态夸张的 Boss 战编成一段五到八小时、节奏明快的线性冒险，处处透着 MediEvil 式的诙谐阴森。难得的是这几乎出自一人之手——证明只要关卡编排扎实、美术氛围到位，单人小成本也能复刻一个被大厂抛下的经典品类，给同样怀旧的玩家一份恰到好处的满足。",
+    "core_loop": "操控 Jack 在线性关卡中跳跃平台、近战砍杀敌人、用同伴能力与道具解开谜题、冲过矿车与追逐段落、推进至关底击败多形态 Boss，循环穿越各主题关卡直至通关。",
+    "progression_model": "靠线性推进各主题关卡、解锁新武器与同伴能力、收集金币购买皮肤与升级；进度体现为关卡推进、已得武器与收集度，强调紧凑流程而非长线养成。",
+    "failure_model": "Jack 在战斗、平台或矿车段落中血量耗尽或坠落即死亡，从检查点重来；核心压力在于精准的平台跳跃、躲避 Boss 攻击与维持砍杀节奏。",
+    "content_structure": "以数个主题关卡的线性流程为骨架，靠平台跳跃、近战砍杀与谜题承载玩法，靠矿车段落与多形态 Boss 调节节奏，单人。",
+    "main_player_actions": ["平台跳跃", "近战攻击", "远程攻击"],
+    "main_player_decisions": ["探索路线", "道具选择", "风险取舍"],
+    "main_player_experiences": ["战斗精通", "探索发现", "视觉享受"],
+    "main_mechanics": ["连招", "轨道移动", "多阶段Boss"],
+    "replayability_sources": ["全收集", "速通"],
+    "production_constraints": ["Unreal 引擎", "卡通渲染"],
+    "innovation_patterns": ["类型缝合"],
+    "reusable_reference_patterns": ["类型缝合", "多阶段Boss"],
+    "non_replicable_risks": ["玩家留存", "一次性体验"],
+    "genre": ["平台跳跃", "动作冒险"],
+    "art_style": ["卡通渲染"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["黑暗童话"],
+    "narrative_style": ["过场驱动", "对话叙事"],
+    "game_feel": ["流畅操作", "厚重打击"],
+    "team_model": ["单人开发"],
+    "reference_value_tags": [
+      {
+        "tag": "类型缝合",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "平台+砍杀+矿车的复刻",
+            "quote_or_summary": "游戏融合 3D 平台跳跃、近战砍杀、谜题与矿车段落，刻意复刻 MediEvil 等 PS2 时代经典的紧凑体验。",
+            "notes": "维基百科与 TheGamer 报道可观察。"
+          }
+        ]
+      },
+      {
+        "tag": "多阶段Boss",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "形态各异的 Boss 战",
+            "quote_or_summary": "每个关卡以形态各异、分阶段的 Boss 战收尾，调节流程节奏。",
+            "notes": "维基百科与报道可观察。"
+          }
+        ]
+      },
+      {
+        "tag": "单人开发",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "几乎独力完成",
+            "quote_or_summary": "游戏几乎由 Nicolas Meyssonnier 一人用 Unreal Engine 4 完成，仅有少量移植与配乐协助。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Pumpkin Jack 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Pumpkin_Jack",
+        "quote_or_summary": "融合 3D 平台/砍杀/动作冒险，跳跃砍杀解谜与矿车段落、多形态 Boss、致敬 PS2 经典，Nicolas Meyssonnier 几乎独力用 Unreal Engine 4 制作，2020 年发售。",
+        "notes": "事实取自维基百科与 TheGamer 报道。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": []
+}

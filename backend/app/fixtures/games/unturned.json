@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_unturned",
+    "title": "Unturned",
+    "source_refs": [
+      {
+        "title": "Unturned（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Unturned",
+        "notes": "类型（生存沙盒）、Nelson Sexton（Smartly Dressed Games 创始人，加拿大独立开发者，首版发布时年仅十六岁）开发、免费游玩、低多边形方块美术、丧尸末世开放世界、搜刮资源/合成物品/建造据点、维持血量与饥饿口渴氧气辐射、多人服务器衍生出生存/角色扮演/创意/PvP 等多种玩法、Steam 创意工坊地图与模组、2014 年 7 月抢先体验、2017 年 7 月正式发售等事实来源。"
+      },
+      {
+        "title": "Unturned（Steam，appid 304930）",
+        "url": "https://store.steampowered.com/app/304930/Unturned/",
+        "notes": "免费生存沙盒、搜刮合成建造、多人联机、创意工坊 UGC 等事实来源。"
+      }
+    ],
+    "short_description": "一款免费的生存沙盒游戏，由 Nelson Sexton（首版发布时年仅十六岁）以低多边形方块美术打造：玩家在丧尸肆虐的末世开放世界中搜刮武器与补给、合成物品、建造据点，维持血量、饥饿、口渴、氧气与辐射等状态以求存，单人或多人皆可，庞大的玩家社区与 Steam 创意工坊更衍生出生存、角色扮演、创意、PvP 等多种玩法，2014 年抢先体验、2017 年正式发售。",
+    "selection_reason": "作为「极简方块美术 + 创意工坊撑起长青多人生存」的代表：一名少年用低成本低多边形美术做出可搜刮、可合成、可建造的开放世界，再靠免费、多人服务器与玩家自制内容滚出庞大社区与超长生命周期，是研究低成本生存沙盒、UGC 生态与社区驱动长尾的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_unturned",
+    "one_sentence_summary": "玩家在丧尸末世的开放世界里搜刮补给、合成物品、建造据点，维持血量饥饿口渴氧气辐射等多重生存状态，单人或多人求存，并借由免费、多人服务器与 Steam 创意工坊衍生出生存、角色扮演、PvP 等大量玩法。",
+    "core_hook": "用极简的低多边形方块美术，把「搜刮—合成—建造—对抗丧尸与玩家」的开放世界生存做成人人可上手、且免费的多人沙盒：一名少年开发者靠低成本美术与开放的创意工坊，让玩家自制地图与模组、自建服务器，把一款独立生存游戏滚成内容与社区都极其庞大的长青平台，玩法从硬核求生一路延展到角色扮演与竞技。",
+    "core_loop": "在地图上搜刮武器与补给、合成物资与装备、建造与加固据点、维持血量饥饿口渴氧气辐射等状态、应对丧尸与其他玩家，单人或多人循环求存并向更危险区域推进。",
+    "progression_model": "靠搜集物资与合成升级装备、建造扩展据点、积累技能点推进；进度体现为装备与据点强度、已探索区域与解锁技能，多人服务器与不同玩法模式提供长线目标。",
+    "failure_model": "血量归零即死亡，硬核服务器下死亡可丢失物品乃至角色重来，饥饿、口渴、辐射、缺氧与丧尸/玩家攻击都会致死，核心压力在于持续维持多重生存状态并守住搜刮成果。",
+    "content_structure": "以多张开放世界地图、丧尸与据点、搜刮合成建造循环为骨架，靠多人服务器与创意工坊地图/模组承载海量衍生玩法与重玩，单人或多人。",
+    "main_player_actions": ["射击", "道具运用", "驾驶"],
+    "main_player_decisions": ["风险取舍", "资源取舍", "探索路线"],
+    "main_player_experiences": ["探索发现", "涌现玩法", "协作默契"],
+    "main_mechanics": ["采集", "合成制作", "建造", "生存模拟", "合作生存"],
+    "replayability_sources": ["创意工坊", "用户生成内容", "难度分级"],
+    "production_constraints": ["Unity 引擎", "小型团队", "低多边形"],
+    "innovation_patterns": ["建造模拟", "创意工坊生态"],
+    "reusable_reference_patterns": ["合作生存", "创意工坊生态", "用户生成内容"],
+    "non_replicable_risks": ["大规模玩家社区", "长期更新运营", "玩家留存"],
+    "genre": ["生存", "沙盒"],
+    "art_style": ["低多边形"],
+    "audio_style": ["环境音"],
+    "perspective": ["第一人称", "第三人称"],
+    "theme": ["丧尸末世"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["自由操控", "紧张节奏"],
+    "team_model": ["单人开发"],
+    "reference_value_tags": [
+      {
+        "tag": "创意工坊生态",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "工坊地图与模组撑起玩法",
+            "quote_or_summary": "Steam 创意工坊的自制地图与模组、加上玩家自建服务器，衍生出生存、角色扮演、创意、PvP 等大量玩法。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "合作生存",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "多人搜刮建造求生",
+            "quote_or_summary": "玩家在多人服务器中协作或对抗，共同搜刮、合成、建造据点并维持多重生存状态。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "低多边形",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "低成本方块美术",
+            "quote_or_summary": "以低多边形方块美术呈现，单名少年开发者即可低成本产出大量内容。",
+            "notes": "维基百科可观察事实。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Unturned 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Unturned",
+        "quote_or_summary": "免费低多边形生存沙盒，丧尸末世搜刮合成建造、维持多重生存状态、多人服务器衍生多种玩法、创意工坊 UGC，Nelson Sexton/Smartly Dressed Games 开发，2014 抢先体验、2017 正式发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_unturned_ugc_longtail",
+      "subject": "用户生成内容",
+      "relation": "creates",
+      "object": "社区长尾参与",
+      "explanation": "把地图与模组的制作权、加上自建服务器的自由开放给玩家，等于让社区源源不断地为游戏补充新内容与新玩法，单一开发者无须独自产出海量地图，玩家就把同一套搜刮-建造内核延展成角色扮演、竞技等无数变体，从而把生命周期拉长到远超官方更新所能支撑的程度；可复用于希望用「开放 UGC + 自建服务器」以极小团队撬动社区自产内容、换取超长尾参与与留存的设计。",
+      "evidence": [
+        {
+          "title": "UGC 驱动长尾解读",
+          "quote_or_summary": "开放创意工坊与自建服务器让玩家自产地图模组与玩法，把有限官方内容延展成长青社区生态。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

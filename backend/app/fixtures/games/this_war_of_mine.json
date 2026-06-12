@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_this_war_of_mine",
+    "title": "This War of Mine",
+    "source_refs": [
+      {
+        "title": "This War of Mine（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/This_War_of_Mine",
+        "notes": "类型（战争生存策略）、11 bit studios 开发发行、2014 年发售、灵感取自萨拉热窝围城（1992–96）、玩家管理战时平民而非士兵、白天在交火威胁下于庇护所制作/交易/加固/烹饪/疗伤、夜晚潜出废墟搜刮、搜刮中面对帮助/抢夺/杀戮的道德抉择、维持健康与饥饿与士气、随机到来的停火结束、玩家选择改变各幸存者结局、2D 单色美术等事实来源。"
+      },
+      {
+        "title": "This War of Mine（Steam，appid 282070）",
+        "url": "https://store.steampowered.com/app/282070/This_War_of_Mine/",
+        "notes": "战时平民生存、昼夜分工、夜间搜刮、道德抉择、随机停火、多结局等事实来源。"
+      }
+    ],
+    "short_description": "一款以战争平民为主角的生存策略游戏，11 bit studios 开发发行、2014 年发售，灵感取自萨拉热窝围城：玩家不扮演士兵，而是管理一群躲在残破公寓里的平民——白天在交火威胁下于庇护所内制作、交易、加固与照料，夜晚潜出废墟搜刮物资，并在搜刮途中不断面对帮助、抢夺或杀戮他人的道德抉择，直到随机到来的停火，活下来的人各有不同结局。",
+    "selection_reason": "作为「用平民视角重写战争题材」的代表：把战争做成关于饥饿、寒冷、伤病与道德重负的平民求生，昼夜分工、夜间搜刮与遭遇时的善恶取舍共同制造沉重抉择；配合炭笔单色美术，是研究生存策略、道德抉择叙事与反战表达的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_this_war_of_mine",
+    "one_sentence_summary": "玩家管理一群战时平民，白天在庇护所制作、交易与加固、照料伤病与情绪，夜晚潜出废墟搜刮并面对帮助、抢夺或杀戮的道德抉择，靠有限物资熬到随机停火，活下来的人各有不同结局。",
+    "core_hook": "把战争的镜头从士兵转向平民，于是「活下去」本身变成沉重的道德考题：白天躲在被狙击手封锁的屋里制作与加固，夜里潜进陌生废墟搜刮——而废墟里往往住着同样在挨饿的老人与母亲。拿走他们的药，你的同伴能活，但你的角色会因此愧疚、抑郁甚至崩溃。资源永远不够，每个决定都在生存与良知之间割裂，停火何时到来还全凭运气；沉郁的单色美术把这份重量压得很实。",
+    "core_loop": "白天在庇护所制作物资、加固与交易、烹饪与照料伤病和情绪，夜晚派人潜入不同地点搜刮、在遭遇中做出帮助或掠夺的抉择，带回物资维持团队，循环熬过寒冬与战火直到随机停火。",
+    "progression_model": "靠日复一日的生存天数与战况推进，靠加固庇护所、积累物资与角色境遇塑造结局；无传统数值升级，进度体现为存活成员、庇护所状态与每个幸存者最终的道德结局。",
+    "failure_model": "角色因饥饿、寒冷、伤病或抑郁自杀而死亡，全员死亡即一局失败；道德重负会持续侵蚀角色情绪，掠夺与杀戮可能引发崩溃，失败往往是物资匮乏与精神崩溃的双重累积。",
+    "content_structure": "以「白天庇护所经营 + 夜间搜刮抉择」的昼夜循环为骨架，靠多重生存需求、道德遭遇与随机停火承载流程，以随机事件与多结局承载重玩，单人。",
+    "main_player_actions": ["物件操控", "道具运用", "对话选择", "潜行"],
+    "main_player_decisions": ["道德抉择", "资源取舍", "风险取舍"],
+    "main_player_experiences": ["氛围营造", "情感叙事", "抉择沉浸"],
+    "main_mechanics": ["生存模拟", "昼夜循环", "合成制作", "随机事件", "物资配给"],
+    "replayability_sources": ["多结局", "难度分级", "任务多样"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["平民视角", "分支叙事"],
+    "reusable_reference_patterns": ["生存模拟", "昼夜循环", "分支叙事"],
+    "non_replicable_risks": ["题材争议", "强美术风格"],
+    "genre": ["生存", "模拟经营"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["横版2D"],
+    "theme": ["战争"],
+    "narrative_style": ["环境叙事", "分支叙事", "碎片化叙事"],
+    "game_feel": ["策略权衡", "紧张节奏", "沉浸代入"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "平民视角",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "扮演平民而非士兵",
+            "quote_or_summary": "玩家管理一群躲在围城中的平民求生，而非操控战斗士兵，重写了战争题材的视角。",
+            "notes": "维基百科可观察设定。"
+          }
+        ]
+      },
+      {
+        "tag": "物资配给",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "有限物资分配与求生",
+            "quote_or_summary": "庇护所内须在永远不足的食物、药品、燃料间分配，照料成员的饥饿、伤病与士气。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "昼夜循环",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "白天经营夜晚搜刮",
+            "quote_or_summary": "白天在庇护所制作与加固、夜晚潜出废墟搜刮，昼夜分工构成核心节奏。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "This War of Mine 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/This_War_of_Mine",
+        "quote_or_summary": "战争生存策略，管理围城平民、白天庇护所经营 + 夜晚搜刮、搜刮遭遇的道德抉择、维持健康/饥饿/士气、随机停火、多结局、单色美术，11 bit studios 开发，2014 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_twom_moral_choice_emotion",
+      "subject": "道德抉择",
+      "relation": "creates",
+      "object": "情绪资源化",
+      "explanation": "把夜间搜刮的遭遇做成会反噬角色心理的道德抉择——抢走老夫妇的药能救同伴，却让动手的角色愧疚、抑郁乃至自杀——等于把「良知」也接进了必须管理的资源系统：情绪不再是叙事点缀，而是和饥饿、健康并列、会真切影响存亡的状态。于是玩家每次取舍都在权衡物资收益与精神代价，求生与道德被迫互相计价。可复用于希望用「会产生心理后果的道德抉择」把角色情绪转化为可管理资源、从而让伦理选择具备机制重量的叙事生存设计。",
+      "evidence": [
+        {
+          "title": "道德代价资源化解读",
+          "quote_or_summary": "搜刮遭遇的善恶抉择会侵蚀角色情绪并可能致死，使良知成为与饥饿并列、须管理的资源。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

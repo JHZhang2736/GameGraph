@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_human_fall_flat",
+    "title": "Human: Fall Flat",
+    "source_refs": [
+      {
+        "title": "Human: Fall Flat（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Human:_Fall_Flat",
+        "notes": "类型（物理解谜平台）、No Brakes Games 开发、Curve Digital 发行、2016 年发售、Unity 引擎、第三人称、可自定义的人偶 Bob、用双臂抓取物件、用头部视线控制朝向、攀爬与软绵绵的物理操作、梦境主题关卡且每道谜题有多种解法、2017 年加入最多 8 人合作、Steam 创意工坊自制关卡、累计销量极高等事实来源。"
+      },
+      {
+        "title": "Human: Fall Flat（Steam，appid 477160）",
+        "url": "https://store.steampowered.com/app/477160/Human_Fall_Flat/",
+        "notes": "物理解谜平台、软绵绵抓取攀爬、梦境关卡多解、最多 8 人合作、创意工坊自制关卡等事实来源。"
+      }
+    ],
+    "short_description": "一款物理解谜平台游戏，No Brakes Games 基于 Unity 打造、Curve Digital 发行：玩家操控一个软绵绵、可自定义外观的人偶 Bob，用双臂抓取物件、用头部视线控制朝向、连摇带晃地攀爬与搬运，在一个个超现实梦境关卡里靠物理破解谜题——每道谜题都有多种歪打正着的解法；支持最多 8 人合作，并以 Steam 创意工坊自制关卡延展内容，2016 年发售、累计销量极高。",
+    "selection_reason": "作为「用软绵绵物理把笨拙变成乐趣」的代表：Bob 难以精确操控的布偶手脚，让攀爬、搬运与解谜处处滑稽，失败比成功还好笑；开放的多解谜题、合作的混乱与创意工坊的自制关卡共同撑起长青口碑，是研究物理喜剧、低成本物理关卡与 UGC 生态的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_human_fall_flat",
+    "one_sentence_summary": "玩家操控软绵绵的人偶 Bob，用双臂抓取、用头部视线控制朝向，连摇带晃地攀爬与搬运，在超现实梦境关卡里靠物理破解有多种解法的谜题，单人或最多 8 人合作，并以创意工坊自制关卡延展内容。",
+    "core_hook": "把「操作的笨拙」本身做成乐趣：Bob 是个软绵绵的布偶，双臂靠物理抓取、朝向靠头部视线，怎么动都摇摇晃晃、难以精确，于是攀爬、搬箱、搭桥的每一步都可能歪掉、滑稽地摔成一团——失败往往比成功还好笑。谜题又刻意留出多种解法，鼓励玩家拿这套不听话的物理身体去歪打正着；一旦多人合作，混乱与笑料成倍放大。笨重的手感不是缺陷而是设计，把解谜变成一场物理喜剧。",
+    "core_loop": "在梦境关卡中观察障碍、用双臂抓取与搬运物件、连摇带晃地攀爬与搭建路径、用物理歪打正着破解谜题抵达下一区域、单人或多人合作制造与化解混乱，循着关卡推进。",
+    "progression_model": "靠一个个梦境关卡线性推进，无数值养成；进度体现为已通过的关卡，重玩与长线乐趣来自多解探索、合作变体与创意工坊的海量自制关卡。",
+    "failure_model": "本作几乎无失败惩罚：Bob 摔落或操作失误通常只是被拉回近处重试、并制造笑料，谜题卡住即源于尚未找到可行的物理解法，真正的「失败」被设计成喜剧而非挫败。",
+    "content_structure": "以一系列超现实梦境关卡与开放多解的物理谜题为骨架，靠软绵绵的抓取攀爬物理承载玩法，以最多 8 人合作与创意工坊自制关卡承载重玩，单人或多人。",
+    "main_player_actions": ["抓取", "平台跳跃", "物件操控"],
+    "main_player_decisions": ["探索路线", "优先级排序"],
+    "main_player_experiences": ["欢乐混乱", "涌现玩法", "探索发现"],
+    "main_mechanics": ["物理模拟", "物理抓取", "合作解谜", "创意工坊", "物理沙盒平台"],
+    "replayability_sources": ["创意工坊", "用户生成内容", "速通"],
+    "production_constraints": ["物理玩法", "小型团队"],
+    "innovation_patterns": ["物理喜剧", "创意工坊生态"],
+    "reusable_reference_patterns": ["物理沙盒", "物理抓取", "创意工坊生态"],
+    "non_replicable_risks": ["平衡复杂度", "玩家留存"],
+    "genre": ["物理沙盒", "解谜平台", "派对游戏"],
+    "art_style": ["低多边形"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["第三人称"],
+    "theme": ["超现实", "玩具沙盒"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["软弹物理", "自由操控"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "物理喜剧",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "软绵绵布偶操作",
+            "quote_or_summary": "Bob 双臂靠物理抓取、朝向靠头部视线，难以精确操控，攀爬搬运处处摇晃滑稽，失败常比成功更好笑。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理抓取",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "双臂抓取搬运",
+            "quote_or_summary": "玩家用双臂分别抓取物件、攀爬与搬运，所有互动建立在实时物理之上。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "创意工坊生态",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "工坊自制关卡",
+            "quote_or_summary": "Steam 创意工坊支持玩家自制关卡，海量 UGC 大幅延展内容与长线寿命。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Human: Fall Flat 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Human:_Fall_Flat",
+        "quote_or_summary": "物理解谜平台，软绵绵人偶 Bob 双臂抓取与头控朝向、梦境关卡多解、最多 8 人合作、创意工坊自制关卡，No Brakes Games 开发、Curve Digital 发行，2016 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_human_fall_flat_physics_comedy",
+      "subject": "物理模拟",
+      "relation": "creates",
+      "object": "失败趣味化",
+      "explanation": "故意让角色难以精确操控——四肢靠物理、抓握会打滑、重心总在晃，等于把「失败」从挫败重构成笑料：摔下平台、举不稳箱子、合作时互相绊倒，这些出糗本身就是乐趣，而非需要惩罚的错误。再配上刻意留白的多解谜题，玩家被鼓励拿这具不听话的身体去试、去歪打正着，过程的滑稽比结果的成败更重要。可复用于希望用「不完全可控的物理操作」把失误转化为喜剧与涌现乐趣、从而降低挫败、抬高合作欢乐的设计。",
+      "evidence": [
+        {
+          "title": "笨拙物理化为喜剧解读",
+          "quote_or_summary": "难以精确操控的物理身体把摔倒出糗变成笑料而非惩罚，多解谜题鼓励歪打正着，过程趣味重于成败。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

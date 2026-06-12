@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_cooking_simulator",
+    "title": "Cooking Simulator",
+    "source_refs": [
+      {
+        "title": "Cooking Simulator（维基百科）",
+        "url": "https://en.wikipedia.org/wiki/Cooking_Simulator",
+        "notes": "类型（厨房烹饪模拟）、Big Cheese Studio 开发、PlayWay 发行、2019 年 6 月发售、基于物理引擎、每种食材按真实物理反应（倒汤、翻牛排、切菜、抛食材、碰翻台面）、提供烤箱/灶台/刀具/搅拌机等器具与 140+ 食材、事业模式按订单备餐赚经验与名声解锁更复杂菜谱、沙盒模式自由折腾等事实来源。"
+      },
+      {
+        "title": "Cooking Simulator（Steam，appid 641320）",
+        "url": "https://store.steampowered.com/app/641320/Cooking_Simulator/",
+        "notes": "物理演算厨房、80+ 菜谱、事业与沙盒模式、混乱厨房游乐场等事实来源。"
+      }
+    ],
+    "short_description": "一款基于物理引擎的厨房烹饪模拟游戏，波兰 Big Cheese Studio 开发、PlayWay 发行、2019 年发售：每种食材都有真实物理反应——切菜、煎牛排、倒汤、抛食材乃至把东西碰翻台面都按物理演算；游戏提供烤箱、灶台、刀具、搅拌机等器具与 140 多种食材，含「在餐厅按顾客订单备餐、靠表现赚取经验与名声解锁更复杂菜谱」的事业模式，以及随意折腾的沙盒模式。",
+    "selection_reason": "作为「用真实物理把做饭做成手忙脚乱喜剧」的代表：食材、刀具与汤水全程物理演算，切配翻炒既能精准也能翻车失火，配合订单计时与名声成长，是研究物理模拟、烹饪模拟与混乱手感喜剧的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_cooking_simulator",
+    "one_sentence_summary": "玩家在物理演算的厨房里用刀具、灶台与搅拌机处理 140 多种食材，按订单备出 80 多道菜，靠表现赚取经验与名声解锁更复杂菜谱，也可在沙盒模式里随意折腾，精准与翻车皆由物理决定。",
+    "core_hook": "把「做饭」整个交给物理引擎：每样食材都有重量与反应，切菜要对准、煎牛排会焦、倒汤会洒、手一抖就把锅碰翻、油锅还会起火。于是同一道菜，熟手能行云流水，新手则手忙脚乱、满厨房狼藉——精准操作的成就与失手翻车的滑稽，都来自同一套真实物理。再叠上订单计时与名声成长，做饭成了既硬核又好笑的物理喜剧。",
+    "core_loop": "在事业模式接顾客订单、按菜谱取用食材、用刀具与灶台等器具物理地切配与烹饪、按时把合格菜品出餐、赚取经验与名声解锁新食材与更复杂菜谱，循环挑战更高难度的餐厅经营；或在沙盒模式自由实验。",
+    "progression_model": "靠完成订单赚取经验与名声、升级厨具与解锁 80 多道更复杂菜谱推进事业；进度体现为名声等级、解锁的菜谱与厨具，沙盒模式则提供无约束的自由烹饪。",
+    "failure_model": "本作无角色死亡，订单超时、上错或烧焦菜品会扣分、损失收入与名声，搞砸不过是利润受损与厨房狼藉，须重整再来，失败被设计成可一笑了之的混乱。",
+    "content_structure": "以事业模式的订单餐厅经营与沙盒自由烹饪为骨架，靠物理演算的烹饪操作与 140+ 食材、80+ 菜谱承载玩法，以沙盒折腾与持续更新承载重玩，单人（后续含合作）。",
+    "main_player_actions": ["物件操控", "道具运用", "参数调整"],
+    "main_player_decisions": ["优先级排序", "时间分配", "资源取舍"],
+    "main_player_experiences": ["经营成就", "欢乐混乱", "系统掌控"],
+    "main_mechanics": ["烹饪模拟", "物理模拟", "顾客经营", "实时计时"],
+    "replayability_sources": ["任务多样", "全收集"],
+    "production_constraints": ["Unreal 引擎", "小型团队", "物理玩法"],
+    "innovation_patterns": ["烹饪模拟", "物理模拟"],
+    "reusable_reference_patterns": ["物理模拟", "顾客经营"],
+    "non_replicable_risks": ["平衡复杂度", "技术复杂度"],
+    "genre": ["模拟经营"],
+    "art_style": ["写实美术"],
+    "audio_style": ["轻松配乐"],
+    "perspective": ["第一人称"],
+    "theme": ["美食"],
+    "narrative_style": ["无叙事"],
+    "game_feel": ["自由操控", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "烹饪模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "器具食材备餐",
+            "quote_or_summary": "玩家用烤箱、灶台、刀具、搅拌机等器具处理 140+ 食材、备出 80+ 道菜，按订单经营餐厅。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "物理模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "食材全程物理演算",
+            "quote_or_summary": "切菜、翻牛排、倒汤、抛食材乃至碰翻台面都按真实物理反应，操作精准与翻车皆由物理决定。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "顾客经营",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "按订单备餐赚名声",
+            "quote_or_summary": "事业模式中玩家按顾客订单及时备出合格菜品，靠表现赚取经验与名声解锁更复杂菜谱。",
+            "notes": "维基百科可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Cooking Simulator 玩法与制作综述",
+        "url": "https://en.wikipedia.org/wiki/Cooking_Simulator",
+        "quote_or_summary": "物理引擎厨房烹饪模拟，食材全程物理反应、140+ 食材、80+ 菜谱、订单事业模式与沙盒模式，Big Cheese Studio 开发、PlayWay 发行，2019 年发售。",
+        "notes": "事实取自维基百科与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_cooking_sim_physics_comedy",
+      "subject": "物理模拟",
+      "relation": "creates",
+      "object": "失败趣味化",
+      "explanation": "把整个厨房交给真实物理后，失误不再是一行冰冷的「订单失败」，而是会洒、会烧、会满台狼藉的具体事故：汤泼了一地、牛排煎成焦炭、油锅腾起火苗——这些翻车场面本身就滑稽好笑，于是搞砸成了乐趣的一部分而非纯粹的惩罚。同一套物理也奖励熟练：练到行云流水时的掌控快感同样来自它。可复用于希望用「高保真物理操作」把失误转化为喜剧与即时反馈、在硬核手感与欢乐混乱之间取得平衡的模拟玩法设计。",
+      "evidence": [
+        {
+          "title": "物理事故化为喜剧解读",
+          "quote_or_summary": "真实物理让失手变成洒汤、起火、满台狼藉的具体事故，搞砸本身成为乐趣而非单纯惩罚。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

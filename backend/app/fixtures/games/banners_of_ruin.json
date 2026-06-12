@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_banners_of_ruin",
+    "title": "Banners of Ruin",
+    "source_refs": [
+      {
+        "title": "Banners of Ruin（Goblinz Studio 官方页）",
+        "url": "https://goblinzstudio.com/game/banners-of-ruin/",
+        "notes": "类型（肉鸽牌组构筑 RPG）、MonteBearo 开发、Goblinz Studio 等发行、拟人动物（anthro）题材、在 Dawn's Point 城中以卡牌驱动的遭遇推进、可组建至多 6 名角色的队伍、6 个种族各有独特卡池与被动、回合制战斗、升级角色解锁天赋卡与强力被动、每局结束以代币解锁新卡与被动（元进度）等事实来源。"
+      },
+      {
+        "title": "Banners of Ruin（Steam，appid 1075740）",
+        "url": "https://store.steampowered.com/app/1075740/Banners_of_Ruin/",
+        "notes": "肉鸽卡牌构筑、最多 6 人队伍、种族卡池、回合制站位战斗、卡牌驱动遭遇、元进度解锁等事实来源。"
+      }
+    ],
+    "short_description": "一款肉鸽牌组构筑 RPG，MonteBearo 开发、Goblinz Studio 发行：在拟人动物盘踞的城市 Dawn's Point 中，玩家以卡牌驱动的随机遭遇推进，可招募至多 6 名角色组成队伍，从 6 个各具独特卡池与被动的种族中选择，进行回合制站位战斗，升级角色解锁天赋卡与强力被动，每局结束以代币解锁新卡牌与被动逐步增强后续挑战。",
+    "selection_reason": "作为「把牌组构筑套进多角色站位队伍」的代表：它不止让玩家堆一套牌，而是组建至多 6 名分属不同种族、各带专属卡池的角色，再以前后排站位决定攻防，把构筑、组队与阵型绑成一体，是研究牌组构筑 RPG 化、种族化卡池与站位战术的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_banners_of_ruin",
+    "one_sentence_summary": "玩家在拟人动物之城 Dawn's Point 以卡牌驱动的遭遇推进，招募至多 6 名分属不同种族、各带专属卡池的角色组成队伍，靠前后排站位打回合制卡牌战，升级解锁天赋卡，每局以代币解锁新卡与被动滚动增强。",
+    "core_hook": "把牌组构筑从「单人堆一套牌」扩成「带一支队伍打牌」：玩家招募至多 6 名角色，每名分属不同种族、自带专属卡池与被动，他们的卡共同汇成你的牌库；战斗又分前后排站位，谁站前面挨打、谁在后排输出，阵型与构筑互相牵制。于是每局既要想「这套牌怎么转起来」，又要想「这支队伍怎么搭、怎么站」，再以局后代币长线解锁新卡与种族，把卡牌肉鸽叠出一层队伍养成与战术阵型的厚度。",
+    "core_loop": "在城中沿卡牌遭遇推进、招募并搭配不同种族的角色、组建与升级牌库和阵型、打回合制站位卡牌战、升级解锁天赋卡与被动、局后以代币解锁新卡与种族，循环挑战直到通关或全队覆灭。",
+    "progression_model": "局内靠招募角色、获取卡牌与升级天赋构筑队伍并滚雪球；跨局靠代币解锁新卡牌、种族与被动拓展构筑空间，进度体现为队伍规模与强度、已解锁卡池与抵达层数。",
+    "failure_model": "队伍在回合制战斗中全员阵亡即本局结束，肉鸽式从头再来，站位失当、构筑不成型或资源分配失衡都可能让全队在某场遭遇中覆灭。",
+    "content_structure": "以 Dawn's Point 城中卡牌驱动的随机遭遇与回合制站位战斗为骨架，靠多种族卡池、队伍构筑与天赋升级承载局内成长，以代币元进度承载肉鸽重玩，单人。",
+    "main_player_actions": ["出牌", "卡牌取舍", "队伍管理"],
+    "main_player_decisions": ["装备搭配", "增益选择", "风险取舍"],
+    "main_player_experiences": ["构筑乐趣", "运筹帷幄", "滚雪球快感"],
+    "main_mechanics": ["牌组构筑", "卡牌战斗", "站位战斗", "职业分工", "元进度"],
+    "replayability_sources": ["程序生成", "构筑多样", "角色解锁"],
+    "production_constraints": ["小型团队", "手绘美术"],
+    "innovation_patterns": ["站位战斗", "牌组构筑"],
+    "reusable_reference_patterns": ["牌组构筑", "站位战斗", "职业分工"],
+    "non_replicable_risks": ["平衡复杂度", "系统复杂度"],
+    "genre": ["卡牌构筑", "类肉鸽"],
+    "art_style": ["手绘美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["第三人称"],
+    "theme": ["黑暗奇幻", "动物"],
+    "narrative_style": ["碎片化叙事"],
+    "game_feel": ["策略权衡", "桌游质感"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "站位战斗",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "前后排站位决定攻防",
+            "quote_or_summary": "回合制战斗分前后排站位，角色站位影响承伤与输出，阵型与卡牌构筑互相牵制。",
+            "notes": "官方页与 Steam 可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "职业分工",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "多种族专属卡池",
+            "quote_or_summary": "至多 6 名角色分属 6 个种族，各有独特卡池与被动，组队即决定牌库与战术分工。",
+            "notes": "官方页与 Steam 可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "牌组构筑",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "队伍卡汇成牌库",
+            "quote_or_summary": "招募角色的卡共同汇成牌库，升级解锁天赋卡，玩家在局内不断构筑与精炼这套牌。",
+            "notes": "官方页与 Steam 可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Banners of Ruin 玩法与制作综述",
+        "url": "https://goblinzstudio.com/game/banners-of-ruin/",
+        "quote_or_summary": "肉鸽牌组构筑 RPG，拟人动物题材，组建至多 6 名分属 6 种族的队伍、卡牌驱动遭遇、回合制前后排站位战斗、天赋升级、代币元进度，MonteBearo 开发、Goblinz Studio 发行。",
+        "notes": "事实取自官方页与 Steam 商店页。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_banners_position_tactics",
+      "subject": "站位战斗",
+      "relation": "creates",
+      "object": "战术深度",
+      "explanation": "在牌组构筑之上叠一层前后排站位，等于给「出什么牌」再加一个「谁站哪里」的维度：同一套牌，把脆皮输出放前排还是护在后排、用谁去顶伤害、怎么逼对手的关键单位暴露，会导出完全不同的打法，构筑因此不再只是抽牌过牌的引擎，而要兼顾空间阵型与角色分工。这把单线的卡牌战拓成「构筑 × 阵型」的二维博弈，显著抬高了战术天花板，可复用于希望在牌组构筑里用「站位/阵型维度」增加战术层次、避免构筑同质化的设计。",
+      "evidence": [
+        {
+          "title": "站位叠加构筑解读",
+          "quote_or_summary": "前后排站位为牌组构筑再加一个空间维度，同套牌因阵型与角色分工导出不同打法，抬高战术天花板。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}

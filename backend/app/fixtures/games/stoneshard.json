@@ -1,0 +1,112 @@
+{
+  "candidate": {
+    "id": "game_stoneshard",
+    "title": "Stoneshard",
+    "source_refs": [
+      {
+        "title": "Stoneshard（Steam，appid 625960）",
+        "url": "https://store.steampowered.com/app/625960/Stoneshard/",
+        "notes": "类型（硬核回合制肉鸽 RPG）、Ink Stains Games 开发、HypeTrain Digital 发行、Kickstarter 众筹、2020 年抢先体验、中世纪雇佣兵题材的开放世界、程序生成地牢、接取契约、生存要素（饥饿/受伤/理智/疼痛）、自带商队与可招募随从、200+ 技能与 400+ 装备且无职业等级限制、需提前规划与权衡资源、惩罚性强、逐格回合制、像素美术等事实来源。"
+      },
+      {
+        "title": "Stoneshard 官方站",
+        "url": "https://stoneshard.com/",
+        "notes": "回合制肉鸽 RPG，含生存与策略要素，中世纪雇佣兵的残酷旅途、商队、程序生成地牢等事实来源。"
+      }
+    ],
+    "short_description": "一款硬核回合制肉鸽 RPG，Ink Stains Games 开发、经 Kickstarter 众筹：玩家扮演一名中世纪雇佣兵，在饱受战火的开放世界里接取契约、深入程序生成的地牢，靠 200+ 技能与 400+ 装备（无职业与等级限制）自由成长，同时对抗饥饿、伤病、疼痛与理智崩溃；游戏不做任何手把手引导、会为失误狠狠惩罚你，须提前规划每次出征、权衡资源与风险，逐格回合制、像素美术，2020 年抢先体验。",
+    "selection_reason": "作为「把多重生存要素压进硬核回合制 RPG」的代表：饥饿、伤病、疼痛与理智被做成必须同时盯防的系统，让每一次进地牢都成了对资源与风险的精算；配合无职业限制的自由成长与惩罚性死亡，是研究生存模拟叠加 CRPG、理智/疼痛系统与硬核探索张力的高价值参考。"
+  },
+  "profile": {
+    "game_id": "game_stoneshard",
+    "one_sentence_summary": "玩家扮演中世纪雇佣兵，在战火蹂躏的开放世界接取契约、深入程序生成地牢，靠无职业限制的 200+ 技能与 400+ 装备自由成长，同时对抗饥饿、伤病、疼痛与理智崩溃，须提前规划、精算资源与风险，逐格回合制求生。",
+    "core_hook": "把求生的代价摊到台面上，逼你像真正的雇佣兵那样精打细算：饥饿要喂、伤口会持续流血、疼痛拖累命中、理智崩了会出幻觉——这些系统必须同时盯防，任一失控都可能在地牢深处要命。游戏不给任何手把手提示，还会为每个失误狠狠惩罚你，于是每次出征前都得备好补给、规划撤退、权衡「这层还打不打」。配合无职业限制的自由成长与逐格回合制，把每一步都变成对资源与风险的冷静计算。",
+    "core_loop": "在城镇补给与接取契约、带商队穿越开放世界、深入程序生成地牢逐格回合制战斗、管理饥饿/伤病/疼痛/理智等生存状态、搜集装备与学习技能自由成长、权衡风险适时撤退，循环承接更深更险的契约。",
+    "progression_model": "靠完成契约获取报酬与经验、从 200+ 技能与 400+ 装备中无职业限制地自由搭配成长、升级商队与招募随从推进；进度体现为技能与装备构筑、商队与据点状态、可承接契约的难度。",
+    "failure_model": "角色死亡即按硬核规则付出沉重代价（依存档机制可致进度大幅倒退乃至重来），饥饿、失血、疼痛、理智崩溃与战斗失利都可能致死，核心压力在于持续维持多重生存状态并在贪进与撤退间抉择。",
+    "content_structure": "以战火开放世界、程序生成地牢与契约任务为骨架，靠多重生存系统、逐格回合制战斗与无限制技能装备构筑承载硬核成长，以程序生成与高难度承载重玩，单人。",
+    "main_player_actions": ["近战攻击", "技能释放", "道具运用"],
+    "main_player_decisions": ["风险取舍", "资源取舍", "能力树优先级"],
+    "main_player_experiences": ["运筹帷幄", "收集养成", "氛围营造"],
+    "main_mechanics": ["回合制", "程序生成", "生存模拟", "理智系统", "死亡惩罚"],
+    "replayability_sources": ["程序生成", "难度分级", "构筑多样"],
+    "production_constraints": ["众筹资金", "小型团队"],
+    "innovation_patterns": ["生存模拟", "压力系统"],
+    "reusable_reference_patterns": ["生存模拟", "死亡惩罚", "程序生成"],
+    "non_replicable_risks": ["高密度像素美术", "长期更新运营", "系统复杂度"],
+    "genre": ["角色扮演", "类肉鸽", "生存"],
+    "art_style": ["像素美术"],
+    "audio_style": ["氛围音乐"],
+    "perspective": ["俯视"],
+    "theme": ["黑暗奇幻"],
+    "narrative_style": ["碎片化叙事"],
+    "game_feel": ["策略权衡", "紧张节奏"],
+    "team_model": ["小团队"],
+    "reference_value_tags": [
+      {
+        "tag": "理智系统",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "理智与疼痛等生存状态",
+            "quote_or_summary": "玩家须同时管理饥饿、伤病、疼痛与理智，理智崩溃会出现幻觉等负面效果。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "生存模拟",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "多重生存要素",
+            "quote_or_summary": "饥饿、失血、疼痛、理智等多重生存系统须同时盯防，任一失控都可能致命。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      },
+      {
+        "tag": "死亡惩罚",
+        "confidence": "high",
+        "quality_status": "draft",
+        "evidence": [
+          {
+            "title": "硬核惩罚性死亡",
+            "quote_or_summary": "游戏不做手把手引导、会为失误狠狠惩罚，角色死亡付出沉重代价，须提前规划与权衡风险。",
+            "notes": "Steam 商店页可观察机制。"
+          }
+        ]
+      }
+    ],
+    "evidence": [
+      {
+        "title": "Stoneshard 玩法与制作综述",
+        "url": "https://store.steampowered.com/app/625960/Stoneshard/",
+        "quote_or_summary": "硬核回合制肉鸽 RPG，中世纪雇佣兵开放世界、程序生成地牢、契约、饥饿/伤病/疼痛/理智生存系统、200+ 技能 400+ 装备无职业限制、惩罚性死亡，Ink Stains Games 开发、Kickstarter 众筹，2020 抢先体验。",
+        "notes": "事实取自 Steam 商店页与官方站。"
+      }
+    ],
+    "confidence": "high",
+    "quality_status": "draft"
+  },
+  "claims": [
+    {
+      "id": "claim_stoneshard_survival_tension",
+      "subject": "生存模拟",
+      "relation": "creates",
+      "object": "探索张力",
+      "explanation": "把饥饿、失血、疼痛、理智做成必须同时维持、且会相互恶化的多重系统，等于给「深入地牢」装上一组持续走低的计时器：你带的补给有限、伤病不会自愈、理智越拖越脆，于是每多下一层都在拿剩余的生存余量去赌更多收益。推进不再是单纯的战斗考验，而是「还撑得住吗、该不该现在撤」的资源-风险博弈，张力来自这份随每一步累积的匮乏。可复用于希望用「多重且会累积恶化的生存状态」把探索深度转化为持续风险权衡、强化推进张力的设计。",
+      "evidence": [
+        {
+          "title": "生存损耗生张力解读",
+          "quote_or_summary": "饥饿/失血/疼痛/理智等会累积恶化的系统让每多下一层都在消耗生存余量，推进成为持续的资源-风险权衡。",
+          "notes": "基于可观察机制的解释性判断。"
+        }
+      ],
+      "confidence": "medium",
+      "quality_status": "draft"
+    }
+  ]
+}
